@@ -1,203 +1,142 @@
-index_html = r'''<!doctype html>
-<html lang="id">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Konsultasi studi di Taiwan untuk mahasiswa internasional dan orang tua. Bantuan pemilihan universitas, aplikasi, dokumen, dan follow-up.">
-  <title>Study in Taiwan | Konsultasi & Bantuan Aplikasi</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study in Taiwan — Application & Document Assistance</title>
+  <meta name="description" content="Application and document assistance for international students and families planning to study in Taiwan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Study in Taiwan">
-      <span class="brand-mark">🎓</span>
-      <span>
-        <strong>STUDY IN TAIWAN</strong>
-        <small>Your Journey, Our Commitment</small>
-      </span>
-    </a>
-
-    <button class="menu-toggle" type="button" aria-label="Open menu">☰</button>
-
-    <nav class="nav">
-      <a href="#home" data-i18n="navHome">Beranda</a>
-      <a href="#why" data-i18n="navTaiwan">Tentang Taiwan</a>
-      <a href="#services" data-i18n="navServices">Layanan</a>
-      <a href="#process" data-i18n="navProcess">Proses</a>
-      <a href="#contact" data-i18n="navContact">Kontak</a>
-    </nav>
-
-    <div class="languages" aria-label="Language selector">
-      <button data-lang="en">EN</button>
-      <button data-lang="id" class="active">ID</button>
-      <button data-lang="ko">한국어</button>
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">Study in Taiwan</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#why">Why Taiwan</a>
+        <a href="#services">Services</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="lang-switch" aria-label="Language selector">
+        <button class="lang active" data-lang="en">EN</button>
+        <button class="lang" data-lang="id">ID</button>
+        <button class="lang" data-lang="ko">한국어</button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
+  <main id="top">
+    <section class="hero">
       <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="eyebrow" data-i18n="eyebrow">JASA KONSULTASI STUDY DI TAIWAN</span>
-        <h1 data-i18n="heroTitle">Wujudkan Masa Depan Anak Anda di Taiwan</h1>
-        <p class="lead" data-i18n="heroText">
-          Kami membantu orang tua dan calon mahasiswa dalam proses aplikasi ke universitas di Taiwan dengan mudah, jelas, dan profesional.
-        </p>
-
-        <ul class="hero-points">
-          <li data-i18n="point1">Pendampingan dari awal hingga diterima</li>
-          <li data-i18n="point2">Bantuan aplikasi ke universitas di Taiwan</li>
-          <li data-i18n="point3">Persiapan dokumen lengkap dan akurat</li>
-        </ul>
-
+      <div class="container hero-content">
+        <p class="eyebrow" data-i18n="hero_eyebrow">Taiwan University Application Support</p>
+        <h1 data-i18n="hero_title">Start Your Child’s Study Journey in Taiwan with Confidence</h1>
+        <p class="hero-text" data-i18n="hero_text">Professional guidance for students and parents—from university selection to application and document preparation.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#contact" data-i18n="consultNow">Konsultasi Sekarang</a>
-          <a class="btn secondary" href="#services" data-i18n="seeServices">Lihat Layanan</a>
+          <a class="btn btn-primary" href="#contact" data-i18n="cta_consult">Start Your Consultation</a>
+          <a class="btn btn-secondary" href="#services" data-i18n="cta_services">View Our Services</a>
         </div>
       </div>
     </section>
 
-    <section class="benefits">
-      <article>
-        <span class="icon">🎓</span>
-        <div>
-          <h3 data-i18n="benefit1Title">Universitas Berkualitas</h3>
-          <p data-i18n="benefit1Text">Akses ke berbagai universitas terbaik di Taiwan.</p>
-        </div>
-      </article>
-      <article>
-        <span class="icon">💰</span>
-        <div>
-          <h3 data-i18n="benefit2Title">Biaya Terjangkau</h3>
-          <p data-i18n="benefit2Text">Biaya kuliah dan hidup yang relatif terjangkau.</p>
-        </div>
-      </article>
-      <article>
-        <span class="icon">🏅</span>
-        <div>
-          <h3 data-i18n="benefit3Title">Banyak Beasiswa</h3>
-          <p data-i18n="benefit3Text">Peluang beasiswa dari pemerintah dan universitas.</p>
-        </div>
-      </article>
-      <article>
-        <span class="icon">🛡️</span>
-        <div>
-          <h3 data-i18n="benefit4Title">Aman & Nyaman</h3>
-          <p data-i18n="benefit4Text">Lingkungan aman, transportasi mudah, dan fasilitas modern.</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="section" id="services">
-      <div class="section-heading">
-        <span data-i18n="servicesLabel">LAYANAN</span>
-        <h2 data-i18n="servicesTitle">Layanan Kami</h2>
-        <p data-i18n="servicesText">Pendampingan praktis dari tahap pencarian universitas sampai aplikasi dikirim.</p>
-      </div>
-
-      <div class="cards five">
-        <article class="card">
-          <div class="card-icon">🏛️</div>
-          <h3 data-i18n="service1Title">Pemilihan Universitas</h3>
-          <p data-i18n="service1Text">Membantu memilih universitas dan program studi yang sesuai dengan latar belakang, minat, dan tujuan siswa.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon">📄</div>
-          <h3 data-i18n="service2Title">Bantuan Aplikasi</h3>
-          <p data-i18n="service2Text">Pendampingan proses aplikasi, pendaftaran online, persyaratan, dan deadline.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon">📁</div>
-          <h3 data-i18n="service3Title">Persiapan Dokumen</h3>
-          <p data-i18n="service3Text">Membantu menyiapkan dan mengecek dokumen agar lengkap, benar, dan sesuai persyaratan.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon">✅</div>
-          <h3 data-i18n="service4Title">Review Aplikasi</h3>
-          <p data-i18n="service4Text">Pengecekan akhir untuk mengurangi kesalahan dan dokumen yang terlewat.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon">✈️</div>
-          <h3 data-i18n="service5Title">Follow-up & Update</h3>
-          <p data-i18n="service5Text">Membantu memahami update dari universitas dan langkah berikutnya.</p>
-        </article>
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div><strong>01</strong><span data-i18n="step_short_1">University Selection</span></div>
+        <div><strong>02</strong><span data-i18n="step_short_2">Document Preparation</span></div>
+        <div><strong>03</strong><span data-i18n="step_short_3">Application Submission</span></div>
+        <div><strong>04</strong><span data-i18n="step_short_4">Admission Follow-up</span></div>
       </div>
     </section>
 
-    <section class="section process-section" id="process">
-      <div class="section-heading">
-        <span data-i18n="processLabel">LANGKAH DEMI LANGKAH</span>
-        <h2 data-i18n="processTitle">Proses Kami</h2>
-      </div>
-
-      <div class="process">
-        <article><b>1</b><span>💬</span><h3 data-i18n="process1Title">Konsultasi Awal</h3><p data-i18n="process1Text">Diskusi kebutuhan, latar belakang pendidikan, dan tujuan studi.</p></article>
-        <article><b>2</b><span>🏛️</span><h3 data-i18n="process2Title">Pemilihan Universitas</h3><p data-i18n="process2Text">Rekomendasi universitas dan program yang sesuai.</p></article>
-        <article><b>3</b><span>📁</span><h3 data-i18n="process3Title">Persiapan Dokumen</h3><p data-i18n="process3Text">Menyiapkan dan melengkapi dokumen yang diperlukan.</p></article>
-        <article><b>4</b><span>📨</span><h3 data-i18n="process4Title">Pengiriman Aplikasi</h3><p data-i18n="process4Text">Pendampingan pengiriman aplikasi sesuai deadline.</p></article>
-        <article><b>5</b><span>✅</span><h3 data-i18n="process5Title">Penerimaan</h3><p data-i18n="process5Text">Membantu memahami hasil dan tahap berikutnya.</p></article>
-      </div>
-    </section>
-
-    <section class="split-section" id="why">
-      <div class="why-card">
+    <section class="section intro">
+      <div class="container two-col">
         <div>
-          <span class="section-tag" data-i18n="whyLabel">KENAPA TAIWAN?</span>
-          <h2 data-i18n="whyTitle">Mengapa Study di Taiwan?</h2>
-          <ul class="check-list">
-            <li data-i18n="why1">Pendidikan berkualitas internasional</li>
-            <li data-i18n="why2">Biaya kuliah dan hidup yang kompetitif</li>
-            <li data-i18n="why3">Peluang beasiswa untuk mahasiswa internasional</li>
-            <li data-i18n="why4">Lingkungan aman dan transportasi yang nyaman</li>
-            <li data-i18n="why5">Kesempatan belajar Bahasa Mandarin</li>
-          </ul>
+          <p class="eyebrow" data-i18n="guide_eyebrow">A clearer path for families</p>
+          <h2 data-i18n="guide_title">Your Guide to Studying in Taiwan</h2>
         </div>
-        <div class="taiwan-art" aria-hidden="true">
-          <div class="tower">101</div>
-          <div class="sun"></div>
-        </div>
-      </div>
-
-      <div class="trust-card">
-        <span class="section-tag" data-i18n="parentLabel">UNTUK ORANG TUA</span>
-        <h2 data-i18n="parentTitle">Informasi yang Jelas, Proses yang Terarah</h2>
-        <p data-i18n="parentText">
-          Kami memahami bahwa keputusan kuliah di luar negeri bukan hanya keputusan siswa, tetapi juga keputusan keluarga. Karena itu setiap tahap dijelaskan dengan bahasa yang mudah dipahami.
-        </p>
-        <div class="trust-grid">
-          <div><strong>01</strong><span data-i18n="trust1">Persyaratan dijelaskan dengan jelas</span></div>
-          <div><strong>02</strong><span data-i18n="trust2">Deadline dan progres lebih mudah dipantau</span></div>
-          <div><strong>03</strong><span data-i18n="trust3">Dokumen dicek sebelum dikirim</span></div>
-          <div><strong>04</strong><span data-i18n="trust4">Komunikasi selama proses aplikasi</span></div>
+        <div>
+          <p data-i18n="guide_text">Applying to an overseas university can be confusing. We help students and parents understand requirements, deadlines, documents, and the application process step by step.</p>
         </div>
       </div>
     </section>
 
-    <section class="cta" id="contact">
-      <div>
-        <span data-i18n="ctaLabel">MULAI DARI SINI</span>
-        <h2 data-i18n="ctaTitle">Siap Memulai Perjalanan Studi di Taiwan?</h2>
-        <p data-i18n="ctaText">Hubungi kami untuk membicarakan kebutuhan siswa dan pilihan universitas yang tersedia.</p>
+    <section id="services" class="section section-soft">
+      <div class="container">
+        <p class="eyebrow" data-i18n="services_eyebrow">What we help with</p>
+        <h2 data-i18n="services_title">Application & Document Assistance</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="card-num">01</span>
+            <h3 data-i18n="service_1_title">University Selection</h3>
+            <p data-i18n="service_1_text">Shortlist suitable universities and programs based on academic background, interests, language ability, and goals.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">02</span>
+            <h3 data-i18n="service_2_title">Application Assistance</h3>
+            <p data-i18n="service_2_text">Understand procedures, requirements, deadlines, and university application systems.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">03</span>
+            <h3 data-i18n="service_3_title">Document Preparation</h3>
+            <p data-i18n="service_3_text">Organize transcripts, certificates, study plans, personal statements, recommendation letters, and financial documents.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">04</span>
+            <h3 data-i18n="service_4_title">Application Review</h3>
+            <p data-i18n="service_4_text">Check application packages for missing items, formatting issues, and common mistakes before submission.</p>
+          </article>
+        </div>
       </div>
-      <a class="btn light" href="mailto:hello@study-in-taiwan.com" data-i18n="ctaButton">Hubungi Kami</a>
+    </section>
+
+    <section id="why" class="section">
+      <div class="container image-text">
+        <img src="images/taiwan-campus.jpg" alt="International students on a university campus in Taiwan" />
+        <div>
+          <p class="eyebrow" data-i18n="why_eyebrow">Why Taiwan</p>
+          <h2 data-i18n="why_title">A Strong Choice for International Education</h2>
+          <div class="check-list">
+            <p data-i18n="why_1"><strong>Quality education.</strong> Taiwan offers respected universities across technology, engineering, business, language, design, and more.</p>
+            <p data-i18n="why_2"><strong>Affordable living.</strong> Tuition and day-to-day costs can be lower than many other international study destinations.</p>
+            <p data-i18n="why_3"><strong>Scholarship options.</strong> Students may qualify for government or university scholarships.</p>
+            <p data-i18n="why_4"><strong>Safe and convenient.</strong> Taiwan has excellent public transport, healthcare, and modern infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section section-dark">
+      <div class="container">
+        <p class="eyebrow light" data-i18n="process_eyebrow">Simple and structured</p>
+        <h2 class="light" data-i18n="process_title">How It Works</h2>
+        <div class="process-grid">
+          <div><span>1</span><h3 data-i18n="process_1_title">Initial Consultation</h3><p data-i18n="process_1_text">We learn about the student’s education, interests, language ability, and preferred field.</p></div>
+          <div><span>2</span><h3 data-i18n="process_2_title">Program Matching</h3><p data-i18n="process_2_text">We identify universities and programs that fit the student’s profile.</p></div>
+          <div><span>3</span><h3 data-i18n="process_3_title">Document Preparation</h3><p data-i18n="process_3_text">We guide the preparation and organization of required application documents.</p></div>
+          <div><span>4</span><h3 data-i18n="process_4_title">Application & Follow-up</h3><p data-i18n="process_4_text">We help with submission steps and follow-up requests from universities.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section cta-section">
+      <div class="container cta-box">
+        <div>
+          <p class="eyebrow" data-i18n="contact_eyebrow">Planning to study in Taiwan?</p>
+          <h2 data-i18n="contact_title">Start with a consultation.</h2>
+          <p data-i18n="contact_text">Tell us about the student’s current education and preferred field of study. We’ll help explain the next steps.</p>
+        </div>
+        <a class="btn btn-primary" href="mailto:hello@study-in-taiwan.com" data-i18n="contact_button">Contact Us</a>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-brand">
-      <strong>🎓 STUDY IN TAIWAN</strong>
-      <p data-i18n="footerText">Pendampingan aplikasi studi di Taiwan untuk mahasiswa internasional dan keluarga.</p>
-    </div>
-    <div>
-      <h4 data-i18n="footerLinks">Tautan</h4>
-      <a href="#services" data-i18n="navServices">Layanan</a>
-      <a href="#process" data-i18n="navProcess">Proses</a>
-      <a href="#why" data-i18n="navTaiwan">Tentang Taiwan</a>
-    </div>
-    <div>
-      <h4 data-i18n="footerContact">Kontak</h4>
-      <a href="mailto:hello@study-in-taiwan.com">hello@study-in-taiwan.com</a>
-      <span>Taipei, Taiwan</span>
+  <footer>
+    <div class="container footer-wrap">
+      <span>© 2026 Study in Taiwan</span>
+      <span data-i18n="footer_text">Application and document assistance for international students.</span>
     </div>
   </footer>
 
