@@ -128,7 +128,14 @@
           <h2 data-i18n="contact_title">Start with a consultation.</h2>
           <p data-i18n="contact_text">Tell us about the student’s current education and preferred field of study. We’ll help explain the next steps.</p>
         </div>
-        <a class="btn btn-primary" href="mailto:hello@study-in-taiwan.com" data-i18n="contact_button">Contact Us</a>
+        <a class="btn btn-primary" 
+   href="#" 
+   data-user="hello" 
+   data-domain="study-in-taiwan.com" 
+   onclick="window.location.href = 'mailto:' + this.dataset.user + '@' + this.dataset.domain; return false;" 
+   data-i18n="contact_button">
+   Contact Us
+</a>
       </div>
     </section>
   </main>
