@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study In Taiwan - 2000vh Experiment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #000;
+            color: #f5f5f7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% -20%, #1a1a2e 0%, #000 70%);
+        }
+
+        .apple-title { font-size: 8vw; font-weight: 700; letter-spacing: -0.05em; line-height: 1.1; text-align: center; }
+        .apple-gradient { background: linear-gradient(180deg, #fff 0%, #86868b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .scroll-container { position: relative; width: 100%; }
+        .sticky-viewport { position: sticky; top: 0; height: 100vh; width: 100vw; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; }
+        
+        /* Teks Sequence di tengah layar */
+        .seq-text { position: absolute; font-size: 5vw; font-weight: 700; opacity: 0; text-align: center; width: 90%; }
+
+        .zoom-wrapper { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; z-index: -1; }
+        .zoom-image { width: 50vw; height: 50vw; border-radius: 40px; object-fit: cover; filter: brightness(0.4); }
+
+        /* Bento Box Grid */
+        .bento-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            grid-auto-rows: 350px; 
+            gap: 1.5rem; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 5vh 5vw; 
+        }
+        
+        .bento-item { background: #111113; border: 1px solid #222; border-radius: 30px; overflow: hidden; position: relative; transform: translateY(50px); opacity: 0; transition: all 0.5s ease; }
+        .bento-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transition: opacity 0.5s; }
+        .bento-item:hover .bento-img { opacity: 0.8; scale: 1.05; }
+        .bento-content { position: absolute; bottom: 0; left: 0; padding: 2rem; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, transparent 100%); }
+        
+        .span-2-col { grid-column: span 2; }
+        .span-2-row { grid-row: span 2; }
+        .span-full { grid-column: span 4; }
+
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 250px; }
+            .span-full { grid-column: span 2; }
+            .zoom-image { width: 80vw; height: 80vw; }
+            .apple-title { font-size: 12vw; }
+            .seq-text { font-size: 8vw; }
+        }
+        @media (max-width: 640px) {
+            .bento-grid { grid-template-columns: 1fr; grid-auto-rows: 300px; }
+            .span-2-col, .span-full { grid-column: span 1; }
+            .span-2-row { grid-row: span 1; }
+        }
+
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; opacity: 0.6; }
+        .mouse { width: 30px; height: 50px; border: 2px solid #fff; border-radius: 20px; position: relative; }
+        .wheel { width: 4px; height: 8px; background: #fff; border-radius: 2px; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); animation: scroll 1.5s infinite; }
+        @keyframes scroll { 0% { top: 8px; opacity: 1; } 100% { top: 24px; opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1 -->
+    <section class="h-screen flex flex-col justify-center items-center relative">
+        <h1 class="apple-title apple-gradient" id="hero-main">Study in Taiwan.</h1>
+        <p class="text-2xl md:text-3xl text-gray-400 mt-4 font-semibold tracking-tight text-center px-4" id="hero-sub">Eksperimen 2000vh.</p>
+        
+        <div class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <p class="text-xs mt-2 font-mono uppercase tracking-widest">Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Scrollytelling - DI SINI KITA PAKAI 2000vh -->
+    <div class="scroll-container" style="height: 2000vh;" id="long-scroll">
+        <div class="sticky-viewport">
+            <h2 class="seq-text">Belajar dari ahlinya.</h2>
+            <h2 class="seq-text">Di jantung industri silikon.</h2>
+            <h2 class="seq-text">Riset teknologi tanpa batas.</h2>
+            <h2 class="seq-text">Dari desain chip semikonduktor.</h2>
+            <h2 class="seq-text">Hingga manufaktur kelas dunia.</h2>
+            <h2 class="seq-text">Membangun masa depan AI.</h2>
+            <h2 class="seq-text">Infrastruktur server berkecepatan tinggi.</h2>
+            <h2 class="seq-text">Ekosistem startup yang dinamis.</h2>
+            <h2 class="seq-text">Karir global menanti.</h2>
+            <h2 class="seq-text text-blue-400">Semuanya ada di sini.</h2>
+        </div>
+    </div>
+
+    <!-- SECTION 3: The Deep Zoom -->
+    <div class="scroll-container" style="height: 250vh;" id="zoom-section">
+        <div class="sticky-viewport">
+            <div class="zoom-wrapper">
+                <!-- Foto Jaringan Data/Bumi Futuristik (Link dijamin jalan buat tes) -->
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop" class="zoom-image" id="zoom-img" alt="Global Tech Data">
+            </div>
+            <h1 class="text-white text-5xl md:text-8xl font-bold z-10 opacity-0 tracking-tighter text-center px-4" id="zoom-title">Koneksi Global.</h1>
+        </div>
+    </div>
+
+    <!-- SECTION 4: Bento Box (Fitur) -->
+    <section class="min-h-screen bg-black py-20" id="bento-section">
+        <h2 class="text-center text-4xl md:text-6xl font-bold mb-16 apple-gradient px-4">Fasilitas Kelas Dunia.</h2>
+        
+        <div class="bento-grid">
+            <div class="bento-item span-2-col span-2-row bento-anim">
+                <img src="https://images.unsplash.com/photo-1470004914212-05527e49370b?q=80&w=1000&auto=format&fit=crop" class="bento-img" alt="Taipei City">
+                <div class="bento-content">
+                    <h3 class="text-2xl md:text-4xl font-bold mb-2">Metropolis Modern.</h3>
+                    <p class="text-gray-300 text-sm md:text-lg">Infrastruktur transportasi dan kehidupan aman di kota paling dinamis di Asia.</p>
+                </div>
+            </div>
+
+            <div class="bento-item span-2-col bento-anim">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" class="bento-img" alt="AI Server">
+                <div class="bento-content">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Laboratorium AI.</h3>
+                    <p class="text-gray-300 text-sm">Akses langsung ke infrastruktur superkomputer.</p>
+                </div>
+            </div>
+
+            <div class="bento-item bento-anim">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop" class="bento-img" alt="Code">
+                <div class="bento-content">
+                    <h3 class="text-xl md:text-2xl font-bold">Cyber Security</h3>
+                </div>
+            </div>
+
+            <div class="bento-item bento-anim">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=600&auto=format&fit=crop" class="bento-img" alt="Lab">
+                <div class="bento-content">
+                    <h3 class="text-xl md:text-2xl font-bold">Riset Nano</h3>
+                </div>
+            </div>
+            
+            <div class="bento-item span-full bento-anim flex">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1500&auto=format&fit=crop" class="bento-img" style="object-position: center 30%;" alt="Industry">
+                <div class="bento-content w-full md:w-2/3">
+                    <h3 class="text-3xl md:text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Koneksi Industri Global.</h3>
+                    <p class="text-gray-300 text-sm md:text-lg">Pelajari langsung ekosistem manufaktur dari para pemimpin industri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Intro
+        gsap.from("#hero-main", { y: 40, opacity: 0, duration: 1.5, ease: "power3.out" });
+        gsap.from("#hero-sub", { y: 20, opacity: 0, duration: 1.5, delay: 0.3, ease: "power3.out" });
+
+        // Teks 2000vh Sequence Script
+        // Gw bikin otomatis ngeloop semua teks yang ada di dalam .seq-text biar mulus
+        let tlSeq = gsap.timeline({
+            scrollTrigger: { 
+                trigger: "#long-scroll", 
+                start: "top top", 
+                end: "bottom bottom", 
+                scrub: 1 
+            }
+        });
+
+        const texts = gsap.utils.toArray(".seq-text");
+        texts.forEach((text, i) => {
+            tlSeq.to(text, { opacity: 1, y: -20, duration: 1 })   // Muncul
+                 .to(text, { opacity: 0, y: -40, duration: 1 });  // Hilang
+        });
+
+        // Efek Deep Zoom
+        let tlZoom = gsap.timeline({
+            scrollTrigger: { trigger: "#zoom-section", start: "top top", end: "bottom bottom", scrub: 1 }
+        });
+
+        tlZoom.to("#zoom-img", { width: "100vw", height: "100vh", borderRadius: "0px", filter: "brightness(0.35)", duration: 3 })
+              .to("#zoom-title", { opacity: 1, scale: 1, y: -20, duration: 1 }, "-=1.5");
+
+        // Animasi Kotak Bento dari Bawah
+        gsap.utils.toArray(".bento-anim").forEach((item, i) => {
+            gsap.to(item, {
+                scrollTrigger: { trigger: item, start: "top 85%" },
+                y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: (i % 3) * 0.1
+            });
+        });
+    </script>
+</body>
+</html>
