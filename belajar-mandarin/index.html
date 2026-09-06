@@ -1215,6 +1215,7 @@
         // The WhatsApp destination becomes available only now.
         waButton.href = result.waUrl;
         waUnlocked.classList.add("show");
+        verifyBtn.style.display = "none";
         delete verifyBtn.dataset.turnstileToken;
         gateStatus.textContent = "";
       } catch (err) {
