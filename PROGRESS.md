@@ -5,4 +5,5 @@
 - Chat queries the active program API, shows source links, and explicitly marks unavailable cost, deadline, admission, language, and scholarship details as unknown.
 - Existing WhatsApp and Turnstile code in `/belajar-mandarin/` was left unchanged.
 - Local syntax and diff checks pass. Local commit: `0c397d0 Add database-backed program consultant chat`.
-- Publishing is blocked by one external issue: this environment has no GitHub credentials, so `git push origin main` failed. Required action: authenticate GitHub for this environment or push commit `0c397d0` from an authenticated machine.
+- GitHub CLI authentication completed as `philips-321`; the existing commits were pushed with a normal non-force push. GitHub Pages published the changes at https://study-in-taiwan.com/.
+- Public verification passed: root and `/belajar-mandarin/` expose the chat assets; `/belajar-mandarin/` still exposes the existing Turnstile and WhatsApp controls; the API engineering search returned 618 total results and the NTU filter returned 127; CORS preflight returned 204 for the allowed origin.
