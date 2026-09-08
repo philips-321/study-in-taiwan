@@ -728,6 +728,7 @@
     }
   </style>
   
+  <link rel="stylesheet" href="../program-chat.css">
 </head>
 
 <body>
@@ -999,6 +1000,28 @@
       </div>
     </section>
 
+    <section class="program-chat" id="program-consultant" data-program-chat>
+      <div class="container">
+        <div class="program-chat__box">
+          <div class="program-chat__head">
+            <h2>AI consultant: find a Taiwan university program</h2>
+            <p>Search the active Study in Taiwan database before you contact our team on WhatsApp.</p>
+          </div>
+          <div class="program-chat__body">
+            <div class="program-chat__suggestions" data-chat-suggestions>
+              <button class="program-chat__suggestion" type="button" data-query="engineering programs">Engineering programs</button>
+              <button class="program-chat__suggestion" type="button" data-query="programs at National Taiwan University">National Taiwan University</button>
+            </div>
+            <div class="program-chat__messages" data-chat-messages aria-live="polite"></div>
+            <form class="program-chat__form" data-chat-form>
+              <input class="program-chat__input" data-chat-input autocomplete="off" placeholder="Contoh: program teknik di National Taiwan University" aria-label="Tanya tentang program Taiwan">
+              <button class="program-chat__submit" data-chat-submit type="submit">Tanya</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="final-cta" id="konsultasi">
       <div class="container">
         <div class="cta-shell">
@@ -1228,5 +1251,6 @@
       }
     });
   </script>
+  <script src="../program-chat.js"></script>
 </body>
 </html>

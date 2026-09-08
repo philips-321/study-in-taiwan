@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="program-chat.css" />
 </head>
 <body>
   <header class="site-header">
@@ -121,6 +122,28 @@
       </div>
     </section>
 
+    <section class="program-chat" id="program-consultant" data-program-chat>
+      <div class="container">
+        <div class="program-chat__box">
+          <div class="program-chat__head">
+            <h2>Ask the Study in Taiwan AI consultant</h2>
+            <p>Search active programs from the official database and open the source for each result.</p>
+          </div>
+          <div class="program-chat__body">
+            <div class="program-chat__suggestions" data-chat-suggestions>
+              <button class="program-chat__suggestion" type="button" data-query="engineering programs">Engineering programs</button>
+              <button class="program-chat__suggestion" type="button" data-query="programs at National Taiwan University">National Taiwan University</button>
+            </div>
+            <div class="program-chat__messages" data-chat-messages aria-live="polite"></div>
+            <form class="program-chat__form" data-chat-form>
+              <input class="program-chat__input" data-chat-input autocomplete="off" placeholder="Try: English-taught engineering programs" aria-label="Ask about Taiwan programs" />
+              <button class="program-chat__submit" data-chat-submit type="submit">Ask</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section cta-section">
       <div class="container cta-box">
         <div>
@@ -151,5 +174,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="program-chat.js"></script>
 </body>
 </html>
