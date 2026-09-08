@@ -126,18 +126,23 @@
       <div class="container">
         <div class="program-chat__box">
           <div class="program-chat__head">
-            <h2>Ask the Study in Taiwan AI consultant</h2>
-            <p>Search active programs from the official database and open the source for each result.</p>
+            <h2 data-chat-i18n="title">Ask the Study in Taiwan AI consultant</h2>
+            <p data-chat-i18n="subtitle">Search active programs from the official database and open the source for each result.</p>
           </div>
           <div class="program-chat__body">
+            <div class="program-chat__languages" data-chat-languages aria-label="Chat language">
+              <button class="program-chat__language" type="button" data-chat-lang="en">EN</button>
+              <button class="program-chat__language" type="button" data-chat-lang="id">ID</button>
+              <button class="program-chat__language" type="button" data-chat-lang="ko">한국어</button>
+            </div>
             <div class="program-chat__suggestions" data-chat-suggestions>
-              <button class="program-chat__suggestion" type="button" data-query="engineering programs">Engineering programs</button>
-              <button class="program-chat__suggestion" type="button" data-query="programs at National Taiwan University">National Taiwan University</button>
+              <button class="program-chat__suggestion" type="button" data-query="engineering programs" data-chat-i18n="suggestEngineering">Engineering programs</button>
+              <button class="program-chat__suggestion" type="button" data-query="programs at National Taiwan University" data-chat-i18n="suggestNtu">National Taiwan University</button>
             </div>
             <div class="program-chat__messages" data-chat-messages aria-live="polite"></div>
             <form class="program-chat__form" data-chat-form>
-              <input class="program-chat__input" data-chat-input autocomplete="off" placeholder="Try: English-taught engineering programs" aria-label="Ask about Taiwan programs" />
-              <button class="program-chat__submit" data-chat-submit type="submit">Ask</button>
+              <input class="program-chat__input" data-chat-input autocomplete="off" data-chat-i18n-placeholder="placeholder" placeholder="Try: English-taught engineering programs" aria-label="Ask about Taiwan programs" />
+              <button class="program-chat__submit" data-chat-submit data-chat-i18n="ask" type="submit">Ask</button>
             </form>
           </div>
         </div>

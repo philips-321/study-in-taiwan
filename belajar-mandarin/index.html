@@ -1004,18 +1004,23 @@
       <div class="container">
         <div class="program-chat__box">
           <div class="program-chat__head">
-            <h2>AI consultant: find a Taiwan university program</h2>
-            <p>Search the active Study in Taiwan database before you contact our team on WhatsApp.</p>
+            <h2 data-chat-i18n="title">AI consultant: find a Taiwan university program</h2>
+            <p data-chat-i18n="subtitle">Search the active Study in Taiwan database before you contact our team on WhatsApp.</p>
           </div>
           <div class="program-chat__body">
+            <div class="program-chat__languages" data-chat-languages aria-label="Bahasa chat">
+              <button class="program-chat__language" type="button" data-chat-lang="en">EN</button>
+              <button class="program-chat__language" type="button" data-chat-lang="id">ID</button>
+              <button class="program-chat__language" type="button" data-chat-lang="ko">한국어</button>
+            </div>
             <div class="program-chat__suggestions" data-chat-suggestions>
-              <button class="program-chat__suggestion" type="button" data-query="engineering programs">Engineering programs</button>
-              <button class="program-chat__suggestion" type="button" data-query="programs at National Taiwan University">National Taiwan University</button>
+              <button class="program-chat__suggestion" type="button" data-query="engineering programs" data-chat-i18n="suggestEngineering">Engineering programs</button>
+              <button class="program-chat__suggestion" type="button" data-query="programs at National Taiwan University" data-chat-i18n="suggestNtu">National Taiwan University</button>
             </div>
             <div class="program-chat__messages" data-chat-messages aria-live="polite"></div>
             <form class="program-chat__form" data-chat-form>
-              <input class="program-chat__input" data-chat-input autocomplete="off" placeholder="Contoh: program teknik di National Taiwan University" aria-label="Tanya tentang program Taiwan">
-              <button class="program-chat__submit" data-chat-submit type="submit">Tanya</button>
+              <input class="program-chat__input" data-chat-input autocomplete="off" data-chat-i18n-placeholder="placeholder" placeholder="Contoh: program teknik di National Taiwan University" aria-label="Tanya tentang program Taiwan">
+              <button class="program-chat__submit" data-chat-submit data-chat-i18n="ask" type="submit">Tanya</button>
             </form>
           </div>
         </div>
