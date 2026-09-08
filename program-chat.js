@@ -35,7 +35,11 @@
   }
   function normalizedQuery(text) {
     let value = text.trim().replace(/\b(국립대만대학교|국립대만 대학)\b/gi, "National Taiwan University");
-    Object.entries(aliases).forEach(([english, words]) => words.forEach(word => { value = value.replace(new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi"), english); }));
+    Object.entries(aliases).forEach(([english, words]) => words.forEach(word => {
+      const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const pattern = /[^\x00-\x7F]/.test(word) ? escaped : `\\b${escaped}\\b`;
+      value = value.replace(new RegExp(pattern, "gi"), english);
+    }));
     return value.replace(/\b(please|tolong|cari|find|search|program|programs|di|at|yang|untuk|with|in|dan|and)\b/gi, " ").replace(/\s+/g, " ").trim();
   }
   function queryFor(text) {
