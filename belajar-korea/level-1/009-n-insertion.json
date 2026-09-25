@@ -251,7 +251,36 @@
       "example": {
         "ko": "솜이불이 따뜻해요",
         "roman": "somniburi ttatteutaeyo",
-        "id": "selimut kapasnya hangat"
+        "id": "selimut kapasnya hangat",
+        "map": {
+          "units": [
+            {
+              "ko": "솜이불",
+              "roman": "somnibul",
+              "literal": "selimut kapas"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "따뜻해요",
+              "roman": "ttatteutaeyo",
+              "literal": "hangat"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Selimut kapasnya",
+              "ref": 0
+            },
+            {
+              "text": "hangat",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -262,7 +291,31 @@
       "example": {
         "ko": "한여름이에요",
         "roman": "hannyeoreum-ieyo",
-        "id": "sedang puncak musim panas"
+        "id": "sedang puncak musim panas",
+        "map": {
+          "units": [
+            {
+              "ko": "한여름",
+              "roman": "hannyeoreum",
+              "literal": "puncak musim panas"
+            },
+            {
+              "ko": "이에요",
+              "roman": "ieyo",
+              "literal": "adalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Sekarang",
+              "ref": 1
+            },
+            {
+              "text": "puncak musim panas",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -273,7 +326,36 @@
       "example": {
         "ko": "담요가 필요해요",
         "roman": "damnyoga piryohaeyo",
-        "id": "butuh selimut"
+        "id": "butuh selimut",
+        "map": {
+          "units": [
+            {
+              "ko": "담요",
+              "roman": "damnyo",
+              "literal": "selimut"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "필요해요",
+              "roman": "piryohaeyo",
+              "literal": "butuh"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Butuh",
+              "ref": 2
+            },
+            {
+              "text": "selimut",
+              "ref": 0
+            }
+          ]
+        }
       }
     }
   ],
