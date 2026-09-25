@@ -341,7 +341,36 @@
       "example": {
         "ko": "책을 읽다",
         "roman": "chaegeul iktta",
-        "id": "membaca buku"
+        "id": "membaca buku",
+        "map": {
+          "units": [
+            {
+              "ko": "책",
+              "roman": "chaek",
+              "literal": "buku"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "읽다",
+              "roman": "iktta",
+              "literal": "membaca"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Membaca",
+              "ref": 2
+            },
+            {
+              "text": "buku",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -352,7 +381,36 @@
       "example": {
         "ko": "책을 읽어요",
         "roman": "chaegeul ilgeoyo",
-        "id": "membaca buku"
+        "id": "membaca buku",
+        "map": {
+          "units": [
+            {
+              "ko": "책",
+              "roman": "chaek",
+              "literal": "buku"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "읽어요",
+              "roman": "ilgeoyo",
+              "literal": "membaca"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Membaca",
+              "ref": 2
+            },
+            {
+              "text": "buku",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -363,7 +421,40 @@
       "example": {
         "ko": "의자에 앉다",
         "roman": "uijae antta",
-        "id": "duduk di kursi"
+        "id": "duduk di kursi",
+        "map": {
+          "units": [
+            {
+              "ko": "의자",
+              "roman": "uija",
+              "literal": "kursi"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "앉다",
+              "roman": "antta",
+              "literal": "duduk"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Duduk",
+              "ref": 2
+            },
+            {
+              "text": "di",
+              "ref": 1
+            },
+            {
+              "text": "kursi",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -374,7 +465,36 @@
       "example": {
         "ko": "시간이 없어요",
         "roman": "sigani eopsseoyo",
-        "id": "tidak ada waktu"
+        "id": "tidak ada waktu",
+        "map": {
+          "units": [
+            {
+              "ko": "시간",
+              "roman": "sigan",
+              "literal": "waktu"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "없어요",
+              "roman": "eopseoyo",
+              "literal": "tidak ada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Tidak punya",
+              "ref": 2
+            },
+            {
+              "text": "waktu",
+              "ref": 0
+            }
+          ]
+        }
       }
     }
   ],
