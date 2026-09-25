@@ -1,0 +1,258 @@
+{
+  "id": "ko-l1-003",
+  "level": "Level 1 · Pengucapan",
+  "order": 3,
+  "passScore": 80,
+  "title": "비음화 — nasalization",
+  "subtitle": "Bunyi akhir ㄱ/ㄷ/ㅂ-type menyesuaikan menjadi ㅇ/ㄴ/ㅁ sebelum ㄴ atau ㅁ.",
+  "intro": "비음화 membuat perpindahan artikulasi lebih mudah. Bunyi non-nasal di depan ㄴ/ㅁ berubah menjadi bunyi nasal yang tempat artikulasinya paling dekat.",
+  "tip": "Pola inti: ㄱ-type → ㅇ, ㄷ-type → ㄴ, ㅂ-type → ㅁ sebelum ㄴ atau ㅁ.",
+  "progressStart": 50,
+  "objectives": [
+    "ㄱ→ㅇ",
+    "ㄷ→ㄴ",
+    "ㅂ→ㅁ"
+  ],
+  "prev": {
+    "title": "Pelajaran 2 · 연음",
+    "path": "level-1/002-yeoneum-liaison.json"
+  },
+  "next": {
+    "title": "Pelajaran 4 · 된소리되기",
+    "path": "level-1/004-doensori-tensing.json"
+  },
+  "detailSections": [
+    {
+      "title": "Tiga perubahan utama",
+      "paragraphs": [
+        "Jika bunyi akhir termasuk kelompok ㄱ dan setelahnya ada ㄴ/ㅁ, bunyi akhir berubah ke ㅇ. Jika kelompok ㄷ, berubah ke ㄴ. Jika kelompok ㅂ, berubah ke ㅁ.",
+        "Tulisan tidak diubah. 국물 tetap ditulis 국물, walaupun diucapkan [궁물]."
+      ]
+    },
+    {
+      "title": "Kenapa disebut nasalization?",
+      "paragraphs": [
+        "ㄴ, ㅁ, dan ㅇ adalah bunyi nasal: udara mengalir melalui rongga hidung. Sistem bunyi Korea menyesuaikan bunyi sebelumnya agar transisi ke nasal berikutnya lebih mudah."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "국 + 물",
+      "pronounced": "[궁물]",
+      "steps": [
+        "국 berakhir bunyi ㄱ-type.",
+        "다음 bunyi adalah ㅁ.",
+        "ㄱ menyesuaikan menjadi ㅇ sebelum ㅁ."
+      ],
+      "note": "Tulisan tetap 국물.",
+      "speak": "국물"
+    },
+    {
+      "written": "먹 + 는",
+      "pronounced": "[멍는]",
+      "steps": [
+        "먹 berakhir ㄱ.",
+        "는 dimulai ㄴ.",
+        "ㄱ → ㅇ sebelum ㄴ."
+      ],
+      "note": "Tulisan tetap 먹는.",
+      "speak": "먹는"
+    },
+    {
+      "written": "받 + 는",
+      "pronounced": "[반는]",
+      "steps": [
+        "받 berakhir bunyi ㄷ-type.",
+        "는 dimulai ㄴ.",
+        "ㄷ → ㄴ sehingga terdengar ㄴㄴ."
+      ],
+      "note": "Tulisan tetap 받는.",
+      "speak": "받는"
+    },
+    {
+      "written": "앞 + 문",
+      "pronounced": "[암문]",
+      "steps": [
+        "앞 berakhir bunyi ㅂ-type.",
+        "문 dimulai ㅁ.",
+        "ㅂ → ㅁ sebelum ㅁ."
+      ],
+      "note": "Tulisan tetap 앞문.",
+      "speak": "앞문"
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "국물이 뜨거워요.",
+      "pronunciation": "[궁무리 뜨거워요]",
+      "roman": "gungmuri tteugeowoyo",
+      "id": "Kuahnya panas.",
+      "note": "국물 → 궁물; lalu 물이 juga tersambung.",
+      "speak": "국물이 뜨거워요."
+    },
+    {
+      "ko": "밥을 먹는 사람이에요.",
+      "pronunciation": "[바블 멍는 사라미에요]",
+      "roman": "babeul meongneun saram-ieyo",
+      "id": "Dia orang yang sedang makan.",
+      "note": "먹는 → 멍는.",
+      "speak": "밥을 먹는 사람이에요."
+    },
+    {
+      "ko": "앞문으로 들어가세요.",
+      "pronunciation": "[암무느로 드러가세요]",
+      "roman": "ammun-euro deureogaseyo",
+      "id": "Silakan masuk lewat pintu depan.",
+      "note": "앞문 → 암문.",
+      "speak": "앞문으로 들어가세요."
+    }
+  ],
+  "units": [
+    {
+      "char": "국물",
+      "roman": "gungmul",
+      "hint": "ㄱ + ㅁ → ㅇ + ㅁ.",
+      "speak": "국물",
+      "example": {
+        "ko": "국물이 맛있어요",
+        "roman": "gungmuri masisseoyo",
+        "id": "kuahnya enak"
+      }
+    },
+    {
+      "char": "먹는",
+      "roman": "meongneun",
+      "hint": "ㄱ + ㄴ → ㅇ + ㄴ.",
+      "speak": "먹는",
+      "example": {
+        "ko": "먹는 사람",
+        "roman": "meongneun saram",
+        "id": "orang yang makan"
+      }
+    },
+    {
+      "char": "앞문",
+      "roman": "ammun",
+      "hint": "ㅂ-type + ㅁ → ㅁ + ㅁ.",
+      "speak": "앞문",
+      "example": {
+        "ko": "앞문으로 가요",
+        "roman": "ammun-euro gayo",
+        "id": "pergi lewat pintu depan"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "국물 paling dekat dibaca…",
+      "options": [
+        "궁물",
+        "국물 apa adanya",
+        "군물",
+        "국뿔"
+      ],
+      "answer": 0,
+      "explain": "ㄱ sebelum ㅁ menjadi ㅇ."
+    },
+    {
+      "question": "먹는 paling dekat dibaca…",
+      "options": [
+        "멍는",
+        "먼는",
+        "먹느",
+        "먹는 terputus"
+      ],
+      "answer": 0,
+      "explain": "ㄱ sebelum ㄴ menjadi ㅇ."
+    },
+    {
+      "question": "ㄱ-type sebelum ㄴ/ㅁ menjadi…",
+      "options": [
+        "ㅇ",
+        "ㄴ",
+        "ㅁ",
+        "ㄹ"
+      ],
+      "answer": 0,
+      "explain": "k-type → ng."
+    },
+    {
+      "question": "ㄷ-type sebelum ㄴ/ㅁ menjadi…",
+      "options": [
+        "ㅇ",
+        "ㄴ",
+        "ㅁ",
+        "ㄹ"
+      ],
+      "answer": 1,
+      "explain": "t-type → n."
+    },
+    {
+      "question": "ㅂ-type sebelum ㄴ/ㅁ menjadi…",
+      "options": [
+        "ㅇ",
+        "ㄴ",
+        "ㅁ",
+        "ㄹ"
+      ],
+      "answer": 2,
+      "explain": "p-type → m."
+    },
+    {
+      "question": "받는 paling dekat dibaca…",
+      "options": [
+        "반는",
+        "받는 apa adanya",
+        "밤는",
+        "방는"
+      ],
+      "answer": 0,
+      "explain": "ㄷ-type → ㄴ sebelum ㄴ."
+    },
+    {
+      "question": "앞문 paling dekat dibaca…",
+      "options": [
+        "암문",
+        "압문",
+        "안문",
+        "앙문"
+      ],
+      "answer": 0,
+      "explain": "ㅂ-type → ㅁ sebelum ㅁ."
+    },
+    {
+      "question": "Mengapa disebut 비음화?",
+      "options": [
+        "karena hasilnya menuju bunyi nasal",
+        "karena bunyinya menjadi tegang",
+        "karena ㅎ hilang",
+        "karena ejaan diubah"
+      ],
+      "answer": 0,
+      "explain": "ㅇ/ㄴ/ㅁ adalah bunyi nasal."
+    },
+    {
+      "question": "Mana contoh 비음화?",
+      "options": [
+        "국물 → 궁물",
+        "집에 → 지베",
+        "신라 → 실라",
+        "좋다 → 조타"
+      ],
+      "answer": 0,
+      "explain": "Yang lain adalah aturan berbeda."
+    },
+    {
+      "question": "Apakah 국물 harus ditulis 궁물?",
+      "options": [
+        "ya",
+        "tidak, tulisan tetap 국물",
+        "hanya di SMS",
+        "hanya saat informal"
+      ],
+      "answer": 1,
+      "explain": "궁물 hanya representasi bunyi."
+    }
+  ]
+}
