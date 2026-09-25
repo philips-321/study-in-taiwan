@@ -30,7 +30,54 @@
       "example": {
         "ko": "저는 인도네시아 사람이에요",
         "roman": "jeoneun Indonesia saram-ieyo",
-        "id": "Saya orang Indonesia."
+        "id": "Saya orang Indonesia.",
+        "map": {
+          "units": [
+            {
+              "ko": "저",
+              "roman": "jeo",
+              "literal": "saya"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "penanda topik"
+            },
+            {
+              "ko": "인도네시아",
+              "roman": "Indonesia",
+              "literal": "Indonesia"
+            },
+            {
+              "ko": "사람",
+              "roman": "saram",
+              "literal": "orang"
+            },
+            {
+              "ko": "이에요",
+              "roman": "ieyo",
+              "literal": "adalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 0
+            },
+            {
+              "text": "orang",
+              "ref": 3
+            },
+            {
+              "text": "Indonesia",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
       }
     },
     {
@@ -41,7 +88,58 @@
       "example": {
         "ko": "학생은 교실에 있어요",
         "roman": "haksaengeun gyosire isseoyo",
-        "id": "Mengenai siswa, dia ada di kelas."
+        "id": "Mengenai siswa, dia ada di kelas.",
+        "map": {
+          "units": [
+            {
+              "ko": "학생",
+              "roman": "haksaeng",
+              "literal": "siswa"
+            },
+            {
+              "ko": "은",
+              "roman": "eun",
+              "literal": "penanda topik"
+            },
+            {
+              "ko": "교실",
+              "roman": "gyosil",
+              "literal": "kelas"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "있어요",
+              "roman": "isseoyo",
+              "literal": "ada / berada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Siswa",
+              "ref": 0
+            },
+            {
+              "text": "berada",
+              "ref": 4
+            },
+            {
+              "text": "di",
+              "ref": 3
+            },
+            {
+              "text": "kelas",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
       }
     },
     {
@@ -52,7 +150,40 @@
       "example": {
         "ko": "오늘은 바빠요",
         "roman": "oneureun bappayo",
-        "id": "Hari ini sibuk."
+        "id": "Hari ini sibuk.",
+        "map": {
+          "units": [
+            {
+              "ko": "오늘",
+              "roman": "oneul",
+              "literal": "hari ini"
+            },
+            {
+              "ko": "은",
+              "roman": "eun",
+              "literal": "penanda topik"
+            },
+            {
+              "ko": "바빠요",
+              "roman": "bappayo",
+              "literal": "sibuk"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Hari ini",
+              "ref": 0
+            },
+            {
+              "text": "sibuk",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -63,7 +194,40 @@
       "example": {
         "ko": "커피는 좋아해요",
         "roman": "keopineun joahaeyo",
-        "id": "Kalau kopi, saya suka."
+        "id": "Kalau kopi, saya suka.",
+        "map": {
+          "units": [
+            {
+              "ko": "커피",
+              "roman": "keopi",
+              "literal": "kopi"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "penanda topik"
+            },
+            {
+              "ko": "좋아해요",
+              "roman": "joahaeyo",
+              "literal": "suka"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Kalau kopi,",
+              "ref": 0
+            },
+            {
+              "text": "saya suka",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     }
   ],
