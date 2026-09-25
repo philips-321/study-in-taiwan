@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Progress Belajar Korea | Leveling</title>
+<script>document.documentElement.dataset.theme=localStorage.getItem('levelingTheme')||'dark';</script>
 <link rel="stylesheet" href="lesson.css">
 <style>
 .dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.metric{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.metric b{display:block;font-size:1.8rem;color:var(--navy)}.metric span{font-size:.82rem;color:var(--muted)}.list{display:grid;gap:10px}.row{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff;display:flex;justify-content:space-between;gap:16px;align-items:center}.row small{color:var(--muted)}.row a{color:var(--blue);font-weight:850}.empty{color:var(--muted)}@media(max-width:700px){.dashboard{grid-template-columns:1fr 1fr}.row{display:block}.row a{display:inline-block;margin-top:8px}}
+html[data-theme="dark"] .metric,html[data-theme="dark"] .row{background:#11151b;border-color:#303744}html[data-theme="dark"] .metric b{color:#f2f5fa}
 </style></head>
-<body><header class="topbar"><div class="shell"><div class="toprow"><a class="brand" href="/belajar-korea/">Le<em>v</em>eling</a><a class="back" href="/belajar-korea/">← Kurikulum</a></div></div></header>
+<body><header class="topbar"><div class="shell"><div class="toprow"><a class="brand" href="/belajar-korea/">Le<em>v</em>eling</a><div style="display:flex;gap:8px;align-items:center"><button class="theme-toggle" id="themeToggle" type="button">☀ Light</button><a class="back" href="/belajar-korea/">← Kurikulum</a></div></div></div></header>
 <main class="shell">
 <section class="lesson-head"><div class="kicker">Progress</div><h1>Dashboard belajar</h1><p>Data tersimpan lokal di browser/device ini.</p></section>
 <section class="dashboard">
@@ -19,6 +21,9 @@
 <section class="block" id="review"><h2>Antrean review</h2><p>Soal yang pernah salah akan muncul di sini sampai kamu menjawabnya dengan benar pada lesson terkait.</p><div id="reviews" class="list"></div></section>
 </main>
 <script>
+function syncThemeButton(){const b=document.getElementById('themeToggle');if(b)b.textContent=document.documentElement.dataset.theme==='dark'?'☀ Light':'☾ Dark'}
+document.getElementById('themeToggle').onclick=()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('levelingTheme',next);syncThemeButton()}
+syncThemeButton();
 const lessons=[
  ['ko-l0-001','L0 · Vokal dasar','level-0/001-vokal-dasar.json'],['ko-l0-002','L0 · Konsonan dasar','level-0/002-konsonan-dasar.json'],['ko-l0-003','L0 · Blok suku kata','level-0/003-blok-suku-kata.json'],['ko-l0-004','L0 · Vokal gabungan','level-0/004-vokal-gabungan.json'],['ko-l0-005','L0 · Batchim dasar','level-0/005-batchim-dasar.json'],
  ['ko-l1-001','L1 · 받침 발음 규칙','level-1/001-batchim-sound-rules.json'],['ko-l1-002','L1 · 연음','level-1/002-yeoneum-liaison.json'],['ko-l1-003','L1 · 비음화','level-1/003-bieumhwa-nasalization.json'],['ko-l1-004','L1 · 된소리되기','level-1/004-doensori-tensing.json'],['ko-l1-005','L1 · 격음화','level-1/005-gyeogeumhwa-aspiration.json'],['ko-l1-006','L1 · 유음화','level-1/006-yueumhwa-liquidization.json'],['ko-l1-007','L1 · 구개음화','level-1/007-gugaeumhwa-palatalization.json'],['ko-l1-008','L1 · ㅎ 탈락','level-1/008-hieut-drop.json'],['ko-l1-009','L1 · ㄴ 첨가','level-1/009-n-insertion.json'],['ko-l1-010','L1 · 겹받침','level-1/010-double-batchim.json'],
