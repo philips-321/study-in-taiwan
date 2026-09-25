@@ -47,7 +47,7 @@ th{background:#faf8f5;position:sticky;top:0}
 <b>OTHER PRIMARY</b> = dokumen pemerintah/lembaga/sumber primer lain untuk verifikasi konteks.
 </div>
 <div class="intro">Format belajar: setiap unit makna memakai warna sendiri. Warna yang sama menghubungkan Hanzi → pinyin → arti Indonesia literal. Di bawah setiap kalimat ada terjemahan Indonesia natural. Setiap berita juga memiliki daftar <b>semua kosakata yang muncul</b>.</div>
-<div class="audio-tools"><b>Audio Mandarin:</b><label>Kecepatan <select id="speech-rate"><option value="0.8">0.8x</option><option value="1" selected>1.0x</option></select></label><button type="button" onclick="stopSpeech()">■ Stop</button><span id="audio-status" class="audio-note"></span></div><div class="topnote"><b>Penting:</b> teks Mandarin adalah rekonstruksi belajar berdasarkan berita aktual dan fakta dari sumber yang dicantumkan, bukan salinan penuh artikel dan bukan soal RTI. Saya sengaja membuat kalimat bergaya berita supaya cocok untuk latihan terjemahan dan 試音.</div>
+<div class="audio-tools"><b>Audio Mandarin:</b><label>Suara <select id="voice-select"><option value="">Auto (browser/device)</option></select></label><label>Kecepatan <select id="speech-rate"><option value="0.8">0.8x</option><option value="1" selected>1.0x</option></select></label><button type="button" onclick="previewVoice()">▶ Tes suara</button><button type="button" onclick="stopSpeech()">■ Stop</button><span id="audio-status" class="audio-note"></span></div><div class="topnote"><b>Penting:</b> teks Mandarin adalah rekonstruksi belajar berdasarkan berita aktual dan fakta dari sumber yang dicantumkan, bukan salinan penuh artikel dan bukan soal RTI. Saya sengaja membuat kalimat bergaya berita supaya cocok untuk latihan terjemahan dan 試音.</div>
 <section class="news"><h2>1. 18 Sep — Latihan militer Taiwan pertama kali memasukkan beberapa jenis drone serang</h2><div style="margin:8px 0 12px"><span style="display:inline-block;background:#6b7280;color:#fff;font-weight:700;font-size:12px;padding:4px 9px;border-radius:999px">CNA DIRECT</span><span style="font-size:12px;color:#666;margin-left:8px">Berita langsung dari CNA; bahan current-affairs tambahan, bukan artikel RTI.</span></div><div class="meta">Tanggal sumber: 2026-09-18</div><div class="source">Sumber: <a href="https://www.cna.com.tw/news/aipl/202609180089.aspx" target="_blank">中央社 CNA</a></div><div class="note">Teks Mandarin di bawah adalah rekonstruksi belajar berdasarkan fakta berita CNA, bukan salinan artikel.</div><div class="listenrow"><button class="listen-all" type="button" onclick="speakSection(this.closest('.news'))">▶ Dengarkan semua berita</button></div>
       <div class="sentence" data-zh="總統賴清德十八日前往屏東視導三軍聯合精準飛彈射擊國軍首次把多型攻擊無人機納入聯合作戰演練並強調無人載具與傳統武器協同運用以因應現代戰爭型態"><div class="listenrow"><button type="button" onclick="speakText(this.closest('.sentence').dataset.zh)">▶ Dengarkan</button></div>
         <div class="tokenrow">
@@ -2852,11 +2852,30 @@ th{background:#faf8f5;position:sticky;top:0}
           <td style="color:#4527A0">posisi / pendirian</td>
           <td>kata benda</td>
         </tr></tbody></table></section></main><script>
-let selectedVoice=null;
-function chooseZhVoice(){const vs=speechSynthesis.getVoices();selectedVoice=vs.find(v=>/zh[-_]TW/i.test(v.lang))||vs.find(v=>/^zh/i.test(v.lang))||null;const s=document.getElementById('audio-status');if(s)s.textContent=selectedVoice?'Voice: '+selectedVoice.name:'Voice zh-TW tidak ditemukan; browser akan memakai voice Mandarin/default jika tersedia.';}
-if('speechSynthesis' in window){chooseZhVoice();speechSynthesis.onvoiceschanged=chooseZhVoice;}else{const s=document.getElementById('audio-status');if(s)s.textContent='Browser ini tidak mendukung speechSynthesis.';}
-function rate(){const e=document.getElementById('speech-rate');return e?parseFloat(e.value||'1'):1;}
-function speakText(txt){if(!('speechSynthesis' in window))return; speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang='zh-TW';u.rate=rate();if(selectedVoice)u.voice=selectedVoice;speechSynthesis.speak(u);}
-function speakSection(sec){if(!('speechSynthesis' in window))return;speechSynthesis.cancel();const txt=[...sec.querySelectorAll('.sentence')].map(x=>x.dataset.zh||'').filter(Boolean).join('。');const u=new SpeechSynthesisUtterance(txt);u.lang='zh-TW';u.rate=rate();if(selectedVoice)u.voice=selectedVoice;speechSynthesis.speak(u);}
-function stopSpeech(){if('speechSynthesis' in window)speechSynthesis.cancel();}
+let rtiVoices=[];
+function voiceSelect(){return document.getElementById('voice-select')}
+function rate(){const e=document.getElementById('speech-rate');return e?parseFloat(e.value||'1'):1}
+function populateVoices(){
+  if(!('speechSynthesis' in window))return;
+  rtiVoices=speechSynthesis.getVoices().filter(v=>/^zh/i.test(v.lang));
+  const sel=voiceSelect();if(!sel)return;
+  const old=localStorage.getItem('rtiVoiceURI')||sel.value||'';
+  sel.innerHTML='<option value="">Auto (browser/device)</option>';
+  rtiVoices.sort((a,b)=>{const aw=/^zh-TW/i.test(a.lang)?0:1,bw=/^zh-TW/i.test(b.lang)?0:1;return aw-bw||a.name.localeCompare(b.name);}).forEach(v=>{
+    const o=document.createElement('option');o.value=v.voiceURI;o.textContent=v.name+' — '+v.lang+(v.localService?' (device)':'');sel.appendChild(o);
+  });
+  if(old && [...sel.options].some(o=>o.value===old))sel.value=old;
+  const s=document.getElementById('audio-status');if(s)s.textContent=rtiVoices.length?('Tersedia '+rtiVoices.length+' voice Mandarin di browser/device ini.'):'Tidak ada voice Mandarin yang terdaftar; pilih Auto untuk memakai fallback browser/device.';
+}
+function selectedVoice(){const sel=voiceSelect();if(!sel||!sel.value)return null;return speechSynthesis.getVoices().find(v=>v.voiceURI===sel.value)||null}
+function makeUtterance(txt){const u=new SpeechSynthesisUtterance(txt);u.lang='zh-TW';u.rate=rate();const v=selectedVoice();if(v)u.voice=v;return u}
+function speakText(txt){if(!('speechSynthesis' in window))return;speechSynthesis.cancel();speechSynthesis.speak(makeUtterance(txt))}
+function speakSection(sec){if(!('speechSynthesis' in window))return;speechSynthesis.cancel();const txt=[...sec.querySelectorAll('.sentence')].map(x=>x.dataset.zh||'').filter(Boolean).join('。');speechSynthesis.speak(makeUtterance(txt))}
+function previewVoice(){speakText('今天天氣很好，我們一起學中文。')}
+function stopSpeech(){if('speechSynthesis' in window)speechSynthesis.cancel()}
+if('speechSynthesis' in window){
+  populateVoices();speechSynthesis.onvoiceschanged=populateVoices;
+  const sel=voiceSelect();if(sel)sel.addEventListener('change',()=>localStorage.setItem('rtiVoiceURI',sel.value));
+  const r=document.getElementById('speech-rate');if(r){const saved=localStorage.getItem('rtiSpeechRate');if(saved)r.value=saved;r.addEventListener('change',()=>localStorage.setItem('rtiSpeechRate',r.value));}
+}else{const s=document.getElementById('audio-status');if(s)s.textContent='Browser ini tidak mendukung speechSynthesis.'}
 </script></body></html>
