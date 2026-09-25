@@ -46,12 +46,14 @@ function clearCorrectFromReview(qi){const id=lesson.id+':'+qi;saveReviewQueue(re
 const CM_COUNT=12;
 function cmClass(i){return 'cm'+(i%CM_COUNT)}
 function renderColorMap(map,fallback){
- const items=(map&&map.length)?map:(fallback?[{ko:fallback.ko||'',roman:fallback.roman||'',literal:fallback.literal||fallback.id||'',natural:fallback.id||fallback.literal||''}]:[]);
+ const obj=Array.isArray(map)?{units:map}:((map&&map.units)?map:null);
+ const items=obj?.units?.length?obj.units:(fallback?[{ko:fallback.ko||'',roman:fallback.roman||'',literal:fallback.literal||fallback.id||''}]:[]);
  if(!items.length)return '';
+ const naturalParts=obj?.natural?.length?obj.natural:items.map((x,i)=>({text:x.natural||x.literal||'',ref:i}));
  const ko=items.map((x,i)=>'<span class="cm-token '+cmClass(i)+'">'+esc(x.ko||'')+'</span>').join('');
  const roman=items.map((x,i)=>'<span class="cm-token '+cmClass(i)+'">'+esc(x.roman||'')+'</span>').join(' ');
  const literal=items.map((x,i)=>'<span class="cm-token '+cmClass(i)+'">'+esc(x.literal||'')+'</span>').join(' ');
- const natural=items.map((x,i)=>'<span class="cm-token '+cmClass(i)+'">'+esc(x.natural||x.literal||'')+'</span>').join(' ');
+ const natural=naturalParts.map(x=>'<span class="cm-token '+cmClass(Number(x.ref)||0)+'">'+esc(x.text||'')+'</span>').join(' ');
  return '<div class="color-map"><div class="cm-label">COLOR MAP</div><div class="cm-ko">'+ko+'</div><div class="cm-row"><span>Romanisasi</span><div>'+roman+'</div></div><div class="cm-row"><span>Arti literal</span><div>'+literal+'</div></div><div class="cm-natural"><span>Indonesia natural</span><div>'+natural+'</div></div></div>';
 }
 function renderDetail(){
