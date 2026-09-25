@@ -1,0 +1,193 @@
+{
+  "id": "ko-l1-004",
+  "level": "Level 1 · Pengucapan",
+  "order": 4,
+  "passScore": 80,
+  "title": "된소리되기 — bunyi menjadi tegang",
+  "subtitle": "Setelah batchim tertentu, konsonan berikutnya dapat terdengar sebagai ㄲ, ㄸ, ㅃ, ㅆ, atau ㅉ.",
+  "intro": "된소리되기 adalah tensification. Dalam banyak kata, konsonan biasa ㄱ ㄷ ㅂ ㅅ ㅈ setelah batchim tertentu terdengar sebagai konsonan tegang.",
+  "tip": "Untuk pemula, dengarkan kontrasnya: 학교 bukan hak-gyo yang longgar, tetapi terdengar mendekati 학꾜.",
+  "progressStart": 54,
+  "objectives": [
+    "konsonan tegang",
+    "listening",
+    "contoh umum"
+  ],
+  "prev": {
+    "title": "Pelajaran 3 · 유음화",
+    "path": "level-1/003-yueumhwa-liquidization.json"
+  },
+  "next": {
+    "title": "Pelajaran 5 · Perubahan ㅎ",
+    "path": "level-1/005-hieut-changes.json"
+  },
+  "units": [
+    {
+      "char": "학교",
+      "roman": "hakkkyo",
+      "hint": "ㄱ setelah batchim ㄱ terdengar tegang ㄲ.",
+      "speak": "학교",
+      "example": {
+        "ko": "학교에 가요",
+        "roman": "hakkkyoe gayo",
+        "id": "pergi ke sekolah"
+      }
+    },
+    {
+      "char": "먹다",
+      "roman": "meoktta",
+      "hint": "ㄷ setelah batchim ㄱ terdengar ㄸ.",
+      "speak": "먹다",
+      "example": {
+        "ko": "밥을 먹다",
+        "roman": "babeul meoktta",
+        "id": "makan"
+      }
+    },
+    {
+      "char": "국밥",
+      "roman": "gukppap",
+      "hint": "ㅂ setelah batchim ㄱ terdengar ㅃ.",
+      "speak": "국밥",
+      "example": {
+        "ko": "국밥을 먹어요",
+        "roman": "gukppabeul meogeoyo",
+        "id": "makan gukbap"
+      }
+    },
+    {
+      "char": "식당",
+      "roman": "sikttang",
+      "hint": "ㄷ setelah batchim ㄱ terdengar ㄸ.",
+      "speak": "식당",
+      "example": {
+        "ko": "식당이 어디예요?",
+        "roman": "sikttangi eodiyeyo",
+        "id": "restorannya di mana?"
+      }
+    },
+    {
+      "char": "없다",
+      "roman": "eoptta",
+      "hint": "ㄷ setelah bunyi akhir ㅂ-type terdengar tegang.",
+      "speak": "없다",
+      "example": {
+        "ko": "시간이 없다",
+        "roman": "sigani eoptta",
+        "id": "tidak ada waktu"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "학교 paling dekat dibaca…",
+      "options": [
+        "학꾜",
+        "항교",
+        "학교 sangat longgar",
+        "하교"
+      ],
+      "answer": 0,
+      "explain": "ㄱ berikutnya menjadi ㄲ."
+    },
+    {
+      "question": "먹다 paling dekat dibaca…",
+      "options": [
+        "먹다",
+        "먹따",
+        "멍다",
+        "머카"
+      ],
+      "answer": 1,
+      "explain": "ㄷ menjadi ㄸ."
+    },
+    {
+      "question": "국밥 paling dekat dibaca…",
+      "options": [
+        "국밥",
+        "국빱",
+        "궁밥",
+        "구갑"
+      ],
+      "answer": 1,
+      "explain": "ㅂ menjadi ㅃ."
+    },
+    {
+      "question": "된소리 berarti bunyi yang…",
+      "options": [
+        "nasal",
+        "tegang",
+        "hilang",
+        "dipanjangkan"
+      ],
+      "answer": 1,
+      "explain": "된소리 adalah tense consonant."
+    },
+    {
+      "question": "Konsonan tegang pasangan ㄱ adalah…",
+      "options": [
+        "ㅋ",
+        "ㄲ",
+        "ㄷ",
+        "ㅃ"
+      ],
+      "answer": 1,
+      "explain": "ㄲ adalah tense counterpart ㄱ."
+    },
+    {
+      "question": "Konsonan tegang pasangan ㄷ adalah…",
+      "options": [
+        "ㅌ",
+        "ㄸ",
+        "ㅉ",
+        "ㅆ"
+      ],
+      "answer": 1,
+      "explain": "ㄸ adalah tense counterpart ㄷ."
+    },
+    {
+      "question": "Konsonan tegang pasangan ㅂ adalah…",
+      "options": [
+        "ㅍ",
+        "ㅃ",
+        "ㅆ",
+        "ㄲ"
+      ],
+      "answer": 1,
+      "explain": "ㅃ adalah tense counterpart ㅂ."
+    },
+    {
+      "question": "식당 paling dekat dibaca…",
+      "options": [
+        "식당",
+        "식땅",
+        "싱당",
+        "시당"
+      ],
+      "answer": 1,
+      "explain": "ㄷ setelah batchim terdengar tegang."
+    },
+    {
+      "question": "Mana contoh 된소리되기?",
+      "options": [
+        "먹다 → 먹따",
+        "국물 → 궁물",
+        "신라 → 실라",
+        "집에 → 지베"
+      ],
+      "answer": 0,
+      "explain": "Yang lain merupakan aturan lain."
+    },
+    {
+      "question": "Apakah ejaan 학교 diubah menjadi 학꾜?",
+      "options": [
+        "ya, selalu",
+        "tidak, 학꾜 hanya menggambarkan bunyi",
+        "hanya di tulisan informal",
+        "hanya di ujian"
+      ],
+      "answer": 1,
+      "explain": "Ejaan standar tetap 학교."
+    }
+  ]
+}
