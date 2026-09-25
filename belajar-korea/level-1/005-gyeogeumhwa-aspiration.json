@@ -89,7 +89,49 @@
       "roman": "oneul nalssiga joayo",
       "id": "Cuaca hari ini bagus.",
       "note": "좋아요 juga menunjukkan pelemahan ㅎ di depan vokal; akan dibahas lagi di pelajaran 8.",
-      "speak": "오늘 날씨가 좋아요."
+      "speak": "오늘 날씨가 좋아요.",
+      "map": {
+        "units": [
+          {
+            "ko": "오늘",
+            "roman": "oneul",
+            "literal": "hari ini"
+          },
+          {
+            "ko": "날씨",
+            "roman": "nalssi",
+            "literal": "cuaca"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "penanda subjek"
+          },
+          {
+            "ko": "좋아요",
+            "roman": "joayo",
+            "literal": "bagus"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Cuaca",
+            "ref": 1
+          },
+          {
+            "text": "hari ini",
+            "ref": 0
+          },
+          {
+            "text": "bagus",
+            "ref": 3
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     },
     {
       "ko": "합격을 축하해요.",
@@ -97,7 +139,40 @@
       "roman": "hapkkyeogeul chukahaeyo",
       "id": "Selamat atas kelulusannya.",
       "note": "축하 → [추카].",
-      "speak": "합격을 축하해요."
+      "speak": "합격을 축하해요.",
+      "map": {
+        "units": [
+          {
+            "ko": "합격",
+            "roman": "hapgyeok",
+            "literal": "kelulusan"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "축하해요",
+            "roman": "chukhahaeyo",
+            "literal": "mengucapkan selamat"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Selamat",
+            "ref": 2
+          },
+          {
+            "text": "atas kelulusannya",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 2
+          }
+        ]
+      }
     },
     {
       "ko": "대학교에 입학했어요.",
@@ -105,7 +180,40 @@
       "roman": "daehakgyoe iphakhaesseoyo",
       "id": "Saya masuk universitas.",
       "note": "입학 → [이팍].",
-      "speak": "대학교에 입학했어요."
+      "speak": "대학교에 입학했어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "대학교",
+            "roman": "daehakgyo",
+            "literal": "universitas"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke / di"
+          },
+          {
+            "ko": "입학했어요",
+            "roman": "iphakhaesseoyo",
+            "literal": "masuk / diterima"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya masuk",
+            "ref": 2
+          },
+          {
+            "text": "universitas",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 2
+          }
+        ]
+      }
     },
     {
       "ko": "책을 놓고 왔어요.",
@@ -113,7 +221,49 @@
       "roman": "chaegeul noko wasseoyo",
       "id": "Saya datang setelah meninggalkan bukunya.",
       "note": "놓고 → [노코].",
-      "speak": "책을 놓고 왔어요."
+      "speak": "책을 놓고 왔어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "놓고",
+            "roman": "noko",
+            "literal": "meninggalkan lalu"
+          },
+          {
+            "ko": "왔어요",
+            "roman": "wasseoyo",
+            "literal": "datang"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya datang",
+            "ref": 3
+          },
+          {
+            "text": "setelah meninggalkan",
+            "ref": 2
+          },
+          {
+            "text": "buku",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     }
   ],
   "units": [
