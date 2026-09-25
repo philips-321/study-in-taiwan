@@ -1,0 +1,791 @@
+{
+  "id": "ko-l3-003",
+  "level": "Level 3 · Kosakata tematik",
+  "order": 3,
+  "passScore": 80,
+  "title": "Rumah & benda sehari-hari",
+  "subtitle": "Kosakata rumah yang langsung bisa dipakai untuk menjelaskan lokasi dan aktivitas.",
+  "intro": "Pelajari kosakata lewat contoh kalimat singkat. Fokus bukan hanya menghafal arti, tetapi mengenali bagaimana kata dipakai di dalam kalimat.",
+  "tip": "Putar contoh, ikuti color map, lalu ulangi kalimatnya dengan suara keras setelah audio selesai.",
+  "progressStart": 80,
+  "objectives": [
+    "12 kosakata",
+    "12 contoh",
+    "audio + color map"
+  ],
+  "prev": {
+    "title": "Pelajaran 2 · Makanan",
+    "path": "level-3/002-food.json"
+  },
+  "next": {
+    "title": "Pelajaran 4 · Sekolah & kerja",
+    "path": "level-3/004-school-work.json"
+  },
+  "units": [
+    {
+      "char": "집",
+      "roman": "jip",
+      "hint": "rumah",
+      "speak": "집",
+      "example": {
+        "ko": "저녁에는 집에 있어요.",
+        "roman": "jeonyeogeneun jibe isseoyo",
+        "id": "Pada malam hari saya berada di rumah.",
+        "map": {
+          "units": [
+            {
+              "ko": "저녁",
+              "roman": "jeonyeok",
+              "literal": "malam"
+            },
+            {
+              "ko": "에는",
+              "roman": "eneun",
+              "literal": "pada/topik"
+            },
+            {
+              "ko": "집",
+              "roman": "jip",
+              "literal": "rumah"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "있어요",
+              "roman": "isseoyo",
+              "literal": "berada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Pada malam hari",
+              "ref": 0
+            },
+            {
+              "text": "saya berada",
+              "ref": 4
+            },
+            {
+              "text": "di rumah",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "방",
+      "roman": "bang",
+      "hint": "kamar",
+      "speak": "방",
+      "example": {
+        "ko": "제 방은 작아요.",
+        "roman": "je bangeun jagayo",
+        "id": "Kamar saya kecil.",
+        "map": {
+          "units": [
+            {
+              "ko": "제",
+              "roman": "je",
+              "literal": "saya/milik saya"
+            },
+            {
+              "ko": "방",
+              "roman": "bang",
+              "literal": "kamar"
+            },
+            {
+              "ko": "은",
+              "roman": "eun",
+              "literal": "topik"
+            },
+            {
+              "ko": "작아요",
+              "roman": "jagayo",
+              "literal": "kecil"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Kamar",
+              "ref": 1
+            },
+            {
+              "text": "saya",
+              "ref": 0
+            },
+            {
+              "text": "kecil",
+              "ref": 3
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "거실",
+      "roman": "geosil",
+      "hint": "ruang tamu",
+      "speak": "거실",
+      "example": {
+        "ko": "거실에서 텔레비전을 봐요.",
+        "roman": "geosireseo tellebijeoneul bwayo",
+        "id": "Saya menonton televisi di ruang tamu.",
+        "map": {
+          "units": [
+            {
+              "ko": "거실",
+              "roman": "geosil",
+              "literal": "ruang tamu"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di"
+            },
+            {
+              "ko": "텔레비전",
+              "roman": "tellebijeon",
+              "literal": "televisi"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "봐요",
+              "roman": "bwayo",
+              "literal": "menonton"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya menonton",
+              "ref": 4
+            },
+            {
+              "text": "televisi",
+              "ref": 2
+            },
+            {
+              "text": "di ruang tamu",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "부엌",
+      "roman": "bueok",
+      "hint": "dapur",
+      "speak": "부엌",
+      "example": {
+        "ko": "어머니가 부엌에서 요리해요.",
+        "roman": "eomeoniga bueogeseo yorihaeyo",
+        "id": "Ibu memasak di dapur.",
+        "map": {
+          "units": [
+            {
+              "ko": "어머니",
+              "roman": "eomeoni",
+              "literal": "ibu"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "subjek"
+            },
+            {
+              "ko": "부엌",
+              "roman": "bueok",
+              "literal": "dapur"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di"
+            },
+            {
+              "ko": "요리해요",
+              "roman": "yorihaeyo",
+              "literal": "memasak"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Ibu",
+              "ref": 0
+            },
+            {
+              "text": "memasak",
+              "ref": 4
+            },
+            {
+              "text": "di dapur",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "화장실",
+      "roman": "hwajangsil",
+      "hint": "toilet / kamar mandi",
+      "speak": "화장실",
+      "example": {
+        "ko": "화장실이 어디예요?",
+        "roman": "hwajangsiri eodiyeyo",
+        "id": "Toiletnya di mana?",
+        "map": {
+          "units": [
+            {
+              "ko": "화장실",
+              "roman": "hwajangsil",
+              "literal": "toilet"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "subjek"
+            },
+            {
+              "ko": "어디",
+              "roman": "eodi",
+              "literal": "di mana"
+            },
+            {
+              "ko": "예요",
+              "roman": "yeyo",
+              "literal": "adalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Toiletnya",
+              "ref": 0
+            },
+            {
+              "text": "di mana",
+              "ref": 2
+            },
+            {
+              "text": "?",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "침대",
+      "roman": "chimdae",
+      "hint": "tempat tidur",
+      "speak": "침대",
+      "example": {
+        "ko": "침대에서 쉬어요.",
+        "roman": "chimdaeeseo swieoyo",
+        "id": "Saya beristirahat di tempat tidur.",
+        "map": {
+          "units": [
+            {
+              "ko": "침대",
+              "roman": "chimdae",
+              "literal": "tempat tidur"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di"
+            },
+            {
+              "ko": "쉬어요",
+              "roman": "swieoyo",
+              "literal": "beristirahat"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya beristirahat",
+              "ref": 2
+            },
+            {
+              "text": "di tempat tidur",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "책상",
+      "roman": "chaeksang",
+      "hint": "meja",
+      "speak": "책상",
+      "example": {
+        "ko": "책상 위에 컴퓨터가 있어요.",
+        "roman": "chaeksang wie keompyuteoga isseoyo",
+        "id": "Ada komputer di atas meja.",
+        "map": {
+          "units": [
+            {
+              "ko": "책상",
+              "roman": "chaeksang",
+              "literal": "meja"
+            },
+            {
+              "ko": "위",
+              "roman": "wi",
+              "literal": "atas"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "컴퓨터",
+              "roman": "keompyuteo",
+              "literal": "komputer"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "subjek"
+            },
+            {
+              "ko": "있어요",
+              "roman": "isseoyo",
+              "literal": "ada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Ada",
+              "ref": 5
+            },
+            {
+              "text": "komputer",
+              "ref": 3
+            },
+            {
+              "text": "di atas",
+              "ref": 1
+            },
+            {
+              "text": "meja",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "의자",
+      "roman": "uija",
+      "hint": "kursi",
+      "speak": "의자",
+      "example": {
+        "ko": "의자에 앉아 주세요.",
+        "roman": "uijae anja juseyo",
+        "id": "Silakan duduk di kursi.",
+        "map": {
+          "units": [
+            {
+              "ko": "의자",
+              "roman": "uija",
+              "literal": "kursi"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "앉아",
+              "roman": "anja",
+              "literal": "duduk"
+            },
+            {
+              "ko": "주세요",
+              "roman": "juseyo",
+              "literal": "silakan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Silakan",
+              "ref": 3
+            },
+            {
+              "text": "duduk",
+              "ref": 2
+            },
+            {
+              "text": "di kursi",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "문",
+      "roman": "mun",
+      "hint": "pintu",
+      "speak": "문",
+      "example": {
+        "ko": "문을 닫아 주세요.",
+        "roman": "muneul dada juseyo",
+        "id": "Tolong tutup pintunya.",
+        "map": {
+          "units": [
+            {
+              "ko": "문",
+              "roman": "mun",
+              "literal": "pintu"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "닫아",
+              "roman": "dada",
+              "literal": "tutup"
+            },
+            {
+              "ko": "주세요",
+              "roman": "juseyo",
+              "literal": "tolong"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Tolong",
+              "ref": 3
+            },
+            {
+              "text": "tutup",
+              "ref": 2
+            },
+            {
+              "text": "pintunya",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "창문",
+      "roman": "changmun",
+      "hint": "jendela",
+      "speak": "창문",
+      "example": {
+        "ko": "창문을 열어요.",
+        "roman": "changmuneul yeoreoyo",
+        "id": "Saya membuka jendela.",
+        "map": {
+          "units": [
+            {
+              "ko": "창문",
+              "roman": "changmun",
+              "literal": "jendela"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "열어요",
+              "roman": "yeoreoyo",
+              "literal": "membuka"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya membuka",
+              "ref": 2
+            },
+            {
+              "text": "jendela",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "냉장고",
+      "roman": "naengjanggo",
+      "hint": "kulkas",
+      "speak": "냉장고",
+      "example": {
+        "ko": "우유는 냉장고에 있어요.",
+        "roman": "uyuneun naengjanggoe isseoyo",
+        "id": "Susu ada di kulkas.",
+        "map": {
+          "units": [
+            {
+              "ko": "우유",
+              "roman": "uyu",
+              "literal": "susu"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "topik"
+            },
+            {
+              "ko": "냉장고",
+              "roman": "naengjanggo",
+              "literal": "kulkas"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "있어요",
+              "roman": "isseoyo",
+              "literal": "ada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Susu",
+              "ref": 0
+            },
+            {
+              "text": "ada",
+              "ref": 4
+            },
+            {
+              "text": "di kulkas",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "세탁기",
+      "roman": "setakgi",
+      "hint": "mesin cuci",
+      "speak": "세탁기",
+      "example": {
+        "ko": "세탁기로 옷을 빨아요.",
+        "roman": "setakgiro oseul pparayo",
+        "id": "Saya mencuci pakaian dengan mesin cuci.",
+        "map": {
+          "units": [
+            {
+              "ko": "세탁기",
+              "roman": "setakgi",
+              "literal": "mesin cuci"
+            },
+            {
+              "ko": "로",
+              "roman": "ro",
+              "literal": "dengan"
+            },
+            {
+              "ko": "옷",
+              "roman": "ot",
+              "literal": "pakaian"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "빨아요",
+              "roman": "pparayo",
+              "literal": "mencuci"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya mencuci",
+              "ref": 4
+            },
+            {
+              "text": "pakaian",
+              "ref": 2
+            },
+            {
+              "text": "dengan mesin cuci",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa arti 집?",
+      "options": [
+        "rumah",
+        "kamar",
+        "dapur",
+        "tempat tidur"
+      ],
+      "answer": 0,
+      "explain": "집 = rumah."
+    },
+    {
+      "question": "Apa arti 방?",
+      "options": [
+        "ruang tamu",
+        "toilet / kamar mandi",
+        "meja",
+        "kamar"
+      ],
+      "answer": 3,
+      "explain": "방 = kamar."
+    },
+    {
+      "question": "Apa arti 거실?",
+      "options": [
+        "tempat tidur",
+        "kursi",
+        "ruang tamu",
+        "dapur"
+      ],
+      "answer": 2,
+      "explain": "거실 = ruang tamu."
+    },
+    {
+      "question": "Apa arti 부엌?",
+      "options": [
+        "pintu",
+        "dapur",
+        "toilet / kamar mandi",
+        "meja"
+      ],
+      "answer": 1,
+      "explain": "부엌 = dapur."
+    },
+    {
+      "question": "Apa arti 화장실?",
+      "options": [
+        "toilet / kamar mandi",
+        "tempat tidur",
+        "kursi",
+        "jendela"
+      ],
+      "answer": 0,
+      "explain": "화장실 = toilet / kamar mandi."
+    },
+    {
+      "question": "Apa arti 침대?",
+      "options": [
+        "meja",
+        "pintu",
+        "kulkas",
+        "tempat tidur"
+      ],
+      "answer": 3,
+      "explain": "침대 = tempat tidur."
+    },
+    {
+      "question": "Apa arti 책상?",
+      "options": [
+        "jendela",
+        "mesin cuci",
+        "meja",
+        "kursi"
+      ],
+      "answer": 2,
+      "explain": "책상 = meja."
+    },
+    {
+      "question": "Apa arti 의자?",
+      "options": [
+        "rumah",
+        "kursi",
+        "pintu",
+        "kulkas"
+      ],
+      "answer": 1,
+      "explain": "의자 = kursi."
+    },
+    {
+      "question": "Apa arti 문?",
+      "options": [
+        "pintu",
+        "jendela",
+        "mesin cuci",
+        "kamar"
+      ],
+      "answer": 0,
+      "explain": "문 = pintu."
+    },
+    {
+      "question": "Apa arti 창문?",
+      "options": [
+        "kulkas",
+        "rumah",
+        "ruang tamu",
+        "jendela"
+      ],
+      "answer": 3,
+      "explain": "창문 = jendela."
+    }
+  ]
+}
