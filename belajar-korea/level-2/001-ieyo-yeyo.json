@@ -360,5 +360,382 @@
       "answer": 0,
       "explain": "Ini pola sopan yang sangat umum."
     }
+  ],
+  "practiceExamples": [
+    {
+      "ko": "저는 회사원이에요.",
+      "roman": "jeoneun hoesawon-ieyo",
+      "id": "Saya pekerja kantoran.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "회사원",
+            "roman": "hoesawon",
+            "literal": "pekerja kantoran"
+          },
+          {
+            "ko": "이에요",
+            "roman": "ieyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "pekerja kantoran",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저는 회사원이에요."
+    },
+    {
+      "ko": "민지는 학생이에요.",
+      "roman": "Minjineun haksaeng-ieyo",
+      "id": "Minji adalah pelajar.",
+      "map": {
+        "units": [
+          {
+            "ko": "민지",
+            "roman": "Minji",
+            "literal": "Minji"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "학생",
+            "roman": "haksaeng",
+            "literal": "pelajar"
+          },
+          {
+            "ko": "이에요",
+            "roman": "ieyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Minji",
+            "ref": 0
+          },
+          {
+            "text": "adalah",
+            "ref": 3
+          },
+          {
+            "text": "pelajar",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "민지는 학생이에요."
+    },
+    {
+      "ko": "여기는 학교예요.",
+      "roman": "yeogineun hakgyoyeyo",
+      "id": "Di sini adalah sekolah.",
+      "map": {
+        "units": [
+          {
+            "ko": "여기",
+            "roman": "yeogi",
+            "literal": "di sini"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "학교",
+            "roman": "hakgyo",
+            "literal": "sekolah"
+          },
+          {
+            "ko": "예요",
+            "roman": "yeyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Di sini",
+            "ref": 0
+          },
+          {
+            "text": "adalah",
+            "ref": 3
+          },
+          {
+            "text": "sekolah",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "여기는 학교예요."
+    },
+    {
+      "ko": "제 이름은 수진이에요.",
+      "roman": "je ireumeun Sujin-ieyo",
+      "id": "Nama saya Sujin.",
+      "map": {
+        "units": [
+          {
+            "ko": "제",
+            "roman": "je",
+            "literal": "saya/milik saya"
+          },
+          {
+            "ko": "이름",
+            "roman": "ireum",
+            "literal": "nama"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "수진",
+            "roman": "Sujin",
+            "literal": "Sujin"
+          },
+          {
+            "ko": "이에요",
+            "roman": "ieyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Nama",
+            "ref": 1
+          },
+          {
+            "text": "saya",
+            "ref": 0
+          },
+          {
+            "text": "Sujin",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "제 이름은 수진이에요."
+    },
+    {
+      "ko": "이것은 책이에요.",
+      "roman": "igeoseun chaeg-ieyo",
+      "id": "Ini adalah buku.",
+      "map": {
+        "units": [
+          {
+            "ko": "이것",
+            "roman": "igeot",
+            "literal": "ini"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          },
+          {
+            "ko": "이에요",
+            "roman": "ieyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Ini",
+            "ref": 0
+          },
+          {
+            "text": "adalah",
+            "ref": 3
+          },
+          {
+            "text": "buku",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "이것은 책이에요."
+    },
+    {
+      "ko": "저 사람은 배우예요.",
+      "roman": "jeo sarameun baeu-yeyo",
+      "id": "Orang itu aktor.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "itu"
+          },
+          {
+            "ko": "사람",
+            "roman": "saram",
+            "literal": "orang"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "배우",
+            "roman": "baeu",
+            "literal": "aktor"
+          },
+          {
+            "ko": "예요",
+            "roman": "yeyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Orang",
+            "ref": 1
+          },
+          {
+            "text": "itu",
+            "ref": 0
+          },
+          {
+            "text": "adalah",
+            "ref": 4
+          },
+          {
+            "text": "aktor",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저 사람은 배우예요."
+    },
+    {
+      "ko": "오늘은 휴일이에요.",
+      "roman": "oneureun hyuil-ieyo",
+      "id": "Hari ini hari libur.",
+      "map": {
+        "units": [
+          {
+            "ko": "오늘",
+            "roman": "oneul",
+            "literal": "hari ini"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "휴일",
+            "roman": "hyuil",
+            "literal": "hari libur"
+          },
+          {
+            "ko": "이에요",
+            "roman": "ieyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Hari ini",
+            "ref": 0
+          },
+          {
+            "text": "hari libur",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "오늘은 휴일이에요."
+    },
+    {
+      "ko": "이 음식은 김치예요.",
+      "roman": "i eumsigeun gimchiyeyo",
+      "id": "Makanan ini adalah kimchi.",
+      "map": {
+        "units": [
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "ini"
+          },
+          {
+            "ko": "음식",
+            "roman": "eumsik",
+            "literal": "makanan"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "김치",
+            "roman": "gimchi",
+            "literal": "kimchi"
+          },
+          {
+            "ko": "예요",
+            "roman": "yeyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Makanan",
+            "ref": 1
+          },
+          {
+            "text": "ini",
+            "ref": 0
+          },
+          {
+            "text": "adalah",
+            "ref": 4
+          },
+          {
+            "text": "kimchi",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "이 음식은 김치예요."
+    }
   ]
 }
