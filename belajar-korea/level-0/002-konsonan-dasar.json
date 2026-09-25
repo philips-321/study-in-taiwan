@@ -1,0 +1,225 @@
+{
+  "id": "ko-l0-002",
+  "level": "Level 0 · Hangul",
+  "order": 2,
+  "title": "14 konsonan dasar Hangul",
+  "subtitle": "Kenali bentuk dan bunyi ㄱ sampai ㅎ dengan bantuan suku kata sederhana.",
+  "intro": "Konsonan Korea tidak dibaca sendirian dalam kata. Karena itu, contoh audio memakai vokal ㅏ agar kamu bisa mendengar bunyinya dalam suku kata nyata.",
+  "tip": "Jangan menghafal nama huruf dulu. Fokus pada bentuk + bunyi dalam suku kata: 가, 나, 다, 라, 마, 바, 사, 아, 자, 차, 카, 타, 파, 하.",
+  "progressStart": 18,
+  "objectives": [
+    "14 konsonan",
+    "audio ko-KR",
+    "±10 menit"
+  ],
+  "prev": {
+    "title": "Pelajaran 1 · Vokal dasar",
+    "path": "level-0/001-vokal-dasar.json"
+  },
+  "next": {
+    "title": "Pelajaran 3 · Blok suku kata",
+    "path": "level-0/003-blok-suku-kata.json"
+  },
+  "units": [
+    {
+      "char": "ㄱ",
+      "roman": "g/k",
+      "hint": "Di awal suku kata biasanya terdengar di antara g dan k.",
+      "speak": "가",
+      "example": {
+        "ko": "가",
+        "roman": "ga",
+        "id": "ga"
+      }
+    },
+    {
+      "char": "ㄴ",
+      "roman": "n",
+      "hint": "Bunyi n.",
+      "speak": "나",
+      "example": {
+        "ko": "나",
+        "roman": "na",
+        "id": "na"
+      }
+    },
+    {
+      "char": "ㄷ",
+      "roman": "d/t",
+      "hint": "Di awal suku kata biasanya terdengar di antara d dan t.",
+      "speak": "다",
+      "example": {
+        "ko": "다",
+        "roman": "da",
+        "id": "da"
+      }
+    },
+    {
+      "char": "ㄹ",
+      "roman": "r/l",
+      "hint": "Bisa terdengar seperti r ringan atau l tergantung posisi.",
+      "speak": "라",
+      "example": {
+        "ko": "라",
+        "roman": "ra",
+        "id": "ra"
+      }
+    },
+    {
+      "char": "ㅁ",
+      "roman": "m",
+      "hint": "Bunyi m.",
+      "speak": "마",
+      "example": {
+        "ko": "마",
+        "roman": "ma",
+        "id": "ma"
+      }
+    },
+    {
+      "char": "ㅂ",
+      "roman": "b/p",
+      "hint": "Di awal suku kata biasanya terdengar di antara b dan p.",
+      "speak": "바",
+      "example": {
+        "ko": "바",
+        "roman": "ba",
+        "id": "ba"
+      }
+    },
+    {
+      "char": "ㅅ",
+      "roman": "s",
+      "hint": "Bunyi s; sebelum ㅣ/ya/yeo/yo/yu bisa terdengar lebih seperti sh.",
+      "speak": "사",
+      "example": {
+        "ko": "사",
+        "roman": "sa",
+        "id": "sa"
+      }
+    },
+    {
+      "char": "ㅇ",
+      "roman": "∅ / ng",
+      "hint": "Di awal suku kata tidak berbunyi; di akhir menjadi ng.",
+      "speak": "아",
+      "example": {
+        "ko": "아",
+        "roman": "a",
+        "id": "awal ㅇ diam"
+      }
+    },
+    {
+      "char": "ㅈ",
+      "roman": "j",
+      "hint": "Bunyi j yang relatif ringan.",
+      "speak": "자",
+      "example": {
+        "ko": "자",
+        "roman": "ja",
+        "id": "ja"
+      }
+    },
+    {
+      "char": "ㅊ",
+      "roman": "ch",
+      "hint": "Bunyi ch beraspirasi.",
+      "speak": "차",
+      "example": {
+        "ko": "차",
+        "roman": "cha",
+        "id": "cha"
+      }
+    },
+    {
+      "char": "ㅋ",
+      "roman": "k",
+      "hint": "Bunyi k beraspirasi.",
+      "speak": "카",
+      "example": {
+        "ko": "카",
+        "roman": "ka",
+        "id": "ka"
+      }
+    },
+    {
+      "char": "ㅌ",
+      "roman": "t",
+      "hint": "Bunyi t beraspirasi.",
+      "speak": "타",
+      "example": {
+        "ko": "타",
+        "roman": "ta",
+        "id": "ta"
+      }
+    },
+    {
+      "char": "ㅍ",
+      "roman": "p",
+      "hint": "Bunyi p beraspirasi.",
+      "speak": "파",
+      "example": {
+        "ko": "파",
+        "roman": "pa",
+        "id": "pa"
+      }
+    },
+    {
+      "char": "ㅎ",
+      "roman": "h",
+      "hint": "Bunyi h.",
+      "speak": "하",
+      "example": {
+        "ko": "하",
+        "roman": "ha",
+        "id": "ha"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Konsonan mana yang berbunyi n?",
+      "options": [
+        "ㄴ",
+        "ㅁ",
+        "ㄹ",
+        "ㅎ"
+      ],
+      "answer": 0,
+      "explain": "ㄴ = n."
+    },
+    {
+      "question": "Huruf mana yang tidak berbunyi ketika berada di awal suku kata?",
+      "options": [
+        "ㅅ",
+        "ㅇ",
+        "ㅈ",
+        "ㄱ"
+      ],
+      "answer": 1,
+      "explain": "ㅇ di awal suku kata berfungsi sebagai penyangga vokal dan tidak berbunyi."
+    },
+    {
+      "question": "Mana yang termasuk bunyi aspirasi kuat 'k'?",
+      "options": [
+        "ㄱ",
+        "ㅋ",
+        "ㄷ",
+        "ㅂ"
+      ],
+      "answer": 1,
+      "explain": "ㅋ adalah k beraspirasi."
+    },
+    {
+      "question": "Huruf mana yang dapat terdengar seperti r atau l tergantung posisi?",
+      "options": [
+        "ㄹ",
+        "ㄴ",
+        "ㅁ",
+        "ㅍ"
+      ],
+      "answer": 0,
+      "explain": "ㄹ dapat direalisasikan sebagai bunyi r ringan atau l tergantung posisinya."
+    }
+  ]
+}
