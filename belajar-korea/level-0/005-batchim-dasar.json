@@ -211,5 +211,117 @@
   "next": {
     "title": "Level 1 · 받침 발음 규칙",
     "path": "level-1/001-batchim-sound-rules.json"
-  }
+  },
+  "practiceExamples": [
+    {
+      "ko": "집",
+      "roman": "jip",
+      "id": "Batchim ㅂ.",
+      "map": {
+        "units": [
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "rumah",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "집"
+    },
+    {
+      "ko": "책",
+      "roman": "chaek",
+      "id": "Batchim ㄱ.",
+      "map": {
+        "units": [
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          }
+        ],
+        "natural": [
+          {
+            "text": "buku",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "책"
+    },
+    {
+      "ko": "옷",
+      "roman": "ot",
+      "id": "Batchim ㅅ → bunyi akhir t-type.",
+      "map": {
+        "units": [
+          {
+            "ko": "옷",
+            "roman": "ot",
+            "literal": "pakaian"
+          }
+        ],
+        "natural": [
+          {
+            "text": "pakaian",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "옷"
+    },
+    {
+      "ko": "눈",
+      "roman": "nun",
+      "id": "Batchim ㄴ.",
+      "map": {
+        "units": [
+          {
+            "ko": "눈",
+            "roman": "nun",
+            "literal": "mata / salju"
+          }
+        ],
+        "natural": [
+          {
+            "text": "mata / salju",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "눈"
+    },
+    {
+      "ko": "손",
+      "roman": "son",
+      "id": "Batchim ㄴ.",
+      "map": {
+        "units": [
+          {
+            "ko": "손",
+            "roman": "son",
+            "literal": "tangan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "tangan",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "손"
+    }
+  ]
 }
