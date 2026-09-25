@@ -1,0 +1,193 @@
+{
+  "id": "ko-l1-001",
+  "level": "Level 1 · Pengucapan",
+  "order": 1,
+  "passScore": 80,
+  "title": "연음 — bunyi yang menyambung",
+  "subtitle": "Saat batchim bertemu suku kata berikutnya yang dimulai ㅇ, bunyinya sering berpindah ke depan.",
+  "intro": "연음 (yeoneum) berarti bunyi yang tersambung. Jika sebuah suku kata berakhir dengan konsonan dan suku kata berikutnya dimulai dengan ㅇ + vokal, konsonan akhir itu biasanya terdengar sebagai awal suku kata berikutnya.",
+  "tip": "Jangan ubah ejaannya. Yang berubah adalah cara dibaca. Contoh: 집에 tetap ditulis 집에, tetapi terdengar mendekati 지베.",
+  "progressStart": 45,
+  "objectives": [
+    "연음 dasar",
+    "batchim + ㅇ",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Level 0 · Batchim dasar",
+    "path": "level-0/005-batchim-dasar.json"
+  },
+  "next": {
+    "title": "Pelajaran 2 · 비음화",
+    "path": "level-1/002-bieumhwa-nasalization.json"
+  },
+  "units": [
+    {
+      "char": "집에",
+      "roman": "jibe",
+      "hint": "집 + 에 → batchim ㅂ tersambung ke 에.",
+      "speak": "집에",
+      "example": {
+        "ko": "집에 가요",
+        "roman": "jibe gayo",
+        "id": "pergi ke rumah"
+      }
+    },
+    {
+      "char": "먹어요",
+      "roman": "meogeoyo",
+      "hint": "먹 + 어요 → ㄱ terdengar sebagai awal 거.",
+      "speak": "먹어요",
+      "example": {
+        "ko": "밥을 먹어요",
+        "roman": "babeul meogeoyo",
+        "id": "makan nasi"
+      }
+    },
+    {
+      "char": "책을",
+      "roman": "chaegeul",
+      "hint": "책 + 을 → ㄱ berpindah ke awal 을.",
+      "speak": "책을",
+      "example": {
+        "ko": "책을 읽어요",
+        "roman": "chaegeul ilgeoyo",
+        "id": "membaca buku"
+      }
+    },
+    {
+      "char": "옷이",
+      "roman": "osi",
+      "hint": "옷 + 이 → ㅅ terdengar sebagai s pada 시.",
+      "speak": "옷이",
+      "example": {
+        "ko": "옷이 예뻐요",
+        "roman": "osi yeppeoyo",
+        "id": "bajunya cantik"
+      }
+    },
+    {
+      "char": "한국어",
+      "roman": "hangugeo",
+      "hint": "국 + 어 → ㄱ tersambung ke 어.",
+      "speak": "한국어",
+      "example": {
+        "ko": "한국어를 공부해요",
+        "roman": "hangugeoreul gongbuhaeyo",
+        "id": "belajar bahasa Korea"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "집에 paling dekat dibaca…",
+      "options": [
+        "집에 terputus",
+        "지베",
+        "짐메",
+        "지페"
+      ],
+      "answer": 1,
+      "explain": "ㅂ batchim tersambung ke 에 → 지베."
+    },
+    {
+      "question": "먹어요 paling dekat dibaca…",
+      "options": [
+        "머거요",
+        "멍어요",
+        "먹커요",
+        "머꺼요"
+      ],
+      "answer": 0,
+      "explain": "ㄱ batchim tersambung ke 어 → 머거요."
+    },
+    {
+      "question": "연음 biasanya terjadi ketika batchim bertemu…",
+      "options": [
+        "konsonan rangkap",
+        "ㅇ + vokal di suku kata berikutnya",
+        "ㅎ saja",
+        "akhir kalimat"
+      ],
+      "answer": 1,
+      "explain": "Pemicu dasar yang dipelajari di sini adalah batchim + suku kata berikutnya yang dimulai ㅇ."
+    },
+    {
+      "question": "책을 paling dekat dibaca…",
+      "options": [
+        "채글",
+        "책을 terpisah",
+        "챙을",
+        "채클"
+      ],
+      "answer": 0,
+      "explain": "ㄱ berpindah menjadi awal suku kata berikutnya."
+    },
+    {
+      "question": "옷이 paling dekat dibaca…",
+      "options": [
+        "오디",
+        "오시",
+        "온니",
+        "옫이"
+      ],
+      "answer": 1,
+      "explain": "ㅅ batchim tersambung ke 이 → 오시."
+    },
+    {
+      "question": "한국어 paling dekat dibaca…",
+      "options": [
+        "한구거",
+        "한국어 terputus",
+        "한궁어",
+        "한쿠거"
+      ],
+      "answer": 0,
+      "explain": "국 + 어 → 구거."
+    },
+    {
+      "question": "Dalam 연음, ejaan kata…",
+      "options": [
+        "ikut berubah",
+        "tetap, hanya pengucapannya yang berubah",
+        "harus ditulis ulang dengan romanisasi",
+        "menghilangkan batchim"
+      ],
+      "answer": 1,
+      "explain": "Ejaan Hangul tetap."
+    },
+    {
+      "question": "Mana contoh 연음?",
+      "options": [
+        "집에 → 지베",
+        "국물 → 궁물",
+        "신라 → 실라",
+        "학교 → 학꾜"
+      ],
+      "answer": 0,
+      "explain": "Tiga lainnya adalah aturan bunyi lain."
+    },
+    {
+      "question": "Jika batchim bertemu ㅇ yang memulai vokal, batchim biasanya…",
+      "options": [
+        "hilang total",
+        "terdengar sebagai awal suku kata berikutnya",
+        "selalu menjadi ng",
+        "menjadi tense consonant"
+      ],
+      "answer": 1,
+      "explain": "Inilah pola dasar liaison."
+    },
+    {
+      "question": "Tujuan utama belajar 연음 adalah…",
+      "options": [
+        "mengubah ejaan",
+        "memahami kenapa kata terdengar menyambung saat diucapkan",
+        "menghafal Hanja",
+        "membedakan formalitas"
+      ],
+      "answer": 1,
+      "explain": "연음 menjelaskan aliran bunyi antar-suku kata."
+    }
+  ]
+}
