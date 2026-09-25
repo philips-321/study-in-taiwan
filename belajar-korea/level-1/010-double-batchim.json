@@ -118,7 +118,63 @@
       "roman": "jeoneun maeil chaegeul ilgeoyo",
       "id": "Saya membaca buku setiap hari.",
       "note": "읽어요 → [일거요].",
-      "speak": "저는 매일 책을 읽어요."
+      "speak": "저는 매일 책을 읽어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "penanda topik"
+          },
+          {
+            "ko": "매일",
+            "roman": "maeil",
+            "literal": "setiap hari"
+          },
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "읽어요",
+            "roman": "ilgeoyo",
+            "literal": "membaca"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "membaca",
+            "ref": 5
+          },
+          {
+            "text": "buku",
+            "ref": 3
+          },
+          {
+            "text": "setiap hari",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 5
+          }
+        ]
+      }
     },
     {
       "ko": "여기에 앉아 주세요.",
@@ -126,7 +182,49 @@
       "roman": "yeogie anja juseyo",
       "id": "Silakan duduk di sini.",
       "note": "앉아 → [안자].",
-      "speak": "여기에 앉아 주세요."
+      "speak": "여기에 앉아 주세요.",
+      "map": {
+        "units": [
+          {
+            "ko": "여기",
+            "roman": "yeogi",
+            "literal": "di sini"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "di"
+          },
+          {
+            "ko": "앉아",
+            "roman": "anja",
+            "literal": "duduk"
+          },
+          {
+            "ko": "주세요",
+            "roman": "juseyo",
+            "literal": "silakan / tolong"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Silakan",
+            "ref": 3
+          },
+          {
+            "text": "duduk",
+            "ref": 2
+          },
+          {
+            "text": "di sini",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     },
     {
       "ko": "오늘은 시간이 없어요.",
@@ -134,7 +232,54 @@
       "roman": "oneureun sigani eopsseoyo",
       "id": "Hari ini saya tidak punya waktu.",
       "note": "없어요 → [업써요].",
-      "speak": "오늘은 시간이 없어요."
+      "speak": "오늘은 시간이 없어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "오늘",
+            "roman": "oneul",
+            "literal": "hari ini"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "penanda topik"
+          },
+          {
+            "ko": "시간",
+            "roman": "sigan",
+            "literal": "waktu"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "penanda subjek"
+          },
+          {
+            "ko": "없어요",
+            "roman": "eopseoyo",
+            "literal": "tidak ada"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Hari ini",
+            "ref": 0
+          },
+          {
+            "text": "saya tidak punya",
+            "ref": 4
+          },
+          {
+            "text": "waktu",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 4
+          }
+        ]
+      }
     },
     {
       "ko": "책을 읽다가 잠들었어요.",
@@ -142,7 +287,49 @@
       "roman": "chaegeul ikttaga jamdeureosseoyo",
       "id": "Saya tertidur saat sedang membaca buku.",
       "note": "읽다 계열 sebelum ㄷ-type memperlihatkan penyederhanaan + tensing.",
-      "speak": "책을 읽다가 잠들었어요."
+      "speak": "책을 읽다가 잠들었어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "읽다가",
+            "roman": "ikttaga",
+            "literal": "sedang membaca lalu"
+          },
+          {
+            "ko": "잠들었어요",
+            "roman": "jamdeureosseoyo",
+            "literal": "tertidur"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tertidur",
+            "ref": 3
+          },
+          {
+            "text": "saat sedang membaca",
+            "ref": 2
+          },
+          {
+            "text": "buku",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     }
   ],
   "units": [
