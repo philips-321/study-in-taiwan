@@ -1,0 +1,663 @@
+{
+  "id": "ko-l4-009",
+  "level": "Level 4 · Grammar bertahap",
+  "order": 9,
+  "passScore": 80,
+  "title": "아/어야 해요 — harus",
+  "subtitle": "Menyatakan kewajiban atau kebutuhan.",
+  "intro": "Tambahkan 아/어야 해요 pada batang. 하다 menjadi 해야 해요. Pola ini sangat umum untuk tugas, aturan, dan kebutuhan pribadi.",
+  "tip": "Bedakan dengan -(으)ㄹ 수 있어요: 'bisa' bukan berarti 'harus'.",
+  "progressStart": 84,
+  "objectives": [
+    "12 contoh",
+    "color map",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Pelajaran 8 · 수 있어요",
+    "path": "level-4/008-su-isseoyo.json"
+  },
+  "next": {
+    "title": "Pelajaran 10 · 고 있어요",
+    "path": "level-4/010-go-isseoyo.json"
+  },
+  "sentences": [
+    {
+      "ko": "내일 일찍 일어나야 해요.",
+      "roman": "naeil iljjik ireonaya haeyo",
+      "id": "Besok saya harus bangun lebih awal.",
+      "map": {
+        "units": [
+          {
+            "ko": "내일",
+            "roman": "naeil",
+            "literal": "besok"
+          },
+          {
+            "ko": "일찍",
+            "roman": "iljjik",
+            "literal": "lebih awal"
+          },
+          {
+            "ko": "일어나야 해요",
+            "roman": "ireonaya haeyo",
+            "literal": "harus bangun"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Besok",
+            "ref": 0
+          },
+          {
+            "text": "saya harus bangun",
+            "ref": 2
+          },
+          {
+            "text": "lebih awal",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "내일 일찍 일어나야 해요."
+    },
+    {
+      "ko": "숙제를 오늘 끝내야 해요.",
+      "roman": "sukjereul oneul kkeutnaeya haeyo",
+      "id": "Saya harus menyelesaikan PR hari ini.",
+      "map": {
+        "units": [
+          {
+            "ko": "숙제",
+            "roman": "sukje",
+            "literal": "PR"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "오늘",
+            "roman": "oneul",
+            "literal": "hari ini"
+          },
+          {
+            "ko": "끝내야 해요",
+            "roman": "kkeutnaeya haeyo",
+            "literal": "harus menyelesaikan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya harus menyelesaikan",
+            "ref": 3
+          },
+          {
+            "text": "PR",
+            "ref": 0
+          },
+          {
+            "text": "hari ini",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "숙제를 오늘 끝내야 해요."
+    },
+    {
+      "ko": "약을 먹어야 해요.",
+      "roman": "yageul meogeoya haeyo",
+      "id": "Saya harus minum obat.",
+      "map": {
+        "units": [
+          {
+            "ko": "약",
+            "roman": "yak",
+            "literal": "obat"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "먹어야 해요",
+            "roman": "meogeoya haeyo",
+            "literal": "harus makan/minum"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya harus minum",
+            "ref": 2
+          },
+          {
+            "text": "obat",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "약을 먹어야 해요."
+    },
+    {
+      "ko": "여권을 가져가야 해요.",
+      "roman": "yeogwoneul gajyeogaya haeyo",
+      "id": "Saya harus membawa paspor.",
+      "map": {
+        "units": [
+          {
+            "ko": "여권",
+            "roman": "yeogwon",
+            "literal": "paspor"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "가져가야 해요",
+            "roman": "gajyeogaya haeyo",
+            "literal": "harus membawa"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya harus membawa",
+            "ref": 2
+          },
+          {
+            "text": "paspor",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "여권을 가져가야 해요."
+    },
+    {
+      "ko": "한국어를 매일 연습해야 해요.",
+      "roman": "hangugeoreul maeil yeonseuphaeya haeyo",
+      "id": "Saya harus berlatih bahasa Korea setiap hari.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국어",
+            "roman": "hangugeo",
+            "literal": "bahasa Korea"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "매일",
+            "roman": "maeil",
+            "literal": "setiap hari"
+          },
+          {
+            "ko": "연습해야 해요",
+            "roman": "yeonseuphaeya haeyo",
+            "literal": "harus berlatih"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya harus berlatih",
+            "ref": 3
+          },
+          {
+            "text": "bahasa Korea",
+            "ref": 0
+          },
+          {
+            "text": "setiap hari",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국어를 매일 연습해야 해요."
+    },
+    {
+      "ko": "지금 출발해야 해요.",
+      "roman": "jigeum chulbalhaeya haeyo",
+      "id": "Kita harus berangkat sekarang.",
+      "map": {
+        "units": [
+          {
+            "ko": "지금",
+            "roman": "jigeum",
+            "literal": "sekarang"
+          },
+          {
+            "ko": "출발해야 해요",
+            "roman": "chulbalhaeya haeyo",
+            "literal": "harus berangkat"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kita harus berangkat",
+            "ref": 1
+          },
+          {
+            "text": "sekarang",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "지금 출발해야 해요."
+    },
+    {
+      "ko": "회의 전에 준비해야 해요.",
+      "roman": "hoeui jeone junbihaeya haeyo",
+      "id": "Saya harus bersiap sebelum rapat.",
+      "map": {
+        "units": [
+          {
+            "ko": "회의",
+            "roman": "hoeui",
+            "literal": "rapat"
+          },
+          {
+            "ko": "전에",
+            "roman": "jeone",
+            "literal": "sebelum"
+          },
+          {
+            "ko": "준비해야 해요",
+            "roman": "junbihaeya haeyo",
+            "literal": "harus bersiap"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya harus bersiap",
+            "ref": 2
+          },
+          {
+            "text": "sebelum",
+            "ref": 1
+          },
+          {
+            "text": "rapat",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "회의 전에 준비해야 해요."
+    },
+    {
+      "ko": "여기에서 신발을 벗어야 해요.",
+      "roman": "yeogieseo sinbareul beoseoya haeyo",
+      "id": "Di sini harus melepas sepatu.",
+      "map": {
+        "units": [
+          {
+            "ko": "여기",
+            "roman": "yeogi",
+            "literal": "di sini"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "신발",
+            "roman": "sinbal",
+            "literal": "sepatu"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "벗어야 해요",
+            "roman": "beoseoya haeyo",
+            "literal": "harus melepas"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Di sini",
+            "ref": 0
+          },
+          {
+            "text": "harus melepas",
+            "ref": 4
+          },
+          {
+            "text": "sepatu",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "여기에서 신발을 벗어야 해요."
+    },
+    {
+      "ko": "늦지 않으려면 지금 가야 해요.",
+      "roman": "neutji aneuryeomyeon jigeum gaya haeyo",
+      "id": "Kalau tidak ingin terlambat, kita harus pergi sekarang.",
+      "map": {
+        "units": [
+          {
+            "ko": "늦지 않으려면",
+            "roman": "neutji aneuryeomyeon",
+            "literal": "jika tidak ingin terlambat"
+          },
+          {
+            "ko": "지금",
+            "roman": "jigeum",
+            "literal": "sekarang"
+          },
+          {
+            "ko": "가야 해요",
+            "roman": "gaya haeyo",
+            "literal": "harus pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kalau tidak ingin terlambat",
+            "ref": 0
+          },
+          {
+            "text": "kita harus pergi",
+            "ref": 2
+          },
+          {
+            "text": "sekarang",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "늦지 않으려면 지금 가야 해요."
+    },
+    {
+      "ko": "시험 전에 복습해야 해요.",
+      "roman": "siheom jeone boksuphaeya haeyo",
+      "id": "Saya harus mengulang pelajaran sebelum ujian.",
+      "map": {
+        "units": [
+          {
+            "ko": "시험",
+            "roman": "siheom",
+            "literal": "ujian"
+          },
+          {
+            "ko": "전에",
+            "roman": "jeone",
+            "literal": "sebelum"
+          },
+          {
+            "ko": "복습해야 해요",
+            "roman": "boksuphaeya haeyo",
+            "literal": "harus review"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya harus mengulang pelajaran",
+            "ref": 2
+          },
+          {
+            "text": "sebelum",
+            "ref": 1
+          },
+          {
+            "text": "ujian",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "시험 전에 복습해야 해요."
+    },
+    {
+      "ko": "이 서류에 이름을 써야 해요.",
+      "roman": "i seoryue ireumeul sseoya haeyo",
+      "id": "Saya harus menulis nama di dokumen ini.",
+      "map": {
+        "units": [
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "ini"
+          },
+          {
+            "ko": "서류",
+            "roman": "seoryu",
+            "literal": "dokumen"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "di"
+          },
+          {
+            "ko": "이름",
+            "roman": "ireum",
+            "literal": "nama"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "써야 해요",
+            "roman": "sseoya haeyo",
+            "literal": "harus menulis"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya harus menulis",
+            "ref": 5
+          },
+          {
+            "text": "nama",
+            "ref": 3
+          },
+          {
+            "text": "di dokumen",
+            "ref": 1
+          },
+          {
+            "text": "ini",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "이 서류에 이름을 써야 해요."
+    },
+    {
+      "ko": "건강을 위해 물을 많이 마셔야 해요.",
+      "roman": "geongangeul wihae mureul mani masyeoya haeyo",
+      "id": "Untuk kesehatan, saya harus banyak minum air.",
+      "map": {
+        "units": [
+          {
+            "ko": "건강",
+            "roman": "geongang",
+            "literal": "kesehatan"
+          },
+          {
+            "ko": "을 위해",
+            "roman": "eul wihae",
+            "literal": "demi/untuk"
+          },
+          {
+            "ko": "물",
+            "roman": "mul",
+            "literal": "air"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "많이",
+            "roman": "mani",
+            "literal": "banyak"
+          },
+          {
+            "ko": "마셔야 해요",
+            "roman": "masyeoya haeyo",
+            "literal": "harus minum"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Untuk kesehatan",
+            "ref": 0
+          },
+          {
+            "text": "saya harus",
+            "ref": 5
+          },
+          {
+            "text": "banyak",
+            "ref": 4
+          },
+          {
+            "text": "minum",
+            "ref": 5
+          },
+          {
+            "text": "air",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "건강을 위해 물을 많이 마셔야 해요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "가다 → harus pergi?",
+      "options": [
+        "가야 해요",
+        "가어야 해요",
+        "갈 수 있어요",
+        "가고 싶어요"
+      ],
+      "answer": 0,
+      "explain": "가다 → 가야 해요."
+    },
+    {
+      "question": "먹다 → harus makan?",
+      "options": [
+        "먹어야 해요",
+        "먹아야 해요",
+        "먹을 거예요",
+        "먹고 있어요"
+      ],
+      "answer": 0,
+      "explain": "먹어야 해요."
+    },
+    {
+      "question": "하다 → harus melakukan?",
+      "options": [
+        "해야 해요",
+        "하야 해요",
+        "할 해요",
+        "하고 해요"
+      ],
+      "answer": 0,
+      "explain": "하다 → 해야 해요."
+    },
+    {
+      "question": "쓰다 → harus menulis?",
+      "options": [
+        "써야 해요",
+        "쓰어야 해요",
+        "쓸 수 있어요",
+        "쓰고 싶어요"
+      ],
+      "answer": 0,
+      "explain": "쓰다 → 써야 해요."
+    },
+    {
+      "question": "아/어야 해요 berarti…",
+      "options": [
+        "harus",
+        "bisa",
+        "ingin",
+        "tetapi"
+      ],
+      "answer": 0,
+      "explain": "Obligation/necessity."
+    },
+    {
+      "question": "준비하다 → ?",
+      "options": [
+        "준비해야 해요",
+        "준비하야 해요",
+        "준비해 수 있어요",
+        "준비했어요"
+      ],
+      "answer": 0,
+      "explain": "하다 → 해야 해요."
+    },
+    {
+      "question": "마시다 → harus minum?",
+      "options": [
+        "마셔야 해요",
+        "마시야 해요",
+        "마실 거예요",
+        "마셨어요"
+      ],
+      "answer": 0,
+      "explain": "마시다 → 마셔야 해요."
+    },
+    {
+      "question": "벗다 → harus melepas?",
+      "options": [
+        "벗어야 해요",
+        "벗아야 해요",
+        "벗을 수 있어요",
+        "벗고 싶어요"
+      ],
+      "answer": 0,
+      "explain": "벗어야 해요."
+    },
+    {
+      "question": "일어나다 → harus bangun?",
+      "options": [
+        "일어나야 해요",
+        "일어나어야 해요",
+        "일어날 거예요",
+        "일어나고 있어요"
+      ],
+      "answer": 0,
+      "explain": "일어나야 해요."
+    },
+    {
+      "question": "Keadaan sosial/aturan dapat memakai pola ini untuk…",
+      "options": [
+        "menyatakan kewajiban",
+        "menyatakan masa lalu",
+        "menyatakan kontras",
+        "menyatakan lokasi"
+      ],
+      "answer": 0,
+      "explain": "Necessity/obligation."
+    }
+  ]
+}
