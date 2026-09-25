@@ -88,7 +88,54 @@
       "roman": "gyeoureneun somnibureul sseoyo",
       "id": "Pada musim dingin saya memakai selimut kapas.",
       "note": "솜이불 → [솜니불].",
-      "speak": "겨울에는 솜이불을 써요."
+      "speak": "겨울에는 솜이불을 써요.",
+      "map": {
+        "units": [
+          {
+            "ko": "겨울",
+            "roman": "gyeoul",
+            "literal": "musim dingin"
+          },
+          {
+            "ko": "에는",
+            "roman": "eneun",
+            "literal": "pada / topik"
+          },
+          {
+            "ko": "솜이불",
+            "roman": "somnibul",
+            "literal": "selimut kapas"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "써요",
+            "roman": "sseoyo",
+            "literal": "memakai"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Pada musim dingin",
+            "ref": 0
+          },
+          {
+            "text": "saya memakai",
+            "ref": 4
+          },
+          {
+            "text": "selimut kapas",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 4
+          }
+        ]
+      }
     },
     {
       "ko": "한여름에는 정말 더워요.",
@@ -96,7 +143,49 @@
       "roman": "hannyeoreumeneun jeongmal deowoyo",
       "id": "Pada puncak musim panas sangat panas.",
       "note": "한여름 → [한녀름].",
-      "speak": "한여름에는 정말 더워요."
+      "speak": "한여름에는 정말 더워요.",
+      "map": {
+        "units": [
+          {
+            "ko": "한여름",
+            "roman": "hannyeoreum",
+            "literal": "puncak musim panas"
+          },
+          {
+            "ko": "에는",
+            "roman": "eneun",
+            "literal": "pada / topik"
+          },
+          {
+            "ko": "정말",
+            "roman": "jeongmal",
+            "literal": "sangat"
+          },
+          {
+            "ko": "더워요",
+            "roman": "deowoyo",
+            "literal": "panas"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Pada puncak musim panas",
+            "ref": 0
+          },
+          {
+            "text": "sangat",
+            "ref": 2
+          },
+          {
+            "text": "panas",
+            "ref": 3
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     },
     {
       "ko": "담요를 하나 주세요.",
@@ -104,7 +193,53 @@
       "roman": "damnyoreul hana juseyo",
       "id": "Tolong beri saya satu selimut.",
       "note": "담요 → [담뇨].",
-      "speak": "담요를 하나 주세요."
+      "speak": "담요를 하나 주세요.",
+      "map": {
+        "units": [
+          {
+            "ko": "담요",
+            "roman": "damnyo",
+            "literal": "selimut"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "하나",
+            "roman": "hana",
+            "literal": "satu"
+          },
+          {
+            "ko": "주세요",
+            "roman": "juseyo",
+            "literal": "tolong beri"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Tolong beri",
+            "ref": 3
+          },
+          {
+            "text": "saya",
+            "ref": 3
+          },
+          {
+            "text": "satu",
+            "ref": 2
+          },
+          {
+            "text": "selimut",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     }
   ],
   "units": [
