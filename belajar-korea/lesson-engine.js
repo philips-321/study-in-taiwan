@@ -23,12 +23,26 @@ function speak(txt){
 function audioPanel(){
  return '<div class="audio-panel"><label>Suara <select id="voiceSelect"><option>Memuat…</option></select></label><label>Kecepatan <select id="speechRate"><option value=".75">0.75x</option><option value=".9">0.9x</option><option value="1" selected>1.0x</option></select></label><button id="testVoice">▶ Tes suara</button><button id="stopVoice">■ Stop</button><span class="status" id="voiceStatus"></span></div>';
 }
+function getWhy(){return localStorage.getItem('levelingWhy')||''}
+function getChallenge(){return Number(localStorage.getItem('levelingChallengeTarget')||80)}
+function reviewQueue(){try{return JSON.parse(localStorage.getItem('levelingReviewQueue')||'[]')}catch{return []}}
+function saveReviewQueue(q){localStorage.setItem('levelingReviewQueue',JSON.stringify(q))}
+function addWrongToReview(qi){
+ const q=lesson.quiz[qi], queue=reviewQueue(), id=lesson.id+':'+qi;
+ if(!queue.some(x=>x.id===id))queue.push({id,lessonId:lesson.id,lessonTitle:lesson.title,question:q.question,addedAt:Date.now(),path:lessonPath()});
+ saveReviewQueue(queue);
+}
+function clearCorrectFromReview(qi){
+ const id=lesson.id+':'+qi;saveReviewQueue(reviewQueue().filter(x=>x.id!==id));
+}
 function render(){
  document.title=lesson.title+' | Leveling';
  const done=localStorage.getItem('levelingDone:'+lesson.id)==='1';
  const units=lesson.units.map(u=>'<article class="unit"><div class="char">'+esc(u.char)+'</div><div class="roman">'+esc(u.roman)+'</div><p class="hint">'+esc(u.hint)+'</p><button class="say" data-say="'+esc(u.speak||u.example?.ko||u.char)+'">▶ Dengarkan</button>'+(u.example?'<div class="example"><b>'+esc(u.example.ko)+'</b><small>'+esc(u.example.roman)+' · '+esc(u.example.id)+'</small></div>':'')+'</article>').join('');
  const quizzes=lesson.quiz.map((q,i)=>'<div class="quiz-card" data-q="'+i+'"><div class="quiz-q">'+(i+1)+'. '+esc(q.question)+'</div><div class="options">'+q.options.map((o,j)=>'<button class="option" data-i="'+j+'">'+esc(o)+'</button>').join('')+'</div><div class="feedback"></div></div>').join('');
+ const why=getWhy(),challenge=getChallenge();
  $('#app').innerHTML='<section class="lesson-head"><div class="kicker">'+esc(lesson.level)+' · Pelajaran '+esc(lesson.order)+'</div><h1>'+esc(lesson.title)+'</h1><p>'+esc(lesson.subtitle)+'</p>'+audioPanel()+'<div class="objective">'+lesson.objectives.map(x=>'<span class="chip">'+esc(x)+'</span>').join('')+'</div></section>'+
+ '<section class="block study-reminder">'+(why?'<div><b>Kenapa kamu belajar:</b> '+esc(why)+'</div>':'')+'<div><b>Target skor pribadi:</b> '+challenge+'%</div><div><a href="progress.html">Lihat progress & review →</a></div></section>'+
  '<section class="block"><h2>Kenali bentuk dan bunyinya</h2><p>'+esc(lesson.intro)+'</p><div class="tip">'+esc(lesson.tip)+'</div><div class="units">'+units+'</div></section>'+
  '<section class="block"><div class="quiz-head"><div><h2>Latihan skor</h2><p>Jawab semua soal. Setiap soal bernilai sama dan jawaban pertama yang dipilih dihitung sebagai nilai.</p></div><div class="scorebox"><b id="scoreText">0 / '+lesson.quiz.length+'</b><span id="scorePct">0%</span></div></div><div class="quiz-meter"><span id="quizMeter"></span></div>'+quizzes+'<div id="quizResult" class="quiz-result">Belum semua soal dijawab.</div><button id="retryQuiz" class="retry-quiz" type="button">↻ Ulangi kuis</button></section>'+
  '<section class="block finish"><div><h2>Selesai pelajaran ini?</h2><div id="doneLabel" class="'+(done?'done':'')+'">'+(done?'✓ Sudah ditandai selesai':'Tandai selesai agar progress tersimpan di browser ini.')+'</div></div><button id="finishBtn">'+(done?'Batalkan selesai':'✓ Tandai selesai')+'</button></section>'+
@@ -56,7 +70,7 @@ function answer(card,i){
  quizAnswers[qi]=i;
  opts.forEach(x=>x.disabled=true);
  opts[i].classList.add(i===q.answer?'correct':'wrong');
- if(i!==q.answer)opts[q.answer].classList.add('correct');
+ if(i!==q.answer){opts[q.answer].classList.add('correct');addWrongToReview(qi)}else{clearCorrectFromReview(qi)}
  fb.textContent=i===q.answer?'✓ Benar. '+(q.explain||''):'✗ Belum tepat. '+(q.explain||'Perhatikan lagi materinya.');
  updateScore();
 }
@@ -70,7 +84,7 @@ function updateScore(){
  if(res){
    if(answered<total)res.textContent='Sudah dijawab '+answered+' dari '+total+' soal.';
    else{
-     const pass=lesson.passScore||80;
+     const pass=Math.max(lesson.passScore||80,getChallenge());
      const key='levelingBest:'+lesson.id;
      const best=Math.max(Number(localStorage.getItem(key)||0),pct);localStorage.setItem(key,String(best));
      res.className='quiz-result '+(pct>=pass?'pass':'fail');
