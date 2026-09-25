@@ -1,0 +1,676 @@
+{
+  "id": "ko-l5-005",
+  "level": "Level 5 · Dialog & reading",
+  "order": 5,
+  "passScore": 80,
+  "title": "Dialog: membuat jadwal",
+  "subtitle": "Menggabungkan waktu, ajakan, rencana, dan tempat dalam percakapan natural.",
+  "intro": "Simulasi membuat rencana belajar bersama.",
+  "tip": "Putar satu turn, ikuti color map, lalu ulangi dengan keras. Setelah paham, coba baca dua peran tanpa melihat arti.",
+  "progressStart": 90,
+  "objectives": [
+    "12 turn",
+    "audio per turn",
+    "comprehension"
+  ],
+  "prev": {
+    "title": "Pelajaran 4 · Transportasi",
+    "path": "level-5/004-transport-dialogue.json"
+  },
+  "next": {
+    "title": "Pelajaran 6 · Reading",
+    "path": "level-5/006-weekend-reading.json"
+  },
+  "dialogues": [
+    {
+      "title": "Dialog: membuat jadwal",
+      "intro": "Dialog latihan dengan 12 turn.",
+      "turns": [
+        {
+          "speaker": "A",
+          "ko": "내일 시간 있어요?",
+          "roman": "naeil sigan isseoyo",
+          "id": "Besok ada waktu?",
+          "map": {
+            "units": [
+              {
+                "ko": "내일",
+                "roman": "naeil",
+                "literal": "besok"
+              },
+              {
+                "ko": "시간",
+                "roman": "sigan",
+                "literal": "waktu"
+              },
+              {
+                "ko": "있어요",
+                "roman": "isseoyo",
+                "literal": "ada"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Besok",
+                "ref": 0
+              },
+              {
+                "text": "ada waktu",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "내일 시간 있어요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "오전에는 수업이 있어요.",
+          "roman": "ojeoneneun sueobi isseoyo",
+          "id": "Pagi saya ada kelas.",
+          "map": {
+            "units": [
+              {
+                "ko": "오전",
+                "roman": "ojeon",
+                "literal": "pagi"
+              },
+              {
+                "ko": "에는",
+                "roman": "eneun",
+                "literal": "pada/topik"
+              },
+              {
+                "ko": "수업",
+                "roman": "sueop",
+                "literal": "kelas"
+              },
+              {
+                "ko": "이",
+                "roman": "i",
+                "literal": "subjek"
+              },
+              {
+                "ko": "있어요",
+                "roman": "isseoyo",
+                "literal": "ada"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Pagi",
+                "ref": 0
+              },
+              {
+                "text": "saya ada",
+                "ref": 4
+              },
+              {
+                "text": "kelas",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "오전에는 수업이 있어요."
+        },
+        {
+          "speaker": "A",
+          "ko": "수업은 몇 시에 끝나요?",
+          "roman": "sueobeun myeot sie kkeunnayo",
+          "id": "Kelas selesai jam berapa?",
+          "map": {
+            "units": [
+              {
+                "ko": "수업",
+                "roman": "sueop",
+                "literal": "kelas"
+              },
+              {
+                "ko": "은",
+                "roman": "eun",
+                "literal": "topik"
+              },
+              {
+                "ko": "몇 시",
+                "roman": "myeot si",
+                "literal": "jam berapa"
+              },
+              {
+                "ko": "에",
+                "roman": "e",
+                "literal": "pada"
+              },
+              {
+                "ko": "끝나요",
+                "roman": "kkeunnayo",
+                "literal": "selesai"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Kelas",
+                "ref": 0
+              },
+              {
+                "text": "selesai",
+                "ref": 4
+              },
+              {
+                "text": "jam berapa",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "수업은 몇 시에 끝나요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "열두 시 반에 끝나요.",
+          "roman": "yeoldu si bane kkeunnayo",
+          "id": "Selesai pukul dua belas tiga puluh.",
+          "map": {
+            "units": [
+              {
+                "ko": "열두 시 반",
+                "roman": "yeoldu si ban",
+                "literal": "12:30"
+              },
+              {
+                "ko": "에",
+                "roman": "e",
+                "literal": "pada"
+              },
+              {
+                "ko": "끝나요",
+                "roman": "kkeunnayo",
+                "literal": "selesai"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Selesai",
+                "ref": 2
+              },
+              {
+                "text": "pukul 12:30",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "열두 시 반에 끝나요."
+        },
+        {
+          "speaker": "A",
+          "ko": "그럼 한 시에 점심 먹을까요?",
+          "roman": "geureom han sie jeomsim meogeulkkayo",
+          "id": "Kalau begitu, makan siang jam satu?",
+          "map": {
+            "units": [
+              {
+                "ko": "그럼",
+                "roman": "geureom",
+                "literal": "kalau begitu"
+              },
+              {
+                "ko": "한 시",
+                "roman": "han si",
+                "literal": "jam satu"
+              },
+              {
+                "ko": "에",
+                "roman": "e",
+                "literal": "pada"
+              },
+              {
+                "ko": "점심",
+                "roman": "jeomsim",
+                "literal": "makan siang"
+              },
+              {
+                "ko": "먹을까요",
+                "roman": "meogeulkkayo",
+                "literal": "maukah makan"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Kalau begitu",
+                "ref": 0
+              },
+              {
+                "text": "makan siang",
+                "ref": 3
+              },
+              {
+                "text": "jam satu",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "그럼 한 시에 점심 먹을까요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "좋아요. 어디에서 만날까요?",
+          "roman": "joayo. eodieseo mannalkkayo",
+          "id": "Boleh. Kita bertemu di mana?",
+          "map": {
+            "units": [
+              {
+                "ko": "좋아요",
+                "roman": "joayo",
+                "literal": "baik"
+              },
+              {
+                "ko": "어디",
+                "roman": "eodi",
+                "literal": "di mana"
+              },
+              {
+                "ko": "에서",
+                "roman": "eseo",
+                "literal": "di"
+              },
+              {
+                "ko": "만날까요",
+                "roman": "mannalkkayo",
+                "literal": "maukah bertemu"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Boleh",
+                "ref": 0
+              },
+              {
+                "text": "Kita bertemu",
+                "ref": 3
+              },
+              {
+                "text": "di mana",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "좋아요. 어디에서 만날까요?"
+        },
+        {
+          "speaker": "A",
+          "ko": "학교 앞 카페에서 만나요.",
+          "roman": "hakgyo ap kapeeseo mannayo",
+          "id": "Mari bertemu di kafe depan sekolah.",
+          "map": {
+            "units": [
+              {
+                "ko": "학교",
+                "roman": "hakgyo",
+                "literal": "sekolah"
+              },
+              {
+                "ko": "앞",
+                "roman": "ap",
+                "literal": "depan"
+              },
+              {
+                "ko": "카페",
+                "roman": "kape",
+                "literal": "kafe"
+              },
+              {
+                "ko": "에서",
+                "roman": "eseo",
+                "literal": "di"
+              },
+              {
+                "ko": "만나요",
+                "roman": "mannayo",
+                "literal": "bertemu"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Mari bertemu",
+                "ref": 4
+              },
+              {
+                "text": "di kafe",
+                "ref": 2
+              },
+              {
+                "text": "depan sekolah",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "학교 앞 카페에서 만나요."
+        },
+        {
+          "speaker": "B",
+          "ko": "점심 후에는 뭐 할 거예요?",
+          "roman": "jeomsim hueneun mwo hal geoyeyo",
+          "id": "Setelah makan siang mau melakukan apa?",
+          "map": {
+            "units": [
+              {
+                "ko": "점심 후",
+                "roman": "jeomsim hu",
+                "literal": "setelah makan siang"
+              },
+              {
+                "ko": "에는",
+                "roman": "eneun",
+                "literal": "pada/topik"
+              },
+              {
+                "ko": "뭐",
+                "roman": "mwo",
+                "literal": "apa"
+              },
+              {
+                "ko": "할 거예요",
+                "roman": "hal geoyeyo",
+                "literal": "akan melakukan"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Setelah makan siang",
+                "ref": 0
+              },
+              {
+                "text": "mau melakukan",
+                "ref": 3
+              },
+              {
+                "text": "apa",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "점심 후에는 뭐 할 거예요?"
+        },
+        {
+          "speaker": "A",
+          "ko": "도서관에서 공부할 거예요.",
+          "roman": "doseogwaneseo gongbuhal geoyeyo",
+          "id": "Saya akan belajar di perpustakaan.",
+          "map": {
+            "units": [
+              {
+                "ko": "도서관",
+                "roman": "doseogwan",
+                "literal": "perpustakaan"
+              },
+              {
+                "ko": "에서",
+                "roman": "eseo",
+                "literal": "di"
+              },
+              {
+                "ko": "공부할 거예요",
+                "roman": "gongbuhal geoyeyo",
+                "literal": "akan belajar"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Saya akan belajar",
+                "ref": 2
+              },
+              {
+                "text": "di perpustakaan",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "도서관에서 공부할 거예요."
+        },
+        {
+          "speaker": "B",
+          "ko": "저도 같이 공부하고 싶어요.",
+          "roman": "jeodo gachi gongbuhago sipeoyo",
+          "id": "Saya juga ingin belajar bersama.",
+          "map": {
+            "units": [
+              {
+                "ko": "저",
+                "roman": "jeo",
+                "literal": "saya"
+              },
+              {
+                "ko": "도",
+                "roman": "do",
+                "literal": "juga"
+              },
+              {
+                "ko": "같이",
+                "roman": "gachi",
+                "literal": "bersama"
+              },
+              {
+                "ko": "공부하고 싶어요",
+                "roman": "gongbuhago sipeoyo",
+                "literal": "ingin belajar"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Saya",
+                "ref": 0
+              },
+              {
+                "text": "juga",
+                "ref": 1
+              },
+              {
+                "text": "ingin belajar",
+                "ref": 3
+              },
+              {
+                "text": "bersama",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "저도 같이 공부하고 싶어요."
+        },
+        {
+          "speaker": "A",
+          "ko": "좋아요. 다섯 시까지 공부해요.",
+          "roman": "joayo. daseot sikkaji gongbuhaeyo",
+          "id": "Baik. Kita belajar sampai jam lima.",
+          "map": {
+            "units": [
+              {
+                "ko": "좋아요",
+                "roman": "joayo",
+                "literal": "baik"
+              },
+              {
+                "ko": "다섯 시",
+                "roman": "daseot si",
+                "literal": "jam lima"
+              },
+              {
+                "ko": "까지",
+                "roman": "kkaji",
+                "literal": "sampai"
+              },
+              {
+                "ko": "공부해요",
+                "roman": "gongbuhaeyo",
+                "literal": "belajar"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Baik",
+                "ref": 0
+              },
+              {
+                "text": "Kita belajar",
+                "ref": 3
+              },
+              {
+                "text": "sampai jam lima",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "좋아요. 다섯 시까지 공부해요."
+        },
+        {
+          "speaker": "B",
+          "ko": "좋아요. 내일 봐요!",
+          "roman": "joayo. naeil bwayo",
+          "id": "Baik. Sampai jumpa besok!",
+          "map": {
+            "units": [
+              {
+                "ko": "좋아요",
+                "roman": "joayo",
+                "literal": "baik"
+              },
+              {
+                "ko": "내일",
+                "roman": "naeil",
+                "literal": "besok"
+              },
+              {
+                "ko": "봐요",
+                "roman": "bwayo",
+                "literal": "bertemu/melihat"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Baik",
+                "ref": 0
+              },
+              {
+                "text": "Sampai jumpa",
+                "ref": 2
+              },
+              {
+                "text": "besok",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "좋아요. 내일 봐요!"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Besok pagi B punya apa?",
+      "options": [
+        "kelas",
+        "rapat",
+        "kerja",
+        "libur"
+      ],
+      "answer": 0,
+      "explain": "수업이 있어요."
+    },
+    {
+      "question": "Kelas selesai jam?",
+      "options": [
+        "12:30",
+        "12:00",
+        "13:00",
+        "11:30"
+      ],
+      "answer": 0,
+      "explain": "열두 시 반."
+    },
+    {
+      "question": "Rencana makan siang jam?",
+      "options": [
+        "1",
+        "2",
+        "12",
+        "3"
+      ],
+      "answer": 0,
+      "explain": "한 시."
+    },
+    {
+      "question": "Mereka bertemu di mana?",
+      "options": [
+        "kafe depan sekolah",
+        "perpustakaan",
+        "stasiun",
+        "rumah"
+      ],
+      "answer": 0,
+      "explain": "학교 앞 카페."
+    },
+    {
+      "question": "Setelah makan siang A akan?",
+      "options": [
+        "belajar di perpustakaan",
+        "pulang",
+        "bekerja",
+        "belanja"
+      ],
+      "answer": 0,
+      "explain": "도서관에서 공부할 거예요."
+    },
+    {
+      "question": "B ingin?",
+      "options": [
+        "ikut belajar",
+        "tidur",
+        "pergi sendiri",
+        "pulang"
+      ],
+      "answer": 0,
+      "explain": "같이 공부하고 싶어요."
+    },
+    {
+      "question": "Belajar sampai jam?",
+      "options": [
+        "5",
+        "4",
+        "6",
+        "3"
+      ],
+      "answer": 0,
+      "explain": "다섯 시까지."
+    },
+    {
+      "question": "몇 시에 끝나요? berarti…",
+      "options": [
+        "selesai jam berapa?",
+        "mulai jam berapa?",
+        "berapa harga?",
+        "di mana?"
+      ],
+      "answer": 0,
+      "explain": "Ask end time."
+    },
+    {
+      "question": "뭐 할 거예요? berarti…",
+      "options": [
+        "akan melakukan apa?",
+        "sudah melakukan apa?",
+        "ingin makan apa?",
+        "siapa?"
+      ],
+      "answer": 0,
+      "explain": "Future plan."
+    },
+    {
+      "question": "내일 봐요 berarti…",
+      "options": [
+        "sampai jumpa besok",
+        "lihat besok saja",
+        "besok hujan",
+        "besok libur"
+      ],
+      "answer": 0,
+      "explain": "Common farewell."
+    }
+  ]
+}
