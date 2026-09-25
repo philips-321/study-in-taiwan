@@ -89,7 +89,54 @@
       "roman": "i noraega jeongmal joayo",
       "id": "Saya sangat suka lagu ini.",
       "note": "좋아요 → [조아요].",
-      "speak": "이 노래가 정말 좋아요."
+      "speak": "이 노래가 정말 좋아요.",
+      "map": {
+        "units": [
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "ini"
+          },
+          {
+            "ko": "노래",
+            "roman": "norae",
+            "literal": "lagu"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "penanda subjek"
+          },
+          {
+            "ko": "정말",
+            "roman": "jeongmal",
+            "literal": "sangat"
+          },
+          {
+            "ko": "좋아요",
+            "roman": "joayo",
+            "literal": "suka / bagus"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya sangat suka",
+            "ref": 4
+          },
+          {
+            "text": "lagu",
+            "ref": 1
+          },
+          {
+            "text": "ini",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 4
+          }
+        ]
+      }
     },
     {
       "ko": "사람이 정말 많아요.",
@@ -97,7 +144,49 @@
       "roman": "sarami jeongmal manayo",
       "id": "Orangnya sangat banyak.",
       "note": "많아요 → [마나요].",
-      "speak": "사람이 정말 많아요."
+      "speak": "사람이 정말 많아요.",
+      "map": {
+        "units": [
+          {
+            "ko": "사람",
+            "roman": "saram",
+            "literal": "orang"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "penanda subjek"
+          },
+          {
+            "ko": "정말",
+            "roman": "jeongmal",
+            "literal": "sangat"
+          },
+          {
+            "ko": "많아요",
+            "roman": "manayo",
+            "literal": "banyak"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Orangnya",
+            "ref": 0
+          },
+          {
+            "text": "sangat",
+            "ref": 2
+          },
+          {
+            "text": "banyak",
+            "ref": 3
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     },
     {
       "ko": "저는 매운 음식을 싫어해요.",
@@ -105,7 +194,63 @@
       "roman": "jeoneun maeun eumsigeul sireohaeyo",
       "id": "Saya tidak suka makanan pedas.",
       "note": "싫어 → [시러].",
-      "speak": "저는 매운 음식을 싫어해요."
+      "speak": "저는 매운 음식을 싫어해요.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "penanda topik"
+          },
+          {
+            "ko": "매운",
+            "roman": "maeun",
+            "literal": "pedas"
+          },
+          {
+            "ko": "음식",
+            "roman": "eumsik",
+            "literal": "makanan"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "싫어해요",
+            "roman": "sireohaeyo",
+            "literal": "tidak suka"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "tidak suka",
+            "ref": 5
+          },
+          {
+            "text": "makanan",
+            "ref": 3
+          },
+          {
+            "text": "pedas",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 5
+          }
+        ]
+      }
     }
   ],
   "units": [
