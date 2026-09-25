@@ -30,7 +30,40 @@
       "example": {
         "ko": "밥을 먹어요",
         "roman": "babeul meogeoyo",
-        "id": "makan nasi"
+        "id": "makan nasi",
+        "map": {
+          "units": [
+            {
+              "ko": "밥",
+              "roman": "bap",
+              "literal": "nasi / makanan"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "먹어요",
+              "roman": "meogeoyo",
+              "literal": "makan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Makan",
+              "ref": 2
+            },
+            {
+              "text": "nasi",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -41,7 +74,40 @@
       "example": {
         "ko": "책을 읽어요",
         "roman": "chaegeul ilgeoyo",
-        "id": "membaca buku"
+        "id": "membaca buku",
+        "map": {
+          "units": [
+            {
+              "ko": "책",
+              "roman": "chaek",
+              "literal": "buku"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "읽어요",
+              "roman": "ilgeoyo",
+              "literal": "membaca"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Membaca",
+              "ref": 2
+            },
+            {
+              "text": "buku",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -52,7 +118,40 @@
       "example": {
         "ko": "커피를 마셔요",
         "roman": "keopireul masyeoyo",
-        "id": "minum kopi"
+        "id": "minum kopi",
+        "map": {
+          "units": [
+            {
+              "ko": "커피",
+              "roman": "keopi",
+              "literal": "kopi"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "마셔요",
+              "roman": "masyeoyo",
+              "literal": "minum"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Minum",
+              "ref": 2
+            },
+            {
+              "text": "kopi",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -63,7 +162,40 @@
       "example": {
         "ko": "영화를 봐요",
         "roman": "yeonghwareul bwayo",
-        "id": "menonton film"
+        "id": "menonton film",
+        "map": {
+          "units": [
+            {
+              "ko": "영화",
+              "roman": "yeonghwa",
+              "literal": "film"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "봐요",
+              "roman": "bwayo",
+              "literal": "menonton / melihat"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Menonton",
+              "ref": 2
+            },
+            {
+              "text": "film",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     }
   ],
