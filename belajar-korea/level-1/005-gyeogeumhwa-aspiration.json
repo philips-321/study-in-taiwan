@@ -1,0 +1,266 @@
+{
+  "id": "ko-l1-005",
+  "level": "Level 1 · Pengucapan",
+  "order": 5,
+  "passScore": 80,
+  "title": "격음화 — aspiration",
+  "subtitle": "Ketika ㅎ bertemu ㄱ, ㄷ, ㅂ, atau ㅈ, bunyi gabungannya sering menjadi ㅋ, ㅌ, ㅍ, atau ㅊ.",
+  "intro": "격음화 menghasilkan bunyi beraspirasi—ada hembusan udara yang lebih kuat. ㅎ dapat berada sebelum atau sesudah konsonan yang dipengaruhi.",
+  "tip": "Pasangan inti: ㄱ+ㅎ/ㅎ+ㄱ → ㅋ, ㄷ+ㅎ/ㅎ+ㄷ → ㅌ, ㅂ+ㅎ/ㅎ+ㅂ → ㅍ, ㅈ+ㅎ/ㅎ+ㅈ → ㅊ.",
+  "progressStart": 58,
+  "objectives": [
+    "ㅋ ㅌ ㅍ ㅊ",
+    "ㅎ interaction",
+    "kalimat audio"
+  ],
+  "prev": {
+    "title": "Pelajaran 4 · 된소리되기",
+    "path": "level-1/004-doensori-tensing.json"
+  },
+  "next": {
+    "title": "Pelajaran 6 · 유음화",
+    "path": "level-1/006-yueumhwa-liquidization.json"
+  },
+  "detailSections": [
+    {
+      "title": "Bedanya dengan 된소리되기",
+      "paragraphs": [
+        "된소리되기 menghasilkan bunyi tegang seperti ㄲ atau ㄸ. 격음화 menghasilkan bunyi beraspirasi seperti ㅋ atau ㅌ. Keduanya terdengar 'lebih kuat', tetapi mekanismenya berbeda.",
+        "Perhatikan keberadaan ㅎ. Jika ㅎ bertemu konsonan tertentu, biasanya muncul aspirasi."
+      ]
+    },
+    {
+      "title": "Tulisan tetap sama",
+      "paragraphs": [
+        "좋다 ditulis 좋다, bukan 조타. [조타] hanya menunjukkan hasil pengucapan setelah ㅎ dan ㄷ bergabung menjadi ㅌ."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "좋 + 다",
+      "pronounced": "[조타]",
+      "steps": [
+        "좋 berakhir ㅎ.",
+        "다 dimulai ㄷ.",
+        "ㅎ + ㄷ bergabung menjadi ㅌ."
+      ],
+      "note": "Tulisan tetap 좋다.",
+      "speak": "좋다"
+    },
+    {
+      "written": "놓 + 고",
+      "pronounced": "[노코]",
+      "steps": [
+        "놓 berakhir ㅎ.",
+        "고 dimulai ㄱ.",
+        "ㅎ + ㄱ → ㅋ."
+      ],
+      "note": "Tulisan tetap 놓고.",
+      "speak": "놓고"
+    },
+    {
+      "written": "축 + 하",
+      "pronounced": "[추카]",
+      "steps": [
+        "축 berakhir ㄱ.",
+        "하 dimulai ㅎ.",
+        "ㄱ + ㅎ → ㅋ."
+      ],
+      "note": "Tulisan tetap 축하.",
+      "speak": "축하"
+    },
+    {
+      "written": "입 + 학",
+      "pronounced": "[이팍]",
+      "steps": [
+        "입 berakhir ㅂ.",
+        "학 dimulai ㅎ.",
+        "ㅂ + ㅎ → ㅍ."
+      ],
+      "note": "Tulisan tetap 입학.",
+      "speak": "입학"
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "오늘 날씨가 좋아요.",
+      "pronunciation": "[오늘 날씨가 조아요]",
+      "roman": "oneul nalssiga joayo",
+      "id": "Cuaca hari ini bagus.",
+      "note": "좋아요 juga menunjukkan pelemahan ㅎ di depan vokal; akan dibahas lagi di pelajaran 8.",
+      "speak": "오늘 날씨가 좋아요."
+    },
+    {
+      "ko": "합격을 축하해요.",
+      "pronunciation": "[합껴글 추카해요]",
+      "roman": "hapkkyeogeul chukahaeyo",
+      "id": "Selamat atas kelulusannya.",
+      "note": "축하 → [추카].",
+      "speak": "합격을 축하해요."
+    },
+    {
+      "ko": "대학교에 입학했어요.",
+      "pronunciation": "[대학교에 이파캤써요]",
+      "roman": "daehakgyoe iphakhaesseoyo",
+      "id": "Saya masuk universitas.",
+      "note": "입학 → [이팍].",
+      "speak": "대학교에 입학했어요."
+    },
+    {
+      "ko": "책을 놓고 왔어요.",
+      "pronunciation": "[채글 노코 와써요]",
+      "roman": "chaegeul noko wasseoyo",
+      "id": "Saya datang setelah meninggalkan bukunya.",
+      "note": "놓고 → [노코].",
+      "speak": "책을 놓고 왔어요."
+    }
+  ],
+  "units": [
+    {
+      "char": "좋다",
+      "roman": "jota",
+      "hint": "ㅎ + ㄷ → ㅌ.",
+      "speak": "좋다",
+      "example": {
+        "ko": "날씨가 좋다",
+        "roman": "nalssiga jota",
+        "id": "cuacanya bagus"
+      }
+    },
+    {
+      "char": "놓고",
+      "roman": "noko",
+      "hint": "ㅎ + ㄱ → ㅋ.",
+      "speak": "놓고",
+      "example": {
+        "ko": "책을 놓고 가요",
+        "roman": "chaegeul noko gayo",
+        "id": "tinggalkan buku lalu pergi"
+      }
+    },
+    {
+      "char": "축하",
+      "roman": "chukha → chuka",
+      "hint": "ㄱ + ㅎ → ㅋ.",
+      "speak": "축하",
+      "example": {
+        "ko": "축하해요",
+        "roman": "chukahaeyo",
+        "id": "selamat"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "좋다 paling dekat dibaca…",
+      "options": [
+        "조타",
+        "조따",
+        "존다",
+        "조다"
+      ],
+      "answer": 0,
+      "explain": "ㅎ + ㄷ → ㅌ."
+    },
+    {
+      "question": "놓고 paling dekat dibaca…",
+      "options": [
+        "노코",
+        "노꼬",
+        "농고",
+        "노고"
+      ],
+      "answer": 0,
+      "explain": "ㅎ + ㄱ → ㅋ."
+    },
+    {
+      "question": "축하 paling dekat dibaca…",
+      "options": [
+        "추카",
+        "축하 apa adanya",
+        "축까",
+        "춘하"
+      ],
+      "answer": 0,
+      "explain": "ㄱ + ㅎ → ㅋ."
+    },
+    {
+      "question": "입학 paling dekat dibaca…",
+      "options": [
+        "이팍",
+        "입학 apa adanya",
+        "임학",
+        "이빡"
+      ],
+      "answer": 0,
+      "explain": "ㅂ + ㅎ → ㅍ."
+    },
+    {
+      "question": "ㅎ + ㄱ menghasilkan…",
+      "options": [
+        "ㅋ",
+        "ㄲ",
+        "ㅇ",
+        "ㄴ"
+      ],
+      "answer": 0,
+      "explain": "Hasil aspirasi adalah ㅋ."
+    },
+    {
+      "question": "ㅎ + ㄷ menghasilkan…",
+      "options": [
+        "ㅌ",
+        "ㄸ",
+        "ㄴ",
+        "ㅅ"
+      ],
+      "answer": 0,
+      "explain": "Hasil aspirasi adalah ㅌ."
+    },
+    {
+      "question": "ㅂ + ㅎ menghasilkan…",
+      "options": [
+        "ㅍ",
+        "ㅃ",
+        "ㅁ",
+        "ㅎ"
+      ],
+      "answer": 0,
+      "explain": "Hasil aspirasi adalah ㅍ."
+    },
+    {
+      "question": "격음화 berbeda dari 된소리되기 karena…",
+      "options": [
+        "menghasilkan aspirasi, bukan tense consonant",
+        "selalu mengubah ejaan",
+        "hanya terjadi pada vokal",
+        "tidak melibatkan bunyi"
+      ],
+      "answer": 0,
+      "explain": "격음화 menghasilkan ㅋ/ㅌ/ㅍ/ㅊ."
+    },
+    {
+      "question": "Apakah 좋다 ditulis 조타?",
+      "options": [
+        "ya",
+        "tidak, tetap 좋다",
+        "hanya formal",
+        "hanya informal"
+      ],
+      "answer": 1,
+      "explain": "조타 adalah representasi bunyi."
+    },
+    {
+      "question": "Mana contoh 격음화?",
+      "options": [
+        "축하 → 추카",
+        "국물 → 궁물",
+        "신라 → 실라",
+        "학교 → 학꾜"
+      ],
+      "answer": 0,
+      "explain": "Yang lain adalah aturan berbeda."
+    }
+  ]
+}
