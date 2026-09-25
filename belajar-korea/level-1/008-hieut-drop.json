@@ -1,0 +1,258 @@
+{
+  "id": "ko-l1-008",
+  "level": "Level 1 · Pengucapan",
+  "order": 8,
+  "passScore": 80,
+  "title": "ㅎ 탈락 / 약화 — ㅎ hilang atau melemah",
+  "subtitle": "Dalam lingkungan tertentu, terutama sebelum vokal, ㅎ di batchim dapat tidak terdengar.",
+  "intro": "ㅎ tidak selalu menghasilkan aspirasi. Jika ㅎ berada dalam 받침 ㅎ, ㄶ, atau ㅀ lalu diikuti vokal, ㅎ sering hilang dari pengucapan dan bunyi lain tersambung.",
+  "tip": "Bandingkan 좋다 [조타] dengan 좋아요 [조아요]. Di 좋다, ㅎ memicu aspirasi; di 좋아요, ㅎ melemah/hilang sebelum vokal.",
+  "progressStart": 70,
+  "objectives": [
+    "ㅎ 탈락",
+    "ㄶ/ㅀ",
+    "bandingkan aspirasi"
+  ],
+  "prev": {
+    "title": "Pelajaran 7 · 구개음화",
+    "path": "level-1/007-gugaeumhwa-palatalization.json"
+  },
+  "next": {
+    "title": "Pelajaran 9 · ㄴ 첨가",
+    "path": "level-1/009-n-insertion.json"
+  },
+  "detailSections": [
+    {
+      "title": "Kapan ㅎ hilang?",
+      "paragraphs": [
+        "Jika batchim ㅎ bertemu suku kata berikutnya yang dimulai vokal, ㅎ sering tidak terdengar. 좋 + 아요 menjadi [조아요].",
+        "Pada cluster ㄶ dan ㅀ, unsur ㅎ juga bisa hilang sebelum vokal. 많 + 아요 → [마나요], 싫 + 어요 → [시러요]."
+      ]
+    },
+    {
+      "title": "Jangan samakan dengan 격음화",
+      "paragraphs": [
+        "Jika sesudah ㅎ ada ㄱ/ㄷ/ㅂ/ㅈ, ㅎ dapat membuat bunyi berikutnya aspiratif. Jika sesudahnya vokal, ㅎ justru sering melemah atau hilang. Lingkungan setelah ㅎ menentukan hasil."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "좋 + 아요",
+      "pronounced": "[조아요]",
+      "steps": [
+        "좋 berakhir ㅎ.",
+        "아요 dimulai vokal.",
+        "ㅎ tidak dipertahankan sebagai bunyi terpisah."
+      ],
+      "note": "Tulisan tetap 좋아요.",
+      "speak": "좋아요"
+    },
+    {
+      "written": "놓 + 아요",
+      "pronounced": "[노아요]",
+      "steps": [
+        "놓 berakhir ㅎ.",
+        "아요 mengikuti.",
+        "ㅎ melemah/hilang sebelum vokal."
+      ],
+      "note": "Tulisan tetap 놓아요.",
+      "speak": "놓아요"
+    },
+    {
+      "written": "많 + 아요",
+      "pronounced": "[마나요]",
+      "steps": [
+        "많 memiliki 겹받침 ㄶ.",
+        "Sebelum vokal, ㅎ hilang.",
+        "ㄴ tersambung ke 아."
+      ],
+      "note": "Tulisan tetap 많아요.",
+      "speak": "많아요"
+    },
+    {
+      "written": "싫 + 어요",
+      "pronounced": "[시러요]",
+      "steps": [
+        "싫 memiliki 겹받침 ㅀ.",
+        "Sebelum vokal, ㅎ hilang.",
+        "ㄹ tersambung ke 어."
+      ],
+      "note": "Tulisan tetap 싫어요.",
+      "speak": "싫어요"
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "이 노래가 정말 좋아요.",
+      "pronunciation": "[이 노래가 정말 조아요]",
+      "roman": "i noraega jeongmal joayo",
+      "id": "Saya sangat suka lagu ini.",
+      "note": "좋아요 → [조아요].",
+      "speak": "이 노래가 정말 좋아요."
+    },
+    {
+      "ko": "사람이 정말 많아요.",
+      "pronunciation": "[사라미 정말 마나요]",
+      "roman": "sarami jeongmal manayo",
+      "id": "Orangnya sangat banyak.",
+      "note": "많아요 → [마나요].",
+      "speak": "사람이 정말 많아요."
+    },
+    {
+      "ko": "저는 매운 음식을 싫어해요.",
+      "pronunciation": "[저는 매운 음시글 시러해요]",
+      "roman": "jeoneun maeun eumsigeul sireohaeyo",
+      "id": "Saya tidak suka makanan pedas.",
+      "note": "싫어 → [시러].",
+      "speak": "저는 매운 음식을 싫어해요."
+    }
+  ],
+  "units": [
+    {
+      "char": "좋아요",
+      "roman": "joayo",
+      "hint": "ㅎ hilang sebelum vokal.",
+      "speak": "좋아요",
+      "example": {
+        "ko": "정말 좋아요",
+        "roman": "jeongmal joayo",
+        "id": "sangat suka / bagus"
+      }
+    },
+    {
+      "char": "많아요",
+      "roman": "manayo",
+      "hint": "ㄶ: ㅎ hilang, ㄴ tersambung.",
+      "speak": "많아요",
+      "example": {
+        "ko": "사람이 많아요",
+        "roman": "sarami manayo",
+        "id": "orangnya banyak"
+      }
+    },
+    {
+      "char": "싫어요",
+      "roman": "sireoyo",
+      "hint": "ㅀ: ㅎ hilang, ㄹ tersambung.",
+      "speak": "싫어요",
+      "example": {
+        "ko": "저는 싫어요",
+        "roman": "jeoneun sireoyo",
+        "id": "saya tidak suka"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "좋아요 paling dekat dibaca…",
+      "options": [
+        "조아요",
+        "조하요",
+        "조타요",
+        "존나요"
+      ],
+      "answer": 0,
+      "explain": "ㅎ melemah/hilang sebelum vokal."
+    },
+    {
+      "question": "많아요 paling dekat dibaca…",
+      "options": [
+        "마나요",
+        "만하요",
+        "만타요",
+        "망아요"
+      ],
+      "answer": 0,
+      "explain": "ㄶ에서 ㅎ hilang dan ㄴ tersambung."
+    },
+    {
+      "question": "싫어요 paling dekat dibaca…",
+      "options": [
+        "시러요",
+        "실허요",
+        "시러뇨",
+        "시터요"
+      ],
+      "answer": 0,
+      "explain": "ㅀ에서 ㅎ hilang dan ㄹ tersambung."
+    },
+    {
+      "question": "좋다 dan 좋아요 berbeda karena…",
+      "options": [
+        "sesudah ㅎ lingkungannya berbeda",
+        "ejaan 좋아요 salah",
+        "좋다 selalu informal",
+        "tidak ada aturan"
+      ],
+      "answer": 0,
+      "explain": "좋다 bertemu ㄷ → aspirasi; 좋아요 bertemu vokal → ㅎ hilang."
+    },
+    {
+      "question": "ㅎ sebelum vokal dalam pola ini cenderung…",
+      "options": [
+        "hilang/melemah",
+        "menjadi ㄲ",
+        "menjadi ㅇ",
+        "selalu menjadi ㅊ"
+      ],
+      "answer": 0,
+      "explain": "Inilah ㅎ 탈락/약화."
+    },
+    {
+      "question": "Pada ㄶ + vokal, unsur yang biasanya hilang adalah…",
+      "options": [
+        "ㅎ",
+        "ㄴ",
+        "keduanya selalu",
+        "vokal"
+      ],
+      "answer": 0,
+      "explain": "ㅎ hilang, ㄴ bisa tersambung."
+    },
+    {
+      "question": "Pada ㅀ + vokal, unsur yang biasanya hilang adalah…",
+      "options": [
+        "ㅎ",
+        "ㄹ",
+        "keduanya",
+        "vokal"
+      ],
+      "answer": 0,
+      "explain": "ㅎ hilang, ㄹ tetap terdengar."
+    },
+    {
+      "question": "Apakah 좋아요 ditulis 조아요?",
+      "options": [
+        "ya",
+        "tidak, tetap 좋아요",
+        "hanya formal",
+        "hanya informal"
+      ],
+      "answer": 1,
+      "explain": "조아요 hanya panduan bunyi."
+    },
+    {
+      "question": "Mana contoh ㅎ 탈락?",
+      "options": [
+        "싫어요 → 시러요",
+        "축하 → 추카",
+        "국물 → 궁물",
+        "신라 → 실라"
+      ],
+      "answer": 0,
+      "explain": "축하 adalah aspirasi; lainnya aturan lain."
+    },
+    {
+      "question": "Hal terpenting saat melihat ㅎ adalah…",
+      "options": [
+        "periksa bunyi sesudahnya",
+        "selalu hapus ㅎ",
+        "selalu ubah menjadi ㅋ",
+        "abaikan seluruh kata"
+      ],
+      "answer": 0,
+      "explain": "Lingkungan berikutnya menentukan apakah ㅎ mengaspirasi atau melemah."
+    }
+  ]
+}
