@@ -89,7 +89,7 @@ function render(){
  bind();populateVoices();updateProgress(done?100:lesson.progressStart||10);
 }
 function bind(){
- $('#testVoice').onclick=e=>speak('안녕하세요. 같이 한국어를 공부해요.',false,e.currentTarget);
+ $('#testVoice').onclick=e=>speak('안녕하세요. 같이 한국어를 공부해요.',true,e.currentTarget);
  $('#stopVoice').onclick=()=>{speechSynthesis.cancel();clearRepeatPrompt()};
  $('#voiceSelect').onchange=e=>localStorage.setItem('levelingKoVoice',e.target.value);
  const savedRate=localStorage.getItem('levelingKoRate');if(savedRate)$('#speechRate').value=savedRate;
