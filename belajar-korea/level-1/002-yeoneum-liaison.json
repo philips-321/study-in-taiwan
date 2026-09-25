@@ -289,7 +289,40 @@
       "example": {
         "ko": "집에 가요",
         "roman": "jibe gayo",
-        "id": "pergi ke rumah"
+        "id": "pergi ke rumah",
+        "map": {
+          "units": [
+            {
+              "ko": "집",
+              "roman": "jip",
+              "literal": "rumah"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "ke"
+            },
+            {
+              "ko": "가요",
+              "roman": "gayo",
+              "literal": "pergi"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Pergi",
+              "ref": 2
+            },
+            {
+              "text": "ke",
+              "ref": 1
+            },
+            {
+              "text": "rumah",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -300,7 +333,36 @@
       "example": {
         "ko": "밥을 먹어요",
         "roman": "babeul meogeoyo",
-        "id": "makan nasi"
+        "id": "makan nasi",
+        "map": {
+          "units": [
+            {
+              "ko": "밥",
+              "roman": "bap",
+              "literal": "nasi"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "먹어요",
+              "roman": "meogeoyo",
+              "literal": "makan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Makan",
+              "ref": 2
+            },
+            {
+              "text": "nasi",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -311,7 +373,36 @@
       "example": {
         "ko": "한국어를 배워요",
         "roman": "hangugeoreul baewoyo",
-        "id": "belajar Korea"
+        "id": "belajar Korea",
+        "map": {
+          "units": [
+            {
+              "ko": "한국어",
+              "roman": "hangugeo",
+              "literal": "bahasa Korea"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "배워요",
+              "roman": "baewoyo",
+              "literal": "belajar"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Belajar",
+              "ref": 2
+            },
+            {
+              "text": "bahasa Korea",
+              "ref": 0
+            }
+          ]
+        }
       }
     }
   ],
