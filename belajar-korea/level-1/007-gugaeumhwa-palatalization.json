@@ -253,7 +253,31 @@
       "example": {
         "ko": "같이 가요",
         "roman": "gachi gayo",
-        "id": "pergi bersama"
+        "id": "pergi bersama",
+        "map": {
+          "units": [
+            {
+              "ko": "같이",
+              "roman": "gachi",
+              "literal": "bersama"
+            },
+            {
+              "ko": "가요",
+              "roman": "gayo",
+              "literal": "pergi"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Pergi",
+              "ref": 1
+            },
+            {
+              "text": "bersama",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -264,7 +288,45 @@
       "example": {
         "ko": "굳이 안 해도 돼요",
         "roman": "guji an haedo dwaeyo",
-        "id": "tidak harus dilakukan"
+        "id": "tidak harus dilakukan",
+        "map": {
+          "units": [
+            {
+              "ko": "굳이",
+              "roman": "guji",
+              "literal": "harus / sengaja"
+            },
+            {
+              "ko": "안",
+              "roman": "an",
+              "literal": "tidak"
+            },
+            {
+              "ko": "해도",
+              "roman": "haedo",
+              "literal": "melakukan meskipun"
+            },
+            {
+              "ko": "돼요",
+              "roman": "dwaeyo",
+              "literal": "boleh / tidak masalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Tidak",
+              "ref": 1
+            },
+            {
+              "text": "harus",
+              "ref": 0
+            },
+            {
+              "text": "dilakukan",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -275,7 +337,36 @@
       "example": {
         "ko": "해돋이를 봐요",
         "roman": "haedojireul bwayo",
-        "id": "melihat matahari terbit"
+        "id": "melihat matahari terbit",
+        "map": {
+          "units": [
+            {
+              "ko": "해돋이",
+              "roman": "haedoji",
+              "literal": "matahari terbit"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "봐요",
+              "roman": "bwayo",
+              "literal": "melihat"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Melihat",
+              "ref": 2
+            },
+            {
+              "text": "matahari terbit",
+              "ref": 0
+            }
+          ]
+        }
       }
     }
   ],
