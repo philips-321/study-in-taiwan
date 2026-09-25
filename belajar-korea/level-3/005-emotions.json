@@ -1,0 +1,784 @@
+{
+  "id": "ko-l3-005",
+  "level": "Level 3 · Kosakata tematik",
+  "order": 5,
+  "passScore": 80,
+  "title": "Emosi & perasaan",
+  "subtitle": "Kosakata untuk menyatakan perasaan, kondisi, dan reaksi sehari-hari.",
+  "intro": "Pelajari kosakata lewat contoh kalimat singkat. Fokus bukan hanya menghafal arti, tetapi mengenali bagaimana kata dipakai di dalam kalimat.",
+  "tip": "Putar contoh, ikuti color map, lalu ulangi kalimatnya dengan suara keras setelah audio selesai.",
+  "progressStart": 80,
+  "objectives": [
+    "12 kosakata",
+    "12 contoh",
+    "audio + color map"
+  ],
+  "prev": {
+    "title": "Pelajaran 4 · Sekolah & kerja",
+    "path": "level-3/004-school-work.json"
+  },
+  "next": {
+    "title": "Pelajaran 6 · Aktivitas",
+    "path": "level-3/006-activities.json"
+  },
+  "units": [
+    {
+      "char": "기뻐요",
+      "roman": "gippeoyo",
+      "hint": "senang",
+      "speak": "기뻐요",
+      "example": {
+        "ko": "좋은 소식을 들어서 기뻐요.",
+        "roman": "joeun sosigeul deureoseo gippeoyo",
+        "id": "Saya senang karena mendengar kabar baik.",
+        "map": {
+          "units": [
+            {
+              "ko": "좋은 소식",
+              "roman": "joeun sosik",
+              "literal": "kabar baik"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "들어서",
+              "roman": "deureoseo",
+              "literal": "karena mendengar"
+            },
+            {
+              "ko": "기뻐요",
+              "roman": "gippeoyo",
+              "literal": "senang"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 3
+            },
+            {
+              "text": "senang",
+              "ref": 3
+            },
+            {
+              "text": "karena mendengar",
+              "ref": 2
+            },
+            {
+              "text": "kabar baik",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "슬퍼요",
+      "roman": "seulpeoyo",
+      "hint": "sedih",
+      "speak": "슬퍼요",
+      "example": {
+        "ko": "영화가 슬퍼요.",
+        "roman": "yeonghwaga seulpeoyo",
+        "id": "Filmnya sedih.",
+        "map": {
+          "units": [
+            {
+              "ko": "영화",
+              "roman": "yeonghwa",
+              "literal": "film"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "subjek"
+            },
+            {
+              "ko": "슬퍼요",
+              "roman": "seulpeoyo",
+              "literal": "sedih"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Filmnya",
+              "ref": 0
+            },
+            {
+              "text": "sedih",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "화나요",
+      "roman": "hwanayo",
+      "hint": "marah",
+      "speak": "화나요",
+      "example": {
+        "ko": "기다려서 조금 화나요.",
+        "roman": "gidaryeoseo jogeum hwanayo",
+        "id": "Saya agak marah karena menunggu.",
+        "map": {
+          "units": [
+            {
+              "ko": "기다려서",
+              "roman": "gidaryeoseo",
+              "literal": "karena menunggu"
+            },
+            {
+              "ko": "조금",
+              "roman": "jogeum",
+              "literal": "agak"
+            },
+            {
+              "ko": "화나요",
+              "roman": "hwanayo",
+              "literal": "marah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 2
+            },
+            {
+              "text": "agak",
+              "ref": 1
+            },
+            {
+              "text": "marah",
+              "ref": 2
+            },
+            {
+              "text": "karena menunggu",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "무서워요",
+      "roman": "museowoyo",
+      "hint": "takut / menakutkan",
+      "speak": "무서워요",
+      "example": {
+        "ko": "이 영화는 조금 무서워요.",
+        "roman": "i yeonghwaneun jogeum museowoyo",
+        "id": "Film ini agak menakutkan.",
+        "map": {
+          "units": [
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "ini"
+            },
+            {
+              "ko": "영화",
+              "roman": "yeonghwa",
+              "literal": "film"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "topik"
+            },
+            {
+              "ko": "조금",
+              "roman": "jogeum",
+              "literal": "agak"
+            },
+            {
+              "ko": "무서워요",
+              "roman": "museowoyo",
+              "literal": "menakutkan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Film",
+              "ref": 1
+            },
+            {
+              "text": "ini",
+              "ref": 0
+            },
+            {
+              "text": "agak",
+              "ref": 3
+            },
+            {
+              "text": "menakutkan",
+              "ref": 4
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "걱정돼요",
+      "roman": "geokjeongdwaeyo",
+      "hint": "khawatir",
+      "speak": "걱정돼요",
+      "example": {
+        "ko": "시험 때문에 걱정돼요.",
+        "roman": "siheom ttaemune geokjeongdwaeyo",
+        "id": "Saya khawatir karena ujian.",
+        "map": {
+          "units": [
+            {
+              "ko": "시험",
+              "roman": "siheom",
+              "literal": "ujian"
+            },
+            {
+              "ko": "때문에",
+              "roman": "ttaemune",
+              "literal": "karena"
+            },
+            {
+              "ko": "걱정돼요",
+              "roman": "geokjeongdwaeyo",
+              "literal": "khawatir"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 2
+            },
+            {
+              "text": "khawatir",
+              "ref": 2
+            },
+            {
+              "text": "karena",
+              "ref": 1
+            },
+            {
+              "text": "ujian",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "피곤해요",
+      "roman": "pigonhaeyo",
+      "hint": "lelah",
+      "speak": "피곤해요",
+      "example": {
+        "ko": "오늘 너무 피곤해요.",
+        "roman": "oneul neomu pigonhaeyo",
+        "id": "Hari ini saya sangat lelah.",
+        "map": {
+          "units": [
+            {
+              "ko": "오늘",
+              "roman": "oneul",
+              "literal": "hari ini"
+            },
+            {
+              "ko": "너무",
+              "roman": "neomu",
+              "literal": "sangat"
+            },
+            {
+              "ko": "피곤해요",
+              "roman": "pigonhaeyo",
+              "literal": "lelah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Hari ini",
+              "ref": 0
+            },
+            {
+              "text": "saya sangat",
+              "ref": 1
+            },
+            {
+              "text": "lelah",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "심심해요",
+      "roman": "simsimhaeyo",
+      "hint": "bosan",
+      "speak": "심심해요",
+      "example": {
+        "ko": "집에 혼자 있어서 심심해요.",
+        "roman": "jibe honja isseoseo simsimhaeyo",
+        "id": "Saya bosan karena sendirian di rumah.",
+        "map": {
+          "units": [
+            {
+              "ko": "집",
+              "roman": "jip",
+              "literal": "rumah"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "혼자",
+              "roman": "honja",
+              "literal": "sendirian"
+            },
+            {
+              "ko": "있어서",
+              "roman": "isseoseo",
+              "literal": "karena berada"
+            },
+            {
+              "ko": "심심해요",
+              "roman": "simsimhaeyo",
+              "literal": "bosan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 4
+            },
+            {
+              "text": "bosan",
+              "ref": 4
+            },
+            {
+              "text": "karena sendirian",
+              "ref": 2
+            },
+            {
+              "text": "di rumah",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "재미있어요",
+      "roman": "jaemiisseoyo",
+      "hint": "menarik / seru",
+      "speak": "재미있어요",
+      "example": {
+        "ko": "한국어 공부가 재미있어요.",
+        "roman": "hangugeo gongbuga jaemiisseoyo",
+        "id": "Belajar bahasa Korea itu menyenangkan.",
+        "map": {
+          "units": [
+            {
+              "ko": "한국어",
+              "roman": "hangugeo",
+              "literal": "bahasa Korea"
+            },
+            {
+              "ko": "공부",
+              "roman": "gongbu",
+              "literal": "belajar"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "subjek"
+            },
+            {
+              "ko": "재미있어요",
+              "roman": "jaemiisseoyo",
+              "literal": "menyenangkan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Belajar",
+              "ref": 1
+            },
+            {
+              "text": "bahasa Korea",
+              "ref": 0
+            },
+            {
+              "text": "itu menyenangkan",
+              "ref": 3
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "행복해요",
+      "roman": "haengbokhaeyo",
+      "hint": "bahagia",
+      "speak": "행복해요",
+      "example": {
+        "ko": "가족과 함께 있으면 행복해요.",
+        "roman": "gajokgwa hamkke isseumyeon haengbokhaeyo",
+        "id": "Saya bahagia jika bersama keluarga.",
+        "map": {
+          "units": [
+            {
+              "ko": "가족",
+              "roman": "gajok",
+              "literal": "keluarga"
+            },
+            {
+              "ko": "과",
+              "roman": "gwa",
+              "literal": "dengan"
+            },
+            {
+              "ko": "함께",
+              "roman": "hamkke",
+              "literal": "bersama"
+            },
+            {
+              "ko": "있으면",
+              "roman": "isseumyeon",
+              "literal": "jika berada"
+            },
+            {
+              "ko": "행복해요",
+              "roman": "haengbokhaeyo",
+              "literal": "bahagia"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 4
+            },
+            {
+              "text": "bahagia",
+              "ref": 4
+            },
+            {
+              "text": "jika bersama",
+              "ref": 2
+            },
+            {
+              "text": "keluarga",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "긴장돼요",
+      "roman": "ginjangdwaeyo",
+      "hint": "tegang / gugup",
+      "speak": "긴장돼요",
+      "example": {
+        "ko": "발표 전에 긴장돼요.",
+        "roman": "balpyo jeone ginjangdwaeyo",
+        "id": "Saya gugup sebelum presentasi.",
+        "map": {
+          "units": [
+            {
+              "ko": "발표",
+              "roman": "balpyo",
+              "literal": "presentasi"
+            },
+            {
+              "ko": "전에",
+              "roman": "jeone",
+              "literal": "sebelum"
+            },
+            {
+              "ko": "긴장돼요",
+              "roman": "ginjangdwaeyo",
+              "literal": "gugup"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya gugup",
+              "ref": 2
+            },
+            {
+              "text": "sebelum",
+              "ref": 1
+            },
+            {
+              "text": "presentasi",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "편해요",
+      "roman": "pyeonhaeyo",
+      "hint": "nyaman",
+      "speak": "편해요",
+      "example": {
+        "ko": "이 의자는 정말 편해요.",
+        "roman": "i uijaneun jeongmal pyeonhaeyo",
+        "id": "Kursi ini sangat nyaman.",
+        "map": {
+          "units": [
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "ini"
+            },
+            {
+              "ko": "의자",
+              "roman": "uija",
+              "literal": "kursi"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "topik"
+            },
+            {
+              "ko": "정말",
+              "roman": "jeongmal",
+              "literal": "sangat"
+            },
+            {
+              "ko": "편해요",
+              "roman": "pyeonhaeyo",
+              "literal": "nyaman"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Kursi",
+              "ref": 1
+            },
+            {
+              "text": "ini",
+              "ref": 0
+            },
+            {
+              "text": "sangat",
+              "ref": 3
+            },
+            {
+              "text": "nyaman",
+              "ref": 4
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "괜찮아요",
+      "roman": "gwaenchanayo",
+      "hint": "tidak apa-apa / baik-baik saja",
+      "speak": "괜찮아요",
+      "example": {
+        "ko": "저는 괜찮아요.",
+        "roman": "jeoneun gwaenchanayo",
+        "id": "Saya baik-baik saja.",
+        "map": {
+          "units": [
+            {
+              "ko": "저",
+              "roman": "jeo",
+              "literal": "saya"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "topik"
+            },
+            {
+              "ko": "괜찮아요",
+              "roman": "gwaenchanayo",
+              "literal": "baik-baik saja"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 0
+            },
+            {
+              "text": "baik-baik saja",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa arti 기뻐요?",
+      "options": [
+        "senang",
+        "sedih",
+        "takut / menakutkan",
+        "lelah"
+      ],
+      "answer": 0,
+      "explain": "기뻐요 = senang."
+    },
+    {
+      "question": "Apa arti 슬퍼요?",
+      "options": [
+        "marah",
+        "khawatir",
+        "bosan",
+        "sedih"
+      ],
+      "answer": 3,
+      "explain": "슬퍼요 = sedih."
+    },
+    {
+      "question": "Apa arti 화나요?",
+      "options": [
+        "lelah",
+        "menarik / seru",
+        "marah",
+        "takut / menakutkan"
+      ],
+      "answer": 2,
+      "explain": "화나요 = marah."
+    },
+    {
+      "question": "Apa arti 무서워요?",
+      "options": [
+        "bahagia",
+        "takut / menakutkan",
+        "khawatir",
+        "bosan"
+      ],
+      "answer": 1,
+      "explain": "무서워요 = takut / menakutkan."
+    },
+    {
+      "question": "Apa arti 걱정돼요?",
+      "options": [
+        "khawatir",
+        "lelah",
+        "menarik / seru",
+        "tegang / gugup"
+      ],
+      "answer": 0,
+      "explain": "걱정돼요 = khawatir."
+    },
+    {
+      "question": "Apa arti 피곤해요?",
+      "options": [
+        "bosan",
+        "bahagia",
+        "nyaman",
+        "lelah"
+      ],
+      "answer": 3,
+      "explain": "피곤해요 = lelah."
+    },
+    {
+      "question": "Apa arti 심심해요?",
+      "options": [
+        "tegang / gugup",
+        "tidak apa-apa / baik-baik saja",
+        "bosan",
+        "menarik / seru"
+      ],
+      "answer": 2,
+      "explain": "심심해요 = bosan."
+    },
+    {
+      "question": "Apa arti 재미있어요?",
+      "options": [
+        "senang",
+        "menarik / seru",
+        "bahagia",
+        "nyaman"
+      ],
+      "answer": 1,
+      "explain": "재미있어요 = menarik / seru."
+    },
+    {
+      "question": "Apa arti 행복해요?",
+      "options": [
+        "bahagia",
+        "tegang / gugup",
+        "tidak apa-apa / baik-baik saja",
+        "sedih"
+      ],
+      "answer": 0,
+      "explain": "행복해요 = bahagia."
+    },
+    {
+      "question": "Apa arti 긴장돼요?",
+      "options": [
+        "nyaman",
+        "senang",
+        "marah",
+        "tegang / gugup"
+      ],
+      "answer": 3,
+      "explain": "긴장돼요 = tegang / gugup."
+    }
+  ]
+}
