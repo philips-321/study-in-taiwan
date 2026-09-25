@@ -31,7 +31,8 @@ function render(){
  $('#app').innerHTML='<section class="lesson-head"><div class="kicker">'+esc(lesson.level)+' · Pelajaran '+esc(lesson.order)+'</div><h1>'+esc(lesson.title)+'</h1><p>'+esc(lesson.subtitle)+'</p>'+audioPanel()+'<div class="objective">'+lesson.objectives.map(x=>'<span class="chip">'+esc(x)+'</span>').join('')+'</div></section>'+
  '<section class="block"><h2>Kenali bentuk dan bunyinya</h2><p>'+esc(lesson.intro)+'</p><div class="tip">'+esc(lesson.tip)+'</div><div class="units">'+units+'</div></section>'+
  '<section class="block"><h2>Cek pemahaman</h2><p>Pilih jawaban. Kamu bisa mencoba lagi kalau salah.</p>'+quizzes+'</section>'+
- '<section class="block finish"><div><h2>Selesai pelajaran ini?</h2><div id="doneLabel" class="'+(done?'done':'')+'">'+(done?'✓ Sudah ditandai selesai':'Tandai selesai agar progress tersimpan di browser ini.')+'</div></div><button id="finishBtn">'+(done?'Batalkan selesai':'✓ Tandai selesai')+'</button></section>';
+ '<section class="block finish"><div><h2>Selesai pelajaran ini?</h2><div id="doneLabel" class="'+(done?'done':'')+'">'+(done?'✓ Sudah ditandai selesai':'Tandai selesai agar progress tersimpan di browser ini.')+'</div></div><button id="finishBtn">'+(done?'Batalkan selesai':'✓ Tandai selesai')+'</button></section>'+
+ '<section class="block lesson-nav"><div>'+(lesson.prev?'<a class="navlesson prev" href="lesson.html?lesson='+esc(lesson.prev.path)+'">← '+esc(lesson.prev.title)+'</a>':'<span></span>')+'</div><div>'+(lesson.next?'<a class="navlesson next" href="lesson.html?lesson='+esc(lesson.next.path)+'">'+esc(lesson.next.title)+' →</a>':'<a class="navlesson next" href="/belajar-korea/">Kembali ke kurikulum →</a>')+'</div></section>';
  bind();populateVoices();updateProgress(done?100:lesson.progressStart||10);
 }
 function bind(){
