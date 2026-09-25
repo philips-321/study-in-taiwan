@@ -1,0 +1,772 @@
+{
+  "id": "ko-l3-004",
+  "level": "Level 3 · Kosakata tematik",
+  "order": 4,
+  "passScore": 80,
+  "title": "Sekolah & pekerjaan",
+  "subtitle": "Kata dasar untuk kelas, tugas, kantor, rapat, dan rutinitas belajar.",
+  "intro": "Pelajari kosakata lewat contoh kalimat singkat. Fokus bukan hanya menghafal arti, tetapi mengenali bagaimana kata dipakai di dalam kalimat.",
+  "tip": "Putar contoh, ikuti color map, lalu ulangi kalimatnya dengan suara keras setelah audio selesai.",
+  "progressStart": 80,
+  "objectives": [
+    "12 kosakata",
+    "12 contoh",
+    "audio + color map"
+  ],
+  "prev": {
+    "title": "Pelajaran 3 · Rumah",
+    "path": "level-3/003-home.json"
+  },
+  "next": {
+    "title": "Pelajaran 5 · Emosi",
+    "path": "level-3/005-emotions.json"
+  },
+  "units": [
+    {
+      "char": "학교",
+      "roman": "hakgyo",
+      "hint": "sekolah",
+      "speak": "학교",
+      "example": {
+        "ko": "매일 학교에 가요.",
+        "roman": "maeil hakgyoe gayo",
+        "id": "Saya pergi ke sekolah setiap hari.",
+        "map": {
+          "units": [
+            {
+              "ko": "매일",
+              "roman": "maeil",
+              "literal": "setiap hari"
+            },
+            {
+              "ko": "학교",
+              "roman": "hakgyo",
+              "literal": "sekolah"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "ke"
+            },
+            {
+              "ko": "가요",
+              "roman": "gayo",
+              "literal": "pergi"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya pergi",
+              "ref": 3
+            },
+            {
+              "text": "ke sekolah",
+              "ref": 1
+            },
+            {
+              "text": "setiap hari",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "교실",
+      "roman": "gyosil",
+      "hint": "kelas",
+      "speak": "교실",
+      "example": {
+        "ko": "학생들이 교실에 있어요.",
+        "roman": "haksaengdeuri gyosire isseoyo",
+        "id": "Para siswa ada di kelas.",
+        "map": {
+          "units": [
+            {
+              "ko": "학생들",
+              "roman": "haksaengdeul",
+              "literal": "para siswa"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "subjek"
+            },
+            {
+              "ko": "교실",
+              "roman": "gyosil",
+              "literal": "kelas"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "있어요",
+              "roman": "isseoyo",
+              "literal": "ada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Para siswa",
+              "ref": 0
+            },
+            {
+              "text": "ada",
+              "ref": 4
+            },
+            {
+              "text": "di kelas",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "선생님",
+      "roman": "seonsaengnim",
+      "hint": "guru",
+      "speak": "선생님",
+      "example": {
+        "ko": "선생님이 설명해요.",
+        "roman": "seonsaengnimi seolmyeonghaeyo",
+        "id": "Guru menjelaskan.",
+        "map": {
+          "units": [
+            {
+              "ko": "선생님",
+              "roman": "seonsaengnim",
+              "literal": "guru"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "subjek"
+            },
+            {
+              "ko": "설명해요",
+              "roman": "seolmyeonghaeyo",
+              "literal": "menjelaskan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Guru",
+              "ref": 0
+            },
+            {
+              "text": "menjelaskan",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "학생",
+      "roman": "haksaeng",
+      "hint": "pelajar / siswa",
+      "speak": "학생",
+      "example": {
+        "ko": "저는 한국어 학생이에요.",
+        "roman": "jeoneun hangugeo haksaeng-ieyo",
+        "id": "Saya pelajar bahasa Korea.",
+        "map": {
+          "units": [
+            {
+              "ko": "저",
+              "roman": "jeo",
+              "literal": "saya"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "topik"
+            },
+            {
+              "ko": "한국어",
+              "roman": "hangugeo",
+              "literal": "bahasa Korea"
+            },
+            {
+              "ko": "학생",
+              "roman": "haksaeng",
+              "literal": "pelajar"
+            },
+            {
+              "ko": "이에요",
+              "roman": "ieyo",
+              "literal": "adalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 0
+            },
+            {
+              "text": "pelajar",
+              "ref": 3
+            },
+            {
+              "text": "bahasa Korea",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "수업",
+      "roman": "sueop",
+      "hint": "kelas / pelajaran",
+      "speak": "수업",
+      "example": {
+        "ko": "수업은 아홉 시에 시작해요.",
+        "roman": "sueobeun ahop sie sijakaeyo",
+        "id": "Kelas dimulai pukul sembilan.",
+        "map": {
+          "units": [
+            {
+              "ko": "수업",
+              "roman": "sueop",
+              "literal": "kelas"
+            },
+            {
+              "ko": "은",
+              "roman": "eun",
+              "literal": "topik"
+            },
+            {
+              "ko": "아홉 시",
+              "roman": "ahop si",
+              "literal": "jam sembilan"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "시작해요",
+              "roman": "sijakaeyo",
+              "literal": "mulai"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Kelas",
+              "ref": 0
+            },
+            {
+              "text": "dimulai",
+              "ref": 4
+            },
+            {
+              "text": "pukul sembilan",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "숙제",
+      "roman": "sukje",
+      "hint": "pekerjaan rumah",
+      "speak": "숙제",
+      "example": {
+        "ko": "오늘 숙제가 많아요.",
+        "roman": "oneul sukjega manayo",
+        "id": "Hari ini PR-nya banyak.",
+        "map": {
+          "units": [
+            {
+              "ko": "오늘",
+              "roman": "oneul",
+              "literal": "hari ini"
+            },
+            {
+              "ko": "숙제",
+              "roman": "sukje",
+              "literal": "PR"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "subjek"
+            },
+            {
+              "ko": "많아요",
+              "roman": "manayo",
+              "literal": "banyak"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Hari ini",
+              "ref": 0
+            },
+            {
+              "text": "PR-nya",
+              "ref": 1
+            },
+            {
+              "text": "banyak",
+              "ref": 3
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "시험",
+      "roman": "siheom",
+      "hint": "ujian",
+      "speak": "시험",
+      "example": {
+        "ko": "내일 시험이 있어요.",
+        "roman": "naeil siheomi isseoyo",
+        "id": "Besok ada ujian.",
+        "map": {
+          "units": [
+            {
+              "ko": "내일",
+              "roman": "naeil",
+              "literal": "besok"
+            },
+            {
+              "ko": "시험",
+              "roman": "siheom",
+              "literal": "ujian"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "subjek"
+            },
+            {
+              "ko": "있어요",
+              "roman": "isseoyo",
+              "literal": "ada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Besok",
+              "ref": 0
+            },
+            {
+              "text": "ada",
+              "ref": 3
+            },
+            {
+              "text": "ujian",
+              "ref": 1
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "회사",
+      "roman": "hoesa",
+      "hint": "perusahaan / kantor",
+      "speak": "회사",
+      "example": {
+        "ko": "회사에서 일해요.",
+        "roman": "hoesaeseo ilhaeyo",
+        "id": "Saya bekerja di kantor.",
+        "map": {
+          "units": [
+            {
+              "ko": "회사",
+              "roman": "hoesa",
+              "literal": "kantor"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di"
+            },
+            {
+              "ko": "일해요",
+              "roman": "ilhaeyo",
+              "literal": "bekerja"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya bekerja",
+              "ref": 2
+            },
+            {
+              "text": "di kantor",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "회의",
+      "roman": "hoeui",
+      "hint": "rapat",
+      "speak": "회의",
+      "example": {
+        "ko": "오후에 회의가 있어요.",
+        "roman": "ohue hoeuiga isseoyo",
+        "id": "Sore ini ada rapat.",
+        "map": {
+          "units": [
+            {
+              "ko": "오후",
+              "roman": "ohu",
+              "literal": "sore"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "회의",
+              "roman": "hoeui",
+              "literal": "rapat"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "subjek"
+            },
+            {
+              "ko": "있어요",
+              "roman": "isseoyo",
+              "literal": "ada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Sore ini",
+              "ref": 0
+            },
+            {
+              "text": "ada",
+              "ref": 4
+            },
+            {
+              "text": "rapat",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "일",
+      "roman": "il",
+      "hint": "pekerjaan",
+      "speak": "일",
+      "example": {
+        "ko": "오늘 일이 많아요.",
+        "roman": "oneul iri manayo",
+        "id": "Hari ini pekerjaannya banyak.",
+        "map": {
+          "units": [
+            {
+              "ko": "오늘",
+              "roman": "oneul",
+              "literal": "hari ini"
+            },
+            {
+              "ko": "일",
+              "roman": "il",
+              "literal": "pekerjaan"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "subjek"
+            },
+            {
+              "ko": "많아요",
+              "roman": "manayo",
+              "literal": "banyak"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Hari ini",
+              "ref": 0
+            },
+            {
+              "text": "pekerjaannya",
+              "ref": 1
+            },
+            {
+              "text": "banyak",
+              "ref": 3
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "컴퓨터",
+      "roman": "keompyuteo",
+      "hint": "komputer",
+      "speak": "컴퓨터",
+      "example": {
+        "ko": "컴퓨터로 문서를 써요.",
+        "roman": "keompyuteoro munseoreul sseoyo",
+        "id": "Saya menulis dokumen dengan komputer.",
+        "map": {
+          "units": [
+            {
+              "ko": "컴퓨터",
+              "roman": "keompyuteo",
+              "literal": "komputer"
+            },
+            {
+              "ko": "로",
+              "roman": "ro",
+              "literal": "dengan"
+            },
+            {
+              "ko": "문서",
+              "roman": "munseo",
+              "literal": "dokumen"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "objek"
+            },
+            {
+              "ko": "써요",
+              "roman": "sseoyo",
+              "literal": "menulis"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya menulis",
+              "ref": 4
+            },
+            {
+              "text": "dokumen",
+              "ref": 2
+            },
+            {
+              "text": "dengan komputer",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "공부",
+      "roman": "gongbu",
+      "hint": "belajar",
+      "speak": "공부",
+      "example": {
+        "ko": "도서관에서 공부해요.",
+        "roman": "doseogwaneseo gongbuhaeyo",
+        "id": "Saya belajar di perpustakaan.",
+        "map": {
+          "units": [
+            {
+              "ko": "도서관",
+              "roman": "doseogwan",
+              "literal": "perpustakaan"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di"
+            },
+            {
+              "ko": "공부해요",
+              "roman": "gongbuhaeyo",
+              "literal": "belajar"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya belajar",
+              "ref": 2
+            },
+            {
+              "text": "di perpustakaan",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa arti 학교?",
+      "options": [
+        "sekolah",
+        "kelas",
+        "pelajar / siswa",
+        "pekerjaan rumah"
+      ],
+      "answer": 0,
+      "explain": "학교 = sekolah."
+    },
+    {
+      "question": "Apa arti 교실?",
+      "options": [
+        "guru",
+        "kelas / pelajaran",
+        "ujian",
+        "kelas"
+      ],
+      "answer": 3,
+      "explain": "교실 = kelas."
+    },
+    {
+      "question": "Apa arti 선생님?",
+      "options": [
+        "pekerjaan rumah",
+        "perusahaan / kantor",
+        "guru",
+        "pelajar / siswa"
+      ],
+      "answer": 2,
+      "explain": "선생님 = guru."
+    },
+    {
+      "question": "Apa arti 학생?",
+      "options": [
+        "rapat",
+        "pelajar / siswa",
+        "kelas / pelajaran",
+        "ujian"
+      ],
+      "answer": 1,
+      "explain": "학생 = pelajar / siswa."
+    },
+    {
+      "question": "Apa arti 수업?",
+      "options": [
+        "kelas / pelajaran",
+        "pekerjaan rumah",
+        "perusahaan / kantor",
+        "pekerjaan"
+      ],
+      "answer": 0,
+      "explain": "수업 = kelas / pelajaran."
+    },
+    {
+      "question": "Apa arti 숙제?",
+      "options": [
+        "ujian",
+        "rapat",
+        "komputer",
+        "pekerjaan rumah"
+      ],
+      "answer": 3,
+      "explain": "숙제 = pekerjaan rumah."
+    },
+    {
+      "question": "Apa arti 시험?",
+      "options": [
+        "pekerjaan",
+        "belajar",
+        "ujian",
+        "perusahaan / kantor"
+      ],
+      "answer": 2,
+      "explain": "시험 = ujian."
+    },
+    {
+      "question": "Apa arti 회사?",
+      "options": [
+        "sekolah",
+        "perusahaan / kantor",
+        "rapat",
+        "komputer"
+      ],
+      "answer": 1,
+      "explain": "회사 = perusahaan / kantor."
+    },
+    {
+      "question": "Apa arti 회의?",
+      "options": [
+        "rapat",
+        "pekerjaan",
+        "belajar",
+        "kelas"
+      ],
+      "answer": 0,
+      "explain": "회의 = rapat."
+    },
+    {
+      "question": "Apa arti 일?",
+      "options": [
+        "komputer",
+        "sekolah",
+        "guru",
+        "pekerjaan"
+      ],
+      "answer": 3,
+      "explain": "일 = pekerjaan."
+    }
+  ]
+}
