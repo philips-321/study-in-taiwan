@@ -30,7 +30,45 @@
       "example": {
         "ko": "저는 학생이에요",
         "roman": "jeoneun haksaeng-ieyo",
-        "id": "Saya pelajar."
+        "id": "Saya pelajar.",
+        "map": {
+          "units": [
+            {
+              "ko": "저",
+              "roman": "jeo",
+              "literal": "saya"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "penanda topik"
+            },
+            {
+              "ko": "학생",
+              "roman": "haksaeng",
+              "literal": "pelajar"
+            },
+            {
+              "ko": "이에요",
+              "roman": "ieyo",
+              "literal": "adalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 0
+            },
+            {
+              "text": "seorang pelajar",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
       }
     },
     {
@@ -41,7 +79,49 @@
       "example": {
         "ko": "민수 씨는 선생님이에요",
         "roman": "Minsu ssineun seonsaengnim-ieyo",
-        "id": "Minsu adalah guru."
+        "id": "Minsu adalah guru.",
+        "map": {
+          "units": [
+            {
+              "ko": "민수 씨",
+              "roman": "Minsu ssi",
+              "literal": "Minsu + sapaan"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "penanda topik"
+            },
+            {
+              "ko": "선생님",
+              "roman": "seonsaengnim",
+              "literal": "guru"
+            },
+            {
+              "ko": "이에요",
+              "roman": "ieyo",
+              "literal": "adalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Minsu",
+              "ref": 0
+            },
+            {
+              "text": "adalah",
+              "ref": 3
+            },
+            {
+              "text": "seorang guru",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
       }
     },
     {
@@ -52,7 +132,58 @@
       "example": {
         "ko": "제 친구는 의사예요",
         "roman": "je chinguneun uisa-yeyo",
-        "id": "Teman saya dokter."
+        "id": "Teman saya dokter.",
+        "map": {
+          "units": [
+            {
+              "ko": "제",
+              "roman": "je",
+              "literal": "saya / milik saya"
+            },
+            {
+              "ko": "친구",
+              "roman": "chingu",
+              "literal": "teman"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "penanda topik"
+            },
+            {
+              "ko": "의사",
+              "roman": "uisa",
+              "literal": "dokter"
+            },
+            {
+              "ko": "예요",
+              "roman": "yeyo",
+              "literal": "adalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Teman",
+              "ref": 1
+            },
+            {
+              "text": "saya",
+              "ref": 0
+            },
+            {
+              "text": "adalah",
+              "ref": 4
+            },
+            {
+              "text": "dokter",
+              "ref": 3
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
       }
     },
     {
@@ -63,7 +194,58 @@
       "example": {
         "ko": "그 사람은 가수예요",
         "roman": "geu sarameun gasu-yeyo",
-        "id": "Orang itu penyanyi."
+        "id": "Orang itu penyanyi.",
+        "map": {
+          "units": [
+            {
+              "ko": "그",
+              "roman": "geu",
+              "literal": "itu"
+            },
+            {
+              "ko": "사람",
+              "roman": "saram",
+              "literal": "orang"
+            },
+            {
+              "ko": "은",
+              "roman": "eun",
+              "literal": "penanda topik"
+            },
+            {
+              "ko": "가수",
+              "roman": "gasu",
+              "literal": "penyanyi"
+            },
+            {
+              "ko": "예요",
+              "roman": "yeyo",
+              "literal": "adalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Orang",
+              "ref": 1
+            },
+            {
+              "text": "itu",
+              "ref": 0
+            },
+            {
+              "text": "adalah",
+              "ref": 4
+            },
+            {
+              "text": "penyanyi",
+              "ref": 3
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
       }
     }
   ],
