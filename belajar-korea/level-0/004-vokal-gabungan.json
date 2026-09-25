@@ -1,0 +1,181 @@
+{
+  "id": "ko-l0-004",
+  "level": "Level 0 · Hangul",
+  "order": 4,
+  "title": "Vokal gabungan yang paling sering dipakai",
+  "subtitle": "Setelah enam vokal dasar, kenali bentuk gabungan seperti ㅐ, ㅔ, ㅚ, ㅟ, ㅘ, dan ㅝ.",
+  "intro": "Beberapa vokal Hangul terbentuk dari gabungan vokal dasar. Dalam bahasa Korea modern, beberapa pasangan seperti ㅐ dan ㅔ sering terdengar sangat mirip bagi pemula.",
+  "tip": "Jangan memaksa membedakan ㅐ dan ㅔ secara berlebihan di tahap awal. Fokus dulu pada bentuk, romanisasi, dan mengenalinya saat membaca.",
+  "progressStart": 30,
+  "objectives": [
+    "10 vokal gabungan",
+    "contoh suku kata",
+    "±10 menit"
+  ],
+  "prev": {
+    "title": "Pelajaran 3 · Blok suku kata",
+    "path": "level-0/003-blok-suku-kata.json"
+  },
+  "next": {
+    "title": "Pelajaran 5 · Batchim dasar",
+    "path": "level-0/005-batchim-dasar.json"
+  },
+  "units": [
+    {
+      "char": "ㅐ",
+      "roman": "ae",
+      "hint": "Dalam pengucapan modern sering sangat dekat dengan ㅔ.",
+      "speak": "애",
+      "example": {
+        "ko": "애",
+        "roman": "ae",
+        "id": "ae"
+      }
+    },
+    {
+      "char": "ㅔ",
+      "roman": "e",
+      "hint": "Dalam pengucapan modern sering sangat dekat dengan ㅐ.",
+      "speak": "에",
+      "example": {
+        "ko": "에",
+        "roman": "e",
+        "id": "e"
+      }
+    },
+    {
+      "char": "ㅚ",
+      "roman": "oe",
+      "hint": "Sering terdengar mendekati 'we' dalam pengucapan modern.",
+      "speak": "외",
+      "example": {
+        "ko": "외",
+        "roman": "oe",
+        "id": "oe"
+      }
+    },
+    {
+      "char": "ㅟ",
+      "roman": "wi",
+      "hint": "Gabungan yang dibaca wi.",
+      "speak": "위",
+      "example": {
+        "ko": "위",
+        "roman": "wi",
+        "id": "wi"
+      }
+    },
+    {
+      "char": "ㅘ",
+      "roman": "wa",
+      "hint": "ㅗ + ㅏ → wa.",
+      "speak": "와",
+      "example": {
+        "ko": "와",
+        "roman": "wa",
+        "id": "wa"
+      }
+    },
+    {
+      "char": "ㅝ",
+      "roman": "wo",
+      "hint": "ㅜ + ㅓ → wo.",
+      "speak": "워",
+      "example": {
+        "ko": "워",
+        "roman": "wo",
+        "id": "wo"
+      }
+    },
+    {
+      "char": "ㅙ",
+      "roman": "wae",
+      "hint": "ㅗ + ㅐ.",
+      "speak": "왜",
+      "example": {
+        "ko": "왜",
+        "roman": "wae",
+        "id": "mengapa"
+      }
+    },
+    {
+      "char": "ㅞ",
+      "roman": "we",
+      "hint": "ㅜ + ㅔ.",
+      "speak": "웨",
+      "example": {
+        "ko": "웨",
+        "roman": "we",
+        "id": "we"
+      }
+    },
+    {
+      "char": "ㅢ",
+      "roman": "ui",
+      "hint": "Bunyi dapat berubah menurut posisi dan kata; pelajari bentuknya dulu.",
+      "speak": "의",
+      "example": {
+        "ko": "의",
+        "roman": "ui",
+        "id": "ui"
+      }
+    },
+    {
+      "char": "ㅑ / ㅕ / ㅛ / ㅠ",
+      "roman": "ya / yeo / yo / yu",
+      "hint": "Vokal dengan garis kecil ganda menghasilkan bunyi y.",
+      "speak": "야 여 요 유",
+      "example": {
+        "ko": "야 여 요 유",
+        "roman": "ya yeo yo yu",
+        "id": "seri y"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "ㅗ + ㅏ menjadi…",
+      "options": [
+        "ㅝ",
+        "ㅘ",
+        "ㅞ",
+        "ㅚ"
+      ],
+      "answer": 1,
+      "explain": "ㅗ + ㅏ = ㅘ (wa)."
+    },
+    {
+      "question": "Vokal mana yang dibaca 'wi'?",
+      "options": [
+        "ㅚ",
+        "ㅟ",
+        "ㅘ",
+        "ㅢ"
+      ],
+      "answer": 1,
+      "explain": "ㅟ = wi."
+    },
+    {
+      "question": "ㅜ + ㅓ menjadi…",
+      "options": [
+        "ㅝ",
+        "ㅙ",
+        "ㅐ",
+        "ㅔ"
+      ],
+      "answer": 0,
+      "explain": "ㅜ + ㅓ = ㅝ (wo)."
+    },
+    {
+      "question": "Pernyataan mana yang paling tepat untuk pemula tentang ㅐ dan ㅔ?",
+      "options": [
+        "harus selalu terdengar sangat berbeda",
+        "keduanya tidak pernah muncul dalam bahasa modern",
+        "dalam pengucapan modern keduanya sering terdengar sangat mirip",
+        "ㅐ dibaca u dan ㅔ dibaca a"
+      ],
+      "answer": 2,
+      "explain": "Dalam bahasa Korea modern, ㅐ dan ㅔ sering terdengar sangat mirip."
+    }
+  ]
+}
