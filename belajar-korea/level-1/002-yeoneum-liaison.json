@@ -1,0 +1,266 @@
+{
+  "id": "ko-l1-002",
+  "level": "Level 1 · Pengucapan",
+  "order": 2,
+  "passScore": 80,
+  "title": "연음 — liaison / penyambungan bunyi",
+  "subtitle": "Batchim dapat berpindah secara bunyi ke suku kata berikutnya ketika suku kata itu dimulai oleh ㅇ + vokal.",
+  "intro": "연음 bukan berarti hurufnya benar-benar dipindah dalam tulisan. Ejaan tetap sama; yang berpindah adalah cara bunyi batchim direalisasikan saat berbicara.",
+  "tip": "Lihat pola C-final + ㅇ-vokal. Karena ㅇ di awal suku kata tidak berbunyi, batchim sebelumnya terdengar seolah mengisi posisi itu.",
+  "progressStart": 46,
+  "objectives": [
+    "perpindahan bunyi",
+    "batchim + ㅇ",
+    "kalimat audio"
+  ],
+  "prev": {
+    "title": "Pelajaran 1 · 받침 발음 규칙",
+    "path": "level-1/001-batchim-sound-rules.json"
+  },
+  "next": {
+    "title": "Pelajaran 3 · 비음화",
+    "path": "level-1/003-bieumhwa-nasalization.json"
+  },
+  "detailSections": [
+    {
+      "title": "Apa yang sebenarnya berpindah?",
+      "paragraphs": [
+        "Pada tulisan 집에, struktur tetap 집 + 에. Batchim ㅂ milik 집 tidak dipindahkan secara ejaan. Saat diucapkan, ㅂ tersambung ke vokal ㅔ karena ㅇ pada 에 tidak memiliki bunyi awal.",
+        "Karena itu 집에 terdengar seperti 지베. Kita menulis 집에, tetapi bisa menandai pengucapannya sebagai [지베]."
+      ]
+    },
+    {
+      "title": "Jangan campur dengan perubahan lain",
+      "paragraphs": [
+        "연음 hanya menjelaskan penyambungan dasar. Beberapa kata sekaligus mengalami palatalization, nasalization, atau tensing. Jika hasilnya lebih kompleks, kita harus melihat aturan berikutnya juga."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "집 + 에",
+      "pronounced": "[지베]",
+      "steps": [
+        "집 berakhir batchim ㅂ.",
+        "에 dimulai ㅇ + ㅔ; ㅇ awal tidak berbunyi.",
+        "Bunyi ㅂ tersambung ke ㅔ sehingga terdengar 베."
+      ],
+      "note": "Tulisan tetap 집에.",
+      "speak": "집에"
+    },
+    {
+      "written": "먹 + 어요",
+      "pronounced": "[머거요]",
+      "steps": [
+        "먹 berakhir ㄱ.",
+        "어요 dimulai ㅇ + ㅓ.",
+        "ㄱ terdengar sebagai awal bunyi 거."
+      ],
+      "note": "Tulisan tetap 먹어요.",
+      "speak": "먹어요"
+    },
+    {
+      "written": "책 + 을",
+      "pronounced": "[채글]",
+      "steps": [
+        "책 berakhir ㄱ.",
+        "을 dimulai ㅇ + ㅡ.",
+        "ㄱ tersambung sehingga 을 terdengar 글."
+      ],
+      "note": "Tulisan tetap 책을.",
+      "speak": "책을"
+    },
+    {
+      "written": "한국 + 어",
+      "pronounced": "[한구거]",
+      "steps": [
+        "국 berakhir ㄱ.",
+        "어 dimulai ㅇ + ㅓ.",
+        "ㄱ berpindah secara bunyi ke 어."
+      ],
+      "note": "Tulisan tetap 한국어.",
+      "speak": "한국어"
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "저는 집에 가요.",
+      "pronunciation": "[저는 지베 가요]",
+      "roman": "jeoneun jibe gayo",
+      "id": "Saya pergi ke rumah.",
+      "note": "집에: ㅂ tersambung ke 에.",
+      "speak": "저는 집에 가요."
+    },
+    {
+      "ko": "아침에 밥을 먹어요.",
+      "pronunciation": "[아치메 바블 머거요]",
+      "roman": "achime babeul meogeoyo",
+      "id": "Saya makan nasi pada pagi hari.",
+      "note": "먹어요: ㄱ tersambung ke 어.",
+      "speak": "아침에 밥을 먹어요."
+    },
+    {
+      "ko": "한국어를 공부해요.",
+      "pronunciation": "[한구거를 공부해요]",
+      "roman": "hangugeoreul gongbuhaeyo",
+      "id": "Saya belajar bahasa Korea.",
+      "note": "한국어: 국의 ㄱ tersambung ke 어.",
+      "speak": "한국어를 공부해요."
+    },
+    {
+      "ko": "책을 읽어요.",
+      "pronunciation": "[채글 일거요]",
+      "roman": "chaegeul ilgeoyo",
+      "id": "Saya membaca buku.",
+      "note": "책을 mengalami liaison; 읽어요 memiliki aturan 겹받침 yang akan dipelajari nanti.",
+      "speak": "책을 읽어요."
+    }
+  ],
+  "units": [
+    {
+      "char": "집에",
+      "roman": "jibe",
+      "hint": "집 + 에 → [지베].",
+      "speak": "집에",
+      "example": {
+        "ko": "집에 가요",
+        "roman": "jibe gayo",
+        "id": "pergi ke rumah"
+      }
+    },
+    {
+      "char": "먹어요",
+      "roman": "meogeoyo",
+      "hint": "먹 + 어요 → [머거요].",
+      "speak": "먹어요",
+      "example": {
+        "ko": "밥을 먹어요",
+        "roman": "babeul meogeoyo",
+        "id": "makan nasi"
+      }
+    },
+    {
+      "char": "한국어",
+      "roman": "hangugeo",
+      "hint": "한국 + 어 → [한구거].",
+      "speak": "한국어",
+      "example": {
+        "ko": "한국어를 배워요",
+        "roman": "hangugeoreul baewoyo",
+        "id": "belajar Korea"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "집에 paling dekat dibaca…",
+      "options": [
+        "지베",
+        "짐메",
+        "지페",
+        "집에 terputus"
+      ],
+      "answer": 0,
+      "explain": "ㅂ tersambung ke 에."
+    },
+    {
+      "question": "먹어요 paling dekat dibaca…",
+      "options": [
+        "머거요",
+        "멍어요",
+        "먹꺼요",
+        "머커요"
+      ],
+      "answer": 0,
+      "explain": "ㄱ tersambung ke 어."
+    },
+    {
+      "question": "연음 biasanya terjadi ketika batchim diikuti…",
+      "options": [
+        "ㅇ + vokal",
+        "konsonan tegang",
+        "ㅎ saja",
+        "akhir kalimat"
+      ],
+      "answer": 0,
+      "explain": "ㅇ awal tidak berbunyi sehingga batchim dapat tersambung."
+    },
+    {
+      "question": "Dalam tulisan 집에, apakah ㅂ benar-benar dipindahkan ke 에?",
+      "options": [
+        "ya, ejaannya berubah",
+        "tidak, hanya bunyinya yang tersambung",
+        "hanya dalam chat",
+        "hanya pada nama"
+      ],
+      "answer": 1,
+      "explain": "Ejaan tetap 집에."
+    },
+    {
+      "question": "책을 paling dekat dibaca…",
+      "options": [
+        "채글",
+        "책을 terputus",
+        "챙을",
+        "채클"
+      ],
+      "answer": 0,
+      "explain": "ㄱ tersambung ke 을."
+    },
+    {
+      "question": "한국어 paling dekat dibaca…",
+      "options": [
+        "한구거",
+        "한궁어",
+        "한쿠거",
+        "한국어 terputus"
+      ],
+      "answer": 0,
+      "explain": "국 + 어 mengalami liaison."
+    },
+    {
+      "question": "ㅇ di awal 에 dalam 집에…",
+      "options": [
+        "berbunyi ng",
+        "tidak berbunyi sebagai onset",
+        "menjadi m",
+        "menjadi l"
+      ],
+      "answer": 1,
+      "explain": "ㅇ di awal suku kata adalah penyangga tanpa bunyi."
+    },
+    {
+      "question": "Mana contoh 연음?",
+      "options": [
+        "집에 → 지베",
+        "국물 → 궁물",
+        "신라 → 실라",
+        "학교 → 학꾜"
+      ],
+      "answer": 0,
+      "explain": "Yang lain adalah aturan berbeda."
+    },
+    {
+      "question": "Bentuk [지베] menunjukkan…",
+      "options": [
+        "ejaan baru",
+        "panduan pengucapan",
+        "romanization resmi",
+        "kata berbeda"
+      ],
+      "answer": 1,
+      "explain": "Tanda [ ] dipakai untuk menunjukkan bunyi."
+    },
+    {
+      "question": "Mengapa 연음 penting untuk listening?",
+      "options": [
+        "ucapan Korea terdengar menyambung antar-suku kata",
+        "mengubah arti semua kata",
+        "membuat semua kata formal",
+        "hanya dipakai di lagu"
+      ],
+      "answer": 0,
+      "explain": "Penyambungan bunyi membuat ucapan natural berbeda dari pembacaan huruf per huruf."
+    }
+  ]
+}
