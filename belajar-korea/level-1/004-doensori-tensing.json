@@ -89,7 +89,53 @@
       "roman": "hakkkyoe maeil gayo",
       "id": "Saya pergi ke sekolah setiap hari.",
       "note": "학교 → [학꾜].",
-      "speak": "학교에 매일 가요."
+      "speak": "학교에 매일 가요.",
+      "map": {
+        "units": [
+          {
+            "ko": "학교",
+            "roman": "hakgyo",
+            "literal": "sekolah"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "매일",
+            "roman": "maeil",
+            "literal": "setiap hari"
+          },
+          {
+            "ko": "가요",
+            "roman": "gayo",
+            "literal": "pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya pergi",
+            "ref": 3
+          },
+          {
+            "text": "ke",
+            "ref": 1
+          },
+          {
+            "text": "sekolah",
+            "ref": 0
+          },
+          {
+            "text": "setiap hari",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     },
     {
       "ko": "저는 국밥을 좋아해요.",
@@ -97,7 +143,54 @@
       "roman": "jeoneun gukppabeul joahaeyo",
       "id": "Saya suka gukbap.",
       "note": "국밥 → [국빱].",
-      "speak": "저는 국밥을 좋아해요."
+      "speak": "저는 국밥을 좋아해요.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "penanda topik"
+          },
+          {
+            "ko": "국밥",
+            "roman": "gukppap",
+            "literal": "gukbap"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "좋아해요",
+            "roman": "joahaeyo",
+            "literal": "suka"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "suka",
+            "ref": 4
+          },
+          {
+            "text": "gukbap",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 4
+          }
+        ]
+      }
     },
     {
       "ko": "식당에서 밥을 먹어요.",
@@ -105,7 +198,58 @@
       "roman": "sikttangeseo babeul meogeoyo",
       "id": "Saya makan di restoran.",
       "note": "식당 → [식땅].",
-      "speak": "식당에서 밥을 먹어요."
+      "speak": "식당에서 밥을 먹어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "식당",
+            "roman": "sikttang",
+            "literal": "restoran"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di / tempat aktivitas"
+          },
+          {
+            "ko": "밥",
+            "roman": "bap",
+            "literal": "nasi"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "먹어요",
+            "roman": "meogeoyo",
+            "literal": "makan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya makan",
+            "ref": 4
+          },
+          {
+            "text": "nasi",
+            "ref": 2
+          },
+          {
+            "text": "di",
+            "ref": 1
+          },
+          {
+            "text": "restoran",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 4
+          }
+        ]
+      }
     }
   ],
   "units": [
