@@ -1,0 +1,644 @@
+{
+  "id": "ko-l5-004",
+  "level": "Level 5 · Dialog & reading",
+  "order": 4,
+  "passScore": 80,
+  "title": "Dialog: transportasi & arah",
+  "subtitle": "Menanyakan rute, jalur, transfer, jumlah stasiun, dan kereta terakhir.",
+  "intro": "Simulasi meminta petunjuk transportasi.",
+  "tip": "Putar satu turn, ikuti color map, lalu ulangi dengan keras. Setelah paham, coba baca dua peran tanpa melihat arti.",
+  "progressStart": 90,
+  "objectives": [
+    "12 turn",
+    "audio per turn",
+    "comprehension"
+  ],
+  "prev": {
+    "title": "Pelajaran 3 · Belanja",
+    "path": "level-5/003-shopping-dialogue.json"
+  },
+  "next": {
+    "title": "Pelajaran 5 · Jadwal",
+    "path": "level-5/005-daily-plan-dialogue.json"
+  },
+  "dialogues": [
+    {
+      "title": "Dialog: transportasi & arah",
+      "intro": "Dialog latihan dengan 12 turn.",
+      "turns": [
+        {
+          "speaker": "A",
+          "ko": "실례합니다. 서울역에 어떻게 가요?",
+          "roman": "sillyehamnida. seoullyeoge eotteoke gayo",
+          "id": "Permisi. Bagaimana cara pergi ke Stasiun Seoul?",
+          "map": {
+            "units": [
+              {
+                "ko": "실례합니다",
+                "roman": "sillyehamnida",
+                "literal": "permisi"
+              },
+              {
+                "ko": "서울역",
+                "roman": "seoullyeok",
+                "literal": "Stasiun Seoul"
+              },
+              {
+                "ko": "에",
+                "roman": "e",
+                "literal": "ke"
+              },
+              {
+                "ko": "어떻게",
+                "roman": "eotteoke",
+                "literal": "bagaimana"
+              },
+              {
+                "ko": "가요",
+                "roman": "gayo",
+                "literal": "pergi"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Permisi",
+                "ref": 0
+              },
+              {
+                "text": "Bagaimana",
+                "ref": 3
+              },
+              {
+                "text": "cara pergi",
+                "ref": 4
+              },
+              {
+                "text": "ke Stasiun Seoul",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "실례합니다. 서울역에 어떻게 가요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "지하철로 가는 게 제일 빨라요.",
+          "roman": "jihacheollo ganeun ge jeil ppallayo",
+          "id": "Paling cepat naik kereta bawah tanah.",
+          "map": {
+            "units": [
+              {
+                "ko": "지하철",
+                "roman": "jihacheol",
+                "literal": "kereta bawah tanah"
+              },
+              {
+                "ko": "로",
+                "roman": "ro",
+                "literal": "dengan"
+              },
+              {
+                "ko": "가는 게",
+                "roman": "ganeun ge",
+                "literal": "cara pergi"
+              },
+              {
+                "ko": "제일",
+                "roman": "jeil",
+                "literal": "paling"
+              },
+              {
+                "ko": "빨라요",
+                "roman": "ppallayo",
+                "literal": "cepat"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Paling",
+                "ref": 3
+              },
+              {
+                "text": "cepat",
+                "ref": 4
+              },
+              {
+                "text": "naik kereta bawah tanah",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "지하철로 가는 게 제일 빨라요."
+        },
+        {
+          "speaker": "A",
+          "ko": "몇 호선을 타야 해요?",
+          "roman": "myeot hoseoneul taya haeyo",
+          "id": "Saya harus naik jalur nomor berapa?",
+          "map": {
+            "units": [
+              {
+                "ko": "몇 호선",
+                "roman": "myeot hoseon",
+                "literal": "jalur nomor berapa"
+              },
+              {
+                "ko": "을",
+                "roman": "eul",
+                "literal": "objek"
+              },
+              {
+                "ko": "타야 해요",
+                "roman": "taya haeyo",
+                "literal": "harus naik"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Saya harus naik",
+                "ref": 2
+              },
+              {
+                "text": "jalur nomor berapa",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "몇 호선을 타야 해요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "2호선을 타세요.",
+          "roman": "i-hoseoneul taseyo",
+          "id": "Naiklah jalur 2.",
+          "map": {
+            "units": [
+              {
+                "ko": "2호선",
+                "roman": "i-hoseon",
+                "literal": "jalur 2"
+              },
+              {
+                "ko": "을",
+                "roman": "eul",
+                "literal": "objek"
+              },
+              {
+                "ko": "타세요",
+                "roman": "taseyo",
+                "literal": "silakan naik"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Silakan naik",
+                "ref": 2
+              },
+              {
+                "text": "jalur 2",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "2호선을 타세요."
+        },
+        {
+          "speaker": "B",
+          "ko": "시청역에서 1호선으로 갈아타세요.",
+          "roman": "sicheongyeogeseo il-hoseoneuro garataseyo",
+          "id": "Di Stasiun City Hall, pindah ke jalur 1.",
+          "map": {
+            "units": [
+              {
+                "ko": "시청역",
+                "roman": "sicheongyeok",
+                "literal": "Stasiun City Hall"
+              },
+              {
+                "ko": "에서",
+                "roman": "eseo",
+                "literal": "di"
+              },
+              {
+                "ko": "1호선",
+                "roman": "il-hoseon",
+                "literal": "jalur 1"
+              },
+              {
+                "ko": "으로",
+                "roman": "euro",
+                "literal": "ke"
+              },
+              {
+                "ko": "갈아타세요",
+                "roman": "garataseyo",
+                "literal": "silakan transfer"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Di Stasiun City Hall",
+                "ref": 0
+              },
+              {
+                "text": "silakan pindah",
+                "ref": 4
+              },
+              {
+                "text": "ke jalur 1",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "시청역에서 1호선으로 갈아타세요."
+        },
+        {
+          "speaker": "A",
+          "ko": "몇 정거장 가야 해요?",
+          "roman": "myeot jeonggeojang gaya haeyo",
+          "id": "Harus berapa stasiun?",
+          "map": {
+            "units": [
+              {
+                "ko": "몇 정거장",
+                "roman": "myeot jeonggeojang",
+                "literal": "berapa stasiun"
+              },
+              {
+                "ko": "가야 해요",
+                "roman": "gaya haeyo",
+                "literal": "harus pergi"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Harus",
+                "ref": 1
+              },
+              {
+                "text": "berapa stasiun",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "몇 정거장 가야 해요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "갈아탄 후에 두 정거장이에요.",
+          "roman": "garatan hue du jeonggeojang-ieyo",
+          "id": "Setelah transfer, dua stasiun.",
+          "map": {
+            "units": [
+              {
+                "ko": "갈아탄 후",
+                "roman": "garatan hu",
+                "literal": "setelah transfer"
+              },
+              {
+                "ko": "에",
+                "roman": "e",
+                "literal": "pada"
+              },
+              {
+                "ko": "두 정거장",
+                "roman": "du jeonggeojang",
+                "literal": "dua stasiun"
+              },
+              {
+                "ko": "이에요",
+                "roman": "ieyo",
+                "literal": "adalah"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Setelah transfer",
+                "ref": 0
+              },
+              {
+                "text": "dua stasiun",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "갈아탄 후에 두 정거장이에요."
+        },
+        {
+          "speaker": "A",
+          "ko": "교통카드를 사용할 수 있어요?",
+          "roman": "gyotongkadeureul sayonghal su isseoyo",
+          "id": "Bisa pakai kartu transportasi?",
+          "map": {
+            "units": [
+              {
+                "ko": "교통카드",
+                "roman": "gyotongkadeu",
+                "literal": "kartu transportasi"
+              },
+              {
+                "ko": "를",
+                "roman": "reul",
+                "literal": "objek"
+              },
+              {
+                "ko": "사용할 수 있어요",
+                "roman": "sayonghal su isseoyo",
+                "literal": "bisa menggunakan"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Bisa menggunakan",
+                "ref": 2
+              },
+              {
+                "text": "kartu transportasi",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "교통카드를 사용할 수 있어요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "네, 사용할 수 있어요.",
+          "roman": "ne, sayonghal su isseoyo",
+          "id": "Ya, bisa.",
+          "map": {
+            "units": [
+              {
+                "ko": "네",
+                "roman": "ne",
+                "literal": "ya"
+              },
+              {
+                "ko": "사용할 수 있어요",
+                "roman": "sayonghal su isseoyo",
+                "literal": "bisa menggunakan"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Ya",
+                "ref": 0
+              },
+              {
+                "text": "bisa",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "네, 사용할 수 있어요."
+        },
+        {
+          "speaker": "A",
+          "ko": "막차는 몇 시예요?",
+          "roman": "makchaneun myeot siyeyo",
+          "id": "Kereta terakhir jam berapa?",
+          "map": {
+            "units": [
+              {
+                "ko": "막차",
+                "roman": "makcha",
+                "literal": "kendaraan terakhir"
+              },
+              {
+                "ko": "는",
+                "roman": "neun",
+                "literal": "topik"
+              },
+              {
+                "ko": "몇 시",
+                "roman": "myeot si",
+                "literal": "jam berapa"
+              },
+              {
+                "ko": "예요",
+                "roman": "yeyo",
+                "literal": "adalah"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Kereta terakhir",
+                "ref": 0
+              },
+              {
+                "text": "jam berapa",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "막차는 몇 시예요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "밤 열두 시쯤이에요.",
+          "roman": "bam yeoldu sijjeum-ieyo",
+          "id": "Sekitar jam dua belas malam.",
+          "map": {
+            "units": [
+              {
+                "ko": "밤",
+                "roman": "bam",
+                "literal": "malam"
+              },
+              {
+                "ko": "열두 시",
+                "roman": "yeoldu si",
+                "literal": "jam dua belas"
+              },
+              {
+                "ko": "쯤",
+                "roman": "jjeum",
+                "literal": "sekitar"
+              },
+              {
+                "ko": "이에요",
+                "roman": "ieyo",
+                "literal": "adalah"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Sekitar",
+                "ref": 2
+              },
+              {
+                "text": "jam dua belas",
+                "ref": 1
+              },
+              {
+                "text": "malam",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "밤 열두 시쯤이에요."
+        },
+        {
+          "speaker": "A",
+          "ko": "감사합니다. 덕분에 잘 갈 수 있겠어요.",
+          "roman": "gamsahamnida. deokbune jal gal su itgesseoyo",
+          "id": "Terima kasih. Berkat Anda, saya rasa bisa sampai dengan baik.",
+          "map": {
+            "units": [
+              {
+                "ko": "감사합니다",
+                "roman": "gamsahamnida",
+                "literal": "terima kasih"
+              },
+              {
+                "ko": "덕분에",
+                "roman": "deokbune",
+                "literal": "berkat Anda"
+              },
+              {
+                "ko": "잘",
+                "roman": "jal",
+                "literal": "dengan baik"
+              },
+              {
+                "ko": "갈 수 있겠어요",
+                "roman": "gal su itgesseoyo",
+                "literal": "sepertinya bisa pergi"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Terima kasih",
+                "ref": 0
+              },
+              {
+                "text": "Berkat Anda",
+                "ref": 1
+              },
+              {
+                "text": "saya rasa bisa sampai",
+                "ref": 3
+              },
+              {
+                "text": "dengan baik",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "감사합니다. 덕분에 잘 갈 수 있겠어요."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Transportasi yang disarankan?",
+      "options": [
+        "subway",
+        "bus",
+        "taksi",
+        "jalan kaki"
+      ],
+      "answer": 0,
+      "explain": "지하철."
+    },
+    {
+      "question": "Pertama naik jalur?",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "answer": 0,
+      "explain": "2호선."
+    },
+    {
+      "question": "Transfer di mana?",
+      "options": [
+        "City Hall",
+        "Seoul Station",
+        "Gangnam",
+        "Hongdae"
+      ],
+      "answer": 0,
+      "explain": "시청역."
+    },
+    {
+      "question": "Pindah ke jalur?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "answer": 0,
+      "explain": "1호선."
+    },
+    {
+      "question": "Setelah transfer berapa stasiun?",
+      "options": [
+        "2",
+        "1",
+        "4",
+        "5"
+      ],
+      "answer": 0,
+      "explain": "두 정거장."
+    },
+    {
+      "question": "Bisa pakai apa?",
+      "options": [
+        "kartu transportasi",
+        "hanya tunai",
+        "paspor",
+        "kupon"
+      ],
+      "answer": 0,
+      "explain": "교통카드."
+    },
+    {
+      "question": "막차 berarti…",
+      "options": [
+        "kendaraan/kereta terakhir",
+        "kereta pertama",
+        "taksi",
+        "halte"
+      ],
+      "answer": 0,
+      "explain": "Last train/bus."
+    },
+    {
+      "question": "Kereta terakhir sekitar jam?",
+      "options": [
+        "12 malam",
+        "10 malam",
+        "8 malam",
+        "1 siang"
+      ],
+      "answer": 0,
+      "explain": "밤 열두 시쯤."
+    },
+    {
+      "question": "갈아타세요 berarti…",
+      "options": [
+        "silakan transfer/pindah kendaraan",
+        "silakan turun",
+        "silakan bayar",
+        "silakan tunggu"
+      ],
+      "answer": 0,
+      "explain": "Transfer."
+    },
+    {
+      "question": "몇 정거장 berarti…",
+      "options": [
+        "berapa stasiun",
+        "jalur berapa",
+        "berapa harga",
+        "jam berapa"
+      ],
+      "answer": 0,
+      "explain": "How many stops."
+    }
+  ]
+}
