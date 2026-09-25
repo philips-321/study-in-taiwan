@@ -1,0 +1,182 @@
+{
+  "id": "ko-l2-003",
+  "level": "Level 2 · Kalimat dasar",
+  "order": 3,
+  "passScore": 80,
+  "title": "이 / 가 — penanda subjek",
+  "subtitle": "Menandai siapa atau apa yang menjadi subjek, terutama ketika informasi itu penting atau baru.",
+  "intro": "Gunakan 이 setelah kata berakhir konsonan dan 가 setelah kata berakhir vokal. 이/가 sering menyoroti subjek atau menjawab 'siapa/apa yang…?'.",
+  "tip": "학생 + 이 = 학생이. 친구 + 가 = 친구가.",
+  "progressStart": 66,
+  "objectives": [
+    "이",
+    "가",
+    "subjek"
+  ],
+  "prev": {
+    "title": "Pelajaran 2 · 은/는",
+    "path": "level-2/002-eun-neun-topic.json"
+  },
+  "next": {
+    "title": "Pelajaran 4 · 을/를",
+    "path": "level-2/004-eul-reul-object.json"
+  },
+  "units": [
+    {
+      "char": "학생이",
+      "roman": "haksaengi",
+      "hint": "학생 berakhir konsonan → 이.",
+      "speak": "학생이",
+      "example": {
+        "ko": "학생이 와요",
+        "roman": "haksaengi wayo",
+        "id": "Seorang siswa datang."
+      }
+    },
+    {
+      "char": "친구가",
+      "roman": "chinguga",
+      "hint": "친구 berakhir vokal → 가.",
+      "speak": "친구가",
+      "example": {
+        "ko": "친구가 전화해요",
+        "roman": "chinguga jeonhwahaeyo",
+        "id": "Teman menelepon."
+      }
+    },
+    {
+      "char": "비가",
+      "roman": "biga",
+      "hint": "비 berakhir vokal → 가.",
+      "speak": "비가",
+      "example": {
+        "ko": "비가 와요",
+        "roman": "biga wayo",
+        "id": "Hujan turun."
+      }
+    },
+    {
+      "char": "사람이",
+      "roman": "sarami",
+      "hint": "사람 berakhir ㅁ → 이.",
+      "speak": "사람이",
+      "example": {
+        "ko": "사람이 많아요",
+        "roman": "sarami manayo",
+        "id": "Orangnya banyak."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "학생___ 와요",
+      "options": [
+        "이",
+        "가",
+        "은",
+        "를"
+      ],
+      "answer": 0,
+      "explain": "학생 berakhir konsonan → 이."
+    },
+    {
+      "question": "친구___ 전화해요",
+      "options": [
+        "이",
+        "가",
+        "은",
+        "을"
+      ],
+      "answer": 1,
+      "explain": "친구 berakhir vokal → 가."
+    },
+    {
+      "question": "비___ 와요",
+      "options": [
+        "이",
+        "가",
+        "는",
+        "를"
+      ],
+      "answer": 1,
+      "explain": "비 berakhir vokal."
+    },
+    {
+      "question": "사람___ 많아요",
+      "options": [
+        "가",
+        "이",
+        "는",
+        "를"
+      ],
+      "answer": 1,
+      "explain": "사람 berakhir ㅁ."
+    },
+    {
+      "question": "이/가 terutama menandai…",
+      "options": [
+        "subjek",
+        "objek",
+        "tempat",
+        "alat"
+      ],
+      "answer": 0,
+      "explain": "Subject marker."
+    },
+    {
+      "question": "Setelah konsonan gunakan…",
+      "options": [
+        "가",
+        "이",
+        "는",
+        "를"
+      ],
+      "answer": 1,
+      "explain": "Konsonan → 이."
+    },
+    {
+      "question": "Setelah vokal gunakan…",
+      "options": [
+        "가",
+        "이",
+        "은",
+        "을"
+      ],
+      "answer": 0,
+      "explain": "Vokal → 가."
+    },
+    {
+      "question": "Mana yang benar?",
+      "options": [
+        "친구이",
+        "친구가",
+        "학생가",
+        "사람가"
+      ],
+      "answer": 1,
+      "explain": "친구 berakhir vokal."
+    },
+    {
+      "question": "Untuk menjawab 'siapa yang datang?', 이/가 sering…",
+      "options": [
+        "menyoroti subjek",
+        "menandai objek",
+        "mengubah tense",
+        "menandai lokasi"
+      ],
+      "answer": 0,
+      "explain": "이/가 sering fokus pada subjek/informasi baru."
+    },
+    {
+      "question": "Perbedaan dasar 은/는 dan 이/가 adalah…",
+      "options": [
+        "keduanya selalu sama",
+        "은/는 topik/kontras, 이/가 subjek/fokus",
+        "은/는 objek, 이/가 tempat",
+        "이/가 hanya masa lalu"
+      ],
+      "answer": 1,
+      "explain": "Ini simplifikasi dasar yang berguna untuk pemula."
+    }
+  ]
+}
