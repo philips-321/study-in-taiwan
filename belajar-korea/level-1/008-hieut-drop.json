@@ -262,7 +262,31 @@
       "example": {
         "ko": "정말 좋아요",
         "roman": "jeongmal joayo",
-        "id": "sangat suka / bagus"
+        "id": "sangat suka / bagus",
+        "map": {
+          "units": [
+            {
+              "ko": "정말",
+              "roman": "jeongmal",
+              "literal": "sangat"
+            },
+            {
+              "ko": "좋아요",
+              "roman": "joayo",
+              "literal": "suka / bagus"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Sangat",
+              "ref": 0
+            },
+            {
+              "text": "suka",
+              "ref": 1
+            }
+          ]
+        }
       }
     },
     {
@@ -273,7 +297,36 @@
       "example": {
         "ko": "사람이 많아요",
         "roman": "sarami manayo",
-        "id": "orangnya banyak"
+        "id": "orangnya banyak",
+        "map": {
+          "units": [
+            {
+              "ko": "사람",
+              "roman": "saram",
+              "literal": "orang"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "많아요",
+              "roman": "manayo",
+              "literal": "banyak"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Orangnya",
+              "ref": 0
+            },
+            {
+              "text": "banyak",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -284,7 +337,36 @@
       "example": {
         "ko": "저는 싫어요",
         "roman": "jeoneun sireoyo",
-        "id": "saya tidak suka"
+        "id": "saya tidak suka",
+        "map": {
+          "units": [
+            {
+              "ko": "저",
+              "roman": "jeo",
+              "literal": "saya"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "penanda topik"
+            },
+            {
+              "ko": "싫어요",
+              "roman": "sireoyo",
+              "literal": "tidak suka"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 0
+            },
+            {
+              "text": "tidak suka",
+              "ref": 2
+            }
+          ]
+        }
       }
     }
   ],
