@@ -1,0 +1,652 @@
+{
+  "id": "ko-l5-002",
+  "level": "Level 5 · Dialog & reading",
+  "order": 2,
+  "passScore": 80,
+  "title": "Dialog: pesan di kafe",
+  "subtitle": "Memesan minuman, memilih panas/dingin, dine-in/takeaway, dan membayar.",
+  "intro": "Simulasi kafe dengan ekspresi yang sangat sering dipakai.",
+  "tip": "Putar satu turn, ikuti color map, lalu ulangi dengan keras. Setelah paham, coba baca dua peran tanpa melihat arti.",
+  "progressStart": 90,
+  "objectives": [
+    "12 turn",
+    "audio per turn",
+    "comprehension"
+  ],
+  "prev": {
+    "title": "Pelajaran 1 · Perkenalan",
+    "path": "level-5/001-introduction-dialogue.json"
+  },
+  "next": {
+    "title": "Pelajaran 3 · Belanja",
+    "path": "level-5/003-shopping-dialogue.json"
+  },
+  "dialogues": [
+    {
+      "title": "Dialog: pesan di kafe",
+      "intro": "Dialog latihan dengan 12 turn.",
+      "turns": [
+        {
+          "speaker": "손님",
+          "ko": "안녕하세요. 두 명이에요.",
+          "roman": "annyeonghaseyo. du myeong-ieyo",
+          "id": "Halo. Kami berdua.",
+          "map": {
+            "units": [
+              {
+                "ko": "안녕하세요",
+                "roman": "annyeonghaseyo",
+                "literal": "halo"
+              },
+              {
+                "ko": "두 명",
+                "roman": "du myeong",
+                "literal": "dua orang"
+              },
+              {
+                "ko": "이에요",
+                "roman": "ieyo",
+                "literal": "adalah"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Halo",
+                "ref": 0
+              },
+              {
+                "text": "Kami berdua",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "안녕하세요. 두 명이에요."
+        },
+        {
+          "speaker": "직원",
+          "ko": "네, 이쪽으로 오세요.",
+          "roman": "ne, ijjogeuro oseyo",
+          "id": "Baik, silakan ke sini.",
+          "map": {
+            "units": [
+              {
+                "ko": "네",
+                "roman": "ne",
+                "literal": "baik"
+              },
+              {
+                "ko": "이쪽",
+                "roman": "ijjok",
+                "literal": "sini/arah ini"
+              },
+              {
+                "ko": "으로",
+                "roman": "euro",
+                "literal": "ke arah"
+              },
+              {
+                "ko": "오세요",
+                "roman": "oseyo",
+                "literal": "silakan datang"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Baik",
+                "ref": 0
+              },
+              {
+                "text": "silakan",
+                "ref": 3
+              },
+              {
+                "text": "ke sini",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "네, 이쪽으로 오세요."
+        },
+        {
+          "speaker": "직원",
+          "ko": "주문하시겠어요?",
+          "roman": "jumunhasigesseoyo",
+          "id": "Apakah Anda siap memesan?",
+          "map": {
+            "units": [
+              {
+                "ko": "주문하시겠어요",
+                "roman": "jumunhasigesseoyo",
+                "literal": "maukah memesan (hormat)"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Apakah Anda siap memesan",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "주문하시겠어요?"
+        },
+        {
+          "speaker": "손님",
+          "ko": "아메리카노 한 잔하고 라테 한 잔 주세요.",
+          "roman": "amerikano han janhago latte han jan juseyo",
+          "id": "Tolong satu Americano dan satu latte.",
+          "map": {
+            "units": [
+              {
+                "ko": "아메리카노",
+                "roman": "amerikano",
+                "literal": "Americano"
+              },
+              {
+                "ko": "한 잔",
+                "roman": "han jan",
+                "literal": "satu cangkir"
+              },
+              {
+                "ko": "하고",
+                "roman": "hago",
+                "literal": "dan"
+              },
+              {
+                "ko": "라테",
+                "roman": "latte",
+                "literal": "latte"
+              },
+              {
+                "ko": "한 잔",
+                "roman": "han jan",
+                "literal": "satu cangkir"
+              },
+              {
+                "ko": "주세요",
+                "roman": "juseyo",
+                "literal": "tolong beri"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Tolong",
+                "ref": 5
+              },
+              {
+                "text": "satu",
+                "ref": 1
+              },
+              {
+                "text": "Americano",
+                "ref": 0
+              },
+              {
+                "text": "dan",
+                "ref": 2
+              },
+              {
+                "text": "satu latte",
+                "ref": 3
+              }
+            ]
+          },
+          "speak": "아메리카노 한 잔하고 라테 한 잔 주세요."
+        },
+        {
+          "speaker": "직원",
+          "ko": "아이스로 드릴까요, 따뜻한 걸로 드릴까요?",
+          "roman": "aiseuro deurilkkayo, ttatteuthan geollo deurilkkayo",
+          "id": "Mau dingin atau panas?",
+          "map": {
+            "units": [
+              {
+                "ko": "아이스",
+                "roman": "aiseu",
+                "literal": "es/dingin"
+              },
+              {
+                "ko": "로",
+                "roman": "ro",
+                "literal": "sebagai"
+              },
+              {
+                "ko": "드릴까요",
+                "roman": "deurilkkayo",
+                "literal": "maukah saya berikan"
+              },
+              {
+                "ko": "따뜻한 것",
+                "roman": "ttatteuthan geot",
+                "literal": "yang hangat"
+              },
+              {
+                "ko": "으로",
+                "roman": "euro",
+                "literal": "sebagai"
+              },
+              {
+                "ko": "드릴까요",
+                "roman": "deurilkkayo",
+                "literal": "maukah saya berikan"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Mau",
+                "ref": 2
+              },
+              {
+                "text": "dingin",
+                "ref": 0
+              },
+              {
+                "text": "atau",
+                "ref": 3
+              },
+              {
+                "text": "panas",
+                "ref": 3
+              }
+            ]
+          },
+          "speak": "아이스로 드릴까요, 따뜻한 걸로 드릴까요?"
+        },
+        {
+          "speaker": "손님",
+          "ko": "아메리카노는 아이스로 주세요.",
+          "roman": "amerikanoneun aiseuro juseyo",
+          "id": "Americanonya tolong dingin.",
+          "map": {
+            "units": [
+              {
+                "ko": "아메리카노",
+                "roman": "amerikano",
+                "literal": "Americano"
+              },
+              {
+                "ko": "는",
+                "roman": "neun",
+                "literal": "topik"
+              },
+              {
+                "ko": "아이스",
+                "roman": "aiseu",
+                "literal": "dingin"
+              },
+              {
+                "ko": "로",
+                "roman": "ro",
+                "literal": "sebagai"
+              },
+              {
+                "ko": "주세요",
+                "roman": "juseyo",
+                "literal": "tolong beri"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Americanonya",
+                "ref": 0
+              },
+              {
+                "text": "tolong",
+                "ref": 4
+              },
+              {
+                "text": "dingin",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "아메리카노는 아이스로 주세요."
+        },
+        {
+          "speaker": "손님",
+          "ko": "라테는 따뜻하게 해 주세요.",
+          "roman": "latteneun ttatteuthage hae juseyo",
+          "id": "Lattenya tolong dibuat panas.",
+          "map": {
+            "units": [
+              {
+                "ko": "라테",
+                "roman": "latte",
+                "literal": "latte"
+              },
+              {
+                "ko": "는",
+                "roman": "neun",
+                "literal": "topik"
+              },
+              {
+                "ko": "따뜻하게",
+                "roman": "ttatteuthage",
+                "literal": "hangat"
+              },
+              {
+                "ko": "해 주세요",
+                "roman": "hae juseyo",
+                "literal": "tolong buat"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Lattenya",
+                "ref": 0
+              },
+              {
+                "text": "tolong dibuat",
+                "ref": 3
+              },
+              {
+                "text": "panas",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "라테는 따뜻하게 해 주세요."
+        },
+        {
+          "speaker": "직원",
+          "ko": "드시고 가세요, 가지고 가세요?",
+          "roman": "deusigo gaseyo, gajigo gaseyo",
+          "id": "Minum di sini atau dibawa pergi?",
+          "map": {
+            "units": [
+              {
+                "ko": "드시고 가세요",
+                "roman": "deusigo gaseyo",
+                "literal": "makan/minum lalu pergi"
+              },
+              {
+                "ko": "가지고 가세요",
+                "roman": "gajigo gaseyo",
+                "literal": "bawa pergi"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Minum di sini",
+                "ref": 0
+              },
+              {
+                "text": "atau dibawa pergi",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "드시고 가세요, 가지고 가세요?"
+        },
+        {
+          "speaker": "손님",
+          "ko": "여기서 마실게요.",
+          "roman": "yeogiseo masilgeyo",
+          "id": "Kami akan minum di sini.",
+          "map": {
+            "units": [
+              {
+                "ko": "여기",
+                "roman": "yeogi",
+                "literal": "di sini"
+              },
+              {
+                "ko": "서",
+                "roman": "seo",
+                "literal": "di"
+              },
+              {
+                "ko": "마실게요",
+                "roman": "masilgeyo",
+                "literal": "akan minum"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Kami akan minum",
+                "ref": 2
+              },
+              {
+                "text": "di sini",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "여기서 마실게요."
+        },
+        {
+          "speaker": "직원",
+          "ko": "총 만이천 원입니다.",
+          "roman": "chong manicheon wonimnida",
+          "id": "Totalnya 12.000 won.",
+          "map": {
+            "units": [
+              {
+                "ko": "총",
+                "roman": "chong",
+                "literal": "total"
+              },
+              {
+                "ko": "만이천 원",
+                "roman": "manicheon won",
+                "literal": "12.000 won"
+              },
+              {
+                "ko": "입니다",
+                "roman": "imnida",
+                "literal": "adalah"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Totalnya",
+                "ref": 0
+              },
+              {
+                "text": "12.000 won",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "총 만이천 원입니다."
+        },
+        {
+          "speaker": "손님",
+          "ko": "카드로 계산할게요.",
+          "roman": "kadeuro gyesanhalgeyo",
+          "id": "Saya akan bayar dengan kartu.",
+          "map": {
+            "units": [
+              {
+                "ko": "카드",
+                "roman": "kadeu",
+                "literal": "kartu"
+              },
+              {
+                "ko": "로",
+                "roman": "ro",
+                "literal": "dengan"
+              },
+              {
+                "ko": "계산할게요",
+                "roman": "gyesanhalgeyo",
+                "literal": "akan membayar"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Saya akan membayar",
+                "ref": 2
+              },
+              {
+                "text": "dengan kartu",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "카드로 계산할게요."
+        },
+        {
+          "speaker": "직원",
+          "ko": "네, 감사합니다. 잠시만 기다려 주세요.",
+          "roman": "ne, gamsahamnida. jamsiman gidaryeo juseyo",
+          "id": "Baik, terima kasih. Mohon tunggu sebentar.",
+          "map": {
+            "units": [
+              {
+                "ko": "네",
+                "roman": "ne",
+                "literal": "baik"
+              },
+              {
+                "ko": "감사합니다",
+                "roman": "gamsahamnida",
+                "literal": "terima kasih"
+              },
+              {
+                "ko": "잠시만",
+                "roman": "jamsiman",
+                "literal": "sebentar"
+              },
+              {
+                "ko": "기다려 주세요",
+                "roman": "gidaryeo juseyo",
+                "literal": "tolong tunggu"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Baik",
+                "ref": 0
+              },
+              {
+                "text": "terima kasih",
+                "ref": 1
+              },
+              {
+                "text": "Mohon tunggu",
+                "ref": 3
+              },
+              {
+                "text": "sebentar",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "네, 감사합니다. 잠시만 기다려 주세요."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Ada berapa orang pelanggan?",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "answer": 0,
+      "explain": "두 명이에요."
+    },
+    {
+      "question": "Apa yang dipesan?",
+      "options": [
+        "Americano dan latte",
+        "teh dan jus",
+        "dua latte",
+        "makanan"
+      ],
+      "answer": 0,
+      "explain": "아메리카노 한 잔하고 라테 한 잔."
+    },
+    {
+      "question": "Americano diminta bagaimana?",
+      "options": [
+        "dingin",
+        "panas",
+        "tanpa es",
+        "besar"
+      ],
+      "answer": 0,
+      "explain": "아이스로 주세요."
+    },
+    {
+      "question": "Latte diminta bagaimana?",
+      "options": [
+        "hangat/panas",
+        "dingin",
+        "tanpa susu",
+        "dibawa"
+      ],
+      "answer": 0,
+      "explain": "따뜻하게."
+    },
+    {
+      "question": "Mereka minum di mana?",
+      "options": [
+        "di kafe",
+        "dibawa pulang",
+        "di luar",
+        "di kantor"
+      ],
+      "answer": 0,
+      "explain": "여기서 마실게요."
+    },
+    {
+      "question": "Total harga?",
+      "options": [
+        "12.000 won",
+        "20.000 won",
+        "1.200 won",
+        "10.000 won"
+      ],
+      "answer": 0,
+      "explain": "만이천 원."
+    },
+    {
+      "question": "Pembayaran memakai?",
+      "options": [
+        "kartu",
+        "tunai",
+        "aplikasi",
+        "kupon"
+      ],
+      "answer": 0,
+      "explain": "카드로."
+    },
+    {
+      "question": "가지고 가세요? menanyakan…",
+      "options": [
+        "take away",
+        "rasa",
+        "harga",
+        "jumlah orang"
+      ],
+      "answer": 0,
+      "explain": "Apakah dibawa pergi."
+    },
+    {
+      "question": "한 잔 adalah counter untuk…",
+      "options": [
+        "satu cangkir/gelas minuman",
+        "satu orang",
+        "satu buku",
+        "satu mobil"
+      ],
+      "answer": 0,
+      "explain": "잔 = cangkir/gelas."
+    },
+    {
+      "question": "잠시만 기다려 주세요 berarti…",
+      "options": [
+        "mohon tunggu sebentar",
+        "silakan duduk",
+        "tolong bayar",
+        "silakan masuk"
+      ],
+      "answer": 0,
+      "explain": "Wait a moment."
+    }
+  ]
+}
