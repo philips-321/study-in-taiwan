@@ -30,7 +30,40 @@
       "example": {
         "ko": "학생이 와요",
         "roman": "haksaengi wayo",
-        "id": "Seorang siswa datang."
+        "id": "Seorang siswa datang.",
+        "map": {
+          "units": [
+            {
+              "ko": "학생",
+              "roman": "haksaeng",
+              "literal": "siswa"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "와요",
+              "roman": "wayo",
+              "literal": "datang"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Seorang siswa",
+              "ref": 0
+            },
+            {
+              "text": "datang",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -41,7 +74,40 @@
       "example": {
         "ko": "친구가 전화해요",
         "roman": "chinguga jeonhwahaeyo",
-        "id": "Teman menelepon."
+        "id": "Teman menelepon.",
+        "map": {
+          "units": [
+            {
+              "ko": "친구",
+              "roman": "chingu",
+              "literal": "teman"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "전화해요",
+              "roman": "jeonhwahaeyo",
+              "literal": "menelepon"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Teman",
+              "ref": 0
+            },
+            {
+              "text": "menelepon",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -52,7 +118,40 @@
       "example": {
         "ko": "비가 와요",
         "roman": "biga wayo",
-        "id": "Hujan turun."
+        "id": "Hujan turun.",
+        "map": {
+          "units": [
+            {
+              "ko": "비",
+              "roman": "bi",
+              "literal": "hujan"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "와요",
+              "roman": "wayo",
+              "literal": "datang / turun"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Hujan",
+              "ref": 0
+            },
+            {
+              "text": "turun",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -63,7 +162,40 @@
       "example": {
         "ko": "사람이 많아요",
         "roman": "sarami manayo",
-        "id": "Orangnya banyak."
+        "id": "Orangnya banyak.",
+        "map": {
+          "units": [
+            {
+              "ko": "사람",
+              "roman": "saram",
+              "literal": "orang"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "많아요",
+              "roman": "manayo",
+              "literal": "banyak"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Orangnya",
+              "ref": 0
+            },
+            {
+              "text": "banyak",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     }
   ],
