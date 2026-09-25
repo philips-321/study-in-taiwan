@@ -20,11 +20,21 @@
 </main>
 <script>
 const lessons=[
- ['ko-l0-001','Vokal dasar','level-0/001-vokal-dasar.json'],
- ['ko-l0-002','Konsonan dasar','level-0/002-konsonan-dasar.json'],
- ['ko-l0-003','Blok suku kata','level-0/003-blok-suku-kata.json'],
- ['ko-l0-004','Vokal gabungan','level-0/004-vokal-gabungan.json'],
- ['ko-l0-005','Batchim dasar','level-0/005-batchim-dasar.json']
+ ['ko-l0-001','L0 · Vokal dasar','level-0/001-vokal-dasar.json'],
+ ['ko-l0-002','L0 · Konsonan dasar','level-0/002-konsonan-dasar.json'],
+ ['ko-l0-003','L0 · Blok suku kata','level-0/003-blok-suku-kata.json'],
+ ['ko-l0-004','L0 · Vokal gabungan','level-0/004-vokal-gabungan.json'],
+ ['ko-l0-005','L0 · Batchim dasar','level-0/005-batchim-dasar.json'],
+ ['ko-l1-001','L1 · 연음','level-1/001-yeoneum-liaison.json'],
+ ['ko-l1-002','L1 · 비음화','level-1/002-bieumhwa-nasalization.json'],
+ ['ko-l1-003','L1 · 유음화','level-1/003-yueumhwa-liquidization.json'],
+ ['ko-l1-004','L1 · 된소리되기','level-1/004-doensori-tensing.json'],
+ ['ko-l1-005','L1 · Perubahan ㅎ','level-1/005-hieut-changes.json'],
+ ['ko-l2-001','L2 · 이에요/예요','level-2/001-ieyo-yeyo.json'],
+ ['ko-l2-002','L2 · 은/는','level-2/002-eun-neun-topic.json'],
+ ['ko-l2-003','L2 · 이/가','level-2/003-i-ga-subject.json'],
+ ['ko-l2-004','L2 · 을/를','level-2/004-eul-reul-object.json'],
+ ['ko-l2-005','L2 · 에/에서','level-2/005-e-eseo-location.json']
 ];
 const vals=lessons.map(x=>Number(localStorage.getItem('levelingBest:'+x[0])||0));
 const done=lessons.filter(x=>localStorage.getItem('levelingDone:'+x[0])==='1').length;
