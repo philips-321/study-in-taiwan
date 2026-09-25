@@ -342,5 +342,387 @@
       "answer": 0,
       "explain": "은/는 sering membawa nuansa topik atau kontras."
     }
+  ],
+  "practiceExamples": [
+    {
+      "ko": "저는 학생이에요.",
+      "roman": "jeoneun haksaeng-ieyo",
+      "id": "Saya pelajar.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "학생",
+            "roman": "haksaeng",
+            "literal": "pelajar"
+          },
+          {
+            "ko": "이에요",
+            "roman": "ieyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "pelajar",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저는 학생이에요."
+    },
+    {
+      "ko": "친구는 서울에 살아요.",
+      "roman": "chinguneun seoure sarayo",
+      "id": "Teman saya tinggal di Seoul.",
+      "map": {
+        "units": [
+          {
+            "ko": "친구",
+            "roman": "chingu",
+            "literal": "teman"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "서울",
+            "roman": "Seoul",
+            "literal": "Seoul"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "di"
+          },
+          {
+            "ko": "살아요",
+            "roman": "sarayo",
+            "literal": "tinggal"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Teman saya",
+            "ref": 0
+          },
+          {
+            "text": "tinggal",
+            "ref": 4
+          },
+          {
+            "text": "di Seoul",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "친구는 서울에 살아요."
+    },
+    {
+      "ko": "이 책은 재미있어요.",
+      "roman": "i chaegeun jaemiisseoyo",
+      "id": "Buku ini menarik.",
+      "map": {
+        "units": [
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "ini"
+          },
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "재미있어요",
+            "roman": "jaemiisseoyo",
+            "literal": "menarik"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Buku",
+            "ref": 1
+          },
+          {
+            "text": "ini",
+            "ref": 0
+          },
+          {
+            "text": "menarik",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "이 책은 재미있어요."
+    },
+    {
+      "ko": "오늘은 날씨가 좋아요.",
+      "roman": "oneureun nalssiga joayo",
+      "id": "Hari ini cuacanya bagus.",
+      "map": {
+        "units": [
+          {
+            "ko": "오늘",
+            "roman": "oneul",
+            "literal": "hari ini"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "날씨",
+            "roman": "nalssi",
+            "literal": "cuaca"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "좋아요",
+            "roman": "joayo",
+            "literal": "bagus"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Hari ini",
+            "ref": 0
+          },
+          {
+            "text": "cuacanya",
+            "ref": 2
+          },
+          {
+            "text": "bagus",
+            "ref": 4
+          }
+        ]
+      },
+      "note": "",
+      "speak": "오늘은 날씨가 좋아요."
+    },
+    {
+      "ko": "한국 음식은 매워요.",
+      "roman": "hanguk eumsigeun maewoyo",
+      "id": "Makanan Korea pedas.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국",
+            "roman": "hanguk",
+            "literal": "Korea"
+          },
+          {
+            "ko": "음식",
+            "roman": "eumsik",
+            "literal": "makanan"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "매워요",
+            "roman": "maewoyo",
+            "literal": "pedas"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Makanan",
+            "ref": 1
+          },
+          {
+            "text": "Korea",
+            "ref": 0
+          },
+          {
+            "text": "pedas",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국 음식은 매워요."
+    },
+    {
+      "ko": "저녁은 집에서 먹어요.",
+      "roman": "jeonyeogeun jibeseo meogeoyo",
+      "id": "Kalau makan malam, saya makan di rumah.",
+      "map": {
+        "units": [
+          {
+            "ko": "저녁",
+            "roman": "jeonyeok",
+            "literal": "makan malam"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "먹어요",
+            "roman": "meogeoyo",
+            "literal": "makan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kalau makan malam",
+            "ref": 0
+          },
+          {
+            "text": "saya makan",
+            "ref": 4
+          },
+          {
+            "text": "di rumah",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저녁은 집에서 먹어요."
+    },
+    {
+      "ko": "주말은 시간이 많아요.",
+      "roman": "jumareun sigani manayo",
+      "id": "Pada akhir pekan saya punya banyak waktu.",
+      "map": {
+        "units": [
+          {
+            "ko": "주말",
+            "roman": "jumal",
+            "literal": "akhir pekan"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "시간",
+            "roman": "sigan",
+            "literal": "waktu"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "subjek"
+          },
+          {
+            "ko": "많아요",
+            "roman": "manayo",
+            "literal": "banyak"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Pada akhir pekan",
+            "ref": 0
+          },
+          {
+            "text": "saya punya banyak",
+            "ref": 4
+          },
+          {
+            "text": "waktu",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "주말은 시간이 많아요."
+    },
+    {
+      "ko": "버스는 싸지만 느려요.",
+      "roman": "beoseuneun ssajiman neuryeoyo",
+      "id": "Bus murah tetapi lambat.",
+      "map": {
+        "units": [
+          {
+            "ko": "버스",
+            "roman": "beoseu",
+            "literal": "bus"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "싸지만",
+            "roman": "ssajiman",
+            "literal": "murah tetapi"
+          },
+          {
+            "ko": "느려요",
+            "roman": "neuryeoyo",
+            "literal": "lambat"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Bus",
+            "ref": 0
+          },
+          {
+            "text": "murah",
+            "ref": 2
+          },
+          {
+            "text": "tetapi",
+            "ref": 2
+          },
+          {
+            "text": "lambat",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "버스는 싸지만 느려요."
+    }
   ]
 }
