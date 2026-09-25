@@ -43,6 +43,17 @@ function reviewQueue(){try{return JSON.parse(localStorage.getItem('levelingRevie
 function saveReviewQueue(q){localStorage.setItem('levelingReviewQueue',JSON.stringify(q))}
 function addWrongToReview(qi){const q=lesson.quiz[qi],queue=reviewQueue(),id=lesson.id+':'+qi;if(!queue.some(x=>x.id===id))queue.push({id,lessonId:lesson.id,lessonTitle:lesson.title,question:q.question,addedAt:Date.now(),path:lessonPath()});saveReviewQueue(queue)}
 function clearCorrectFromReview(qi){const id=lesson.id+':'+qi;saveReviewQueue(reviewQueue().filter(x=>x.id!==id))}
+const CM_COUNT=12;
+function cmClass(i){return 'cm'+(i%CM_COUNT)}
+function renderColorMap(map,fallback){
+ const items=(map&&map.length)?map:(fallback?[{ko:fallback.ko||'',roman:fallback.roman||'',literal:fallback.literal||fallback.id||'',natural:fallback.id||fallback.literal||''}]:[]);
+ if(!items.length)return '';
+ const ko=items.map((x,i)=>'<span class="cm-token '+cmClass(i)+'">'+esc(x.ko||'')+'</span>').join('');
+ const roman=items.map((x,i)=>'<span class="cm-token '+cmClass(i)+'">'+esc(x.roman||'')+'</span>').join(' ');
+ const literal=items.map((x,i)=>'<span class="cm-token '+cmClass(i)+'">'+esc(x.literal||'')+'</span>').join(' ');
+ const natural=items.map((x,i)=>'<span class="cm-token '+cmClass(i)+'">'+esc(x.natural||x.literal||'')+'</span>').join(' ');
+ return '<div class="color-map"><div class="cm-label">COLOR MAP</div><div class="cm-ko">'+ko+'</div><div class="cm-row"><span>Romanisasi</span><div>'+roman+'</div></div><div class="cm-row"><span>Arti literal</span><div>'+literal+'</div></div><div class="cm-natural"><span>Indonesia natural</span><div>'+natural+'</div></div></div>';
+}
 function renderDetail(){
  if(!lesson.detailSections?.length)return '';
  return '<section class="block"><h2>Penjelasan lengkap</h2>'+lesson.detailSections.map(s=>'<div class="detail-section"><h3>'+esc(s.title)+'</h3>'+(s.paragraphs||[]).map(p=>'<p>'+esc(p)+'</p>').join('')+'</div>').join('')+'</section>';
@@ -53,12 +64,12 @@ function renderTransforms(){
 }
 function renderSentences(){
  if(!lesson.sentences?.length)return '';
- return '<section class="block"><h2>Contoh kalimat</h2><p>Putar kalimatnya, dengarkan sampai selesai, lalu ulangi dengan suara keras.</p><div class="sentence-list">'+lesson.sentences.map(s=>'<article class="sentence-example"><div class="sentence-ko">'+esc(s.ko)+'</div>'+(s.pronunciation?'<div class="sentence-pron">Bunyi: '+esc(s.pronunciation)+'</div>':'')+(s.roman?'<div class="sentence-roman">'+esc(s.roman)+'</div>':'')+'<div class="sentence-id">'+esc(s.id)+'</div>'+(s.note?'<div class="sentence-note">'+esc(s.note)+'</div>':'')+'<button class="say sentence-play" data-say="'+esc(s.speak||s.ko)+'">▶ Putar kalimat</button></article>').join('')+'</div></section>';
+ return '<section class="block"><h2>Contoh kalimat</h2><p>Warna yang sama menghubungkan unit makna Korea → romanisasi → arti literal → terjemahan Indonesia natural.</p><div class="sentence-list">'+lesson.sentences.map(s=>'<article class="sentence-example">'+renderColorMap(s.map,{ko:s.ko,roman:s.roman,literal:s.id,id:s.id})+(s.pronunciation?'<div class="sentence-pron">Bunyi: '+esc(s.pronunciation)+'</div>':'')+(s.note?'<div class="sentence-note">'+esc(s.note)+'</div>':'')+'<button class="say sentence-play" data-say="'+esc(s.speak||s.ko)+'">▶ Putar kalimat</button></article>').join('')+'</div></section>';
 }
 function render(){
  document.title=lesson.title+' | Leveling';
  const done=localStorage.getItem('levelingDone:'+lesson.id)==='1';
- const units=(lesson.units||[]).map(u=>'<article class="unit"><div class="char">'+esc(u.char)+'</div><div class="roman">'+esc(u.roman)+'</div><p class="hint">'+esc(u.hint)+'</p><button class="say" data-say="'+esc(u.speak||u.char)+'">▶ Dengarkan kata</button>'+(u.example?'<div class="example"><b>'+esc(u.example.ko)+'</b><small>'+esc(u.example.roman)+' · '+esc(u.example.id)+'</small><button class="say mini-play" data-say="'+esc(u.example.ko)+'">▶ Putar contoh</button></div>':'')+'</article>').join('');
+ const units=(lesson.units||[]).map(u=>'<article class="unit"><div class="char">'+esc(u.char)+'</div><div class="roman">'+esc(u.roman)+'</div><p class="hint">'+esc(u.hint)+'</p><button class="say" data-say="'+esc(u.speak||u.char)+'">▶ Dengarkan kata</button>'+(u.example?'<div class="example">'+renderColorMap(u.example.map,{ko:u.example.ko,roman:u.example.roman,literal:u.example.id,id:u.example.id})+'<button class="say mini-play" data-say="'+esc(u.example.ko)+'">▶ Putar contoh</button></div>':'')+'</article>').join('');
  const quizzes=(lesson.quiz||[]).map((q,i)=>'<div class="quiz-card" data-q="'+i+'"><div class="quiz-q">'+(i+1)+'. '+esc(q.question)+'</div><div class="options">'+q.options.map((o,j)=>'<button class="option" data-i="'+j+'">'+esc(o)+'</button>').join('')+'</div><div class="feedback"></div></div>').join('');
  const why=getWhy(),challenge=getChallenge();
  $('#app').innerHTML='<section class="lesson-head"><div class="kicker">'+esc(lesson.level)+' · Pelajaran '+esc(lesson.order)+'</div><h1>'+esc(lesson.title)+'</h1><p>'+esc(lesson.subtitle)+'</p>'+audioPanel()+'<div class="objective">'+(lesson.objectives||[]).map(x=>'<span class="chip">'+esc(x)+'</span>').join('')+'</div></section>'+
