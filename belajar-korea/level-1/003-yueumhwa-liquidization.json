@@ -1,0 +1,193 @@
+{
+  "id": "ko-l1-003",
+  "level": "Level 1 · Pengucapan",
+  "order": 3,
+  "passScore": 80,
+  "title": "유음화 — ㄴ dan ㄹ bertemu",
+  "subtitle": "Ketika ㄴ dan ㄹ bertemu pada batas suku kata, keduanya sering terdengar sebagai ㄹㄹ.",
+  "intro": "유음화 adalah perubahan bunyi yang melibatkan ㄴ dan ㄹ. Dalam pola yang umum, ㄴ+ㄹ atau ㄹ+ㄴ direalisasikan sebagai ㄹㄹ.",
+  "tip": "Kunci pemula: lihat pertemuan N dan R/L. Kalau pola ini muncul, dengarkan apakah hasilnya menjadi dua bunyi ㄹ.",
+  "progressStart": 51,
+  "objectives": [
+    "ㄴ+ㄹ",
+    "ㄹ+ㄴ",
+    "contoh umum"
+  ],
+  "prev": {
+    "title": "Pelajaran 2 · 비음화",
+    "path": "level-1/002-bieumhwa-nasalization.json"
+  },
+  "next": {
+    "title": "Pelajaran 4 · 된소리되기",
+    "path": "level-1/004-doensori-tensing.json"
+  },
+  "units": [
+    {
+      "char": "신라",
+      "roman": "silla",
+      "hint": "ㄴ + ㄹ → ㄹㄹ.",
+      "speak": "신라",
+      "example": {
+        "ko": "신라 시대",
+        "roman": "silla sidae",
+        "id": "zaman Silla"
+      }
+    },
+    {
+      "char": "설날",
+      "roman": "seollal",
+      "hint": "ㄹ + ㄴ → ㄹㄹ.",
+      "speak": "설날",
+      "example": {
+        "ko": "설날이에요",
+        "roman": "seollarieyo",
+        "id": "ini Seollal"
+      }
+    },
+    {
+      "char": "연락",
+      "roman": "yeollak",
+      "hint": "ㄴ + ㄹ → ㄹㄹ.",
+      "speak": "연락",
+      "example": {
+        "ko": "연락해 주세요",
+        "roman": "yeollakae juseyo",
+        "id": "tolong hubungi"
+      }
+    },
+    {
+      "char": "편리",
+      "roman": "pyeolli",
+      "hint": "ㄴ + ㄹ → ㄹㄹ.",
+      "speak": "편리",
+      "example": {
+        "ko": "정말 편리해요",
+        "roman": "jeongmal pyeollihaeyo",
+        "id": "sangat praktis"
+      }
+    },
+    {
+      "char": "난로",
+      "roman": "nallo",
+      "hint": "ㄴ + ㄹ → ㄹㄹ.",
+      "speak": "난로",
+      "example": {
+        "ko": "난로가 있어요",
+        "roman": "nalloga isseoyo",
+        "id": "ada pemanas"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "신라 paling dekat dibaca…",
+      "options": [
+        "신라 terpisah",
+        "실라",
+        "신나",
+        "심라"
+      ],
+      "answer": 1,
+      "explain": "ㄴ+ㄹ → ㄹㄹ."
+    },
+    {
+      "question": "설날 paling dekat dibaca…",
+      "options": [
+        "설날 apa adanya",
+        "설랄",
+        "선날",
+        "설날르"
+      ],
+      "answer": 1,
+      "explain": "ㄹ+ㄴ → ㄹㄹ."
+    },
+    {
+      "question": "연락 paling dekat dibaca…",
+      "options": [
+        "연락",
+        "열락",
+        "연낙",
+        "염락"
+      ],
+      "answer": 1,
+      "explain": "ㄴ+ㄹ menjadi ㄹㄹ."
+    },
+    {
+      "question": "유음화 yang dipelajari di sini terutama melibatkan…",
+      "options": [
+        "ㄱ dan ㅁ",
+        "ㄴ dan ㄹ",
+        "ㅂ dan ㅅ",
+        "ㅎ dan ㄷ"
+      ],
+      "answer": 1,
+      "explain": "Fokusnya pertemuan ㄴ/ㄹ."
+    },
+    {
+      "question": "편리 paling dekat dibaca…",
+      "options": [
+        "편리",
+        "펼리",
+        "편니",
+        "평리"
+      ],
+      "answer": 1,
+      "explain": "ㄴ + ㄹ → ㄹㄹ."
+    },
+    {
+      "question": "난로 paling dekat dibaca…",
+      "options": [
+        "난로",
+        "날로",
+        "난노",
+        "남로"
+      ],
+      "answer": 1,
+      "explain": "ㄴ+ㄹ menjadi ㄹㄹ."
+    },
+    {
+      "question": "Pola ㄹ+ㄴ umumnya menjadi…",
+      "options": [
+        "ㄴㄴ",
+        "ㄹㄹ",
+        "ㅁㅁ",
+        "ㅇㄴ"
+      ],
+      "answer": 1,
+      "explain": "Keduanya dilikuidisasi menjadi ㄹㄹ."
+    },
+    {
+      "question": "Mana contoh 유음화?",
+      "options": [
+        "설날 → 설랄",
+        "국물 → 궁물",
+        "먹다 → 먹따",
+        "집에 → 지베"
+      ],
+      "answer": 0,
+      "explain": "Yang lain nasalization, tensing, dan liaison."
+    },
+    {
+      "question": "Ejaan 설날 setelah aturan bunyi…",
+      "options": [
+        "berubah resmi menjadi 설랄",
+        "tetap 설날",
+        "menjadi 선날",
+        "menjadi 설라"
+      ],
+      "answer": 1,
+      "explain": "Aturan ini hanya menjelaskan pengucapan."
+    },
+    {
+      "question": "Tujuan mempelajari 유음화 adalah…",
+      "options": [
+        "mengenali aliran ㄴ/ㄹ dalam ucapan alami",
+        "mengganti semua ㄴ menjadi ㄹ",
+        "menghafal kosakata Hanja",
+        "belajar honorifik"
+      ],
+      "answer": 0,
+      "explain": "Ini membantu listening dan pronunciation."
+    }
+  ]
+}
