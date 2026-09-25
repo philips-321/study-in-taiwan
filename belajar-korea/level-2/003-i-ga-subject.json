@@ -310,5 +310,290 @@
       "answer": 1,
       "explain": "Ini simplifikasi dasar yang berguna untuk pemula."
     }
+  ],
+  "practiceExamples": [
+    {
+      "ko": "고양이가 자요.",
+      "roman": "goyangiga jayo",
+      "id": "Kucing tidur.",
+      "map": {
+        "units": [
+          {
+            "ko": "고양이",
+            "roman": "goyangi",
+            "literal": "kucing"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "자요",
+            "roman": "jayo",
+            "literal": "tidur"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kucing",
+            "ref": 0
+          },
+          {
+            "text": "tidur",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "고양이가 자요."
+    },
+    {
+      "ko": "버스가 와요.",
+      "roman": "beoseuga wayo",
+      "id": "Bus datang.",
+      "map": {
+        "units": [
+          {
+            "ko": "버스",
+            "roman": "beoseu",
+            "literal": "bus"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "와요",
+            "roman": "wayo",
+            "literal": "datang"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Bus",
+            "ref": 0
+          },
+          {
+            "text": "datang",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "버스가 와요."
+    },
+    {
+      "ko": "문이 열려 있어요.",
+      "roman": "muni yeollyeo isseoyo",
+      "id": "Pintunya terbuka.",
+      "map": {
+        "units": [
+          {
+            "ko": "문",
+            "roman": "mun",
+            "literal": "pintu"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "subjek"
+          },
+          {
+            "ko": "열려 있어요",
+            "roman": "yeollyeo isseoyo",
+            "literal": "terbuka"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Pintunya",
+            "ref": 0
+          },
+          {
+            "text": "terbuka",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "문이 열려 있어요."
+    },
+    {
+      "ko": "누가 왔어요?",
+      "roman": "nuga wasseoyo",
+      "id": "Siapa yang datang?",
+      "map": {
+        "units": [
+          {
+            "ko": "누가",
+            "roman": "nuga",
+            "literal": "siapa + subjek"
+          },
+          {
+            "ko": "왔어요",
+            "roman": "wasseoyo",
+            "literal": "datang lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Siapa",
+            "ref": 0
+          },
+          {
+            "text": "yang datang",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "누가 왔어요?"
+    },
+    {
+      "ko": "제가 할게요.",
+      "roman": "jega halgeyo",
+      "id": "Saya yang akan melakukannya.",
+      "map": {
+        "units": [
+          {
+            "ko": "제",
+            "roman": "je",
+            "literal": "saya"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "할게요",
+            "roman": "halgeyo",
+            "literal": "akan melakukan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "yang akan melakukannya",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "제가 할게요."
+    },
+    {
+      "ko": "음식이 맛있어요.",
+      "roman": "eumsigi masisseoyo",
+      "id": "Makanannya enak.",
+      "map": {
+        "units": [
+          {
+            "ko": "음식",
+            "roman": "eumsik",
+            "literal": "makanan"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "subjek"
+          },
+          {
+            "ko": "맛있어요",
+            "roman": "masisseoyo",
+            "literal": "enak"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Makanannya",
+            "ref": 0
+          },
+          {
+            "text": "enak",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "음식이 맛있어요."
+    },
+    {
+      "ko": "날씨가 추워요.",
+      "roman": "nalssiga chuwoyo",
+      "id": "Cuacanya dingin.",
+      "map": {
+        "units": [
+          {
+            "ko": "날씨",
+            "roman": "nalssi",
+            "literal": "cuaca"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "추워요",
+            "roman": "chuwoyo",
+            "literal": "dingin"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Cuacanya",
+            "ref": 0
+          },
+          {
+            "text": "dingin",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "날씨가 추워요."
+    },
+    {
+      "ko": "시간이 없어요.",
+      "roman": "sigani eopseoyo",
+      "id": "Tidak ada waktu.",
+      "map": {
+        "units": [
+          {
+            "ko": "시간",
+            "roman": "sigan",
+            "literal": "waktu"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "subjek"
+          },
+          {
+            "ko": "없어요",
+            "roman": "eopseoyo",
+            "literal": "tidak ada"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Tidak ada",
+            "ref": 2
+          },
+          {
+            "text": "waktu",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "시간이 없어요."
+    }
   ]
 }
