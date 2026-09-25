@@ -3,29 +3,116 @@
   "level": "Level 1 · Pengucapan",
   "order": 4,
   "passScore": 80,
-  "title": "된소리되기 — bunyi menjadi tegang",
-  "subtitle": "Setelah batchim tertentu, konsonan berikutnya dapat terdengar sebagai ㄲ, ㄸ, ㅃ, ㅆ, atau ㅉ.",
-  "intro": "된소리되기 adalah tensification. Dalam banyak kata, konsonan biasa ㄱ ㄷ ㅂ ㅅ ㅈ setelah batchim tertentu terdengar sebagai konsonan tegang.",
-  "tip": "Untuk pemula, dengarkan kontrasnya: 학교 bukan hak-gyo yang longgar, tetapi terdengar mendekati 학꾜.",
+  "title": "된소리되기 — tensing",
+  "subtitle": "Konsonan biasa dapat berubah menjadi bunyi tegang ㄲ, ㄸ, ㅃ, ㅆ, atau ㅉ setelah lingkungan tertentu.",
+  "intro": "Dalam banyak kata, konsonan awal suku kata kedua tidak lagi terdengar sebagai bunyi biasa. Ia menjadi bunyi tegang yang lebih rapat dan kuat.",
+  "tip": "Fokus dulu pada pola setelah batchim obstruent: ㄱ/ㄷ/ㅂ-type + ㄱㄷㅂㅅㅈ dapat memicu ㄲㄸㅃㅆㅉ.",
   "progressStart": 54,
   "objectives": [
-    "konsonan tegang",
-    "listening",
-    "contoh umum"
+    "ㄲ ㄸ ㅃ ㅆ ㅉ",
+    "tulisan tetap",
+    "contoh kalimat"
   ],
   "prev": {
-    "title": "Pelajaran 3 · 유음화",
-    "path": "level-1/003-yueumhwa-liquidization.json"
+    "title": "Pelajaran 3 · 비음화",
+    "path": "level-1/003-bieumhwa-nasalization.json"
   },
   "next": {
-    "title": "Pelajaran 5 · Perubahan ㅎ",
-    "path": "level-1/005-hieut-changes.json"
+    "title": "Pelajaran 5 · 격음화",
+    "path": "level-1/005-gyeogeumhwa-aspiration.json"
   },
+  "detailSections": [
+    {
+      "title": "Apa yang berubah?",
+      "paragraphs": [
+        "Yang berubah adalah kekuatan konsonan awal berikutnya. Misalnya 학교 ditulis 학 + 교, tetapi ㄱ pada 교 terdengar tegang menjadi ㄲ: [학꾜].",
+        "Konsonan tegang tidak ditambahkan ke ejaan. Kita tidak menulis 학꾜 dalam tulisan standar."
+      ]
+    },
+    {
+      "title": "Kenapa harus didengar, bukan hanya dibaca?",
+      "paragraphs": [
+        "Perbedaan antara ㄱ dan ㄲ, ㄷ dan ㄸ, atau ㅂ dan ㅃ sangat penting dalam Korean pronunciation. Romanisasi sering tidak cukup untuk menunjukkan kekuatan bunyi ini dengan tepat."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "학 + 교",
+      "pronounced": "[학꾜]",
+      "steps": [
+        "학 berakhir ㄱ-type.",
+        "교 dimulai ㄱ.",
+        "ㄱ berikutnya menjadi tense ㄲ."
+      ],
+      "note": "Tulisan tetap 학교.",
+      "speak": "학교"
+    },
+    {
+      "written": "먹 + 다",
+      "pronounced": "[먹따]",
+      "steps": [
+        "먹 berakhir ㄱ-type.",
+        "다 dimulai ㄷ.",
+        "ㄷ menjadi tense ㄸ."
+      ],
+      "note": "Tulisan tetap 먹다.",
+      "speak": "먹다"
+    },
+    {
+      "written": "국 + 밥",
+      "pronounced": "[국빱]",
+      "steps": [
+        "국 berakhir ㄱ-type.",
+        "밥 dimulai ㅂ.",
+        "ㅂ menjadi tense ㅃ."
+      ],
+      "note": "Tulisan tetap 국밥.",
+      "speak": "국밥"
+    },
+    {
+      "written": "식 + 당",
+      "pronounced": "[식땅]",
+      "steps": [
+        "식 berakhir ㄱ-type.",
+        "당 dimulai ㄷ.",
+        "ㄷ menjadi tense ㄸ."
+      ],
+      "note": "Tulisan tetap 식당.",
+      "speak": "식당"
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "학교에 매일 가요.",
+      "pronunciation": "[학꾜에 매일 가요]",
+      "roman": "hakkkyoe maeil gayo",
+      "id": "Saya pergi ke sekolah setiap hari.",
+      "note": "학교 → [학꾜].",
+      "speak": "학교에 매일 가요."
+    },
+    {
+      "ko": "저는 국밥을 좋아해요.",
+      "pronunciation": "[저는 국빠블 조아해요]",
+      "roman": "jeoneun gukppabeul joahaeyo",
+      "id": "Saya suka gukbap.",
+      "note": "국밥 → [국빱].",
+      "speak": "저는 국밥을 좋아해요."
+    },
+    {
+      "ko": "식당에서 밥을 먹어요.",
+      "pronunciation": "[식땅에서 바블 머거요]",
+      "roman": "sikttangeseo babeul meogeoyo",
+      "id": "Saya makan di restoran.",
+      "note": "식당 → [식땅].",
+      "speak": "식당에서 밥을 먹어요."
+    }
+  ],
   "units": [
     {
       "char": "학교",
       "roman": "hakkkyo",
-      "hint": "ㄱ setelah batchim ㄱ terdengar tegang ㄲ.",
+      "hint": "ㄱ menjadi ㄲ.",
       "speak": "학교",
       "example": {
         "ko": "학교에 가요",
@@ -36,7 +123,7 @@
     {
       "char": "먹다",
       "roman": "meoktta",
-      "hint": "ㄷ setelah batchim ㄱ terdengar ㄸ.",
+      "hint": "ㄷ menjadi ㄸ.",
       "speak": "먹다",
       "example": {
         "ko": "밥을 먹다",
@@ -47,34 +134,12 @@
     {
       "char": "국밥",
       "roman": "gukppap",
-      "hint": "ㅂ setelah batchim ㄱ terdengar ㅃ.",
+      "hint": "ㅂ menjadi ㅃ.",
       "speak": "국밥",
       "example": {
         "ko": "국밥을 먹어요",
         "roman": "gukppabeul meogeoyo",
         "id": "makan gukbap"
-      }
-    },
-    {
-      "char": "식당",
-      "roman": "sikttang",
-      "hint": "ㄷ setelah batchim ㄱ terdengar ㄸ.",
-      "speak": "식당",
-      "example": {
-        "ko": "식당이 어디예요?",
-        "roman": "sikttangi eodiyeyo",
-        "id": "restorannya di mana?"
-      }
-    },
-    {
-      "char": "없다",
-      "roman": "eoptta",
-      "hint": "ㄷ setelah bunyi akhir ㅂ-type terdengar tegang.",
-      "speak": "없다",
-      "example": {
-        "ko": "시간이 없다",
-        "roman": "sigani eoptta",
-        "id": "tidak ada waktu"
       }
     }
   ],
@@ -84,7 +149,7 @@
       "options": [
         "학꾜",
         "항교",
-        "학교 sangat longgar",
+        "학교 longgar",
         "하교"
       ],
       "answer": 0,
@@ -93,79 +158,90 @@
     {
       "question": "먹다 paling dekat dibaca…",
       "options": [
-        "먹다",
         "먹따",
         "멍다",
-        "머카"
+        "머카",
+        "먹다 longgar"
       ],
-      "answer": 1,
+      "answer": 0,
       "explain": "ㄷ menjadi ㄸ."
     },
     {
       "question": "국밥 paling dekat dibaca…",
       "options": [
-        "국밥",
         "국빱",
         "궁밥",
-        "구갑"
+        "구갑",
+        "국밥 longgar"
       ],
-      "answer": 1,
+      "answer": 0,
       "explain": "ㅂ menjadi ㅃ."
     },
     {
       "question": "된소리 berarti bunyi yang…",
       "options": [
-        "nasal",
         "tegang",
+        "nasal",
         "hilang",
-        "dipanjangkan"
+        "panjang"
       ],
-      "answer": 1,
-      "explain": "된소리 adalah tense consonant."
+      "answer": 0,
+      "explain": "된소리 = tense consonant."
     },
     {
-      "question": "Konsonan tegang pasangan ㄱ adalah…",
+      "question": "Pasangan tegang ㄱ adalah…",
       "options": [
-        "ㅋ",
         "ㄲ",
-        "ㄷ",
+        "ㅋ",
+        "ㄸ",
         "ㅃ"
       ],
-      "answer": 1,
-      "explain": "ㄲ adalah tense counterpart ㄱ."
+      "answer": 0,
+      "explain": "ㄲ adalah tense ㄱ."
     },
     {
-      "question": "Konsonan tegang pasangan ㄷ adalah…",
+      "question": "Pasangan tegang ㄷ adalah…",
       "options": [
-        "ㅌ",
         "ㄸ",
+        "ㅌ",
         "ㅉ",
         "ㅆ"
       ],
-      "answer": 1,
-      "explain": "ㄸ adalah tense counterpart ㄷ."
+      "answer": 0,
+      "explain": "ㄸ adalah tense ㄷ."
     },
     {
-      "question": "Konsonan tegang pasangan ㅂ adalah…",
+      "question": "Pasangan tegang ㅂ adalah…",
       "options": [
-        "ㅍ",
         "ㅃ",
+        "ㅍ",
         "ㅆ",
         "ㄲ"
       ],
-      "answer": 1,
-      "explain": "ㅃ adalah tense counterpart ㅂ."
+      "answer": 0,
+      "explain": "ㅃ adalah tense ㅂ."
     },
     {
       "question": "식당 paling dekat dibaca…",
       "options": [
-        "식당",
         "식땅",
         "싱당",
-        "시당"
+        "시당",
+        "식당 apa adanya"
+      ],
+      "answer": 0,
+      "explain": "ㄷ menjadi ㄸ."
+    },
+    {
+      "question": "Apakah sekolah ditulis 학꾜?",
+      "options": [
+        "ya",
+        "tidak, tetap 학교",
+        "hanya di buku anak",
+        "hanya di chat"
       ],
       "answer": 1,
-      "explain": "ㄷ setelah batchim terdengar tegang."
+      "explain": "학꾜 hanya panduan bunyi."
     },
     {
       "question": "Mana contoh 된소리되기?",
@@ -176,18 +252,7 @@
         "집에 → 지베"
       ],
       "answer": 0,
-      "explain": "Yang lain merupakan aturan lain."
-    },
-    {
-      "question": "Apakah ejaan 학교 diubah menjadi 학꾜?",
-      "options": [
-        "ya, selalu",
-        "tidak, 학꾜 hanya menggambarkan bunyi",
-        "hanya di tulisan informal",
-        "hanya di ujian"
-      ],
-      "answer": 1,
-      "explain": "Ejaan standar tetap 학교."
+      "explain": "Yang lain aturan lain."
     }
   ]
 }
