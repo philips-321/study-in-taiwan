@@ -63,3 +63,44 @@ html[data-theme="dark"]{--cm0:#ff776f;--cm1:#77a8ff;--cm2:#65d99e;--cm3:#a992ff;
 .cm0{color:var(--cm0)}.cm1{color:var(--cm1)}.cm2{color:var(--cm2)}.cm3{color:var(--cm3)}.cm4{color:var(--cm4)}.cm5{color:var(--cm5)}.cm6{color:var(--cm6)}.cm7{color:var(--cm7)}.cm8{color:var(--cm8)}.cm9{color:var(--cm9)}.cm10{color:var(--cm10)}.cm11{color:var(--cm11)}
 .color-map{margin-top:12px;padding:16px;border:1px solid var(--line);border-radius:15px;background:var(--soft)}.cm-label{display:inline-block;font-size:.68rem;font-weight:950;letter-spacing:.1em;color:var(--pink);background:rgba(201,79,114,.10);padding:4px 7px;border-radius:999px;margin-bottom:11px}.cm-ko{font-size:1.55rem;font-weight:900;line-height:1.45;display:flex;flex-wrap:wrap;gap:0 4px}.cm-token{font-weight:800}.cm-row,.cm-natural{display:grid;grid-template-columns:92px 1fr;gap:10px;margin-top:9px;align-items:start}.cm-row>span,.cm-natural>span{font-size:.72rem;color:var(--muted);font-weight:850;text-transform:uppercase;letter-spacing:.04em}.cm-row>div,.cm-natural>div{display:flex;flex-wrap:wrap;gap:3px 7px}.cm-natural{margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}.cm-natural>div{font-size:1.02rem;line-height:1.55}.example .color-map{padding:11px;margin-top:0}.example .cm-ko{font-size:1.25rem}.example .cm-row,.example .cm-natural{grid-template-columns:76px 1fr}.example .cm-label{display:none}@media(max-width:560px){.cm-row,.cm-natural,.example .cm-row,.example .cm-natural{grid-template-columns:1fr;gap:3px}.cm-ko{font-size:1.35rem}}
 html[data-theme="dark"] .color-map{background:#0d1117;border-color:#303744}
+
+/* Local repeat prompt: appears only below the audio button that just finished. */
+.local-repeat{display:block;width:max-content;max-width:100%;margin:6px 0 0;padding:0 2px;font-size:.82rem;font-weight:900;color:var(--pink);opacity:0;transform:translateY(-3px);transition:opacity .18s ease,transform .18s ease}
+.local-repeat.show{opacity:1;transform:none}
+.repeat-status{display:none!important}
+
+/* Better interactive audio buttons in both themes. */
+.say{border:1px solid #cfe0f5;background:#eef5ff;color:#245c9f;transition:background .16s,border-color .16s,transform .08s}
+.say:hover{background:#e2efff;border-color:#acc9ec}.say:active{transform:translateY(1px)}
+.audio-panel button{transition:background .16s,border-color .16s}
+
+/* Dark-mode readability audit. */
+html[data-theme="dark"] .back,
+html[data-theme="dark"] .audio-panel label,
+html[data-theme="dark"] .status,
+html[data-theme="dark"] .transform-main .label,
+html[data-theme="dark"] .cm-row>span,
+html[data-theme="dark"] .cm-natural>span{color:#aeb9ca}
+html[data-theme="dark"] .chip{background:#1b2430;color:#c6d8ee;border:1px solid #33445a}
+html[data-theme="dark"] .say{background:#17283b;color:#9ccaff;border-color:#315276}
+html[data-theme="dark"] .say:hover{background:#1d334b;border-color:#4775a5}
+html[data-theme="dark"] .audio-panel button{background:#1b2430;color:#d9e8fb;border-color:#3c5069}
+html[data-theme="dark"] .audio-panel button:hover{background:#223147;border-color:#58769b}
+html[data-theme="dark"] .audio-panel select{background:#111820;color:#e8edf5;border-color:#3a4b60}
+html[data-theme="dark"] .audio-panel select option{background:#111820;color:#e8edf5}
+html[data-theme="dark"] .process>div{color:#c3ccd9}
+html[data-theme="dark"] .process span{background:#1b2d45;color:#9bc5ff}
+html[data-theme="dark"] .arrow{color:#8997aa}
+html[data-theme="dark"] .sentence-roman{color:#c3a9d4}
+html[data-theme="dark"] .sentence-pron{color:#ff9cba}
+html[data-theme="dark"] .feedback{color:#d4dbe6}
+html[data-theme="dark"] .quiz-q{color:#f0f4f9}
+html[data-theme="dark"] .scorebox span{color:#ff9cba}
+html[data-theme="dark"] .scorebox b{color:#f3f6fb}
+html[data-theme="dark"] .done{color:#73e0b0}
+html[data-theme="dark"] .example small{color:#aab4c4}
+html[data-theme="dark"] .error{background:#301719;border-color:#844449;color:#ffb4b0}
+html[data-theme="dark"] .local-repeat{color:#ff9cba}
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select{accent-color:#85b5ff}
