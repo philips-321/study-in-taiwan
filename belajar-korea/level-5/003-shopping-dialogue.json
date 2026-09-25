@@ -1,0 +1,637 @@
+{
+  "id": "ko-l5-003",
+  "level": "Level 5 · Dialog & reading",
+  "order": 3,
+  "passScore": 80,
+  "title": "Dialog: belanja pakaian",
+  "subtitle": "Menanyakan harga, warna, ukuran, mencoba barang, dan checkout.",
+  "intro": "Simulasi toko pakaian.",
+  "tip": "Putar satu turn, ikuti color map, lalu ulangi dengan keras. Setelah paham, coba baca dua peran tanpa melihat arti.",
+  "progressStart": 90,
+  "objectives": [
+    "12 turn",
+    "audio per turn",
+    "comprehension"
+  ],
+  "prev": {
+    "title": "Pelajaran 2 · Kafe",
+    "path": "level-5/002-cafe-dialogue.json"
+  },
+  "next": {
+    "title": "Pelajaran 4 · Transportasi",
+    "path": "level-5/004-transport-dialogue.json"
+  },
+  "dialogues": [
+    {
+      "title": "Dialog: belanja pakaian",
+      "intro": "Dialog latihan dengan 12 turn.",
+      "turns": [
+        {
+          "speaker": "손님",
+          "ko": "이 셔츠 얼마예요?",
+          "roman": "i syeocheu eolmayeyo",
+          "id": "Kemeja ini berapa harganya?",
+          "map": {
+            "units": [
+              {
+                "ko": "이",
+                "roman": "i",
+                "literal": "ini"
+              },
+              {
+                "ko": "셔츠",
+                "roman": "syeocheu",
+                "literal": "kemeja"
+              },
+              {
+                "ko": "얼마",
+                "roman": "eolma",
+                "literal": "berapa harga"
+              },
+              {
+                "ko": "예요",
+                "roman": "yeyo",
+                "literal": "adalah"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Kemeja",
+                "ref": 1
+              },
+              {
+                "text": "ini",
+                "ref": 0
+              },
+              {
+                "text": "berapa harganya",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "이 셔츠 얼마예요?"
+        },
+        {
+          "speaker": "직원",
+          "ko": "삼만 오천 원이에요.",
+          "roman": "samman ocheon won-ieyo",
+          "id": "Harganya 35.000 won.",
+          "map": {
+            "units": [
+              {
+                "ko": "삼만 오천 원",
+                "roman": "samman ocheon won",
+                "literal": "35.000 won"
+              },
+              {
+                "ko": "이에요",
+                "roman": "ieyo",
+                "literal": "adalah"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Harganya",
+                "ref": 1
+              },
+              {
+                "text": "35.000 won",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "삼만 오천 원이에요."
+        },
+        {
+          "speaker": "손님",
+          "ko": "다른 색도 있어요?",
+          "roman": "dareun saekdo isseoyo",
+          "id": "Ada warna lain juga?",
+          "map": {
+            "units": [
+              {
+                "ko": "다른",
+                "roman": "dareun",
+                "literal": "lain"
+              },
+              {
+                "ko": "색",
+                "roman": "saek",
+                "literal": "warna"
+              },
+              {
+                "ko": "도",
+                "roman": "do",
+                "literal": "juga"
+              },
+              {
+                "ko": "있어요",
+                "roman": "isseoyo",
+                "literal": "ada"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Ada",
+                "ref": 3
+              },
+              {
+                "text": "warna lain",
+                "ref": 1
+              },
+              {
+                "text": "juga",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "다른 색도 있어요?"
+        },
+        {
+          "speaker": "직원",
+          "ko": "네, 검은색하고 파란색이 있어요.",
+          "roman": "ne, geomeunsaekhago paransaegi isseoyo",
+          "id": "Ya, ada warna hitam dan biru.",
+          "map": {
+            "units": [
+              {
+                "ko": "네",
+                "roman": "ne",
+                "literal": "ya"
+              },
+              {
+                "ko": "검은색",
+                "roman": "geomeunsaek",
+                "literal": "hitam"
+              },
+              {
+                "ko": "하고",
+                "roman": "hago",
+                "literal": "dan"
+              },
+              {
+                "ko": "파란색",
+                "roman": "paransaek",
+                "literal": "biru"
+              },
+              {
+                "ko": "이",
+                "roman": "i",
+                "literal": "subjek"
+              },
+              {
+                "ko": "있어요",
+                "roman": "isseoyo",
+                "literal": "ada"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Ya",
+                "ref": 0
+              },
+              {
+                "text": "ada",
+                "ref": 5
+              },
+              {
+                "text": "warna hitam",
+                "ref": 1
+              },
+              {
+                "text": "dan",
+                "ref": 2
+              },
+              {
+                "text": "biru",
+                "ref": 3
+              }
+            ]
+          },
+          "speak": "네, 검은색하고 파란색이 있어요."
+        },
+        {
+          "speaker": "손님",
+          "ko": "파란색으로 볼게요.",
+          "roman": "paransaeg-euro bolgeyo",
+          "id": "Saya mau lihat yang biru.",
+          "map": {
+            "units": [
+              {
+                "ko": "파란색",
+                "roman": "paransaek",
+                "literal": "biru"
+              },
+              {
+                "ko": "으로",
+                "roman": "euro",
+                "literal": "sebagai"
+              },
+              {
+                "ko": "볼게요",
+                "roman": "bolgeyo",
+                "literal": "akan melihat"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Saya mau melihat",
+                "ref": 2
+              },
+              {
+                "text": "yang biru",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "파란색으로 볼게요."
+        },
+        {
+          "speaker": "손님",
+          "ko": "입어 봐도 돼요?",
+          "roman": "ibeo bwado dwaeyo",
+          "id": "Boleh saya coba pakai?",
+          "map": {
+            "units": [
+              {
+                "ko": "입어 봐도 돼요",
+                "roman": "ibeo bwado dwaeyo",
+                "literal": "boleh mencoba memakai"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Boleh saya coba pakai",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "입어 봐도 돼요?"
+        },
+        {
+          "speaker": "직원",
+          "ko": "네, 탈의실은 저쪽에 있어요.",
+          "roman": "ne, taruisireun jeojjoge isseoyo",
+          "id": "Ya, kamar pas ada di sebelah sana.",
+          "map": {
+            "units": [
+              {
+                "ko": "네",
+                "roman": "ne",
+                "literal": "ya"
+              },
+              {
+                "ko": "탈의실",
+                "roman": "taruisil",
+                "literal": "kamar pas"
+              },
+              {
+                "ko": "은",
+                "roman": "eun",
+                "literal": "topik"
+              },
+              {
+                "ko": "저쪽",
+                "roman": "jeojjok",
+                "literal": "sebelah sana"
+              },
+              {
+                "ko": "에",
+                "roman": "e",
+                "literal": "di"
+              },
+              {
+                "ko": "있어요",
+                "roman": "isseoyo",
+                "literal": "ada"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Ya",
+                "ref": 0
+              },
+              {
+                "text": "kamar pas",
+                "ref": 1
+              },
+              {
+                "text": "ada",
+                "ref": 5
+              },
+              {
+                "text": "di sebelah sana",
+                "ref": 3
+              }
+            ]
+          },
+          "speak": "네, 탈의실은 저쪽에 있어요."
+        },
+        {
+          "speaker": "손님",
+          "ko": "조금 큰 것 같아요.",
+          "roman": "jogeum keun geot gatayo",
+          "id": "Sepertinya agak besar.",
+          "map": {
+            "units": [
+              {
+                "ko": "조금",
+                "roman": "jogeum",
+                "literal": "agak"
+              },
+              {
+                "ko": "큰 것 같아요",
+                "roman": "keun geot gatayo",
+                "literal": "sepertinya besar"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Sepertinya",
+                "ref": 1
+              },
+              {
+                "text": "agak",
+                "ref": 0
+              },
+              {
+                "text": "besar",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "조금 큰 것 같아요."
+        },
+        {
+          "speaker": "손님",
+          "ko": "한 사이즈 작은 것도 있어요?",
+          "roman": "han saijeu jageun geotdo isseoyo",
+          "id": "Ada yang satu ukuran lebih kecil?",
+          "map": {
+            "units": [
+              {
+                "ko": "한 사이즈",
+                "roman": "han saijeu",
+                "literal": "satu ukuran"
+              },
+              {
+                "ko": "작은 것",
+                "roman": "jageun geot",
+                "literal": "yang kecil"
+              },
+              {
+                "ko": "도",
+                "roman": "do",
+                "literal": "juga"
+              },
+              {
+                "ko": "있어요",
+                "roman": "isseoyo",
+                "literal": "ada"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Ada",
+                "ref": 3
+              },
+              {
+                "text": "yang satu ukuran lebih kecil",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "한 사이즈 작은 것도 있어요?"
+        },
+        {
+          "speaker": "직원",
+          "ko": "네, 여기 있습니다.",
+          "roman": "ne, yeogi itseumnida",
+          "id": "Ya, ini ada di sini.",
+          "map": {
+            "units": [
+              {
+                "ko": "네",
+                "roman": "ne",
+                "literal": "ya"
+              },
+              {
+                "ko": "여기",
+                "roman": "yeogi",
+                "literal": "di sini"
+              },
+              {
+                "ko": "있습니다",
+                "roman": "itseumnida",
+                "literal": "ada formal"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Ya",
+                "ref": 0
+              },
+              {
+                "text": "ini ada",
+                "ref": 2
+              },
+              {
+                "text": "di sini",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "네, 여기 있습니다."
+        },
+        {
+          "speaker": "손님",
+          "ko": "이걸로 살게요.",
+          "roman": "igeollo salgeyo",
+          "id": "Saya akan membeli yang ini.",
+          "map": {
+            "units": [
+              {
+                "ko": "이것",
+                "roman": "igeot",
+                "literal": "ini"
+              },
+              {
+                "ko": "으로",
+                "roman": "euro",
+                "literal": "sebagai"
+              },
+              {
+                "ko": "살게요",
+                "roman": "salgeyo",
+                "literal": "akan membeli"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Saya akan membeli",
+                "ref": 2
+              },
+              {
+                "text": "yang ini",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "이걸로 살게요."
+        },
+        {
+          "speaker": "직원",
+          "ko": "네, 계산 도와드릴게요.",
+          "roman": "ne, gyesan dowadeurilgeyo",
+          "id": "Baik, saya bantu pembayarannya.",
+          "map": {
+            "units": [
+              {
+                "ko": "네",
+                "roman": "ne",
+                "literal": "baik"
+              },
+              {
+                "ko": "계산",
+                "roman": "gyesan",
+                "literal": "pembayaran"
+              },
+              {
+                "ko": "도와드릴게요",
+                "roman": "dowadeurilgeyo",
+                "literal": "akan membantu (hormat)"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Baik",
+                "ref": 0
+              },
+              {
+                "text": "saya bantu",
+                "ref": 2
+              },
+              {
+                "text": "pembayarannya",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "네, 계산 도와드릴게요."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Harga kemeja?",
+      "options": [
+        "35.000 won",
+        "30.000 won",
+        "50.000 won",
+        "15.000 won"
+      ],
+      "answer": 0,
+      "explain": "삼만 오천 원."
+    },
+    {
+      "question": "Warna apa yang dipilih untuk dilihat?",
+      "options": [
+        "biru",
+        "hitam",
+        "putih",
+        "merah"
+      ],
+      "answer": 0,
+      "explain": "파란색."
+    },
+    {
+      "question": "입어 봐도 돼요? berarti…",
+      "options": [
+        "boleh coba pakai?",
+        "boleh bayar?",
+        "boleh bawa pulang?",
+        "ada diskon?"
+      ],
+      "answer": 0,
+      "explain": "Try on."
+    },
+    {
+      "question": "Kamar pas ada di mana?",
+      "options": [
+        "sebelah sana",
+        "lantai atas",
+        "dekat pintu",
+        "tidak ada"
+      ],
+      "answer": 0,
+      "explain": "저쪽에."
+    },
+    {
+      "question": "Masalah ukuran pertama?",
+      "options": [
+        "agak besar",
+        "terlalu kecil",
+        "terlalu panjang",
+        "terlalu mahal"
+      ],
+      "answer": 0,
+      "explain": "조금 큰 것 같아요."
+    },
+    {
+      "question": "Dia meminta ukuran…",
+      "options": [
+        "satu ukuran lebih kecil",
+        "dua ukuran lebih besar",
+        "sama",
+        "anak-anak"
+      ],
+      "answer": 0,
+      "explain": "한 사이즈 작은 것."
+    },
+    {
+      "question": "이걸로 살게요 berarti…",
+      "options": [
+        "saya beli yang ini",
+        "saya coba yang ini",
+        "saya kembalikan",
+        "saya tidak mau"
+      ],
+      "answer": 0,
+      "explain": "Choose to buy."
+    },
+    {
+      "question": "다른 색도 있어요? menanyakan…",
+      "options": [
+        "warna lain",
+        "ukuran lain",
+        "harga diskon",
+        "bahan"
+      ],
+      "answer": 0,
+      "explain": "Other colors."
+    },
+    {
+      "question": "탈의실 berarti…",
+      "options": [
+        "kamar pas",
+        "kasir",
+        "toilet",
+        "gudang"
+      ],
+      "answer": 0,
+      "explain": "Fitting room."
+    },
+    {
+      "question": "계산 도와드릴게요 berarti…",
+      "options": [
+        "saya bantu pembayaran",
+        "saya bantu coba baju",
+        "saya beri diskon",
+        "saya tutup toko"
+      ],
+      "answer": 0,
+      "explain": "Help checkout."
+    }
+  ]
+}
