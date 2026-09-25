@@ -16,20 +16,20 @@ function populateVoices(){
  if(saved&&[...sel.options].some(o=>o.value===saved))sel.value=saved;
  const st=$('#voiceStatus');if(st)st.textContent=voices.length?voices.length+' voice Korea tersedia di browser/device ini.':'Voice Korea tidak terdaftar; Auto akan memakai fallback browser/device.';
 }
-function indonesianVoice(){
- const vs=speechSynthesis.getVoices();
- return vs.find(v=>/^id-ID/i.test(v.lang))||vs.find(v=>/^id/i.test(v.lang))||null;
-}
+
+let repeatTimer=null;
 function repeatPrompt(){
- const st=$('#repeatStatus');if(st)st.textContent='Sekarang: ulangi, baca dengan keras.';
- if(!('speechSynthesis'in window))return;
- const p=new SpeechSynthesisUtterance('Ulangi, baca dengan keras.');p.lang='id-ID';p.rate=1;
- const v=indonesianVoice();if(v)p.voice=v;speechSynthesis.speak(p);
+ const st=$('#repeatStatus');if(!st)return;
+ clearTimeout(repeatTimer);
+ st.textContent='Ulangi, baca dengan keras.';
+ st.classList.add('show');
+ repeatTimer=setTimeout(()=>{st.textContent='';st.classList.remove('show')},2000);
 }
 function speak(txt,promptAfter=true){
  if(!('speechSynthesis'in window))return;
  speechSynthesis.cancel();
- const st=$('#repeatStatus');if(st)st.textContent='Dengarkan sampai selesai…';
+ clearTimeout(repeatTimer);
+ const st=$('#repeatStatus');if(st){st.textContent='';st.classList.remove('show')};
  const u=new SpeechSynthesisUtterance(txt);u.lang='ko-KR';u.rate=getRate();const v=selectedVoice();if(v)u.voice=v;
  u.onend=()=>{if(promptAfter)repeatPrompt();else if(st)st.textContent='';};
  speechSynthesis.speak(u);
@@ -72,7 +72,7 @@ function render(){
 }
 function bind(){
  $('#testVoice').onclick=()=>speak('안녕하세요. 같이 한국어를 공부해요.',false);
- $('#stopVoice').onclick=()=>{speechSynthesis.cancel();const st=$('#repeatStatus');if(st)st.textContent='';};
+ $('#stopVoice').onclick=()=>{speechSynthesis.cancel();clearTimeout(repeatTimer);const st=$('#repeatStatus');if(st){st.textContent='';st.classList.remove('show')}};
  $('#voiceSelect').onchange=e=>localStorage.setItem('levelingKoVoice',e.target.value);
  const savedRate=localStorage.getItem('levelingKoRate');if(savedRate)$('#speechRate').value=savedRate;
  $('#speechRate').onchange=e=>localStorage.setItem('levelingKoRate',e.target.value);
