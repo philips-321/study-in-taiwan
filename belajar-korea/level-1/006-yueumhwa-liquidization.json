@@ -89,7 +89,54 @@
       "roman": "seollare gajogeul mannayo",
       "id": "Saat Seollal saya bertemu keluarga.",
       "note": "설날 → [설랄], lalu 날에 juga mengalami liaison.",
-      "speak": "설날에 가족을 만나요."
+      "speak": "설날에 가족을 만나요.",
+      "map": {
+        "units": [
+          {
+            "ko": "설날",
+            "roman": "seollal",
+            "literal": "Seollal"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "가족",
+            "roman": "gajok",
+            "literal": "keluarga"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "만나요",
+            "roman": "mannayo",
+            "literal": "bertemu"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saat Seollal",
+            "ref": 0
+          },
+          {
+            "text": "saya bertemu",
+            "ref": 4
+          },
+          {
+            "text": "keluarga",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 4
+          }
+        ]
+      }
     },
     {
       "ko": "나중에 연락해 주세요.",
@@ -97,7 +144,49 @@
       "roman": "najunge yeollakae juseyo",
       "id": "Tolong hubungi saya nanti.",
       "note": "연락 → [열락].",
-      "speak": "나중에 연락해 주세요."
+      "speak": "나중에 연락해 주세요.",
+      "map": {
+        "units": [
+          {
+            "ko": "나중",
+            "roman": "najung",
+            "literal": "nanti"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "연락해",
+            "roman": "yeollakae",
+            "literal": "hubungi"
+          },
+          {
+            "ko": "주세요",
+            "roman": "juseyo",
+            "literal": "tolong"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Tolong",
+            "ref": 3
+          },
+          {
+            "text": "hubungi saya",
+            "ref": 2
+          },
+          {
+            "text": "nanti",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     },
     {
       "ko": "지하철이 정말 편리해요.",
@@ -105,7 +194,49 @@
       "roman": "jihacheori jeongmal pyeollihaeyo",
       "id": "Kereta bawah tanah sangat praktis.",
       "note": "편리 → [펼리].",
-      "speak": "지하철이 정말 편리해요."
+      "speak": "지하철이 정말 편리해요.",
+      "map": {
+        "units": [
+          {
+            "ko": "지하철",
+            "roman": "jihacheol",
+            "literal": "kereta bawah tanah"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "penanda subjek"
+          },
+          {
+            "ko": "정말",
+            "roman": "jeongmal",
+            "literal": "sangat"
+          },
+          {
+            "ko": "편리해요",
+            "roman": "pyeollihaeyo",
+            "literal": "praktis"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kereta bawah tanah",
+            "ref": 0
+          },
+          {
+            "text": "sangat",
+            "ref": 2
+          },
+          {
+            "text": "praktis",
+            "ref": 3
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     }
   ],
   "units": [
