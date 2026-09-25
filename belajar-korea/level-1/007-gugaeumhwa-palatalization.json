@@ -90,7 +90,44 @@
       "roman": "uri gachi gongbuhaeyo",
       "id": "Mari belajar bersama.",
       "note": "같이 → [가치].",
-      "speak": "우리 같이 공부해요."
+      "speak": "우리 같이 공부해요.",
+      "map": {
+        "units": [
+          {
+            "ko": "우리",
+            "roman": "uri",
+            "literal": "kita"
+          },
+          {
+            "ko": "같이",
+            "roman": "gachi",
+            "literal": "bersama"
+          },
+          {
+            "ko": "공부해요",
+            "roman": "gongbuhaeyo",
+            "literal": "belajar"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Mari kita",
+            "ref": 0
+          },
+          {
+            "text": "belajar",
+            "ref": 2
+          },
+          {
+            "text": "bersama",
+            "ref": 1
+          },
+          {
+            "text": ".",
+            "ref": 2
+          }
+        ]
+      }
     },
     {
       "ko": "굳이 지금 갈 필요는 없어요.",
@@ -98,7 +135,63 @@
       "roman": "guji jigeum gal piryoneun eopseoyo",
       "id": "Tidak perlu harus pergi sekarang.",
       "note": "굳이 → [구지].",
-      "speak": "굳이 지금 갈 필요는 없어요."
+      "speak": "굳이 지금 갈 필요는 없어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "굳이",
+            "roman": "guji",
+            "literal": "harus / sengaja"
+          },
+          {
+            "ko": "지금",
+            "roman": "jigeum",
+            "literal": "sekarang"
+          },
+          {
+            "ko": "갈",
+            "roman": "gal",
+            "literal": "akan pergi"
+          },
+          {
+            "ko": "필요",
+            "roman": "piryo",
+            "literal": "kebutuhan"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "penanda topik"
+          },
+          {
+            "ko": "없어요",
+            "roman": "eopseoyo",
+            "literal": "tidak ada"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Tidak perlu",
+            "ref": 3
+          },
+          {
+            "text": "harus",
+            "ref": 0
+          },
+          {
+            "text": "pergi",
+            "ref": 2
+          },
+          {
+            "text": "sekarang",
+            "ref": 1
+          },
+          {
+            "text": ".",
+            "ref": 5
+          }
+        ]
+      }
     },
     {
       "ko": "해돋이를 보러 갔어요.",
@@ -106,7 +199,49 @@
       "roman": "haedojireul boreo gasseoyo",
       "id": "Saya pergi untuk melihat matahari terbit.",
       "note": "해돋이 → [해도지].",
-      "speak": "해돋이를 보러 갔어요."
+      "speak": "해돋이를 보러 갔어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "해돋이",
+            "roman": "haedoji",
+            "literal": "matahari terbit"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "보러",
+            "roman": "boreo",
+            "literal": "untuk melihat"
+          },
+          {
+            "ko": "갔어요",
+            "roman": "gasseoyo",
+            "literal": "pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya pergi",
+            "ref": 3
+          },
+          {
+            "text": "untuk melihat",
+            "ref": 2
+          },
+          {
+            "text": "matahari terbit",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     }
   ],
   "units": [
