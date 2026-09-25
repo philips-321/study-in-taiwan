@@ -136,7 +136,40 @@
       "roman": "bakki chuwoyo",
       "id": "Di luar dingin.",
       "note": "밖 sendiri berakhir [박], tetapi ketika bertemu 이 aturan berikutnya ikut bekerja.",
-      "speak": "밖이 추워요."
+      "speak": "밖이 추워요.",
+      "map": {
+        "units": [
+          {
+            "ko": "밖",
+            "roman": "bak",
+            "literal": "luar"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "penanda subjek"
+          },
+          {
+            "ko": "추워요",
+            "roman": "chuwoyo",
+            "literal": "dingin"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Di luar",
+            "ref": 0
+          },
+          {
+            "text": "dingin",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 2
+          }
+        ]
+      }
     },
     {
       "ko": "옷이 예뻐요.",
@@ -144,7 +177,40 @@
       "roman": "osi yeppeoyo",
       "id": "Bajunya cantik.",
       "note": "옷 sebagai kata tunggal berakhir [옫], tetapi sebelum 이 bunyinya tersambung. Ini akan dibahas di 연음.",
-      "speak": "옷이 예뻐요."
+      "speak": "옷이 예뻐요.",
+      "map": {
+        "units": [
+          {
+            "ko": "옷",
+            "roman": "ot",
+            "literal": "pakaian"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "penanda subjek"
+          },
+          {
+            "ko": "예뻐요",
+            "roman": "yeppeoyo",
+            "literal": "cantik"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Bajunya",
+            "ref": 0
+          },
+          {
+            "text": "cantik",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 2
+          }
+        ]
+      }
     },
     {
       "ko": "부엌 문을 닫아요.",
@@ -152,7 +218,49 @@
       "roman": "bueong muneul dadayo",
       "id": "Tutup pintu dapur.",
       "note": "부엌 sendiri berakhir bunyi ㄱ-type.",
-      "speak": "부엌 문을 닫아요."
+      "speak": "부엌 문을 닫아요.",
+      "map": {
+        "units": [
+          {
+            "ko": "부엌",
+            "roman": "bueok",
+            "literal": "dapur"
+          },
+          {
+            "ko": "문",
+            "roman": "mun",
+            "literal": "pintu"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "닫아요",
+            "roman": "dadayo",
+            "literal": "menutup"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Tutup",
+            "ref": 3
+          },
+          {
+            "text": "pintu",
+            "ref": 1
+          },
+          {
+            "text": "dapur",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 3
+          }
+        ]
+      }
     }
   ],
   "quiz": [
