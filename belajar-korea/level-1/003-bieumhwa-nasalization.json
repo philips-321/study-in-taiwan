@@ -89,7 +89,40 @@
       "roman": "gungmuri tteugeowoyo",
       "id": "Kuahnya panas.",
       "note": "국물 → 궁물; lalu 물이 juga tersambung.",
-      "speak": "국물이 뜨거워요."
+      "speak": "국물이 뜨거워요.",
+      "map": {
+        "units": [
+          {
+            "ko": "국물",
+            "roman": "gungmul",
+            "literal": "kuah"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "penanda subjek"
+          },
+          {
+            "ko": "뜨거워요",
+            "roman": "tteugeowoyo",
+            "literal": "panas"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kuahnya",
+            "ref": 0
+          },
+          {
+            "text": "panas",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 2
+          }
+        ]
+      }
     },
     {
       "ko": "밥을 먹는 사람이에요.",
@@ -97,7 +130,54 @@
       "roman": "babeul meongneun saram-ieyo",
       "id": "Dia orang yang sedang makan.",
       "note": "먹는 → 멍는.",
-      "speak": "밥을 먹는 사람이에요."
+      "speak": "밥을 먹는 사람이에요.",
+      "map": {
+        "units": [
+          {
+            "ko": "밥",
+            "roman": "bap",
+            "literal": "nasi"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "먹는",
+            "roman": "meongneun",
+            "literal": "yang makan"
+          },
+          {
+            "ko": "사람",
+            "roman": "saram",
+            "literal": "orang"
+          },
+          {
+            "ko": "이에요",
+            "roman": "ieyo",
+            "literal": "adalah"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Dia",
+            "ref": 4
+          },
+          {
+            "text": "orang",
+            "ref": 3
+          },
+          {
+            "text": "yang sedang makan",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 4
+          }
+        ]
+      }
     },
     {
       "ko": "앞문으로 들어가세요.",
@@ -105,7 +185,44 @@
       "roman": "ammun-euro deureogaseyo",
       "id": "Silakan masuk lewat pintu depan.",
       "note": "앞문 → 암문.",
-      "speak": "앞문으로 들어가세요."
+      "speak": "앞문으로 들어가세요.",
+      "map": {
+        "units": [
+          {
+            "ko": "앞문",
+            "roman": "ammun",
+            "literal": "pintu depan"
+          },
+          {
+            "ko": "으로",
+            "roman": "euro",
+            "literal": "melalui / lewat"
+          },
+          {
+            "ko": "들어가세요",
+            "roman": "deureogaseyo",
+            "literal": "silakan masuk"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Silakan masuk",
+            "ref": 2
+          },
+          {
+            "text": "lewat",
+            "ref": 1
+          },
+          {
+            "text": "pintu depan",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 2
+          }
+        ]
+      }
     }
   ],
   "units": [
