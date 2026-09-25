@@ -4,11 +4,17 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index,follow">
 <title>Pelajaran Korea | Leveling</title>
+<script>document.documentElement.dataset.theme=localStorage.getItem('levelingTheme')||'dark';</script>
 <link rel="stylesheet" href="lesson.css">
 </head>
 <body>
-<header class="topbar"><div class="shell"><div class="toprow"><a class="brand" href="/belajar-korea/">Le<em>v</em>eling</a><a class="back" href="/belajar-korea/">← Kurikulum</a></div></div><div class="progress"><span id="progressBar"></span></div></header>
+<header class="topbar"><div class="shell"><div class="toprow"><a class="brand" href="/belajar-korea/">Le<em>v</em>eling</a><div style="display:flex;gap:8px;align-items:center"><button class="theme-toggle" id="themeToggle" type="button">☀ Light</button><a class="back" href="/belajar-korea/">← Kurikulum</a></div></div></div><div class="progress"><span id="progressBar"></span></div></header>
 <main class="shell"><div id="app"><div class="block">Memuat pelajaran…</div></div></main>
+<script>
+function syncThemeButton(){const b=document.getElementById('themeToggle');if(b)b.textContent=document.documentElement.dataset.theme==='dark'?'☀ Light':'☾ Dark'}
+document.getElementById('themeToggle').onclick=()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('levelingTheme',next);syncThemeButton()}
+syncThemeButton();
+</script>
 <script src="lesson-engine.js"></script>
 </body>
 </html>
