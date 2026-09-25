@@ -1,0 +1,638 @@
+{
+  "id": "ko-l4-008",
+  "level": "Level 4 · Grammar bertahap",
+  "order": 8,
+  "passScore": 80,
+  "title": "-(으)ㄹ 수 있어요 — bisa / mampu",
+  "subtitle": "Menyatakan kemampuan atau kemungkinan melakukan sesuatu.",
+  "intro": "Gunakan ㄹ 수 있어요 setelah vokal, 을 수 있어요 setelah konsonan. Negatifnya -(으)ㄹ 수 없어요.",
+  "tip": "Dalam konteks aturan tempat, 수 없어요 juga bisa berarti 'tidak diperbolehkan'.",
+  "progressStart": 84,
+  "objectives": [
+    "12 contoh",
+    "color map",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Pelajaran 7 · 지만",
+    "path": "level-4/007-jiman.json"
+  },
+  "next": {
+    "title": "Pelajaran 9 · 아/어야 해요",
+    "path": "level-4/009-aya-eoya-haeyo.json"
+  },
+  "sentences": [
+    {
+      "ko": "한국어를 읽을 수 있어요.",
+      "roman": "hangugeoreul ilgeul su isseoyo",
+      "id": "Saya bisa membaca bahasa Korea.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국어",
+            "roman": "hangugeo",
+            "literal": "bahasa Korea"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "읽을 수 있어요",
+            "roman": "ilgeul su isseoyo",
+            "literal": "bisa membaca"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya bisa membaca",
+            "ref": 2
+          },
+          {
+            "text": "bahasa Korea",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국어를 읽을 수 있어요."
+    },
+    {
+      "ko": "저는 수영할 수 있어요.",
+      "roman": "jeoneun suyeonghal su isseoyo",
+      "id": "Saya bisa berenang.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "수영할 수 있어요",
+            "roman": "suyeonghal su isseoyo",
+            "literal": "bisa berenang"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "bisa berenang",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저는 수영할 수 있어요."
+    },
+    {
+      "ko": "여기에서 사진을 찍을 수 있어요.",
+      "roman": "yeogieseo sajineul jjigeul su isseoyo",
+      "id": "Di sini boleh/bisa mengambil foto.",
+      "map": {
+        "units": [
+          {
+            "ko": "여기",
+            "roman": "yeogi",
+            "literal": "di sini"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "사진",
+            "roman": "sajin",
+            "literal": "foto"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "찍을 수 있어요",
+            "roman": "jjigeul su isseoyo",
+            "literal": "bisa mengambil"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Di sini",
+            "ref": 0
+          },
+          {
+            "text": "bisa mengambil",
+            "ref": 4
+          },
+          {
+            "text": "foto",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "여기에서 사진을 찍을 수 있어요."
+    },
+    {
+      "ko": "매운 음식을 먹을 수 있어요.",
+      "roman": "maeun eumsigeul meogeul su isseoyo",
+      "id": "Saya bisa makan makanan pedas.",
+      "map": {
+        "units": [
+          {
+            "ko": "매운",
+            "roman": "maeun",
+            "literal": "pedas"
+          },
+          {
+            "ko": "음식",
+            "roman": "eumsik",
+            "literal": "makanan"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "먹을 수 있어요",
+            "roman": "meogeul su isseoyo",
+            "literal": "bisa makan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya bisa makan",
+            "ref": 3
+          },
+          {
+            "text": "makanan",
+            "ref": 1
+          },
+          {
+            "text": "pedas",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "매운 음식을 먹을 수 있어요."
+    },
+    {
+      "ko": "오늘은 만날 수 없어요.",
+      "roman": "oneureun mannal su eopseoyo",
+      "id": "Hari ini saya tidak bisa bertemu.",
+      "map": {
+        "units": [
+          {
+            "ko": "오늘",
+            "roman": "oneul",
+            "literal": "hari ini"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "만날 수 없어요",
+            "roman": "mannal su eopseoyo",
+            "literal": "tidak bisa bertemu"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Hari ini",
+            "ref": 0
+          },
+          {
+            "text": "saya tidak bisa bertemu",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "오늘은 만날 수 없어요."
+    },
+    {
+      "ko": "혼자 갈 수 있어요.",
+      "roman": "honja gal su isseoyo",
+      "id": "Saya bisa pergi sendiri.",
+      "map": {
+        "units": [
+          {
+            "ko": "혼자",
+            "roman": "honja",
+            "literal": "sendiri"
+          },
+          {
+            "ko": "갈 수 있어요",
+            "roman": "gal su isseoyo",
+            "literal": "bisa pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya bisa pergi",
+            "ref": 1
+          },
+          {
+            "text": "sendiri",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "혼자 갈 수 있어요."
+    },
+    {
+      "ko": "이 컴퓨터를 사용할 수 있어요.",
+      "roman": "i keompyuteoreul sayonghal su isseoyo",
+      "id": "Saya bisa menggunakan komputer ini.",
+      "map": {
+        "units": [
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "ini"
+          },
+          {
+            "ko": "컴퓨터",
+            "roman": "keompyuteo",
+            "literal": "komputer"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "사용할 수 있어요",
+            "roman": "sayonghal su isseoyo",
+            "literal": "bisa menggunakan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya bisa menggunakan",
+            "ref": 3
+          },
+          {
+            "text": "komputer",
+            "ref": 1
+          },
+          {
+            "text": "ini",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "이 컴퓨터를 사용할 수 있어요."
+    },
+    {
+      "ko": "내일 일찍 올 수 있어요.",
+      "roman": "naeil iljjik ol su isseoyo",
+      "id": "Besok saya bisa datang lebih awal.",
+      "map": {
+        "units": [
+          {
+            "ko": "내일",
+            "roman": "naeil",
+            "literal": "besok"
+          },
+          {
+            "ko": "일찍",
+            "roman": "iljjik",
+            "literal": "lebih awal"
+          },
+          {
+            "ko": "올 수 있어요",
+            "roman": "ol su isseoyo",
+            "literal": "bisa datang"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Besok",
+            "ref": 0
+          },
+          {
+            "text": "saya bisa datang",
+            "ref": 2
+          },
+          {
+            "text": "lebih awal",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "내일 일찍 올 수 있어요."
+    },
+    {
+      "ko": "여기에서는 담배를 피울 수 없어요.",
+      "roman": "yeogieseo-neun dambaereul piul su eopseoyo",
+      "id": "Di sini tidak boleh merokok.",
+      "map": {
+        "units": [
+          {
+            "ko": "여기",
+            "roman": "yeogi",
+            "literal": "di sini"
+          },
+          {
+            "ko": "에서는",
+            "roman": "eseo-neun",
+            "literal": "di/topik"
+          },
+          {
+            "ko": "담배",
+            "roman": "dambae",
+            "literal": "rokok"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "피울 수 없어요",
+            "roman": "piul su eopseoyo",
+            "literal": "tidak bisa/boleh merokok"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Di sini",
+            "ref": 0
+          },
+          {
+            "text": "tidak boleh merokok",
+            "ref": 4
+          }
+        ]
+      },
+      "note": "",
+      "speak": "여기에서는 담배를 피울 수 없어요."
+    },
+    {
+      "ko": "한글을 조금 쓸 수 있어요.",
+      "roman": "hangeureul jogeum sseul su isseoyo",
+      "id": "Saya bisa menulis sedikit Hangul.",
+      "map": {
+        "units": [
+          {
+            "ko": "한글",
+            "roman": "hangeul",
+            "literal": "Hangul"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "조금",
+            "roman": "jogeum",
+            "literal": "sedikit"
+          },
+          {
+            "ko": "쓸 수 있어요",
+            "roman": "sseul su isseoyo",
+            "literal": "bisa menulis"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya bisa menulis",
+            "ref": 3
+          },
+          {
+            "text": "sedikit",
+            "ref": 2
+          },
+          {
+            "text": "Hangul",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한글을 조금 쓸 수 있어요."
+    },
+    {
+      "ko": "카드로 결제할 수 있어요.",
+      "roman": "kadeuro gyeoljehal su isseoyo",
+      "id": "Bisa membayar dengan kartu.",
+      "map": {
+        "units": [
+          {
+            "ko": "카드",
+            "roman": "kadeu",
+            "literal": "kartu"
+          },
+          {
+            "ko": "로",
+            "roman": "ro",
+            "literal": "dengan"
+          },
+          {
+            "ko": "결제할 수 있어요",
+            "roman": "gyeoljehal su isseoyo",
+            "literal": "bisa membayar"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Bisa membayar",
+            "ref": 2
+          },
+          {
+            "text": "dengan kartu",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "카드로 결제할 수 있어요."
+    },
+    {
+      "ko": "이 문제를 혼자 풀 수 있어요.",
+      "roman": "i munjereul honja pul su isseoyo",
+      "id": "Saya bisa menyelesaikan soal ini sendiri.",
+      "map": {
+        "units": [
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "ini"
+          },
+          {
+            "ko": "문제",
+            "roman": "munje",
+            "literal": "soal"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "혼자",
+            "roman": "honja",
+            "literal": "sendiri"
+          },
+          {
+            "ko": "풀 수 있어요",
+            "roman": "pul su isseoyo",
+            "literal": "bisa menyelesaikan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya bisa menyelesaikan",
+            "ref": 4
+          },
+          {
+            "text": "soal",
+            "ref": 1
+          },
+          {
+            "text": "ini",
+            "ref": 0
+          },
+          {
+            "text": "sendiri",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "이 문제를 혼자 풀 수 있어요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "먹다 → 'bisa makan'?",
+      "options": [
+        "먹을 수 있어요",
+        "먹고 싶어요",
+        "먹어야 해요",
+        "먹었어요"
+      ],
+      "answer": 0,
+      "explain": "Verb + (으)ㄹ 수 있어요."
+    },
+    {
+      "question": "가다 → 'bisa pergi'?",
+      "options": [
+        "갈 수 있어요",
+        "가을 수 있어요",
+        "갔어요",
+        "가고 있어요"
+      ],
+      "answer": 0,
+      "explain": "가다 → 갈 수 있어요."
+    },
+    {
+      "question": "읽다 → ?",
+      "options": [
+        "읽을 수 있어요",
+        "읽ㄹ 수 있어요",
+        "읽고 싶지요",
+        "읽었어요"
+      ],
+      "answer": 0,
+      "explain": "Consonant stem → 을 수 있어요."
+    },
+    {
+      "question": "하다 → ?",
+      "options": [
+        "할 수 있어요",
+        "하을 수 있어요",
+        "해 수 있어요",
+        "하고 있어요"
+      ],
+      "answer": 0,
+      "explain": "하다 → 할 수 있어요."
+    },
+    {
+      "question": "Bentuk negatif kemampuan…",
+      "options": [
+        "(으)ㄹ 수 없어요",
+        "안 수 있어요",
+        "못 수 있어요",
+        "수 안 있어요"
+      ],
+      "answer": 0,
+      "explain": "수 없어요."
+    },
+    {
+      "question": "수 있어요 mengekspresikan…",
+      "options": [
+        "kemampuan/kemungkinan",
+        "keinginan",
+        "masa lalu",
+        "sebab"
+      ],
+      "answer": 0,
+      "explain": "Can/be able to."
+    },
+    {
+      "question": "만날 수 없어요 berarti…",
+      "options": [
+        "tidak bisa bertemu",
+        "tidak ingin bertemu",
+        "sudah bertemu",
+        "akan bertemu"
+      ],
+      "answer": 0,
+      "explain": "Cannot meet."
+    },
+    {
+      "question": "쓸 수 있어요 berasal dari…",
+      "options": [
+        "쓰다",
+        "쓸다",
+        "서다",
+        "쉬다"
+      ],
+      "answer": 0,
+      "explain": "쓰다 → 쓸 수 있어요."
+    },
+    {
+      "question": "올 수 있어요 berasal dari…",
+      "options": [
+        "오다",
+        "올다",
+        "있다",
+        "오르다"
+      ],
+      "answer": 0,
+      "explain": "오다 → 올 수 있어요."
+    },
+    {
+      "question": "피울 수 없어요 dalam aturan tempat sering bermakna…",
+      "options": [
+        "tidak boleh/tidak bisa merokok",
+        "ingin merokok",
+        "sudah merokok",
+        "harus merokok"
+      ],
+      "answer": 0,
+      "explain": "Context can express prohibition through impossibility."
+    }
+  ]
+}
