@@ -1,0 +1,801 @@
+{
+  "id": "ko-l3-006",
+  "level": "Level 3 · Kosakata tematik",
+  "order": 6,
+  "passScore": 80,
+  "title": "Aktivitas & rutinitas",
+  "subtitle": "Kata kerja paling berguna untuk menjelaskan kegiatan sehari-hari.",
+  "intro": "Pelajari kosakata lewat contoh kalimat singkat. Fokus bukan hanya menghafal arti, tetapi mengenali bagaimana kata dipakai di dalam kalimat.",
+  "tip": "Putar contoh, ikuti color map, lalu ulangi kalimatnya dengan suara keras setelah audio selesai.",
+  "progressStart": 80,
+  "objectives": [
+    "12 kosakata",
+    "12 contoh",
+    "audio + color map"
+  ],
+  "prev": {
+    "title": "Pelajaran 5 · Emosi",
+    "path": "level-3/005-emotions.json"
+  },
+  "next": {
+    "title": "Level 4 · Present tense",
+    "path": "level-4/001-present-ayo-eoyo.json"
+  },
+  "units": [
+    {
+      "char": "일어나요",
+      "roman": "ireonayo",
+      "hint": "bangun",
+      "speak": "일어나요",
+      "example": {
+        "ko": "아침 일곱 시에 일어나요.",
+        "roman": "achim ilgop sie ireonayo",
+        "id": "Saya bangun pukul tujuh pagi.",
+        "map": {
+          "units": [
+            {
+              "ko": "아침",
+              "roman": "achim",
+              "literal": "pagi"
+            },
+            {
+              "ko": "일곱 시",
+              "roman": "ilgop si",
+              "literal": "jam tujuh"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "일어나요",
+              "roman": "ireonayo",
+              "literal": "bangun"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya bangun",
+              "ref": 3
+            },
+            {
+              "text": "pukul tujuh",
+              "ref": 1
+            },
+            {
+              "text": "pagi",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "씻어요",
+      "roman": "ssiseoyo",
+      "hint": "mencuci / mandi",
+      "speak": "씻어요",
+      "example": {
+        "ko": "아침에 얼굴을 씻어요.",
+        "roman": "achime eolgureul ssiseoyo",
+        "id": "Saya mencuci muka pada pagi hari.",
+        "map": {
+          "units": [
+            {
+              "ko": "아침",
+              "roman": "achim",
+              "literal": "pagi"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "얼굴",
+              "roman": "eolgul",
+              "literal": "wajah"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "씻어요",
+              "roman": "ssiseoyo",
+              "literal": "mencuci"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya mencuci",
+              "ref": 4
+            },
+            {
+              "text": "muka",
+              "ref": 2
+            },
+            {
+              "text": "pada pagi hari",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "먹어요",
+      "roman": "meogeoyo",
+      "hint": "makan",
+      "speak": "먹어요",
+      "example": {
+        "ko": "점심을 열두 시에 먹어요.",
+        "roman": "jeomsimeul yeoldu sie meogeoyo",
+        "id": "Saya makan siang pukul dua belas.",
+        "map": {
+          "units": [
+            {
+              "ko": "점심",
+              "roman": "jeomsim",
+              "literal": "makan siang"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "열두 시",
+              "roman": "yeoldu si",
+              "literal": "jam dua belas"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "먹어요",
+              "roman": "meogeoyo",
+              "literal": "makan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya makan siang",
+              "ref": 0
+            },
+            {
+              "text": "pukul dua belas",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "마셔요",
+      "roman": "masyeoyo",
+      "hint": "minum",
+      "speak": "마셔요",
+      "example": {
+        "ko": "운동 후에 물을 마셔요.",
+        "roman": "undong hue mureul masyeoyo",
+        "id": "Saya minum air setelah olahraga.",
+        "map": {
+          "units": [
+            {
+              "ko": "운동",
+              "roman": "undong",
+              "literal": "olahraga"
+            },
+            {
+              "ko": "후에",
+              "roman": "hue",
+              "literal": "setelah"
+            },
+            {
+              "ko": "물",
+              "roman": "mul",
+              "literal": "air"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "마셔요",
+              "roman": "masyeoyo",
+              "literal": "minum"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya minum",
+              "ref": 4
+            },
+            {
+              "text": "air",
+              "ref": 2
+            },
+            {
+              "text": "setelah olahraga",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "공부해요",
+      "roman": "gongbuhaeyo",
+      "hint": "belajar",
+      "speak": "공부해요",
+      "example": {
+        "ko": "저녁에 한국어를 공부해요.",
+        "roman": "jeonyeoge hangugeoreul gongbuhaeyo",
+        "id": "Saya belajar bahasa Korea pada malam hari.",
+        "map": {
+          "units": [
+            {
+              "ko": "저녁",
+              "roman": "jeonyeok",
+              "literal": "malam"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "한국어",
+              "roman": "hangugeo",
+              "literal": "bahasa Korea"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "objek"
+            },
+            {
+              "ko": "공부해요",
+              "roman": "gongbuhaeyo",
+              "literal": "belajar"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya belajar",
+              "ref": 4
+            },
+            {
+              "text": "bahasa Korea",
+              "ref": 2
+            },
+            {
+              "text": "pada malam hari",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "일해요",
+      "roman": "ilhaeyo",
+      "hint": "bekerja",
+      "speak": "일해요",
+      "example": {
+        "ko": "평일에는 회사에서 일해요.",
+        "roman": "pyeongireneun hoesaeseo ilhaeyo",
+        "id": "Pada hari kerja saya bekerja di kantor.",
+        "map": {
+          "units": [
+            {
+              "ko": "평일",
+              "roman": "pyeongil",
+              "literal": "hari kerja"
+            },
+            {
+              "ko": "에는",
+              "roman": "eneun",
+              "literal": "pada/topik"
+            },
+            {
+              "ko": "회사",
+              "roman": "hoesa",
+              "literal": "kantor"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di"
+            },
+            {
+              "ko": "일해요",
+              "roman": "ilhaeyo",
+              "literal": "bekerja"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Pada hari kerja",
+              "ref": 0
+            },
+            {
+              "text": "saya bekerja",
+              "ref": 4
+            },
+            {
+              "text": "di kantor",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "운동해요",
+      "roman": "undonghaeyo",
+      "hint": "berolahraga",
+      "speak": "운동해요",
+      "example": {
+        "ko": "주말에 공원에서 운동해요.",
+        "roman": "jumare gongwoneseo undonghaeyo",
+        "id": "Saya berolahraga di taman pada akhir pekan.",
+        "map": {
+          "units": [
+            {
+              "ko": "주말",
+              "roman": "jumal",
+              "literal": "akhir pekan"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "공원",
+              "roman": "gongwon",
+              "literal": "taman"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di"
+            },
+            {
+              "ko": "운동해요",
+              "roman": "undonghaeyo",
+              "literal": "berolahraga"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya berolahraga",
+              "ref": 4
+            },
+            {
+              "text": "di taman",
+              "ref": 2
+            },
+            {
+              "text": "pada akhir pekan",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "산책해요",
+      "roman": "sanchaekaeyo",
+      "hint": "berjalan-jalan",
+      "speak": "산책해요",
+      "example": {
+        "ko": "저녁마다 산책해요.",
+        "roman": "jeonyeongmada sanchaekaeyo",
+        "id": "Saya berjalan-jalan setiap malam.",
+        "map": {
+          "units": [
+            {
+              "ko": "저녁마다",
+              "roman": "jeonyeongmada",
+              "literal": "setiap malam"
+            },
+            {
+              "ko": "산책해요",
+              "roman": "sanchaekaeyo",
+              "literal": "berjalan-jalan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya berjalan-jalan",
+              "ref": 1
+            },
+            {
+              "text": "setiap malam",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "요리해요",
+      "roman": "yorihaeyo",
+      "hint": "memasak",
+      "speak": "요리해요",
+      "example": {
+        "ko": "집에서 저녁을 요리해요.",
+        "roman": "jibeseo jeonyeogeul yorihaeyo",
+        "id": "Saya memasak makan malam di rumah.",
+        "map": {
+          "units": [
+            {
+              "ko": "집",
+              "roman": "jip",
+              "literal": "rumah"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di"
+            },
+            {
+              "ko": "저녁",
+              "roman": "jeonyeok",
+              "literal": "makan malam"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "요리해요",
+              "roman": "yorihaeyo",
+              "literal": "memasak"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya memasak",
+              "ref": 4
+            },
+            {
+              "text": "makan malam",
+              "ref": 2
+            },
+            {
+              "text": "di rumah",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "청소해요",
+      "roman": "cheongsohaeyo",
+      "hint": "membersihkan",
+      "speak": "청소해요",
+      "example": {
+        "ko": "토요일에 방을 청소해요.",
+        "roman": "toyoire bangeul cheongsohaeyo",
+        "id": "Saya membersihkan kamar pada hari Sabtu.",
+        "map": {
+          "units": [
+            {
+              "ko": "토요일",
+              "roman": "toyoil",
+              "literal": "Sabtu"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "방",
+              "roman": "bang",
+              "literal": "kamar"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "청소해요",
+              "roman": "cheongsohaeyo",
+              "literal": "membersihkan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya membersihkan",
+              "ref": 4
+            },
+            {
+              "text": "kamar",
+              "ref": 2
+            },
+            {
+              "text": "pada hari Sabtu",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "봐요",
+      "roman": "bwayo",
+      "hint": "menonton / melihat",
+      "speak": "봐요",
+      "example": {
+        "ko": "밤에 드라마를 봐요.",
+        "roman": "bame deuramareul bwayo",
+        "id": "Saya menonton drama pada malam hari.",
+        "map": {
+          "units": [
+            {
+              "ko": "밤",
+              "roman": "bam",
+              "literal": "malam"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "드라마",
+              "roman": "deurama",
+              "literal": "drama"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "objek"
+            },
+            {
+              "ko": "봐요",
+              "roman": "bwayo",
+              "literal": "menonton"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya menonton",
+              "ref": 4
+            },
+            {
+              "text": "drama",
+              "ref": 2
+            },
+            {
+              "text": "pada malam hari",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "자요",
+      "roman": "jayo",
+      "hint": "tidur",
+      "speak": "자요",
+      "example": {
+        "ko": "보통 열한 시에 자요.",
+        "roman": "botong yeolhan sie jayo",
+        "id": "Biasanya saya tidur pukul sebelas.",
+        "map": {
+          "units": [
+            {
+              "ko": "보통",
+              "roman": "botong",
+              "literal": "biasanya"
+            },
+            {
+              "ko": "열한 시",
+              "roman": "yeolhan si",
+              "literal": "jam sebelas"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "자요",
+              "roman": "jayo",
+              "literal": "tidur"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Biasanya",
+              "ref": 0
+            },
+            {
+              "text": "saya tidur",
+              "ref": 3
+            },
+            {
+              "text": "pukul sebelas",
+              "ref": 1
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa arti 일어나요?",
+      "options": [
+        "bangun",
+        "mencuci / mandi",
+        "minum",
+        "bekerja"
+      ],
+      "answer": 0,
+      "explain": "일어나요 = bangun."
+    },
+    {
+      "question": "Apa arti 씻어요?",
+      "options": [
+        "makan",
+        "belajar",
+        "berolahraga",
+        "mencuci / mandi"
+      ],
+      "answer": 3,
+      "explain": "씻어요 = mencuci / mandi."
+    },
+    {
+      "question": "Apa arti 먹어요?",
+      "options": [
+        "bekerja",
+        "berjalan-jalan",
+        "makan",
+        "minum"
+      ],
+      "answer": 2,
+      "explain": "먹어요 = makan."
+    },
+    {
+      "question": "Apa arti 마셔요?",
+      "options": [
+        "memasak",
+        "minum",
+        "belajar",
+        "berolahraga"
+      ],
+      "answer": 1,
+      "explain": "마셔요 = minum."
+    },
+    {
+      "question": "Apa arti 공부해요?",
+      "options": [
+        "belajar",
+        "bekerja",
+        "berjalan-jalan",
+        "membersihkan"
+      ],
+      "answer": 0,
+      "explain": "공부해요 = belajar."
+    },
+    {
+      "question": "Apa arti 일해요?",
+      "options": [
+        "berolahraga",
+        "memasak",
+        "menonton / melihat",
+        "bekerja"
+      ],
+      "answer": 3,
+      "explain": "일해요 = bekerja."
+    },
+    {
+      "question": "Apa arti 운동해요?",
+      "options": [
+        "membersihkan",
+        "tidur",
+        "berolahraga",
+        "berjalan-jalan"
+      ],
+      "answer": 2,
+      "explain": "운동해요 = berolahraga."
+    },
+    {
+      "question": "Apa arti 산책해요?",
+      "options": [
+        "bangun",
+        "berjalan-jalan",
+        "memasak",
+        "menonton / melihat"
+      ],
+      "answer": 1,
+      "explain": "산책해요 = berjalan-jalan."
+    },
+    {
+      "question": "Apa arti 요리해요?",
+      "options": [
+        "memasak",
+        "membersihkan",
+        "tidur",
+        "mencuci / mandi"
+      ],
+      "answer": 0,
+      "explain": "요리해요 = memasak."
+    },
+    {
+      "question": "Apa arti 청소해요?",
+      "options": [
+        "menonton / melihat",
+        "bangun",
+        "makan",
+        "membersihkan"
+      ],
+      "answer": 3,
+      "explain": "청소해요 = membersihkan."
+    }
+  ]
+}
