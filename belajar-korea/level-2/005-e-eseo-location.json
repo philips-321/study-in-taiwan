@@ -1,0 +1,189 @@
+{
+  "id": "ko-l2-005",
+  "level": "Level 2 · Kalimat dasar",
+  "order": 5,
+  "passScore": 80,
+  "title": "에 / 에서 — ke, di, dan tempat melakukan aksi",
+  "subtitle": "Dua partikel lokasi yang mirip tetapi punya fungsi berbeda.",
+  "intro": "에 dipakai untuk tujuan/destinasi, waktu, atau lokasi keberadaan. 에서 dipakai untuk tempat berlangsungnya sebuah aktivitas.",
+  "tip": "학교에 가요 = pergi ke sekolah. 학교에서 공부해요 = belajar di sekolah.",
+  "progressStart": 72,
+  "objectives": [
+    "에 destinasi",
+    "에 keberadaan/waktu",
+    "에서 aksi"
+  ],
+  "prev": {
+    "title": "Pelajaran 4 · 을/를",
+    "path": "level-2/004-eul-reul-object.json"
+  },
+  "units": [
+    {
+      "char": "학교에 가요",
+      "roman": "hakgyoe gayo",
+      "hint": "에 menunjukkan tujuan/destinasi.",
+      "speak": "학교에 가요",
+      "example": {
+        "ko": "아침에 학교에 가요",
+        "roman": "achime hakgyoe gayo",
+        "id": "pagi pergi ke sekolah"
+      }
+    },
+    {
+      "char": "집에 있어요",
+      "roman": "jibe isseoyo",
+      "hint": "에 menunjukkan lokasi keberadaan.",
+      "speak": "집에 있어요",
+      "example": {
+        "ko": "지금 집에 있어요",
+        "roman": "jigeum jibe isseoyo",
+        "id": "sekarang ada di rumah"
+      }
+    },
+    {
+      "char": "세 시에",
+      "roman": "se sie",
+      "hint": "에 juga digunakan dengan waktu tertentu.",
+      "speak": "세 시에",
+      "example": {
+        "ko": "세 시에 만나요",
+        "roman": "se sie mannayo",
+        "id": "bertemu jam tiga"
+      }
+    },
+    {
+      "char": "학교에서 공부해요",
+      "roman": "hakgyoeseo gongbuhaeyo",
+      "hint": "에서 menunjukkan tempat aktivitas belajar berlangsung.",
+      "speak": "학교에서 공부해요",
+      "example": {
+        "ko": "학교에서 한국어를 공부해요",
+        "roman": "hakgyoeseo hangugeoreul gongbuhaeyo",
+        "id": "belajar Korea di sekolah"
+      }
+    },
+    {
+      "char": "카페에서 마셔요",
+      "roman": "kapeeseo masyeoyo",
+      "hint": "Aktivitas minum berlangsung di kafe.",
+      "speak": "카페에서 마셔요",
+      "example": {
+        "ko": "카페에서 커피를 마셔요",
+        "roman": "kapeeseo keopireul masyeoyo",
+        "id": "minum kopi di kafe"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "학교___ 가요",
+      "options": [
+        "에",
+        "에서",
+        "을",
+        "가"
+      ],
+      "answer": 0,
+      "explain": "Destinasi → 에."
+    },
+    {
+      "question": "학교___ 공부해요",
+      "options": [
+        "에",
+        "에서",
+        "를",
+        "는"
+      ],
+      "answer": 1,
+      "explain": "Tempat aktivitas → 에서."
+    },
+    {
+      "question": "집___ 있어요",
+      "options": [
+        "에서",
+        "에",
+        "를",
+        "가"
+      ],
+      "answer": 1,
+      "explain": "Lokasi keberadaan dengan 있어요 → 에."
+    },
+    {
+      "question": "세 시___ 만나요",
+      "options": [
+        "에서",
+        "에",
+        "를",
+        "가"
+      ],
+      "answer": 1,
+      "explain": "Waktu tertentu → 에."
+    },
+    {
+      "question": "카페___ 커피를 마셔요",
+      "options": [
+        "에",
+        "에서",
+        "가",
+        "를"
+      ],
+      "answer": 1,
+      "explain": "Aktivitas minum berlangsung di kafe."
+    },
+    {
+      "question": "에 untuk tempat biasanya digunakan dengan…",
+      "options": [
+        "destinasi/keberadaan",
+        "semua aktivitas",
+        "objek langsung",
+        "subject focus"
+      ],
+      "answer": 0,
+      "explain": "Contoh 가요, 있어요."
+    },
+    {
+      "question": "에서 menunjukkan…",
+      "options": [
+        "tempat berlangsungnya aktivitas",
+        "waktu saja",
+        "objek",
+        "topik"
+      ],
+      "answer": 0,
+      "explain": "Action location marker."
+    },
+    {
+      "question": "Mana kalimat benar untuk 'belajar di rumah'?",
+      "options": [
+        "집에 공부해요",
+        "집에서 공부해요",
+        "집을 공부해요",
+        "집이 공부해요"
+      ],
+      "answer": 1,
+      "explain": "공부하다 adalah aktivitas → 에서."
+    },
+    {
+      "question": "Mana kalimat benar untuk 'pergi ke kafe'?",
+      "options": [
+        "카페에서 가요",
+        "카페에 가요",
+        "카페를 가요",
+        "카페가 가요"
+      ],
+      "answer": 1,
+      "explain": "Destinasi → 에."
+    },
+    {
+      "question": "Perbedaan paling berguna untuk pemula adalah…",
+      "options": [
+        "에 = tujuan/keberadaan/waktu, 에서 = tempat aktivitas",
+        "keduanya selalu sama",
+        "에서 hanya untuk masa lalu",
+        "에 hanya untuk orang"
+      ],
+      "answer": 0,
+      "explain": "Ini inti fungsi dasar keduanya."
+    }
+  ]
+}
