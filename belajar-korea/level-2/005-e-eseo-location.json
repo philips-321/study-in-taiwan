@@ -421,5 +421,297 @@
   "next": {
     "title": "Level 3 · Keluarga",
     "path": "level-3/001-family.json"
-  }
+  },
+  "practiceExamples": [
+    {
+      "ko": "회사에 가요.",
+      "roman": "hoesae gayo",
+      "id": "Saya pergi ke kantor.",
+      "map": {
+        "units": [
+          {
+            "ko": "회사",
+            "roman": "hoesa",
+            "literal": "kantor"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "가요",
+            "roman": "gayo",
+            "literal": "pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya pergi",
+            "ref": 2
+          },
+          {
+            "text": "ke kantor",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "회사에 가요."
+    },
+    {
+      "ko": "서울에 살아요.",
+      "roman": "seoure sarayo",
+      "id": "Saya tinggal di Seoul.",
+      "map": {
+        "units": [
+          {
+            "ko": "서울",
+            "roman": "Seoul",
+            "literal": "Seoul"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "di"
+          },
+          {
+            "ko": "살아요",
+            "roman": "sarayo",
+            "literal": "tinggal"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tinggal",
+            "ref": 2
+          },
+          {
+            "text": "di Seoul",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "서울에 살아요."
+    },
+    {
+      "ko": "일곱 시에 일어나요.",
+      "roman": "ilgop sie ireonayo",
+      "id": "Saya bangun pukul tujuh.",
+      "map": {
+        "units": [
+          {
+            "ko": "일곱 시",
+            "roman": "ilgop si",
+            "literal": "jam tujuh"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "일어나요",
+            "roman": "ireonayo",
+            "literal": "bangun"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya bangun",
+            "ref": 2
+          },
+          {
+            "text": "pukul tujuh",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "일곱 시에 일어나요."
+    },
+    {
+      "ko": "도서관에서 책을 읽어요.",
+      "roman": "doseogwaneseo chaegeul ilgeoyo",
+      "id": "Saya membaca buku di perpustakaan.",
+      "map": {
+        "units": [
+          {
+            "ko": "도서관",
+            "roman": "doseogwan",
+            "literal": "perpustakaan"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "읽어요",
+            "roman": "ilgeoyo",
+            "literal": "membaca"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya membaca",
+            "ref": 4
+          },
+          {
+            "text": "buku",
+            "ref": 2
+          },
+          {
+            "text": "di perpustakaan",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "도서관에서 책을 읽어요."
+    },
+    {
+      "ko": "식당에서 밥을 먹어요.",
+      "roman": "sikdangeseo babeul meogeoyo",
+      "id": "Saya makan di restoran.",
+      "map": {
+        "units": [
+          {
+            "ko": "식당",
+            "roman": "sikdang",
+            "literal": "restoran"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "밥",
+            "roman": "bap",
+            "literal": "nasi/makanan"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "먹어요",
+            "roman": "meogeoyo",
+            "literal": "makan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya makan",
+            "ref": 4
+          },
+          {
+            "text": "di restoran",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "식당에서 밥을 먹어요."
+    },
+    {
+      "ko": "공원에서 운동해요.",
+      "roman": "gongwoneseo undonghaeyo",
+      "id": "Saya berolahraga di taman.",
+      "map": {
+        "units": [
+          {
+            "ko": "공원",
+            "roman": "gongwon",
+            "literal": "taman"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "운동해요",
+            "roman": "undonghaeyo",
+            "literal": "berolahraga"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya berolahraga",
+            "ref": 2
+          },
+          {
+            "text": "di taman",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "공원에서 운동해요."
+    },
+    {
+      "ko": "집에 친구가 있어요.",
+      "roman": "jibe chinguga isseoyo",
+      "id": "Ada teman di rumah.",
+      "map": {
+        "units": [
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "di"
+          },
+          {
+            "ko": "친구",
+            "roman": "chingu",
+            "literal": "teman"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "있어요",
+            "roman": "isseoyo",
+            "literal": "ada"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Ada",
+            "ref": 4
+          },
+          {
+            "text": "teman",
+            "ref": 2
+          },
+          {
+            "text": "di rumah",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "집에 친구가 있어요."
+    }
+  ]
 }
