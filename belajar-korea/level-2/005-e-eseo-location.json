@@ -26,7 +26,58 @@
       "example": {
         "ko": "아침에 학교에 가요",
         "roman": "achime hakgyoe gayo",
-        "id": "pagi pergi ke sekolah"
+        "id": "pagi pergi ke sekolah",
+        "map": {
+          "units": [
+            {
+              "ko": "아침",
+              "roman": "achim",
+              "literal": "pagi"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "학교",
+              "roman": "hakgyo",
+              "literal": "sekolah"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "ke"
+            },
+            {
+              "ko": "가요",
+              "roman": "gayo",
+              "literal": "pergi"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Pagi,",
+              "ref": 0
+            },
+            {
+              "text": "pergi",
+              "ref": 4
+            },
+            {
+              "text": "ke",
+              "ref": 3
+            },
+            {
+              "text": "sekolah",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
       }
     },
     {
@@ -37,7 +88,53 @@
       "example": {
         "ko": "지금 집에 있어요",
         "roman": "jigeum jibe isseoyo",
-        "id": "sekarang ada di rumah"
+        "id": "sekarang ada di rumah",
+        "map": {
+          "units": [
+            {
+              "ko": "지금",
+              "roman": "jigeum",
+              "literal": "sekarang"
+            },
+            {
+              "ko": "집",
+              "roman": "jip",
+              "literal": "rumah"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "있어요",
+              "roman": "isseoyo",
+              "literal": "ada / berada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Sekarang",
+              "ref": 0
+            },
+            {
+              "text": "berada",
+              "ref": 3
+            },
+            {
+              "text": "di",
+              "ref": 2
+            },
+            {
+              "text": "rumah",
+              "ref": 1
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
       }
     },
     {
@@ -48,7 +145,40 @@
       "example": {
         "ko": "세 시에 만나요",
         "roman": "se sie mannayo",
-        "id": "bertemu jam tiga"
+        "id": "bertemu jam tiga",
+        "map": {
+          "units": [
+            {
+              "ko": "세 시",
+              "roman": "se si",
+              "literal": "jam tiga"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "만나요",
+              "roman": "mannayo",
+              "literal": "bertemu"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Bertemu",
+              "ref": 2
+            },
+            {
+              "text": "jam tiga",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -59,7 +189,58 @@
       "example": {
         "ko": "학교에서 한국어를 공부해요",
         "roman": "hakgyoeseo hangugeoreul gongbuhaeyo",
-        "id": "belajar Korea di sekolah"
+        "id": "belajar Korea di sekolah",
+        "map": {
+          "units": [
+            {
+              "ko": "학교",
+              "roman": "hakgyo",
+              "literal": "sekolah"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di / tempat aktivitas"
+            },
+            {
+              "ko": "한국어",
+              "roman": "hangugeo",
+              "literal": "bahasa Korea"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "공부해요",
+              "roman": "gongbuhaeyo",
+              "literal": "belajar"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Belajar",
+              "ref": 4
+            },
+            {
+              "text": "bahasa Korea",
+              "ref": 2
+            },
+            {
+              "text": "di",
+              "ref": 1
+            },
+            {
+              "text": "sekolah",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
       }
     },
     {
@@ -70,7 +251,58 @@
       "example": {
         "ko": "카페에서 커피를 마셔요",
         "roman": "kapeeseo keopireul masyeoyo",
-        "id": "minum kopi di kafe"
+        "id": "minum kopi di kafe",
+        "map": {
+          "units": [
+            {
+              "ko": "카페",
+              "roman": "kape",
+              "literal": "kafe"
+            },
+            {
+              "ko": "에서",
+              "roman": "eseo",
+              "literal": "di / tempat aktivitas"
+            },
+            {
+              "ko": "커피",
+              "roman": "keopi",
+              "literal": "kopi"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "마셔요",
+              "roman": "masyeoyo",
+              "literal": "minum"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Minum",
+              "ref": 4
+            },
+            {
+              "text": "kopi",
+              "ref": 2
+            },
+            {
+              "text": "di",
+              "ref": 1
+            },
+            {
+              "text": "kafe",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
       }
     }
   ],
