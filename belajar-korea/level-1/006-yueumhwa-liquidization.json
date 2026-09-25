@@ -248,7 +248,31 @@
       "example": {
         "ko": "신라 시대",
         "roman": "silla sidae",
-        "id": "zaman Silla"
+        "id": "zaman Silla",
+        "map": {
+          "units": [
+            {
+              "ko": "신라",
+              "roman": "Silla",
+              "literal": "Silla"
+            },
+            {
+              "ko": "시대",
+              "roman": "sidae",
+              "literal": "zaman"
+            }
+          ],
+          "natural": [
+            {
+              "text": "zaman",
+              "ref": 1
+            },
+            {
+              "text": "Silla",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -259,7 +283,31 @@
       "example": {
         "ko": "설날이에요",
         "roman": "seollarieyo",
-        "id": "ini Seollal"
+        "id": "ini Seollal",
+        "map": {
+          "units": [
+            {
+              "ko": "설날",
+              "roman": "seollal",
+              "literal": "Seollal"
+            },
+            {
+              "ko": "이에요",
+              "roman": "ieyo",
+              "literal": "adalah"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Ini",
+              "ref": 1
+            },
+            {
+              "text": "Seollal",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -270,7 +318,31 @@
       "example": {
         "ko": "연락해 주세요",
         "roman": "yeollakae juseyo",
-        "id": "tolong hubungi"
+        "id": "tolong hubungi",
+        "map": {
+          "units": [
+            {
+              "ko": "연락해",
+              "roman": "yeollakae",
+              "literal": "hubungi"
+            },
+            {
+              "ko": "주세요",
+              "roman": "juseyo",
+              "literal": "tolong"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Tolong",
+              "ref": 1
+            },
+            {
+              "text": "hubungi saya",
+              "ref": 0
+            }
+          ]
+        }
       }
     }
   ],
