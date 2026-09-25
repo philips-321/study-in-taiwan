@@ -1,0 +1,753 @@
+{
+  "id": "ko-l4-006",
+  "level": "Level 4 · Grammar bertahap",
+  "order": 6,
+  "passScore": 80,
+  "title": "아/어서 — sebab & urutan",
+  "subtitle": "Menghubungkan dua kejadian sebagai sebab-akibat atau urutan yang alami.",
+  "intro": "Gunakan 아서/어서 setelah batang kata kerja atau sifat. 하다 menjadi 해서. Maknanya bisa 'karena...' atau 'lalu...' tergantung hubungan dua klausa.",
+  "tip": "Lihat hubungan logisnya, bukan terjemahan satu kata.",
+  "progressStart": 84,
+  "objectives": [
+    "12 contoh",
+    "color map",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Pelajaran 5 · 고 싶어요",
+    "path": "level-4/005-go-sipeoyo.json"
+  },
+  "next": {
+    "title": "Pelajaran 7 · 지만",
+    "path": "level-4/007-jiman.json"
+  },
+  "sentences": [
+    {
+      "ko": "배가 고파서 밥을 먹어요.",
+      "roman": "baega gopaseo babeul meogeoyo",
+      "id": "Saya makan karena lapar.",
+      "map": {
+        "units": [
+          {
+            "ko": "배",
+            "roman": "bae",
+            "literal": "perut"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "고파서",
+            "roman": "gopaseo",
+            "literal": "karena lapar"
+          },
+          {
+            "ko": "밥",
+            "roman": "bap",
+            "literal": "nasi"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "먹어요",
+            "roman": "meogeoyo",
+            "literal": "makan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya makan",
+            "ref": 5
+          },
+          {
+            "text": "karena lapar",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "배가 고파서 밥을 먹어요."
+    },
+    {
+      "ko": "비가 와서 집에 있어요.",
+      "roman": "biga waseo jibe isseoyo",
+      "id": "Saya di rumah karena hujan.",
+      "map": {
+        "units": [
+          {
+            "ko": "비",
+            "roman": "bi",
+            "literal": "hujan"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "와서",
+            "roman": "waseo",
+            "literal": "karena turun"
+          },
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "di"
+          },
+          {
+            "ko": "있어요",
+            "roman": "isseoyo",
+            "literal": "berada"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya berada",
+            "ref": 5
+          },
+          {
+            "text": "di rumah",
+            "ref": 3
+          },
+          {
+            "text": "karena hujan",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "비가 와서 집에 있어요."
+    },
+    {
+      "ko": "피곤해서 일찍 자요.",
+      "roman": "pigonhaeseo iljjik jayo",
+      "id": "Saya tidur lebih awal karena lelah.",
+      "map": {
+        "units": [
+          {
+            "ko": "피곤해서",
+            "roman": "pigonhaeseo",
+            "literal": "karena lelah"
+          },
+          {
+            "ko": "일찍",
+            "roman": "iljjik",
+            "literal": "lebih awal"
+          },
+          {
+            "ko": "자요",
+            "roman": "jayo",
+            "literal": "tidur"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tidur",
+            "ref": 2
+          },
+          {
+            "text": "lebih awal",
+            "ref": 1
+          },
+          {
+            "text": "karena lelah",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "피곤해서 일찍 자요."
+    },
+    {
+      "ko": "친구를 만나서 커피를 마셨어요.",
+      "roman": "chingureul mannaseo keopireul masyeosseoyo",
+      "id": "Saya bertemu teman lalu minum kopi.",
+      "map": {
+        "units": [
+          {
+            "ko": "친구",
+            "roman": "chingu",
+            "literal": "teman"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "만나서",
+            "roman": "mannaseo",
+            "literal": "bertemu lalu"
+          },
+          {
+            "ko": "커피",
+            "roman": "keopi",
+            "literal": "kopi"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "마셨어요",
+            "roman": "masyeosseoyo",
+            "literal": "minum lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya bertemu",
+            "ref": 2
+          },
+          {
+            "text": "teman",
+            "ref": 0
+          },
+          {
+            "text": "lalu minum",
+            "ref": 5
+          },
+          {
+            "text": "kopi",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "친구를 만나서 커피를 마셨어요."
+    },
+    {
+      "ko": "집에 가서 쉬어요.",
+      "roman": "jibe gaseo swieoyo",
+      "id": "Saya pulang ke rumah lalu beristirahat.",
+      "map": {
+        "units": [
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "가서",
+            "roman": "gaseo",
+            "literal": "pergi lalu"
+          },
+          {
+            "ko": "쉬어요",
+            "roman": "swieoyo",
+            "literal": "beristirahat"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya pergi",
+            "ref": 2
+          },
+          {
+            "text": "ke rumah",
+            "ref": 0
+          },
+          {
+            "text": "lalu beristirahat",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "집에 가서 쉬어요."
+    },
+    {
+      "ko": "시장에 가서 과일을 샀어요.",
+      "roman": "sijange gaseo gwaireul sasseoyo",
+      "id": "Saya pergi ke pasar lalu membeli buah.",
+      "map": {
+        "units": [
+          {
+            "ko": "시장",
+            "roman": "sijang",
+            "literal": "pasar"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "가서",
+            "roman": "gaseo",
+            "literal": "pergi lalu"
+          },
+          {
+            "ko": "과일",
+            "roman": "gwail",
+            "literal": "buah"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "샀어요",
+            "roman": "sasseoyo",
+            "literal": "membeli lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya pergi",
+            "ref": 2
+          },
+          {
+            "text": "ke pasar",
+            "ref": 0
+          },
+          {
+            "text": "lalu membeli",
+            "ref": 5
+          },
+          {
+            "text": "buah",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "시장에 가서 과일을 샀어요."
+    },
+    {
+      "ko": "날씨가 좋아서 산책해요.",
+      "roman": "nalssiga joaseo sanchaekaeyo",
+      "id": "Saya berjalan-jalan karena cuacanya bagus.",
+      "map": {
+        "units": [
+          {
+            "ko": "날씨",
+            "roman": "nalssi",
+            "literal": "cuaca"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "좋아서",
+            "roman": "joaseo",
+            "literal": "karena bagus"
+          },
+          {
+            "ko": "산책해요",
+            "roman": "sanchaekaeyo",
+            "literal": "berjalan-jalan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya berjalan-jalan",
+            "ref": 3
+          },
+          {
+            "text": "karena cuacanya bagus",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "날씨가 좋아서 산책해요."
+    },
+    {
+      "ko": "시간이 없어서 택시를 탔어요.",
+      "roman": "sigani eopseoseo taeksireul tasseoyo",
+      "id": "Saya naik taksi karena tidak punya waktu.",
+      "map": {
+        "units": [
+          {
+            "ko": "시간",
+            "roman": "sigan",
+            "literal": "waktu"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "subjek"
+          },
+          {
+            "ko": "없어서",
+            "roman": "eopseoseo",
+            "literal": "karena tidak ada"
+          },
+          {
+            "ko": "택시",
+            "roman": "taeksi",
+            "literal": "taksi"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "탔어요",
+            "roman": "tasseoyo",
+            "literal": "naik lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya naik",
+            "ref": 5
+          },
+          {
+            "text": "taksi",
+            "ref": 3
+          },
+          {
+            "text": "karena tidak punya waktu",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "시간이 없어서 택시를 탔어요."
+    },
+    {
+      "ko": "한국어가 재미있어서 매일 공부해요.",
+      "roman": "hangugeoga jaemiisseoseo maeil gongbuhaeyo",
+      "id": "Saya belajar setiap hari karena bahasa Korea menarik.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국어",
+            "roman": "hangugeo",
+            "literal": "bahasa Korea"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "재미있어서",
+            "roman": "jaemiisseoseo",
+            "literal": "karena menarik"
+          },
+          {
+            "ko": "매일",
+            "roman": "maeil",
+            "literal": "setiap hari"
+          },
+          {
+            "ko": "공부해요",
+            "roman": "gongbuhaeyo",
+            "literal": "belajar"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya belajar",
+            "ref": 4
+          },
+          {
+            "text": "setiap hari",
+            "ref": 3
+          },
+          {
+            "text": "karena bahasa Korea menarik",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국어가 재미있어서 매일 공부해요."
+    },
+    {
+      "ko": "늦게 일어나서 아침을 못 먹었어요.",
+      "roman": "neutge ireonaseo achimeul mot meogeosseoyo",
+      "id": "Saya tidak sempat sarapan karena bangun terlambat.",
+      "map": {
+        "units": [
+          {
+            "ko": "늦게",
+            "roman": "neutge",
+            "literal": "terlambat"
+          },
+          {
+            "ko": "일어나서",
+            "roman": "ireonaseo",
+            "literal": "karena bangun"
+          },
+          {
+            "ko": "아침",
+            "roman": "achim",
+            "literal": "sarapan"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "못",
+            "roman": "mot",
+            "literal": "tidak bisa"
+          },
+          {
+            "ko": "먹었어요",
+            "roman": "meogeosseoyo",
+            "literal": "makan lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tidak sempat",
+            "ref": 4
+          },
+          {
+            "text": "sarapan",
+            "ref": 2
+          },
+          {
+            "text": "karena bangun terlambat",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "늦게 일어나서 아침을 못 먹었어요."
+    },
+    {
+      "ko": "문을 열어서 바람을 넣어요.",
+      "roman": "muneul yeoreoseo barameul neoeoyo",
+      "id": "Saya membuka pintu agar udara masuk.",
+      "map": {
+        "units": [
+          {
+            "ko": "문",
+            "roman": "mun",
+            "literal": "pintu"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "열어서",
+            "roman": "yeoreoseo",
+            "literal": "membuka lalu"
+          },
+          {
+            "ko": "바람",
+            "roman": "baram",
+            "literal": "angin/udara"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "넣어요",
+            "roman": "neoeoyo",
+            "literal": "memasukkan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya membuka",
+            "ref": 2
+          },
+          {
+            "text": "pintu",
+            "ref": 0
+          },
+          {
+            "text": "lalu membiarkan udara masuk",
+            "ref": 5
+          }
+        ]
+      },
+      "note": "",
+      "speak": "문을 열어서 바람을 넣어요."
+    },
+    {
+      "ko": "공부를 끝내서 이제 쉴 거예요.",
+      "roman": "gongbureul kkeutnaeseo ije swil geoyeyo",
+      "id": "Saya sudah selesai belajar, jadi sekarang akan beristirahat.",
+      "map": {
+        "units": [
+          {
+            "ko": "공부",
+            "roman": "gongbu",
+            "literal": "belajar"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "끝내서",
+            "roman": "kkeutnaeseo",
+            "literal": "selesai lalu/karena selesai"
+          },
+          {
+            "ko": "이제",
+            "roman": "ije",
+            "literal": "sekarang"
+          },
+          {
+            "ko": "쉴 거예요",
+            "roman": "swil geoyeyo",
+            "literal": "akan beristirahat"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya sudah selesai belajar",
+            "ref": 2
+          },
+          {
+            "text": "jadi sekarang",
+            "ref": 3
+          },
+          {
+            "text": "akan beristirahat",
+            "ref": 4
+          }
+        ]
+      },
+      "note": "",
+      "speak": "공부를 끝내서 이제 쉴 거예요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "배가 고파서 밥을 먹어요 berarti…",
+      "options": [
+        "makan karena lapar",
+        "lapar karena makan",
+        "akan makan",
+        "tidak bisa makan"
+      ],
+      "answer": 0,
+      "explain": "-아서 menghubungkan sebab."
+    },
+    {
+      "question": "가다 + 아/어서 → ?",
+      "options": [
+        "가서",
+        "가아서",
+        "가어서",
+        "갔어서"
+      ],
+      "answer": 0,
+      "explain": "가다 → 가서."
+    },
+    {
+      "question": "먹다 + 아/어서 → ?",
+      "options": [
+        "먹어서",
+        "먹아서",
+        "먹서",
+        "먹고서 saja"
+      ],
+      "answer": 0,
+      "explain": "먹다 → 먹어서."
+    },
+    {
+      "question": "하다 + 아/어서 → ?",
+      "options": [
+        "해서",
+        "하아서",
+        "하여서 saja",
+        "했어서"
+      ],
+      "answer": 0,
+      "explain": "하다 → 해서."
+    },
+    {
+      "question": "만나다 + 아/어서 → ?",
+      "options": [
+        "만나서",
+        "만나어서",
+        "만났서",
+        "만나고만"
+      ],
+      "answer": 0,
+      "explain": "만나다 → 만나서."
+    },
+    {
+      "question": "아/어서 dapat menandai…",
+      "options": [
+        "sebab atau urutan alami",
+        "future saja",
+        "kemampuan",
+        "keharusan"
+      ],
+      "answer": 0,
+      "explain": "Reason/sequence."
+    },
+    {
+      "question": "비가 와서 집에 있어요: 와서 berarti…",
+      "options": [
+        "karena turun (hujan)",
+        "akan turun",
+        "sudah berhenti",
+        "tidak turun"
+      ],
+      "answer": 0,
+      "explain": "Cause."
+    },
+    {
+      "question": "집에 가서 쉬어요 menunjukkan…",
+      "options": [
+        "urutan: pergi lalu istirahat",
+        "kontras",
+        "keinginan",
+        "kemampuan"
+      ],
+      "answer": 0,
+      "explain": "Sequence."
+    },
+    {
+      "question": "좋다 + 아/어서 → ?",
+      "options": [
+        "좋아서",
+        "좋어서",
+        "좋해",
+        "좋고 싶어서"
+      ],
+      "answer": 0,
+      "explain": "좋다 → 좋아서."
+    },
+    {
+      "question": "없다 + 아/어서 → ?",
+      "options": [
+        "없어서",
+        "없아서",
+        "없고서",
+        "없해"
+      ],
+      "answer": 0,
+      "explain": "없다 → 없어서."
+    }
+  ]
+}
