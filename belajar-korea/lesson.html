@@ -5,7 +5,7 @@
 <meta name="robots" content="index,follow">
 <title>Pelajaran Korea | Leveling</title>
 <script>document.documentElement.dataset.theme=localStorage.getItem('levelingTheme')||'dark';</script>
-<link rel="stylesheet" href="lesson.css?v=20260926-2">
+<link rel="stylesheet" href="lesson.css?v=20260926-3">
 </head>
 <body>
 <header class="topbar"><div class="shell"><div class="toprow"><a class="brand" href="/belajar-korea/">Le<em>v</em>eling</a><div style="display:flex;gap:8px;align-items:center"><button class="theme-toggle" id="themeToggle" type="button">☀ Light</button><a class="back" href="/belajar-korea/">← Kurikulum</a></div></div></div><div class="progress"><span id="progressBar"></span></div></header>
@@ -15,6 +15,6 @@ function syncThemeButton(){const b=document.getElementById('themeToggle');if(b)b
 document.getElementById('themeToggle').onclick=()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('levelingTheme',next);syncThemeButton()}
 syncThemeButton();
 </script>
-<script src="lesson-engine.js?v=20260926-2"></script>
+<script src="lesson-engine.js?v=20260926-3"></script>
 </body>
 </html>
