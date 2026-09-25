@@ -1,0 +1,25 @@
+{
+  "id": "ko-l0-001",
+  "level": "Level 0 · Hangul",
+  "order": 1,
+  "title": "6 vokal dasar Hangul",
+  "subtitle": "Kenali ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, dan ㅣ sebelum masuk konsonan.",
+  "intro": "Hangul disusun dari bentuk sederhana. Pada pelajaran pertama, fokus hanya pada enam vokal inti. Jangan buru-buru menghafal semua kombinasi.",
+  "tip": "Perhatikan arah garis kecilnya: ㅏ dan ㅓ berbentuk vertikal, sedangkan ㅗ dan ㅜ berbentuk horizontal. ㅡ dan ㅣ adalah garis dasar yang paling sederhana.",
+  "progressStart": 12,
+  "objectives": ["6 huruf", "audio ko-KR", "±5 menit"],
+  "units": [
+    {"char":"ㅏ","roman":"a","hint":"Bunyi a, mirip a pada kata 'apa'.","speak":"아","example":{"ko":"아","roman":"a","id":"bunyi a"}},
+    {"char":"ㅓ","roman":"eo","hint":"Ditulis eo dalam romanisasi; bunyinya bukan e-o terpisah.","speak":"어","example":{"ko":"어","roman":"eo","id":"bunyi eo"}},
+    {"char":"ㅗ","roman":"o","hint":"Bunyi o; garis kecil berada di atas garis horizontal.","speak":"오","example":{"ko":"오","roman":"o","id":"bunyi o"}},
+    {"char":"ㅜ","roman":"u","hint":"Bunyi u; garis kecil berada di bawah garis horizontal.","speak":"우","example":{"ko":"우","roman":"u","id":"bunyi u"}},
+    {"char":"ㅡ","roman":"eu","hint":"Bunyi khas Korea; bibir relatif datar, bukan u Indonesia.","speak":"으","example":{"ko":"으","roman":"eu","id":"bunyi eu"}},
+    {"char":"ㅣ","roman":"i","hint":"Bunyi i, seperti i pada kata 'ini'.","speak":"이","example":{"ko":"이","roman":"i","id":"bunyi i"}}
+  ],
+  "quiz": [
+    {"question":"Huruf mana yang berbunyi 'a'?","options":["ㅓ","ㅏ","ㅜ","ㅡ"],"answer":1,"explain":"ㅏ = a."},
+    {"question":"Mana yang dibaca 'u'?","options":["ㅗ","ㅣ","ㅜ","ㅓ"],"answer":2,"explain":"ㅜ = u; garis kecilnya berada di bawah."},
+    {"question":"Romanisasi 'eu' adalah…","options":["ㅡ","ㅣ","ㅗ","ㅏ"],"answer":0,"explain":"ㅡ ditulis eu dalam romanisasi."},
+    {"question":"Mana yang dibaca 'i'?","options":["ㅏ","ㅓ","ㅡ","ㅣ"],"answer":3,"explain":"ㅣ = i."}
+  ]
+}
