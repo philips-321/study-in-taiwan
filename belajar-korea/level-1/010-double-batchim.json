@@ -1,0 +1,306 @@
+{
+  "id": "ko-l1-010",
+  "level": "Level 1 · Pengucapan",
+  "order": 10,
+  "passScore": 80,
+  "title": "겹받침 / 자음군 단순화 — double batchim",
+  "subtitle": "Ketika dua konsonan berada di batchim, hasil bunyinya bergantung pada apakah setelahnya ada konsonan atau vokal.",
+  "intro": "겹받침 adalah batchim yang terdiri dari dua konsonan, misalnya ㄺ, ㄵ, ㄶ, ㅄ. Jika kata berhenti atau diikuti konsonan, biasanya hanya satu komponen yang terdengar. Jika diikuti vokal, komponen lain dapat berpindah ke suku kata berikutnya.",
+  "tip": "Jangan hafal satu bunyi untuk setiap 겹받침 tanpa melihat konteks. Bandingkan 읽다 [익따] dengan 읽어 [일거]. Lingkungan sesudahnya mengubah hasil.",
+  "progressStart": 78,
+  "objectives": [
+    "double batchim",
+    "simplification",
+    "sebelum vokal vs konsonan"
+  ],
+  "prev": {
+    "title": "Pelajaran 9 · ㄴ 첨가",
+    "path": "level-1/009-n-insertion.json"
+  },
+  "next": {
+    "title": "Level 2 · 이에요/예요",
+    "path": "level-2/001-ieyo-yeyo.json"
+  },
+  "detailSections": [
+    {
+      "title": "Jika berhenti atau bertemu konsonan",
+      "paragraphs": [
+        "Cluster dua konsonan biasanya disederhanakan sehingga hanya salah satu bunyi yang menjadi batchim terdengar. Contoh: 읽다 dimulai dari 읽 + 다; ㄺ disederhanakan ke bunyi ㄱ lalu ㄷ berikutnya menjadi tense: [익따].",
+        "앉다 memiliki ㄵ. Bunyi akhir yang dipertahankan adalah ㄴ, lalu ㄷ berikutnya menjadi tense: [안따]."
+      ]
+    },
+    {
+      "title": "Jika bertemu vokal",
+      "paragraphs": [
+        "Salah satu konsonan dapat tetap sebagai batchim dan konsonan lainnya tersambung ke suku kata berikutnya. 읽어 diucapkan [일거]: ㄹ tetap pada suku kata pertama, ㄱ tersambung ke 어.",
+        "앉아 diucapkan [안자]: ㄴ tetap sebagai batchim, ㅈ tersambung ke 아."
+      ]
+    },
+    {
+      "title": "Kenapa pelajaran ini diletakkan terakhir?",
+      "paragraphs": [
+        "겹받침 sering berinteraksi dengan 연음, 된소리되기, 비음화, dan ㅎ 변화. Setelah memahami aturan sebelumnya, kamu bisa melihat prosesnya sebagai rangkaian, bukan sebagai daftar hafalan acak."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "읽 + 다",
+      "pronounced": "[익따]",
+      "steps": [
+        "겹받침 ㄺ bertemu konsonan ㄷ.",
+        "Pada posisi ini bunyi akhir disederhanakan ke ㄱ.",
+        "ㄷ berikutnya mengalami tensing menjadi ㄸ."
+      ],
+      "note": "Tulisan tetap 읽다.",
+      "speak": "읽다"
+    },
+    {
+      "written": "읽 + 어",
+      "pronounced": "[일거]",
+      "steps": [
+        "겹받침 ㄺ bertemu vokal.",
+        "ㄹ tetap sebagai batchim.",
+        "ㄱ tersambung ke 어 sehingga terdengar 거."
+      ],
+      "note": "Tulisan tetap 읽어.",
+      "speak": "읽어"
+    },
+    {
+      "written": "앉 + 다",
+      "pronounced": "[안따]",
+      "steps": [
+        "겹받침 ㄵ bertemu ㄷ.",
+        "ㄴ dipertahankan sebagai bunyi akhir.",
+        "ㄷ berikutnya menjadi tense ㄸ."
+      ],
+      "note": "Tulisan tetap 앉다.",
+      "speak": "앉다"
+    },
+    {
+      "written": "앉 + 아",
+      "pronounced": "[안자]",
+      "steps": [
+        "겹받침 ㄵ bertemu vokal.",
+        "ㄴ tetap pada suku kata pertama.",
+        "ㅈ tersambung ke 아."
+      ],
+      "note": "Tulisan tetap 앉아.",
+      "speak": "앉아"
+    },
+    {
+      "written": "없 + 다",
+      "pronounced": "[업따]",
+      "steps": [
+        "겹받침 ㅄ sebelum konsonan disederhanakan ke ㅂ.",
+        "ㄷ berikutnya mengalami tensing.",
+        "Hasil [업따]."
+      ],
+      "note": "Tulisan tetap 없다.",
+      "speak": "없다"
+    },
+    {
+      "written": "없 + 어",
+      "pronounced": "[업써]",
+      "steps": [
+        "Sebelum vokal, ㅂ tetap sebagai batchim.",
+        "ㅅ tersambung ke 어 dan terdengar tegang ㅆ.",
+        "Hasil [업써]."
+      ],
+      "note": "Tulisan tetap 없어.",
+      "speak": "없어"
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "저는 매일 책을 읽어요.",
+      "pronunciation": "[저는 매일 채글 일거요]",
+      "roman": "jeoneun maeil chaegeul ilgeoyo",
+      "id": "Saya membaca buku setiap hari.",
+      "note": "읽어요 → [일거요].",
+      "speak": "저는 매일 책을 읽어요."
+    },
+    {
+      "ko": "여기에 앉아 주세요.",
+      "pronunciation": "[여기에 안자 주세요]",
+      "roman": "yeogie anja juseyo",
+      "id": "Silakan duduk di sini.",
+      "note": "앉아 → [안자].",
+      "speak": "여기에 앉아 주세요."
+    },
+    {
+      "ko": "오늘은 시간이 없어요.",
+      "pronunciation": "[오느른 시가니 업써요]",
+      "roman": "oneureun sigani eopsseoyo",
+      "id": "Hari ini saya tidak punya waktu.",
+      "note": "없어요 → [업써요].",
+      "speak": "오늘은 시간이 없어요."
+    },
+    {
+      "ko": "책을 읽다가 잠들었어요.",
+      "pronunciation": "[채글 익따가 잠드러써요]",
+      "roman": "chaegeul ikttaga jamdeureosseoyo",
+      "id": "Saya tertidur saat sedang membaca buku.",
+      "note": "읽다 계열 sebelum ㄷ-type memperlihatkan penyederhanaan + tensing.",
+      "speak": "책을 읽다가 잠들었어요."
+    }
+  ],
+  "units": [
+    {
+      "char": "읽다",
+      "roman": "iktta",
+      "hint": "ㄺ + ㄷ → [익따].",
+      "speak": "읽다",
+      "example": {
+        "ko": "책을 읽다",
+        "roman": "chaegeul iktta",
+        "id": "membaca buku"
+      }
+    },
+    {
+      "char": "읽어",
+      "roman": "ilgeo",
+      "hint": "ㄺ + vokal → ㄹ tetap, ㄱ berpindah.",
+      "speak": "읽어",
+      "example": {
+        "ko": "책을 읽어요",
+        "roman": "chaegeul ilgeoyo",
+        "id": "membaca buku"
+      }
+    },
+    {
+      "char": "앉다",
+      "roman": "antta",
+      "hint": "ㄵ + ㄷ → [안따].",
+      "speak": "앉다",
+      "example": {
+        "ko": "의자에 앉다",
+        "roman": "uijae antta",
+        "id": "duduk di kursi"
+      }
+    },
+    {
+      "char": "없어",
+      "roman": "eopsseo",
+      "hint": "ㅄ + vokal → [업써].",
+      "speak": "없어",
+      "example": {
+        "ko": "시간이 없어요",
+        "roman": "sigani eopsseoyo",
+        "id": "tidak ada waktu"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "읽다 paling dekat dibaca…",
+      "options": [
+        "익따",
+        "일다",
+        "읽다 apa adanya",
+        "잉따"
+      ],
+      "answer": 0,
+      "explain": "ㄺ disederhanakan ke ㄱ lalu ㄷ menjadi tense."
+    },
+    {
+      "question": "읽어 paling dekat dibaca…",
+      "options": [
+        "일거",
+        "익어",
+        "인너",
+        "일꺼"
+      ],
+      "answer": 0,
+      "explain": "ㄹ tetap, ㄱ tersambung ke 어."
+    },
+    {
+      "question": "앉다 paling dekat dibaca…",
+      "options": [
+        "안따",
+        "앋다",
+        "안자",
+        "암따"
+      ],
+      "answer": 0,
+      "explain": "ㄵ → ㄴ before ㄷ, lalu tensing."
+    },
+    {
+      "question": "앉아 paling dekat dibaca…",
+      "options": [
+        "안자",
+        "안아",
+        "앉아 terputus",
+        "안짜"
+      ],
+      "answer": 0,
+      "explain": "ㅈ tersambung ke 아."
+    },
+    {
+      "question": "없다 paling dekat dibaca…",
+      "options": [
+        "업따",
+        "없다 apa adanya",
+        "엄따",
+        "업다"
+      ],
+      "answer": 0,
+      "explain": "ㅄ disederhanakan ke ㅂ lalu ㄷ tense."
+    },
+    {
+      "question": "없어 paling dekat dibaca…",
+      "options": [
+        "업써",
+        "어버",
+        "엄서",
+        "업어"
+      ],
+      "answer": 0,
+      "explain": "ㅂ tetap, ㅅ tersambung dan terdengar tegang."
+    },
+    {
+      "question": "Mengapa 읽다 dan 읽어 berbeda?",
+      "options": [
+        "karena bunyi sesudah 겹받침 berbeda",
+        "karena ejaannya salah",
+        "karena satu formal satu informal",
+        "karena romanisasi"
+      ],
+      "answer": 0,
+      "explain": "Konsonan vs vokal sesudah cluster menghasilkan proses berbeda."
+    },
+    {
+      "question": "Jika 겹받침 bertemu vokal, salah satu konsonan dapat…",
+      "options": [
+        "tersambung ke suku kata berikutnya",
+        "selalu hilang semua",
+        "menjadi vokal",
+        "mengubah ejaan resmi"
+      ],
+      "answer": 0,
+      "explain": "Ini sering terjadi melalui liaison."
+    },
+    {
+      "question": "Apakah 읽어 ditulis 일거?",
+      "options": [
+        "ya",
+        "tidak, tetap 읽어",
+        "hanya informal",
+        "hanya formal"
+      ],
+      "answer": 1,
+      "explain": "일거 hanya panduan bunyi."
+    },
+    {
+      "question": "Pelajaran 겹받침 membutuhkan aturan sebelumnya karena…",
+      "options": [
+        "sering berinteraksi dengan liaison dan tensing",
+        "tidak punya bunyi sendiri",
+        "hanya ada di puisi",
+        "selalu sama"
+      ],
+      "answer": 0,
+      "explain": "Double batchim sering memicu beberapa proses berurutan."
+    }
+  ]
+}
