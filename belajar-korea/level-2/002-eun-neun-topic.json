@@ -1,0 +1,182 @@
+{
+  "id": "ko-l2-002",
+  "level": "Level 2 · Kalimat dasar",
+  "order": 2,
+  "passScore": 80,
+  "title": "은 / 는 — penanda topik",
+  "subtitle": "Menunjukkan topik yang sedang dibicarakan dan sering dipakai untuk kontras.",
+  "intro": "Gunakan 은 setelah kata berakhir konsonan dan 는 setelah kata berakhir vokal. Partikel ini menandai 'kalau mengenai X…' atau membandingkan X dengan hal lain.",
+  "tip": "저 + 는 = 저는. 학생 + 은 = 학생은.",
+  "progressStart": 63,
+  "objectives": [
+    "은",
+    "는",
+    "topik & kontras"
+  ],
+  "prev": {
+    "title": "Pelajaran 1 · 이에요/예요",
+    "path": "level-2/001-ieyo-yeyo.json"
+  },
+  "next": {
+    "title": "Pelajaran 3 · 이/가",
+    "path": "level-2/003-i-ga-subject.json"
+  },
+  "units": [
+    {
+      "char": "저는",
+      "roman": "jeoneun",
+      "hint": "저 berakhir vokal → 는.",
+      "speak": "저는",
+      "example": {
+        "ko": "저는 인도네시아 사람이에요",
+        "roman": "jeoneun Indonesia saram-ieyo",
+        "id": "Saya orang Indonesia."
+      }
+    },
+    {
+      "char": "학생은",
+      "roman": "haksaengeun",
+      "hint": "학생 berakhir ㅇ → 은.",
+      "speak": "학생은",
+      "example": {
+        "ko": "학생은 교실에 있어요",
+        "roman": "haksaengeun gyosire isseoyo",
+        "id": "Mengenai siswa, dia ada di kelas."
+      }
+    },
+    {
+      "char": "오늘은",
+      "roman": "oneureun",
+      "hint": "오늘 berakhir ㄹ → 은.",
+      "speak": "오늘은",
+      "example": {
+        "ko": "오늘은 바빠요",
+        "roman": "oneureun bappayo",
+        "id": "Hari ini sibuk."
+      }
+    },
+    {
+      "char": "커피는",
+      "roman": "keopineun",
+      "hint": "커피 berakhir vokal → 는.",
+      "speak": "커피는",
+      "example": {
+        "ko": "커피는 좋아해요",
+        "roman": "keopineun joahaeyo",
+        "id": "Kalau kopi, saya suka."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "저___",
+      "options": [
+        "은",
+        "는",
+        "이",
+        "을"
+      ],
+      "answer": 1,
+      "explain": "저 berakhir vokal → 는."
+    },
+    {
+      "question": "학생___",
+      "options": [
+        "는",
+        "은",
+        "가",
+        "를"
+      ],
+      "answer": 1,
+      "explain": "학생 berakhir konsonan → 은."
+    },
+    {
+      "question": "커피___",
+      "options": [
+        "은",
+        "는",
+        "이",
+        "을"
+      ],
+      "answer": 1,
+      "explain": "커피 berakhir vokal."
+    },
+    {
+      "question": "오늘___",
+      "options": [
+        "는",
+        "은",
+        "가",
+        "를"
+      ],
+      "answer": 1,
+      "explain": "오늘 berakhir ㄹ."
+    },
+    {
+      "question": "은/는 terutama menandai…",
+      "options": [
+        "objek",
+        "topik/kontras",
+        "lokasi aksi",
+        "masa lalu"
+      ],
+      "answer": 1,
+      "explain": "Fungsi dasarnya topic marker."
+    },
+    {
+      "question": "Pola setelah konsonan adalah…",
+      "options": [
+        "는",
+        "은",
+        "가",
+        "를"
+      ],
+      "answer": 1,
+      "explain": "Konsonan → 은."
+    },
+    {
+      "question": "Pola setelah vokal adalah…",
+      "options": [
+        "는",
+        "은",
+        "이",
+        "을"
+      ],
+      "answer": 0,
+      "explain": "Vokal → 는."
+    },
+    {
+      "question": "Mana bentuk yang benar?",
+      "options": [
+        "저은",
+        "저는",
+        "학생는",
+        "커피은"
+      ],
+      "answer": 1,
+      "explain": "저 + 는."
+    },
+    {
+      "question": "Mana bentuk yang benar?",
+      "options": [
+        "학생은",
+        "학생는",
+        "학생가",
+        "학생를"
+      ],
+      "answer": 0,
+      "explain": "학생 + 은."
+    },
+    {
+      "question": "Dalam kalimat kontras, 은/는 membantu menunjukkan…",
+      "options": [
+        "hal yang dibandingkan/topik",
+        "angka",
+        "waktu lampau",
+        "honorifik saja"
+      ],
+      "answer": 0,
+      "explain": "은/는 sering membawa nuansa topik atau kontras."
+    }
+  ]
+}
