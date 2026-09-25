@@ -1,0 +1,708 @@
+{
+  "id": "ko-l4-004",
+  "level": "Level 4 · Grammar bertahap",
+  "order": 4,
+  "passScore": 80,
+  "title": "-(으)ㄹ 거예요 — rencana & masa depan",
+  "subtitle": "Menyatakan rencana, niat, atau prediksi.",
+  "intro": "Gunakan ㄹ 거예요 setelah batang berakhir vokal, 을 거예요 setelah kebanyakan konsonan. Batang ㄹ tidak menambah ㄹ lagi.",
+  "tip": "Bedakan fungsi konteks: kalimat ini bisa berupa rencana pribadi atau prediksi.",
+  "progressStart": 84,
+  "objectives": [
+    "12 contoh",
+    "color map",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Pelajaran 3 · Past",
+    "path": "level-4/003-past-asseoyo-eosseoyo.json"
+  },
+  "next": {
+    "title": "Pelajaran 5 · 고 싶어요",
+    "path": "level-4/005-go-sipeoyo.json"
+  },
+  "sentences": [
+    {
+      "ko": "내일 친구를 만날 거예요.",
+      "roman": "naeil chingureul mannal geoyeyo",
+      "id": "Besok saya akan bertemu teman.",
+      "map": {
+        "units": [
+          {
+            "ko": "내일",
+            "roman": "naeil",
+            "literal": "besok"
+          },
+          {
+            "ko": "친구",
+            "roman": "chingu",
+            "literal": "teman"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "만날 거예요",
+            "roman": "mannal geoyeyo",
+            "literal": "akan bertemu"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Besok",
+            "ref": 0
+          },
+          {
+            "text": "saya akan bertemu",
+            "ref": 3
+          },
+          {
+            "text": "teman",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "내일 친구를 만날 거예요."
+    },
+    {
+      "ko": "주말에 영화를 볼 거예요.",
+      "roman": "jumare yeonghwareul bol geoyeyo",
+      "id": "Akhir pekan ini saya akan menonton film.",
+      "map": {
+        "units": [
+          {
+            "ko": "주말",
+            "roman": "jumal",
+            "literal": "akhir pekan"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "영화",
+            "roman": "yeonghwa",
+            "literal": "film"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "볼 거예요",
+            "roman": "bol geoyeyo",
+            "literal": "akan menonton"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Akhir pekan ini",
+            "ref": 0
+          },
+          {
+            "text": "saya akan menonton",
+            "ref": 4
+          },
+          {
+            "text": "film",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "주말에 영화를 볼 거예요."
+    },
+    {
+      "ko": "저녁에 집에서 요리할 거예요.",
+      "roman": "jeonyeoge jibeseo yorihal geoyeyo",
+      "id": "Malam ini saya akan memasak di rumah.",
+      "map": {
+        "units": [
+          {
+            "ko": "저녁",
+            "roman": "jeonyeok",
+            "literal": "malam"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "요리할 거예요",
+            "roman": "yorihal geoyeyo",
+            "literal": "akan memasak"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Malam ini",
+            "ref": 0
+          },
+          {
+            "text": "saya akan memasak",
+            "ref": 4
+          },
+          {
+            "text": "di rumah",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저녁에 집에서 요리할 거예요."
+    },
+    {
+      "ko": "다음 달에 한국에 갈 거예요.",
+      "roman": "daeum dare hanguge gal geoyeyo",
+      "id": "Bulan depan saya akan pergi ke Korea.",
+      "map": {
+        "units": [
+          {
+            "ko": "다음 달",
+            "roman": "daeum dal",
+            "literal": "bulan depan"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "한국",
+            "roman": "hanguk",
+            "literal": "Korea"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "갈 거예요",
+            "roman": "gal geoyeyo",
+            "literal": "akan pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Bulan depan",
+            "ref": 0
+          },
+          {
+            "text": "saya akan pergi",
+            "ref": 4
+          },
+          {
+            "text": "ke Korea",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "다음 달에 한국에 갈 거예요."
+    },
+    {
+      "ko": "내일 비가 올 거예요.",
+      "roman": "naeil biga ol geoyeyo",
+      "id": "Besok akan turun hujan.",
+      "map": {
+        "units": [
+          {
+            "ko": "내일",
+            "roman": "naeil",
+            "literal": "besok"
+          },
+          {
+            "ko": "비",
+            "roman": "bi",
+            "literal": "hujan"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "올 거예요",
+            "roman": "ol geoyeyo",
+            "literal": "akan datang/turun"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Besok",
+            "ref": 0
+          },
+          {
+            "text": "akan turun",
+            "ref": 3
+          },
+          {
+            "text": "hujan",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "내일 비가 올 거예요."
+    },
+    {
+      "ko": "조금 후에 전화할 거예요.",
+      "roman": "jogeum hue jeonhwahal geoyeyo",
+      "id": "Sebentar lagi saya akan menelepon.",
+      "map": {
+        "units": [
+          {
+            "ko": "조금 후",
+            "roman": "jogeum hu",
+            "literal": "sebentar lagi"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "전화할 거예요",
+            "roman": "jeonhwahal geoyeyo",
+            "literal": "akan menelepon"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Sebentar lagi",
+            "ref": 0
+          },
+          {
+            "text": "saya akan menelepon",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "조금 후에 전화할 거예요."
+    },
+    {
+      "ko": "방학에 많이 쉴 거예요.",
+      "roman": "banghage mani swil geoyeyo",
+      "id": "Saat liburan saya akan banyak beristirahat.",
+      "map": {
+        "units": [
+          {
+            "ko": "방학",
+            "roman": "banghak",
+            "literal": "liburan sekolah"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "많이",
+            "roman": "mani",
+            "literal": "banyak"
+          },
+          {
+            "ko": "쉴 거예요",
+            "roman": "swil geoyeyo",
+            "literal": "akan beristirahat"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saat liburan",
+            "ref": 0
+          },
+          {
+            "text": "saya akan banyak",
+            "ref": 2
+          },
+          {
+            "text": "beristirahat",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "방학에 많이 쉴 거예요."
+    },
+    {
+      "ko": "오늘 밤에 일찍 잘 거예요.",
+      "roman": "oneul bame iljjik jal geoyeyo",
+      "id": "Malam ini saya akan tidur lebih awal.",
+      "map": {
+        "units": [
+          {
+            "ko": "오늘 밤",
+            "roman": "oneul bam",
+            "literal": "malam ini"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "일찍",
+            "roman": "iljjik",
+            "literal": "lebih awal"
+          },
+          {
+            "ko": "잘 거예요",
+            "roman": "jal geoyeyo",
+            "literal": "akan tidur"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Malam ini",
+            "ref": 0
+          },
+          {
+            "text": "saya akan tidur",
+            "ref": 3
+          },
+          {
+            "text": "lebih awal",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "오늘 밤에 일찍 잘 거예요."
+    },
+    {
+      "ko": "새 컴퓨터를 살 거예요.",
+      "roman": "sae keompyuteoreul sal geoyeyo",
+      "id": "Saya akan membeli komputer baru.",
+      "map": {
+        "units": [
+          {
+            "ko": "새",
+            "roman": "sae",
+            "literal": "baru"
+          },
+          {
+            "ko": "컴퓨터",
+            "roman": "keompyuteo",
+            "literal": "komputer"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "살 거예요",
+            "roman": "sal geoyeyo",
+            "literal": "akan membeli"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya akan membeli",
+            "ref": 3
+          },
+          {
+            "text": "komputer",
+            "ref": 1
+          },
+          {
+            "text": "baru",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "새 컴퓨터를 살 거예요."
+    },
+    {
+      "ko": "내년에는 한국어 시험을 볼 거예요.",
+      "roman": "naenyeoneneun hangugeo siheomeul bol geoyeyo",
+      "id": "Tahun depan saya akan mengikuti ujian bahasa Korea.",
+      "map": {
+        "units": [
+          {
+            "ko": "내년",
+            "roman": "naenyeon",
+            "literal": "tahun depan"
+          },
+          {
+            "ko": "에는",
+            "roman": "eneun",
+            "literal": "pada/topik"
+          },
+          {
+            "ko": "한국어",
+            "roman": "hangugeo",
+            "literal": "bahasa Korea"
+          },
+          {
+            "ko": "시험",
+            "roman": "siheom",
+            "literal": "ujian"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "볼 거예요",
+            "roman": "bol geoyeyo",
+            "literal": "akan mengikuti/melihat"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Tahun depan",
+            "ref": 0
+          },
+          {
+            "text": "saya akan mengikuti",
+            "ref": 5
+          },
+          {
+            "text": "ujian",
+            "ref": 3
+          },
+          {
+            "text": "bahasa Korea",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "내년에는 한국어 시험을 볼 거예요."
+    },
+    {
+      "ko": "친구와 같이 공부할 거예요.",
+      "roman": "chinguwa gachi gongbuhal geoyeyo",
+      "id": "Saya akan belajar bersama teman.",
+      "map": {
+        "units": [
+          {
+            "ko": "친구",
+            "roman": "chingu",
+            "literal": "teman"
+          },
+          {
+            "ko": "와",
+            "roman": "wa",
+            "literal": "dengan"
+          },
+          {
+            "ko": "같이",
+            "roman": "gachi",
+            "literal": "bersama"
+          },
+          {
+            "ko": "공부할 거예요",
+            "roman": "gongbuhal geoyeyo",
+            "literal": "akan belajar"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya akan belajar",
+            "ref": 3
+          },
+          {
+            "text": "bersama",
+            "ref": 2
+          },
+          {
+            "text": "teman",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "친구와 같이 공부할 거예요."
+    },
+    {
+      "ko": "주말에는 청소를 안 할 거예요.",
+      "roman": "jumareneun cheongsoreul an hal geoyeyo",
+      "id": "Akhir pekan ini saya tidak akan membersihkan rumah.",
+      "map": {
+        "units": [
+          {
+            "ko": "주말",
+            "roman": "jumal",
+            "literal": "akhir pekan"
+          },
+          {
+            "ko": "에는",
+            "roman": "eneun",
+            "literal": "pada/topik"
+          },
+          {
+            "ko": "청소",
+            "roman": "cheongso",
+            "literal": "bersih-bersih"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "안",
+            "roman": "an",
+            "literal": "tidak"
+          },
+          {
+            "ko": "할 거예요",
+            "roman": "hal geoyeyo",
+            "literal": "akan melakukan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Akhir pekan ini",
+            "ref": 0
+          },
+          {
+            "text": "saya tidak",
+            "ref": 4
+          },
+          {
+            "text": "akan bersih-bersih",
+            "ref": 5
+          }
+        ]
+      },
+      "note": "",
+      "speak": "주말에는 청소를 안 할 거예요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "가다 → future dengan -(으)ㄹ 거예요?",
+      "options": [
+        "갈 거예요",
+        "가를 거예요",
+        "가을 거예요",
+        "갔어요"
+      ],
+      "answer": 0,
+      "explain": "Batang berakhir vokal → ㄹ 거예요."
+    },
+    {
+      "question": "먹다 → future?",
+      "options": [
+        "먹을 거예요",
+        "먹ㄹ 거예요",
+        "먹었어요",
+        "먹고 싶어요"
+      ],
+      "answer": 0,
+      "explain": "Batang berakhir konsonan → 을 거예요."
+    },
+    {
+      "question": "하다 → future?",
+      "options": [
+        "할 거예요",
+        "하을 거예요",
+        "했어요",
+        "해요"
+      ],
+      "answer": 0,
+      "explain": "하다 → 할 거예요."
+    },
+    {
+      "question": "보다 → future?",
+      "options": [
+        "볼 거예요",
+        "보을 거예요",
+        "봤어요",
+        "봐요"
+      ],
+      "answer": 0,
+      "explain": "보다 → 볼 거예요."
+    },
+    {
+      "question": "살다 (live/buy depending context) → future ending?",
+      "options": [
+        "살 거예요",
+        "살을 거예요",
+        "사을 거예요",
+        "살았어요"
+      ],
+      "answer": 0,
+      "explain": "ㄹ-final stem memakai 거예요 tanpa tambahan 을."
+    },
+    {
+      "question": "-(으)ㄹ 거예요 sering dipakai untuk…",
+      "options": [
+        "rencana/prediksi masa depan",
+        "masa lalu",
+        "negasi",
+        "perintah"
+      ],
+      "answer": 0,
+      "explain": "Future plan/prediction."
+    },
+    {
+      "question": "비가 올 거예요 berarti…",
+      "options": [
+        "akan hujan",
+        "sedang hujan",
+        "sudah hujan",
+        "jangan hujan"
+      ],
+      "answer": 0,
+      "explain": "Prediction."
+    },
+    {
+      "question": "잘 거예요 berasal dari…",
+      "options": [
+        "자다",
+        "잘다",
+        "자르다",
+        "재다"
+      ],
+      "answer": 0,
+      "explain": "자다 → 잘 거예요."
+    },
+    {
+      "question": "쉴 거예요 berasal dari…",
+      "options": [
+        "쉬다",
+        "쉴다",
+        "쉬었다",
+        "쉽다"
+      ],
+      "answer": 0,
+      "explain": "쉬다 → 쉴 거예요."
+    },
+    {
+      "question": "안 할 거예요 berarti…",
+      "options": [
+        "tidak akan melakukan",
+        "tidak bisa melakukan",
+        "sudah tidak melakukan",
+        "ingin melakukan"
+      ],
+      "answer": 0,
+      "explain": "안 + future."
+    }
+  ]
+}
