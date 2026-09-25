@@ -1,0 +1,159 @@
+{
+  "id": "ko-l0-003",
+  "level": "Level 0 · Hangul",
+  "order": 3,
+  "title": "Cara menyusun blok suku kata",
+  "subtitle": "Hangul tidak ditulis berjajar seperti alfabet Latin; huruf disusun menjadi satu blok suku kata.",
+  "intro": "Satu blok Hangul minimal memiliki konsonan awal dan vokal. Bentuk blok berubah mengikuti orientasi vokalnya. Vokal vertikal berada di kanan konsonan, sedangkan vokal horizontal berada di bawah konsonan.",
+  "tip": "Pola paling penting: ㄱ + ㅏ = 가, tetapi ㄱ + ㅗ = 고. Kalau ada konsonan akhir, letakkan di bagian bawah: ㄱ + ㅏ + ㄴ = 간.",
+  "progressStart": 24,
+  "objectives": [
+    "CV dan CVC",
+    "orientasi blok",
+    "±8 menit"
+  ],
+  "prev": {
+    "title": "Pelajaran 2 · Konsonan dasar",
+    "path": "level-0/002-konsonan-dasar.json"
+  },
+  "next": {
+    "title": "Pelajaran 4 · Vokal gabungan",
+    "path": "level-0/004-vokal-gabungan.json"
+  },
+  "units": [
+    {
+      "char": "가",
+      "roman": "ga",
+      "hint": "ㄱ + ㅏ. Vokal ㅏ vertikal, jadi ditempatkan di kanan.",
+      "speak": "가",
+      "example": {
+        "ko": "가",
+        "roman": "ga",
+        "id": "ㄱ + ㅏ"
+      }
+    },
+    {
+      "char": "너",
+      "roman": "neo",
+      "hint": "ㄴ + ㅓ. Vokal ㅓ juga vertikal.",
+      "speak": "너",
+      "example": {
+        "ko": "너",
+        "roman": "neo",
+        "id": "ㄴ + ㅓ"
+      }
+    },
+    {
+      "char": "도",
+      "roman": "do",
+      "hint": "ㄷ + ㅗ. Vokal ㅗ horizontal, jadi ditempatkan di bawah.",
+      "speak": "도",
+      "example": {
+        "ko": "도",
+        "roman": "do",
+        "id": "ㄷ + ㅗ"
+      }
+    },
+    {
+      "char": "무",
+      "roman": "mu",
+      "hint": "ㅁ + ㅜ. Vokal ㅜ horizontal.",
+      "speak": "무",
+      "example": {
+        "ko": "무",
+        "roman": "mu",
+        "id": "ㅁ + ㅜ"
+      }
+    },
+    {
+      "char": "이",
+      "roman": "i",
+      "hint": "ㅇ + ㅣ. Karena vokal tidak bisa berdiri sendiri di blok, ㅇ dipakai sebagai penyangga.",
+      "speak": "이",
+      "example": {
+        "ko": "이",
+        "roman": "i",
+        "id": "ㅇ + ㅣ"
+      }
+    },
+    {
+      "char": "간",
+      "roman": "gan",
+      "hint": "ㄱ + ㅏ + ㄴ. ㄴ menjadi konsonan akhir di bawah.",
+      "speak": "간",
+      "example": {
+        "ko": "간",
+        "roman": "gan",
+        "id": "CVC"
+      }
+    },
+    {
+      "char": "문",
+      "roman": "mun",
+      "hint": "ㅁ + ㅜ + ㄴ.",
+      "speak": "문",
+      "example": {
+        "ko": "문",
+        "roman": "mun",
+        "id": "CVC"
+      }
+    },
+    {
+      "char": "밥",
+      "roman": "bap",
+      "hint": "ㅂ + ㅏ + ㅂ. Konsonan terakhir menjadi batchim.",
+      "speak": "밥",
+      "example": {
+        "ko": "밥",
+        "roman": "bap",
+        "id": "nasi / makan"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Bagaimana menulis ㄱ + ㅏ?",
+      "options": [
+        "고",
+        "가",
+        "구",
+        "기"
+      ],
+      "answer": 1,
+      "explain": "ㅏ adalah vokal vertikal, jadi berada di kanan ㄱ → 가."
+    },
+    {
+      "question": "Bagaimana menulis ㄱ + ㅗ?",
+      "options": [
+        "고",
+        "가",
+        "거",
+        "구"
+      ],
+      "answer": 0,
+      "explain": "ㅗ adalah vokal horizontal, jadi berada di bawah ㄱ → 고."
+    },
+    {
+      "question": "Dalam blok 간, huruf ㄴ berada di posisi apa?",
+      "options": [
+        "konsonan awal",
+        "vokal",
+        "konsonan akhir",
+        "tidak dibaca"
+      ],
+      "answer": 2,
+      "explain": "ㄴ berada di bagian bawah sebagai konsonan akhir (batchim)."
+    },
+    {
+      "question": "Mengapa 이 memakai ㅇ di depan?",
+      "options": [
+        "karena ㅇ dibaca ng di awal",
+        "karena vokal butuh penyangga konsonan di awal blok",
+        "karena ㅣ selalu harus berpasangan dengan ㅇ",
+        "karena 이 adalah batchim"
+      ],
+      "answer": 1,
+      "explain": "Dalam blok Hangul, vokal tidak ditulis sendirian; ㅇ menjadi penyangga tanpa bunyi di awal."
+    }
+  ]
+}
