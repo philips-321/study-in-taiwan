@@ -89,7 +89,58 @@
       "roman": "jeoneun jibe gayo",
       "id": "Saya pergi ke rumah.",
       "note": "집에: ㅂ tersambung ke 에.",
-      "speak": "저는 집에 가요."
+      "speak": "저는 집에 가요.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "penanda topik"
+          },
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "가요",
+            "roman": "gayo",
+            "literal": "pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "pergi",
+            "ref": 4
+          },
+          {
+            "text": "ke",
+            "ref": 3
+          },
+          {
+            "text": "rumah",
+            "ref": 2
+          },
+          {
+            "text": ".",
+            "ref": 4
+          }
+        ]
+      }
     },
     {
       "ko": "아침에 밥을 먹어요.",
@@ -97,7 +148,54 @@
       "roman": "achime babeul meogeoyo",
       "id": "Saya makan nasi pada pagi hari.",
       "note": "먹어요: ㄱ tersambung ke 어.",
-      "speak": "아침에 밥을 먹어요."
+      "speak": "아침에 밥을 먹어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "아침",
+            "roman": "achim",
+            "literal": "pagi"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "밥",
+            "roman": "bap",
+            "literal": "nasi"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "먹어요",
+            "roman": "meogeoyo",
+            "literal": "makan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya makan",
+            "ref": 4
+          },
+          {
+            "text": "nasi",
+            "ref": 2
+          },
+          {
+            "text": "pada pagi hari",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 4
+          }
+        ]
+      }
     },
     {
       "ko": "한국어를 공부해요.",
@@ -105,7 +203,40 @@
       "roman": "hangugeoreul gongbuhaeyo",
       "id": "Saya belajar bahasa Korea.",
       "note": "한국어: 국의 ㄱ tersambung ke 어.",
-      "speak": "한국어를 공부해요."
+      "speak": "한국어를 공부해요.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국어",
+            "roman": "hangugeo",
+            "literal": "bahasa Korea"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "공부해요",
+            "roman": "gongbuhaeyo",
+            "literal": "belajar"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya belajar",
+            "ref": 2
+          },
+          {
+            "text": "bahasa Korea",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 2
+          }
+        ]
+      }
     },
     {
       "ko": "책을 읽어요.",
@@ -113,7 +244,40 @@
       "roman": "chaegeul ilgeoyo",
       "id": "Saya membaca buku.",
       "note": "책을 mengalami liaison; 읽어요 memiliki aturan 겹받침 yang akan dipelajari nanti.",
-      "speak": "책을 읽어요."
+      "speak": "책을 읽어요.",
+      "map": {
+        "units": [
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "penanda objek"
+          },
+          {
+            "ko": "읽어요",
+            "roman": "ilgeoyo",
+            "literal": "membaca"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya membaca",
+            "ref": 2
+          },
+          {
+            "text": "buku",
+            "ref": 0
+          },
+          {
+            "text": ".",
+            "ref": 2
+          }
+        ]
+      }
     }
   ],
   "units": [
