@@ -1,0 +1,193 @@
+{
+  "id": "ko-l1-002",
+  "level": "Level 1 · Pengucapan",
+  "order": 2,
+  "passScore": 80,
+  "title": "비음화 — nasalization",
+  "subtitle": "Beberapa bunyi akhir berubah menjadi bunyi sengau sebelum ㄴ atau ㅁ.",
+  "intro": "Dalam 비음화, batchim tertentu menyesuaikan diri dengan bunyi nasal di depannya. Pola inti untuk pemula: ㄱ 계열 → ㅇ, ㄷ 계열 → ㄴ, dan ㅂ 계열 → ㅁ ketika diikuti ㄴ atau ㅁ.",
+  "tip": "Ingat tiga arah utama: k → ng, t → n, p → m. Ini membuat perpindahan bunyi lebih mudah diucapkan.",
+  "progressStart": 48,
+  "objectives": [
+    "ㄱ→ㅇ",
+    "ㄷ→ㄴ",
+    "ㅂ→ㅁ"
+  ],
+  "prev": {
+    "title": "Pelajaran 1 · 연음",
+    "path": "level-1/001-yeoneum-liaison.json"
+  },
+  "next": {
+    "title": "Pelajaran 3 · 유음화",
+    "path": "level-1/003-yueumhwa-liquidization.json"
+  },
+  "units": [
+    {
+      "char": "국물",
+      "roman": "gungmul",
+      "hint": "ㄱ + ㅁ → ㅇ + ㅁ.",
+      "speak": "국물",
+      "example": {
+        "ko": "국물이 뜨거워요",
+        "roman": "gungmuri tteugeowoyo",
+        "id": "kuahnya panas"
+      }
+    },
+    {
+      "char": "먹는",
+      "roman": "meongneun",
+      "hint": "ㄱ + ㄴ → ㅇ + ㄴ.",
+      "speak": "먹는",
+      "example": {
+        "ko": "먹는 사람",
+        "roman": "meongneun saram",
+        "id": "orang yang makan"
+      }
+    },
+    {
+      "char": "닫는",
+      "roman": "danneun",
+      "hint": "ㄷ + ㄴ → ㄴ + ㄴ.",
+      "speak": "닫는",
+      "example": {
+        "ko": "문을 닫는 사람",
+        "roman": "muneul danneun saram",
+        "id": "orang yang menutup pintu"
+      }
+    },
+    {
+      "char": "앞문",
+      "roman": "ammun",
+      "hint": "ㅂ 계열 + ㅁ → ㅁ + ㅁ.",
+      "speak": "앞문",
+      "example": {
+        "ko": "앞문으로 가요",
+        "roman": "ammun-euro gayo",
+        "id": "pergi lewat pintu depan"
+      }
+    },
+    {
+      "char": "십만",
+      "roman": "simman",
+      "hint": "ㅂ + ㅁ → ㅁ + ㅁ.",
+      "speak": "십만",
+      "example": {
+        "ko": "십만 원",
+        "roman": "simman won",
+        "id": "100 ribu won"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "국물 paling dekat dibaca…",
+      "options": [
+        "국물",
+        "궁물",
+        "군물",
+        "국뿔"
+      ],
+      "answer": 1,
+      "explain": "ㄱ sebelum ㅁ menjadi ㅇ."
+    },
+    {
+      "question": "먹는 paling dekat dibaca…",
+      "options": [
+        "먹는 apa adanya",
+        "멍는",
+        "먼는",
+        "먹느"
+      ],
+      "answer": 1,
+      "explain": "ㄱ sebelum ㄴ menjadi ㅇ."
+    },
+    {
+      "question": "ㄱ 계열 sebelum ㄴ/ㅁ biasanya berubah menjadi…",
+      "options": [
+        "ㄴ",
+        "ㅇ",
+        "ㅁ",
+        "ㄹ"
+      ],
+      "answer": 1,
+      "explain": "k-type → ng."
+    },
+    {
+      "question": "ㄷ 계열 sebelum ㄴ/ㅁ biasanya berubah menjadi…",
+      "options": [
+        "ㄴ",
+        "ㅇ",
+        "ㅁ",
+        "ㄹ"
+      ],
+      "answer": 0,
+      "explain": "t-type → n."
+    },
+    {
+      "question": "ㅂ 계열 sebelum ㄴ/ㅁ biasanya berubah menjadi…",
+      "options": [
+        "ㄴ",
+        "ㅇ",
+        "ㅁ",
+        "ㄹ"
+      ],
+      "answer": 2,
+      "explain": "p-type → m."
+    },
+    {
+      "question": "십만 paling dekat dibaca…",
+      "options": [
+        "십만",
+        "심만",
+        "신만",
+        "싱만"
+      ],
+      "answer": 1,
+      "explain": "ㅂ sebelum ㅁ menjadi ㅁ."
+    },
+    {
+      "question": "앞문 paling dekat dibaca…",
+      "options": [
+        "압문",
+        "암문",
+        "안문",
+        "앙문"
+      ],
+      "answer": 1,
+      "explain": "ㅂ 계열 menyesuaikan menjadi ㅁ."
+    },
+    {
+      "question": "비음화 berarti perubahan menuju bunyi yang lebih…",
+      "options": [
+        "nasal/sengau",
+        "tegang",
+        "beraspirasi",
+        "panjang"
+      ],
+      "answer": 0,
+      "explain": "ㄴ, ㅁ, ㅇ adalah bunyi nasal utama."
+    },
+    {
+      "question": "Mana contoh 비음화?",
+      "options": [
+        "국물 → 궁물",
+        "집에 → 지베",
+        "신라 → 실라",
+        "좋다 → 조타"
+      ],
+      "answer": 0,
+      "explain": "Yang lain mewakili liaison, liquidization, dan aspirasi."
+    },
+    {
+      "question": "Mengapa perubahan ini terjadi dalam pengucapan?",
+      "options": [
+        "agar transisi ke ㄴ/ㅁ lebih mudah",
+        "karena ejaannya salah",
+        "karena semua batchim harus menjadi ㅇ",
+        "karena kata serapan"
+      ],
+      "answer": 0,
+      "explain": "Bunyi menyesuaikan tempat/artikulasi agar aliran bicara lebih mudah."
+    }
+  ]
+}
