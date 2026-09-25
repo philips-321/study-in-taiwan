@@ -104,3 +104,6 @@ html[data-theme="dark"] .local-repeat{color:#ff9cba}
 html[data-theme="dark"] input,
 html[data-theme="dark"] textarea,
 html[data-theme="dark"] select{accent-color:#85b5ff}
+
+.dialogue-list{display:grid;gap:12px}.dialogue-turn{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.speaker{display:inline-block;margin-bottom:6px;padding:4px 8px;border-radius:999px;background:#eef3fa;color:#365779;font-size:.72rem;font-weight:900;letter-spacing:.04em}.dialogue-turn .color-map{margin-top:4px}
+html[data-theme="dark"] .dialogue-turn{background:#11151b;border-color:var(--line)}html[data-theme="dark"] .speaker{background:#1b2a3b;color:#a9cbf5}
