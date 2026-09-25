@@ -1,0 +1,182 @@
+{
+  "id": "ko-l2-001",
+  "level": "Level 2 · Kalimat dasar",
+  "order": 1,
+  "passScore": 80,
+  "title": "이에요 / 예요 — “adalah”",
+  "subtitle": "Pola paling dasar untuk mengatakan A adalah B dalam gaya sopan sehari-hari.",
+  "intro": "Gunakan 이에요 setelah kata benda yang berakhir konsonan, dan 예요 setelah kata benda yang berakhir vokal.",
+  "tip": "Cek huruf terakhir kata benda: 학생 berakhir ㅇ → 학생이에요. 의사 berakhir ㅏ → 의사예요.",
+  "progressStart": 60,
+  "objectives": [
+    "이에요",
+    "예요",
+    "kalimat nominal"
+  ],
+  "prev": {
+    "title": "Level 1 · Perubahan ㅎ",
+    "path": "level-1/005-hieut-changes.json"
+  },
+  "next": {
+    "title": "Pelajaran 2 · 은/는",
+    "path": "level-2/002-eun-neun-topic.json"
+  },
+  "units": [
+    {
+      "char": "학생이에요",
+      "roman": "haksaeng-ieyo",
+      "hint": "학생 berakhir konsonan → 이에요.",
+      "speak": "학생이에요",
+      "example": {
+        "ko": "저는 학생이에요",
+        "roman": "jeoneun haksaeng-ieyo",
+        "id": "Saya pelajar."
+      }
+    },
+    {
+      "char": "선생님이에요",
+      "roman": "seonsaengnim-ieyo",
+      "hint": "선생님 berakhir ㅁ → 이에요.",
+      "speak": "선생님이에요",
+      "example": {
+        "ko": "민수 씨는 선생님이에요",
+        "roman": "Minsu ssineun seonsaengnim-ieyo",
+        "id": "Minsu adalah guru."
+      }
+    },
+    {
+      "char": "의사예요",
+      "roman": "uisa-yeyo",
+      "hint": "의사 berakhir vokal → 예요.",
+      "speak": "의사예요",
+      "example": {
+        "ko": "제 친구는 의사예요",
+        "roman": "je chinguneun uisa-yeyo",
+        "id": "Teman saya dokter."
+      }
+    },
+    {
+      "char": "가수예요",
+      "roman": "gasu-yeyo",
+      "hint": "가수 berakhir ㅜ → 예요.",
+      "speak": "가수예요",
+      "example": {
+        "ko": "그 사람은 가수예요",
+        "roman": "geu sarameun gasu-yeyo",
+        "id": "Orang itu penyanyi."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "학생___",
+      "options": [
+        "예요",
+        "이에요",
+        "을",
+        "가"
+      ],
+      "answer": 1,
+      "explain": "학생 berakhir konsonan."
+    },
+    {
+      "question": "의사___",
+      "options": [
+        "예요",
+        "이에요",
+        "은",
+        "이"
+      ],
+      "answer": 0,
+      "explain": "의사 berakhir vokal."
+    },
+    {
+      "question": "선생님___",
+      "options": [
+        "예요",
+        "이에요",
+        "를",
+        "는"
+      ],
+      "answer": 1,
+      "explain": "선생님 berakhir ㅁ."
+    },
+    {
+      "question": "가수___",
+      "options": [
+        "이에요",
+        "예요",
+        "을",
+        "이"
+      ],
+      "answer": 1,
+      "explain": "가수 berakhir vokal."
+    },
+    {
+      "question": "이에요/예요 paling dekat berarti…",
+      "options": [
+        "pergi",
+        "adalah",
+        "makan",
+        "tidak ada"
+      ],
+      "answer": 1,
+      "explain": "Digunakan sebagai copula sopan."
+    },
+    {
+      "question": "Kapan memakai 이에요?",
+      "options": [
+        "setelah kata benda berakhir konsonan",
+        "setelah semua vokal",
+        "hanya setelah nama orang",
+        "hanya untuk masa lalu"
+      ],
+      "answer": 0,
+      "explain": "Konsonan akhir → 이에요."
+    },
+    {
+      "question": "Kapan memakai 예요?",
+      "options": [
+        "setelah batchim",
+        "setelah kata benda berakhir vokal",
+        "setelah kata kerja",
+        "hanya pada pertanyaan"
+      ],
+      "answer": 1,
+      "explain": "Vokal akhir → 예요."
+    },
+    {
+      "question": "Kalimat benar untuk 'Saya pelajar' adalah…",
+      "options": [
+        "저는 학생예요",
+        "저는 학생이에요",
+        "저를 학생이에요",
+        "저가 학생을"
+      ],
+      "answer": 1,
+      "explain": "학생 memiliki batchim ㅇ."
+    },
+    {
+      "question": "Kalimat benar untuk 'Dia dokter' adalah…",
+      "options": [
+        "그 사람은 의사예요",
+        "그 사람은 의사이에요",
+        "그 사람을 의사예요",
+        "그 사람이 의사를"
+      ],
+      "answer": 0,
+      "explain": "의사 berakhir vokal."
+    },
+    {
+      "question": "이에요/예요 termasuk gaya…",
+      "options": [
+        "sopan sehari-hari",
+        "sangat kasar",
+        "hanya tulisan akademik",
+        "hanya militer"
+      ],
+      "answer": 0,
+      "explain": "Ini pola sopan yang sangat umum."
+    }
+  ]
+}
