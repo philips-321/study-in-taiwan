@@ -1,0 +1,193 @@
+{
+  "id": "ko-l1-005",
+  "level": "Level 1 · Pengucapan",
+  "order": 5,
+  "passScore": 80,
+  "title": "ㅎ — aspirasi dan pelemahan",
+  "subtitle": "ㅎ dapat membuat konsonan di dekatnya menjadi aspiratif, dan dalam konteks tertentu bunyi ㅎ dapat melemah.",
+  "intro": "ㅎ sangat aktif dalam perubahan bunyi. Ketika bertemu ㄱ, ㄷ, atau ㅈ, hasilnya sering menjadi ㅋ, ㅌ, atau ㅊ. Di depan vokal pada beberapa bentuk, ㅎ juga dapat melemah atau tidak terdengar jelas.",
+  "tip": "Fokus dulu pada pasangan mudah: ㅎ+ㄱ→ㅋ, ㅎ+ㄷ→ㅌ, ㅎ+ㅈ→ㅊ.",
+  "progressStart": 57,
+  "objectives": [
+    "ㅎ+ㄱ",
+    "ㅎ+ㄷ",
+    "ㅎ+ㅈ"
+  ],
+  "prev": {
+    "title": "Pelajaran 4 · 된소리되기",
+    "path": "level-1/004-doensori-tensing.json"
+  },
+  "next": {
+    "title": "Level 2 · 이에요/예요",
+    "path": "level-2/001-ieyo-yeyo.json"
+  },
+  "units": [
+    {
+      "char": "좋다",
+      "roman": "jota",
+      "hint": "ㅎ + ㄷ → ㅌ.",
+      "speak": "좋다",
+      "example": {
+        "ko": "날씨가 좋다",
+        "roman": "nalssiga jota",
+        "id": "cuacanya bagus"
+      }
+    },
+    {
+      "char": "놓고",
+      "roman": "noko",
+      "hint": "ㅎ + ㄱ → ㅋ.",
+      "speak": "놓고",
+      "example": {
+        "ko": "책을 놓고 가요",
+        "roman": "chaegeul noko gayo",
+        "id": "tinggalkan buku lalu pergi"
+      }
+    },
+    {
+      "char": "그렇지",
+      "roman": "geureochi",
+      "hint": "ㅎ + ㅈ → ㅊ.",
+      "speak": "그렇지",
+      "example": {
+        "ko": "그렇지!",
+        "roman": "geureochi",
+        "id": "benar, kan!"
+      }
+    },
+    {
+      "char": "많다",
+      "roman": "manta",
+      "hint": "ㄶ + ㄷ menghasilkan bunyi aspiratif ㅌ.",
+      "speak": "많다",
+      "example": {
+        "ko": "사람이 많다",
+        "roman": "sarami manta",
+        "id": "orangnya banyak"
+      }
+    },
+    {
+      "char": "좋아요",
+      "roman": "joayo",
+      "hint": "Pada bentuk ini ㅎ melemah di depan vokal.",
+      "speak": "좋아요",
+      "example": {
+        "ko": "정말 좋아요",
+        "roman": "jeongmal joayo",
+        "id": "sangat suka / bagus"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "좋다 paling dekat dibaca…",
+      "options": [
+        "조다",
+        "조타",
+        "존다",
+        "조따"
+      ],
+      "answer": 1,
+      "explain": "ㅎ + ㄷ menghasilkan ㅌ."
+    },
+    {
+      "question": "놓고 paling dekat dibaca…",
+      "options": [
+        "노고",
+        "노코",
+        "농고",
+        "노꼬"
+      ],
+      "answer": 1,
+      "explain": "ㅎ + ㄱ menghasilkan ㅋ."
+    },
+    {
+      "question": "그렇지 paling dekat terdengar…",
+      "options": [
+        "그러지",
+        "그러치",
+        "그런지",
+        "그러찌"
+      ],
+      "answer": 1,
+      "explain": "ㅎ + ㅈ menghasilkan ㅊ."
+    },
+    {
+      "question": "ㅎ + ㄱ cenderung menghasilkan…",
+      "options": [
+        "ㄲ",
+        "ㅋ",
+        "ㅇ",
+        "ㄴ"
+      ],
+      "answer": 1,
+      "explain": "Hasil aspirasi adalah ㅋ."
+    },
+    {
+      "question": "ㅎ + ㄷ cenderung menghasilkan…",
+      "options": [
+        "ㄸ",
+        "ㅌ",
+        "ㄴ",
+        "ㅅ"
+      ],
+      "answer": 1,
+      "explain": "Hasil aspirasi adalah ㅌ."
+    },
+    {
+      "question": "ㅎ + ㅈ cenderung menghasilkan…",
+      "options": [
+        "ㅉ",
+        "ㅊ",
+        "ㅅ",
+        "ㄹ"
+      ],
+      "answer": 1,
+      "explain": "Hasil aspirasi adalah ㅊ."
+    },
+    {
+      "question": "많다 paling dekat dibaca…",
+      "options": [
+        "만다",
+        "만타",
+        "망다",
+        "만따"
+      ],
+      "answer": 1,
+      "explain": "ㄶ bertemu ㄷ menghasilkan aspirasi."
+    },
+    {
+      "question": "좋아요 menunjukkan bahwa ㅎ dapat…",
+      "options": [
+        "selalu menjadi ng",
+        "melemah di depan vokal dalam konteks tertentu",
+        "menjadi ㄹ",
+        "selalu menjadi tense"
+      ],
+      "answer": 1,
+      "explain": "ㅎ dapat melemah/hilang dalam pengucapan tertentu."
+    },
+    {
+      "question": "Mana contoh perubahan karena ㅎ?",
+      "options": [
+        "좋다 → 조타",
+        "국물 → 궁물",
+        "신라 → 실라",
+        "먹다 → 먹따"
+      ],
+      "answer": 0,
+      "explain": "Yang lain adalah nasalization, liquidization, dan tensing."
+    },
+    {
+      "question": "Setelah menyelesaikan Level 1, fokus berikutnya adalah…",
+      "options": [
+        "Hanja",
+        "kalimat dasar dan partikel",
+        "angka Cina saja",
+        "dialek"
+      ],
+      "answer": 1,
+      "explain": "Level 2 mulai membangun struktur kalimat dasar."
+    }
+  ]
+}
