@@ -1,0 +1,797 @@
+{
+  "id": "ko-l3-002",
+  "level": "Level 3 · Kosakata tematik",
+  "order": 2,
+  "passScore": 80,
+  "title": "Makanan & minuman",
+  "subtitle": "Kosakata yang paling sering muncul saat makan, memesan, dan menjelaskan rasa.",
+  "intro": "Pelajari kosakata lewat contoh kalimat singkat. Fokus bukan hanya menghafal arti, tetapi mengenali bagaimana kata dipakai di dalam kalimat.",
+  "tip": "Putar contoh, ikuti color map, lalu ulangi kalimatnya dengan suara keras setelah audio selesai.",
+  "progressStart": 80,
+  "objectives": [
+    "12 kosakata",
+    "12 contoh",
+    "audio + color map"
+  ],
+  "prev": {
+    "title": "Pelajaran 1 · Keluarga",
+    "path": "level-3/001-family.json"
+  },
+  "next": {
+    "title": "Pelajaran 3 · Rumah",
+    "path": "level-3/003-home.json"
+  },
+  "units": [
+    {
+      "char": "밥",
+      "roman": "bap",
+      "hint": "nasi / makanan",
+      "speak": "밥",
+      "example": {
+        "ko": "아침에 밥을 먹어요.",
+        "roman": "achime babeul meogeoyo",
+        "id": "Saya makan nasi pada pagi hari.",
+        "map": {
+          "units": [
+            {
+              "ko": "아침",
+              "roman": "achim",
+              "literal": "pagi"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "pada"
+            },
+            {
+              "ko": "밥",
+              "roman": "bap",
+              "literal": "nasi"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "먹어요",
+              "roman": "meogeoyo",
+              "literal": "makan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya makan",
+              "ref": 4
+            },
+            {
+              "text": "nasi",
+              "ref": 2
+            },
+            {
+              "text": "pada pagi hari",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "김치",
+      "roman": "gimchi",
+      "hint": "kimchi",
+      "speak": "김치",
+      "example": {
+        "ko": "김치가 조금 매워요.",
+        "roman": "gimchiga jogeum maewoyo",
+        "id": "Kimchi agak pedas.",
+        "map": {
+          "units": [
+            {
+              "ko": "김치",
+              "roman": "gimchi",
+              "literal": "kimchi"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "subjek"
+            },
+            {
+              "ko": "조금",
+              "roman": "jogeum",
+              "literal": "agak"
+            },
+            {
+              "ko": "매워요",
+              "roman": "maewoyo",
+              "literal": "pedas"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Kimchi",
+              "ref": 0
+            },
+            {
+              "text": "agak",
+              "ref": 2
+            },
+            {
+              "text": "pedas",
+              "ref": 3
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "고기",
+      "roman": "gogi",
+      "hint": "daging",
+      "speak": "고기",
+      "example": {
+        "ko": "저는 고기를 좋아해요.",
+        "roman": "jeoneun gogireul joahaeyo",
+        "id": "Saya suka daging.",
+        "map": {
+          "units": [
+            {
+              "ko": "저",
+              "roman": "jeo",
+              "literal": "saya"
+            },
+            {
+              "ko": "는",
+              "roman": "neun",
+              "literal": "topik"
+            },
+            {
+              "ko": "고기",
+              "roman": "gogi",
+              "literal": "daging"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "objek"
+            },
+            {
+              "ko": "좋아해요",
+              "roman": "joahaeyo",
+              "literal": "suka"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya",
+              "ref": 0
+            },
+            {
+              "text": "suka",
+              "ref": 4
+            },
+            {
+              "text": "daging",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "생선",
+      "roman": "saengseon",
+      "hint": "ikan",
+      "speak": "생선",
+      "example": {
+        "ko": "오늘 생선을 구워요.",
+        "roman": "oneul saengseoneul guwoyo",
+        "id": "Hari ini saya memanggang ikan.",
+        "map": {
+          "units": [
+            {
+              "ko": "오늘",
+              "roman": "oneul",
+              "literal": "hari ini"
+            },
+            {
+              "ko": "생선",
+              "roman": "saengseon",
+              "literal": "ikan"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "구워요",
+              "roman": "guwoyo",
+              "literal": "memanggang"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Hari ini",
+              "ref": 0
+            },
+            {
+              "text": "saya memanggang",
+              "ref": 3
+            },
+            {
+              "text": "ikan",
+              "ref": 1
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "야채",
+      "roman": "yachae",
+      "hint": "sayuran",
+      "speak": "야채",
+      "example": {
+        "ko": "야채를 많이 먹어요.",
+        "roman": "yachaereul mani meogeoyo",
+        "id": "Saya makan banyak sayuran.",
+        "map": {
+          "units": [
+            {
+              "ko": "야채",
+              "roman": "yachae",
+              "literal": "sayuran"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "objek"
+            },
+            {
+              "ko": "많이",
+              "roman": "mani",
+              "literal": "banyak"
+            },
+            {
+              "ko": "먹어요",
+              "roman": "meogeoyo",
+              "literal": "makan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya makan",
+              "ref": 3
+            },
+            {
+              "text": "banyak",
+              "ref": 2
+            },
+            {
+              "text": "sayuran",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "과일",
+      "roman": "gwail",
+      "hint": "buah",
+      "speak": "과일",
+      "example": {
+        "ko": "과일은 냉장고에 있어요.",
+        "roman": "gwaireun naengjanggoe isseoyo",
+        "id": "Buah ada di kulkas.",
+        "map": {
+          "units": [
+            {
+              "ko": "과일",
+              "roman": "gwail",
+              "literal": "buah"
+            },
+            {
+              "ko": "은",
+              "roman": "eun",
+              "literal": "topik"
+            },
+            {
+              "ko": "냉장고",
+              "roman": "naengjanggo",
+              "literal": "kulkas"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "di"
+            },
+            {
+              "ko": "있어요",
+              "roman": "isseoyo",
+              "literal": "ada"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Buah",
+              "ref": 0
+            },
+            {
+              "text": "ada",
+              "ref": 4
+            },
+            {
+              "text": "di kulkas",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "물",
+      "roman": "mul",
+      "hint": "air",
+      "speak": "물",
+      "example": {
+        "ko": "물을 자주 마셔요.",
+        "roman": "mureul jaju masyeoyo",
+        "id": "Saya sering minum air.",
+        "map": {
+          "units": [
+            {
+              "ko": "물",
+              "roman": "mul",
+              "literal": "air"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "objek"
+            },
+            {
+              "ko": "자주",
+              "roman": "jaju",
+              "literal": "sering"
+            },
+            {
+              "ko": "마셔요",
+              "roman": "masyeoyo",
+              "literal": "minum"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya sering",
+              "ref": 2
+            },
+            {
+              "text": "minum",
+              "ref": 3
+            },
+            {
+              "text": "air",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "커피",
+      "roman": "keopi",
+      "hint": "kopi",
+      "speak": "커피",
+      "example": {
+        "ko": "커피를 한 잔 주세요.",
+        "roman": "keopireul han jan juseyo",
+        "id": "Tolong beri saya satu cangkir kopi.",
+        "map": {
+          "units": [
+            {
+              "ko": "커피",
+              "roman": "keopi",
+              "literal": "kopi"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "objek"
+            },
+            {
+              "ko": "한 잔",
+              "roman": "han jan",
+              "literal": "satu cangkir"
+            },
+            {
+              "ko": "주세요",
+              "roman": "juseyo",
+              "literal": "tolong beri"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Tolong beri",
+              "ref": 3
+            },
+            {
+              "text": "saya",
+              "ref": 3
+            },
+            {
+              "text": "satu cangkir",
+              "ref": 2
+            },
+            {
+              "text": "kopi",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "차",
+      "roman": "cha",
+      "hint": "teh",
+      "speak": "차",
+      "example": {
+        "ko": "따뜻한 차를 마셔요.",
+        "roman": "ttatteuthan chareul masyeoyo",
+        "id": "Saya minum teh hangat.",
+        "map": {
+          "units": [
+            {
+              "ko": "따뜻한",
+              "roman": "ttatteuthan",
+              "literal": "hangat"
+            },
+            {
+              "ko": "차",
+              "roman": "cha",
+              "literal": "teh"
+            },
+            {
+              "ko": "를",
+              "roman": "reul",
+              "literal": "objek"
+            },
+            {
+              "ko": "마셔요",
+              "roman": "masyeoyo",
+              "literal": "minum"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Saya minum",
+              "ref": 3
+            },
+            {
+              "text": "teh",
+              "ref": 1
+            },
+            {
+              "text": "hangat",
+              "ref": 0
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "맛있어요",
+      "roman": "masisseoyo",
+      "hint": "enak",
+      "speak": "맛있어요",
+      "example": {
+        "ko": "이 음식은 정말 맛있어요.",
+        "roman": "i eumsigeun jeongmal masisseoyo",
+        "id": "Makanan ini sangat enak.",
+        "map": {
+          "units": [
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "ini"
+            },
+            {
+              "ko": "음식",
+              "roman": "eumsik",
+              "literal": "makanan"
+            },
+            {
+              "ko": "은",
+              "roman": "eun",
+              "literal": "topik"
+            },
+            {
+              "ko": "정말",
+              "roman": "jeongmal",
+              "literal": "sangat"
+            },
+            {
+              "ko": "맛있어요",
+              "roman": "masisseoyo",
+              "literal": "enak"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Makanan",
+              "ref": 1
+            },
+            {
+              "text": "ini",
+              "ref": 0
+            },
+            {
+              "text": "sangat",
+              "ref": 3
+            },
+            {
+              "text": "enak",
+              "ref": 4
+            },
+            {
+              "text": ".",
+              "ref": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "매워요",
+      "roman": "maewoyo",
+      "hint": "pedas",
+      "speak": "매워요",
+      "example": {
+        "ko": "떡볶이가 너무 매워요.",
+        "roman": "tteokbokkiga neomu maewoyo",
+        "id": "Tteokbokki terlalu pedas.",
+        "map": {
+          "units": [
+            {
+              "ko": "떡볶이",
+              "roman": "tteokbokki",
+              "literal": "tteokbokki"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "subjek"
+            },
+            {
+              "ko": "너무",
+              "roman": "neomu",
+              "literal": "terlalu"
+            },
+            {
+              "ko": "매워요",
+              "roman": "maewoyo",
+              "literal": "pedas"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Tteokbokki",
+              "ref": 0
+            },
+            {
+              "text": "terlalu",
+              "ref": 2
+            },
+            {
+              "text": "pedas",
+              "ref": 3
+            },
+            {
+              "text": ".",
+              "ref": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "char": "배고파요",
+      "roman": "baegopayo",
+      "hint": "lapar",
+      "speak": "배고파요",
+      "example": {
+        "ko": "지금 정말 배고파요.",
+        "roman": "jigeum jeongmal baegopayo",
+        "id": "Sekarang saya sangat lapar.",
+        "map": {
+          "units": [
+            {
+              "ko": "지금",
+              "roman": "jigeum",
+              "literal": "sekarang"
+            },
+            {
+              "ko": "정말",
+              "roman": "jeongmal",
+              "literal": "sangat"
+            },
+            {
+              "ko": "배고파요",
+              "roman": "baegopayo",
+              "literal": "lapar"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Sekarang",
+              "ref": 0
+            },
+            {
+              "text": "saya sangat",
+              "ref": 1
+            },
+            {
+              "text": "lapar",
+              "ref": 2
+            },
+            {
+              "text": ".",
+              "ref": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa arti 밥?",
+      "options": [
+        "nasi / makanan",
+        "kimchi",
+        "ikan",
+        "buah"
+      ],
+      "answer": 0,
+      "explain": "밥 = nasi / makanan."
+    },
+    {
+      "question": "Apa arti 김치?",
+      "options": [
+        "daging",
+        "sayuran",
+        "air",
+        "kimchi"
+      ],
+      "answer": 3,
+      "explain": "김치 = kimchi."
+    },
+    {
+      "question": "Apa arti 고기?",
+      "options": [
+        "buah",
+        "kopi",
+        "daging",
+        "ikan"
+      ],
+      "answer": 2,
+      "explain": "고기 = daging."
+    },
+    {
+      "question": "Apa arti 생선?",
+      "options": [
+        "teh",
+        "ikan",
+        "sayuran",
+        "air"
+      ],
+      "answer": 1,
+      "explain": "생선 = ikan."
+    },
+    {
+      "question": "Apa arti 야채?",
+      "options": [
+        "sayuran",
+        "buah",
+        "kopi",
+        "enak"
+      ],
+      "answer": 0,
+      "explain": "야채 = sayuran."
+    },
+    {
+      "question": "Apa arti 과일?",
+      "options": [
+        "air",
+        "teh",
+        "pedas",
+        "buah"
+      ],
+      "answer": 3,
+      "explain": "과일 = buah."
+    },
+    {
+      "question": "Apa arti 물?",
+      "options": [
+        "enak",
+        "lapar",
+        "air",
+        "kopi"
+      ],
+      "answer": 2,
+      "explain": "물 = air."
+    },
+    {
+      "question": "Apa arti 커피?",
+      "options": [
+        "nasi / makanan",
+        "kopi",
+        "teh",
+        "pedas"
+      ],
+      "answer": 1,
+      "explain": "커피 = kopi."
+    },
+    {
+      "question": "Apa arti 차?",
+      "options": [
+        "teh",
+        "enak",
+        "lapar",
+        "kimchi"
+      ],
+      "answer": 0,
+      "explain": "차 = teh."
+    },
+    {
+      "question": "Apa arti 맛있어요?",
+      "options": [
+        "pedas",
+        "nasi / makanan",
+        "daging",
+        "enak"
+      ],
+      "answer": 3,
+      "explain": "맛있어요 = enak."
+    }
+  ]
+}
