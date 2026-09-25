@@ -17,25 +17,30 @@ function populateVoices(){
  const st=$('#voiceStatus');if(st)st.textContent=voices.length?voices.length+' voice Korea tersedia di browser/device ini.':'Voice Korea tidak terdaftar; Auto akan memakai fallback browser/device.';
 }
 
-let repeatTimer=null;
-function repeatPrompt(){
- const st=$('#repeatStatus');if(!st)return;
+let repeatTimer=null,activeRepeatEl=null;
+function clearRepeatPrompt(){
  clearTimeout(repeatTimer);
- st.textContent='Ulangi, baca dengan keras.';
- st.classList.add('show');
- repeatTimer=setTimeout(()=>{st.textContent='';st.classList.remove('show')},2000);
+ if(activeRepeatEl){activeRepeatEl.textContent='';activeRepeatEl.classList.remove('show');activeRepeatEl=null}
 }
-function speak(txt,promptAfter=true){
+function repeatPrompt(sourceButton){
+ clearRepeatPrompt();
+ if(!sourceButton)return;
+ let el=sourceButton.nextElementSibling;
+ if(!el||!el.classList.contains('local-repeat')){
+   el=document.createElement('div');el.className='local-repeat';sourceButton.insertAdjacentElement('afterend',el);
+ }
+ activeRepeatEl=el;el.textContent='Ulangi, baca dengan keras.';requestAnimationFrame(()=>el.classList.add('show'));
+ repeatTimer=setTimeout(()=>{el.classList.remove('show');setTimeout(()=>{if(el===activeRepeatEl){el.textContent='';activeRepeatEl=null}},180)},2000);
+}
+function speak(txt,promptAfter=true,sourceButton=null){
  if(!('speechSynthesis'in window))return;
- speechSynthesis.cancel();
- clearTimeout(repeatTimer);
- const st=$('#repeatStatus');if(st){st.textContent='';st.classList.remove('show')};
+ speechSynthesis.cancel();clearRepeatPrompt();
  const u=new SpeechSynthesisUtterance(txt);u.lang='ko-KR';u.rate=getRate();const v=selectedVoice();if(v)u.voice=v;
- u.onend=()=>{if(promptAfter)repeatPrompt();else if(st)st.textContent='';};
+ u.onend=()=>{if(promptAfter)repeatPrompt(sourceButton)};
  speechSynthesis.speak(u);
 }
 function audioPanel(){
- return '<div class="audio-panel"><label>Suara <select id="voiceSelect"><option>Memuat…</option></select></label><label>Kecepatan <select id="speechRate"><option value=".75">0.75x</option><option value=".9">0.9x</option><option value="1" selected>1.0x</option></select></label><button id="testVoice">▶ Tes suara</button><button id="stopVoice">■ Stop</button><span class="status" id="voiceStatus"></span><span class="repeat-status" id="repeatStatus"></span></div>';
+ return '<div class="audio-panel"><label>Suara <select id="voiceSelect"><option>Memuat…</option></select></label><label>Kecepatan <select id="speechRate"><option value=".75">0.75x</option><option value=".9">0.9x</option><option value="1" selected>1.0x</option></select></label><button id="testVoice">▶ Tes suara</button><button id="stopVoice">■ Stop</button><span class="status" id="voiceStatus"></span></div>';
 }
 function getWhy(){return localStorage.getItem('levelingWhy')||''}
 function getChallenge(){return Number(localStorage.getItem('levelingChallengeTarget')||80)}
@@ -84,12 +89,12 @@ function render(){
  bind();populateVoices();updateProgress(done?100:lesson.progressStart||10);
 }
 function bind(){
- $('#testVoice').onclick=()=>speak('안녕하세요. 같이 한국어를 공부해요.',false);
- $('#stopVoice').onclick=()=>{speechSynthesis.cancel();clearTimeout(repeatTimer);const st=$('#repeatStatus');if(st){st.textContent='';st.classList.remove('show')}};
+ $('#testVoice').onclick=e=>speak('안녕하세요. 같이 한국어를 공부해요.',false,e.currentTarget);
+ $('#stopVoice').onclick=()=>{speechSynthesis.cancel();clearRepeatPrompt()};
  $('#voiceSelect').onchange=e=>localStorage.setItem('levelingKoVoice',e.target.value);
  const savedRate=localStorage.getItem('levelingKoRate');if(savedRate)$('#speechRate').value=savedRate;
  $('#speechRate').onchange=e=>localStorage.setItem('levelingKoRate',e.target.value);
- document.querySelectorAll('[data-say]').forEach(b=>b.onclick=e=>{e.stopPropagation();speak(b.dataset.say,true)});
+ document.querySelectorAll('[data-say]').forEach(b=>b.onclick=e=>{e.stopPropagation();speak(b.dataset.say,true,b)});
  quizAnswers=Array(lesson.quiz.length).fill(null);
  document.querySelectorAll('.quiz-card').forEach(card=>card.querySelectorAll('.option').forEach(btn=>btn.onclick=()=>answer(card,Number(btn.dataset.i))));
  $('#retryQuiz').onclick=resetQuiz;$('#finishBtn').onclick=toggleDone;updateScore();
