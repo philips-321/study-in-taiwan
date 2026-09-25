@@ -103,7 +103,22 @@
       "example": {
         "ko": "밖",
         "roman": "bak",
-        "id": "di luar"
+        "id": "di luar",
+        "map": {
+          "units": [
+            {
+              "ko": "밖",
+              "roman": "bak",
+              "literal": "di luar"
+            }
+          ],
+          "natural": [
+            {
+              "text": "di luar",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -114,7 +129,22 @@
       "example": {
         "ko": "옷",
         "roman": "ot",
-        "id": "pakaian"
+        "id": "pakaian",
+        "map": {
+          "units": [
+            {
+              "ko": "옷",
+              "roman": "ot",
+              "literal": "pakaian"
+            }
+          ],
+          "natural": [
+            {
+              "text": "pakaian",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -125,7 +155,22 @@
       "example": {
         "ko": "앞",
         "roman": "ap",
-        "id": "depan"
+        "id": "depan",
+        "map": {
+          "units": [
+            {
+              "ko": "앞",
+              "roman": "ap",
+              "literal": "depan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "depan",
+              "ref": 0
+            }
+          ]
+        }
       }
     }
   ],
