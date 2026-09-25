@@ -1,0 +1,258 @@
+{
+  "id": "ko-l1-006",
+  "level": "Level 1 · Pengucapan",
+  "order": 6,
+  "passScore": 80,
+  "title": "유음화 — ㄴ dan ㄹ menjadi ㄹㄹ",
+  "subtitle": "Ketika ㄴ dan ㄹ bertemu pada batas suku kata, keduanya sering direalisasikan sebagai ㄹㄹ.",
+  "intro": "유음화 membuat pertemuan ㄴ dan ㄹ menjadi lebih mulus. Dalam pola umum ㄴ+ㄹ atau ㄹ+ㄴ, hasil bunyinya menjadi ㄹㄹ.",
+  "tip": "Jangan mengubah ejaan. 신라 tetap ditulis 신라, tetapi diucapkan [실라].",
+  "progressStart": 62,
+  "objectives": [
+    "ㄴ+ㄹ",
+    "ㄹ+ㄴ",
+    "tulisan vs bunyi"
+  ],
+  "prev": {
+    "title": "Pelajaran 5 · 격음화",
+    "path": "level-1/005-gyeogeumhwa-aspiration.json"
+  },
+  "next": {
+    "title": "Pelajaran 7 · 구개음화",
+    "path": "level-1/007-gugaeumhwa-palatalization.json"
+  },
+  "detailSections": [
+    {
+      "title": "Dua arah yang perlu dikenali",
+      "paragraphs": [
+        "Jika batchim ㄴ bertemu ㄹ di awal suku kata berikutnya, keduanya cenderung terdengar sebagai ㄹㄹ. Contoh: 신라 [실라].",
+        "Jika batchim ㄹ bertemu ㄴ, hasilnya juga sering ㄹㄹ. Contoh: 설날 [설랄]."
+      ]
+    },
+    {
+      "title": "Kenapa bentuk [ ] berbeda dari tulisan?",
+      "paragraphs": [
+        "Bentuk [실라] atau [설랄] adalah notasi bunyi untuk membantu belajar pronunciation. Dalam tulisan standar, kita tetap memakai 신라 dan 설날."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "신 + 라",
+      "pronounced": "[실라]",
+      "steps": [
+        "신 berakhir ㄴ.",
+        "라 dimulai ㄹ.",
+        "Pertemuan ㄴ + ㄹ menjadi ㄹ + ㄹ."
+      ],
+      "note": "Tulisan tetap 신라.",
+      "speak": "신라"
+    },
+    {
+      "written": "설 + 날",
+      "pronounced": "[설랄]",
+      "steps": [
+        "설 berakhir ㄹ.",
+        "날 dimulai ㄴ.",
+        "Pertemuan ㄹ + ㄴ menjadi ㄹ + ㄹ."
+      ],
+      "note": "Tulisan tetap 설날.",
+      "speak": "설날"
+    },
+    {
+      "written": "연 + 락",
+      "pronounced": "[열락]",
+      "steps": [
+        "연 berakhir ㄴ.",
+        "락 dimulai ㄹ.",
+        "ㄴ + ㄹ → ㄹㄹ."
+      ],
+      "note": "Tulisan tetap 연락.",
+      "speak": "연락"
+    },
+    {
+      "written": "편 + 리",
+      "pronounced": "[펼리]",
+      "steps": [
+        "편 berakhir ㄴ.",
+        "리 dimulai ㄹ.",
+        "ㄴ + ㄹ → ㄹㄹ."
+      ],
+      "note": "Tulisan tetap 편리.",
+      "speak": "편리"
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "설날에 가족을 만나요.",
+      "pronunciation": "[설라레 가조글 만나요]",
+      "roman": "seollare gajogeul mannayo",
+      "id": "Saat Seollal saya bertemu keluarga.",
+      "note": "설날 → [설랄], lalu 날에 juga mengalami liaison.",
+      "speak": "설날에 가족을 만나요."
+    },
+    {
+      "ko": "나중에 연락해 주세요.",
+      "pronunciation": "[나중에 열라캐 주세요]",
+      "roman": "najunge yeollakae juseyo",
+      "id": "Tolong hubungi saya nanti.",
+      "note": "연락 → [열락].",
+      "speak": "나중에 연락해 주세요."
+    },
+    {
+      "ko": "지하철이 정말 편리해요.",
+      "pronunciation": "[지하처리 정말 펼리해요]",
+      "roman": "jihacheori jeongmal pyeollihaeyo",
+      "id": "Kereta bawah tanah sangat praktis.",
+      "note": "편리 → [펼리].",
+      "speak": "지하철이 정말 편리해요."
+    }
+  ],
+  "units": [
+    {
+      "char": "신라",
+      "roman": "silla",
+      "hint": "ㄴ + ㄹ → ㄹㄹ.",
+      "speak": "신라",
+      "example": {
+        "ko": "신라 시대",
+        "roman": "silla sidae",
+        "id": "zaman Silla"
+      }
+    },
+    {
+      "char": "설날",
+      "roman": "seollal",
+      "hint": "ㄹ + ㄴ → ㄹㄹ.",
+      "speak": "설날",
+      "example": {
+        "ko": "설날이에요",
+        "roman": "seollarieyo",
+        "id": "ini Seollal"
+      }
+    },
+    {
+      "char": "연락",
+      "roman": "yeollak",
+      "hint": "ㄴ + ㄹ → ㄹㄹ.",
+      "speak": "연락",
+      "example": {
+        "ko": "연락해 주세요",
+        "roman": "yeollakae juseyo",
+        "id": "tolong hubungi"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "신라 paling dekat dibaca…",
+      "options": [
+        "실라",
+        "신나",
+        "심라",
+        "신라 terputus"
+      ],
+      "answer": 0,
+      "explain": "ㄴ + ㄹ → ㄹㄹ."
+    },
+    {
+      "question": "설날 paling dekat dibaca…",
+      "options": [
+        "설랄",
+        "선날",
+        "설날 apa adanya",
+        "설낟"
+      ],
+      "answer": 0,
+      "explain": "ㄹ + ㄴ → ㄹㄹ."
+    },
+    {
+      "question": "연락 paling dekat dibaca…",
+      "options": [
+        "열락",
+        "연낙",
+        "염락",
+        "연락 terputus"
+      ],
+      "answer": 0,
+      "explain": "ㄴ + ㄹ menjadi ㄹㄹ."
+    },
+    {
+      "question": "유음화 di pelajaran ini terutama melibatkan…",
+      "options": [
+        "ㄴ dan ㄹ",
+        "ㄱ dan ㅁ",
+        "ㅂ dan ㅎ",
+        "ㅅ dan ㅣ"
+      ],
+      "answer": 0,
+      "explain": "Fokusnya pertemuan ㄴ/ㄹ."
+    },
+    {
+      "question": "편리 paling dekat dibaca…",
+      "options": [
+        "펼리",
+        "편니",
+        "평리",
+        "편리 apa adanya"
+      ],
+      "answer": 0,
+      "explain": "ㄴ + ㄹ → ㄹㄹ."
+    },
+    {
+      "question": "Pola ㄹ + ㄴ biasanya menjadi…",
+      "options": [
+        "ㄹㄹ",
+        "ㄴㄴ",
+        "ㅁㅁ",
+        "ㅇㄴ"
+      ],
+      "answer": 0,
+      "explain": "Liquidization menghasilkan ㄹㄹ."
+    },
+    {
+      "question": "Pola ㄴ + ㄹ biasanya menjadi…",
+      "options": [
+        "ㄹㄹ",
+        "ㄴㄴ",
+        "ㅇㄹ",
+        "ㅁㄹ"
+      ],
+      "answer": 0,
+      "explain": "ㄴ berubah menyesuaikan menjadi ㄹ."
+    },
+    {
+      "question": "Apakah 신라 ditulis 실라 dalam ejaan standar?",
+      "options": [
+        "ya",
+        "tidak, tetap 신라",
+        "hanya formal",
+        "hanya informal"
+      ],
+      "answer": 1,
+      "explain": "실라 hanya panduan bunyi."
+    },
+    {
+      "question": "Mana contoh 유음화?",
+      "options": [
+        "설날 → 설랄",
+        "국물 → 궁물",
+        "먹다 → 먹따",
+        "집에 → 지베"
+      ],
+      "answer": 0,
+      "explain": "Yang lain adalah nasalization, tensing, dan liaison."
+    },
+    {
+      "question": "Tujuan belajar 유음화 adalah…",
+      "options": [
+        "mengenali aliran ㄴ/ㄹ dalam ucapan alami",
+        "mengubah semua ㄴ menjadi ㄹ",
+        "menghafal Hanja",
+        "belajar tense"
+      ],
+      "answer": 0,
+      "explain": "Aturan ini membantu listening dan pronunciation."
+    }
+  ]
+}
