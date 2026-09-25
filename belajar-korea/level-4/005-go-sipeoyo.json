@@ -1,0 +1,637 @@
+{
+  "id": "ko-l4-005",
+  "level": "Level 4 · Grammar bertahap",
+  "order": 5,
+  "passScore": 80,
+  "title": "-고 싶어요 — ingin melakukan",
+  "subtitle": "Menyatakan keinginan melakukan suatu aktivitas.",
+  "intro": "Tambahkan -고 싶어요 pada batang kata kerja. Bentuk negatif yang aman: -고 싶지 않아요.",
+  "tip": "Gunakan untuk keinginan sendiri atau bertanya pada lawan bicara; keinginan orang ketiga biasanya memakai bentuk lain.",
+  "progressStart": 84,
+  "objectives": [
+    "12 contoh",
+    "color map",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Pelajaran 4 · Future",
+    "path": "level-4/004-future-eul-geoyeyo.json"
+  },
+  "next": {
+    "title": "Pelajaran 6 · 아/어서",
+    "path": "level-4/006-a-eoseo.json"
+  },
+  "sentences": [
+    {
+      "ko": "한국에 가고 싶어요.",
+      "roman": "hanguge gago sipeoyo",
+      "id": "Saya ingin pergi ke Korea.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국",
+            "roman": "hanguk",
+            "literal": "Korea"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "가고 싶어요",
+            "roman": "gago sipeoyo",
+            "literal": "ingin pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya ingin pergi",
+            "ref": 2
+          },
+          {
+            "text": "ke Korea",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국에 가고 싶어요."
+    },
+    {
+      "ko": "한국 음식을 먹고 싶어요.",
+      "roman": "hanguk eumsigeul meokgo sipeoyo",
+      "id": "Saya ingin makan makanan Korea.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국",
+            "roman": "hanguk",
+            "literal": "Korea"
+          },
+          {
+            "ko": "음식",
+            "roman": "eumsik",
+            "literal": "makanan"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "먹고 싶어요",
+            "roman": "meokgo sipeoyo",
+            "literal": "ingin makan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya ingin makan",
+            "ref": 3
+          },
+          {
+            "text": "makanan Korea",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국 음식을 먹고 싶어요."
+    },
+    {
+      "ko": "새 휴대폰을 사고 싶어요.",
+      "roman": "sae hyudaephoneul sago sipeoyo",
+      "id": "Saya ingin membeli ponsel baru.",
+      "map": {
+        "units": [
+          {
+            "ko": "새",
+            "roman": "sae",
+            "literal": "baru"
+          },
+          {
+            "ko": "휴대폰",
+            "roman": "hyudaepon",
+            "literal": "ponsel"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "사고 싶어요",
+            "roman": "sago sipeoyo",
+            "literal": "ingin membeli"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya ingin membeli",
+            "ref": 3
+          },
+          {
+            "text": "ponsel",
+            "ref": 1
+          },
+          {
+            "text": "baru",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "새 휴대폰을 사고 싶어요."
+    },
+    {
+      "ko": "오늘은 일찍 자고 싶어요.",
+      "roman": "oneureun iljjik jago sipeoyo",
+      "id": "Hari ini saya ingin tidur lebih awal.",
+      "map": {
+        "units": [
+          {
+            "ko": "오늘",
+            "roman": "oneul",
+            "literal": "hari ini"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "일찍",
+            "roman": "iljjik",
+            "literal": "lebih awal"
+          },
+          {
+            "ko": "자고 싶어요",
+            "roman": "jago sipeoyo",
+            "literal": "ingin tidur"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Hari ini",
+            "ref": 0
+          },
+          {
+            "text": "saya ingin tidur",
+            "ref": 3
+          },
+          {
+            "text": "lebih awal",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "오늘은 일찍 자고 싶어요."
+    },
+    {
+      "ko": "친구를 만나고 싶어요.",
+      "roman": "chingureul mannago sipeoyo",
+      "id": "Saya ingin bertemu teman.",
+      "map": {
+        "units": [
+          {
+            "ko": "친구",
+            "roman": "chingu",
+            "literal": "teman"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "만나고 싶어요",
+            "roman": "mannago sipeoyo",
+            "literal": "ingin bertemu"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya ingin bertemu",
+            "ref": 2
+          },
+          {
+            "text": "teman",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "친구를 만나고 싶어요."
+    },
+    {
+      "ko": "주말에는 쉬고 싶어요.",
+      "roman": "jumareneun swigo sipeoyo",
+      "id": "Pada akhir pekan saya ingin beristirahat.",
+      "map": {
+        "units": [
+          {
+            "ko": "주말",
+            "roman": "jumal",
+            "literal": "akhir pekan"
+          },
+          {
+            "ko": "에는",
+            "roman": "eneun",
+            "literal": "pada/topik"
+          },
+          {
+            "ko": "쉬고 싶어요",
+            "roman": "swigo sipeoyo",
+            "literal": "ingin beristirahat"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Pada akhir pekan",
+            "ref": 0
+          },
+          {
+            "text": "saya ingin beristirahat",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "주말에는 쉬고 싶어요."
+    },
+    {
+      "ko": "한국어를 더 잘하고 싶어요.",
+      "roman": "hangugeoreul deo jalhago sipeoyo",
+      "id": "Saya ingin lebih mahir bahasa Korea.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국어",
+            "roman": "hangugeo",
+            "literal": "bahasa Korea"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "더",
+            "roman": "deo",
+            "literal": "lebih"
+          },
+          {
+            "ko": "잘하고 싶어요",
+            "roman": "jalhago sipeoyo",
+            "literal": "ingin melakukan dengan baik"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya ingin",
+            "ref": 3
+          },
+          {
+            "text": "lebih",
+            "ref": 2
+          },
+          {
+            "text": "mahir",
+            "ref": 3
+          },
+          {
+            "text": "bahasa Korea",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국어를 더 잘하고 싶어요."
+    },
+    {
+      "ko": "제주도에 여행하고 싶어요.",
+      "roman": "jejudo-e yeohaenghago sipeoyo",
+      "id": "Saya ingin berwisata ke Pulau Jeju.",
+      "map": {
+        "units": [
+          {
+            "ko": "제주도",
+            "roman": "Jejudo",
+            "literal": "Pulau Jeju"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "여행하고 싶어요",
+            "roman": "yeohaenghago sipeoyo",
+            "literal": "ingin bepergian"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya ingin berwisata",
+            "ref": 2
+          },
+          {
+            "text": "ke Pulau Jeju",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "제주도에 여행하고 싶어요."
+    },
+    {
+      "ko": "따뜻한 커피를 마시고 싶어요.",
+      "roman": "ttatteuthan keopireul masigo sipeoyo",
+      "id": "Saya ingin minum kopi hangat.",
+      "map": {
+        "units": [
+          {
+            "ko": "따뜻한",
+            "roman": "ttatteuthan",
+            "literal": "hangat"
+          },
+          {
+            "ko": "커피",
+            "roman": "keopi",
+            "literal": "kopi"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "마시고 싶어요",
+            "roman": "masigo sipeoyo",
+            "literal": "ingin minum"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya ingin minum",
+            "ref": 3
+          },
+          {
+            "text": "kopi",
+            "ref": 1
+          },
+          {
+            "text": "hangat",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "따뜻한 커피를 마시고 싶어요."
+    },
+    {
+      "ko": "그 영화를 다시 보고 싶어요.",
+      "roman": "geu yeonghwareul dasi bogo sipeoyo",
+      "id": "Saya ingin menonton film itu lagi.",
+      "map": {
+        "units": [
+          {
+            "ko": "그",
+            "roman": "geu",
+            "literal": "itu"
+          },
+          {
+            "ko": "영화",
+            "roman": "yeonghwa",
+            "literal": "film"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "다시",
+            "roman": "dasi",
+            "literal": "lagi"
+          },
+          {
+            "ko": "보고 싶어요",
+            "roman": "bogo sipeoyo",
+            "literal": "ingin menonton"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya ingin menonton",
+            "ref": 4
+          },
+          {
+            "text": "film",
+            "ref": 1
+          },
+          {
+            "text": "itu",
+            "ref": 0
+          },
+          {
+            "text": "lagi",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "그 영화를 다시 보고 싶어요."
+    },
+    {
+      "ko": "새로운 사람들을 만나고 싶어요.",
+      "roman": "saeroun saramdeureul mannago sipeoyo",
+      "id": "Saya ingin bertemu orang-orang baru.",
+      "map": {
+        "units": [
+          {
+            "ko": "새로운",
+            "roman": "saeroun",
+            "literal": "baru"
+          },
+          {
+            "ko": "사람들",
+            "roman": "saramdeul",
+            "literal": "orang-orang"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "만나고 싶어요",
+            "roman": "mannago sipeoyo",
+            "literal": "ingin bertemu"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya ingin bertemu",
+            "ref": 3
+          },
+          {
+            "text": "orang-orang",
+            "ref": 1
+          },
+          {
+            "text": "baru",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "새로운 사람들을 만나고 싶어요."
+    },
+    {
+      "ko": "아무것도 하고 싶지 않아요.",
+      "roman": "amugeotdo hago sipji anayo",
+      "id": "Saya tidak ingin melakukan apa pun.",
+      "map": {
+        "units": [
+          {
+            "ko": "아무것도",
+            "roman": "amugeotdo",
+            "literal": "apa pun"
+          },
+          {
+            "ko": "하고 싶지 않아요",
+            "roman": "hago sipji anayo",
+            "literal": "tidak ingin melakukan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tidak ingin melakukan",
+            "ref": 1
+          },
+          {
+            "text": "apa pun",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "아무것도 하고 싶지 않아요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "가다 + ingin → ?",
+      "options": [
+        "가고 싶어요",
+        "갈 거예요",
+        "갔어요",
+        "가야 해요"
+      ],
+      "answer": 0,
+      "explain": "Verb stem + 고 싶어요."
+    },
+    {
+      "question": "먹다 + ingin → ?",
+      "options": [
+        "먹고 싶어요",
+        "먹을 수 있어요",
+        "먹었어요",
+        "먹지만"
+      ],
+      "answer": 0,
+      "explain": "먹고 싶어요."
+    },
+    {
+      "question": "보다 + ingin → ?",
+      "options": [
+        "보고 싶어요",
+        "봐고 싶어요",
+        "볼 싶어요",
+        "봤어요"
+      ],
+      "answer": 0,
+      "explain": "Stem 보 + 고 싶어요."
+    },
+    {
+      "question": "하다 + ingin → ?",
+      "options": [
+        "하고 싶어요",
+        "해고 싶어요",
+        "할고 싶어요",
+        "했어요"
+      ],
+      "answer": 0,
+      "explain": "하고 싶어요."
+    },
+    {
+      "question": "고 싶어요 mengekspresikan…",
+      "options": [
+        "keinginan pembicara",
+        "masa lalu",
+        "kemampuan",
+        "alasan"
+      ],
+      "answer": 0,
+      "explain": "Desire."
+    },
+    {
+      "question": "Bentuk negatif 'tidak ingin'…",
+      "options": [
+        "고 싶지 않아요",
+        "안 고 싶어요 saja selalu",
+        "못고 싶어요",
+        "고 안 싶어요"
+      ],
+      "answer": 0,
+      "explain": "고 싶지 않아요."
+    },
+    {
+      "question": "사고 싶어요 dari verb…",
+      "options": [
+        "사다",
+        "살다",
+        "쓰다",
+        "서다"
+      ],
+      "answer": 0,
+      "explain": "사다 = membeli."
+    },
+    {
+      "question": "마시고 싶어요 berarti…",
+      "options": [
+        "ingin minum",
+        "bisa minum",
+        "sudah minum",
+        "harus minum"
+      ],
+      "answer": 0,
+      "explain": "Desire to drink."
+    },
+    {
+      "question": "보고 싶어요 bisa berarti…",
+      "options": [
+        "ingin melihat / merindukan seseorang dalam konteks tertentu",
+        "tidak melihat",
+        "harus melihat",
+        "sudah melihat"
+      ],
+      "answer": 0,
+      "explain": "보고 싶어요 secara literal ingin melihat; pada orang bisa bermakna rindu."
+    },
+    {
+      "question": "Untuk menyatakan keinginan orang ketiga secara netral biasanya perlu…",
+      "options": [
+        "konstruksi/konteks lain seperti -고 싶어하다",
+        "selalu 고 싶어요 tanpa konteks",
+        "past tense",
+        "future saja"
+      ],
+      "answer": 0,
+      "explain": "고 싶어요 terutama menyatakan keinginan pembicara/interlocutor."
+    }
+  ]
+}
