@@ -124,10 +124,77 @@
       ],
       "answer": 3,
       "explain": "ㅣ = i."
+    },
+    {
+      "question": "Huruf mana yang dibaca 'eo'?",
+      "options": [
+        "ㅏ",
+        "ㅓ",
+        "ㅗ",
+        "ㅜ"
+      ],
+      "answer": 1,
+      "explain": "ㅓ = eo."
+    },
+    {
+      "question": "Huruf mana yang dibaca 'o'?",
+      "options": [
+        "ㅜ",
+        "ㅡ",
+        "ㅗ",
+        "ㅣ"
+      ],
+      "answer": 2,
+      "explain": "ㅗ = o."
+    },
+    {
+      "question": "Mana yang berbunyi 'eu'?",
+      "options": [
+        "ㅡ",
+        "ㅓ",
+        "ㅣ",
+        "ㅏ"
+      ],
+      "answer": 0,
+      "explain": "ㅡ = eu."
+    },
+    {
+      "question": "Pasangan mana yang sama-sama berbentuk dasar vertikal?",
+      "options": [
+        "ㅏ dan ㅓ",
+        "ㅗ dan ㅜ",
+        "ㅡ dan ㅗ",
+        "ㅜ dan ㅡ"
+      ],
+      "answer": 0,
+      "explain": "ㅏ dan ㅓ menggunakan garis utama vertikal."
+    },
+    {
+      "question": "Pasangan mana yang sama-sama berbentuk dasar horizontal?",
+      "options": [
+        "ㅏ dan ㅓ",
+        "ㅗ dan ㅜ",
+        "ㅣ dan ㅓ",
+        "ㅏ dan ㅣ"
+      ],
+      "answer": 1,
+      "explain": "ㅗ dan ㅜ menggunakan garis utama horizontal."
+    },
+    {
+      "question": "Huruf paling sederhana berupa satu garis vertikal adalah…",
+      "options": [
+        "ㅡ",
+        "ㅣ",
+        "ㅏ",
+        "ㅗ"
+      ],
+      "answer": 1,
+      "explain": "ㅣ adalah satu garis vertikal."
     }
   ],
   "next": {
     "title": "Pelajaran 2 · Konsonan dasar",
     "path": "level-0/002-konsonan-dasar.json"
-  }
+  },
+  "passScore": 80
 }
