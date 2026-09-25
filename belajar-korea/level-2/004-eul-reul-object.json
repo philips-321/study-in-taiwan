@@ -1,0 +1,182 @@
+{
+  "id": "ko-l2-004",
+  "level": "Level 2 · Kalimat dasar",
+  "order": 4,
+  "passScore": 80,
+  "title": "을 / 를 — penanda objek",
+  "subtitle": "Menandai benda atau hal yang langsung dikenai tindakan.",
+  "intro": "Gunakan 을 setelah kata berakhir konsonan dan 를 setelah kata berakhir vokal.",
+  "tip": "밥 + 을 = 밥을. 커피 + 를 = 커피를.",
+  "progressStart": 69,
+  "objectives": [
+    "을",
+    "를",
+    "objek langsung"
+  ],
+  "prev": {
+    "title": "Pelajaran 3 · 이/가",
+    "path": "level-2/003-i-ga-subject.json"
+  },
+  "next": {
+    "title": "Pelajaran 5 · 에 / 에서",
+    "path": "level-2/005-e-eseo-location.json"
+  },
+  "units": [
+    {
+      "char": "밥을",
+      "roman": "babeul",
+      "hint": "밥 berakhir ㅂ → 을.",
+      "speak": "밥을",
+      "example": {
+        "ko": "밥을 먹어요",
+        "roman": "babeul meogeoyo",
+        "id": "makan nasi"
+      }
+    },
+    {
+      "char": "책을",
+      "roman": "chaegeul",
+      "hint": "책 berakhir ㄱ → 을.",
+      "speak": "책을",
+      "example": {
+        "ko": "책을 읽어요",
+        "roman": "chaegeul ilgeoyo",
+        "id": "membaca buku"
+      }
+    },
+    {
+      "char": "커피를",
+      "roman": "keopireul",
+      "hint": "커피 berakhir vokal → 를.",
+      "speak": "커피를",
+      "example": {
+        "ko": "커피를 마셔요",
+        "roman": "keopireul masyeoyo",
+        "id": "minum kopi"
+      }
+    },
+    {
+      "char": "영화를",
+      "roman": "yeonghwareul",
+      "hint": "영화 berakhir vokal → 를.",
+      "speak": "영화를",
+      "example": {
+        "ko": "영화를 봐요",
+        "roman": "yeonghwareul bwayo",
+        "id": "menonton film"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "밥___ 먹어요",
+      "options": [
+        "을",
+        "를",
+        "이",
+        "가"
+      ],
+      "answer": 0,
+      "explain": "밥 berakhir konsonan."
+    },
+    {
+      "question": "커피___ 마셔요",
+      "options": [
+        "을",
+        "를",
+        "은",
+        "이"
+      ],
+      "answer": 1,
+      "explain": "커피 berakhir vokal."
+    },
+    {
+      "question": "책___ 읽어요",
+      "options": [
+        "를",
+        "을",
+        "가",
+        "는"
+      ],
+      "answer": 1,
+      "explain": "책 berakhir ㄱ."
+    },
+    {
+      "question": "영화___ 봐요",
+      "options": [
+        "을",
+        "를",
+        "이",
+        "은"
+      ],
+      "answer": 1,
+      "explain": "영화 berakhir vokal."
+    },
+    {
+      "question": "을/를 menandai…",
+      "options": [
+        "subjek",
+        "objek langsung",
+        "topik",
+        "tempat aksi"
+      ],
+      "answer": 1,
+      "explain": "Object marker."
+    },
+    {
+      "question": "Setelah konsonan gunakan…",
+      "options": [
+        "를",
+        "을",
+        "가",
+        "는"
+      ],
+      "answer": 1,
+      "explain": "Konsonan → 을."
+    },
+    {
+      "question": "Setelah vokal gunakan…",
+      "options": [
+        "를",
+        "을",
+        "이",
+        "은"
+      ],
+      "answer": 0,
+      "explain": "Vokal → 를."
+    },
+    {
+      "question": "Mana kalimat yang benar?",
+      "options": [
+        "밥를 먹어요",
+        "밥을 먹어요",
+        "밥이 먹어요 untuk 'makan nasi'",
+        "밥가 먹어요"
+      ],
+      "answer": 1,
+      "explain": "밥 adalah objek dan berakhir konsonan."
+    },
+    {
+      "question": "Dalam 책을 읽어요, objeknya adalah…",
+      "options": [
+        "읽어요",
+        "책",
+        "을",
+        "subjek tersembunyi"
+      ],
+      "answer": 1,
+      "explain": "책 adalah benda yang dibaca."
+    },
+    {
+      "question": "Dalam 커피를 마셔요, 를 berfungsi sebagai…",
+      "options": [
+        "penanda objek",
+        "penanda topik",
+        "penanda subjek",
+        "penanda waktu"
+      ],
+      "answer": 0,
+      "explain": "커피 adalah objek dari 마셔요."
+    }
+  ]
+}
