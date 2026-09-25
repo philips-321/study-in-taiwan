@@ -1,0 +1,257 @@
+{
+  "id": "ko-l1-009",
+  "level": "Level 1 · Pengucapan",
+  "order": 9,
+  "passScore": 80,
+  "title": "ㄴ 첨가 — penyisipan bunyi ㄴ",
+  "subtitle": "Dalam sejumlah kata majemuk, ㄴ dapat muncul di antara dua bagian kata meskipun tidak tertulis.",
+  "intro": "ㄴ 첨가 bukan aturan yang berlaku pada semua kombinasi. Ia sering muncul pada kata majemuk tertentu ketika bagian kedua dimulai dengan 이, 야, 여, 요, atau 유 setelah bagian pertama berakhir konsonan.",
+  "tip": "Anggap sebagai pola kosakata + bunyi, bukan rumus yang harus dipaksakan ke semua kata. Contoh penting: 솜이불 [솜니불], 한여름 [한녀름], 담요 [담뇨].",
+  "progressStart": 74,
+  "objectives": [
+    "compound words",
+    "ㄴ insertion",
+    "tidak selalu berlaku"
+  ],
+  "prev": {
+    "title": "Pelajaran 8 · ㅎ 탈락",
+    "path": "level-1/008-hieut-drop.json"
+  },
+  "next": {
+    "title": "Pelajaran 10 · 겹받침",
+    "path": "level-1/010-double-batchim.json"
+  },
+  "detailSections": [
+    {
+      "title": "Apa arti 'penyisipan'?",
+      "paragraphs": [
+        "Dalam tulisan, tidak ada ㄴ tambahan. Namun ketika dua bagian kata bertemu, penutur dapat mengucapkan bunyi ㄴ di awal bagian kedua. 솜이불 ditulis dengan 이불, tetapi terdengar [솜니불].",
+        "Karena ini berkaitan dengan struktur kata majemuk dan kosakata tertentu, jangan menambahkan ㄴ secara otomatis ke semua kata yang memiliki 이/야/여/요/유."
+      ]
+    },
+    {
+      "title": "Bisa memicu perubahan lanjutan",
+      "paragraphs": [
+        "Setelah ㄴ disisipkan, batchim sebelumnya dapat ikut menyesuaikan melalui nasalization. Contoh kompleks seperti 꽃잎 [꼰닙] menunjukkan ㄴ 첨가 sekaligus perubahan bunyi lain."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "솜 + 이불",
+      "pronounced": "[솜니불]",
+      "steps": [
+        "이불 dimulai 이.",
+        "Dalam kata majemuk ini, bunyi ㄴ disisipkan sebelum 이.",
+        "Hasil awal bagian kedua terdengar 니."
+      ],
+      "note": "Tulisan tetap 솜이불.",
+      "speak": "솜이불"
+    },
+    {
+      "written": "한 + 여름",
+      "pronounced": "[한녀름]",
+      "steps": [
+        "여름 dimulai 여.",
+        "ㄴ disisipkan sebelum 여.",
+        "여 terdengar 녀."
+      ],
+      "note": "Tulisan tetap 한여름.",
+      "speak": "한여름"
+    },
+    {
+      "written": "담 + 요",
+      "pronounced": "[담뇨]",
+      "steps": [
+        "요 dimulai bunyi y.",
+        "ㄴ disisipkan sehingga 요 terdengar 뇨."
+      ],
+      "note": "Tulisan tetap 담요.",
+      "speak": "담요"
+    },
+    {
+      "written": "꽃 + 잎",
+      "pronounced": "[꼰닙]",
+      "steps": [
+        "Kata majemuk memicu ㄴ 첨가 sebelum 잎.",
+        "Batchim sebelumnya ikut menyesuaikan melalui nasalization.",
+        "Hasil akhirnya [꼰닙]."
+      ],
+      "note": "Contoh ini menggabungkan lebih dari satu aturan; tulisan tetap 꽃잎.",
+      "speak": "꽃잎"
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "겨울에는 솜이불을 써요.",
+      "pronunciation": "[겨우레는 솜니부를 써요]",
+      "roman": "gyeoureneun somnibureul sseoyo",
+      "id": "Pada musim dingin saya memakai selimut kapas.",
+      "note": "솜이불 → [솜니불].",
+      "speak": "겨울에는 솜이불을 써요."
+    },
+    {
+      "ko": "한여름에는 정말 더워요.",
+      "pronunciation": "[한녀르메는 정말 더워요]",
+      "roman": "hannyeoreumeneun jeongmal deowoyo",
+      "id": "Pada puncak musim panas sangat panas.",
+      "note": "한여름 → [한녀름].",
+      "speak": "한여름에는 정말 더워요."
+    },
+    {
+      "ko": "담요를 하나 주세요.",
+      "pronunciation": "[담뇨를 하나 주세요]",
+      "roman": "damnyoreul hana juseyo",
+      "id": "Tolong beri saya satu selimut.",
+      "note": "담요 → [담뇨].",
+      "speak": "담요를 하나 주세요."
+    }
+  ],
+  "units": [
+    {
+      "char": "솜이불",
+      "roman": "somnibul",
+      "hint": "이불 → 니불 setelah ㄴ insertion.",
+      "speak": "솜이불",
+      "example": {
+        "ko": "솜이불이 따뜻해요",
+        "roman": "somniburi ttatteutaeyo",
+        "id": "selimut kapasnya hangat"
+      }
+    },
+    {
+      "char": "한여름",
+      "roman": "hannyeoreum",
+      "hint": "여름 → 녀름.",
+      "speak": "한여름",
+      "example": {
+        "ko": "한여름이에요",
+        "roman": "hannyeoreum-ieyo",
+        "id": "sedang puncak musim panas"
+      }
+    },
+    {
+      "char": "담요",
+      "roman": "damnyo",
+      "hint": "요 → 뇨.",
+      "speak": "담요",
+      "example": {
+        "ko": "담요가 필요해요",
+        "roman": "damnyoga piryohaeyo",
+        "id": "butuh selimut"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "솜이불 paling dekat dibaca…",
+      "options": [
+        "솜니불",
+        "소미불",
+        "솜미불",
+        "솜이불 terputus"
+      ],
+      "answer": 0,
+      "explain": "ㄴ disisipkan sebelum 이불."
+    },
+    {
+      "question": "한여름 paling dekat dibaca…",
+      "options": [
+        "한녀름",
+        "한여름 apa adanya",
+        "할여름",
+        "한며름"
+      ],
+      "answer": 0,
+      "explain": "ㄴ disisipkan sebelum 여름."
+    },
+    {
+      "question": "담요 paling dekat dibaca…",
+      "options": [
+        "담뇨",
+        "다묘",
+        "담요 tanpa perubahan",
+        "단요"
+      ],
+      "answer": 0,
+      "explain": "ㄴ insertion membuat 요 terdengar 뇨."
+    },
+    {
+      "question": "Apakah ㄴ 첨가 berlaku pada semua kata yang punya 이/야/여/요/유?",
+      "options": [
+        "ya selalu",
+        "tidak, sering bergantung pada struktur kata/kosakata",
+        "hanya pada kata kerja",
+        "hanya angka"
+      ],
+      "answer": 1,
+      "explain": "Jangan menerapkannya secara mekanis ke semua kata."
+    },
+    {
+      "question": "Dalam 솜이불, ㄴ tambahan…",
+      "options": [
+        "terdengar tetapi tidak ditulis",
+        "harus ditulis",
+        "menggantikan ㅁ",
+        "menghilangkan 이"
+      ],
+      "answer": 0,
+      "explain": "Ini perubahan bunyi, bukan ejaan."
+    },
+    {
+      "question": "꽃잎 [꼰닙] menunjukkan…",
+      "options": [
+        "ㄴ 첨가 plus perubahan lain",
+        "hanya liaison sederhana",
+        "hanya tensing",
+        "tidak ada perubahan"
+      ],
+      "answer": 0,
+      "explain": "Ini contoh kompleks dengan insertion dan nasalization."
+    },
+    {
+      "question": "ㄴ 첨가 sering muncul pada…",
+      "options": [
+        "kata majemuk tertentu",
+        "semua kata tunggal",
+        "semua angka",
+        "semua partikel"
+      ],
+      "answer": 0,
+      "explain": "Struktur kata majemuk sering berperan."
+    },
+    {
+      "question": "Apakah 한여름 ditulis 한녀름?",
+      "options": [
+        "ya",
+        "tidak, tetap 한여름",
+        "hanya informal",
+        "hanya formal"
+      ],
+      "answer": 1,
+      "explain": "한녀름 adalah panduan bunyi."
+    },
+    {
+      "question": "Mana contoh ㄴ 첨가?",
+      "options": [
+        "담요 → 담뇨",
+        "국물 → 궁물",
+        "같이 → 가치",
+        "학교 → 학꾜"
+      ],
+      "answer": 0,
+      "explain": "Yang lain adalah aturan lain."
+    },
+    {
+      "question": "Cara terbaik mempelajari ㄴ 첨가 adalah…",
+      "options": [
+        "pelajari pola bersama kosakata nyata",
+        "tambahkan ㄴ ke semua kata",
+        "abaikan listening",
+        "ubah ejaan"
+      ],
+      "answer": 0,
+      "explain": "Karena tidak sepenuhnya mekanis, contoh kosakata sangat penting."
+    }
+  ]
+}
