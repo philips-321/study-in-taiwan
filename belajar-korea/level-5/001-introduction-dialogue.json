@@ -1,0 +1,712 @@
+{
+  "id": "ko-l5-001",
+  "level": "Level 5 · Dialog & reading",
+  "order": 1,
+  "passScore": 80,
+  "title": "Dialog: perkenalan & kenalan baru",
+  "subtitle": "Latihan memperkenalkan diri, asal, durasi tinggal, minat, dan membuat rencana sederhana.",
+  "intro": "Gunakan dialog ini sebagai simulasi pertemuan pertama.",
+  "tip": "Putar satu turn, ikuti color map, lalu ulangi dengan keras. Setelah paham, coba baca dua peran tanpa melihat arti.",
+  "progressStart": 90,
+  "objectives": [
+    "12 turn",
+    "audio per turn",
+    "comprehension"
+  ],
+  "prev": {
+    "title": "Level 4 · 고 있어요",
+    "path": "level-4/010-go-isseoyo.json"
+  },
+  "next": {
+    "title": "Pelajaran 2 · Kafe",
+    "path": "level-5/002-cafe-dialogue.json"
+  },
+  "dialogues": [
+    {
+      "title": "Dialog: perkenalan & kenalan baru",
+      "intro": "Dialog latihan dengan 12 turn.",
+      "turns": [
+        {
+          "speaker": "A",
+          "ko": "안녕하세요. 처음 뵙겠습니다.",
+          "roman": "annyeonghaseyo. cheoeum boepgetseumnida",
+          "id": "Halo. Senang bertemu dengan Anda.",
+          "map": {
+            "units": [
+              {
+                "ko": "안녕하세요",
+                "roman": "annyeonghaseyo",
+                "literal": "halo"
+              },
+              {
+                "ko": "처음",
+                "roman": "cheoeum",
+                "literal": "pertama kali"
+              },
+              {
+                "ko": "뵙겠습니다",
+                "roman": "boepgetseumnida",
+                "literal": "bertemu (hormat)"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Halo",
+                "ref": 0
+              },
+              {
+                "text": "Senang bertemu dengan Anda",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "안녕하세요. 처음 뵙겠습니다."
+        },
+        {
+          "speaker": "B",
+          "ko": "안녕하세요. 저는 민지예요.",
+          "roman": "annyeonghaseyo. jeoneun Minjiyeyo",
+          "id": "Halo. Saya Minji.",
+          "map": {
+            "units": [
+              {
+                "ko": "안녕하세요",
+                "roman": "annyeonghaseyo",
+                "literal": "halo"
+              },
+              {
+                "ko": "저",
+                "roman": "jeo",
+                "literal": "saya"
+              },
+              {
+                "ko": "는",
+                "roman": "neun",
+                "literal": "topik"
+              },
+              {
+                "ko": "민지",
+                "roman": "Minji",
+                "literal": "Minji"
+              },
+              {
+                "ko": "예요",
+                "roman": "yeyo",
+                "literal": "adalah"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Halo",
+                "ref": 0
+              },
+              {
+                "text": "Saya",
+                "ref": 1
+              },
+              {
+                "text": "Minji",
+                "ref": 3
+              }
+            ]
+          },
+          "speak": "안녕하세요. 저는 민지예요."
+        },
+        {
+          "speaker": "A",
+          "ko": "저는 다니엘이에요. 어느 나라에서 왔어요?",
+          "roman": "jeoneun Daniel-ieyo. eoneu naraeseo wasseoyo",
+          "id": "Saya Daniel. Anda berasal dari negara mana?",
+          "map": {
+            "units": [
+              {
+                "ko": "저",
+                "roman": "jeo",
+                "literal": "saya"
+              },
+              {
+                "ko": "는",
+                "roman": "neun",
+                "literal": "topik"
+              },
+              {
+                "ko": "다니엘",
+                "roman": "Daniel",
+                "literal": "Daniel"
+              },
+              {
+                "ko": "이에요",
+                "roman": "ieyo",
+                "literal": "adalah"
+              },
+              {
+                "ko": "어느 나라",
+                "roman": "eoneu nara",
+                "literal": "negara mana"
+              },
+              {
+                "ko": "에서",
+                "roman": "eseo",
+                "literal": "dari"
+              },
+              {
+                "ko": "왔어요",
+                "roman": "wasseoyo",
+                "literal": "datang"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Saya",
+                "ref": 0
+              },
+              {
+                "text": "Daniel",
+                "ref": 2
+              },
+              {
+                "text": "Anda berasal",
+                "ref": 6
+              },
+              {
+                "text": "dari negara mana",
+                "ref": 4
+              }
+            ]
+          },
+          "speak": "저는 다니엘이에요. 어느 나라에서 왔어요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "저는 인도네시아에서 왔어요.",
+          "roman": "jeoneun Indonesiaeseo wasseoyo",
+          "id": "Saya berasal dari Indonesia.",
+          "map": {
+            "units": [
+              {
+                "ko": "저",
+                "roman": "jeo",
+                "literal": "saya"
+              },
+              {
+                "ko": "는",
+                "roman": "neun",
+                "literal": "topik"
+              },
+              {
+                "ko": "인도네시아",
+                "roman": "Indonesia",
+                "literal": "Indonesia"
+              },
+              {
+                "ko": "에서",
+                "roman": "eseo",
+                "literal": "dari"
+              },
+              {
+                "ko": "왔어요",
+                "roman": "wasseoyo",
+                "literal": "datang"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Saya",
+                "ref": 0
+              },
+              {
+                "text": "berasal",
+                "ref": 4
+              },
+              {
+                "text": "dari Indonesia",
+                "ref": 2
+              }
+            ]
+          },
+          "speak": "저는 인도네시아에서 왔어요."
+        },
+        {
+          "speaker": "A",
+          "ko": "한국에는 얼마나 있었어요?",
+          "roman": "hangugeneun eolmana isseosseoyo",
+          "id": "Sudah berapa lama Anda berada di Korea?",
+          "map": {
+            "units": [
+              {
+                "ko": "한국",
+                "roman": "hanguk",
+                "literal": "Korea"
+              },
+              {
+                "ko": "에는",
+                "roman": "eneun",
+                "literal": "di/topik"
+              },
+              {
+                "ko": "얼마나",
+                "roman": "eolmana",
+                "literal": "berapa lama"
+              },
+              {
+                "ko": "있었어요",
+                "roman": "isseosseoyo",
+                "literal": "berada lampau"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Sudah berapa lama",
+                "ref": 2
+              },
+              {
+                "text": "Anda berada",
+                "ref": 3
+              },
+              {
+                "text": "di Korea",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "한국에는 얼마나 있었어요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "두 달 정도 있었어요.",
+          "roman": "du dal jeongdo isseosseoyo",
+          "id": "Sekitar dua bulan.",
+          "map": {
+            "units": [
+              {
+                "ko": "두 달",
+                "roman": "du dal",
+                "literal": "dua bulan"
+              },
+              {
+                "ko": "정도",
+                "roman": "jeongdo",
+                "literal": "sekitar"
+              },
+              {
+                "ko": "있었어요",
+                "roman": "isseosseoyo",
+                "literal": "berada"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Sekitar",
+                "ref": 1
+              },
+              {
+                "text": "dua bulan",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "두 달 정도 있었어요."
+        },
+        {
+          "speaker": "A",
+          "ko": "한국어를 공부해요?",
+          "roman": "hangugeoreul gongbuhaeyo",
+          "id": "Apakah Anda belajar bahasa Korea?",
+          "map": {
+            "units": [
+              {
+                "ko": "한국어",
+                "roman": "hangugeo",
+                "literal": "bahasa Korea"
+              },
+              {
+                "ko": "를",
+                "roman": "reul",
+                "literal": "objek"
+              },
+              {
+                "ko": "공부해요",
+                "roman": "gongbuhaeyo",
+                "literal": "belajar"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Apakah Anda belajar",
+                "ref": 2
+              },
+              {
+                "text": "bahasa Korea",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "한국어를 공부해요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "네, 매일 조금씩 공부하고 있어요.",
+          "roman": "ne, maeil jogeumssik gongbuhago isseoyo",
+          "id": "Ya, saya belajar sedikit demi sedikit setiap hari.",
+          "map": {
+            "units": [
+              {
+                "ko": "네",
+                "roman": "ne",
+                "literal": "ya"
+              },
+              {
+                "ko": "매일",
+                "roman": "maeil",
+                "literal": "setiap hari"
+              },
+              {
+                "ko": "조금씩",
+                "roman": "jogeumssik",
+                "literal": "sedikit demi sedikit"
+              },
+              {
+                "ko": "공부하고 있어요",
+                "roman": "gongbuhago isseoyo",
+                "literal": "sedang belajar"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Ya",
+                "ref": 0
+              },
+              {
+                "text": "saya belajar",
+                "ref": 3
+              },
+              {
+                "text": "sedikit demi sedikit",
+                "ref": 2
+              },
+              {
+                "text": "setiap hari",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "네, 매일 조금씩 공부하고 있어요."
+        },
+        {
+          "speaker": "A",
+          "ko": "한국에서 뭐가 제일 재미있어요?",
+          "roman": "hangugeseo mwoga jeil jaemiisseoyo",
+          "id": "Apa yang paling menarik di Korea?",
+          "map": {
+            "units": [
+              {
+                "ko": "한국",
+                "roman": "hanguk",
+                "literal": "Korea"
+              },
+              {
+                "ko": "에서",
+                "roman": "eseo",
+                "literal": "di"
+              },
+              {
+                "ko": "뭐",
+                "roman": "mwo",
+                "literal": "apa"
+              },
+              {
+                "ko": "가",
+                "roman": "ga",
+                "literal": "subjek"
+              },
+              {
+                "ko": "제일",
+                "roman": "jeil",
+                "literal": "paling"
+              },
+              {
+                "ko": "재미있어요",
+                "roman": "jaemiisseoyo",
+                "literal": "menarik"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Apa",
+                "ref": 2
+              },
+              {
+                "text": "yang paling",
+                "ref": 4
+              },
+              {
+                "text": "menarik",
+                "ref": 5
+              },
+              {
+                "text": "di Korea",
+                "ref": 0
+              }
+            ]
+          },
+          "speak": "한국에서 뭐가 제일 재미있어요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "음식하고 카페 문화가 재미있어요.",
+          "roman": "eumsikhago kape munhwaga jaemiisseoyo",
+          "id": "Makanan dan budaya kafenya menarik.",
+          "map": {
+            "units": [
+              {
+                "ko": "음식",
+                "roman": "eumsik",
+                "literal": "makanan"
+              },
+              {
+                "ko": "하고",
+                "roman": "hago",
+                "literal": "dan"
+              },
+              {
+                "ko": "카페 문화",
+                "roman": "kape munhwa",
+                "literal": "budaya kafe"
+              },
+              {
+                "ko": "가",
+                "roman": "ga",
+                "literal": "subjek"
+              },
+              {
+                "ko": "재미있어요",
+                "roman": "jaemiisseoyo",
+                "literal": "menarik"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Makanan",
+                "ref": 0
+              },
+              {
+                "text": "dan",
+                "ref": 1
+              },
+              {
+                "text": "budaya kafe",
+                "ref": 2
+              },
+              {
+                "text": "menarik",
+                "ref": 4
+              }
+            ]
+          },
+          "speak": "음식하고 카페 문화가 재미있어요."
+        },
+        {
+          "speaker": "A",
+          "ko": "나중에 같이 커피 마실까요?",
+          "roman": "najunge gachi keopi masilkkayo",
+          "id": "Nanti mau minum kopi bersama?",
+          "map": {
+            "units": [
+              {
+                "ko": "나중에",
+                "roman": "najunge",
+                "literal": "nanti"
+              },
+              {
+                "ko": "같이",
+                "roman": "gachi",
+                "literal": "bersama"
+              },
+              {
+                "ko": "커피",
+                "roman": "keopi",
+                "literal": "kopi"
+              },
+              {
+                "ko": "마실까요",
+                "roman": "masilkkayo",
+                "literal": "maukah minum"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Nanti",
+                "ref": 0
+              },
+              {
+                "text": "mau minum",
+                "ref": 3
+              },
+              {
+                "text": "kopi",
+                "ref": 2
+              },
+              {
+                "text": "bersama",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "나중에 같이 커피 마실까요?"
+        },
+        {
+          "speaker": "B",
+          "ko": "좋아요. 연락해 주세요.",
+          "roman": "joayo. yeollakae juseyo",
+          "id": "Boleh. Tolong hubungi saya.",
+          "map": {
+            "units": [
+              {
+                "ko": "좋아요",
+                "roman": "joayo",
+                "literal": "baik/suka"
+              },
+              {
+                "ko": "연락해",
+                "roman": "yeollakae",
+                "literal": "hubungi"
+              },
+              {
+                "ko": "주세요",
+                "roman": "juseyo",
+                "literal": "tolong"
+              }
+            ],
+            "natural": [
+              {
+                "text": "Boleh",
+                "ref": 0
+              },
+              {
+                "text": "Tolong",
+                "ref": 2
+              },
+              {
+                "text": "hubungi saya",
+                "ref": 1
+              }
+            ]
+          },
+          "speak": "좋아요. 연락해 주세요."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Minji berasal dari mana?",
+      "options": [
+        "Indonesia",
+        "Korea",
+        "Jepang",
+        "Taiwan"
+      ],
+      "answer": 0,
+      "explain": "Dia berkata 인도네시아에서 왔어요."
+    },
+    {
+      "question": "Sudah berapa lama dia di Korea?",
+      "options": [
+        "dua bulan",
+        "dua tahun",
+        "dua minggu",
+        "lima bulan"
+      ],
+      "answer": 0,
+      "explain": "두 달 정도."
+    },
+    {
+      "question": "Apa yang sedang dipelajari Minji?",
+      "options": [
+        "bahasa Korea",
+        "bahasa Jepang",
+        "memasak",
+        "musik"
+      ],
+      "answer": 0,
+      "explain": "한국어를 공부하고 있어요."
+    },
+    {
+      "question": "Seberapa sering dia belajar?",
+      "options": [
+        "setiap hari sedikit demi sedikit",
+        "seminggu sekali",
+        "tidak belajar",
+        "hanya akhir pekan"
+      ],
+      "answer": 0,
+      "explain": "매일 조금씩."
+    },
+    {
+      "question": "Apa yang menurutnya menarik?",
+      "options": [
+        "makanan dan budaya kafe",
+        "cuaca",
+        "sekolah",
+        "olahraga"
+      ],
+      "answer": 0,
+      "explain": "음식하고 카페 문화."
+    },
+    {
+      "question": "Apa ajakan Daniel?",
+      "options": [
+        "minum kopi bersama",
+        "pergi ke sekolah",
+        "makan malam",
+        "belanja"
+      ],
+      "answer": 0,
+      "explain": "같이 커피 마실까요?"
+    },
+    {
+      "question": "연락해 주세요 berarti…",
+      "options": [
+        "tolong hubungi saya",
+        "tolong tunggu",
+        "tolong duduk",
+        "tolong bayar"
+      ],
+      "answer": 0,
+      "explain": "연락하다 = menghubungi."
+    },
+    {
+      "question": "어느 나라에서 왔어요? menanyakan…",
+      "options": [
+        "negara asal",
+        "umur",
+        "pekerjaan",
+        "alamat"
+      ],
+      "answer": 0,
+      "explain": "Negara dari mana datang."
+    },
+    {
+      "question": "얼마나 있었어요? menanyakan…",
+      "options": [
+        "berapa lama tinggal/berada",
+        "berapa harga",
+        "berapa orang",
+        "berapa umur"
+      ],
+      "answer": 0,
+      "explain": "얼마나 + 있다."
+    },
+    {
+      "question": "처음 뵙겠습니다 dipakai saat…",
+      "options": [
+        "pertama kali bertemu secara sopan",
+        "berpisah",
+        "memesan makanan",
+        "membayar"
+      ],
+      "answer": 0,
+      "explain": "Ungkapan perkenalan formal/sopan."
+    }
+  ]
+}
