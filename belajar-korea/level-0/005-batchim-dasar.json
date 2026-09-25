@@ -1,0 +1,148 @@
+{
+  "id": "ko-l0-005",
+  "level": "Level 0 · Hangul",
+  "order": 5,
+  "title": "Batchim dasar: konsonan di akhir suku kata",
+  "subtitle": "Belajar membaca konsonan akhir tanpa masuk terlalu jauh ke perubahan bunyi lanjutan.",
+  "intro": "Batchim (받침) adalah konsonan yang berada di bagian bawah blok suku kata. Walaupun banyak huruf dapat ditulis sebagai batchim, bunyi akhirnya dikelompokkan ke beberapa bunyi dasar.",
+  "tip": "Untuk tahap awal, fokus pada bunyi akhir representatif: ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅇ. Aturan perubahan bunyi antar-suku kata akan dibahas di Level 1.",
+  "progressStart": 38,
+  "objectives": [
+    "7 bunyi akhir",
+    "batchim",
+    "±10 menit"
+  ],
+  "prev": {
+    "title": "Pelajaran 4 · Vokal gabungan",
+    "path": "level-0/004-vokal-gabungan.json"
+  },
+  "next": {
+    "title": "Lanjut ke Level 1 nanti",
+    "path": "../index.html#kurikulum"
+  },
+  "units": [
+    {
+      "char": "각",
+      "roman": "gak",
+      "hint": "Batchim ㄱ → bunyi akhir k pendek/tidak dilepas.",
+      "speak": "각",
+      "example": {
+        "ko": "각",
+        "roman": "gak",
+        "id": "ㄱ batchim"
+      }
+    },
+    {
+      "char": "산",
+      "roman": "san",
+      "hint": "Batchim ㄴ → n.",
+      "speak": "산",
+      "example": {
+        "ko": "산",
+        "roman": "san",
+        "id": "gunung"
+      }
+    },
+    {
+      "char": "옷",
+      "roman": "ot",
+      "hint": "ㅅ sebagai batchim masuk kelompok bunyi akhir ㄷ/t.",
+      "speak": "옷",
+      "example": {
+        "ko": "옷",
+        "roman": "ot",
+        "id": "pakaian"
+      }
+    },
+    {
+      "char": "달",
+      "roman": "dal",
+      "hint": "Batchim ㄹ → l.",
+      "speak": "달",
+      "example": {
+        "ko": "달",
+        "roman": "dal",
+        "id": "bulan"
+      }
+    },
+    {
+      "char": "밤",
+      "roman": "bam",
+      "hint": "Batchim ㅁ → m.",
+      "speak": "밤",
+      "example": {
+        "ko": "밤",
+        "roman": "bam",
+        "id": "malam"
+      }
+    },
+    {
+      "char": "밥",
+      "roman": "bap",
+      "hint": "Batchim ㅂ → p pendek/tidak dilepas.",
+      "speak": "밥",
+      "example": {
+        "ko": "밥",
+        "roman": "bap",
+        "id": "nasi / makan"
+      }
+    },
+    {
+      "char": "방",
+      "roman": "bang",
+      "hint": "Batchim ㅇ → ng.",
+      "speak": "방",
+      "example": {
+        "ko": "방",
+        "roman": "bang",
+        "id": "kamar"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Pada kata 방, batchim ㅇ berbunyi…",
+      "options": [
+        "diam",
+        "n",
+        "ng",
+        "m"
+      ],
+      "answer": 2,
+      "explain": "ㅇ di akhir suku kata berbunyi ng."
+    },
+    {
+      "question": "Pada 달, bunyi akhir ㄹ paling dekat dengan…",
+      "options": [
+        "l",
+        "m",
+        "k",
+        "ng"
+      ],
+      "answer": 0,
+      "explain": "ㄹ sebagai batchim direalisasikan sebagai bunyi l."
+    },
+    {
+      "question": "Mana yang memiliki batchim ㅁ?",
+      "options": [
+        "밤",
+        "방",
+        "밥",
+        "산"
+      ],
+      "answer": 0,
+      "explain": "밤 berakhir dengan ㅁ."
+    },
+    {
+      "question": "Kenapa 옷 berakhir dengan bunyi t walaupun ditulis ㅅ?",
+      "options": [
+        "karena ㅅ selalu dibaca t",
+        "karena sebagai batchim ㅅ termasuk kelompok bunyi akhir ㄷ/t",
+        "karena ㅗ mengubah ㅅ menjadi t",
+        "karena ada ㅇ tersembunyi"
+      ],
+      "answer": 1,
+      "explain": "Dalam posisi batchim, beberapa huruf dinetralkan ke kelompok bunyi akhir tertentu; ㅅ masuk kelompok ㄷ/t."
+    }
+  ]
+}
