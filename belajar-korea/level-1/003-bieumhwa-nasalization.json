@@ -234,7 +234,36 @@
       "example": {
         "ko": "국물이 맛있어요",
         "roman": "gungmuri masisseoyo",
-        "id": "kuahnya enak"
+        "id": "kuahnya enak",
+        "map": {
+          "units": [
+            {
+              "ko": "국물",
+              "roman": "gungmul",
+              "literal": "kuah"
+            },
+            {
+              "ko": "이",
+              "roman": "i",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "맛있어요",
+              "roman": "masisseoyo",
+              "literal": "enak"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Kuahnya",
+              "ref": 0
+            },
+            {
+              "text": "enak",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -245,7 +274,31 @@
       "example": {
         "ko": "먹는 사람",
         "roman": "meongneun saram",
-        "id": "orang yang makan"
+        "id": "orang yang makan",
+        "map": {
+          "units": [
+            {
+              "ko": "먹는",
+              "roman": "meongneun",
+              "literal": "yang makan"
+            },
+            {
+              "ko": "사람",
+              "roman": "saram",
+              "literal": "orang"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Orang",
+              "ref": 1
+            },
+            {
+              "text": "yang makan",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -256,7 +309,40 @@
       "example": {
         "ko": "앞문으로 가요",
         "roman": "ammun-euro gayo",
-        "id": "pergi lewat pintu depan"
+        "id": "pergi lewat pintu depan",
+        "map": {
+          "units": [
+            {
+              "ko": "앞문",
+              "roman": "ammun",
+              "literal": "pintu depan"
+            },
+            {
+              "ko": "으로",
+              "roman": "euro",
+              "literal": "melalui / lewat"
+            },
+            {
+              "ko": "가요",
+              "roman": "gayo",
+              "literal": "pergi"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Pergi",
+              "ref": 2
+            },
+            {
+              "text": "lewat",
+              "ref": 1
+            },
+            {
+              "text": "pintu depan",
+              "ref": 0
+            }
+          ]
+        }
       }
     }
   ],
