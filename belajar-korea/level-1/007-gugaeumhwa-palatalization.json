@@ -1,0 +1,259 @@
+{
+  "id": "ko-l1-007",
+  "level": "Level 1 · Pengucapan",
+  "order": 7,
+  "passScore": 80,
+  "title": "구개음화 — palatalization",
+  "subtitle": "ㄷ atau ㅌ di posisi batchim dapat berubah menjadi ㅈ atau ㅊ ketika bertemu 이/히.",
+  "intro": "구개음화 terjadi ketika bunyi lidah bergeser ke arah langit-langit keras karena pengaruh bunyi i. Dalam pola dasar, ㄷ + 이 → ㅈ이 dan ㅌ + 이 → ㅊ이.",
+  "tip": "Contoh kunci: 굳이 [구지], 같이 [가치], 해돋이 [해도지]. Ejaan tetap sama.",
+  "progressStart": 66,
+  "objectives": [
+    "ㄷ→ㅈ",
+    "ㅌ→ㅊ",
+    "이/히 environment"
+  ],
+  "prev": {
+    "title": "Pelajaran 6 · 유음화",
+    "path": "level-1/006-yueumhwa-liquidization.json"
+  },
+  "next": {
+    "title": "Pelajaran 8 · ㅎ 탈락",
+    "path": "level-1/008-hieut-drop.json"
+  },
+  "detailSections": [
+    {
+      "title": "Apa yang berubah?",
+      "paragraphs": [
+        "Ketika batchim ㄷ bertemu suku kata berikutnya yang dimulai 이, bunyi ㄷ dapat berubah menjadi ㅈ. Ketika batchim ㅌ bertemu 이, bunyinya dapat berubah menjadi ㅊ.",
+        "Proses ini biasanya muncul bersama liaison: konsonan akhir bergerak secara bunyi ke depan, lalu dipengaruhi oleh vokal ㅣ."
+      ]
+    },
+    {
+      "title": "Tulisan tidak diubah",
+      "paragraphs": [
+        "같이 tetap ditulis 같이, bukan 가치. Bentuk [가치] hanya menunjukkan bunyi yang terdengar.",
+        "굳이 tetap ditulis 굳이, tetapi diucapkan [구지]."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "굳 + 이",
+      "pronounced": "[구지]",
+      "steps": [
+        "굳 berakhir ㄷ.",
+        "이 dimulai ㅇ + ㅣ.",
+        "ㄷ tersambung ke ㅣ dan menjadi bunyi ㅈ."
+      ],
+      "note": "Tulisan tetap 굳이.",
+      "speak": "굳이"
+    },
+    {
+      "written": "같 + 이",
+      "pronounced": "[가치]",
+      "steps": [
+        "같 berakhir ㅌ.",
+        "이 dimulai ㅇ + ㅣ.",
+        "ㅌ tersambung dan berubah menjadi ㅊ."
+      ],
+      "note": "Tulisan tetap 같이.",
+      "speak": "같이"
+    },
+    {
+      "written": "해돋 + 이",
+      "pronounced": "[해도지]",
+      "steps": [
+        "돋 berakhir ㄷ.",
+        "이 dimulai vokal ㅣ.",
+        "ㄷ mengalami palatalization menjadi ㅈ."
+      ],
+      "note": "Tulisan tetap 해돋이.",
+      "speak": "해돋이"
+    },
+    {
+      "written": "맏 + 이",
+      "pronounced": "[마지]",
+      "steps": [
+        "맏 berakhir ㄷ.",
+        "이 mengikuti.",
+        "ㄷ + 이 → ㅈ이."
+      ],
+      "note": "Tulisan tetap 맏이.",
+      "speak": "맏이"
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "우리 같이 공부해요.",
+      "pronunciation": "[우리 가치 공부해요]",
+      "roman": "uri gachi gongbuhaeyo",
+      "id": "Mari belajar bersama.",
+      "note": "같이 → [가치].",
+      "speak": "우리 같이 공부해요."
+    },
+    {
+      "ko": "굳이 지금 갈 필요는 없어요.",
+      "pronunciation": "[구지 지금 갈 피료는 업써요]",
+      "roman": "guji jigeum gal piryoneun eopseoyo",
+      "id": "Tidak perlu harus pergi sekarang.",
+      "note": "굳이 → [구지].",
+      "speak": "굳이 지금 갈 필요는 없어요."
+    },
+    {
+      "ko": "해돋이를 보러 갔어요.",
+      "pronunciation": "[해도지를 보러 가써요]",
+      "roman": "haedojireul boreo gasseoyo",
+      "id": "Saya pergi untuk melihat matahari terbit.",
+      "note": "해돋이 → [해도지].",
+      "speak": "해돋이를 보러 갔어요."
+    }
+  ],
+  "units": [
+    {
+      "char": "같이",
+      "roman": "gachi",
+      "hint": "ㅌ + 이 → ㅊ이.",
+      "speak": "같이",
+      "example": {
+        "ko": "같이 가요",
+        "roman": "gachi gayo",
+        "id": "pergi bersama"
+      }
+    },
+    {
+      "char": "굳이",
+      "roman": "guji",
+      "hint": "ㄷ + 이 → ㅈ이.",
+      "speak": "굳이",
+      "example": {
+        "ko": "굳이 안 해도 돼요",
+        "roman": "guji an haedo dwaeyo",
+        "id": "tidak harus dilakukan"
+      }
+    },
+    {
+      "char": "해돋이",
+      "roman": "haedoji",
+      "hint": "ㄷ + 이 → ㅈ이.",
+      "speak": "해돋이",
+      "example": {
+        "ko": "해돋이를 봐요",
+        "roman": "haedojireul bwayo",
+        "id": "melihat matahari terbit"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "같이 paling dekat dibaca…",
+      "options": [
+        "가치",
+        "가티",
+        "간지",
+        "가씨"
+      ],
+      "answer": 0,
+      "explain": "ㅌ + 이 → ㅊ."
+    },
+    {
+      "question": "굳이 paling dekat dibaca…",
+      "options": [
+        "구지",
+        "구디",
+        "군니",
+        "구치"
+      ],
+      "answer": 0,
+      "explain": "ㄷ + 이 → ㅈ."
+    },
+    {
+      "question": "해돋이 paling dekat dibaca…",
+      "options": [
+        "해도지",
+        "해도디",
+        "해돈니",
+        "해도치"
+      ],
+      "answer": 0,
+      "explain": "ㄷ + 이 mengalami palatalization."
+    },
+    {
+      "question": "구개음화 dasar melibatkan perubahan ㄷ menjadi…",
+      "options": [
+        "ㅈ",
+        "ㅊ",
+        "ㄴ",
+        "ㅁ"
+      ],
+      "answer": 0,
+      "explain": "ㄷ + 이 → ㅈ이."
+    },
+    {
+      "question": "ㅌ sebelum 이 cenderung menjadi…",
+      "options": [
+        "ㅊ",
+        "ㅈ",
+        "ㄸ",
+        "ㅆ"
+      ],
+      "answer": 0,
+      "explain": "ㅌ + 이 → ㅊ이."
+    },
+    {
+      "question": "Vokal yang mendorong palatalization di pola ini adalah…",
+      "options": [
+        "ㅣ",
+        "ㅏ",
+        "ㅗ",
+        "ㅡ"
+      ],
+      "answer": 0,
+      "explain": "Bunyi i menarik artikulasi ke palatal."
+    },
+    {
+      "question": "Apakah 같이 harus ditulis 가치?",
+      "options": [
+        "ya",
+        "tidak, tetap 같이",
+        "hanya di chat",
+        "hanya formal"
+      ],
+      "answer": 1,
+      "explain": "가치 hanya panduan bunyi."
+    },
+    {
+      "question": "Mana contoh 구개음화?",
+      "options": [
+        "같이 → 가치",
+        "국물 → 궁물",
+        "학교 → 학꾜",
+        "신라 → 실라"
+      ],
+      "answer": 0,
+      "explain": "Yang lain aturan berbeda."
+    },
+    {
+      "question": "Palatalization sering muncul bersama proses…",
+      "options": [
+        "liaison",
+        "hanya nasalization",
+        "hanya tensing",
+        "tidak ada proses lain"
+      ],
+      "answer": 0,
+      "explain": "Konsonan akhir tersambung lalu berubah karena ㅣ."
+    },
+    {
+      "question": "맏이 paling dekat dibaca…",
+      "options": [
+        "마지",
+        "마디",
+        "만니",
+        "마치"
+      ],
+      "answer": 0,
+      "explain": "ㄷ + 이 → ㅈ이."
+    }
+  ]
+}
