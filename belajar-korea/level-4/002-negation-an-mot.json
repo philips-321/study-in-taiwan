@@ -1,0 +1,806 @@
+{
+  "id": "ko-l4-002",
+  "level": "Level 4 · Grammar bertahap",
+  "order": 2,
+  "passScore": 80,
+  "title": "안 / 못 — dua jenis “tidak”",
+  "subtitle": "Bedakan tidak melakukan dengan tidak bisa melakukan.",
+  "intro": "안 adalah negasi sederhana: tidak melakukan/tidak demikian. 못 menunjukkan tidak mampu atau keadaan yang membuat tindakan tidak dapat dilakukan.",
+  "tip": "Tanya diri sendiri: 'tidak' karena pilihan/fakta, atau 'tidak bisa' karena kemampuan/kondisi?",
+  "progressStart": 84,
+  "objectives": [
+    "12 contoh",
+    "color map",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Pelajaran 1 · 아/어요",
+    "path": "level-4/001-present-ayo-eoyo.json"
+  },
+  "next": {
+    "title": "Pelajaran 3 · Past tense",
+    "path": "level-4/003-past-asseoyo-eosseoyo.json"
+  },
+  "sentences": [
+    {
+      "ko": "저는 커피를 안 마셔요.",
+      "roman": "jeoneun keopireul an masyeoyo",
+      "id": "Saya tidak minum kopi.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "커피",
+            "roman": "keopi",
+            "literal": "kopi"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "안",
+            "roman": "an",
+            "literal": "tidak"
+          },
+          {
+            "ko": "마셔요",
+            "roman": "masyeoyo",
+            "literal": "minum"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "tidak",
+            "ref": 4
+          },
+          {
+            "text": "minum",
+            "ref": 5
+          },
+          {
+            "text": "kopi",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저는 커피를 안 마셔요."
+    },
+    {
+      "ko": "오늘은 학교에 안 가요.",
+      "roman": "oneureun hakgyoe an gayo",
+      "id": "Hari ini saya tidak pergi ke sekolah.",
+      "map": {
+        "units": [
+          {
+            "ko": "오늘",
+            "roman": "oneul",
+            "literal": "hari ini"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "학교",
+            "roman": "hakgyo",
+            "literal": "sekolah"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "안",
+            "roman": "an",
+            "literal": "tidak"
+          },
+          {
+            "ko": "가요",
+            "roman": "gayo",
+            "literal": "pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Hari ini",
+            "ref": 0
+          },
+          {
+            "text": "saya tidak",
+            "ref": 4
+          },
+          {
+            "text": "pergi",
+            "ref": 5
+          },
+          {
+            "text": "ke sekolah",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "오늘은 학교에 안 가요."
+    },
+    {
+      "ko": "매운 음식을 못 먹어요.",
+      "roman": "maeun eumsigeul mot meogeoyo",
+      "id": "Saya tidak bisa makan makanan pedas.",
+      "map": {
+        "units": [
+          {
+            "ko": "매운",
+            "roman": "maeun",
+            "literal": "pedas"
+          },
+          {
+            "ko": "음식",
+            "roman": "eumsik",
+            "literal": "makanan"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "못",
+            "roman": "mot",
+            "literal": "tidak bisa"
+          },
+          {
+            "ko": "먹어요",
+            "roman": "meogeoyo",
+            "literal": "makan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tidak bisa",
+            "ref": 3
+          },
+          {
+            "text": "makan",
+            "ref": 4
+          },
+          {
+            "text": "makanan",
+            "ref": 1
+          },
+          {
+            "text": "pedas",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "매운 음식을 못 먹어요."
+    },
+    {
+      "ko": "저는 수영을 못 해요.",
+      "roman": "jeoneun suyeongeul mot haeyo",
+      "id": "Saya tidak bisa berenang.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "수영",
+            "roman": "suyeong",
+            "literal": "berenang"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "못",
+            "roman": "mot",
+            "literal": "tidak bisa"
+          },
+          {
+            "ko": "해요",
+            "roman": "haeyo",
+            "literal": "melakukan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "tidak bisa",
+            "ref": 4
+          },
+          {
+            "text": "berenang",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저는 수영을 못 해요."
+    },
+    {
+      "ko": "그 영화는 안 봐요.",
+      "roman": "geu yeonghwaneun an bwayo",
+      "id": "Saya tidak menonton film itu.",
+      "map": {
+        "units": [
+          {
+            "ko": "그",
+            "roman": "geu",
+            "literal": "itu"
+          },
+          {
+            "ko": "영화",
+            "roman": "yeonghwa",
+            "literal": "film"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "안",
+            "roman": "an",
+            "literal": "tidak"
+          },
+          {
+            "ko": "봐요",
+            "roman": "bwayo",
+            "literal": "menonton"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tidak",
+            "ref": 3
+          },
+          {
+            "text": "menonton",
+            "ref": 4
+          },
+          {
+            "text": "film",
+            "ref": 1
+          },
+          {
+            "text": "itu",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "그 영화는 안 봐요."
+    },
+    {
+      "ko": "어제는 운동을 못 했어요.",
+      "roman": "eojeneun undongeul mot haesseoyo",
+      "id": "Kemarin saya tidak bisa berolahraga.",
+      "map": {
+        "units": [
+          {
+            "ko": "어제",
+            "roman": "eoje",
+            "literal": "kemarin"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "운동",
+            "roman": "undong",
+            "literal": "olahraga"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "못",
+            "roman": "mot",
+            "literal": "tidak bisa"
+          },
+          {
+            "ko": "했어요",
+            "roman": "haesseoyo",
+            "literal": "melakukan lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kemarin",
+            "ref": 0
+          },
+          {
+            "text": "saya tidak bisa",
+            "ref": 4
+          },
+          {
+            "text": "berolahraga",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "어제는 운동을 못 했어요."
+    },
+    {
+      "ko": "아침을 안 먹었어요.",
+      "roman": "achimeul an meogeosseoyo",
+      "id": "Saya tidak sarapan.",
+      "map": {
+        "units": [
+          {
+            "ko": "아침",
+            "roman": "achim",
+            "literal": "sarapan/pagi"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "안",
+            "roman": "an",
+            "literal": "tidak"
+          },
+          {
+            "ko": "먹었어요",
+            "roman": "meogeosseoyo",
+            "literal": "makan lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tidak",
+            "ref": 2
+          },
+          {
+            "text": "sarapan",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "아침을 안 먹었어요."
+    },
+    {
+      "ko": "한국어를 잘 못 말해요.",
+      "roman": "hangugeoreul jal mot malhaeyo",
+      "id": "Saya belum bisa berbicara bahasa Korea dengan baik.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국어",
+            "roman": "hangugeo",
+            "literal": "bahasa Korea"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "잘",
+            "roman": "jal",
+            "literal": "dengan baik"
+          },
+          {
+            "ko": "못",
+            "roman": "mot",
+            "literal": "tidak bisa"
+          },
+          {
+            "ko": "말해요",
+            "roman": "malhaeyo",
+            "literal": "berbicara"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya belum bisa",
+            "ref": 3
+          },
+          {
+            "text": "berbicara",
+            "ref": 4
+          },
+          {
+            "text": "bahasa Korea",
+            "ref": 0
+          },
+          {
+            "text": "dengan baik",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국어를 잘 못 말해요."
+    },
+    {
+      "ko": "저는 술을 안 마셔요.",
+      "roman": "jeoneun sureul an masyeoyo",
+      "id": "Saya tidak minum alkohol.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "술",
+            "roman": "sul",
+            "literal": "alkohol"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "안",
+            "roman": "an",
+            "literal": "tidak"
+          },
+          {
+            "ko": "마셔요",
+            "roman": "masyeoyo",
+            "literal": "minum"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "tidak",
+            "ref": 4
+          },
+          {
+            "text": "minum",
+            "ref": 5
+          },
+          {
+            "text": "alkohol",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저는 술을 안 마셔요."
+    },
+    {
+      "ko": "비가 와서 밖에 못 나가요.",
+      "roman": "biga waseo bakke mot nagayo",
+      "id": "Saya tidak bisa keluar karena hujan.",
+      "map": {
+        "units": [
+          {
+            "ko": "비",
+            "roman": "bi",
+            "literal": "hujan"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "와서",
+            "roman": "waseo",
+            "literal": "karena turun"
+          },
+          {
+            "ko": "밖",
+            "roman": "bak",
+            "literal": "luar"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "못",
+            "roman": "mot",
+            "literal": "tidak bisa"
+          },
+          {
+            "ko": "나가요",
+            "roman": "nagayo",
+            "literal": "keluar"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tidak bisa",
+            "ref": 5
+          },
+          {
+            "text": "keluar",
+            "ref": 6
+          },
+          {
+            "text": "karena hujan",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "비가 와서 밖에 못 나가요."
+    },
+    {
+      "ko": "시간이 없어서 숙제를 못 해요.",
+      "roman": "sigani eopseoseo sukjereul mot haeyo",
+      "id": "Saya tidak bisa mengerjakan PR karena tidak ada waktu.",
+      "map": {
+        "units": [
+          {
+            "ko": "시간",
+            "roman": "sigan",
+            "literal": "waktu"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "subjek"
+          },
+          {
+            "ko": "없어서",
+            "roman": "eopseoseo",
+            "literal": "karena tidak ada"
+          },
+          {
+            "ko": "숙제",
+            "roman": "sukje",
+            "literal": "PR"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "못",
+            "roman": "mot",
+            "literal": "tidak bisa"
+          },
+          {
+            "ko": "해요",
+            "roman": "haeyo",
+            "literal": "melakukan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tidak bisa",
+            "ref": 5
+          },
+          {
+            "text": "mengerjakan",
+            "ref": 6
+          },
+          {
+            "text": "PR",
+            "ref": 3
+          },
+          {
+            "text": "karena tidak ada waktu",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "시간이 없어서 숙제를 못 해요."
+    },
+    {
+      "ko": "저는 늦게 안 자요.",
+      "roman": "jeoneun neutge an jayo",
+      "id": "Saya tidak tidur larut.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "늦게",
+            "roman": "neutge",
+            "literal": "larut"
+          },
+          {
+            "ko": "안",
+            "roman": "an",
+            "literal": "tidak"
+          },
+          {
+            "ko": "자요",
+            "roman": "jayo",
+            "literal": "tidur"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "tidak",
+            "ref": 3
+          },
+          {
+            "text": "tidur",
+            "ref": 4
+          },
+          {
+            "text": "larut",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저는 늦게 안 자요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "안 paling dekat berarti…",
+      "options": [
+        "tidak (pilihan/negasi biasa)",
+        "tidak bisa karena kemampuan/kondisi",
+        "sudah",
+        "akan"
+      ],
+      "answer": 0,
+      "explain": "안 menegasikan tindakan/sifat secara umum."
+    },
+    {
+      "question": "못 paling dekat berarti…",
+      "options": [
+        "tidak mau",
+        "tidak bisa",
+        "belum pernah",
+        "jangan"
+      ],
+      "answer": 1,
+      "explain": "못 menunjukkan ketidakmampuan atau keadaan yang menghalangi."
+    },
+    {
+      "question": "'Saya tidak pergi' paling natural…",
+      "options": [
+        "안 가요",
+        "못 가요 selalu",
+        "가 안요",
+        "안가요 tanpa spasi wajib"
+      ],
+      "answer": 0,
+      "explain": "안 가요 = tidak pergi."
+    },
+    {
+      "question": "'Saya tidak bisa berenang'…",
+      "options": [
+        "수영을 안 해요",
+        "수영을 못 해요",
+        "수영이 못이에요",
+        "못 수영이에요"
+      ],
+      "answer": 1,
+      "explain": "못 해요 menunjukkan tidak bisa."
+    },
+    {
+      "question": "Untuk 하다-verbs, 안 biasanya bisa menjadi…",
+      "options": [
+        "공부 안 해요",
+        "안 공부해요 saja",
+        "공부 못이에요",
+        "안 공부예요"
+      ],
+      "answer": 0,
+      "explain": "Sering diletakkan sebelum 해요: 공부 안 해요."
+    },
+    {
+      "question": "잘 못 말해요 berarti…",
+      "options": [
+        "berbicara tidak baik / belum bisa lancar",
+        "tidak mau bicara",
+        "bicara sangat baik",
+        "akan bicara"
+      ],
+      "answer": 0,
+      "explain": "잘 못 + verb = tidak dapat melakukan dengan baik."
+    },
+    {
+      "question": "안 마셔요 berarti…",
+      "options": [
+        "tidak minum",
+        "tidak bisa minum saja",
+        "sudah minum",
+        "ingin minum"
+      ],
+      "answer": 0,
+      "explain": "Negasi biasa."
+    },
+    {
+      "question": "못 나가요 berarti…",
+      "options": [
+        "tidak keluar karena pilihan",
+        "tidak bisa keluar",
+        "keluar sekarang",
+        "jangan keluar"
+      ],
+      "answer": 1,
+      "explain": "못 = tidak bisa."
+    },
+    {
+      "question": "Mana yang mengekspresikan kemampuan terhalang?",
+      "options": [
+        "못",
+        "안",
+        "도",
+        "만"
+      ],
+      "answer": 0,
+      "explain": "못."
+    },
+    {
+      "question": "Mana yang mengekspresikan negasi sederhana?",
+      "options": [
+        "안",
+        "못 saja",
+        "에서",
+        "에게"
+      ],
+      "answer": 0,
+      "explain": "안."
+    }
+  ]
+}
