@@ -1,0 +1,270 @@
+{
+  "id": "ko-l1-001",
+  "level": "Level 1 · Pengucapan",
+  "order": 1,
+  "passScore": 80,
+  "title": "받침 발음 규칙 — 7 bunyi akhir",
+  "subtitle": "Banyak huruf bisa ditulis sebagai batchim, tetapi di akhir suku kata bunyinya dinetralkan menjadi tujuh kelompok utama.",
+  "intro": "Ini fondasi semua aturan pengucapan berikutnya. Tulisan tetap memakai huruf aslinya, tetapi bunyi akhir yang terdengar sering lebih sederhana.",
+  "tip": "Hafalkan tujuh bunyi akhir representatif: ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅇ. Huruf lain bergabung ke salah satu kelompok ini.",
+  "progressStart": 42,
+  "objectives": [
+    "7 bunyi akhir",
+    "tulisan vs bunyi",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Level 0 · Batchim dasar",
+    "path": "level-0/005-batchim-dasar.json"
+  },
+  "next": {
+    "title": "Pelajaran 2 · 연음",
+    "path": "level-1/002-yeoneum-liaison.json"
+  },
+  "detailSections": [
+    {
+      "title": "Kenapa tulisan dan bunyi berbeda?",
+      "paragraphs": [
+        "Dalam Hangul, banyak konsonan dapat berada di posisi batchim, tetapi lidah dan mulut tidak melepaskan semua bunyi itu secara penuh di akhir suku kata. Karena itu, beberapa huruf berbeda terdengar sama ketika berada di posisi akhir.",
+        "Bentuk dalam tanda kurung siku, misalnya 옷 [옫], adalah panduan bunyi. Kata tetap ditulis 옷, bukan 옫."
+      ]
+    },
+    {
+      "title": "Tujuh kelompok utama",
+      "paragraphs": [
+        "ㄱ/ㅋ/ㄲ → bunyi akhir [ㄱ]. ㄴ → [ㄴ]. ㄷ/ㅅ/ㅆ/ㅈ/ㅊ/ㅌ/ㅎ → [ㄷ]. ㄹ → [ㄹ]. ㅁ → [ㅁ]. ㅂ/ㅍ → [ㅂ]. ㅇ → [ㅇ].",
+        "Aturan ini berlaku ketika bunyi berhenti pada akhir suku kata. Jika sesudahnya ada vokal atau aturan lain, hasilnya bisa berubah lagi."
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "written": "밖",
+      "pronounced": "[박]",
+      "steps": [
+        "Batchim aslinya ㄲ.",
+        "Di akhir suku kata, ㄲ masuk kelompok bunyi ㄱ.",
+        "Bunyinya berhenti sebagai [박]."
+      ],
+      "note": "Tulisan tetap 밖.",
+      "speak": "밖"
+    },
+    {
+      "written": "옷",
+      "pronounced": "[옫]",
+      "steps": [
+        "Batchim aslinya ㅅ.",
+        "ㅅ di akhir suku kata dinetralkan ke kelompok ㄷ.",
+        "Hasil bunyi akhirnya [옫]."
+      ],
+      "note": "Tulisan tetap 옷.",
+      "speak": "옷"
+    },
+    {
+      "written": "꽃",
+      "pronounced": "[꼳]",
+      "steps": [
+        "Batchim aslinya ㅊ.",
+        "ㅊ di akhir suku kata masuk kelompok ㄷ.",
+        "Bunyi akhirnya [꼳]."
+      ],
+      "note": "Tulisan tetap 꽃.",
+      "speak": "꽃"
+    },
+    {
+      "written": "앞",
+      "pronounced": "[압]",
+      "steps": [
+        "Batchim aslinya ㅍ.",
+        "ㅍ di akhir suku kata masuk kelompok ㅂ.",
+        "Bunyi akhirnya [압]."
+      ],
+      "note": "Tulisan tetap 앞.",
+      "speak": "앞"
+    },
+    {
+      "written": "부엌",
+      "pronounced": "[부억]",
+      "steps": [
+        "Batchim ㅋ berada di akhir.",
+        "ㅋ dinetralkan ke bunyi akhir ㄱ.",
+        "Hasilnya [부억]."
+      ],
+      "note": "Tulisan tetap 부엌.",
+      "speak": "부엌"
+    }
+  ],
+  "units": [
+    {
+      "char": "ㄱ 계열",
+      "roman": "k-type",
+      "hint": "ㄱ, ㅋ, ㄲ → bunyi akhir ㄱ.",
+      "speak": "밖",
+      "example": {
+        "ko": "밖",
+        "roman": "bak",
+        "id": "di luar"
+      }
+    },
+    {
+      "char": "ㄷ 계열",
+      "roman": "t-type",
+      "hint": "ㄷ, ㅅ, ㅆ, ㅈ, ㅊ, ㅌ, ㅎ → bunyi akhir ㄷ.",
+      "speak": "옷",
+      "example": {
+        "ko": "옷",
+        "roman": "ot",
+        "id": "pakaian"
+      }
+    },
+    {
+      "char": "ㅂ 계열",
+      "roman": "p-type",
+      "hint": "ㅂ, ㅍ → bunyi akhir ㅂ.",
+      "speak": "앞",
+      "example": {
+        "ko": "앞",
+        "roman": "ap",
+        "id": "depan"
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "ko": "밖이 추워요.",
+      "pronunciation": "[바끼 추워요]",
+      "roman": "bakki chuwoyo",
+      "id": "Di luar dingin.",
+      "note": "밖 sendiri berakhir [박], tetapi ketika bertemu 이 aturan berikutnya ikut bekerja.",
+      "speak": "밖이 추워요."
+    },
+    {
+      "ko": "옷이 예뻐요.",
+      "pronunciation": "[오시 예뻐요]",
+      "roman": "osi yeppeoyo",
+      "id": "Bajunya cantik.",
+      "note": "옷 sebagai kata tunggal berakhir [옫], tetapi sebelum 이 bunyinya tersambung. Ini akan dibahas di 연음.",
+      "speak": "옷이 예뻐요."
+    },
+    {
+      "ko": "부엌 문을 닫아요.",
+      "pronunciation": "[부엉 무늘 다다요]",
+      "roman": "bueong muneul dadayo",
+      "id": "Tutup pintu dapur.",
+      "note": "부엌 sendiri berakhir bunyi ㄱ-type.",
+      "speak": "부엌 문을 닫아요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Mana tujuh bunyi akhir representatif yang benar?",
+      "options": [
+        "ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅇ",
+        "ㄱ ㄴ ㄷ ㄹ ㅅ ㅈ ㅎ",
+        "ㄲ ㄸ ㅃ ㅆ ㅉ ㅋ ㅌ",
+        "ㅏ ㅓ ㅗ ㅜ ㅡ ㅣ ㅐ"
+      ],
+      "answer": 0,
+      "explain": "Tujuh bunyi akhir utama adalah ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅇ."
+    },
+    {
+      "question": "옷 ketika berhenti di akhir paling dekat berbunyi…",
+      "options": [
+        "[옷]",
+        "[옫]",
+        "[온]",
+        "[옹]"
+      ],
+      "answer": 1,
+      "explain": "ㅅ batchim dinetralkan ke ㄷ."
+    },
+    {
+      "question": "앞 sebagai kata tunggal paling dekat berbunyi…",
+      "options": [
+        "[앞] dengan hembusan p",
+        "[압]",
+        "[암]",
+        "[안]"
+      ],
+      "answer": 1,
+      "explain": "ㅍ batchim masuk kelompok ㅂ."
+    },
+    {
+      "question": "밖 paling dekat berbunyi…",
+      "options": [
+        "[박]",
+        "[밖] dengan ㄲ dilepas penuh",
+        "[밤]",
+        "[반]"
+      ],
+      "answer": 0,
+      "explain": "ㄲ batchim masuk kelompok ㄱ."
+    },
+    {
+      "question": "꽃 paling dekat berbunyi…",
+      "options": [
+        "[꼳]",
+        "[꼿]",
+        "[꼰]",
+        "[꼭]"
+      ],
+      "answer": 0,
+      "explain": "ㅊ batchim masuk kelompok ㄷ."
+    },
+    {
+      "question": "ㅋ sebagai batchim masuk kelompok…",
+      "options": [
+        "ㄱ",
+        "ㄴ",
+        "ㄷ",
+        "ㅂ"
+      ],
+      "answer": 0,
+      "explain": "ㅋ dinetralkan ke bunyi akhir ㄱ."
+    },
+    {
+      "question": "ㅍ sebagai batchim masuk kelompok…",
+      "options": [
+        "ㄷ",
+        "ㅂ",
+        "ㅁ",
+        "ㅇ"
+      ],
+      "answer": 1,
+      "explain": "ㅍ dinetralkan ke bunyi akhir ㅂ."
+    },
+    {
+      "question": "Apakah kata 옷 harus ditulis 옫 setelah belajar aturan ini?",
+      "options": [
+        "ya",
+        "tidak, ejaan tetap 옷",
+        "hanya di chat",
+        "hanya saat ujian"
+      ],
+      "answer": 1,
+      "explain": "Bentuk [옫] hanya menunjukkan pengucapan."
+    },
+    {
+      "question": "Aturan batchim dasar penting karena…",
+      "options": [
+        "menjadi dasar aturan bunyi berikutnya",
+        "mengubah semua ejaan",
+        "hanya untuk puisi",
+        "hanya untuk nama orang"
+      ],
+      "answer": 0,
+      "explain": "Banyak perubahan bunyi dimulai dari cara batchim direalisasikan."
+    },
+    {
+      "question": "Jika setelah batchim ada vokal, apakah hasil bunyi selalu tetap sama seperti saat kata berhenti?",
+      "options": [
+        "selalu",
+        "tidak, bisa terjadi 연음 atau aturan lain",
+        "hanya jika ada angka",
+        "tidak pernah berubah"
+      ],
+      "answer": 1,
+      "explain": "Lingkungan bunyi berikutnya dapat mengubah hasil."
+    }
+  ]
+}
