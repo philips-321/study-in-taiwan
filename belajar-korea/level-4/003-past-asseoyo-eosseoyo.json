@@ -1,0 +1,714 @@
+{
+  "id": "ko-l4-003",
+  "level": "Level 4 · Grammar bertahap",
+  "order": 3,
+  "passScore": 80,
+  "title": "았/었어요 — past tense",
+  "subtitle": "Menceritakan apa yang sudah terjadi.",
+  "intro": "Batang dengan ㅏ/ㅗ cenderung memakai 았어요; lainnya 었어요; 하다 menjadi 했어요. Banyak kontraksi umum harus dikenali sebagai satu pola bunyi.",
+  "tip": "Selalu hubungkan ending dengan penanda waktu seperti 어제, 지난주, 아까 agar makna waktunya terasa.",
+  "progressStart": 84,
+  "objectives": [
+    "12 contoh",
+    "color map",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Pelajaran 2 · 안/못",
+    "path": "level-4/002-negation-an-mot.json"
+  },
+  "next": {
+    "title": "Pelajaran 4 · Future",
+    "path": "level-4/004-future-eul-geoyeyo.json"
+  },
+  "sentences": [
+    {
+      "ko": "어제 친구를 만났어요.",
+      "roman": "eoje chingureul mannasseoyo",
+      "id": "Kemarin saya bertemu teman.",
+      "map": {
+        "units": [
+          {
+            "ko": "어제",
+            "roman": "eoje",
+            "literal": "kemarin"
+          },
+          {
+            "ko": "친구",
+            "roman": "chingu",
+            "literal": "teman"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "만났어요",
+            "roman": "mannasseoyo",
+            "literal": "bertemu lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kemarin",
+            "ref": 0
+          },
+          {
+            "text": "saya bertemu",
+            "ref": 3
+          },
+          {
+            "text": "teman",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "어제 친구를 만났어요."
+    },
+    {
+      "ko": "아침에 커피를 마셨어요.",
+      "roman": "achime keopireul masyeosseoyo",
+      "id": "Pagi tadi saya minum kopi.",
+      "map": {
+        "units": [
+          {
+            "ko": "아침",
+            "roman": "achim",
+            "literal": "pagi"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "커피",
+            "roman": "keopi",
+            "literal": "kopi"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "마셨어요",
+            "roman": "masyeosseoyo",
+            "literal": "minum lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Pagi tadi",
+            "ref": 0
+          },
+          {
+            "text": "saya minum",
+            "ref": 4
+          },
+          {
+            "text": "kopi",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "아침에 커피를 마셨어요."
+    },
+    {
+      "ko": "지난주에 부산에 갔어요.",
+      "roman": "jinanjue busane gasseoyo",
+      "id": "Minggu lalu saya pergi ke Busan.",
+      "map": {
+        "units": [
+          {
+            "ko": "지난주",
+            "roman": "jinanju",
+            "literal": "minggu lalu"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "부산",
+            "roman": "Busan",
+            "literal": "Busan"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "갔어요",
+            "roman": "gasseoyo",
+            "literal": "pergi lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Minggu lalu",
+            "ref": 0
+          },
+          {
+            "text": "saya pergi",
+            "ref": 4
+          },
+          {
+            "text": "ke Busan",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "지난주에 부산에 갔어요."
+    },
+    {
+      "ko": "어제 영화를 봤어요.",
+      "roman": "eoje yeonghwareul bwasseoyo",
+      "id": "Kemarin saya menonton film.",
+      "map": {
+        "units": [
+          {
+            "ko": "어제",
+            "roman": "eoje",
+            "literal": "kemarin"
+          },
+          {
+            "ko": "영화",
+            "roman": "yeonghwa",
+            "literal": "film"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "봤어요",
+            "roman": "bwasseoyo",
+            "literal": "menonton lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kemarin",
+            "ref": 0
+          },
+          {
+            "text": "saya menonton",
+            "ref": 3
+          },
+          {
+            "text": "film",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "어제 영화를 봤어요."
+    },
+    {
+      "ko": "주말에 집에서 쉬었어요.",
+      "roman": "jumare jibeseo swieosseoyo",
+      "id": "Akhir pekan lalu saya beristirahat di rumah.",
+      "map": {
+        "units": [
+          {
+            "ko": "주말",
+            "roman": "jumal",
+            "literal": "akhir pekan"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "쉬었어요",
+            "roman": "swieosseoyo",
+            "literal": "beristirahat lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Akhir pekan lalu",
+            "ref": 0
+          },
+          {
+            "text": "saya beristirahat",
+            "ref": 4
+          },
+          {
+            "text": "di rumah",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "주말에 집에서 쉬었어요."
+    },
+    {
+      "ko": "저녁에 한국 음식을 먹었어요.",
+      "roman": "jeonyeoge hanguk eumsigeul meogeosseoyo",
+      "id": "Tadi malam saya makan makanan Korea.",
+      "map": {
+        "units": [
+          {
+            "ko": "저녁",
+            "roman": "jeonyeok",
+            "literal": "malam"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "한국",
+            "roman": "hanguk",
+            "literal": "Korea"
+          },
+          {
+            "ko": "음식",
+            "roman": "eumsik",
+            "literal": "makanan"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "먹었어요",
+            "roman": "meogeosseoyo",
+            "literal": "makan lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Tadi malam",
+            "ref": 0
+          },
+          {
+            "text": "saya makan",
+            "ref": 5
+          },
+          {
+            "text": "makanan Korea",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저녁에 한국 음식을 먹었어요."
+    },
+    {
+      "ko": "어제 비가 많이 왔어요.",
+      "roman": "eoje biga mani wasseoyo",
+      "id": "Kemarin hujan turun deras.",
+      "map": {
+        "units": [
+          {
+            "ko": "어제",
+            "roman": "eoje",
+            "literal": "kemarin"
+          },
+          {
+            "ko": "비",
+            "roman": "bi",
+            "literal": "hujan"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "많이",
+            "roman": "mani",
+            "literal": "banyak/deras"
+          },
+          {
+            "ko": "왔어요",
+            "roman": "wasseoyo",
+            "literal": "datang/turun lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kemarin",
+            "ref": 0
+          },
+          {
+            "text": "hujan",
+            "ref": 1
+          },
+          {
+            "text": "turun deras",
+            "ref": 4
+          }
+        ]
+      },
+      "note": "",
+      "speak": "어제 비가 많이 왔어요."
+    },
+    {
+      "ko": "숙제를 다 했어요.",
+      "roman": "sukjereul da haesseoyo",
+      "id": "Saya sudah menyelesaikan semua PR.",
+      "map": {
+        "units": [
+          {
+            "ko": "숙제",
+            "roman": "sukje",
+            "literal": "PR"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "다",
+            "roman": "da",
+            "literal": "semua"
+          },
+          {
+            "ko": "했어요",
+            "roman": "haesseoyo",
+            "literal": "melakukan lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya sudah mengerjakan",
+            "ref": 3
+          },
+          {
+            "text": "semua",
+            "ref": 2
+          },
+          {
+            "text": "PR",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "숙제를 다 했어요."
+    },
+    {
+      "ko": "지난달에 새 집으로 이사했어요.",
+      "roman": "jinandare sae jibeuro isahaesseoyo",
+      "id": "Bulan lalu saya pindah ke rumah baru.",
+      "map": {
+        "units": [
+          {
+            "ko": "지난달",
+            "roman": "jinandal",
+            "literal": "bulan lalu"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "새",
+            "roman": "sae",
+            "literal": "baru"
+          },
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          },
+          {
+            "ko": "으로",
+            "roman": "euro",
+            "literal": "ke"
+          },
+          {
+            "ko": "이사했어요",
+            "roman": "isahaesseoyo",
+            "literal": "pindah lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Bulan lalu",
+            "ref": 0
+          },
+          {
+            "text": "saya pindah",
+            "ref": 5
+          },
+          {
+            "text": "ke rumah baru",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "지난달에 새 집으로 이사했어요."
+    },
+    {
+      "ko": "아침을 안 먹었어요.",
+      "roman": "achimeul an meogeosseoyo",
+      "id": "Saya tidak sarapan.",
+      "map": {
+        "units": [
+          {
+            "ko": "아침",
+            "roman": "achim",
+            "literal": "sarapan"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "안",
+            "roman": "an",
+            "literal": "tidak"
+          },
+          {
+            "ko": "먹었어요",
+            "roman": "meogeosseoyo",
+            "literal": "makan lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tidak",
+            "ref": 2
+          },
+          {
+            "text": "sarapan",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "아침을 안 먹었어요."
+    },
+    {
+      "ko": "어렸을 때 서울에 살았어요.",
+      "roman": "eoryeosseul ttae seoure sarasseoyo",
+      "id": "Saat kecil saya tinggal di Seoul.",
+      "map": {
+        "units": [
+          {
+            "ko": "어렸을 때",
+            "roman": "eoryeosseul ttae",
+            "literal": "saat kecil"
+          },
+          {
+            "ko": "서울",
+            "roman": "Seoul",
+            "literal": "Seoul"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "di"
+          },
+          {
+            "ko": "살았어요",
+            "roman": "sarasseoyo",
+            "literal": "tinggal lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saat kecil",
+            "ref": 0
+          },
+          {
+            "text": "saya tinggal",
+            "ref": 3
+          },
+          {
+            "text": "di Seoul",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "어렸을 때 서울에 살았어요."
+    },
+    {
+      "ko": "수업이 일찍 끝났어요.",
+      "roman": "sueobi iljjik kkeunnasseoyo",
+      "id": "Kelas selesai lebih awal.",
+      "map": {
+        "units": [
+          {
+            "ko": "수업",
+            "roman": "sueop",
+            "literal": "kelas"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "subjek"
+          },
+          {
+            "ko": "일찍",
+            "roman": "iljjik",
+            "literal": "lebih awal"
+          },
+          {
+            "ko": "끝났어요",
+            "roman": "kkeunnasseoyo",
+            "literal": "selesai lampau"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kelas",
+            "ref": 0
+          },
+          {
+            "text": "selesai",
+            "ref": 3
+          },
+          {
+            "text": "lebih awal",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "수업이 일찍 끝났어요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "가다 → past sopan?",
+      "options": [
+        "갔어요",
+        "가았어요",
+        "가요",
+        "갈 거예요"
+      ],
+      "answer": 0,
+      "explain": "가 + 았어요 → 갔어요."
+    },
+    {
+      "question": "먹다 → past?",
+      "options": [
+        "먹었어요",
+        "먹았어요",
+        "먹어요",
+        "먹겠어요"
+      ],
+      "answer": 0,
+      "explain": "먹 + 었어요."
+    },
+    {
+      "question": "하다 → past?",
+      "options": [
+        "했어요",
+        "하었어요",
+        "해요",
+        "할 거예요"
+      ],
+      "answer": 0,
+      "explain": "하다 → 했어요."
+    },
+    {
+      "question": "보다 → past?",
+      "options": [
+        "봤어요",
+        "보았어요 saja",
+        "봐요",
+        "볼 거예요"
+      ],
+      "answer": 0,
+      "explain": "보았어요 berkontraksi menjadi 봤어요."
+    },
+    {
+      "question": "마시다 → past?",
+      "options": [
+        "마셨어요",
+        "마시았어요",
+        "마셔요",
+        "마실래요"
+      ],
+      "answer": 0,
+      "explain": "마시 + 었어요 → 마셨어요."
+    },
+    {
+      "question": "았/었어요 menandai…",
+      "options": [
+        "masa lalu",
+        "masa depan",
+        "keinginan",
+        "kemampuan"
+      ],
+      "answer": 0,
+      "explain": "Past tense."
+    },
+    {
+      "question": "오다 → past?",
+      "options": [
+        "왔어요",
+        "오었어요",
+        "와요",
+        "올 거예요"
+      ],
+      "answer": 0,
+      "explain": "오 + 았어요 → 왔어요."
+    },
+    {
+      "question": "쉬다 → past?",
+      "options": [
+        "쉬었어요",
+        "쉬았어요",
+        "쉬어요",
+        "쉴 거예요"
+      ],
+      "answer": 0,
+      "explain": "쉬 + 었어요."
+    },
+    {
+      "question": "살다 → past?",
+      "options": [
+        "살았어요",
+        "살었어요",
+        "사랐어요",
+        "살아요"
+      ],
+      "answer": 0,
+      "explain": "살 + 았어요."
+    },
+    {
+      "question": "끝나다 → past?",
+      "options": [
+        "끝났어요",
+        "끝났어요? no",
+        "끝나요 saja",
+        "끝날 거예요"
+      ],
+      "answer": 0,
+      "explain": "끝나다 → 끝났어요."
+    }
+  ]
+}
