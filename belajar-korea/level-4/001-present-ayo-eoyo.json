@@ -1,0 +1,695 @@
+{
+  "id": "ko-l4-001",
+  "level": "Level 4 · Grammar bertahap",
+  "order": 1,
+  "passScore": 80,
+  "title": "아/어요 — present sopan",
+  "subtitle": "Bentuk dasar paling penting untuk kata kerja dan kata sifat dalam percakapan sehari-hari.",
+  "intro": "Buang 다 dari bentuk kamus lalu tambahkan 아요/어요 sesuai vokal batang; 하다 menjadi 해요. Banyak bentuk mengalami kontraksi alami.",
+  "tip": "Jangan hanya hafal tabel. Dengarkan pola berulang lewat 12 kalimat nyata.",
+  "progressStart": 84,
+  "objectives": [
+    "12 contoh",
+    "color map",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Level 3 · Aktivitas",
+    "path": "level-3/006-activities.json"
+  },
+  "next": {
+    "title": "Pelajaran 2 · 안 / 못",
+    "path": "level-4/002-negation-an-mot.json"
+  },
+  "sentences": [
+    {
+      "ko": "저는 매일 한국어를 공부해요.",
+      "roman": "jeoneun maeil hangugeoreul gongbuhaeyo",
+      "id": "Saya belajar bahasa Korea setiap hari.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "매일",
+            "roman": "maeil",
+            "literal": "setiap hari"
+          },
+          {
+            "ko": "한국어",
+            "roman": "hangugeo",
+            "literal": "bahasa Korea"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "공부해요",
+            "roman": "gongbuhaeyo",
+            "literal": "belajar"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "belajar",
+            "ref": 5
+          },
+          {
+            "text": "bahasa Korea",
+            "ref": 3
+          },
+          {
+            "text": "setiap hari",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저는 매일 한국어를 공부해요."
+    },
+    {
+      "ko": "아침에 커피를 마셔요.",
+      "roman": "achime keopireul masyeoyo",
+      "id": "Saya minum kopi pada pagi hari.",
+      "map": {
+        "units": [
+          {
+            "ko": "아침",
+            "roman": "achim",
+            "literal": "pagi"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "커피",
+            "roman": "keopi",
+            "literal": "kopi"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "마셔요",
+            "roman": "masyeoyo",
+            "literal": "minum"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya minum",
+            "ref": 4
+          },
+          {
+            "text": "kopi",
+            "ref": 2
+          },
+          {
+            "text": "pada pagi hari",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "아침에 커피를 마셔요."
+    },
+    {
+      "ko": "친구가 학교에 가요.",
+      "roman": "chinguga hakgyoe gayo",
+      "id": "Teman pergi ke sekolah.",
+      "map": {
+        "units": [
+          {
+            "ko": "친구",
+            "roman": "chingu",
+            "literal": "teman"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "학교",
+            "roman": "hakgyo",
+            "literal": "sekolah"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "ke"
+          },
+          {
+            "ko": "가요",
+            "roman": "gayo",
+            "literal": "pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Teman",
+            "ref": 0
+          },
+          {
+            "text": "pergi",
+            "ref": 4
+          },
+          {
+            "text": "ke sekolah",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "친구가 학교에 가요."
+    },
+    {
+      "ko": "저녁에 책을 읽어요.",
+      "roman": "jeonyeoge chaegeul ilgeoyo",
+      "id": "Saya membaca buku pada malam hari.",
+      "map": {
+        "units": [
+          {
+            "ko": "저녁",
+            "roman": "jeonyeok",
+            "literal": "malam"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "읽어요",
+            "roman": "ilgeoyo",
+            "literal": "membaca"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya membaca",
+            "ref": 4
+          },
+          {
+            "text": "buku",
+            "ref": 2
+          },
+          {
+            "text": "pada malam hari",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저녁에 책을 읽어요."
+    },
+    {
+      "ko": "주말에 운동해요.",
+      "roman": "jumare undonghaeyo",
+      "id": "Saya berolahraga pada akhir pekan.",
+      "map": {
+        "units": [
+          {
+            "ko": "주말",
+            "roman": "jumal",
+            "literal": "akhir pekan"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "운동해요",
+            "roman": "undonghaeyo",
+            "literal": "berolahraga"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya berolahraga",
+            "ref": 2
+          },
+          {
+            "text": "pada akhir pekan",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "주말에 운동해요."
+    },
+    {
+      "ko": "어머니가 요리해요.",
+      "roman": "eomeoniga yorihaeyo",
+      "id": "Ibu memasak.",
+      "map": {
+        "units": [
+          {
+            "ko": "어머니",
+            "roman": "eomeoni",
+            "literal": "ibu"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "요리해요",
+            "roman": "yorihaeyo",
+            "literal": "memasak"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Ibu",
+            "ref": 0
+          },
+          {
+            "text": "memasak",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "어머니가 요리해요."
+    },
+    {
+      "ko": "동생은 음악을 들어요.",
+      "roman": "dongsaengeun eumageul deureoyo",
+      "id": "Adik mendengarkan musik.",
+      "map": {
+        "units": [
+          {
+            "ko": "동생",
+            "roman": "dongsaeng",
+            "literal": "adik"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "음악",
+            "roman": "eumak",
+            "literal": "musik"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "들어요",
+            "roman": "deureoyo",
+            "literal": "mendengarkan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Adik",
+            "ref": 0
+          },
+          {
+            "text": "mendengarkan",
+            "ref": 4
+          },
+          {
+            "text": "musik",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "동생은 음악을 들어요."
+    },
+    {
+      "ko": "저는 서울에 살아요.",
+      "roman": "jeoneun seoure sarayo",
+      "id": "Saya tinggal di Seoul.",
+      "map": {
+        "units": [
+          {
+            "ko": "저",
+            "roman": "jeo",
+            "literal": "saya"
+          },
+          {
+            "ko": "는",
+            "roman": "neun",
+            "literal": "topik"
+          },
+          {
+            "ko": "서울",
+            "roman": "Seoul",
+            "literal": "Seoul"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "di"
+          },
+          {
+            "ko": "살아요",
+            "roman": "sarayo",
+            "literal": "tinggal"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya",
+            "ref": 0
+          },
+          {
+            "text": "tinggal",
+            "ref": 4
+          },
+          {
+            "text": "di Seoul",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "저는 서울에 살아요."
+    },
+    {
+      "ko": "수업은 아홉 시에 시작해요.",
+      "roman": "sueobeun ahop sie sijakaeyo",
+      "id": "Kelas dimulai pukul sembilan.",
+      "map": {
+        "units": [
+          {
+            "ko": "수업",
+            "roman": "sueop",
+            "literal": "kelas"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "아홉 시",
+            "roman": "ahop si",
+            "literal": "jam sembilan"
+          },
+          {
+            "ko": "에",
+            "roman": "e",
+            "literal": "pada"
+          },
+          {
+            "ko": "시작해요",
+            "roman": "sijakaeyo",
+            "literal": "mulai"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kelas",
+            "ref": 0
+          },
+          {
+            "text": "dimulai",
+            "ref": 4
+          },
+          {
+            "text": "pukul sembilan",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "수업은 아홉 시에 시작해요."
+    },
+    {
+      "ko": "날씨가 좋아요.",
+      "roman": "nalssiga joayo",
+      "id": "Cuacanya bagus.",
+      "map": {
+        "units": [
+          {
+            "ko": "날씨",
+            "roman": "nalssi",
+            "literal": "cuaca"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "좋아요",
+            "roman": "joayo",
+            "literal": "bagus"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Cuacanya",
+            "ref": 0
+          },
+          {
+            "text": "bagus",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "날씨가 좋아요."
+    },
+    {
+      "ko": "이 가방은 비싸요.",
+      "roman": "i gabangeun bissayo",
+      "id": "Tas ini mahal.",
+      "map": {
+        "units": [
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "ini"
+          },
+          {
+            "ko": "가방",
+            "roman": "gabang",
+            "literal": "tas"
+          },
+          {
+            "ko": "은",
+            "roman": "eun",
+            "literal": "topik"
+          },
+          {
+            "ko": "비싸요",
+            "roman": "bissayo",
+            "literal": "mahal"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Tas",
+            "ref": 1
+          },
+          {
+            "text": "ini",
+            "ref": 0
+          },
+          {
+            "text": "mahal",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "이 가방은 비싸요."
+    },
+    {
+      "ko": "한국 음식이 맛있어요.",
+      "roman": "hanguk eumsigi masisseoyo",
+      "id": "Makanan Korea enak.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국",
+            "roman": "hanguk",
+            "literal": "Korea"
+          },
+          {
+            "ko": "음식",
+            "roman": "eumsik",
+            "literal": "makanan"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "subjek"
+          },
+          {
+            "ko": "맛있어요",
+            "roman": "masisseoyo",
+            "literal": "enak"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Makanan",
+            "ref": 1
+          },
+          {
+            "text": "Korea",
+            "ref": 0
+          },
+          {
+            "text": "enak",
+            "ref": 3
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국 음식이 맛있어요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "가다 → bentuk sopan present?",
+      "options": [
+        "가요",
+        "가어요",
+        "갔어요",
+        "갈 거예요"
+      ],
+      "answer": 0,
+      "explain": "가다 → 가요."
+    },
+    {
+      "question": "먹다 → bentuk sopan present?",
+      "options": [
+        "먹아요",
+        "먹어요",
+        "먹었어요",
+        "먹고 싶어요"
+      ],
+      "answer": 1,
+      "explain": "Vokal batang ㅓ → 먹어요."
+    },
+    {
+      "question": "공부하다 → ?",
+      "options": [
+        "공부해요",
+        "공부하요",
+        "공부어요",
+        "공부했어요"
+      ],
+      "answer": 0,
+      "explain": "하다 → 해요."
+    },
+    {
+      "question": "보다 → ?",
+      "options": [
+        "보어요",
+        "봐요",
+        "봤어요",
+        "보여요"
+      ],
+      "answer": 1,
+      "explain": "보아요 berkontraksi menjadi 봐요."
+    },
+    {
+      "question": "마시다 → ?",
+      "options": [
+        "마셔요",
+        "마시어요 saja",
+        "마셨다",
+        "마실 거예요"
+      ],
+      "answer": 0,
+      "explain": "마시어요 → 마셔요."
+    },
+    {
+      "question": "아/어요 dipakai terutama untuk…",
+      "options": [
+        "present sopan sehari-hari",
+        "masa lalu saja",
+        "masa depan saja",
+        "perintah kasar"
+      ],
+      "answer": 0,
+      "explain": "Ini ending sopan informal paling umum."
+    },
+    {
+      "question": "하다 berubah menjadi…",
+      "options": [
+        "하아요",
+        "해요",
+        "히어요",
+        "했어요 selalu"
+      ],
+      "answer": 1,
+      "explain": "하다 → 해요."
+    },
+    {
+      "question": "좋다 → ?",
+      "options": [
+        "좋아요",
+        "좋어요",
+        "좋해요",
+        "조아요 sebagai ejaan"
+      ],
+      "answer": 0,
+      "explain": "Bentuk tulisnya 좋아요."
+    },
+    {
+      "question": "살다 → ?",
+      "options": [
+        "살아요",
+        "살어요",
+        "사라요",
+        "살해요"
+      ],
+      "answer": 0,
+      "explain": "살다 → 살아요."
+    },
+    {
+      "question": "읽다 → ?",
+      "options": [
+        "읽어요",
+        "읽아요",
+        "읽해요",
+        "일거요 sebagai ejaan"
+      ],
+      "answer": 0,
+      "explain": "Ditulis 읽어요; pengucapan [일거요]."
+    }
+  ]
+}
