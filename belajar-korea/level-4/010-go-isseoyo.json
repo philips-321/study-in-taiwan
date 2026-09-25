@@ -1,0 +1,634 @@
+{
+  "id": "ko-l4-010",
+  "level": "Level 4 · Grammar bertahap",
+  "order": 10,
+  "passScore": 80,
+  "title": "-고 있어요 — sedang",
+  "subtitle": "Menyatakan aktivitas atau keadaan yang sedang berlangsung.",
+  "intro": "Tambahkan -고 있어요 pada batang kata kerja. Selain aksi saat ini, pola ini juga dapat menggambarkan keadaan yang berlangsung dalam periode sekarang.",
+  "tip": "Jangan terjemahkan selalu secara kaku menjadi 'sedang'; 살고 있어요 sering cukup diterjemahkan 'tinggal'.",
+  "progressStart": 84,
+  "objectives": [
+    "12 contoh",
+    "color map",
+    "10 soal"
+  ],
+  "prev": {
+    "title": "Pelajaran 9 · 아/어야 해요",
+    "path": "level-4/009-aya-eoya-haeyo.json"
+  },
+  "next": {
+    "title": "Level 5 · Dialog perkenalan",
+    "path": "level-5/001-introduction-dialogue.json"
+  },
+  "sentences": [
+    {
+      "ko": "지금 한국어를 공부하고 있어요.",
+      "roman": "jigeum hangugeoreul gongbuhago isseoyo",
+      "id": "Sekarang saya sedang belajar bahasa Korea.",
+      "map": {
+        "units": [
+          {
+            "ko": "지금",
+            "roman": "jigeum",
+            "literal": "sekarang"
+          },
+          {
+            "ko": "한국어",
+            "roman": "hangugeo",
+            "literal": "bahasa Korea"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "공부하고 있어요",
+            "roman": "gongbuhago isseoyo",
+            "literal": "sedang belajar"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Sekarang",
+            "ref": 0
+          },
+          {
+            "text": "saya sedang belajar",
+            "ref": 3
+          },
+          {
+            "text": "bahasa Korea",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "지금 한국어를 공부하고 있어요."
+    },
+    {
+      "ko": "친구가 전화하고 있어요.",
+      "roman": "chinguga jeonhwahago isseoyo",
+      "id": "Teman sedang menelepon.",
+      "map": {
+        "units": [
+          {
+            "ko": "친구",
+            "roman": "chingu",
+            "literal": "teman"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "전화하고 있어요",
+            "roman": "jeonhwahago isseoyo",
+            "literal": "sedang menelepon"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Teman",
+            "ref": 0
+          },
+          {
+            "text": "sedang menelepon",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "친구가 전화하고 있어요."
+    },
+    {
+      "ko": "어머니가 저녁을 만들고 있어요.",
+      "roman": "eomeoniga jeonyeogeul mandeulgo isseoyo",
+      "id": "Ibu sedang membuat makan malam.",
+      "map": {
+        "units": [
+          {
+            "ko": "어머니",
+            "roman": "eomeoni",
+            "literal": "ibu"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "저녁",
+            "roman": "jeonyeok",
+            "literal": "makan malam"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "만들고 있어요",
+            "roman": "mandeulgo isseoyo",
+            "literal": "sedang membuat"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Ibu",
+            "ref": 0
+          },
+          {
+            "text": "sedang membuat",
+            "ref": 4
+          },
+          {
+            "text": "makan malam",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "어머니가 저녁을 만들고 있어요."
+    },
+    {
+      "ko": "아이들이 공원에서 놀고 있어요.",
+      "roman": "aideuri gongwoneseo nolgo isseoyo",
+      "id": "Anak-anak sedang bermain di taman.",
+      "map": {
+        "units": [
+          {
+            "ko": "아이들",
+            "roman": "aideul",
+            "literal": "anak-anak"
+          },
+          {
+            "ko": "이",
+            "roman": "i",
+            "literal": "subjek"
+          },
+          {
+            "ko": "공원",
+            "roman": "gongwon",
+            "literal": "taman"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "놀고 있어요",
+            "roman": "nolgo isseoyo",
+            "literal": "sedang bermain"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Anak-anak",
+            "ref": 0
+          },
+          {
+            "text": "sedang bermain",
+            "ref": 4
+          },
+          {
+            "text": "di taman",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "아이들이 공원에서 놀고 있어요."
+    },
+    {
+      "ko": "버스를 기다리고 있어요.",
+      "roman": "beoseureul gidarigo isseoyo",
+      "id": "Saya sedang menunggu bus.",
+      "map": {
+        "units": [
+          {
+            "ko": "버스",
+            "roman": "beoseu",
+            "literal": "bus"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "기다리고 있어요",
+            "roman": "gidarigo isseoyo",
+            "literal": "sedang menunggu"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya sedang menunggu",
+            "ref": 2
+          },
+          {
+            "text": "bus",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "버스를 기다리고 있어요."
+    },
+    {
+      "ko": "비가 내리고 있어요.",
+      "roman": "biga naerigo isseoyo",
+      "id": "Hujan sedang turun.",
+      "map": {
+        "units": [
+          {
+            "ko": "비",
+            "roman": "bi",
+            "literal": "hujan"
+          },
+          {
+            "ko": "가",
+            "roman": "ga",
+            "literal": "subjek"
+          },
+          {
+            "ko": "내리고 있어요",
+            "roman": "naerigo isseoyo",
+            "literal": "sedang turun"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Hujan",
+            "ref": 0
+          },
+          {
+            "text": "sedang turun",
+            "ref": 2
+          }
+        ]
+      },
+      "note": "",
+      "speak": "비가 내리고 있어요."
+    },
+    {
+      "ko": "책을 읽고 있어요.",
+      "roman": "chaegeul ilggo isseoyo",
+      "id": "Saya sedang membaca buku.",
+      "map": {
+        "units": [
+          {
+            "ko": "책",
+            "roman": "chaek",
+            "literal": "buku"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "읽고 있어요",
+            "roman": "ilggo isseoyo",
+            "literal": "sedang membaca"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya sedang membaca",
+            "ref": 2
+          },
+          {
+            "text": "buku",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "책을 읽고 있어요."
+    },
+    {
+      "ko": "회의를 하고 있어요.",
+      "roman": "hoeuireul hago isseoyo",
+      "id": "Kami sedang rapat.",
+      "map": {
+        "units": [
+          {
+            "ko": "회의",
+            "roman": "hoeui",
+            "literal": "rapat"
+          },
+          {
+            "ko": "를",
+            "roman": "reul",
+            "literal": "objek"
+          },
+          {
+            "ko": "하고 있어요",
+            "roman": "hago isseoyo",
+            "literal": "sedang melakukan"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Kami sedang",
+            "ref": 2
+          },
+          {
+            "text": "rapat",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "회의를 하고 있어요."
+    },
+    {
+      "ko": "음악을 들으면서 일하고 있어요.",
+      "roman": "eumageul deureumyeonseo ilhago isseoyo",
+      "id": "Saya sedang bekerja sambil mendengarkan musik.",
+      "map": {
+        "units": [
+          {
+            "ko": "음악",
+            "roman": "eumak",
+            "literal": "musik"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "들으면서",
+            "roman": "deureumyeonseo",
+            "literal": "sambil mendengarkan"
+          },
+          {
+            "ko": "일하고 있어요",
+            "roman": "ilhago isseoyo",
+            "literal": "sedang bekerja"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya sedang bekerja",
+            "ref": 3
+          },
+          {
+            "text": "sambil mendengarkan",
+            "ref": 2
+          },
+          {
+            "text": "musik",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "음악을 들으면서 일하고 있어요."
+    },
+    {
+      "ko": "지금 집으로 가고 있어요.",
+      "roman": "jigeum jibeuro gago isseoyo",
+      "id": "Sekarang saya sedang dalam perjalanan pulang.",
+      "map": {
+        "units": [
+          {
+            "ko": "지금",
+            "roman": "jigeum",
+            "literal": "sekarang"
+          },
+          {
+            "ko": "집",
+            "roman": "jip",
+            "literal": "rumah"
+          },
+          {
+            "ko": "으로",
+            "roman": "euro",
+            "literal": "ke arah"
+          },
+          {
+            "ko": "가고 있어요",
+            "roman": "gago isseoyo",
+            "literal": "sedang pergi"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Sekarang",
+            "ref": 0
+          },
+          {
+            "text": "saya sedang pergi",
+            "ref": 3
+          },
+          {
+            "text": "ke rumah",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "지금 집으로 가고 있어요."
+    },
+    {
+      "ko": "한국에서 살고 있어요.",
+      "roman": "hangugeseo salgo isseoyo",
+      "id": "Saya sedang tinggal di Korea.",
+      "map": {
+        "units": [
+          {
+            "ko": "한국",
+            "roman": "hanguk",
+            "literal": "Korea"
+          },
+          {
+            "ko": "에서",
+            "roman": "eseo",
+            "literal": "di"
+          },
+          {
+            "ko": "살고 있어요",
+            "roman": "salgo isseoyo",
+            "literal": "sedang tinggal"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Saya tinggal",
+            "ref": 2
+          },
+          {
+            "text": "di Korea",
+            "ref": 0
+          }
+        ]
+      },
+      "note": "",
+      "speak": "한국에서 살고 있어요."
+    },
+    {
+      "ko": "요즘 운동을 배우고 있어요.",
+      "roman": "yojeum undongeul baeugo isseoyo",
+      "id": "Akhir-akhir ini saya sedang belajar olahraga.",
+      "map": {
+        "units": [
+          {
+            "ko": "요즘",
+            "roman": "yojeum",
+            "literal": "akhir-akhir ini"
+          },
+          {
+            "ko": "운동",
+            "roman": "undong",
+            "literal": "olahraga"
+          },
+          {
+            "ko": "을",
+            "roman": "eul",
+            "literal": "objek"
+          },
+          {
+            "ko": "배우고 있어요",
+            "roman": "baeugo isseoyo",
+            "literal": "sedang belajar"
+          }
+        ],
+        "natural": [
+          {
+            "text": "Akhir-akhir ini",
+            "ref": 0
+          },
+          {
+            "text": "saya sedang belajar",
+            "ref": 3
+          },
+          {
+            "text": "olahraga",
+            "ref": 1
+          }
+        ]
+      },
+      "note": "",
+      "speak": "요즘 운동을 배우고 있어요."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "공부하다 → sedang belajar?",
+      "options": [
+        "공부하고 있어요",
+        "공부해 있어요",
+        "공부할 거예요",
+        "공부했어요"
+      ],
+      "answer": 0,
+      "explain": "Verb stem + 고 있어요."
+    },
+    {
+      "question": "먹다 → sedang makan?",
+      "options": [
+        "먹고 있어요",
+        "먹어 있어요",
+        "먹을 수 있어요",
+        "먹고 싶어요"
+      ],
+      "answer": 0,
+      "explain": "먹고 있어요."
+    },
+    {
+      "question": "가다 → sedang pergi?",
+      "options": [
+        "가고 있어요",
+        "가 있어요",
+        "갈 거예요",
+        "갔어요"
+      ],
+      "answer": 0,
+      "explain": "가고 있어요."
+    },
+    {
+      "question": "고 있어요 menandai…",
+      "options": [
+        "aksi/proses yang sedang berlangsung",
+        "masa lalu",
+        "keharusan",
+        "kontras"
+      ],
+      "answer": 0,
+      "explain": "Progressive/state in progress."
+    },
+    {
+      "question": "기다리다 → ?",
+      "options": [
+        "기다리고 있어요",
+        "기다려 있어요",
+        "기다릴 수 있어요",
+        "기다렸어요"
+      ],
+      "answer": 0,
+      "explain": "기다리고 있어요."
+    },
+    {
+      "question": "읽다 → sedang membaca?",
+      "options": [
+        "읽고 있어요",
+        "읽어 있어요",
+        "읽을 거예요",
+        "읽었어요"
+      ],
+      "answer": 0,
+      "explain": "읽고 있어요."
+    },
+    {
+      "question": "살고 있어요 sering berarti…",
+      "options": [
+        "sedang/masih tinggal",
+        "akan tinggal",
+        "sudah berhenti tinggal",
+        "ingin tinggal"
+      ],
+      "answer": 0,
+      "explain": "Ongoing state."
+    },
+    {
+      "question": "비가 내리고 있어요 berarti…",
+      "options": [
+        "hujan sedang turun",
+        "hujan akan turun",
+        "hujan sudah berhenti",
+        "tidak hujan"
+      ],
+      "answer": 0,
+      "explain": "Ongoing action."
+    },
+    {
+      "question": "회의를 하고 있어요 berarti…",
+      "options": [
+        "sedang rapat",
+        "ingin rapat",
+        "sudah rapat",
+        "harus rapat"
+      ],
+      "answer": 0,
+      "explain": "Progressive."
+    },
+    {
+      "question": "요즘 ... 배우고 있어요 menunjukkan…",
+      "options": [
+        "kegiatan yang sedang berlangsung akhir-akhir ini",
+        "satu kejadian lampau saja",
+        "future pasti",
+        "negasi"
+      ],
+      "answer": 0,
+      "explain": "Ongoing current period."
+    }
+  ]
+}
