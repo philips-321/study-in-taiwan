@@ -275,7 +275,36 @@
       "example": {
         "ko": "날씨가 좋다",
         "roman": "nalssiga jota",
-        "id": "cuacanya bagus"
+        "id": "cuacanya bagus",
+        "map": {
+          "units": [
+            {
+              "ko": "날씨",
+              "roman": "nalssi",
+              "literal": "cuaca"
+            },
+            {
+              "ko": "가",
+              "roman": "ga",
+              "literal": "penanda subjek"
+            },
+            {
+              "ko": "좋다",
+              "roman": "jota",
+              "literal": "bagus"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Cuacanya",
+              "ref": 0
+            },
+            {
+              "text": "bagus",
+              "ref": 2
+            }
+          ]
+        }
       }
     },
     {
@@ -286,7 +315,45 @@
       "example": {
         "ko": "책을 놓고 가요",
         "roman": "chaegeul noko gayo",
-        "id": "tinggalkan buku lalu pergi"
+        "id": "tinggalkan buku lalu pergi",
+        "map": {
+          "units": [
+            {
+              "ko": "책",
+              "roman": "chaek",
+              "literal": "buku"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "놓고",
+              "roman": "noko",
+              "literal": "meninggalkan lalu"
+            },
+            {
+              "ko": "가요",
+              "roman": "gayo",
+              "literal": "pergi"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Pergi",
+              "ref": 3
+            },
+            {
+              "text": "setelah meninggalkan",
+              "ref": 2
+            },
+            {
+              "text": "buku",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -297,7 +364,22 @@
       "example": {
         "ko": "축하해요",
         "roman": "chukahaeyo",
-        "id": "selamat"
+        "id": "selamat",
+        "map": {
+          "units": [
+            {
+              "ko": "축하해요",
+              "roman": "chukhahaeyo",
+              "literal": "selamat / mengucapkan selamat"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Selamat",
+              "ref": 0
+            }
+          ]
+        }
       }
     }
   ],
