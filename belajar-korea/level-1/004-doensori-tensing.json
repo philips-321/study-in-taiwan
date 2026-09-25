@@ -261,7 +261,40 @@
       "example": {
         "ko": "학교에 가요",
         "roman": "hakkkyoe gayo",
-        "id": "pergi ke sekolah"
+        "id": "pergi ke sekolah",
+        "map": {
+          "units": [
+            {
+              "ko": "학교",
+              "roman": "hakgyo",
+              "literal": "sekolah"
+            },
+            {
+              "ko": "에",
+              "roman": "e",
+              "literal": "ke"
+            },
+            {
+              "ko": "가요",
+              "roman": "gayo",
+              "literal": "pergi"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Pergi",
+              "ref": 2
+            },
+            {
+              "text": "ke",
+              "ref": 1
+            },
+            {
+              "text": "sekolah",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -272,7 +305,36 @@
       "example": {
         "ko": "밥을 먹다",
         "roman": "babeul meoktta",
-        "id": "makan"
+        "id": "makan",
+        "map": {
+          "units": [
+            {
+              "ko": "밥",
+              "roman": "bap",
+              "literal": "nasi"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "먹다",
+              "roman": "meoktta",
+              "literal": "makan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Makan",
+              "ref": 2
+            },
+            {
+              "text": "nasi",
+              "ref": 0
+            }
+          ]
+        }
       }
     },
     {
@@ -283,7 +345,36 @@
       "example": {
         "ko": "국밥을 먹어요",
         "roman": "gukppabeul meogeoyo",
-        "id": "makan gukbap"
+        "id": "makan gukbap",
+        "map": {
+          "units": [
+            {
+              "ko": "국밥",
+              "roman": "gukppap",
+              "literal": "gukbap"
+            },
+            {
+              "ko": "을",
+              "roman": "eul",
+              "literal": "penanda objek"
+            },
+            {
+              "ko": "먹어요",
+              "roman": "meogeoyo",
+              "literal": "makan"
+            }
+          ],
+          "natural": [
+            {
+              "text": "Makan",
+              "ref": 2
+            },
+            {
+              "text": "gukbap",
+              "ref": 0
+            }
+          ]
+        }
       }
     }
   ],
