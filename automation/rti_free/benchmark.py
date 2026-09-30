@@ -7,80 +7,152 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
-from pypinyin import Style, lazy_pinyin
 
-from generate import extract_article, ai_prompt, validate_material
+from generate import extract_article
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
 REF = json.loads((HERE / "benchmark_reference.json").read_text(encoding="utf-8"))
 CF_ACCOUNT = os.getenv("CLOUDFLARE_ACCOUNT_ID", "").strip()
 CF_TOKEN = os.getenv("CLOUDFLARE_API_TOKEN", "").strip()
+
 MODELS = [
     "@cf/zai-org/glm-4.7-flash",
     "@cf/aisingapore/gemma-sea-lion-v4-27b-it",
     "@cf/openai/gpt-oss-120b",
 ]
+
 SESSION = requests.Session()
 
-def norm(s):
-    return re.sub(r"[^0-9A-Za-z\u3400-\u9fff]+", "", str(s or "")).lower()
 
-def _extract_direct_payload(data):
-    if isinstance(data, dict) and data.get("success") is False:
-        raise RuntimeError(f"Cloudflare API error: {json.dumps(data, ensure_ascii=False)[:1600]}")
-    result = data.get("result", data) if isinstance(data, dict) else data
+def prompt(article):
+    return f"""You are being evaluated for factual preservation and Mandarin-Indonesian accuracy.
 
+SOURCE ARTICLE
+Title: {article['title']}
+URL: {article['url']}
+Text:
+---
+{article['body']}
+---
+
+Return ONLY a compact valid JSON object:
+{{
+  "title_zh": "short Traditional Chinese headline",
+  "sentences": [
+    {{"zh":"Traditional Chinese factual reconstruction","id":"natural Indonesian translation"}}
+  ],
+  "summary_id": "one concise natural Indonesian summary"
+}}
+
+Requirements:
+- Use 5-7 Traditional Chinese sentences.
+- Preserve ALL substantive facts from the source: names, organizations, dates, numbers, countries, locations, event sequence, exhibition structure, statements, and purpose.
+- Do not invent facts.
+- Paraphrase; do not copy long passages verbatim.
+- Indonesian must be natural and faithful to the Chinese sentence.
+- No pinyin, vocabulary table, explanations, reasoning, or markdown.
+- Output JSON immediately.
+"""
+
+
+def parse_json_text(text):
+    text = (text or "").strip()
+    text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.I)
+    text = re.sub(r"\s*```$", "", text)
+    return json.loads(text)
+
+
+def call_glm(article):
+    endpoint = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/ai/v1/chat/completions"
+    payload = {
+        "model": "@cf/zai-org/glm-4.7-flash",
+        "messages": [
+            {"role":"system","content":"Answer immediately without thinking text. Return only valid JSON."},
+            {"role":"user","content":prompt(article)}
+        ],
+        "temperature": 0.1,
+        "max_completion_tokens": 1400,
+        "chat_template_kwargs": {"enable_thinking": False},
+        "response_format": {"type":"json_object"}
+    }
+    r = SESSION.post(endpoint, headers={"Authorization":f"Bearer {CF_TOKEN}","Content-Type":"application/json"}, json=payload, timeout=90)
+    if r.status_code >= 400:
+        raise RuntimeError(f"HTTP {r.status_code}: {r.text[:1400]}")
+    data = r.json()
+    msg = data["choices"][0]["message"]
+    content = msg.get("content")
+    if not isinstance(content, str) or not content.strip():
+        raise RuntimeError(f"No final content: {json.dumps(data, ensure_ascii=False)[:1600]}")
+    return parse_json_text(content), data.get("usage", {})
+
+
+def call_sealion(article):
+    endpoint = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it"
+    payload = {
+        "messages": [
+            {"role":"system","content":"Return only valid compact JSON."},
+            {"role":"user","content":prompt(article)}
+        ],
+        "temperature": 0.1,
+        "max_tokens": 1800,
+        "response_format": {"type":"json_object"}
+    }
+    r = SESSION.post(endpoint, headers={"Authorization":f"Bearer {CF_TOKEN}","Content-Type":"application/json"}, json=payload, timeout=90)
+    if r.status_code >= 400:
+        raise RuntimeError(f"HTTP {r.status_code}: {r.text[:1400]}")
+    data = r.json()
+    result = data.get("result", data)
+    value = result.get("response") if isinstance(result, dict) else result
+    if isinstance(value, dict):
+        return value, result.get("usage", {}) if isinstance(result, dict) else {}
+    if isinstance(value, str):
+        return parse_json_text(value), result.get("usage", {}) if isinstance(result, dict) else {}
     if isinstance(result, dict):
-        response = result.get("response")
-        if isinstance(response, dict):
-            return response
-        if isinstance(response, str) and response.strip():
-            return response
-        for key in ("text", "content", "output_text"):
+        for key in ("text","content","output_text"):
             value = result.get(key)
             if isinstance(value, str) and value.strip():
-                return value
-        choices = result.get("choices")
-        if isinstance(choices, list) and choices:
-            msg = choices[0].get("message", {}) if isinstance(choices[0], dict) else {}
-            value = msg.get("content")
-            if isinstance(value, str) and value.strip():
-                return value
-    if isinstance(result, str) and result.strip():
-        return result
-    raise RuntimeError(f"No usable model output in response: {json.dumps(data, ensure_ascii=False)[:1600]}")
+                return parse_json_text(value), result.get("usage", {})
+    raise RuntimeError(f"No usable output: {json.dumps(data, ensure_ascii=False)[:1600]}")
+
+
+def call_gptoss(article):
+    endpoint = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/ai/v1/responses"
+    payload = {
+        "model": "@cf/openai/gpt-oss-120b",
+        "reasoning": {"effort":"low"},
+        "input": [
+            {"role":"system","content":"Return only valid compact JSON. Do not include reasoning."},
+            {"role":"user","content":prompt(article)}
+        ],
+        "max_output_tokens": 1600
+    }
+    r = SESSION.post(endpoint, headers={"Authorization":f"Bearer {CF_TOKEN}","Content-Type":"application/json"}, json=payload, timeout=90)
+    if r.status_code >= 400:
+        raise RuntimeError(f"HTTP {r.status_code}: {r.text[:1400]}")
+    data = r.json()
+
+    texts = []
+    for item in data.get("output", []):
+        if not isinstance(item, dict) or item.get("type") != "message":
+            continue
+        for part in item.get("content", []):
+            if isinstance(part, dict) and part.get("type") in ("output_text","text") and isinstance(part.get("text"), str):
+                texts.append(part["text"])
+    if not texts and isinstance(data.get("output_text"), str):
+        texts = [data["output_text"]]
+    if not texts:
+        raise RuntimeError(f"No final output text: {json.dumps(data, ensure_ascii=False)[:1600]}")
+    return parse_json_text("\n".join(texts)), data.get("usage", {})
 
 
 def call(model, article):
-    endpoint = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/ai/run/{model}"
-    payload = {
-        "messages": [
-            {"role":"system","content":"Return strict valid JSON only. Use Traditional Chinese and Indonesian exactly as requested."},
-            {"role":"user","content":ai_prompt(article) + "\nFor this benchmark, keep the reconstruction compact: 5-7 sentences, no repeated facts, and list each vocabulary item only once."}
-        ],
-        "temperature": 0.2,
-        "max_tokens": 3200,
-        "response_format": {"type":"json_object"}
-    }
-    headers = {
-        "Authorization": f"Bearer {CF_TOKEN}",
-        "Content-Type":"application/json"
-    }
-    r = SESSION.post(endpoint, headers=headers, json=payload, timeout=90)
-    if r.status_code >= 400 and "response_format" in r.text:
-        payload.pop("response_format", None)
-        r = SESSION.post(endpoint, headers=headers, json=payload, timeout=90)
-    if r.status_code >= 400:
-        raise RuntimeError(f"Cloudflare AI HTTP {r.status_code}: {r.text[:1600]}")
-    data = r.json()
-    value = _extract_direct_payload(data)
-    if isinstance(value, dict):
-        return value, (data.get("result", {}) or {}).get("usage", {}) if isinstance(data, dict) else {}
-    content = value.strip()
-    content = re.sub(r"^```(?:json)?\s*", "", content, flags=re.I)
-    content = re.sub(r"\s*```$", "", content)
-    return json.loads(content), (data.get("result", {}) or {}).get("usage", {}) if isinstance(data, dict) else {}
+    if model.endswith("glm-4.7-flash"):
+        return call_glm(article)
+    if model.endswith("gemma-sea-lion-v4-27b-it"):
+        return call_sealion(article)
+    if model.endswith("gpt-oss-120b"):
+        return call_gptoss(article)
+    raise ValueError(model)
 
 
 def fact_score(mat):
@@ -97,95 +169,84 @@ def fact_score(mat):
         results.append({"id":fact["id"],"ok":ok,"matched":matched,"description":fact["description"]})
     return results
 
-def token_coverage(mat):
-    rows = []
-    for idx, s in enumerate(mat.get("sentences", []), 1):
-        zh = norm(s.get("zh",""))
-        tok = norm("".join(str(t.get("hz","")) for t in s.get("tokens", [])))
-        rows.append({"sentence":idx,"ok":zh == tok,"zh_norm":zh,"tokens_norm":tok})
-    return rows
 
-def strip_marks(s):
-    return norm(s.replace("ü","v"))
+def valid_output(mat):
+    return (
+        isinstance(mat, dict)
+        and isinstance(mat.get("title_zh"), str)
+        and isinstance(mat.get("summary_id"), str)
+        and isinstance(mat.get("sentences"), list)
+        and 1 <= len(mat["sentences"]) <= 10
+        and all(isinstance(x, dict) and isinstance(x.get("zh"), str) and isinstance(x.get("id"), str) for x in mat["sentences"])
+    )
 
-def pinyin_heuristic(mat):
-    checked = 0
-    exact = 0
-    details = []
-    for si, s in enumerate(mat.get("sentences", []),1):
-        for ti, t in enumerate(s.get("tokens", []),1):
-            hz = str(t.get("hz",""))
-            given = str(t.get("py","")).strip()
-            if not hz or not re.search(r"[\u3400-\u9fff]", hz) or not given:
-                continue
-            expected = " ".join(lazy_pinyin(hz, style=Style.TONE, neutral_tone_with_five=False))
-            checked += 1
-            ok = strip_marks(given) == strip_marks(expected)
-            exact += int(ok)
-            if not ok and len(details) < 25:
-                details.append({"sentence":si,"token":ti,"hz":hz,"given":given,"dictionary":expected})
-    return {"checked":checked,"exact":exact,"rate":(exact/checked if checked else None),"mismatches":details,
-            "note":"Heuristic only: proper names/polyphonic characters may make dictionary pinyin disagree with context."}
 
 def main():
     if not CF_ACCOUNT or not CF_TOKEN:
         raise SystemExit("Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN")
+
     article = extract_article(REF["article_url"])
     if not article:
-        raise SystemExit("Could not extract benchmark RTI article")
+        raise SystemExit("Could not extract benchmark source")
+
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     outdir = HERE / "benchmark-results" / stamp
     outdir.mkdir(parents=True, exist_ok=True)
+
     summary = {
-        "timestamp":stamp,
-        "source":{"url":REF["article_url"],"title":REF["article_title"]},
-        "models":[]
+        "timestamp": stamp,
+        "source": {"url":REF["article_url"],"title":REF["article_title"]},
+        "models": []
     }
+
     for model in MODELS:
         print(f"START {model}", flush=True)
         slug = model.split("/")[-1]
         row = {"model":model}
         try:
             mat, usage = call(model, article)
-            valid = validate_material(mat)
+            valid = valid_output(mat)
             facts = fact_score(mat) if valid else []
-            coverage = token_coverage(mat) if valid else []
-            pinyin = pinyin_heuristic(mat) if valid else {}
             row.update({
-                "json_valid":True,
-                "structure_valid":valid,
-                "facts_passed":sum(1 for x in facts if x["ok"]),
-                "facts_total":len(facts),
-                "fact_results":facts,
-                "token_coverage_rate":(sum(1 for x in coverage if x["ok"])/len(coverage) if coverage else None),
-                "token_coverage":coverage,
-                "pinyin":pinyin,
-                "usage":usage
+                "json_valid": True,
+                "structure_valid": valid,
+                "facts_passed": sum(1 for x in facts if x["ok"]),
+                "facts_total": len(facts),
+                "fact_results": facts,
+                "sentence_count": len(mat.get("sentences", [])) if isinstance(mat, dict) else None,
+                "usage": usage
             })
+            (outdir / f"{slug}.json").write_text(json.dumps(mat, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             print(f"DONE {model}: facts={row['facts_passed']}/{row['facts_total']}", flush=True)
-            (outdir / f"{slug}.json").write_text(json.dumps(mat,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
         except Exception as e:
             print(f"FAIL {model}: {e}", flush=True)
-            row.update({"json_valid":False,"error":str(e)})
+            row.update({"json_valid":False,"structure_valid":False,"error":str(e)})
         summary["models"].append(row)
-        time.sleep(1.0)
-    (outdir/"summary.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+        time.sleep(0.5)
 
-    md = ["# RTI model benchmark", "", f"Source: {REF['article_url']}", "",
-          "| Model | JSON/structure | Source facts | Token coverage | Pinyin heuristic |",
-          "|---|---:|---:|---:|---:|"]
+    (outdir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    md = [
+        "# RTI factual-accuracy benchmark",
+        "",
+        f"Source: {REF['article_url']}",
+        "",
+        "| Model | Valid structured output | Source facts preserved |",
+        "|---|---:|---:|"
+    ]
     for row in summary["models"]:
         if row.get("structure_valid"):
-            pin = row["pinyin"].get("rate")
-            md.append(f"| {row['model']} | yes | {row['facts_passed']}/{row['facts_total']} | {row['token_coverage_rate']:.1%} | {pin:.1%} |")
+            md.append(f"| {row['model']} | yes | {row['facts_passed']}/{row['facts_total']} |")
         else:
-            md.append(f"| {row['model']} | no | — | — | — |")
-    md += ["", "## Important", "",
-           "The factual score checks preservation of a fixed checklist from the RTI source. It does not automatically prove absence of hallucinations.",
-           "Pinyin score is a dictionary heuristic and must be manually reviewed for names and polyphonic characters.",
-           "Natural Indonesian translation quality must be manually reviewed side-by-side from the raw JSON outputs."]
-    (outdir/"REPORT.md").write_text("\n".join(md)+"\n",encoding="utf-8")
-    print((outdir/"REPORT.md").read_text(encoding="utf-8"))
+            md.append(f"| {row['model']} | no | — |")
+    md += [
+        "",
+        "Fact preservation is checked against a fixed 14-item checklist derived from the source.",
+        "Raw model JSON is included for manual Mandarin-Indonesian review."
+    ]
+    (outdir / "REPORT.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    print("\n".join(md), flush=True)
+
 
 if __name__ == "__main__":
     main()
