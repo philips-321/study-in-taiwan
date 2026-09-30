@@ -1,0 +1,42 @@
+name: RTI Model Benchmark
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: automation/rti_free/requirements.txt
+
+      - run: pip install -r automation/rti_free/requirements.txt
+
+      - name: Verify Cloudflare secrets
+        run: |
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing CLOUDFLARE_ACCOUNT_ID"; exit 1; }
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "Missing CLOUDFLARE_API_TOKEN"; exit 1; }
+
+      - name: Run the same RTI article through all candidate free models
+        run: python automation/rti_free/benchmark.py
+
+      - name: Upload benchmark results only
+        uses: actions/upload-artifact@v4
+        with:
+          name: rti-model-benchmark
+          path: automation/rti_free/benchmark-results/
+          retention-days: 7
