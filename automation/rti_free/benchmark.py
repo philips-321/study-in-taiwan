@@ -26,28 +26,62 @@ SESSION = requests.Session()
 def norm(s):
     return re.sub(r"[^0-9A-Za-z\u3400-\u9fff]+", "", str(s or "")).lower()
 
+def _extract_direct_payload(data):
+    if isinstance(data, dict) and data.get("success") is False:
+        raise RuntimeError(f"Cloudflare API error: {json.dumps(data, ensure_ascii=False)[:1600]}")
+    result = data.get("result", data) if isinstance(data, dict) else data
+
+    if isinstance(result, dict):
+        response = result.get("response")
+        if isinstance(response, dict):
+            return response
+        if isinstance(response, str) and response.strip():
+            return response
+        for key in ("text", "content", "output_text"):
+            value = result.get(key)
+            if isinstance(value, str) and value.strip():
+                return value
+        choices = result.get("choices")
+        if isinstance(choices, list) and choices:
+            msg = choices[0].get("message", {}) if isinstance(choices[0], dict) else {}
+            value = msg.get("content")
+            if isinstance(value, str) and value.strip():
+                return value
+    if isinstance(result, str) and result.strip():
+        return result
+    raise RuntimeError(f"No usable model output in response: {json.dumps(data, ensure_ascii=False)[:1600]}")
+
+
 def call(model, article):
-    endpoint = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/ai/v1/chat/completions"
+    endpoint = f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/ai/run/{model}"
     payload = {
-        "model": model,
         "messages": [
             {"role":"system","content":"Return strict valid JSON only. Use Traditional Chinese and Indonesian exactly as requested."},
-            {"role":"user","content":ai_prompt(article)}
+            {"role":"user","content":ai_prompt(article) + "\nFor this benchmark, keep the reconstruction compact: 5-7 sentences, no repeated facts, and list each vocabulary item only once."}
         ],
         "temperature": 0.2,
-        "max_completion_tokens": 2600
+        "max_tokens": 3200,
+        "response_format": {"type":"json_object"}
     }
-    r = SESSION.post(endpoint, headers={
+    headers = {
         "Authorization": f"Bearer {CF_TOKEN}",
         "Content-Type":"application/json"
-    }, json=payload, timeout=90)
+    }
+    r = SESSION.post(endpoint, headers=headers, json=payload, timeout=90)
+    if r.status_code >= 400 and "response_format" in r.text:
+        payload.pop("response_format", None)
+        r = SESSION.post(endpoint, headers=headers, json=payload, timeout=90)
     if r.status_code >= 400:
-        raise RuntimeError(f"HTTP {r.status_code}: {r.text[:1200]}")
+        raise RuntimeError(f"Cloudflare AI HTTP {r.status_code}: {r.text[:1600]}")
     data = r.json()
-    content = data["choices"][0]["message"]["content"].strip()
+    value = _extract_direct_payload(data)
+    if isinstance(value, dict):
+        return value, (data.get("result", {}) or {}).get("usage", {}) if isinstance(data, dict) else {}
+    content = value.strip()
     content = re.sub(r"^```(?:json)?\s*", "", content, flags=re.I)
     content = re.sub(r"\s*```$", "", content)
-    return json.loads(content), data.get("usage", {})
+    return json.loads(content), (data.get("result", {}) or {}).get("usage", {}) if isinstance(data, dict) else {}
+
 
 def fact_score(mat):
     text = json.dumps(mat, ensure_ascii=False)
