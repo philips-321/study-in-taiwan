@@ -40,7 +40,7 @@ def call(model, article):
     r = SESSION.post(endpoint, headers={
         "Authorization": f"Bearer {CF_TOKEN}",
         "Content-Type":"application/json"
-    }, json=payload, timeout=240)
+    }, json=payload, timeout=90)
     if r.status_code >= 400:
         raise RuntimeError(f"HTTP {r.status_code}: {r.text[:1200]}")
     data = r.json()
@@ -108,6 +108,7 @@ def main():
         "models":[]
     }
     for model in MODELS:
+        print(f"START {model}", flush=True)
         slug = model.split("/")[-1]
         row = {"model":model}
         try:
@@ -127,8 +128,10 @@ def main():
                 "pinyin":pinyin,
                 "usage":usage
             })
+            print(f"DONE {model}: facts={row['facts_passed']}/{row['facts_total']}", flush=True)
             (outdir / f"{slug}.json").write_text(json.dumps(mat,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
         except Exception as e:
+            print(f"FAIL {model}: {e}", flush=True)
             row.update({"json_valid":False,"error":str(e)})
         summary["models"].append(row)
         time.sleep(1.0)
