@@ -1,0 +1,10 @@
+{
+  "model": "@cf/zai-org/glm-4.7-flash",
+  "max_articles": 20,
+  "max_source_chars": 9000,
+  "max_completion_tokens": 2600,
+  "lookback_hours": 36,
+  "template": "news/templates/v1/news-template.html",
+  "output_dir": "news",
+  "index": "news/index.html"
+}
