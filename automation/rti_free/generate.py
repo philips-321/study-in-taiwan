@@ -353,6 +353,21 @@ def render_page(items: list[tuple[dict, dict]]) -> str:
     suffix = template[last_script:]
     prefix = re.sub(r"<title>RTI Daily News — .*?</title>", f"<title>RTI Daily News — {DATE_LONG}</title>", prefix, count=1, flags=re.S)
     prefix = re.sub(r"<h1>RTI Daily News — .*?</h1>", f"<h1>RTI Daily News — {DATE_LONG}</h1>", prefix, count=1, flags=re.S)
+    prefix = re.sub(
+        r'<meta\\s+name=["\\\']robots["\\\']\\s+content=["\\\'][^"\\\']*["\\\']\\s*/?>',
+        '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">',
+        prefix,
+        count=1,
+        flags=re.I,
+    )
+    canonical = f'https://study-in-taiwan.com/news/news-{DATE_ISO}.html'
+    if 'rel="canonical"' not in prefix and "rel='canonical'" not in prefix:
+        prefix = prefix.replace(
+            '<meta name="viewport" content="width=device-width,initial-scale=1">',
+            '<meta name="viewport" content="width=device-width,initial-scale=1">\\n'
+            f'<link rel="canonical" href="{canonical}">',
+            1,
+        )
     sections = "".join(render_section(i + 1, a, m) for i, (a, m) in enumerate(items))
     return prefix + sections + suffix
 
