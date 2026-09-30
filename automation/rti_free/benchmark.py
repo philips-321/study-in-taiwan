@@ -94,7 +94,7 @@ def call_sealion(article):
             {"role":"user","content":prompt(article)}
         ],
         "temperature": 0.1,
-        "max_tokens": 1800,
+        "max_tokens": 3000,
         "response_format": {"type":"json_object"}
     }
     r = SESSION.post(endpoint, headers={"Authorization":f"Bearer {CF_TOKEN}","Content-Type":"application/json"}, json=payload, timeout=90)
