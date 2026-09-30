@@ -393,6 +393,19 @@ def update_index(count: int):
     path.write_text(text.replace(marker, marker + card, 1), encoding="utf-8")
 
 
+def update_sitemap():
+    path = ROOT / "sitemap.xml"
+    if not path.exists():
+        return
+    text = path.read_text(encoding="utf-8")
+    loc = f"https://study-in-taiwan.com/news/news-{DATE_ISO}.html"
+    if loc in text:
+        return
+    entry = f'  <url><loc>{loc}</loc><lastmod>{DATE_ISO}</lastmod></url>\n'
+    text = text.replace("</urlset>", entry + "</urlset>", 1)
+    path.write_text(text, encoding="utf-8")
+
+
 def main():
     print(f"RTI free automation date={DATE_ISO}, model={MODEL}, max_articles={MAX_ARTICLES}")
     articles = latest_articles()
@@ -417,6 +430,7 @@ def main():
     out = ROOT / CFG["output_dir"] / f"news-{DATE_ISO}.html"
     out.write_text(render_page(results), encoding="utf-8")
     update_index(len(results))
+    update_sitemap()
     manifest = {
         "date": DATE_ISO,
         "generated_at": datetime.now(timezone.utc).isoformat(),
