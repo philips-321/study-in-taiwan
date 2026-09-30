@@ -17,8 +17,7 @@ jobs:
         shell: bash
         run: |
           python - <<'PY'
-          import requests, re
-          from bs4 import BeautifulSoup
+          import requests, re, html
 
           targets = [
               ("RSS", "https://www.rti.org.tw/rss"),
@@ -26,29 +25,34 @@ jobs:
               ("Robots", "https://www.rti.org.tw/robots.txt"),
           ]
           headers = {"User-Agent":"Mozilla/5.0","Accept-Language":"zh-TW,zh;q=0.9"}
+
           for name, url in targets:
               try:
                   r = requests.get(url, headers=headers, timeout=20, allow_redirects=True)
                   print(f"=== {name} ===")
                   print(f"status={r.status_code} len={len(r.content)} final={r.url}")
-                  text = r.text[:120000]
+                  text = r.text[:150000]
                   if r.status_code == 200:
-                      soup = BeautifulSoup(text, "html.parser")
-                      pairs = []
-                      for a in soup.find_all("a", href=True):
-                          title = " ".join(a.stripped_strings)
-                          href = a.get("href","")
-                          if title and ("news" in href or "pid=" in href):
-                              pairs.append((title, href))
-                          if len(pairs) >= 3:
+                      news_urls = re.findall(r'https?://[^\s<>"\']*(?:/news[^\s<>"\']*|pid=\d+[^\s<>"\']*)', text)
+                      seen = []
+                      for u in news_urls:
+                          u = html.unescape(u)
+                          if u not in seen:
+                              seen.append(u)
+                          if len(seen) >= 3:
                               break
-                      for title, href in pairs:
-                          print("TITLE:", title[:140])
-                          print("URL:", href)
-                      if not pairs:
-                          urls = re.findall(r'https?://[^\s<>"\']+', text)
-                          for u in urls[:3]:
-                              print("URLONLY:", u[:220])
+                      for u in seen:
+                          print("NEWS_URL:", u[:240])
+
+                      titles = re.findall(r'<title>(.*?)</title>|<loc>(.*?)</loc>', text, flags=re.I|re.S)
+                      shown = 0
+                      for a,b in titles:
+                          val = re.sub(r'<[^>]+>', '', a or b).strip()
+                          if val:
+                              print("TITLE_OR_LOC:", html.unescape(val)[:240])
+                              shown += 1
+                          if shown >= 3:
+                              break
               except Exception as e:
                   print(f"{name} ERROR {type(e).__name__}: {e}")
           PY
