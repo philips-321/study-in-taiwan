@@ -2,6 +2,12 @@ name: RTI Model Benchmark
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "automation/rti_free/benchmark_reference.json"
+      - "automation/rti_free/benchmark.py"
+      - ".github/workflows/rti-model-benchmark.yml"
 
 permissions:
   contents: read
