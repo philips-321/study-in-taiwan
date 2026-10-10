@@ -49,4 +49,5 @@ document.getElementById('targetScore').textContent=(localStorage.getItem('leveli
 document.getElementById('whyText').textContent=localStorage.getItem('levelingWhy')||'Belum diisi. Kembali ke halaman utama untuk menulis alasan belajar.';
 document.getElementById('scores').innerHTML=lessons.map((x,i)=>'<div class="row"><div><b>'+x[1]+'</b><br><small>Best score: '+vals[i]+'% · '+(localStorage.getItem('levelingDone:'+x[0])==='1'?'selesai':'belum selesai')+'</small></div><a href="lesson.html?lesson='+x[2]+'">Buka →</a></div>').join('');
 document.getElementById('reviews').innerHTML=rq.length?rq.map(x=>'<div class="row"><div><b>'+x.lessonTitle+'</b><br><small>'+x.question+'</small></div><a href="lesson.html?lesson='+x.path+'">Review →</a></div>').join(''):'<p class="empty">Belum ada soal di antrean review.</p>';
-</script></body></html>
+</script>  <script src="/human-analytics.js" defer></script>
+</body></html>

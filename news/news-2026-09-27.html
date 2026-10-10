@@ -10,4 +10,5 @@ function selectedVoice(){const sel=voiceSelect();if(!sel||!sel.value)return null
 function speakText(txt){if(!('speechSynthesis' in window)){const s=document.getElementById('speechstatus');if(s)s.textContent='Browser ini tidak mendukung speechSynthesis.';return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang='zh-TW';u.rate=rateValue();const v=selectedVoice();if(v)u.voice=v;speechSynthesis.speak(u)}
 function previewVoice(){speakText('今天天氣很好，我們一起學中文。')}
 if('speechSynthesis' in window){populateVoices();speechSynthesis.onvoiceschanged=populateVoices;const sel=voiceSelect();if(sel)sel.addEventListener('change',()=>localStorage.setItem('rtiVoiceURI',sel.value));const r=document.getElementById('rate');if(r){const saved=localStorage.getItem('rtiSpeechRate');if(saved)r.value=saved;r.addEventListener('change',()=>localStorage.setItem('rtiSpeechRate',r.value))}}else{const s=document.getElementById('speechstatus');if(s)s.textContent='Audio tidak didukung browser ini.'}
-</script></main></body></html>
+</script></main>  <script src="/human-analytics.js" defer></script>
+</body></html>

@@ -78,4 +78,5 @@ function allSpeak(){synth.cancel();document.querySelectorAll('.sentence').forEac
 function testVoice(){speak('這是中文語音測試。')}
 vs.onchange=()=>localStorage.setItem('rtiVoice',vs.value);rate.onchange=()=>localStorage.setItem('rtiRate',rate.value);
 rate.value=localStorage.getItem('rtiRate')||'1';loadVoices();if(synth.onvoiceschanged!==undefined)synth.onvoiceschanged=loadVoices;
-</script></body></html>
+</script>  <script src="/human-analytics.js" defer></script>
+</body></html>

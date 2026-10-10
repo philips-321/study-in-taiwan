@@ -56,4 +56,5 @@ function selectedVoice(){const x=voiceSelect().value;return speechSynthesis.getV
 function speakText(txt){if(!("speechSynthesis" in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang="zh-TW";u.rate=rateValue();const v=selectedVoice();if(v)u.voice=v;speechSynthesis.speak(u)}
 function previewVoice(){speakText("台股第三季先蹲後跳，九月三十日加權指數收在四萬七千九百四十點。")}
 render();if("speechSynthesis" in window){populateVoices();speechSynthesis.onvoiceschanged=populateVoices}
-</script></main></body></html>
+</script></main>  <script src="/human-analytics.js" defer></script>
+</body></html>

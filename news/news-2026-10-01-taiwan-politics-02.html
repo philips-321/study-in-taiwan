@@ -71,4 +71,5 @@ function speakText(txt){if(!("speechSynthesis" in window))return;speechSynthesis
 function speakAll(){speakText(allZh())}function stopSpeech(){if("speechSynthesis" in window)speechSynthesis.cancel()}function previewVoice(){speakText("副總統蕭美琴接受中央社專訪，說明台灣無人機產業發展。")}
 render();if("speechSynthesis" in window){populateVoices();speechSynthesis.onvoiceschanged=populateVoices}
 </script>
-</main></body></html>
+</main>  <script src="/human-analytics.js" defer></script>
+</body></html>

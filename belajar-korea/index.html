@@ -192,5 +192,6 @@ function syncThemeButton(){const b=document.getElementById('themeToggle');if(b)b
 document.getElementById('themeToggle').onclick=()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('levelingTheme',next);syncThemeButton()}
 syncThemeButton();
 restoreStudySystem();
-</script></body>
+</script>  <script src="/human-analytics.js" defer></script>
+</body>
 </html>

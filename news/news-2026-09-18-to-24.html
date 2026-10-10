@@ -2879,4 +2879,5 @@ if('speechSynthesis' in window){
   const sel=voiceSelect();if(sel)sel.addEventListener('change',()=>localStorage.setItem('rtiVoiceURI',sel.value));
   const r=document.getElementById('speech-rate');if(r){const saved=localStorage.getItem('rtiSpeechRate');if(saved)r.value=saved;r.addEventListener('change',()=>localStorage.setItem('rtiSpeechRate',r.value));}
 }else{const s=document.getElementById('audio-status');if(s)s.textContent='Browser ini tidak mendukung speechSynthesis.'}
-</script></body></html>
+</script>  <script src="/human-analytics.js" defer></script>
+</body></html>
