@@ -1,0 +1,41 @@
+name: Inject human analytics
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "human-analytics.js"
+      - "scripts/inject-human-analytics.py"
+      - ".github/workflows/inject-human-analytics.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inject-human-analytics
+  cancel-in-progress: false
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Inject tracker into HTML
+        run: python3 scripts/inject-human-analytics.py
+      - name: Commit tracker references
+        run: |
+          git config user.name "human-analytics-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*.html'
+          if git diff --cached --quiet; then
+            echo "No HTML injection changes."
+            exit 0
+          fi
+          git commit -m "Inject human analytics tracker [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
