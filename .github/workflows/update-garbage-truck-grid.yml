@@ -1,0 +1,40 @@
+name: Update garbage truck geo-grid
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - garbage-truck-grid
+    paths:
+      - "garbage-truck/scripts/build-taipei-grid.mjs"
+      - ".github/workflows/update-garbage-truck-grid.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Taipei geo-grid
+        run: node garbage-truck/scripts/build-taipei-grid.mjs
+
+      - name: Validate generated files
+        run: |
+          test -s garbage-truck/data/manifest.json
+          node -e 'const m=require("./garbage-truck/data/manifest.json"); if(!m.tiles?.length || m.total_rows < 1000) process.exit(1); console.log(m.total_rows, m.tiles.length)'
+
+      - name: Commit generated grid
+        run: |
+          if git diff --quiet -- garbage-truck/data; then
+            echo "No data changes."
+            exit 0
+          fi
+          git config user.name "garbage-truck-data-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add garbage-truck/data
+          git commit -m "Update Taipei garbage truck geo-grid [skip ci]"
+          git push origin HEAD:${GITHUB_REF_NAME}
