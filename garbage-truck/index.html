@@ -3,55 +3,68 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Taiwan Garbage Truck Map | Study in Taiwan</title>
-<meta name="theme-color" content="#0B7A75">
+<meta name="theme-color" content="#12262A">
 <meta name="description" content="Find Taipei and New Taipei garbage truck pickup times and Taipei fixed garbage/recycling drop-off facilities.">
 <link href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css" rel="stylesheet">
 <style>
 /* ===== Tokens ===== */
 :root{
- color-scheme:light dark;
- --bg:#EEF2F0;--surface:#fff;--surface-2:#F4F7F5;--text:#12262A;--muted:#58696A;--border:#DCE4E1;
- --accent:#0B7A75;--accent-ink:#fff;--accent-soft:#E2F1EF;
- --past:#8B8B8B;--now:#18864B;--upcoming:#2463EB;--offday:#8B5CF6;--facility:#087F5B;
- --board:#10282B;--board-ink:#F2F7F5;
+ color-scheme:light;
+ --bg:#EDF0EE;--surface:#fff;--surface-2:#F3F6F4;--text:#12262A;--muted:#58696A;--border:#DCE4E1;
+ --accent:#FFC72C;--accent-ink:#1A1500;--accent-text:#0B6B66;--accent-soft:#FFF4CC;--focus:#0B6B66;
+ --header:#12262A;--header-ink:#F2F7F5;--header-muted:#A9BDBA;--header-line:#1F3A3E;
+ --upcoming-text:#2463EB;--offday-text:#7C3AED;--past:#8B8B8B;--now:#18864B;--upcoming:#2463EB;--offday:#8B5CF6;--facility:#087F5B;
  --shadow-sm:0 1px 2px rgba(18,38,42,.08);--shadow-md:0 6px 20px rgba(18,38,42,.14);
  --r-sm:8px;--r-md:12px;--r-lg:16px;
  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,"Noto Sans TC","Noto Sans",sans-serif;
 }
-@media(prefers-color-scheme:dark){:root{
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){
+ color-scheme:dark;
  --bg:#0C1416;--surface:#152123;--surface-2:#1B2B2D;--text:#E7F0EE;--muted:#93A6A3;--border:#263638;
- --accent:#3CCBB8;--accent-ink:#06201D;--accent-soft:#17312F;
- --board:#050B0C;--board-ink:#F2F7F5;
+ --upcoming-text:#9DBBFF;--offday-text:#CDBBFF;--accent:#FFC72C;--accent-ink:#1A1500;--accent-text:#FFC72C;--accent-soft:#2A2610;--focus:#FFC72C;
+ --header:#071012;--header-ink:#F2F7F5;--header-muted:#9FB3B0;--header-line:#1B2A2C;
  --shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 6px 20px rgba(0,0,0,.5);
 }}
+:root[data-theme=dark]{
+ color-scheme:dark;
+ --bg:#0C1416;--surface:#152123;--surface-2:#1B2B2D;--text:#E7F0EE;--muted:#93A6A3;--border:#263638;
+ --upcoming-text:#9DBBFF;--offday-text:#CDBBFF;--accent:#FFC72C;--accent-ink:#1A1500;--accent-text:#FFC72C;--accent-soft:#2A2610;--focus:#FFC72C;
+ --header:#071012;--header-ink:#F2F7F5;--header-muted:#9FB3B0;--header-line:#1B2A2C;
+ --shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 6px 20px rgba(0,0,0,.5);
+}
 
 /* ===== Base ===== */
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;font-family:var(--font);color:var(--text);background:var(--bg);-webkit-text-size-adjust:100%}
 #app{height:100%;display:grid;grid-template-rows:auto 1fr}
 button,select{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 
 /* ===== Header ===== */
-header{display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap;padding:12px 16px;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm);position:relative;z-index:3}
+header{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;padding:12px 16px;background:var(--header);color:var(--header-ink);border-bottom:3px solid var(--accent);box-shadow:var(--shadow-sm);position:relative;z-index:3}
 .brand{font-size:19px;font-weight:750;letter-spacing:-.01em;margin-right:auto;display:flex;align-items:center;gap:10px}
-.brand::before{content:"♻";display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-size:18px;font-weight:700}
+.brand::before{content:"";flex:none;width:56px;height:34px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 32'%3E%3Crect x='20' y='5' width='28' height='20' rx='3' fill='%23FFC72C'/%3E%3Crect x='20' y='19' width='28' height='3' fill='%23D9A400'/%3E%3Crect x='46' y='9' width='4' height='14' rx='1.5' fill='%23D9A400'/%3E%3Cpath d='M2 25V14c0-2 1.5-3.5 3.5-3.5H13l6 6.5v8z' fill='%23FFC72C'/%3E%3Cpath d='M6 13h6l4.2 4.5H6z' fill='%2312262A'/%3E%3Crect x='1' y='22' width='3' height='3' rx='1' fill='%23FF8A3D'/%3E%3Crect x='2' y='25' width='48' height='3' rx='1' fill='%2347605F'/%3E%3Ccircle cx='12' cy='27' r='4.2' fill='%23071012' stroke='%23DDE7E4' stroke-width='2'/%3E%3Ccircle cx='38' cy='27' r='4.2' fill='%23071012' stroke='%23DDE7E4' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat}
 .controls{display:flex;gap:8px;align-items:center}
 button,select{min-height:40px;padding:8px 14px;border:1px solid var(--border);border-radius:999px;background:var(--surface-2);cursor:pointer;transition:background .15s,border-color .15s,transform .1s}
+header button,header select{background:rgba(255,255,255,.08);border-color:var(--header-line);color:var(--header-ink)}
+header button:hover,header select:hover{border-color:var(--accent)}
 select{padding-right:10px}
-button:hover,select:hover{border-color:var(--accent)}
+select option{background:var(--surface);color:var(--text)}
 button:active{transform:scale(.97)}
-#locate{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:650;display:inline-flex;align-items:center;gap:6px}
+#locate{background:var(--accent)!important;color:var(--accent-ink)!important;border-color:var(--accent)!important;font-weight:700;display:inline-flex;align-items:center;gap:6px}
 #locate::before{content:"";width:14px;height:14px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center/contain no-repeat}
-#locate:hover{filter:brightness(1.08)}
-#status{flex-basis:100%;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;min-height:20px}
-#status::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--now)}
+#locate:hover{filter:brightness(1.06)}
+#theme{width:40px;padding:0;font-size:18px;line-height:1;display:grid;place-items:center}
+#status{flex-basis:100%;font-size:13px;color:var(--header-muted);display:flex;align-items:center;gap:8px;min-height:20px}
+#status::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#3DDC84}
 
 /* ===== Layout ===== */
 #content{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 400px}
 #map{min-height:520px;background:var(--surface-2)}
 #panel{overflow:auto;border-left:1px solid var(--border);background:var(--bg);padding:16px;scrollbar-width:thin}
-#panel h2{font-size:18px;font-weight:750;letter-spacing:-.01em;margin:0 0 4px}
+#panel h2{font-size:18px;font-weight:750;letter-spacing:-.01em;margin:0 0 4px;display:flex;align-items:center;gap:8px}
+#panel h2::before{content:"";flex:none;width:6px;height:18px;border-radius:3px;background:var(--accent)}
+.sheet-toggle{display:none}
 .hint{font-size:13px;line-height:1.45;color:var(--muted)}
 
 /* ===== Legend ===== */
@@ -64,7 +77,7 @@ button:active{transform:scale(.97)}
 .dot.facility{background:var(--facility);border-radius:3px}
 
 /* ===== Today guide ===== */
-.guide{padding:12px 14px;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--r-md);background:var(--surface);margin:0 0 14px;font-size:13px;line-height:1.55;box-shadow:var(--shadow-sm)}
+.guide{padding:12px 14px;border:1px solid var(--border);border-left:5px solid var(--accent);border-radius:var(--r-md);background:var(--surface);margin:0 0 14px;font-size:13px;line-height:1.55;box-shadow:var(--shadow-sm)}
 .guide b{font-size:14px}
 .guide .meta{display:block;margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
 
@@ -80,12 +93,12 @@ button:active{transform:scale(.97)}
 .chip,.popup-chip,.accept-chip{font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;border:1px solid var(--border);border-radius:999px;padding:4px 9px;background:var(--surface-2);color:var(--text)}
 .chip.past,.popup-chip.past{color:var(--muted);background:var(--surface-2);font-weight:500}
 .chip.now,.popup-chip.now{background:var(--now);color:#fff;border-color:var(--now)}
-.chip.upcoming,.popup-chip.upcoming{background:color-mix(in srgb,var(--upcoming) 12%,var(--surface));color:var(--upcoming);border-color:color-mix(in srgb,var(--upcoming) 45%,transparent)}
-.chip.offday,.popup-chip.offday{background:color-mix(in srgb,var(--offday) 12%,var(--surface));color:var(--offday);border-color:color-mix(in srgb,var(--offday) 50%,transparent);border-style:dashed}
-.glink{display:inline-flex;align-items:center;min-height:32px;margin-top:6px;font-size:12px;font-weight:650;color:var(--accent);text-decoration:none;border-radius:var(--r-sm)}
+.chip.upcoming,.popup-chip.upcoming{background:color-mix(in srgb,var(--upcoming) 12%,var(--surface));color:var(--upcoming-text);border-color:color-mix(in srgb,var(--upcoming) 45%,transparent)}
+.chip.offday,.popup-chip.offday{background:color-mix(in srgb,var(--offday) 12%,var(--surface));color:var(--offday-text);border-color:color-mix(in srgb,var(--offday) 50%,transparent);border-style:dashed}
+.glink{display:inline-flex;align-items:center;min-height:32px;margin-top:6px;font-size:12px;font-weight:650;color:var(--accent-text);text-decoration:none;border-radius:var(--r-sm)}
 .glink:hover{text-decoration:underline}
 .section-title{font-size:13px;font-weight:700;margin:12px 0 4px}
-.zoom-note{padding:14px;border-radius:var(--r-md);background:var(--accent-soft);color:var(--text);font-size:13px;line-height:1.5;border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.zoom-note{padding:14px;border-radius:var(--r-md);background:var(--accent-soft);color:var(--text);font-size:13px;line-height:1.5;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent)}
 .zoom-note::before{content:"🔍 "}
 
 /* ===== Map markers (arrival-board style) ===== */
@@ -108,7 +121,7 @@ button:active{transform:scale(.97)}
 .maplibregl-popup-anchor-top .maplibregl-popup-tip,.maplibregl-popup-anchor-top-left .maplibregl-popup-tip,.maplibregl-popup-anchor-top-right .maplibregl-popup-tip{border-bottom-color:var(--surface)}
 .maplibregl-popup-anchor-left .maplibregl-popup-tip{border-right-color:var(--surface)}
 .maplibregl-popup-anchor-right .maplibregl-popup-tip{border-left-color:var(--surface)}
-.maplibregl-popup-content a{color:var(--accent);font-weight:650;text-decoration:none}
+.maplibregl-popup-content a{color:var(--accent-text);font-weight:650;text-decoration:none}
 .maplibregl-popup-content a:hover{text-decoration:underline}
 .maplibregl-popup-close-button{width:32px;height:32px;font-size:20px;color:var(--muted);border-radius:0 var(--r-md) 0 var(--r-sm)}
 .maplibregl-popup-close-button:hover{background:var(--surface-2);color:var(--text)}
@@ -120,21 +133,31 @@ button:active{transform:scale(.97)}
 /* ===== Responsive ===== */
 @media(max-width:1000px){#content{grid-template-columns:minmax(0,1fr) 340px}}
 @media(max-width:800px){
- header{position:sticky;top:0;padding:10px 12px}
- .brand{font-size:17px}
- #content{grid-template-columns:1fr;grid-template-rows:clamp(320px,52vh,480px) auto}
+ #app{height:100vh;height:100dvh}
+ header{padding:8px 12px;gap:6px 10px;border-bottom-width:2px}
+ .brand{font-size:16px}
+ .brand::before{width:46px;height:28px}
+ button,select{min-height:38px}
+ #theme{width:38px}
+ #status{font-size:12px;min-height:16px}
+ #content{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}
  #map{min-height:0}
- #panel{border-left:0;border-top:1px solid var(--border);border-radius:var(--r-lg) var(--r-lg) 0 0;margin-top:-16px;position:relative;z-index:2;box-shadow:0 -6px 16px rgba(18,38,42,.12);padding-top:22px}
- #panel::before{content:"";position:absolute;top:8px;left:50%;width:40px;height:4px;border-radius:2px;background:var(--border);transform:translateX(-50%)}
+ #panel{max-height:46vh;max-height:46dvh;border-left:0;border-top:1px solid var(--border);border-radius:var(--r-lg) var(--r-lg) 0 0;margin-top:-16px;position:relative;z-index:2;box-shadow:0 -6px 16px rgba(18,38,42,.14);padding:0 16px 16px}
+ .sheet-toggle{display:block;position:sticky;top:0;z-index:2;width:calc(100% + 32px);margin:0 -16px 6px;min-height:30px;padding:0;border:0;border-radius:var(--r-lg) var(--r-lg) 0 0;background:var(--bg)}
+ .sheet-toggle::before{content:"";display:block;width:44px;height:5px;margin:0 auto;border-radius:3px;background:var(--border);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--muted) 35%,transparent)}
+ #panel.collapsed{max-height:none;overflow:hidden;padding-bottom:6px;cursor:pointer}
+ #panel.collapsed>:not(.sheet-toggle):not(h2){display:none}
+ #panel.collapsed h2{margin:0 0 6px;font-size:15px}
+ #panel.collapsed h2::after{content:"▲";margin-left:auto;font-size:12px;color:var(--muted)}
 }
-@media(max-width:380px){.controls{width:100%}#locate{flex:1;justify-content:center}}
+@media(max-width:420px){.controls{width:100%}#locate{flex:1;justify-content:center}}
 
 /* ===== Reduced motion ===== */
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{animation:none!important;transition:none!important}
 }
 </style></head>
-<body><div id="app"><header><div class="brand" id="brand">Garbage Truck Map</div><div class="controls"><button id="locate">Use my location</button><select id="lang"><option value="en">English</option><option value="id">Indonesia</option></select></div><div id="status">Loading nearby area…</div></header><div id="content"><div id="map"></div><aside id="panel"><h2 id="panelTitle">Visible pickup locations</h2><div class="hint" id="hint">Truck times and fixed drop-off facilities near the current map area.</div><div class="legend"><span><i class="dot past"></i><b id="lp">Past today</b></span><span><i class="dot now"></i><b id="ln">Active now</b></span><span><i class="dot upcoming"></i><b id="lu">Upcoming</b></span><span><i class="dot offday"></i><b id="lo">Planning only</b></span><span><i class="dot facility"></i><b id="lf">Fixed drop-off</b></span></div><div id="todayGuide" class="guide"></div><div id="list">Loading…</div></aside></div></div>
+<body><div id="app"><header><div class="brand" id="brand">Garbage Truck Map</div><div class="controls"><button id="locate">Use my location</button><button id="theme" type="button" aria-label="Switch to dark mode"></button><select id="lang" aria-label="Language"><option value="en">English</option><option value="id">Indonesia</option></select></div><div id="status">Loading nearby area…</div></header><div id="content"><div id="map"></div><aside id="panel"><button id="sheetToggle" class="sheet-toggle" type="button" aria-expanded="true" aria-controls="panel" aria-label="Hide list"></button><h2 id="panelTitle">Visible pickup locations</h2><div class="hint" id="hint">Truck times and fixed drop-off facilities near the current map area.</div><div class="legend"><span><i class="dot past"></i><b id="lp">Past today</b></span><span><i class="dot now"></i><b id="ln">Active now</b></span><span><i class="dot upcoming"></i><b id="lu">Upcoming</b></span><span><i class="dot offday"></i><b id="lo">Planning only</b></span><span><i class="dot facility"></i><b id="lf">Fixed drop-off</b></span></div><div id="todayGuide" class="guide"></div><div id="list">Loading…</div></aside></div></div>
 <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
 <script>
 const MIN_TRUCK_ZOOM=14;
@@ -164,4 +187,17 @@ function applyLang(){const tr=T[lang];document.documentElement.lang=lang;documen
 async function readJson(url,fallback=null){try{const r=await fetch(url,{cache:"force-cache"});if(!r.ok)throw Error(r.status);return await r.json()}catch(e){console.warn(url,e);return fallback}}
 async function init(){try{const defs=[{city:"taipei",url:"data/manifest.json",base:"data/"},{city:"new-taipei",url:"data/new-taipei/manifest.json",base:"data/new-taipei/"}];sources=await Promise.all(defs.map(async d=>({...d,manifest:await readJson(d.url,null)})));if(sources.some(s=>!s.manifest))throw Error("manifest");const [to,no,ff]=await Promise.all([readJson("data/operations/taipei.json",{dates:{}}),readJson("data/operations/new-taipei.json",{dates:{}}),readJson("data/facilities/taipei.json",{facilities:[]})]);operations={taipei:to||{dates:{}},"new-taipei":no||{dates:{}}};facilities=ff?.facilities||[];await ensure()}catch(e){console.error(e);statusEl.textContent=T[lang].error;listEl.textContent=T[lang].error}}
 map.on("load",init);map.on("moveend",ensure);map.on("zoomend",ensure);document.getElementById("lang").onchange=e=>{lang=e.target.value;applyLang()};document.getElementById("locate").onclick=()=>{const tr=T[lang];if(!navigator.geolocation){statusEl.textContent=tr.blocked;return}statusEl.textContent=tr.getting;navigator.geolocation.getCurrentPosition(p=>{userPos={lat:p.coords.latitude,lng:p.coords.longitude};if(userMarker)userMarker.remove();const el=document.createElement("div");el.className="user-dot";userMarker=new maplibregl.Marker({element:el}).setLngLat([userPos.lng,userPos.lat]).addTo(map);map.flyTo({center:[userPos.lng,userPos.lat],zoom:16})},()=>statusEl.textContent=tr.blocked,{enableHighAccuracy:true,timeout:10000,maximumAge:0})};
+</script>
+<script>
+(function(){const r=document.documentElement,tb=document.getElementById("theme"),sb=document.getElementById("sheetToggle"),pn=document.getElementById("panel"),lg=document.getElementById("lang"),K="siteTheme";
+const L={en:{dark:"Switch to dark mode",light:"Switch to light mode",hide:"Hide list",show:"Show list"},id:{dark:"Ganti ke mode gelap",light:"Ganti ke mode terang",hide:"Sembunyikan daftar",show:"Tampilkan daftar"}};
+function cur(){return r.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}
+function lab(){const t=L[lg.value]||L.en,d=cur()==="dark",c=pn.classList.contains("collapsed");tb.textContent=d?"☀":"☾";tb.title=tb.ariaLabel=d?t.light:t.dark;sb.ariaLabel=c?t.show:t.hide;sb.setAttribute("aria-expanded",String(!c))}
+try{const v=localStorage.getItem(K);if(v==="dark"||v==="light")r.dataset.theme=v}catch(e){}
+tb.onclick=()=>{const n=cur()==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem(K,n)}catch(e){}lab()};
+function fit(){requestAnimationFrame(()=>{try{map.resize()}catch(e){}})}
+function flip(){pn.classList.toggle("collapsed");lab();fit()}
+sb.onclick=flip;pn.addEventListener("click",e=>{if(pn.classList.contains("collapsed")&&e.target!==sb)flip()});
+lg.addEventListener("change",lab);matchMedia("(prefers-color-scheme:dark)").addEventListener("change",lab);lab();
+})();
 </script></body></html>
