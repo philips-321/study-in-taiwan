@@ -2,13 +2,6 @@ name: Inject human analytics
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "**/*.html"
-      - "human-analytics.js"
-      - "scripts/inject-human-analytics.py"
-      - ".github/workflows/inject-human-analytics.yml"
 
 permissions:
   contents: write
