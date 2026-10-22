@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "city": "taipei",
+  "generated_at": "2026-10-22T17:33:12.073817+00:00",
+  "source": "Taipei Open Data garbage-truck pickup-point CSV",
+  "source_csv": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=a6e90031-7ec4-4089-afb5-361a4efe7202",
+  "grid_deg": 0.06,
+  "origin": [
+    121.4,
+    24.9
+  ],
+  "total_rows": 4009,
+  "tiles": [
+    {
+      "id": "1_1",
+      "bounds": [
+        121.46,
+        24.96,
+        121.52,
+        25.02
+      ],
+      "count": 12,
+      "file": "taipei/1_1.json"
+    },
+    {
+      "id": "1_2",
+      "bounds": [
+        121.46,
+        25.02,
+        121.52,
+        25.08
+      ],
+      "count": 746,
+      "file": "taipei/1_2.json"
+    },
+    {
+      "id": "1_3",
+      "bounds": [
+        121.46,
+        25.08,
+        121.52,
+        25.14
+      ],
+      "count": 542,
+      "file": "taipei/1_3.json"
+    },
+    {
+      "id": "1_4",
+      "bounds": [
+        121.46,
+        25.14,
+        121.52,
+        25.2
+      ],
+      "count": 105,
+      "file": "taipei/1_4.json"
+    },
+    {
+      "id": "2_1",
+      "bounds": [
+        121.52,
+        24.96,
+        121.58,
+        25.02
+      ],
+      "count": 593,
+      "file": "taipei/2_1.json"
+    },
+    {
+      "id": "2_2",
+      "bounds": [
+        121.52,
+        25.02,
+        121.58,
+        25.08
+      ],
+      "count": 965,
+      "file": "taipei/2_2.json"
+    },
+    {
+      "id": "2_3",
+      "bounds": [
+        121.52,
+        25.08,
+        121.58,
+        25.14
+      ],
+      "count": 486,
+      "file": "taipei/2_3.json"
+    },
+    {
+      "id": "2_4",
+      "bounds": [
+        121.52,
+        25.14,
+        121.58,
+        25.2
+      ],
+      "count": 95,
+      "file": "taipei/2_4.json"
+    },
+    {
+      "id": "3_1",
+      "bounds": [
+        121.58,
+        24.96,
+        121.64,
+        25.02
+      ],
+      "count": 80,
+      "file": "taipei/3_1.json"
+    },
+    {
+      "id": "3_2",
+      "bounds": [
+        121.58,
+        25.02,
+        121.64,
+        25.08
+      ],
+      "count": 342,
+      "file": "taipei/3_2.json"
+    },
+    {
+      "id": "3_3",
+      "bounds": [
+        121.58,
+        25.08,
+        121.64,
+        25.14
+      ],
+      "count": 43,
+      "file": "taipei/3_3.json"
+    }
+  ]
+}
