@@ -5,7 +5,7 @@ from pathlib import Path
 
 CSV_URL = "https://data.ntpc.gov.tw/api/datasets/edc3ad26-8ae7-4916-a00b-bc6048d19bf8/csv/file"
 OUT = Path("garbage-truck/data/new-taipei")
-STEP = 0.06
+STEP = 0.02
 ORIGIN_LNG = 121.2
 ORIGIN_LAT = 24.6
 
@@ -74,4 +74,4 @@ for tid in sorted(tiles,key=lambda v:tuple(int(x) for x in v.split("_"))):
     fn=f"{tid}.json"; (OUT/fn).write_text(json.dumps(tiles[tid],ensure_ascii=False,separators=(",",":")),encoding="utf-8")
     manifest["tiles"].append({"id":tid,"bounds":[round(west,5),round(south,5),round(west+STEP,5),round(south+STEP,5)],"count":len(tiles[tid]),"file":fn})
 (OUT/"manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-print(f"Built {len(manifest['tiles'])} tiles from {len(rows)} New Taipei schedules.")
+print(f"Built {len(manifest['tiles'])} tiles from {len(rows)} New Taipei schedules; max rows per tile={max(map(len,tiles.values()))}.")
