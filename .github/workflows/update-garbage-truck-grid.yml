@@ -35,7 +35,7 @@ jobs:
 
       - name: Commit generated grid
         run: |
-          if git diff --quiet -- garbage-truck/data; then
+          if [ -z "$(git status --porcelain -- garbage-truck/data)" ]; then
             echo "No data changes."
             exit 0
           fi
