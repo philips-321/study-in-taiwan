@@ -4,9 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - garbage-truck-grid
+      - main
     paths:
       - "garbage-truck/scripts/build-taipei-grid.py"
+      - "garbage-truck/scripts/build-new-taipei-grid.py"
       - ".github/workflows/update-garbage-truck-grid.yml"
 
 permissions:
@@ -18,22 +19,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Build Taipei geo-grid
         run: python3 garbage-truck/scripts/build-taipei-grid.py
 
+      - name: Build New Taipei geo-grid
+        run: python3 garbage-truck/scripts/build-new-taipei-grid.py
+
       - name: Validate generated files
         run: |
           test -s garbage-truck/data/manifest.json
+          test -s garbage-truck/data/new-taipei/manifest.json
           python3 - <<'PY'
           import json
           from pathlib import Path
-          m = json.loads(Path('garbage-truck/data/manifest.json').read_text())
-          assert m.get('tiles') and m.get('total_rows', 0) >= 1000
-          print(m['total_rows'], len(m['tiles']))
+          t = json.loads(Path('garbage-truck/data/manifest.json').read_text())
+          n = json.loads(Path('garbage-truck/data/new-taipei/manifest.json').read_text())
+          assert t.get('tiles') and t.get('total_rows', 0) >= 1000
+          assert n.get('tiles') and n.get('total_rows', 0) >= 20000
+          print('Taipei', t['total_rows'], len(t['tiles']))
+          print('New Taipei', n['total_rows'], len(n['tiles']))
           PY
 
-      - name: Commit generated grid
+      - name: Commit generated grids
         run: |
           if [ -z "$(git status --porcelain -- garbage-truck/data)" ]; then
             echo "No data changes."
@@ -42,5 +53,6 @@ jobs:
           git config user.name "garbage-truck-data-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add garbage-truck/data
-          git commit -m "Update Taipei garbage truck geo-grid [skip ci]"
-          git push origin HEAD:${GITHUB_REF_NAME}
+          git commit -m "Update Taipei and New Taipei garbage truck geo-grids [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
