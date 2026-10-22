@@ -6,7 +6,7 @@ on:
     branches:
       - garbage-truck-grid
     paths:
-      - "garbage-truck/scripts/build-taipei-grid.mjs"
+      - "garbage-truck/scripts/build-taipei-grid.py"
       - ".github/workflows/update-garbage-truck-grid.yml"
 
 permissions:
@@ -20,12 +20,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Taipei geo-grid
-        run: node garbage-truck/scripts/build-taipei-grid.mjs
+        run: python3 garbage-truck/scripts/build-taipei-grid.py
 
       - name: Validate generated files
         run: |
           test -s garbage-truck/data/manifest.json
-          node -e 'const m=require("./garbage-truck/data/manifest.json"); if(!m.tiles?.length || m.total_rows < 1000) process.exit(1); console.log(m.total_rows, m.tiles.length)'
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          m = json.loads(Path('garbage-truck/data/manifest.json').read_text())
+          assert m.get('tiles') and m.get('total_rows', 0) >= 1000
+          print(m['total_rows'], len(m['tiles']))
+          PY
 
       - name: Commit generated grid
         run: |
