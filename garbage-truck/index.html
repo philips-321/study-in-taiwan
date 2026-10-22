@@ -3,10 +3,136 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Taiwan Garbage Truck Map | Study in Taiwan</title>
+<meta name="theme-color" content="#0B7A75">
 <meta name="description" content="Find Taipei and New Taipei garbage truck pickup times and Taipei fixed garbage/recycling drop-off facilities.">
 <link href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css" rel="stylesheet">
 <style>
-*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111;background:#fff}#app{height:100%;display:grid;grid-template-rows:auto 1fr}header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;border-bottom:1px solid #ddd;background:#fff;z-index:3}.brand{font-weight:700;margin-right:auto}.controls{display:flex;gap:8px;align-items:center}button,select{font:inherit;padding:9px 11px;border:1px solid #bbb;border-radius:9px;background:#fff}button{cursor:pointer}#status{font-size:13px;color:#555;flex-basis:100%}#content{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 380px}#map{min-height:520px}#panel{overflow:auto;border-left:1px solid #ddd;background:#fff;padding:12px}#panel h2{font-size:17px;margin:0 0 4px}.hint{font-size:12px;color:#666}.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;margin:8px 0 10px}.legend span{display:flex;align-items:center;gap:5px}.dot{width:9px;height:9px;border-radius:50%}.dot.past{background:#8b8b8b}.dot.now{background:#18864b}.dot.upcoming{background:#2463eb}.dot.offday{background:#8b5cf6}.dot.facility{background:#087f5b;border-radius:2px}.place-card{border-top:1px solid #eee;padding:10px 0}.addr{font-size:13px;font-weight:700;line-height:1.35}.meta{font-size:12px;color:#666;margin-top:3px}.times,.accepts{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}.chip,.popup-chip,.accept-chip{font-size:12px;border:1px solid #ccc;border-radius:999px;padding:3px 7px;background:#f7f7f7}.chip.past,.popup-chip.past{color:#777;background:#f1f1f1}.chip.now,.popup-chip.now{background:#18864b;color:#fff;border-color:#18864b}.chip.upcoming,.popup-chip.upcoming{background:#eaf0ff;color:#174bb8;border-color:#9db7ff}.chip.offday,.popup-chip.offday{background:#f1eafe;color:#6d28d9;border-color:#c4b5fd}.time-marker{padding:3px 6px;border-radius:6px;font:bold 12px/1.1 sans-serif;white-space:nowrap;border:1px solid #fff;box-shadow:0 1px 4px #0004;color:#fff}.time-marker.past{background:#8b8b8b}.time-marker.now{background:#18864b}.time-marker.upcoming{background:#2463eb}.time-marker.offday{background:#8b5cf6}.facility-marker{width:28px;height:28px;border-radius:7px;background:#087f5b;color:#fff;border:2px solid #fff;box-shadow:0 1px 5px #0005;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700}.user-dot{width:18px;height:18px;border-radius:50%;background:#1677ff;border:3px solid #fff;box-shadow:0 0 0 2px #1677ff}.popup-times{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}.glink{display:inline-block;margin-top:6px;font-size:12px;text-decoration:none}.section-title{font-size:13px;font-weight:700;margin:12px 0 4px}.guide{padding:9px 10px;border:1px solid #e3e3e3;border-radius:10px;background:#fafafa;margin:8px 0 10px;font-size:12px;line-height:1.45}.zoom-note{padding:12px;border-radius:10px;background:#f5f7fb;color:#555;font-size:13px}@media(max-width:800px){#content{grid-template-columns:1fr;grid-template-rows:minmax(430px,62vh) auto}#panel{border-left:0;border-top:1px solid #ddd}}
+/* ===== Tokens ===== */
+:root{
+ color-scheme:light dark;
+ --bg:#EEF2F0;--surface:#fff;--surface-2:#F4F7F5;--text:#12262A;--muted:#58696A;--border:#DCE4E1;
+ --accent:#0B7A75;--accent-ink:#fff;--accent-soft:#E2F1EF;
+ --past:#8B8B8B;--now:#18864B;--upcoming:#2463EB;--offday:#8B5CF6;--facility:#087F5B;
+ --board:#10282B;--board-ink:#F2F7F5;
+ --shadow-sm:0 1px 2px rgba(18,38,42,.08);--shadow-md:0 6px 20px rgba(18,38,42,.14);
+ --r-sm:8px;--r-md:12px;--r-lg:16px;
+ --font:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,"Noto Sans TC","Noto Sans",sans-serif;
+}
+@media(prefers-color-scheme:dark){:root{
+ --bg:#0C1416;--surface:#152123;--surface-2:#1B2B2D;--text:#E7F0EE;--muted:#93A6A3;--border:#263638;
+ --accent:#3CCBB8;--accent-ink:#06201D;--accent-soft:#17312F;
+ --board:#050B0C;--board-ink:#F2F7F5;
+ --shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 6px 20px rgba(0,0,0,.5);
+}}
+
+/* ===== Base ===== */
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;font-family:var(--font);color:var(--text);background:var(--bg);-webkit-text-size-adjust:100%}
+#app{height:100%;display:grid;grid-template-rows:auto 1fr}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* ===== Header ===== */
+header{display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap;padding:12px 16px;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm);position:relative;z-index:3}
+.brand{font-size:19px;font-weight:750;letter-spacing:-.01em;margin-right:auto;display:flex;align-items:center;gap:10px}
+.brand::before{content:"♻";display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-size:18px;font-weight:700}
+.controls{display:flex;gap:8px;align-items:center}
+button,select{min-height:40px;padding:8px 14px;border:1px solid var(--border);border-radius:999px;background:var(--surface-2);cursor:pointer;transition:background .15s,border-color .15s,transform .1s}
+select{padding-right:10px}
+button:hover,select:hover{border-color:var(--accent)}
+button:active{transform:scale(.97)}
+#locate{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:650;display:inline-flex;align-items:center;gap:6px}
+#locate::before{content:"";width:14px;height:14px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center/contain no-repeat}
+#locate:hover{filter:brightness(1.08)}
+#status{flex-basis:100%;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;min-height:20px}
+#status::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--now)}
+
+/* ===== Layout ===== */
+#content{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 400px}
+#map{min-height:520px;background:var(--surface-2)}
+#panel{overflow:auto;border-left:1px solid var(--border);background:var(--bg);padding:16px;scrollbar-width:thin}
+#panel h2{font-size:18px;font-weight:750;letter-spacing:-.01em;margin:0 0 4px}
+.hint{font-size:13px;line-height:1.45;color:var(--muted)}
+
+/* ===== Legend ===== */
+.legend{display:flex;gap:6px;flex-wrap:wrap;font-size:12px;margin:12px 0}
+.legend span{display:flex;align-items:center;gap:6px;padding:5px 10px 5px 8px;border:1px solid var(--border);border-radius:999px;background:var(--surface)}
+.legend b{font-weight:600}
+.dot{flex:none;width:10px;height:10px;border-radius:50%}
+.dot.past{background:var(--past)}.dot.now{background:var(--now);box-shadow:0 0 0 3px color-mix(in srgb,var(--now) 25%,transparent)}
+.dot.upcoming{background:var(--upcoming)}.dot.offday{background:transparent;border:2px dashed var(--offday)}
+.dot.facility{background:var(--facility);border-radius:3px}
+
+/* ===== Today guide ===== */
+.guide{padding:12px 14px;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--r-md);background:var(--surface);margin:0 0 14px;font-size:13px;line-height:1.55;box-shadow:var(--shadow-sm)}
+.guide b{font-size:14px}
+.guide .meta{display:block;margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+
+/* ===== List & cards ===== */
+#list{font-size:14px;color:var(--muted)}
+.place-card{position:relative;padding:12px 14px;margin:0 0 10px;border:1px solid var(--border);border-left:4px solid var(--past);border-radius:var(--r-md);background:var(--surface);box-shadow:var(--shadow-sm);cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s}
+.place-card.now{border-left-color:var(--now)}.place-card.upcoming{border-left-color:var(--upcoming)}.place-card.past{border-left-color:var(--past)}
+.place-card.offday{border-left-color:var(--offday);border-left-style:dashed}
+.place-card:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.addr{font-size:14px;font-weight:700;line-height:1.35;color:var(--text)}
+.meta{font-size:12px;line-height:1.4;color:var(--muted);margin-top:3px}
+.times,.accepts{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip,.popup-chip,.accept-chip{font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;border:1px solid var(--border);border-radius:999px;padding:4px 9px;background:var(--surface-2);color:var(--text)}
+.chip.past,.popup-chip.past{color:var(--muted);background:var(--surface-2);font-weight:500}
+.chip.now,.popup-chip.now{background:var(--now);color:#fff;border-color:var(--now)}
+.chip.upcoming,.popup-chip.upcoming{background:color-mix(in srgb,var(--upcoming) 12%,var(--surface));color:var(--upcoming);border-color:color-mix(in srgb,var(--upcoming) 45%,transparent)}
+.chip.offday,.popup-chip.offday{background:color-mix(in srgb,var(--offday) 12%,var(--surface));color:var(--offday);border-color:color-mix(in srgb,var(--offday) 50%,transparent);border-style:dashed}
+.glink{display:inline-flex;align-items:center;min-height:32px;margin-top:6px;font-size:12px;font-weight:650;color:var(--accent);text-decoration:none;border-radius:var(--r-sm)}
+.glink:hover{text-decoration:underline}
+.section-title{font-size:13px;font-weight:700;margin:12px 0 4px}
+.zoom-note{padding:14px;border-radius:var(--r-md);background:var(--accent-soft);color:var(--text);font-size:13px;line-height:1.5;border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.zoom-note::before{content:"🔍 "}
+
+/* ===== Map markers (arrival-board style) ===== */
+.time-marker{padding:5px 9px;border-radius:var(--r-sm);font:700 12px/1.1 var(--font);font-variant-numeric:tabular-nums;white-space:nowrap;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3);color:#fff;background:var(--past);cursor:pointer}
+.time-marker::after{content:"";position:absolute;left:50%;bottom:-6px;width:10px;height:10px;background:inherit;border:inherit;border-top:0;border-left:0;transform:translateX(-50%) rotate(45deg)}
+.time-marker.now{background:var(--now)}.time-marker.upcoming{background:var(--upcoming)}
+.time-marker.offday{background:#fff;color:var(--offday);border:2px dashed var(--offday)}
+.time-marker.offday::after{display:none}
+.time-marker.now{animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 2px 6px rgba(0,0,0,.3),0 0 0 0 rgba(24,134,75,.55)}80%,100%{box-shadow:0 2px 6px rgba(0,0,0,.3),0 0 0 12px rgba(24,134,75,0)}}
+.facility-marker{width:30px;height:30px;border-radius:9px;background:var(--facility);color:#fff;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;cursor:pointer}
+.user-dot{width:18px;height:18px;border-radius:50%;background:#1677ff;border:3px solid #fff;box-shadow:0 0 0 2px #1677ff;animation:ring 2.4s ease-out infinite}
+@keyframes ring{0%{box-shadow:0 0 0 2px #1677ff,0 0 0 2px rgba(22,119,255,.5)}80%,100%{box-shadow:0 0 0 2px #1677ff,0 0 0 16px rgba(22,119,255,0)}}
+
+/* ===== MapLibre overrides ===== */
+.maplibregl-popup-content{padding:14px 34px 12px 16px;border-radius:var(--r-md);background:var(--surface);color:var(--text);font:13px/1.5 var(--font);box-shadow:var(--shadow-md);max-width:300px}
+.maplibregl-popup-content b{font-weight:700}
+.maplibregl-popup-content small{color:var(--muted)}
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip,.maplibregl-popup-anchor-bottom-left .maplibregl-popup-tip,.maplibregl-popup-anchor-bottom-right .maplibregl-popup-tip{border-top-color:var(--surface)}
+.maplibregl-popup-anchor-top .maplibregl-popup-tip,.maplibregl-popup-anchor-top-left .maplibregl-popup-tip,.maplibregl-popup-anchor-top-right .maplibregl-popup-tip{border-bottom-color:var(--surface)}
+.maplibregl-popup-anchor-left .maplibregl-popup-tip{border-right-color:var(--surface)}
+.maplibregl-popup-anchor-right .maplibregl-popup-tip{border-left-color:var(--surface)}
+.maplibregl-popup-content a{color:var(--accent);font-weight:650;text-decoration:none}
+.maplibregl-popup-content a:hover{text-decoration:underline}
+.maplibregl-popup-close-button{width:32px;height:32px;font-size:20px;color:var(--muted);border-radius:0 var(--r-md) 0 var(--r-sm)}
+.maplibregl-popup-close-button:hover{background:var(--surface-2);color:var(--text)}
+.popup-times{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.maplibregl-ctrl-group{border-radius:var(--r-md)!important;box-shadow:var(--shadow-md)!important;overflow:hidden}
+.maplibregl-ctrl-group button{min-height:0;border-radius:0;border:0;width:36px;height:36px}
+.maplibregl-ctrl-attrib{border-radius:8px 0 0 0;font-size:11px}
+
+/* ===== Responsive ===== */
+@media(max-width:1000px){#content{grid-template-columns:minmax(0,1fr) 340px}}
+@media(max-width:800px){
+ header{position:sticky;top:0;padding:10px 12px}
+ .brand{font-size:17px}
+ #content{grid-template-columns:1fr;grid-template-rows:clamp(320px,52vh,480px) auto}
+ #map{min-height:0}
+ #panel{border-left:0;border-top:1px solid var(--border);border-radius:var(--r-lg) var(--r-lg) 0 0;margin-top:-16px;position:relative;z-index:2;box-shadow:0 -6px 16px rgba(18,38,42,.12);padding-top:22px}
+ #panel::before{content:"";position:absolute;top:8px;left:50%;width:40px;height:4px;border-radius:2px;background:var(--border);transform:translateX(-50%)}
+}
+@media(max-width:380px){.controls{width:100%}#locate{flex:1;justify-content:center}}
+
+/* ===== Reduced motion ===== */
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+}
 </style></head>
 <body><div id="app"><header><div class="brand" id="brand">Garbage Truck Map</div><div class="controls"><button id="locate">Use my location</button><select id="lang"><option value="en">English</option><option value="id">Indonesia</option></select></div><div id="status">Loading nearby area…</div></header><div id="content"><div id="map"></div><aside id="panel"><h2 id="panelTitle">Visible pickup locations</h2><div class="hint" id="hint">Truck times and fixed drop-off facilities near the current map area.</div><div class="legend"><span><i class="dot past"></i><b id="lp">Past today</b></span><span><i class="dot now"></i><b id="ln">Active now</b></span><span><i class="dot upcoming"></i><b id="lu">Upcoming</b></span><span><i class="dot offday"></i><b id="lo">Planning only</b></span><span><i class="dot facility"></i><b id="lf">Fixed drop-off</b></span></div><div id="todayGuide" class="guide"></div><div id="list">Loading…</div></aside></div></div>
 <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
@@ -33,7 +159,7 @@ function acceptanceLabel(f){const tr=T[lang];if(f.accept.general&&f.accept.recyc
 function renderFacilityMarkers(){clearFacilities();const b=map.getBounds();for(const f of facilities){if(f.lng<b.getWest()||f.lng>b.getEast()||f.lat<b.getSouth()||f.lat>b.getNorth())continue;const el=document.createElement("div");el.className="facility-marker";el.textContent="♻";const popup=new maplibregl.Popup({offset:18}).setHTML(`<b>${esc(f.name)}</b><br><small>${esc(f.district)} · ${esc(T[lang].facilityTitle)}</small><br>${esc(f.address)}<br><b>${esc(T[lang].hours)}:</b> ${esc(f.hours)}<br><b>${esc(T[lang].accepts)}:</b> ${esc(acceptanceLabel(f))}${f.note?`<br><small>${esc(f.note)}</small>`:""}<br><small>${esc(T[lang].bag)}</small><br><a href="${gmaps(f.lat,f.lng)}" target="_blank" rel="noopener">${T[lang].maps}</a>`);facilityMarkers.push(new maplibregl.Marker({element:el,anchor:"bottom"}).setLngLat([f.lng,f.lat]).setPopup(popup).addTo(map))}}
 function todayGuide(){const tr=T[lang],d=day();if(d===0||d===3)return`<b>${tr.today}</b><br>${tr.noRegular}<br><span class="meta">${tr.bag}</span>`;const category=(d===1||d===5)?tr.flat:tr.threeD;return`<b>${tr.today}</b><br>• ${tr.general}<br>• ${tr.food}<br>• ${category}<br>• ${tr.other}<br><span class="meta">${tr.bag}</span>`}
 function render(){if(!map.loaded()||!sources.length)return;clearTrucks();renderFacilityMarkers();document.getElementById("todayGuide").innerHTML=todayGuide();const tr=T[lang];if(map.getZoom()<MIN_TRUCK_ZOOM){listEl.innerHTML=`<div class="zoom-note">${tr.zoomIn}</div>`;statusEl.textContent=`${cache.size} ${tr.cached}`;return}const a=groups(),now=nowMin();for(const g of a){const el=document.createElement("div");el.className=`time-marker ${g.st}`;el.textContent=g.active?`${tr.nowShort}→${g.active.d}`:g.mark.a;const chips=g.times.map(x=>`<span class="popup-chip ${state(x,g.city,now)}">${esc(x.a)}${x.d?"–"+esc(x.d):""}</span>`).join("");const note=g.st==="offday"?`<br><small>${esc(serviceNote(g))}</small>`:"";const ds=g.distance==null?"":`<br><small>${Math.round(g.distance)} ${tr.from}</small>`;const route=g.route?`<br><small>${esc(g.route)}</small>`:"";const popup=new maplibregl.Popup({offset:18}).setHTML(`<b>${esc(g.place)}</b><br><small>${g.city==="taipei"?"Taipei":"New Taipei"}${g.district?" · "+esc(g.district):""}</small>${route}${ds}${note}<div class="popup-times">${chips}</div><a href="${gmaps(g.lat,g.lng)}" target="_blank" rel="noopener">${tr.maps}</a>`);truckMarkers.push(new maplibregl.Marker({element:el,anchor:"bottom"}).setLngLat([g.lng,g.lat]).setPopup(popup).addTo(map))}
-listEl.innerHTML=a.map((g,i)=>{const chips=g.times.map(x=>`<span class="chip ${state(x,g.city,now)}">${esc(x.a)}${x.d?"–"+esc(x.d):""}</span>`).join("");const ds=g.distance==null?"":`${Math.round(g.distance)} ${tr.from} · `;const note=g.st==="offday"?`<div class="meta">${esc(serviceNote(g))}</div>`:"";const route=g.route?`<div class="meta">${esc(g.route)}</div>`:"";return`<div class="place-card" data-i="${i}"><div class="addr">${esc(g.place)}</div><div class="meta">${ds}${g.city==="taipei"?"Taipei":"New Taipei"}${g.district?" · "+esc(g.district):""}</div>${route}${note}<div class="times">${chips}</div><a class="glink" href="${gmaps(g.lat,g.lng)}" target="_blank" rel="noopener">${tr.maps}</a></div>`}).join("")||tr.none;[...listEl.querySelectorAll(".place-card")].forEach((el,i)=>el.onclick=e=>{if(e.target.closest("a"))return;let g=a[i];map.flyTo({center:[g.lng,g.lat],zoom:17});truckMarkers[i].togglePopup()});statusEl.textContent=`${a.length} ${tr.visible}${userPos?" · "+tr.nearest:""} · ${cache.size} ${tr.cached}`}
+listEl.innerHTML=a.map((g,i)=>{const chips=g.times.map(x=>`<span class="chip ${state(x,g.city,now)}">${esc(x.a)}${x.d?"–"+esc(x.d):""}</span>`).join("");const ds=g.distance==null?"":`${Math.round(g.distance)} ${tr.from} · `;const note=g.st==="offday"?`<div class="meta">${esc(serviceNote(g))}</div>`:"";const route=g.route?`<div class="meta">${esc(g.route)}</div>`:"";return`<div class="place-card ${g.st}" data-i="${i}"><div class="addr">${esc(g.place)}</div><div class="meta">${ds}${g.city==="taipei"?"Taipei":"New Taipei"}${g.district?" · "+esc(g.district):""}</div>${route}${note}<div class="times">${chips}</div><a class="glink" href="${gmaps(g.lat,g.lng)}" target="_blank" rel="noopener">${tr.maps}</a></div>`}).join("")||tr.none;[...listEl.querySelectorAll(".place-card")].forEach((el,i)=>el.onclick=e=>{if(e.target.closest("a"))return;let g=a[i];map.flyTo({center:[g.lng,g.lat],zoom:17});truckMarkers[i].togglePopup()});statusEl.textContent=`${a.length} ${tr.visible}${userPos?" · "+tr.nearest:""} · ${cache.size} ${tr.cached}`}
 function applyLang(){const tr=T[lang];document.documentElement.lang=lang;document.getElementById("brand").textContent=tr.brand;document.getElementById("locate").textContent=tr.locate;document.getElementById("panelTitle").textContent=tr.panel;document.getElementById("hint").textContent=tr.hint;document.getElementById("lp").textContent=tr.past;document.getElementById("ln").textContent=tr.now;document.getElementById("lu").textContent=tr.up;document.getElementById("lo").textContent=tr.off;document.getElementById("lf").textContent=tr.facility;render()}
 async function readJson(url,fallback=null){try{const r=await fetch(url,{cache:"force-cache"});if(!r.ok)throw Error(r.status);return await r.json()}catch(e){console.warn(url,e);return fallback}}
 async function init(){try{const defs=[{city:"taipei",url:"data/manifest.json",base:"data/"},{city:"new-taipei",url:"data/new-taipei/manifest.json",base:"data/new-taipei/"}];sources=await Promise.all(defs.map(async d=>({...d,manifest:await readJson(d.url,null)})));if(sources.some(s=>!s.manifest))throw Error("manifest");const [to,no,ff]=await Promise.all([readJson("data/operations/taipei.json",{dates:{}}),readJson("data/operations/new-taipei.json",{dates:{}}),readJson("data/facilities/taipei.json",{facilities:[]})]);operations={taipei:to||{dates:{}},"new-taipei":no||{dates:{}}};facilities=ff?.facilities||[];await ensure()}catch(e){console.error(e);statusEl.textContent=T[lang].error;listEl.textContent=T[lang].error}}
