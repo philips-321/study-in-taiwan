@@ -1,5 +1,6 @@
 const BASE = 'https://www.ambassador.com.tw';
 const DAYS = 7;
+const CONCURRENCY = 8;
 
 function stripHtml(value) {
   return String(value || '')
@@ -74,6 +75,44 @@ function englishTitleFromHeading(heading, chineseTitle) {
   return null;
 }
 
+function parseShowtimePage(html, theater, date, dt) {
+  const rows = [];
+  const movieBlocks = html.split(/<div\s+class=['"]showtime-item['"]>/i).slice(1);
+  for (const block of movieBlocks) {
+    const headingHtml = block.match(/<h3[^>]*>\s*<a[^>]*>([\s\S]*?)<\/a>\s*<\/h3>/i)?.[1] || '';
+    const movieId = block.match(/MovieContent\?MID=([a-f0-9-]{36})/i)?.[1] || null;
+
+    const versionBlocks = block.split(/<p\s+class=['"]tag-seat['"]>/i).slice(1);
+    for (const versionBlock of versionBlocks) {
+      const tagText = decodeText(versionBlock.split(/<\/p>/i)[0] || '');
+      const tagMatch = tagText.match(/^\(([^)]*)\)\s*(.+)$/);
+      const format = tagMatch?.[1]?.trim() || null;
+      const title = tagMatch?.[2]?.trim() || null;
+      if (!title) continue;
+      const titleEn = englishTitleFromHeading(headingHtml, title);
+
+      for (const session of versionBlock.matchAll(/<h6[^>]*>\s*([0-9]{1,2}:[0-9]{2})\s*<\/h6>[\s\S]*?<span\s+class=['"]float-left info['"]>([^<]*)/gi)) {
+        rows.push({
+          cinema_name: theater.name,
+          city: theater.city,
+          address: theater.address || null,
+          movie_title: title,
+          movie_title_en: titleEn,
+          date,
+          time: session[1].padStart(5, '0'),
+          hall: session[2].trim() || null,
+          format,
+          audio_language: languageFromFormat(format),
+          source_event_id: movieId,
+          source_url: `${BASE}/home/Showtime?ID=${theater.id}&DT=${dt}`,
+          source: 'ambassador-official-site'
+        });
+      }
+    }
+  }
+  return rows;
+}
+
 export async function fetchAmbassadorShowtimes() {
   const index = await get(`${BASE}/home/TheaterList`);
   const theaters = [];
@@ -89,54 +128,32 @@ export async function fetchAmbassadorShowtimes() {
     theaters.push({ id: match[1], name, address, city: cityFromAddress(address) });
   }
 
-  const rows = [];
+  const tasks = [];
   for (const theater of theaters) {
     for (let offset = 0; offset < DAYS; offset++) {
       const date = taipeiDate(offset);
       const dt = encodeURIComponent(date.replaceAll('-', '/'));
-      let html;
+      tasks.push({ theater, date, dt });
+    }
+  }
+
+  const rows = [];
+  let cursor = 0;
+  async function worker() {
+    while (true) {
+      const index = cursor++;
+      if (index >= tasks.length) return;
+      const { theater, date, dt } = tasks[index];
+      const url = `${BASE}/home/Showtime?ID=${theater.id}&DT=${dt}`;
       try {
-        html = await get(`${BASE}/home/Showtime?ID=${theater.id}&DT=${dt}`);
+        const html = await get(url);
+        rows.push(...parseShowtimePage(html, theater, date, dt));
       } catch (error) {
         console.error(`Ambassador ${theater.name} ${date}:`, error.message);
-        continue;
-      }
-
-      const movieBlocks = html.split(/<div\s+class=['"]showtime-item['"]>/i).slice(1);
-      for (const block of movieBlocks) {
-        const headingHtml = block.match(/<h3[^>]*>\s*<a[^>]*>([\s\S]*?)<\/a>\s*<\/h3>/i)?.[1] || '';
-        const movieId = block.match(/MovieContent\?MID=([a-f0-9-]{36})/i)?.[1] || null;
-
-        const versionBlocks = block.split(/<p\s+class=['"]tag-seat['"]>/i).slice(1);
-        for (const versionBlock of versionBlocks) {
-          const tagText = decodeText(versionBlock.split(/<\/p>/i)[0] || '');
-          const tagMatch = tagText.match(/^\(([^)]*)\)\s*(.+)$/);
-          const format = tagMatch?.[1]?.trim() || null;
-          const title = tagMatch?.[2]?.trim() || null;
-          if (!title) continue;
-          const titleEn = englishTitleFromHeading(headingHtml, title);
-
-          for (const session of versionBlock.matchAll(/<h6[^>]*>\s*([0-9]{1,2}:[0-9]{2})\s*<\/h6>[\s\S]*?<span\s+class=['"]float-left info['"]>([^<]*)/gi)) {
-            rows.push({
-              cinema_name: theater.name,
-              city: theater.city,
-              address: theater.address || null,
-              movie_title: title,
-              movie_title_en: titleEn,
-              date,
-              time: session[1].padStart(5, '0'),
-              hall: session[2].trim() || null,
-              format,
-              audio_language: languageFromFormat(format),
-              source_event_id: movieId,
-              source_url: `${BASE}/home/Showtime?ID=${theater.id}&DT=${dt}`,
-              source: 'ambassador-official-site'
-            });
-          }
-        }
       }
     }
   }
 
+  await Promise.all(Array.from({ length: Math.min(CONCURRENCY, tasks.length) }, () => worker()));
   return rows;
 }
