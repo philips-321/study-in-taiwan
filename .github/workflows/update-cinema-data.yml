@@ -30,18 +30,57 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: main
-          fetch-depth: 0
+          fetch-depth: 5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
 
+      - name: Preserve previous showtimes for last-known-good fallback
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cinema-showtimes-prev
+          mkdir -p /tmp/cinema-showtimes-prev
+          if [ -d cinema/data/showtimes ]; then
+            cp -a cinema/data/showtimes/. /tmp/cinema-showtimes-prev/
+          fi
+
+      - name: Probe MOC movie source once
+        id: moc_probe
+        shell: bash
+        run: |
+          set -u
+          url='https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8'
+          if curl --fail --silent --show-error --connect-timeout 5 --max-time 12 --retry 0 "$url" -o /tmp/moc-probe.json; then
+            echo 'available=true' >> "$GITHUB_OUTPUT"
+            echo 'MOC movie source probe succeeded.'
+          else
+            echo 'available=false' >> "$GITHUB_OUTPUT"
+            echo '::warning::MOC movie source probe failed. Circuit is open for this run; independent collectors will continue and eligible last-known-good MOC rows will be restored.'
+          fi
+
       - name: Refresh cinema JSON
-        run: node cinema/scripts/update-cinema-data.mjs
+        shell: bash
+        env:
+          MOC_AVAILABLE: ${{ steps.moc_probe.outputs.available }}
+        run: |
+          set -euo pipefail
+          if [ "$MOC_AVAILABLE" = 'true' ]; then
+            node cinema/scripts/update-cinema-data.mjs
+          else
+            node --import ./cinema/scripts/moc-offline-shim.mjs cinema/scripts/update-cinema-data.mjs
+          fi
+
+      - name: Restore failed-source last-known-good rows and source health
+        env:
+          CINEMA_PREVIOUS_SHOWTIMES_DIR: /tmp/cinema-showtimes-prev
+          CINEMA_FORCE_FAILED_SOURCES: ${{ steps.moc_probe.outputs.available == 'true' && '' || 'moc-culture-movie-api' }}
+          CINEMA_FORCED_SOURCE_ERROR: MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests
+        run: node cinema/scripts/restore-failed-source-fallbacks.mjs
 
       - name: Validate generated JSON
         run: |
@@ -64,7 +103,10 @@ jobs:
             'atmovies-taipei-fallback'
           ];
           for (const source of requiredSources) {
-            if (!manifest.sources?.showtimes?.[source]) throw new Error(`Missing source status: ${source}`);
+            const status = manifest.sources?.showtimes?.[source];
+            if (!status) throw new Error(`Missing source status: ${source}`);
+            if (!['healthy', 'degraded'].includes(status.health)) throw new Error(`Missing source health: ${source}`);
+            if (!['closed', 'open'].includes(status.circuit_state)) throw new Error(`Missing circuit state: ${source}`);
           }
           for (const [city, counts] of Object.entries(manifest.cities)) {
             if (!Number.isInteger(counts.cinemas) || !Number.isInteger(counts.showtimes)) {
@@ -87,10 +129,10 @@ jobs:
           git add cinema/data
           git commit -m 'Update Taiwan cinema JSON [skip ci]'
 
-          # main may move while collectors are running. Retry with a fresh rebase
+          # main may move while collectors are running. Retry from current main
           # instead of failing on a transient non-fast-forward/ref-lock race.
           for attempt in 1 2 3; do
-            git fetch origin main
+            git fetch --deepen=20 origin main
             git rebase origin/main
             if git push origin HEAD:main; then
               exit 0
