@@ -5,6 +5,7 @@ import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
 import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
 import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
+import { fetchAtMoviesTaipeiShowtimes } from './sources/atmovies-taipei.mjs';
 
 const ROOT = path.resolve('cinema/data');
 const CINEMAS_DIR = path.join(ROOT, 'cinemas');
@@ -130,7 +131,8 @@ const sourceStatus = {
   'miramar-official-api': { ok: false, showtimes: 0 },
   'ambassador-official-site': { ok: false, showtimes: 0 },
   'showtimes-official-site': { ok: false, showtimes: 0 },
-  'spot-huashan-official-schedule': { ok: false, showtimes: 0 }
+  'spot-huashan-official-schedule': { ok: false, showtimes: 0 },
+  'atmovies-taipei-fallback': { ok: false, showtimes: 0, role: 'fallback only for sources blocked/incomplete from GitHub Actions' }
 };
 
 function mergeExternalRows(rows, sourceName) {
@@ -157,12 +159,14 @@ function mergeExternalRows(rows, sourceName) {
       on_sales: null,
       source_event_id: row.source_event_id || null,
       source_url: row.source_url || null,
+      source_role: row.source_role || null,
       source: sourceName
     });
   }
   sourceStatus[sourceName] = {
     ok: true,
     showtimes: rows.length,
+    ...(sourceStatus[sourceName]?.role ? { role: sourceStatus[sourceName].role } : {}),
     ...(Array.isArray(rows.source_errors) && rows.source_errors.length ? { warnings: rows.source_errors.slice(0, 10) } : {})
   };
 }
@@ -171,7 +175,12 @@ async function runSource(sourceName, label, loader) {
   try {
     mergeExternalRows(await loader(), sourceName);
   } catch (error) {
-    sourceStatus[sourceName] = { ok: false, showtimes: 0, error: String(error?.message || error).slice(0, 300) };
+    sourceStatus[sourceName] = {
+      ...(sourceStatus[sourceName] || {}),
+      ok: false,
+      showtimes: 0,
+      error: String(error?.message || error).slice(0, 300)
+    };
     console.error(`${label} source failed:`, error);
   }
 }
@@ -180,6 +189,7 @@ await runSource('miramar-official-api', 'Miramar', fetchMiramarShowtimes);
 await runSource('ambassador-official-site', 'Ambassador', fetchAmbassadorShowtimes);
 await runSource('showtimes-official-site', 'ShowTimes', fetchShowTimesShowtimes);
 await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuashanShowtimes);
+await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);
 
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
 const citySummary = {};
@@ -199,12 +209,14 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   citySummary[slug] = { cinemas: cinemas.length, showtimes: showtimes.length };
 }
 await writeJson(path.join(ROOT, 'manifest.json'), {
-  version: 4, generated_at: generatedAt, timezone: 'Asia/Taipei',
+  version: 5, generated_at: generatedAt, timezone: 'Asia/Taipei',
   model: 'fixed per-city JSON files overwritten on refresh; no per-date archive files',
+  source_policy: 'official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete',
   fields: {
     audio_language: 'source-declared spoken/dubbed language when available',
     subtitles: 'verified subtitle language codes when source explicitly declares them; null means unknown',
-    duration_minutes: 'source-declared running time when available'
+    duration_minutes: 'source-declared running time when available',
+    source_role: 'why a fallback record was used, when applicable'
   },
   sources: {
     cinema_master: { metadata: CINEMA_META_API, year: master.year, csv: master.url },
