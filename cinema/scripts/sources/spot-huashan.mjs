@@ -11,18 +11,18 @@ function decodeHtml(value) {
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)));
 }
 
-function stripHtml(html) {
+function cellLines(html) {
   return decodeHtml(
     String(html || '')
-      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '\n')
-      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '\n')
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
       .replace(/<br\s*\/?>/gi, '\n')
-      .replace(/<\/\s*(?:p|div|li|h[1-6]|tr|td|th|section|article|tbody|thead)\s*>/gi, '\n')
       .replace(/<[^>]+>/g, ' ')
   )
     .replace(/\r/g, '')
-    .replace(/[\t ]+/g, ' ')
-    .replace(/\n+/g, '\n');
+    .split(/\n+/)
+    .map(v => v.replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
 }
 
 function resolveDate(month, day) {
@@ -44,74 +44,103 @@ function normalizeSubtitles(code) {
   return [compact];
 }
 
-function isDateOrShowStart(line) {
-  return /^(?:\d{1,2}\/\d{1,2}\s*)?(?:\([^)]*\)\s*)?\d{2}:\d{2}\b/.test(line) ||
-    /^\d{1,2}\/\d{1,2}(?:\s*\([^)]*\))?\s*$/.test(line);
-}
-
-function parseMeta(lines, startIndex) {
-  const parts = [];
-  for (let j = startIndex; j < Math.min(lines.length, startIndex + 7); j++) {
-    const next = lines[j].trim();
-    if (!next) continue;
-    if (isDateOrShowStart(next)) break;
-    parts.push(next);
-
-    const joined = parts.join(' ').replace(/\s+/g, ' ').trim();
-    const match = joined.match(/^(.*?)(?:\s+)(\d{2,3})(?:\s+)(C\/E|E\/C|C|E)(?:\s+(普|護|輔12|輔15|限))?$/i);
-    if (match) {
-      return {
-        englishTitle: match[1].trim() || null,
-        duration: Number(match[2]),
-        subtitleCode: match[3].toUpperCase(),
-        rating: match[4] || null
-      };
-    }
-  }
-  return { englishTitle: null, duration: null, subtitleCode: null, rating: null };
-}
-
 function parseRows(html) {
-  const text = stripHtml(html);
-  const lines = text.split('\n').map(v => v.trim()).filter(Boolean);
   const rows = [];
   let currentDate = null;
 
-  for (let i = 0; i < lines.length; i++) {
-    let line = lines[i];
+  for (const tr of String(html || '').matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cells = [...tr[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)]
+      .map(match => cellLines(match[1]))
+      .filter(lines => lines.length);
+    if (!cells.length) continue;
 
-    const datePrefix = line.match(/^(\d{1,2})\/(\d{1,2})(?:\s*\([^)]*\))?(?:\s+(.*))?$/);
-    if (datePrefix) {
-      currentDate = resolveDate(Number(datePrefix[1]), Number(datePrefix[2]));
-      line = (datePrefix[3] || '').trim();
-      if (!line) continue;
+    let date = currentDate;
+    for (const lines of cells) {
+      const joined = lines.join(' ');
+      const dm = joined.match(/(?:^|\s)(\d{1,2})\/(\d{1,2})(?:\s|$)/);
+      if (dm) {
+        date = resolveDate(Number(dm[1]), Number(dm[2]));
+        currentDate = date;
+        break;
+      }
+    }
+    if (!date) continue;
+
+    let timeCellIndex = -1;
+    let time = null;
+    for (let i = 0; i < cells.length; i++) {
+      const joined = cells[i].join(' ');
+      const tm = joined.match(/(?:^|\s)(\d{1,2}:\d{2})(?:\s|$)/);
+      if (tm) {
+        timeCellIndex = i;
+        time = tm[1].padStart(5, '0');
+        break;
+      }
+    }
+    if (!time || timeCellIndex < 0) continue;
+
+    const timeCell = cells[timeCellIndex].join(' ');
+    const afterTime = timeCell.replace(/^.*?\d{1,2}:\d{2}\s*/, '').trim();
+
+    let titleCellIndex = timeCellIndex;
+    let titleLines = afterTime ? [afterTime] : [];
+    if (!titleLines.length) {
+      for (let i = timeCellIndex + 1; i < cells.length; i++) {
+        const joined = cells[i].join(' ').trim();
+        if (!joined) continue;
+        if (/^\d{2,3}$/.test(joined) || /^(?:C\/E|E\/C|C|E)$/i.test(joined) || /^(?:普|護|輔12|輔15|限)$/.test(joined)) continue;
+        titleCellIndex = i;
+        titleLines = cells[i];
+        break;
+      }
+    }
+    if (!titleLines.length) continue;
+
+    const chineseTitle = titleLines[0].trim();
+    if (!chineseTitle || /台灣國際女性影展/.test(chineseTitle)) continue;
+    const englishTitle = titleLines.slice(1).join(' ').trim() || null;
+
+    let duration = null;
+    let subtitleCode = null;
+    let rating = null;
+    for (let i = titleCellIndex + 1; i < cells.length; i++) {
+      const joined = cells[i].join(' ').trim();
+      if (duration == null && /^\d{2,3}$/.test(joined)) {
+        duration = Number(joined);
+        continue;
+      }
+      if (!subtitleCode && /^(?:C\/E|E\/C|C|E)$/i.test(joined)) {
+        subtitleCode = joined.toUpperCase();
+        continue;
+      }
+      if (!rating && /^(?:普|護|輔12|輔15|限)$/.test(joined)) rating = joined;
     }
 
-    if (!currentDate) continue;
-
-    const start = line.match(/^(?:\([^)]*\)\s*)?(\d{2}:\d{2})\s+(.+)$/);
-    if (!start) continue;
-
-    const time = start[1];
-    const title = start[2].trim();
-    if (!title || /台灣國際女性影展.*(?:無售票|暫停售票)/.test(title)) continue;
-
-    const meta = parseMeta(lines, i + 1);
+    // Some layouts keep title/meta in one cell. Recover trailing metadata if needed.
+    if (duration == null || !subtitleCode) {
+      const combined = titleLines.join(' ').trim();
+      const meta = combined.match(/^(.*?)(?:\s+)(\d{2,3})\s+(C\/E|E\/C|C|E)(?:\s+(普|護|輔12|輔15|限))?$/i);
+      if (meta) {
+        duration ??= Number(meta[2]);
+        subtitleCode ||= meta[3].toUpperCase();
+        rating ||= meta[4] || null;
+      }
+    }
 
     rows.push({
       cinema_name: '光點華山電影館',
       city: 'taipei',
       address: '台北市中正區八德路一段1號',
-      movie_title: title,
-      movie_title_en: meta.englishTitle,
-      rating: meta.rating,
-      date: currentDate,
+      movie_title: chineseTitle,
+      movie_title_en: englishTitle,
+      rating,
+      date,
       time,
       hall: null,
       format: null,
       audio_language: null,
-      subtitles: normalizeSubtitles(meta.subtitleCode),
-      duration_minutes: meta.duration,
+      subtitles: normalizeSubtitles(subtitleCode),
+      duration_minutes: duration,
       source_url: URL,
       source: 'spot-huashan-official-schedule'
     });
