@@ -1,11 +1,20 @@
 {
   "version": 1,
   "city": "changhua",
-  "generated_at": "2026-10-23T17:56:00.225Z",
-  "source": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8",
+  "generated_at": "2026-10-23T18:06:09.420Z",
+  "sources": {
+    "moc-culture-movie-api": {
+      "ok": true,
+      "showtimes": 4
+    },
+    "miramar-official-api": {
+      "ok": true,
+      "showtimes": 355
+    }
+  },
   "showtimes": [
     {
-      "id": "1ff3da1be02709bb",
+      "id": "1ee103cbd284f1ef",
       "cinema_id": "5223efb5d4bbb508",
       "cinema_name": "彰化縣和美鎮立圖書館",
       "movie_title": "2026年11月【和美鎮立圖書館-電影欣賞】",
@@ -18,7 +27,7 @@
       "source": "moc-culture-movie-api"
     },
     {
-      "id": "168fda8ede43e1ac",
+      "id": "33fc3956edfb412a",
       "cinema_id": "5223efb5d4bbb508",
       "cinema_name": "彰化縣和美鎮立圖書館",
       "movie_title": "2026年12月【和美鎮立圖書館-電影欣賞】",

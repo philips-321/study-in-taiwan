@@ -1,7 +1,16 @@
 {
   "version": 1,
   "city": "new-taipei",
-  "generated_at": "2026-10-23T17:56:00.225Z",
-  "source": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8",
+  "generated_at": "2026-10-23T18:06:09.420Z",
+  "sources": {
+    "moc-culture-movie-api": {
+      "ok": true,
+      "showtimes": 4
+    },
+    "miramar-official-api": {
+      "ok": true,
+      "showtimes": 355
+    }
+  },
   "showtimes": []
 }

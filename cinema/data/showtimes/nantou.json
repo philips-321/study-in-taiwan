@@ -1,11 +1,20 @@
 {
   "version": 1,
   "city": "nantou",
-  "generated_at": "2026-10-23T17:56:00.225Z",
-  "source": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8",
+  "generated_at": "2026-10-23T18:06:09.420Z",
+  "sources": {
+    "moc-culture-movie-api": {
+      "ok": true,
+      "showtimes": 4
+    },
+    "miramar-official-api": {
+      "ok": true,
+      "showtimes": 355
+    }
+  },
   "showtimes": [
     {
-      "id": "5ab5067e4d54cbe0",
+      "id": "d1085c4b96e04478",
       "cinema_id": "8f9ec71fd16532e8",
       "cinema_name": "車籠埔斷層保存園區",
       "movie_title": "車籠埔斷層保存園區視聽中心影片欣賞（3月2日至6月1日空調設備改善工程休館）",

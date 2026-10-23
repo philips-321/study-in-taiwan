@@ -1,11 +1,20 @@
 {
   "version": 1,
   "city": "tainan",
-  "generated_at": "2026-10-23T17:56:00.225Z",
-  "source": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8",
+  "generated_at": "2026-10-23T18:06:09.420Z",
+  "sources": {
+    "moc-culture-movie-api": {
+      "ok": true,
+      "showtimes": 4
+    },
+    "miramar-official-api": {
+      "ok": true,
+      "showtimes": 355
+    }
+  },
   "showtimes": [
     {
-      "id": "3ca55a42c255e10c",
+      "id": "e9717d975eac61dd",
       "cinema_id": "c238467bfff226a1",
       "cinema_name": "臺南市奇美博物館",
       "movie_title": "VR沉浸探險【消失的法老】",

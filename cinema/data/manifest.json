@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "generated_at": "2026-10-23T17:56:00.225Z",
+  "version": 2,
+  "generated_at": "2026-10-23T18:06:09.420Z",
   "timezone": "Asia/Taipei",
   "model": "fixed per-city JSON files overwritten on refresh; no per-date archive files",
   "sources": {
@@ -9,12 +9,21 @@
       "year": 2025,
       "csv": "https://file.moc.gov.tw/001/Upload/510/relfile/16158/247043/ed396c28-93b3-4a58-9845-25a1e127c095.csv"
     },
-    "showtimes": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8"
+    "showtimes": {
+      "moc-culture-movie-api": {
+        "ok": true,
+        "showtimes": 4
+      },
+      "miramar-official-api": {
+        "ok": true,
+        "showtimes": 355
+      }
+    }
   },
   "cities": {
     "taipei": {
       "cinemas": 30,
-      "showtimes": 0
+      "showtimes": 355
     },
     "new-taipei": {
       "cinemas": 13,
