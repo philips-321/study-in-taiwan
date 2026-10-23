@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
+import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
 
 const ROOT = path.resolve('cinema/data');
 const CINEMAS_DIR = path.join(ROOT, 'cinemas');
@@ -122,36 +123,49 @@ for (const event of events) {
 
 const sourceStatus = {
   'moc-culture-movie-api': { ok: true, showtimes: [...showtimesByCity.values()].reduce((n, rows) => n + rows.length, 0) },
-  'miramar-official-api': { ok: false, showtimes: 0 }
+  'miramar-official-api': { ok: false, showtimes: 0 },
+  'ambassador-official-site': { ok: false, showtimes: 0 }
 };
-try {
-  const miramarRows = await fetchMiramarShowtimes();
-  for (const row of miramarRows) {
-    const slug = row.city || citySlug(row.cinema_name);
-    const matched = matchCinema(slug, row.cinema_name, null);
-    const cinemaId = matched?.id || stableId(slug, row.cinema_name);
-    showtimesByCity.get(slug).push({
-      id: stableId('miramar', row.cinema_name, row.movie_title, row.date, row.time, row.hall || ''),
+
+function mergeExternalRows(rows, sourceName) {
+  for (const row of rows) {
+    const slug = row.city || citySlug(row.address, row.cinema_name);
+    const target = showtimesByCity.has(slug) ? slug : 'unknown';
+    const matched = matchCinema(target, row.cinema_name, row.address || null);
+    const cinemaId = matched?.id || stableId(target, row.cinema_name, row.address || '');
+    showtimesByCity.get(target).push({
+      id: stableId(sourceName, row.cinema_name, row.movie_title, row.date, row.time, row.hall || '', row.format || ''),
       cinema_id: cinemaId,
       cinema_name: row.cinema_name,
       movie_title: row.movie_title,
-      movie_title_en: row.movie_title_en,
-      rating: row.rating,
+      movie_title_en: row.movie_title_en || null,
+      rating: row.rating || null,
       start_time: dateTimeToIso(row.date, row.time),
       end_time: null,
-      hall: row.hall,
-      format: row.format,
+      hall: row.hall || null,
+      format: row.format || null,
       price: null,
       on_sales: null,
-      source_event_id: null,
-      source_url: row.source_url,
-      source: row.source
+      source_event_id: row.source_event_id || null,
+      source_url: row.source_url || null,
+      source: sourceName
     });
   }
-  sourceStatus['miramar-official-api'] = { ok: true, showtimes: miramarRows.length };
+  sourceStatus[sourceName] = { ok: true, showtimes: rows.length };
+}
+
+try {
+  mergeExternalRows(await fetchMiramarShowtimes(), 'miramar-official-api');
 } catch (error) {
   sourceStatus['miramar-official-api'] = { ok: false, showtimes: 0, error: String(error?.message || error).slice(0, 300) };
   console.error('Miramar source failed:', error);
+}
+
+try {
+  mergeExternalRows(await fetchAmbassadorShowtimes(), 'ambassador-official-site');
+} catch (error) {
+  sourceStatus['ambassador-official-site'] = { ok: false, showtimes: 0, error: String(error?.message || error).slice(0, 300) };
+  console.error('Ambassador source failed:', error);
 }
 
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
@@ -172,7 +186,7 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   citySummary[slug] = { cinemas: cinemas.length, showtimes: showtimes.length };
 }
 await writeJson(path.join(ROOT, 'manifest.json'), {
-  version: 2, generated_at: generatedAt, timezone: 'Asia/Taipei',
+  version: 3, generated_at: generatedAt, timezone: 'Asia/Taipei',
   model: 'fixed per-city JSON files overwritten on refresh; no per-date archive files',
   sources: {
     cinema_master: { metadata: CINEMA_META_API, year: master.year, csv: master.url },
@@ -180,4 +194,4 @@ await writeJson(path.join(ROOT, 'manifest.json'), {
   },
   cities: citySummary
 });
-console.log(`Cinema master ${master.year}: ${cinemaRows.length} rows; MOC events: ${events.length}; Miramar: ${sourceStatus['miramar-official-api'].showtimes} showtimes.`);
+console.log(`Cinema master ${master.year}: ${cinemaRows.length} rows; sources: ${JSON.stringify(sourceStatus)}`);
