@@ -1,6 +1,6 @@
 {
   "version": 7,
-  "generated_at": "2026-10-23T19:04:02.308Z",
+  "generated_at": "2026-10-23T19:05:16.466Z",
   "timezone": "Asia/Taipei",
   "model": "fixed per-city JSON files overwritten on refresh; no per-date archive files",
   "source_policy": "official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete",
@@ -32,7 +32,7 @@
       },
       "ambassador-official-site": {
         "ok": true,
-        "showtimes": 2574
+        "showtimes": 2593
       },
       "showtimes-official-site": {
         "ok": false,
@@ -54,8 +54,8 @@
         "role": "fallback only for sources blocked/incomplete from GitHub Actions",
         "warnings": [
           "t02a01/2026-10-24: No showtimes parsed",
-          "t02a01/2026-10-29: No showtimes parsed",
           "t02a11/2026-10-24: No showtimes parsed",
+          "t02a01/2026-10-29: No showtimes parsed",
           "t02a11/2026-10-29: No showtimes parsed",
           "t02a12/2026-10-24: No showtimes parsed",
           "t02a12/2026-10-29: No showtimes parsed",
@@ -72,13 +72,13 @@
       "cinemas": 30,
       "active_cinemas": 12,
       "unknown_cinemas": 18,
-      "showtimes": 2653
+      "showtimes": 2587
     },
     "new-taipei": {
       "cinemas": 13,
       "active_cinemas": 3,
       "unknown_cinemas": 10,
-      "showtimes": 899
+      "showtimes": 797
     },
     "keelung": {
       "cinemas": 1,
@@ -90,7 +90,7 @@
       "cinemas": 9,
       "active_cinemas": 1,
       "unknown_cinemas": 8,
-      "showtimes": 298
+      "showtimes": 254
     },
     "hsinchu-city": {
       "cinemas": 2,
@@ -156,7 +156,7 @@
       "cinemas": 10,
       "active_cinemas": 2,
       "unknown_cinemas": 8,
-      "showtimes": 556
+      "showtimes": 586
     },
     "pingtung": {
       "cinemas": 2,
