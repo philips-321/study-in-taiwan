@@ -10,7 +10,7 @@ on:
     branches:
       - main
     paths:
-      - 'cinema/scripts/update-cinema-data.mjs'
+      - 'cinema/scripts/**'
       - '.github/workflows/update-cinema-data.yml'
 
 concurrency:
@@ -52,12 +52,15 @@ jobs:
           import fs from 'node:fs';
           const manifest = JSON.parse(fs.readFileSync('cinema/data/manifest.json', 'utf8'));
           if (!manifest.generated_at || !manifest.cities) throw new Error('Invalid cinema manifest');
+          if (!manifest.sources?.cinema_master?.year) throw new Error('Missing cinema master source');
+          if (!manifest.sources?.showtimes?.['moc-culture-movie-api']) throw new Error('Missing MOC source status');
+          if (!manifest.sources?.showtimes?.['miramar-official-api']) throw new Error('Missing Miramar source status');
           for (const [city, counts] of Object.entries(manifest.cities)) {
             if (!Number.isInteger(counts.cinemas) || !Number.isInteger(counts.showtimes)) {
               throw new Error(`Invalid counts for ${city}`);
             }
           }
-          console.log(manifest.cities);
+          console.log(JSON.stringify({ cities: manifest.cities, sources: manifest.sources.showtimes }, null, 2));
           NODE
 
       - name: Commit changed JSON only
