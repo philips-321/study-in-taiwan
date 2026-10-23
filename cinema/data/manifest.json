@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "generated_at": "2026-10-23T18:06:40.824Z",
+  "version": 3,
+  "generated_at": "2026-10-23T18:07:06.741Z",
   "timezone": "Asia/Taipei",
   "model": "fixed per-city JSON files overwritten on refresh; no per-date archive files",
   "sources": {
@@ -17,17 +17,21 @@
       "miramar-official-api": {
         "ok": true,
         "showtimes": 355
+      },
+      "ambassador-official-site": {
+        "ok": true,
+        "showtimes": 2574
       }
     }
   },
   "cities": {
     "taipei": {
       "cinemas": 30,
-      "showtimes": 355
+      "showtimes": 942
     },
     "new-taipei": {
       "cinemas": 13,
-      "showtimes": 0
+      "showtimes": 899
     },
     "keelung": {
       "cinemas": 1,
@@ -35,7 +39,7 @@
     },
     "taoyuan": {
       "cinemas": 9,
-      "showtimes": 0
+      "showtimes": 298
     },
     "hsinchu-city": {
       "cinemas": 2,
@@ -79,11 +83,11 @@
     },
     "kaohsiung": {
       "cinemas": 10,
-      "showtimes": 0
+      "showtimes": 556
     },
     "pingtung": {
       "cinemas": 2,
-      "showtimes": 0
+      "showtimes": 234
     },
     "yilan": {
       "cinemas": 2,
