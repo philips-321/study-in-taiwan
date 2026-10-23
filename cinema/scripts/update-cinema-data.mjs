@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 
 const ROOT = path.resolve('cinema/data');
 const CINEMAS_DIR = path.join(ROOT, 'cinemas');
@@ -30,6 +31,10 @@ function toIsoLocal(value) {
   if (!value || typeof value !== 'string') return null;
   const m = value.trim().match(/^(\d{4})\/(\d{2})\/(\d{2})\s+(\d{2}):(\d{2})(?::(\d{2}))?/);
   return m ? `${m[1]}-${m[2]}-${m[3]}T${m[4]}:${m[5]}:${m[6] || '00'}+08:00` : value.trim();
+}
+function dateTimeToIso(date, time) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '') || !/^\d{2}:\d{2}$/.test(time || '')) return null;
+  return `${date}T${time}:00+08:00`;
 }
 async function fetchText(url) {
   const r = await fetch(url, { headers: { 'user-agent': 'study-in-taiwan-cinema-data/1.0' } });
@@ -107,7 +112,7 @@ for (const event of events) {
     const matched = matchCinema(slug, venue, location);
     const cinemaId = matched?.id || stableId(slug, venue, location || '');
     showtimesByCity.get(slug).push({
-      id: stableId(event.UID || '', venue, show.time || '', event.title || ''), cinema_id: cinemaId,
+      id: stableId('moc', event.UID || '', venue, show.time || '', event.title || ''), cinema_id: cinemaId,
       cinema_name: venue, movie_title: clean(event.title), start_time: toIsoLocal(show.time), end_time: toIsoLocal(show.endTime),
       price: clean(show.price), on_sales: show.onSales ?? null, source_event_id: clean(event.UID),
       source_url: clean(event.sourceWebPromote) || clean(event.webSales), source: 'moc-culture-movie-api'
@@ -115,19 +120,64 @@ for (const event of events) {
   }
 }
 
+const sourceStatus = {
+  'moc-culture-movie-api': { ok: true, showtimes: [...showtimesByCity.values()].reduce((n, rows) => n + rows.length, 0) },
+  'miramar-official-api': { ok: false, showtimes: 0 }
+};
+try {
+  const miramarRows = await fetchMiramarShowtimes();
+  for (const row of miramarRows) {
+    const slug = row.city || citySlug(row.cinema_name);
+    const matched = matchCinema(slug, row.cinema_name, null);
+    const cinemaId = matched?.id || stableId(slug, row.cinema_name);
+    showtimesByCity.get(slug).push({
+      id: stableId('miramar', row.cinema_name, row.movie_title, row.date, row.time, row.hall || ''),
+      cinema_id: cinemaId,
+      cinema_name: row.cinema_name,
+      movie_title: row.movie_title,
+      movie_title_en: row.movie_title_en,
+      rating: row.rating,
+      start_time: dateTimeToIso(row.date, row.time),
+      end_time: null,
+      hall: row.hall,
+      format: row.format,
+      price: null,
+      on_sales: null,
+      source_event_id: null,
+      source_url: row.source_url,
+      source: row.source
+    });
+  }
+  sourceStatus['miramar-official-api'] = { ok: true, showtimes: miramarRows.length };
+} catch (error) {
+  sourceStatus['miramar-official-api'] = { ok: false, showtimes: 0, error: String(error?.message || error).slice(0, 300) };
+  console.error('Miramar source failed:', error);
+}
+
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
 const citySummary = {};
 for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   const cinemas = [...cinemasByCity.get(slug).values()].sort((a,b) => a.name_zh.localeCompare(b.name_zh, 'zh-Hant'));
-  const showtimes = showtimesByCity.get(slug).sort((a,b) => String(a.start_time).localeCompare(String(b.start_time)));
+  const seen = new Set();
+  const showtimes = showtimesByCity.get(slug)
+    .filter(row => {
+      const key = [row.cinema_id, row.movie_title, row.start_time, row.hall || '', row.source].join('|');
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .sort((a,b) => String(a.start_time).localeCompare(String(b.start_time)));
   await writeJson(path.join(CINEMAS_DIR, `${slug}.json`), { version: 1, city: slug, source_year: master.year, source: master.url, cinemas });
-  await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), { version: 1, city: slug, generated_at: generatedAt, source: MOVIE_API, showtimes });
+  await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), { version: 1, city: slug, generated_at: generatedAt, sources: sourceStatus, showtimes });
   citySummary[slug] = { cinemas: cinemas.length, showtimes: showtimes.length };
 }
 await writeJson(path.join(ROOT, 'manifest.json'), {
-  version: 1, generated_at: generatedAt, timezone: 'Asia/Taipei',
+  version: 2, generated_at: generatedAt, timezone: 'Asia/Taipei',
   model: 'fixed per-city JSON files overwritten on refresh; no per-date archive files',
-  sources: { cinema_master: { metadata: CINEMA_META_API, year: master.year, csv: master.url }, showtimes: MOVIE_API },
+  sources: {
+    cinema_master: { metadata: CINEMA_META_API, year: master.year, csv: master.url },
+    showtimes: sourceStatus
+  },
   cities: citySummary
 });
-console.log(`Cinema master ${master.year}: ${cinemaRows.length} rows; movie events: ${events.length}.`);
+console.log(`Cinema master ${master.year}: ${cinemaRows.length} rows; MOC events: ${events.length}; Miramar: ${sourceStatus['miramar-official-api'].showtimes} showtimes.`);
