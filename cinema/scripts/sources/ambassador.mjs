@@ -12,6 +12,19 @@ function stripHtml(value) {
     .filter(Boolean);
 }
 
+function decodeText(value) {
+  return String(value || '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function taipeiDate(offset = 0) {
   const now = new Date(Date.now() + offset * 86400000);
   return new Intl.DateTimeFormat('en-CA', {
@@ -35,6 +48,29 @@ function cityFromAddress(address) {
     ['tainan', ['台南市','臺南市']], ['kaohsiung', ['高雄市']], ['pingtung', ['屏東縣']]
   ];
   for (const [slug, names] of aliases) if (names.some(n => value.includes(n))) return slug;
+  return null;
+}
+
+function languageFromFormat(format) {
+  const value = String(format || '');
+  if (/英文版/.test(value)) return 'en';
+  if (/日文版/.test(value)) return 'ja';
+  if (/韓語版|韓文版/.test(value)) return 'ko';
+  if (/中文版|中文配音/.test(value)) return 'zh';
+  if (/法語版|法文版/.test(value)) return 'fr';
+  if (/德語版|德文版/.test(value)) return 'de';
+  if (/西語版|西班牙文版/.test(value)) return 'es';
+  return null;
+}
+
+function englishTitleFromHeading(heading, chineseTitle) {
+  const raw = decodeText(heading);
+  const zh = String(chineseTitle || '').trim();
+  if (!raw || !zh) return null;
+  if (raw.startsWith(zh)) {
+    const rest = raw.slice(zh.length).trim();
+    return rest || null;
+  }
   return null;
 }
 
@@ -68,15 +104,18 @@ export async function fetchAmbassadorShowtimes() {
 
       const movieBlocks = html.split(/<div\s+class=['"]showtime-item['"]>/i).slice(1);
       for (const block of movieBlocks) {
-        const titleMatch = block.match(/<h3[^>]*>\s*<a[^>]*>\s*([^<]+?)\s*(?:<span\s+class=['"]eng['"]>([^<]*)<\/span>)?/i);
-        if (!titleMatch) continue;
-        const title = titleMatch[1].trim();
-        const titleEn = (titleMatch[2] || '').trim() || null;
+        const headingHtml = block.match(/<h3[^>]*>\s*<a[^>]*>([\s\S]*?)<\/a>\s*<\/h3>/i)?.[1] || '';
         const movieId = block.match(/MovieContent\?MID=([a-f0-9-]{36})/i)?.[1] || null;
 
         const versionBlocks = block.split(/<p\s+class=['"]tag-seat['"]>/i).slice(1);
         for (const versionBlock of versionBlocks) {
-          const version = versionBlock.match(/^\s*\(([^)]*)\)/)?.[1]?.trim() || null;
+          const tagText = decodeText(versionBlock.split(/<\/p>/i)[0] || '');
+          const tagMatch = tagText.match(/^\(([^)]*)\)\s*(.+)$/);
+          const format = tagMatch?.[1]?.trim() || null;
+          const title = tagMatch?.[2]?.trim() || null;
+          if (!title) continue;
+          const titleEn = englishTitleFromHeading(headingHtml, title);
+
           for (const session of versionBlock.matchAll(/<h6[^>]*>\s*([0-9]{1,2}:[0-9]{2})\s*<\/h6>[\s\S]*?<span\s+class=['"]float-left info['"]>([^<]*)/gi)) {
             rows.push({
               cinema_name: theater.name,
@@ -87,7 +126,8 @@ export async function fetchAmbassadorShowtimes() {
               date,
               time: session[1].padStart(5, '0'),
               hall: session[2].trim() || null,
-              format: version,
+              format,
+              audio_language: languageFromFormat(format),
               source_event_id: movieId,
               source_url: `${BASE}/home/Showtime?ID=${theater.id}&DT=${dt}`,
               source: 'ambassador-official-site'
