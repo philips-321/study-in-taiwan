@@ -40,10 +40,28 @@ function dateTimeToIso(date, time) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '') || !/^\d{2}:\d{2}$/.test(time || '')) return null;
   return `${date}T${time}:00+08:00`;
 }
-async function fetchText(url) {
-  const r = await fetch(url, { headers: { 'user-agent': 'study-in-taiwan-cinema-data/1.0' } });
-  if (!r.ok) throw new Error(`${r.status} ${r.statusText}: ${url}`);
-  return r.text();
+function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+async function fetchText(url, attempts = 3) {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      const r = await fetch(url, { headers: { 'user-agent': 'study-in-taiwan-cinema-data/1.0' } });
+      if (!r.ok) {
+        const error = new Error(`${r.status} ${r.statusText}: ${url}`);
+        if (r.status >= 400 && r.status < 500 && r.status !== 408 && r.status !== 429) throw error;
+        lastError = error;
+      } else {
+        return await r.text();
+      }
+    } catch (error) {
+      lastError = error;
+    }
+    if (attempt < attempts) {
+      console.warn(`Fetch attempt ${attempt}/${attempts} failed for ${url}: ${String(lastError?.message || lastError)}`);
+      await sleep(attempt * 2000);
+    }
+  }
+  throw lastError || new Error(`Unable to fetch ${url}`);
 }
 async function fetchJson(url) { return JSON.parse((await fetchText(url)).replace(/^\uFEFF/, '')); }
 function parseCsv(text) {
