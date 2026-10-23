@@ -194,7 +194,6 @@ await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtM
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
 const citySummary = {};
 for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
-  const cinemas = [...cinemasByCity.get(slug).values()].sort((a,b) => a.name_zh.localeCompare(b.name_zh, 'zh-Hant'));
   const seen = new Set();
   const showtimes = showtimesByCity.get(slug)
     .filter(row => {
@@ -204,19 +203,48 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
       return true;
     })
     .sort((a,b) => String(a.start_time).localeCompare(String(b.start_time)));
-  await writeJson(path.join(CINEMAS_DIR, `${slug}.json`), { version: 1, city: slug, source_year: master.year, source: master.url, cinemas });
+
+  const activeCinemaIds = new Set(showtimes.map(row => row.cinema_id).filter(Boolean));
+  const cinemas = [...cinemasByCity.get(slug).values()]
+    .map(cinema => {
+      const active = activeCinemaIds.has(cinema.id);
+      return {
+        ...cinema,
+        operational_status: active ? 'active' : 'unknown',
+        recommendation_eligible: active,
+        status_evidence: active ? 'fresh-showtime-source' : 'no-fresh-showtime-evidence',
+        status_checked_at: generatedAt
+      };
+    })
+    .sort((a,b) => a.name_zh.localeCompare(b.name_zh, 'zh-Hant'));
+
+  const activeCount = cinemas.filter(cinema => cinema.operational_status === 'active').length;
+  const unknownCount = cinemas.length - activeCount;
+
+  await writeJson(path.join(CINEMAS_DIR, `${slug}.json`), {
+    version: 2,
+    city: slug,
+    source_year: master.year,
+    source: master.url,
+    status_policy: 'active requires fresh showtime evidence; absence of showtimes is unknown, never inferred closed',
+    cinemas
+  });
   await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), { version: 2, city: slug, generated_at: generatedAt, sources: sourceStatus, showtimes });
-  citySummary[slug] = { cinemas: cinemas.length, showtimes: showtimes.length };
+  citySummary[slug] = { cinemas: cinemas.length, active_cinemas: activeCount, unknown_cinemas: unknownCount, showtimes: showtimes.length };
 }
 await writeJson(path.join(ROOT, 'manifest.json'), {
-  version: 5, generated_at: generatedAt, timezone: 'Asia/Taipei',
+  version: 6, generated_at: generatedAt, timezone: 'Asia/Taipei',
   model: 'fixed per-city JSON files overwritten on refresh; no per-date archive files',
   source_policy: 'official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete',
+  operational_status_policy: 'fresh showtime evidence marks a cinema active; no fresh evidence stays unknown; closed status requires explicit verified evidence and is never inferred from missing showtimes',
+  recommendation_policy: 'automatic recommendations should use recommendation_eligible=true; unknown cinemas require separate verification before recommendation',
   fields: {
     audio_language: 'source-declared spoken/dubbed language when available',
     subtitles: 'verified subtitle language codes when source explicitly declares them; null means unknown',
     duration_minutes: 'source-declared running time when available',
-    source_role: 'why a fallback record was used, when applicable'
+    source_role: 'why a fallback record was used, when applicable',
+    operational_status: 'active when supported by fresh showtime evidence; otherwise unknown unless explicitly verified closed in a future override layer',
+    recommendation_eligible: 'true only when current evidence supports automatic recommendation'
   },
   sources: {
     cinema_master: { metadata: CINEMA_META_API, year: master.year, csv: master.url },
