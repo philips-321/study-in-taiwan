@@ -1,21 +1,21 @@
 {
   "version": 3,
   "city": "tainan",
-  "generated_at": "2026-10-23T20:21:14.631Z",
+  "generated_at": "2026-10-23T23:53:43.718Z",
   "sources": {
     "moc-culture-movie-api": {
       "ok": false,
-      "showtimes": 0,
+      "showtimes": 1078,
       "error": "MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 1,
-      "fresh_showtimes": 0,
+      "failure_count": 2,
+      "fresh_showtimes": 1078,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": "2026-10-23T19:07:14.709Z",
-      "last_failure_at": "2026-10-23T20:22:13.365Z",
-      "next_probe_at": "2026-10-23T20:52:13.365Z"
+      "last_failure_at": "2026-10-23T23:54:20.869Z",
+      "next_probe_at": "2026-10-24T00:24:20.869Z"
     },
     "miramar-official-api": {
       "ok": true,
@@ -26,20 +26,20 @@
       "fresh_showtimes": 355,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-23T20:22:13.365Z",
+      "last_success_at": "2026-10-23T23:54:20.869Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 2922,
+      "showtimes": 2758,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 2922,
+      "fresh_showtimes": 2758,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-23T20:22:13.365Z",
+      "last_success_at": "2026-10-23T23:54:20.869Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -49,13 +49,13 @@
       "error": "ShowTimes source failed: 台北欣欣秀泰影城: 403 Forbidden; 大巨蛋秀泰影城: 403 Forbidden",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 1,
+      "failure_count": 2,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-10-23T20:22:13.365Z",
-      "next_probe_at": "2026-10-23T20:52:13.365Z"
+      "last_failure_at": "2026-10-23T23:54:20.869Z",
+      "next_probe_at": "2026-10-24T00:24:20.869Z"
     },
     "spot-huashan-official-schedule": {
       "ok": true,
@@ -66,7 +66,7 @@
       "fresh_showtimes": 79,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-23T20:22:13.365Z",
+      "last_success_at": "2026-10-23T23:54:20.869Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -76,13 +76,13 @@
       "error": "Eslite 403 Forbidden",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 1,
+      "failure_count": 2,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-10-23T20:22:13.365Z",
-      "next_probe_at": "2026-10-23T20:52:13.365Z"
+      "last_failure_at": "2026-10-23T23:54:20.869Z",
+      "next_probe_at": "2026-10-24T00:24:20.869Z"
     },
     "atmovies-taipei-fallback": {
       "ok": true,
@@ -94,8 +94,8 @@
         "t02a11/2026-10-24: No showtimes parsed",
         "t02a11/2026-10-29: No showtimes parsed",
         "t02a12/2026-10-24: No showtimes parsed",
-        "t02a12/2026-10-29: No showtimes parsed",
         "t02b14/2026-10-24: No showtimes parsed",
+        "t02a12/2026-10-29: No showtimes parsed",
         "t02b14/2026-10-29: No showtimes parsed",
         "t02b08/2026-10-24: No showtimes parsed",
         "t02b08/2026-10-29: No showtimes parsed"
@@ -106,12 +106,32 @@
       "fresh_showtimes": 1632,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-23T20:22:13.365Z",
+      "last_success_at": "2026-10-23T23:54:20.869Z",
       "last_failure_at": null,
       "next_probe_at": null
     }
   },
-  "showtimes": [],
+  "showtimes": [
+    {
+      "id": "e9717d975eac61dd",
+      "cinema_id": "c238467bfff226a1",
+      "cinema_name": "臺南市奇美博物館",
+      "movie_title": "VR沉浸探險【消失的法老】",
+      "movie_title_en": null,
+      "start_time": "2026-01-29T09:30:00+08:00",
+      "end_time": "2026-12-31T17:30:00+08:00",
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": null,
+      "duration_minutes": null,
+      "price": "VR線上票+680;全票 +800;優惠票+750",
+      "on_sales": "Y",
+      "source_event_id": "6920ec3b26b32445dce6f17a",
+      "source_url": "https://www.chimeimuseum.org/event/691aeece01a23",
+      "source": "moc-culture-movie-api"
+    }
+  ],
   "resilience": {
     "policy": "failed collectors preserve eligible future last-known-good rows while independent collectors continue",
     "restored_sources": [
@@ -119,6 +139,6 @@
       "showtimes-official-site",
       "eslite-official-schedule"
     ],
-    "restored_at": "2026-10-23T20:22:13.365Z"
+    "restored_at": "2026-10-23T23:54:20.869Z"
   }
 }
