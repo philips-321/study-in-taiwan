@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "generated_at": "2026-10-23T17:56:00.225Z",
+  "timezone": "Asia/Taipei",
+  "model": "fixed per-city JSON files overwritten on refresh; no per-date archive files",
+  "sources": {
+    "cinema_master": {
+      "metadata": "https://www.bamid.gov.tw/OpenData.aspx?SN=E6C57FC155564DEB",
+      "year": 2025,
+      "csv": "https://file.moc.gov.tw/001/Upload/510/relfile/16158/247043/ed396c28-93b3-4a58-9845-25a1e127c095.csv"
+    },
+    "showtimes": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8"
+  },
+  "cities": {
+    "taipei": {
+      "cinemas": 30,
+      "showtimes": 0
+    },
+    "new-taipei": {
+      "cinemas": 13,
+      "showtimes": 0
+    },
+    "keelung": {
+      "cinemas": 1,
+      "showtimes": 0
+    },
+    "taoyuan": {
+      "cinemas": 9,
+      "showtimes": 0
+    },
+    "hsinchu-city": {
+      "cinemas": 2,
+      "showtimes": 0
+    },
+    "hsinchu-county": {
+      "cinemas": 1,
+      "showtimes": 0
+    },
+    "miaoli": {
+      "cinemas": 1,
+      "showtimes": 0
+    },
+    "taichung": {
+      "cinemas": 13,
+      "showtimes": 0
+    },
+    "changhua": {
+      "cinemas": 1,
+      "showtimes": 2
+    },
+    "nantou": {
+      "cinemas": 2,
+      "showtimes": 1
+    },
+    "yunlin": {
+      "cinemas": 2,
+      "showtimes": 0
+    },
+    "chiayi-city": {
+      "cinemas": 3,
+      "showtimes": 0
+    },
+    "chiayi-county": {
+      "cinemas": 0,
+      "showtimes": 0
+    },
+    "tainan": {
+      "cinemas": 9,
+      "showtimes": 1
+    },
+    "kaohsiung": {
+      "cinemas": 10,
+      "showtimes": 0
+    },
+    "pingtung": {
+      "cinemas": 2,
+      "showtimes": 0
+    },
+    "yilan": {
+      "cinemas": 2,
+      "showtimes": 0
+    },
+    "hualien": {
+      "cinemas": 2,
+      "showtimes": 0
+    },
+    "taitung": {
+      "cinemas": 1,
+      "showtimes": 0
+    },
+    "penghu": {
+      "cinemas": 1,
+      "showtimes": 0
+    },
+    "kinmen": {
+      "cinemas": 2,
+      "showtimes": 0
+    },
+    "lienchiang": {
+      "cinemas": 0,
+      "showtimes": 0
+    },
+    "unknown": {
+      "cinemas": 0,
+      "showtimes": 0
+    }
+  }
+}
