@@ -5,6 +5,7 @@ import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
 import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
 import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
+import { fetchEsliteShowtimes } from './sources/eslite.mjs';
 import { fetchAtMoviesTaipeiShowtimes } from './sources/atmovies-taipei.mjs';
 
 const ROOT = path.resolve('cinema/data');
@@ -118,12 +119,28 @@ for (const r of cinemaRows) {
   });
 }
 
+function normName(value) {
+  return String(value || '')
+    .replace(/臺/g, '台')
+    .toLowerCase()
+    .replace(/(?:電影城|電影院|電影館|影城|戲院|劇院|威秀)/g, '')
+    .replace(/[\s　・·()（）\-_/]/g, '');
+}
+function addressKey(value) {
+  const normalized = String(value || '')
+    .replace(/臺/g, '台')
+    .replace(/[\s　，,、()（）\-]/g, '');
+  return normalized.match(/^(.+?號)/)?.[1] || normalized;
+}
 function matchCinema(slug, venue, location) {
   const list = [...cinemasByCity.get(slug).values()];
-  const norm = s => (s || '').replace(/[\s　・·()（）影城電影城戲院]/g, '').toLowerCase();
-  const v = norm(venue), a = norm(location);
-  return list.find(c => v && (norm(c.name_zh).includes(v) || v.includes(norm(c.name_zh)))) ||
-         list.find(c => a && c.address && (norm(c.address).includes(a) || a.includes(norm(c.address)))) || null;
+  const v = normName(venue);
+  const a = addressKey(location);
+  return list.find(c => {
+           const n = normName(c.name_zh);
+           return v && n && (n.includes(v) || v.includes(n));
+         }) ||
+         list.find(c => a && c.address && addressKey(c.address) === a) || null;
 }
 
 for (const event of events) {
@@ -150,6 +167,7 @@ const sourceStatus = {
   'ambassador-official-site': { ok: false, showtimes: 0 },
   'showtimes-official-site': { ok: false, showtimes: 0 },
   'spot-huashan-official-schedule': { ok: false, showtimes: 0 },
+  'eslite-official-schedule': { ok: false, showtimes: 0 },
   'atmovies-taipei-fallback': { ok: false, showtimes: 0, role: 'fallback only for sources blocked/incomplete from GitHub Actions' }
 };
 
@@ -207,6 +225,7 @@ await runSource('miramar-official-api', 'Miramar', fetchMiramarShowtimes);
 await runSource('ambassador-official-site', 'Ambassador', fetchAmbassadorShowtimes);
 await runSource('showtimes-official-site', 'ShowTimes', fetchShowTimesShowtimes);
 await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuashanShowtimes);
+await runSource('eslite-official-schedule', 'Eslite', fetchEsliteShowtimes);
 await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);
 
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
@@ -215,7 +234,7 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   const seen = new Set();
   const showtimes = showtimesByCity.get(slug)
     .filter(row => {
-      const key = [row.cinema_id, row.movie_title, row.start_time, row.hall || '', row.source].join('|');
+      const key = [row.cinema_id, row.movie_title, row.start_time, row.hall || '', row.format || ''].join('|');
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
@@ -247,15 +266,16 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
     status_policy: 'active requires fresh showtime evidence; absence of showtimes is unknown, never inferred closed',
     cinemas
   });
-  await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), { version: 2, city: slug, generated_at: generatedAt, sources: sourceStatus, showtimes });
+  await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), { version: 3, city: slug, generated_at: generatedAt, sources: sourceStatus, showtimes });
   citySummary[slug] = { cinemas: cinemas.length, active_cinemas: activeCount, unknown_cinemas: unknownCount, showtimes: showtimes.length };
 }
 await writeJson(path.join(ROOT, 'manifest.json'), {
-  version: 6, generated_at: generatedAt, timezone: 'Asia/Taipei',
+  version: 7, generated_at: generatedAt, timezone: 'Asia/Taipei',
   model: 'fixed per-city JSON files overwritten on refresh; no per-date archive files',
   source_policy: 'official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete',
   operational_status_policy: 'fresh showtime evidence marks a cinema active; no fresh evidence stays unknown; closed status requires explicit verified evidence and is never inferred from missing showtimes',
   recommendation_policy: 'automatic recommendations should use recommendation_eligible=true; unknown cinemas require separate verification before recommendation',
+  dedup_policy: 'same normalized cinema/movie/time/hall/format is emitted once; official sources run before fallback sources and therefore win exact duplicates',
   fields: {
     audio_language: 'source-declared spoken/dubbed language when available',
     subtitles: 'verified subtitle language codes when source explicitly declares them; null means unknown',
