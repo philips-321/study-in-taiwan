@@ -1,4 +1,5 @@
 const BASE = 'https://www.atmovies.com.tw/showtime';
+const CONCURRENCY = 6;
 
 const CINEMAS = [
   { code: 't02a01', cinema_name: '台北信義威秀影城', address: '台北市信義區松壽路20號', source_role: 'vieshow-waf-fallback' },
@@ -141,31 +142,47 @@ function parsePage(html, cinema, requestedDate, url) {
   return rows;
 }
 
+async function fetchTask({ cinema, date }) {
+  const url = `${BASE}/${cinema.code}/a02/${compactDate(date)}/`;
+  const response = await fetch(url, {
+    headers: {
+      accept: 'text/html,application/xhtml+xml',
+      'accept-language': 'zh-TW,zh;q=0.9,en;q=0.7',
+      'user-agent': 'study-in-taiwan-cinema-data/1.0'
+    }
+  });
+  if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+  const parsed = parsePage(await response.text(), cinema, date, url);
+  if (!parsed.length) throw new Error('No showtimes parsed');
+  return parsed;
+}
+
 export async function fetchAtMoviesTaipeiShowtimes(days = 6) {
   const rows = [];
   const errors = [];
+  const tasks = [];
 
   for (const cinema of CINEMAS) {
     for (let offset = 0; offset < days; offset++) {
-      const date = taipeiDate(offset);
-      const url = `${BASE}/${cinema.code}/a02/${compactDate(date)}/`;
+      tasks.push({ cinema, date: taipeiDate(offset) });
+    }
+  }
+
+  let cursor = 0;
+  async function worker() {
+    while (true) {
+      const index = cursor++;
+      if (index >= tasks.length) return;
+      const task = tasks[index];
       try {
-        const response = await fetch(url, {
-          headers: {
-            accept: 'text/html,application/xhtml+xml',
-            'accept-language': 'zh-TW,zh;q=0.9,en;q=0.7',
-            'user-agent': 'study-in-taiwan-cinema-data/1.0'
-          }
-        });
-        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-        const parsed = parsePage(await response.text(), cinema, date, url);
-        if (!parsed.length) throw new Error('No showtimes parsed');
-        rows.push(...parsed);
+        rows.push(...await fetchTask(task));
       } catch (error) {
-        errors.push(`${cinema.code}/${date}: ${String(error?.message || error)}`);
+        errors.push(`${task.cinema.code}/${task.date}: ${String(error?.message || error)}`);
       }
     }
   }
+
+  await Promise.all(Array.from({ length: Math.min(CONCURRENCY, tasks.length) }, () => worker()));
 
   if (!rows.length) throw new Error(`AtMovies Taipei fallback failed: ${errors.slice(0, 8).join('; ')}`);
   rows.source_errors = errors;
