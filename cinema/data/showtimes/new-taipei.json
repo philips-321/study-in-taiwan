@@ -1,11 +1,11 @@
 {
-  "version": 2,
+  "version": 3,
   "city": "new-taipei",
-  "generated_at": "2026-10-23T18:50:03.904Z",
+  "generated_at": "2026-10-23T19:04:02.308Z",
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
-      "showtimes": 4
+      "showtimes": 0
     },
     "miramar-official-api": {
       "ok": true,
@@ -21,9 +21,13 @@
       "error": "ShowTimes source failed: 台北欣欣秀泰影城: 403 Forbidden; 大巨蛋秀泰影城: 403 Forbidden"
     },
     "spot-huashan-official-schedule": {
+      "ok": true,
+      "showtimes": 79
+    },
+    "eslite-official-schedule": {
       "ok": false,
       "showtimes": 0,
-      "error": "SPOT Huashan returned no parseable showtimes"
+      "error": "Eslite 403 Forbidden"
     },
     "atmovies-taipei-fallback": {
       "ok": true,

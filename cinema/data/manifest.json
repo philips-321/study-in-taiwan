@@ -1,11 +1,12 @@
 {
-  "version": 6,
-  "generated_at": "2026-10-23T18:50:03.904Z",
+  "version": 7,
+  "generated_at": "2026-10-23T19:04:02.308Z",
   "timezone": "Asia/Taipei",
   "model": "fixed per-city JSON files overwritten on refresh; no per-date archive files",
   "source_policy": "official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete",
   "operational_status_policy": "fresh showtime evidence marks a cinema active; no fresh evidence stays unknown; closed status requires explicit verified evidence and is never inferred from missing showtimes",
   "recommendation_policy": "automatic recommendations should use recommendation_eligible=true; unknown cinemas require separate verification before recommendation",
+  "dedup_policy": "same normalized cinema/movie/time/hall/format is emitted once; official sources run before fallback sources and therefore win exact duplicates",
   "fields": {
     "audio_language": "source-declared spoken/dubbed language when available",
     "subtitles": "verified subtitle language codes when source explicitly declares them; null means unknown",
@@ -23,7 +24,7 @@
     "showtimes": {
       "moc-culture-movie-api": {
         "ok": true,
-        "showtimes": 4
+        "showtimes": 0
       },
       "miramar-official-api": {
         "ok": true,
@@ -39,9 +40,13 @@
         "error": "ShowTimes source failed: 台北欣欣秀泰影城: 403 Forbidden; 大巨蛋秀泰影城: 403 Forbidden"
       },
       "spot-huashan-official-schedule": {
+        "ok": true,
+        "showtimes": 79
+      },
+      "eslite-official-schedule": {
         "ok": false,
         "showtimes": 0,
-        "error": "SPOT Huashan returned no parseable showtimes"
+        "error": "Eslite 403 Forbidden"
       },
       "atmovies-taipei-fallback": {
         "ok": true,
@@ -65,9 +70,9 @@
   "cities": {
     "taipei": {
       "cinemas": 30,
-      "active_cinemas": 10,
-      "unknown_cinemas": 20,
-      "showtimes": 2573
+      "active_cinemas": 12,
+      "unknown_cinemas": 18,
+      "showtimes": 2653
     },
     "new-taipei": {
       "cinemas": 13,
@@ -115,13 +120,13 @@
       "cinemas": 1,
       "active_cinemas": 0,
       "unknown_cinemas": 1,
-      "showtimes": 2
+      "showtimes": 0
     },
     "nantou": {
       "cinemas": 2,
       "active_cinemas": 0,
       "unknown_cinemas": 2,
-      "showtimes": 1
+      "showtimes": 0
     },
     "yunlin": {
       "cinemas": 2,
@@ -145,7 +150,7 @@
       "cinemas": 9,
       "active_cinemas": 0,
       "unknown_cinemas": 9,
-      "showtimes": 1
+      "showtimes": 0
     },
     "kaohsiung": {
       "cinemas": 10,

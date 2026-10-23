@@ -1,11 +1,11 @@
 {
-  "version": 2,
+  "version": 3,
   "city": "taipei",
-  "generated_at": "2026-10-23T18:50:03.904Z",
+  "generated_at": "2026-10-23T19:04:02.308Z",
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
-      "showtimes": 4
+      "showtimes": 0
     },
     "miramar-official-api": {
       "ok": true,
@@ -21,9 +21,13 @@
       "error": "ShowTimes source failed: 台北欣欣秀泰影城: 403 Forbidden; 大巨蛋秀泰影城: 403 Forbidden"
     },
     "spot-huashan-official-schedule": {
+      "ok": true,
+      "showtimes": 79
+    },
+    "eslite-official-schedule": {
       "ok": false,
       "showtimes": 0,
-      "error": "SPOT Huashan returned no parseable showtimes"
+      "error": "Eslite 403 Forbidden"
     },
     "atmovies-taipei-fallback": {
       "ok": true,
@@ -45,6 +49,446 @@
   },
   "showtimes": [
     {
+      "id": "1a2b2641c69866ec",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-21T10:15:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "cbbdcc89ae8d8adc",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-21T12:05:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "a35bdb64c9722bcb",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約藝術家的性與愛",
+      "movie_title_en": "Drunken Noodles",
+      "rating": "輔15",
+      "start_time": "2026-10-21T13:35:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 83,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "13655cddfa2ffb6a",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "WHIPLASH",
+      "rating": "護",
+      "start_time": "2026-10-21T15:15:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 110,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "cdac25a3fd8661fe",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-21T17:20:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "92c826fd140bf190",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-21T21:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "c762390630833781",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "獨裁大明星",
+      "movie_title_en": "EAGLES OF THE REPUBLIC",
+      "rating": "輔12",
+      "start_time": "2026-10-22T10:50:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 128,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "876fa6d8aeb05f49",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "WHIPLASH",
+      "rating": "護",
+      "start_time": "2026-10-22T13:15:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 110,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "02e3faa78ff50e60",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "青春電幻物語：數位修復版",
+      "movie_title_en": "(百萬感謝場) All About Lily Chou-Chou",
+      "rating": "輔12",
+      "start_time": "2026-10-22T15:20:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 146,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "2386fb964726a04a",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-22T18:05:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "33ad0e5406de9bf1",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "WHIPLASH",
+      "rating": "護",
+      "start_time": "2026-10-22T19:55:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 110,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "280347f3470f3fc1",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-22T22:00:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "2172e7d607c0d067",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "金三角 孤軍淚",
+      "movie_title_en": "Tears of the Lost Army in Golden Triangle",
+      "rating": "普",
+      "start_time": "2026-10-23T10:30:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 80,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "c3890a9dc3eb1c7c",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-23T12:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "8b8406d8e9aa1ae3",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-23T14:00:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "b93e078cbb01db14",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-23T15:35:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "8c7a3d10fc50643b",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-23T17:25:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "1e36f6fa558daf42",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-23T19:30:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "9480e1d86edb5fe4",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-23T21:40:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "f7ec31bb462ae93d",
       "cinema_id": "066bac028bf2da57",
       "cinema_name": "國賓大戲院",
@@ -64,6 +508,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F10%2F24",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "e428422e58476cc5",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-24T10:20:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "23537ea78d940177",
@@ -337,6 +804,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F24",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "eb3e80770ee835e4",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-24T12:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "48a874319bbb6dde",
@@ -717,6 +1207,30 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "cea48d660991a910",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "麥特與麥斯(特別場)",
+      "movie_title_en": "Matthias & Maxime",
+      "rating": "輔12",
+      "start_time": "2026-10-24T14:15:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 120,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "7626b7e7a770f5d3",
       "cinema_id": "2f06b3e2df1c96f3",
       "cinema_name": "台北長春國賓影城",
@@ -1093,6 +1607,30 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F24",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "dc95765a2bb881dc",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-24T16:30:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "a15b7d20d5a559fb",
@@ -1494,6 +2032,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "1f5b8e09be6fe618",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-24T18:40:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "5e7953bbf622a15c",
       "cinema_id": "2f06b3e2df1c96f3",
       "cinema_name": "台北長春國賓影城",
@@ -1849,6 +2410,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F24",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "6537281ead2d49cf",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "青春電幻物語：數位修復版",
+      "movie_title_en": "All About Lily Chou-Chou (百萬感謝場)",
+      "rating": "輔12",
+      "start_time": "2026-10-24T20:30:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 146,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "00377c2f3cfa65d0",
@@ -3237,6 +3821,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "f524b1f71a1386bd",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-25T10:50:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "19665573a7b1da9f",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -3574,7 +4181,7 @@
     },
     {
       "id": "4ca01abeaabb41eb",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -3658,7 +4265,7 @@
     },
     {
       "id": "22f50fe30a8020f4",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -3826,7 +4433,7 @@
     },
     {
       "id": "f578841d1e46ee49",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -3973,7 +4580,7 @@
     },
     {
       "id": "e6f73d5e73ea7cdd",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -4099,7 +4706,7 @@
     },
     {
       "id": "07a63965b66ea1fa",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "宛如星辰的你",
       "movie_title_en": null,
@@ -4288,7 +4895,7 @@
     },
     {
       "id": "f30916c6be0f0962",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -4477,7 +5084,7 @@
     },
     {
       "id": "0932876bfac5b59c",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -4939,7 +5546,7 @@
     },
     {
       "id": "001eb5ea752eefbc",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -5422,7 +6029,7 @@
     },
     {
       "id": "70a2870a3e005499",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "逃出鯨吞",
       "movie_title_en": null,
@@ -5527,7 +6134,7 @@
     },
     {
       "id": "d6c943e6ae6c8b85",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "另一個媽咪",
       "movie_title_en": null,
@@ -5632,7 +6239,7 @@
     },
     {
       "id": "63d0c03d9dce87c8",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -5947,7 +6554,7 @@
     },
     {
       "id": "d1936b2de956f259",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -6220,7 +6827,7 @@
     },
     {
       "id": "4a69e8bfe123ff28",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "野獸之心",
       "movie_title_en": null,
@@ -6493,7 +7100,7 @@
     },
     {
       "id": "a05cc231556d466e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -6786,6 +7393,29 @@
       "source": "atmovies-taipei-fallback"
     },
     {
+      "id": "1f094a50578df096",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日(海報場)",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-25T15:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "d1770280e527c262",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -6871,7 +7501,7 @@
     },
     {
       "id": "80b2f270ee88cb3d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -6976,7 +7606,7 @@
     },
     {
       "id": "0857838852796e9a",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -7333,7 +7963,7 @@
     },
     {
       "id": "6f9cdfa4df882c02",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -7522,7 +8152,7 @@
     },
     {
       "id": "5406baffb9a69116",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -7921,7 +8551,7 @@
     },
     {
       "id": "b58e32e9e6921bca",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "青春電幻物語",
       "movie_title_en": null,
@@ -8005,7 +8635,7 @@
     },
     {
       "id": "d96020617f8bc4c7",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -8278,7 +8908,7 @@
     },
     {
       "id": "32361ebd16d86820",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -8382,6 +9012,30 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "266bf056184e053f",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-25T17:00:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "72571d724a34248d",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -8404,7 +9058,7 @@
     },
     {
       "id": "800ac08c5ebdfe4a",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "不存在的罪人",
       "movie_title_en": null,
@@ -8572,7 +9226,7 @@
     },
     {
       "id": "35e0c0e14e6bf107",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "高年級實習生",
       "movie_title_en": null,
@@ -9139,7 +9793,7 @@
     },
     {
       "id": "5d5e39f2e79bc9f6",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -9874,7 +10528,7 @@
     },
     {
       "id": "1e836ab9f346b655",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -10084,7 +10738,7 @@
     },
     {
       "id": "e5c1fc531b3a5fab",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -10144,6 +10798,29 @@
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source_role": null,
       "source": "miramar-official-api"
+    },
+    {
+      "id": "0b47a8a8a8f794f3",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-25T19:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "19db07903bb95b5a",
@@ -10252,7 +10929,7 @@
     },
     {
       "id": "a2748d5ef06d34d0",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "另一個媽咪",
       "movie_title_en": null,
@@ -10336,7 +11013,7 @@
     },
     {
       "id": "966950c3a4dd8345",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -10483,7 +11160,7 @@
     },
     {
       "id": "4396b2d8923c192b",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -10756,7 +11433,7 @@
     },
     {
       "id": "f3ea00d73429afbf",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "逃出鯨吞",
       "movie_title_en": null,
@@ -11113,7 +11790,7 @@
     },
     {
       "id": "dd2219295e350632",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -11575,7 +12252,7 @@
     },
     {
       "id": "6beafc9929729526",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -11677,6 +12354,29 @@
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source_role": null,
       "source": "miramar-official-api"
+    },
+    {
+      "id": "1f50700495408032",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-25T21:00:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "ac5e287a8754728d",
@@ -11827,7 +12527,7 @@
     },
     {
       "id": "a0859cd4094b24c8",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "不存在的罪人",
       "movie_title_en": null,
@@ -11932,7 +12632,7 @@
     },
     {
       "id": "703269e8364609b8",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "野獸之心",
       "movie_title_en": null,
@@ -12289,7 +12989,7 @@
     },
     {
       "id": "40d7bdef24d4819d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -12415,7 +13115,7 @@
     },
     {
       "id": "f41c245b0467556d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -12562,7 +13262,7 @@
     },
     {
       "id": "956e2cfc59ffb9bf",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -13003,7 +13703,7 @@
     },
     {
       "id": "28073d33f1a111a1",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -13213,7 +13913,7 @@
     },
     {
       "id": "565aedf7c312d2c0",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -15018,6 +15718,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "48ef2293bd2fff27",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-26T10:50:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "e8caa3052cd379b9",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -15186,6 +15909,30 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "6ad7e0b2cbfe9944",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-26T11:00:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "e0f6541a283fd886",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -15229,7 +15976,7 @@
     },
     {
       "id": "a41b2e3fc568c927",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -15355,7 +16102,7 @@
     },
     {
       "id": "5efc57749d462eda",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "高年級實習生",
       "movie_title_en": null,
@@ -15439,7 +16186,7 @@
     },
     {
       "id": "8da5efced73c1c5e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -15481,7 +16228,7 @@
     },
     {
       "id": "17ce616d19f43f89",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "青春電幻物語",
       "movie_title_en": null,
@@ -15565,7 +16312,7 @@
     },
     {
       "id": "5b56edd6ae930e1a",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -16006,7 +16753,7 @@
     },
     {
       "id": "d6d2457b70242734",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -16069,7 +16816,7 @@
     },
     {
       "id": "039739a425c9782d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -16846,7 +17593,7 @@
     },
     {
       "id": "8281b4dd85af6bee",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -16885,6 +17632,29 @@
       "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261026/",
       "source_role": "vieshow-waf-fallback",
       "source": "atmovies-taipei-fallback"
+    },
+    {
+      "id": "fadadb62dff50251",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-26T12:55:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "d180af338c914bd4",
@@ -17223,8 +17993,32 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "6d3ba55896a8db55",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "金三角 孤軍淚",
+      "movie_title_en": "Tears of the Lost Army in Golden Triangle",
+      "rating": "普",
+      "start_time": "2026-10-26T13:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 80,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "69b4995250120293",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "黑球",
       "movie_title_en": null,
@@ -17392,7 +18186,7 @@
     },
     {
       "id": "8fae9b045b36a3d0",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "另一個媽咪",
       "movie_title_en": null,
@@ -17539,7 +18333,7 @@
     },
     {
       "id": "401518b0ce94bda2",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -17728,7 +18522,7 @@
     },
     {
       "id": "0099a2a480169f54",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "逃出鯨吞",
       "movie_title_en": null,
@@ -17917,7 +18711,7 @@
     },
     {
       "id": "253a83d1392d4e57",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "蜘蛛人：重生日",
       "movie_title_en": null,
@@ -17959,7 +18753,7 @@
     },
     {
       "id": "f01183f8dd7b13e3",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "野獸之心",
       "movie_title_en": null,
@@ -18001,7 +18795,7 @@
     },
     {
       "id": "277049e4567fad3a",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -18315,6 +19109,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "d26154ea943cea8d",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "歐威爾：2+2=5 + QA",
+      "movie_title_en": "Orwell: 2+2=5",
+      "rating": null,
+      "start_time": "2026-10-26T14:30:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 119,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "6a97fdb2dc7b668a",
       "cinema_id": "06e26c038c52d33d",
       "cinema_name": "台北南港LaLaport威秀影城",
@@ -18565,6 +19382,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F26",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "3b5acf4ad37ce607",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-26T14:45:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "3cddedf19b897090",
@@ -19051,7 +19891,7 @@
     },
     {
       "id": "e626d3294c25798c",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -19387,7 +20227,7 @@
     },
     {
       "id": "3df7244ce65b9f7f",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -19513,7 +20353,7 @@
     },
     {
       "id": "51b28654c0b1778e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -19639,7 +20479,7 @@
     },
     {
       "id": "a776d36eb60f1e1f",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -19744,7 +20584,7 @@
     },
     {
       "id": "3fe4f43c47b6928c",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "奧德賽",
       "movie_title_en": null,
@@ -20059,7 +20899,7 @@
     },
     {
       "id": "194a6d61e0a8e63e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "雙雄起義",
       "movie_title_en": null,
@@ -20163,6 +21003,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "be1cac59954fc749",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-26T16:35:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "a1bf21fb00d82a75",
       "cinema_id": "b8450eabc146ac0f",
       "cinema_name": "美麗華大直影城",
@@ -20227,7 +21090,7 @@
     },
     {
       "id": "244d6cb4c4bfa1ec",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -20479,7 +21342,7 @@
     },
     {
       "id": "ccf3caa9999d2f7d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -20626,7 +21489,7 @@
     },
     {
       "id": "739a8ccca0cd9eb4",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "不存在的罪人",
       "movie_title_en": null,
@@ -20854,6 +21717,30 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F26",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "b891565b08042dc3",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-26T17:15:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "874301e53410068a",
@@ -21109,7 +21996,7 @@
     },
     {
       "id": "fe309aa96215350b",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "野獸之心",
       "movie_title_en": null,
@@ -21319,7 +22206,7 @@
     },
     {
       "id": "940bfa154fb6c996",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -21906,6 +22793,30 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "677f155ea9a5c3f8",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "麥特與麥斯(特別場)",
+      "movie_title_en": "Matthias & Maxime",
+      "rating": "輔12",
+      "start_time": "2026-10-26T18:40:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 120,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "1f1fb25cbfbd2349",
       "cinema_id": "06e26c038c52d33d",
       "cinema_name": "台北南港LaLaport威秀影城",
@@ -22117,7 +23028,7 @@
     },
     {
       "id": "127ca037ac8b0d2c",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -22264,7 +23175,7 @@
     },
     {
       "id": "5cc1deb8d384afc7",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -22516,7 +23427,7 @@
     },
     {
       "id": "4fe4fb87e117a179",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "另一個媽咪",
       "movie_title_en": null,
@@ -22579,7 +23490,7 @@
     },
     {
       "id": "dbd08411f9f54a77",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -22683,8 +23594,31 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "4577d61eb97d9d78",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-26T19:25:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "4857e30b18556be8",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -22873,7 +23807,7 @@
     },
     {
       "id": "2a640e0f9ff5ac9e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "逃出鯨吞",
       "movie_title_en": null,
@@ -23272,7 +24206,7 @@
     },
     {
       "id": "9ea0d6fcf19c43a0",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -23482,7 +24416,7 @@
     },
     {
       "id": "109d6d087ef487bb",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -23796,8 +24730,31 @@
       "source": "atmovies-taipei-fallback"
     },
     {
+      "id": "52f4c479df817f8a",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "颱風俱樂部 4K修復版(特典場)",
+      "movie_title_en": "Typhoon Club",
+      "rating": "輔15",
+      "start_time": "2026-10-26T20:55:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 115,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "2c0287d1d1d83ccd",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -24049,7 +25006,7 @@
     },
     {
       "id": "0b759f66faa698d0",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "不存在的罪人",
       "movie_title_en": null,
@@ -24130,6 +25087,29 @@
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source_role": null,
       "source": "miramar-official-api"
+    },
+    {
+      "id": "0e61040d98ee1a8e",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-26T21:15:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "0e3190c374f47ae7",
@@ -24238,7 +25218,7 @@
     },
     {
       "id": "977420bbc61ba399",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "宛如星辰的你",
       "movie_title_en": null,
@@ -24532,7 +25512,7 @@
     },
     {
       "id": "3f9ed0db24b7673c",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -24700,7 +25680,7 @@
     },
     {
       "id": "1c69c7cbba04839f",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -24847,7 +25827,7 @@
     },
     {
       "id": "f740552f4a633821",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -25225,7 +26205,7 @@
     },
     {
       "id": "4516ddcbdf60f075",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -25414,7 +26394,7 @@
     },
     {
       "id": "6158d6a43875e1fe",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -26547,6 +27527,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "cee1aae8ef33c95d",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-27T10:30:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "01e4fc99fe43faa8",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -27070,6 +28073,29 @@
       "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261027/",
       "source_role": "vieshow-waf-fallback",
       "source": "atmovies-taipei-fallback"
+    },
+    {
+      "id": "dd81f8c54b712114",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-27T10:55:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "79310cfc2bb58d77",
@@ -27850,7 +28876,7 @@
     },
     {
       "id": "f152ca7133d58f04",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -28017,8 +29043,31 @@
       "source": "atmovies-taipei-fallback"
     },
     {
+      "id": "226be6062e51fd20",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-27T12:05:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "c641278cf0d8e42f",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -28060,7 +29109,7 @@
     },
     {
       "id": "68877b1d93f430da",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -28198,6 +29247,27 @@
       "audio_language": null,
       "subtitles": null,
       "duration_minutes": 117,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261027/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback"
+    },
+    {
+      "id": "de6fb4869ddc1986",
+      "cinema_id": "0a13c96a4123d0b5",
+      "cinema_name": "台北信義威秀影城",
+      "movie_title": "快打旋風",
+      "movie_title_en": null,
+      "rating": null,
+      "start_time": "2026-10-27T12:20:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": "4DX版",
+      "audio_language": null,
+      "subtitles": null,
+      "duration_minutes": 119,
       "price": null,
       "on_sales": null,
       "source_event_id": null,
@@ -28626,8 +29696,32 @@
       "source": "atmovies-taipei-fallback"
     },
     {
+      "id": "c1f0293e29cc542e",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "金三角 孤軍淚",
+      "movie_title_en": "Tears of the Lost Army in Golden Triangle",
+      "rating": "普",
+      "start_time": "2026-10-27T12:45:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 80,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "761f5ab17fb41295",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -28753,7 +29847,7 @@
     },
     {
       "id": "0c28402412d47caf",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -28942,7 +30036,7 @@
     },
     {
       "id": "12c9784207eebbf8",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -29173,7 +30267,7 @@
     },
     {
       "id": "9328b8d2620e0eae",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "另一個媽咪",
       "movie_title_en": null,
@@ -29320,7 +30414,7 @@
     },
     {
       "id": "3dd7aeeb476f8239",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -29677,7 +30771,7 @@
     },
     {
       "id": "27c873bc8f894dd8",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -29907,6 +31001,30 @@
       "source": "atmovies-taipei-fallback"
     },
     {
+      "id": "fc5d77a812a62ab6",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-27T14:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "a80ba6e8b0761056",
       "cinema_id": "29fa20640d772416",
       "cinema_name": "台北西門威秀影城",
@@ -29989,6 +31107,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F10%2F27",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "6d5f9d92b7529e09",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-27T14:20:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "f4c002bfab88d239",
@@ -30160,7 +31301,7 @@
     },
     {
       "id": "0aa8d998a07a0bed",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -30265,7 +31406,7 @@
     },
     {
       "id": "57a8ffda86269bed",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "野獸之心",
       "movie_title_en": null,
@@ -30496,7 +31637,7 @@
     },
     {
       "id": "d2bb55d3aa8ebc03",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "逃出鯨吞",
       "movie_title_en": null,
@@ -30790,7 +31931,7 @@
     },
     {
       "id": "82501d1f5772367e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -30937,7 +32078,7 @@
     },
     {
       "id": "8b637eb2f6ef3b00",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -31000,7 +32141,7 @@
     },
     {
       "id": "e0feafa6f8bf979d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "不存在的罪人",
       "movie_title_en": null,
@@ -31546,7 +32687,7 @@
     },
     {
       "id": "1482e059c144eb1d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -31567,7 +32708,7 @@
     },
     {
       "id": "c1e4a76b2dbfa99e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -31713,6 +32854,29 @@
       "source": "atmovies-taipei-fallback"
     },
     {
+      "id": "e8b7228ff9e173a9",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "青春電幻物語：數位修復版",
+      "movie_title_en": "All About Lily Chou-Chou (百萬感謝場)",
+      "rating": "輔12",
+      "start_time": "2026-10-27T16:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 146,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "0b545569e06807a0",
       "cinema_id": "06e26c038c52d33d",
       "cinema_name": "台北南港LaLaport威秀影城",
@@ -31816,6 +32980,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F27",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "479a2338722dec7a",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-27T16:20:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "9cb5a4ba1d4cc4bd",
@@ -32218,7 +33405,7 @@
     },
     {
       "id": "1408382adc0a0c9a",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "宛如星辰的你",
       "movie_title_en": null,
@@ -32281,7 +33468,7 @@
     },
     {
       "id": "3e5579af2f46b25e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "高年級實習生",
       "movie_title_en": null,
@@ -32428,7 +33615,7 @@
     },
     {
       "id": "439ce7f8670c0d05",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -32533,7 +33720,7 @@
     },
     {
       "id": "159b80dfe17144c3",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -32953,7 +34140,7 @@
     },
     {
       "id": "6492b038ef2a86bf",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -32974,7 +34161,7 @@
     },
     {
       "id": "a6a5a88f137e5cd8",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -33394,7 +34581,7 @@
     },
     {
       "id": "8a93296f550ea5bf",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -33475,6 +34662,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F27",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "00b98ae9d973eb51",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-27T18:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "12838d64469ac827",
@@ -34108,7 +35318,7 @@
     },
     {
       "id": "9463343ae2134c87",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -34276,7 +35486,7 @@
     },
     {
       "id": "4070ee27df1d757b",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -34444,7 +35654,7 @@
     },
     {
       "id": "f05625fa2bb4b2b2",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "另一個媽咪",
       "movie_title_en": null,
@@ -34549,7 +35759,7 @@
     },
     {
       "id": "62a1a57ad0053a6f",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "野獸之心",
       "movie_title_en": null,
@@ -34675,7 +35885,7 @@
     },
     {
       "id": "85005111117a000e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -34738,7 +35948,7 @@
     },
     {
       "id": "03b179014493ff26",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "逃出鯨吞",
       "movie_title_en": null,
@@ -34861,6 +36071,29 @@
       "source_url": "https://www.atmovies.com.tw/showtime/t02a12/a02/20261027/",
       "source_role": "vieshow-waf-fallback",
       "source": "atmovies-taipei-fallback"
+    },
+    {
+      "id": "a7bad5859ffb7da3",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-27T19:40:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "48e03acf1828cfa5",
@@ -35473,7 +36706,7 @@
     },
     {
       "id": "fdf23766c4bdb8ea",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -35788,7 +37021,7 @@
     },
     {
       "id": "f5ee913343eb4493",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -36019,7 +37252,7 @@
     },
     {
       "id": "73405751e9336da6",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -36208,7 +37441,7 @@
     },
     {
       "id": "5e536ac396994d0f",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -36310,6 +37543,29 @@
       "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261027/",
       "source_role": "vieshow-waf-fallback",
       "source": "atmovies-taipei-fallback"
+    },
+    {
+      "id": "20789826c766af9c",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-27T21:25:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "c2c2e72d1c0792e1",
@@ -36439,7 +37695,7 @@
     },
     {
       "id": "191c2e379a771992",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "不存在的罪人",
       "movie_title_en": null,
@@ -36585,6 +37841,30 @@
       "source": "atmovies-taipei-fallback"
     },
     {
+      "id": "8565aefd4ab59706",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-27T21:45:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "71a304e3700e8a6b",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -36628,7 +37908,7 @@
     },
     {
       "id": "7a761a457073ad11",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -36733,7 +38013,7 @@
     },
     {
       "id": "167060c1c01a8b6f",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -36859,7 +38139,7 @@
     },
     {
       "id": "c841b7a5e12b98e8",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -38307,6 +39587,30 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "1fc885f27498cfc9",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-28T10:30:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "2de7f0a351b0f71b",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -39210,6 +40514,30 @@
       "source": "atmovies-taipei-fallback"
     },
     {
+      "id": "e1887e5e98a91a07",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "金三角 孤軍淚",
+      "movie_title_en": "Tears of the Lost Army in Golden Triangle",
+      "rating": "普",
+      "start_time": "2026-10-28T11:15:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 80,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "7776c27ae0e681d8",
       "cinema_id": "b8450eabc146ac0f",
       "cinema_name": "美麗華大直影城",
@@ -39463,7 +40791,7 @@
     },
     {
       "id": "9fa9f15c82e3b393",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -39694,7 +41022,7 @@
     },
     {
       "id": "9ce038c832a17478",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -39736,7 +41064,7 @@
     },
     {
       "id": "70f983a7bc39aa7f",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -40260,6 +41588,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "37776909f9bda89d",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-28T12:40:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "6f754c280c8801cb",
       "cinema_id": "06e26c038c52d33d",
       "cinema_name": "台北南港LaLaport威秀影城",
@@ -40387,7 +41738,7 @@
     },
     {
       "id": "d8e4b937d69b63ba",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -40512,8 +41863,31 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "c07274b413276ba5",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "青春電幻物語：數位修復版",
+      "movie_title_en": "All About Lily Chou-Chou (百萬感謝場)",
+      "rating": "輔12",
+      "start_time": "2026-10-28T12:50:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 146,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "d5f9df9f8b1dc54e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -40702,7 +42076,7 @@
     },
     {
       "id": "1f360916ad5bc821",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -40891,7 +42265,7 @@
     },
     {
       "id": "72d7645fa156a097",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "另一個媽咪",
       "movie_title_en": null,
@@ -40975,7 +42349,7 @@
     },
     {
       "id": "52fa443326822ac7",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -41332,7 +42706,7 @@
     },
     {
       "id": "2dbefa2cb55707b9",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -41667,6 +43041,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "0f74dee71c823317",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-28T14:15:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "e4a705fd2a320707",
       "cinema_id": "06e26c038c52d33d",
       "cinema_name": "台北南港LaLaport威秀影城",
@@ -41878,7 +43275,7 @@
     },
     {
       "id": "6a28e2e3b0303e17",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -41983,7 +43380,7 @@
     },
     {
       "id": "d944efcada7b573d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "野獸之心",
       "movie_title_en": null,
@@ -42256,7 +43653,7 @@
     },
     {
       "id": "7a354bd9c8b24601",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "逃出鯨吞",
       "movie_title_en": null,
@@ -42508,7 +43905,7 @@
     },
     {
       "id": "055263f4071f0e7e",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -42634,7 +44031,7 @@
     },
     {
       "id": "3194a440cc379d70",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -42697,7 +44094,7 @@
     },
     {
       "id": "8154e0d84d7e7e23",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "不存在的罪人",
       "movie_title_en": null,
@@ -42990,6 +44387,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "ad5a66cdf284a2b2",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-28T15:35:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "d2c96d4a8749a21d",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -43201,7 +44621,7 @@
     },
     {
       "id": "9bb49fc32c302937",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -43222,7 +44642,7 @@
     },
     {
       "id": "60201ce824f958e0",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -43429,6 +44849,29 @@
       "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261028/",
       "source_role": "vieshow-waf-fallback",
       "source": "atmovies-taipei-fallback"
+    },
+    {
+      "id": "75bb9230cf5d9668",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-28T16:05:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "71150fd79ef1219c",
@@ -43999,7 +45442,7 @@
     },
     {
       "id": "818cdb12d4455722",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "宛如星辰的你",
       "movie_title_en": null,
@@ -44062,7 +45505,7 @@
     },
     {
       "id": "ebe1549898952ab4",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "蜘蛛人：重生日",
       "movie_title_en": null,
@@ -44188,7 +45631,7 @@
     },
     {
       "id": "cdca8849dfbdd7b0",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -44272,7 +45715,7 @@
     },
     {
       "id": "52de24ae5659aed4",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -44628,6 +46071,30 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "5196da2e379ba0bc",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "金三角 孤軍淚",
+      "movie_title_en": "Tears of the Lost Army in Golden Triangle",
+      "rating": "普",
+      "start_time": "2026-10-28T17:25:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 80,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "f7837e5704fd5e0b",
       "cinema_id": "0a13c96a4123d0b5",
       "cinema_name": "台北信義威秀影城",
@@ -44671,7 +46138,7 @@
     },
     {
       "id": "9f014832a5ada628",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -44692,7 +46159,7 @@
     },
     {
       "id": "a3cdc73cb474ce1d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -45133,7 +46600,7 @@
     },
     {
       "id": "8191054fe69ed432",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -45235,6 +46702,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F28",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "fa3f9f65ff42d6fd",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-28T18:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "c12f7fadd14265f0",
@@ -45847,7 +47337,7 @@
     },
     {
       "id": "b2570b701f1eaf0a",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -46036,7 +47526,7 @@
     },
     {
       "id": "97cf6dc089e40aa9",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "YORUSHIKA LIVE 「盜作」",
       "movie_title_en": null,
@@ -46099,7 +47589,7 @@
     },
     {
       "id": "bee5424b65266de1",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "進擊的鼓手",
       "movie_title_en": null,
@@ -46225,7 +47715,7 @@
     },
     {
       "id": "2ed9c18a93edcc5d",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "另一個媽咪",
       "movie_title_en": null,
@@ -46330,7 +47820,7 @@
     },
     {
       "id": "be3af63fc1cbad90",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "野獸之心",
       "movie_title_en": null,
@@ -46435,7 +47925,7 @@
     },
     {
       "id": "6d2e92a702b3b410",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "挖掘者",
       "movie_title_en": null,
@@ -46477,7 +47967,7 @@
     },
     {
       "id": "3608ff597966d206",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "逃出鯨吞",
       "movie_title_en": null,
@@ -46705,6 +48195,30 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F28",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "d38d00f9359c0c4e",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-28T19:45:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "043c1998a289bee8",
@@ -47212,7 +48726,7 @@
     },
     {
       "id": "6ee0aa0202c42d25",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -47527,7 +49041,7 @@
     },
     {
       "id": "29b889c0a3d8323a",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "社群清算",
       "movie_title_en": null,
@@ -47821,7 +49335,7 @@
     },
     {
       "id": "cdbf4d055e809bdf",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "不存在的罪人",
       "movie_title_en": null,
@@ -47989,7 +49503,7 @@
     },
     {
       "id": "f5418d298111a3ea",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "快打旋風",
       "movie_title_en": null,
@@ -48115,7 +49629,7 @@
     },
     {
       "id": "fd0901d61be11dbf",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -48220,7 +49734,7 @@
     },
     {
       "id": "768c10c94fdae9e7",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "高年級實習生",
       "movie_title_en": null,
@@ -48343,6 +49857,29 @@
       "source_url": "https://www.atmovies.com.tw/showtime/t02a08/a02/20261028/",
       "source_role": "eslite-fallback",
       "source": "atmovies-taipei-fallback"
+    },
+    {
+      "id": "15308a11ca60e50a",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-28T21:45:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "b3bbca2f51612a07",
@@ -48514,7 +50051,7 @@
     },
     {
       "id": "b2776129229d4fe8",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "泥面人",
       "movie_title_en": null,
@@ -48597,8 +50134,31 @@
       "source": "atmovies-taipei-fallback"
     },
     {
+      "id": "97ce93eee074fddd",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-28T21:55:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "376c9c3a703c2ec0",
-      "cinema_id": "1fc59109d63ff37f",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "cinema_name": "MUVIE CINEMAS 台北松仁",
       "movie_title": "惡靈古堡：爆發夜",
       "movie_title_en": null,
@@ -49836,6 +51396,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "5af86b20210a3a9e",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-29T10:35:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "c758ef76c5b78fd1",
       "cinema_id": "2f06b3e2df1c96f3",
       "cinema_name": "台北長春國賓影城",
@@ -50025,6 +51608,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "fe257c5153ba10d4",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-29T11:30:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "39038ae9d360532f",
       "cinema_id": "2f06b3e2df1c96f3",
       "cinema_name": "台北長春國賓影城",
@@ -50170,6 +51776,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F29",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "78070ebf1fb0356d",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-29T12:40:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "664e0a7f9834605c",
@@ -50319,6 +51948,30 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "ebb57863b2145347",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "金三角 孤軍淚",
+      "movie_title_en": "Tears of the Lost Army in Golden Triangle",
+      "rating": "普",
+      "start_time": "2026-10-29T13:20:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 80,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "e190d89622319aee",
       "cinema_id": "2f06b3e2df1c96f3",
       "cinema_name": "台北長春國賓影城",
@@ -50424,6 +52077,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "f97fc0021a4243d8",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-29T14:15:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "df77f3706672a08d",
       "cinema_id": "066bac028bf2da57",
       "cinema_name": "國賓大戲院",
@@ -50527,6 +52203,30 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F29",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "4ace41cd508ef82f",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-29T14:55:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "82493ae2a25d488d",
@@ -50718,6 +52418,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "df381d471c36bce7",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "進擊的鼓手 4K重映",
+      "movie_title_en": "Whiplash",
+      "rating": "護",
+      "start_time": "2026-10-29T16:05:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 107,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "984a908bfc615306",
       "cinema_id": "2f06b3e2df1c96f3",
       "cinema_name": "台北長春國賓影城",
@@ -50884,6 +52607,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F29",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "cf1dc1ba2553c834",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "吳爾芙的夜與日",
+      "movie_title_en": "Virginia Woolf's NIGHT & DAY",
+      "rating": "普",
+      "start_time": "2026-10-29T17:05:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "6e6377a134586ccd",
@@ -51075,6 +52821,29 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "9a06a39c3bff5969",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "紐約攝影師的日與夜",
+      "movie_title_en": "Peter Hujar&rsquo;s Day",
+      "rating": "護",
+      "start_time": "2026-10-29T18:10:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 76,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "be065cc891231627",
       "cinema_id": "066bac028bf2da57",
       "cinema_name": "國賓大戲院",
@@ -51222,6 +52991,30 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "d70d1aa23b21e0a5",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "讓建築歌唱～徐亞英的交響人生",
+      "movie_title_en": "Tuning Architecture: The Life of Albert Xu in Sound +QA",
+      "rating": "普",
+      "start_time": "2026-10-29T19:00:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 111,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
       "id": "ab2f6fb13bb8f72d",
       "cinema_id": "2f06b3e2df1c96f3",
       "cinema_name": "台北長春國賓影城",
@@ -51304,6 +53097,29 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F29",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "6d95cf170c72a94a",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蒙克聲音拼貼",
+      "movie_title_en": "Monk in pieces",
+      "rating": "普",
+      "start_time": "2026-10-29T19:45:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh"
+      ],
+      "duration_minutes": 95,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "f9482016bc478d66",
@@ -51598,6 +53414,54 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F10%2F29",
       "source_role": null,
       "source": "ambassador-official-site"
+    },
+    {
+      "id": "753883cdc24e20cf",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "蕭邦！蕭邦！",
+      "movie_title_en": "Chopin, Chopin!",
+      "rating": "輔12",
+      "start_time": "2026-10-29T21:35:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 114,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
+    },
+    {
+      "id": "41ce01c9cc7c9497",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "movie_title": "金三角 孤軍淚",
+      "movie_title_en": "Tears of the Lost Army in Golden Triangle",
+      "rating": "普",
+      "start_time": "2026-10-29T21:45:00+08:00",
+      "end_time": null,
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "duration_minutes": 80,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": null,
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_role": null,
+      "source": "spot-huashan-official-schedule"
     },
     {
       "id": "ff3883395ab1e07c",
