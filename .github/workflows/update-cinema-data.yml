@@ -1,0 +1,75 @@
+name: Update Taiwan cinema JSON
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 05:27 and 17:27 Taiwan time (UTC+8), avoiding common top-of-hour peaks.
+    - cron: '27 21 * * *'
+    - cron: '27 9 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'cinema/scripts/update-cinema-data.mjs'
+      - '.github/workflows/update-cinema-data.yml'
+
+concurrency:
+  group: update-cinema-data
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Taipei
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Refresh cinema JSON
+        run: node cinema/scripts/update-cinema-data.mjs
+
+      - name: Validate generated JSON
+        run: |
+          set -euo pipefail
+          test -s cinema/data/manifest.json
+          test -s cinema/data/cinemas/taipei.json
+          test -s cinema/data/showtimes/taipei.json
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const manifest = JSON.parse(fs.readFileSync('cinema/data/manifest.json', 'utf8'));
+          if (!manifest.generated_at || !manifest.cities) throw new Error('Invalid cinema manifest');
+          for (const [city, counts] of Object.entries(manifest.cities)) {
+            if (!Number.isInteger(counts.cinemas) || !Number.isInteger(counts.showtimes)) {
+              throw new Error(`Invalid counts for ${city}`);
+            }
+          }
+          console.log(manifest.cities);
+          NODE
+
+      - name: Commit changed JSON only
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- cinema/data)" ]; then
+            echo 'No cinema data changes.'
+            exit 0
+          fi
+          git config user.name 'cinema-data-bot'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add cinema/data
+          git commit -m 'Update Taiwan cinema JSON [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
