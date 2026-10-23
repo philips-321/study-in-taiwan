@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "city": "taitung",
-  "generated_at": "2026-10-23T18:31:43.679Z",
+  "generated_at": "2026-10-23T18:32:31.157Z",
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
@@ -13,7 +13,17 @@
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 2574
+      "showtimes": 2544
+    },
+    "showtimes-official-site": {
+      "ok": false,
+      "showtimes": 0,
+      "error": "ShowTimes source failed: 台北欣欣秀泰影城: 403 Forbidden; 大巨蛋秀泰影城: 403 Forbidden"
+    },
+    "spot-huashan-official-schedule": {
+      "ok": false,
+      "showtimes": 0,
+      "error": "SPOT Huashan returned no parseable showtimes"
     }
   },
   "showtimes": []

@@ -1,8 +1,13 @@
 {
-  "version": 3,
-  "generated_at": "2026-10-23T18:31:43.679Z",
+  "version": 4,
+  "generated_at": "2026-10-23T18:32:31.157Z",
   "timezone": "Asia/Taipei",
   "model": "fixed per-city JSON files overwritten on refresh; no per-date archive files",
+  "fields": {
+    "audio_language": "source-declared spoken/dubbed language when available",
+    "subtitles": "verified subtitle language codes when source explicitly declares them; null means unknown",
+    "duration_minutes": "source-declared running time when available"
+  },
   "sources": {
     "cinema_master": {
       "metadata": "https://www.bamid.gov.tw/OpenData.aspx?SN=E6C57FC155564DEB",
@@ -20,7 +25,17 @@
       },
       "ambassador-official-site": {
         "ok": true,
-        "showtimes": 2574
+        "showtimes": 2544
+      },
+      "showtimes-official-site": {
+        "ok": false,
+        "showtimes": 0,
+        "error": "ShowTimes source failed: 台北欣欣秀泰影城: 403 Forbidden; 大巨蛋秀泰影城: 403 Forbidden"
+      },
+      "spot-huashan-official-schedule": {
+        "ok": false,
+        "showtimes": 0,
+        "error": "SPOT Huashan returned no parseable showtimes"
       }
     }
   },
@@ -87,7 +102,7 @@
     },
     "pingtung": {
       "cinemas": 2,
-      "showtimes": 234
+      "showtimes": 204
     },
     "yilan": {
       "cinemas": 2,
