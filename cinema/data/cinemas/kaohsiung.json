@@ -1,8 +1,9 @@
 {
-  "version": 1,
+  "version": 2,
   "city": "kaohsiung",
   "source_year": 2025,
   "source": "https://file.moc.gov.tw/001/Upload/510/relfile/16158/247043/ed396c28-93b3-4a58-9845-25a1e127c095.csv",
+  "status_policy": "active requires fresh showtime evidence; absence of showtimes is unknown, never inferred closed",
   "cinemas": [
     {
       "id": "785b0aaafc496ce0",
@@ -15,7 +16,11 @@
       "phone": "(07)5363788",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "c49578bdeb514807",
@@ -28,7 +33,11 @@
       "phone": "(07)2166189",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "2e33433ca052e5dd",
@@ -41,7 +50,11 @@
       "phone": "(07)3345566",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "5c35b8e61739d367",
@@ -54,7 +67,11 @@
       "phone": "(07)6262808",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "9593243720ef4f8a",
@@ -67,7 +84,11 @@
       "phone": "(07)6568368",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "active",
+      "recommendation_eligible": true,
+      "status_evidence": "fresh-showtime-source",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "b7843607f93e577c",
@@ -80,7 +101,11 @@
       "phone": "(07)8122998",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "afa3562511df19d5",
@@ -93,7 +118,11 @@
       "phone": "(07)7933611",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "active",
+      "recommendation_eligible": true,
+      "status_evidence": "fresh-showtime-source",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "699829fd94ac6d73",
@@ -106,7 +135,11 @@
       "phone": "(07)3308585",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "48dd9d30f73ece53",
@@ -119,7 +152,11 @@
       "phone": "(07)7220066",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "e060ce6fcd128989",
@@ -132,7 +169,11 @@
       "phone": "(07)9766088",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     }
   ]
 }

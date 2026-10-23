@@ -1,8 +1,9 @@
 {
-  "version": 1,
+  "version": 2,
   "city": "hualien",
   "source_year": 2025,
   "source": "https://file.moc.gov.tw/001/Upload/510/relfile/16158/247043/ed396c28-93b3-4a58-9845-25a1e127c095.csv",
+  "status_policy": "active requires fresh showtime evidence; absence of showtimes is unknown, never inferred closed",
   "cinemas": [
     {
       "id": "0bc190790a97a92b",
@@ -15,7 +16,11 @@
       "phone": "(03)8337675",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     },
     {
       "id": "758a39fe5ae9a51d",
@@ -28,7 +33,11 @@
       "phone": "(03)8421133",
       "notes": null,
       "source": "bamid-national-cinema-master",
-      "source_year": 2025
+      "source_year": 2025,
+      "operational_status": "unknown",
+      "recommendation_eligible": false,
+      "status_evidence": "no-fresh-showtime-evidence",
+      "status_checked_at": "2026-10-23T18:42:57.844Z"
     }
   ]
 }
