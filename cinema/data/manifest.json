@@ -1,12 +1,14 @@
 {
-  "version": 4,
-  "generated_at": "2026-10-23T18:33:24.452Z",
+  "version": 5,
+  "generated_at": "2026-10-23T18:35:48.469Z",
   "timezone": "Asia/Taipei",
   "model": "fixed per-city JSON files overwritten on refresh; no per-date archive files",
+  "source_policy": "official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete",
   "fields": {
     "audio_language": "source-declared spoken/dubbed language when available",
     "subtitles": "verified subtitle language codes when source explicitly declares them; null means unknown",
-    "duration_minutes": "source-declared running time when available"
+    "duration_minutes": "source-declared running time when available",
+    "source_role": "why a fallback record was used, when applicable"
   },
   "sources": {
     "cinema_master": {
@@ -36,13 +38,30 @@
         "ok": false,
         "showtimes": 0,
         "error": "SPOT Huashan returned no parseable showtimes"
+      },
+      "atmovies-taipei-fallback": {
+        "ok": true,
+        "showtimes": 1632,
+        "role": "fallback only for sources blocked/incomplete from GitHub Actions",
+        "warnings": [
+          "t02a01/2026-10-24: No showtimes parsed",
+          "t02a01/2026-10-29: No showtimes parsed",
+          "t02a11/2026-10-24: No showtimes parsed",
+          "t02a11/2026-10-29: No showtimes parsed",
+          "t02a12/2026-10-24: No showtimes parsed",
+          "t02a12/2026-10-29: No showtimes parsed",
+          "t02b14/2026-10-24: No showtimes parsed",
+          "t02b14/2026-10-29: No showtimes parsed",
+          "t02b08/2026-10-24: No showtimes parsed",
+          "t02b08/2026-10-29: No showtimes parsed"
+        ]
       }
     }
   },
   "cities": {
     "taipei": {
       "cinemas": 30,
-      "showtimes": 942
+      "showtimes": 2573
     },
     "new-taipei": {
       "cinemas": 13,
