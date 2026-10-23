@@ -1,6 +1,7 @@
 const BASE = 'https://www.ambassador.com.tw';
 const DAYS = 7;
 const CONCURRENCY = 8;
+const RETRIES = 3;
 
 function stripHtml(value) {
   return String(value || '')
@@ -33,12 +34,27 @@ function taipeiDate(offset = 0) {
   }).format(now);
 }
 
+function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+
 async function get(url) {
-  const response = await fetch(url, {
-    headers: { 'user-agent': 'study-in-taiwan-cinema-data/1.0' }
-  });
-  if (!response.ok) throw new Error(`Ambassador ${response.status} ${response.statusText}: ${url}`);
-  return response.text();
+  let lastError;
+  for (let attempt = 1; attempt <= RETRIES; attempt++) {
+    try {
+      const response = await fetch(url, {
+        headers: { 'user-agent': 'study-in-taiwan-cinema-data/1.0' }
+      });
+      if (response.ok) return response.text();
+
+      const error = new Error(`Ambassador ${response.status} ${response.statusText}: ${url}`);
+      if (response.status < 500 && response.status !== 408 && response.status !== 429) throw error;
+      lastError = error;
+    } catch (error) {
+      lastError = error;
+    }
+
+    if (attempt < RETRIES) await sleep(attempt * 800);
+  }
+  throw lastError || new Error(`Ambassador fetch failed: ${url}`);
 }
 
 function cityFromAddress(address) {
