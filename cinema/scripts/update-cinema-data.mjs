@@ -3,6 +3,8 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
+import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
+import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
 
 const ROOT = path.resolve('cinema/data');
 const CINEMAS_DIR = path.join(ROOT, 'cinemas');
@@ -114,7 +116,9 @@ for (const event of events) {
     const cinemaId = matched?.id || stableId(slug, venue, location || '');
     showtimesByCity.get(slug).push({
       id: stableId('moc', event.UID || '', venue, show.time || '', event.title || ''), cinema_id: cinemaId,
-      cinema_name: venue, movie_title: clean(event.title), start_time: toIsoLocal(show.time), end_time: toIsoLocal(show.endTime),
+      cinema_name: venue, movie_title: clean(event.title), movie_title_en: null,
+      start_time: toIsoLocal(show.time), end_time: toIsoLocal(show.endTime), hall: null, format: null,
+      audio_language: null, subtitles: null, duration_minutes: null,
       price: clean(show.price), on_sales: show.onSales ?? null, source_event_id: clean(event.UID),
       source_url: clean(event.sourceWebPromote) || clean(event.webSales), source: 'moc-culture-movie-api'
     });
@@ -124,7 +128,9 @@ for (const event of events) {
 const sourceStatus = {
   'moc-culture-movie-api': { ok: true, showtimes: [...showtimesByCity.values()].reduce((n, rows) => n + rows.length, 0) },
   'miramar-official-api': { ok: false, showtimes: 0 },
-  'ambassador-official-site': { ok: false, showtimes: 0 }
+  'ambassador-official-site': { ok: false, showtimes: 0 },
+  'showtimes-official-site': { ok: false, showtimes: 0 },
+  'spot-huashan-official-schedule': { ok: false, showtimes: 0 }
 };
 
 function mergeExternalRows(rows, sourceName) {
@@ -144,6 +150,9 @@ function mergeExternalRows(rows, sourceName) {
       end_time: null,
       hall: row.hall || null,
       format: row.format || null,
+      audio_language: row.audio_language || null,
+      subtitles: Array.isArray(row.subtitles) ? row.subtitles : null,
+      duration_minutes: Number.isFinite(row.duration_minutes) ? row.duration_minutes : null,
       price: null,
       on_sales: null,
       source_event_id: row.source_event_id || null,
@@ -151,22 +160,26 @@ function mergeExternalRows(rows, sourceName) {
       source: sourceName
     });
   }
-  sourceStatus[sourceName] = { ok: true, showtimes: rows.length };
+  sourceStatus[sourceName] = {
+    ok: true,
+    showtimes: rows.length,
+    ...(Array.isArray(rows.source_errors) && rows.source_errors.length ? { warnings: rows.source_errors.slice(0, 10) } : {})
+  };
 }
 
-try {
-  mergeExternalRows(await fetchMiramarShowtimes(), 'miramar-official-api');
-} catch (error) {
-  sourceStatus['miramar-official-api'] = { ok: false, showtimes: 0, error: String(error?.message || error).slice(0, 300) };
-  console.error('Miramar source failed:', error);
+async function runSource(sourceName, label, loader) {
+  try {
+    mergeExternalRows(await loader(), sourceName);
+  } catch (error) {
+    sourceStatus[sourceName] = { ok: false, showtimes: 0, error: String(error?.message || error).slice(0, 300) };
+    console.error(`${label} source failed:`, error);
+  }
 }
 
-try {
-  mergeExternalRows(await fetchAmbassadorShowtimes(), 'ambassador-official-site');
-} catch (error) {
-  sourceStatus['ambassador-official-site'] = { ok: false, showtimes: 0, error: String(error?.message || error).slice(0, 300) };
-  console.error('Ambassador source failed:', error);
-}
+await runSource('miramar-official-api', 'Miramar', fetchMiramarShowtimes);
+await runSource('ambassador-official-site', 'Ambassador', fetchAmbassadorShowtimes);
+await runSource('showtimes-official-site', 'ShowTimes', fetchShowTimesShowtimes);
+await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuashanShowtimes);
 
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
 const citySummary = {};
@@ -182,12 +195,17 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
     })
     .sort((a,b) => String(a.start_time).localeCompare(String(b.start_time)));
   await writeJson(path.join(CINEMAS_DIR, `${slug}.json`), { version: 1, city: slug, source_year: master.year, source: master.url, cinemas });
-  await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), { version: 1, city: slug, generated_at: generatedAt, sources: sourceStatus, showtimes });
+  await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), { version: 2, city: slug, generated_at: generatedAt, sources: sourceStatus, showtimes });
   citySummary[slug] = { cinemas: cinemas.length, showtimes: showtimes.length };
 }
 await writeJson(path.join(ROOT, 'manifest.json'), {
-  version: 3, generated_at: generatedAt, timezone: 'Asia/Taipei',
+  version: 4, generated_at: generatedAt, timezone: 'Asia/Taipei',
   model: 'fixed per-city JSON files overwritten on refresh; no per-date archive files',
+  fields: {
+    audio_language: 'source-declared spoken/dubbed language when available',
+    subtitles: 'verified subtitle language codes when source explicitly declares them; null means unknown',
+    duration_minutes: 'source-declared running time when available'
+  },
   sources: {
     cinema_master: { metadata: CINEMA_META_API, year: master.year, csv: master.url },
     showtimes: sourceStatus
