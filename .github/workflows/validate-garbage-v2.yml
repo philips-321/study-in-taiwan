@@ -1,0 +1,51 @@
+name: Validate Garbage Truck V2
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'garbage-truck/v2/**/*.js'
+      - 'garbage-truck/v2/**/*.py'
+      - 'garbage-truck/v2/**/*.json'
+      - '.github/workflows/refresh-garbage-v2-city.yml'
+      - '.github/workflows/bootstrap-garbage-v2-data.yml'
+      - '.github/workflows/validate-garbage-v2.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: garbage-truck-v2-validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Compile Python scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile garbage-truck/v2/scripts/*.py
+
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in garbage-truck/v2/*.js garbage-truck/v2/i18n/*.js; do
+            [[ -f "$file" ]] || continue
+            echo "node --check $file"
+            node --check "$file"
+          done
+
+      - name: Validate JSON and V2 invariants
+        run: python garbage-truck/v2/scripts/validate_v2.py
