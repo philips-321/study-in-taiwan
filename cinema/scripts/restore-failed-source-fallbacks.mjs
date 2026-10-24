@@ -65,6 +65,32 @@ for (const name of names) {
   if (previous && Array.isArray(previous.showtimes)) previousByCity.set(city, previous);
 }
 
+// Date/city chunks are the durable store for imported official snapshots. Restore
+// rows from those small payloads too, even when they are intentionally omitted
+// from the larger per-city source files.
+const previousDateRoot = path.join(PREVIOUS_DIR, 'by-date');
+try {
+  for (const date of await fs.readdir(previousDateRoot)) {
+    const datePath = path.join(previousDateRoot, date);
+    if (!(await fs.stat(datePath)).isDirectory()) continue;
+    for (const name of await fs.readdir(datePath)) {
+      if (!name.endsWith('.json')) continue;
+      const city = name.replace(/\.json$/, '');
+      const payload = await readJson(path.join(datePath, name));
+      if (!payload || !Array.isArray(payload.showtimes)) continue;
+      const previous = previousByCity.get(city) || { showtimes: [] };
+      const seen = new Set(previous.showtimes.map(rowKey));
+      for (const row of payload.showtimes) {
+        const key = rowKey(row);
+        if (!seen.has(key)) { previous.showtimes.push(row); seen.add(key); }
+      }
+      previousByCity.set(city, previous);
+    }
+  }
+} catch (error) {
+  if (error?.code !== 'ENOENT') throw error;
+}
+
 const firstCurrent = currentByCity.values().next().value;
 const firstPrevious = previousByCity.values().next().value || null;
 const currentStatus = structuredClone(firstCurrent?.sources || {});

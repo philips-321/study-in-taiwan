@@ -87,17 +87,23 @@ for (const [corporationId, group] of Object.entries(data.eventsForCorporations))
 const cityFiles = (await fs.readdir(SHOW_DIR)).filter(name => name.endsWith('.json'));
 const manifestFile = path.join(ROOT, 'manifest.json');
 const manifest = await read(manifestFile);
+const completeRowsByCity = new Map();
 for (const file of cityFiles) {
   const city = file.replace(/\.json$/, '');
   const payload = await read(path.join(SHOW_DIR, file));
   payload.showtimes = payload.showtimes.filter(row => row.source !== 'showtimes-official-api');
   const incoming = rowsByCity.get(city) || [];
+  payload.showtimes = payload.showtimes.filter(row => row.source !== 'showtimes-official-api');
   const seen = new Set(payload.showtimes.map(rowKey));
   for (const row of incoming) {
     const key = rowKey(row);
     if (!seen.has(key)) { payload.showtimes.push(row); seen.add(key); }
   }
-  const uniqueIncoming = new Set(incoming.map(rowKey)).size;
+  const completeRows = payload.showtimes;
+  completeRowsByCity.set(city, completeRows);
+  const importedKeys = new Set(incoming.map(rowKey));
+  payload.showtimes = payload.showtimes.filter(row => !importedKeys.has(rowKey(row)) || row.source !== 'showtimes-official-api');
+  const uniqueIncoming = importedKeys.size;
   payload.showtimes.sort((a, b) => String(a.start_time).localeCompare(String(b.start_time)));
   payload.generated_at = '2026-10-24T00:00:00.000Z';
   payload.sources ||= {};
@@ -110,7 +116,7 @@ for (const file of cityFiles) {
     health: 'degraded',
     error: 'Official ShowTimes API returned 403 to scheduled collector; rows loaded from supplied official bootstrap snapshot'
   };
-  if (manifest.cities?.[city]) manifest.cities[city].showtimes = payload.showtimes.length;
+  if (manifest.cities?.[city]) manifest.cities[city].showtimes = completeRows.length;
   await write(path.join(SHOW_DIR, file), payload);
 }
 
@@ -118,9 +124,8 @@ const importedUniqueRows = [...rowsByCity.values()].reduce((sum, rows) => sum + 
 const oldIndex = new Map();
 let explicitSubtitleRows = 0;
 for (const city of cityFiles.map(name => name.replace(/\.json$/, ''))) {
-  const payload = await read(path.join(SHOW_DIR, `${city}.json`));
   const byDate = new Map();
-  for (const show of payload.showtimes) {
+  for (const show of completeRowsByCity.get(city) || []) {
     if (Array.isArray(show.subtitles) && show.subtitles.length) explicitSubtitleRows++;
     const date = String(show.start_time || '').slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
