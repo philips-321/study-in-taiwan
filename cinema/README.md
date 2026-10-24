@@ -427,6 +427,8 @@ This adapter is fallback only. Official sources should replace its records when 
 
 Current state: selected Taipei branches are served through the AtMovies fallback above.
 
+Official-source check, 2026-10-24: Vie Show publishes its own [Show Times page](https://www.vscinemas.com.tw/ShowTimes/) and says its schedule is a rolling window: Friday releases generally open from Wednesday for Friday through the following Thursday; some Wednesday/Thursday releases open separately earlier in the week. Treat that horizon as the expected official coverage instead of expecting months of dates from this source. The official site directory also exposes a `vsweb/api/GetLstDicCinema/` endpoint path, consistent with the venue-list API used by the existing reference scraper. This is a lead to verify in a browser session, not yet a confirmed endpoint contract or reliable server-side collector.
+
 A useful reference implementation was found in the public `RabbitKM/cinema-showtime-pipeline` project. Its Vie Show scraper uses Playwright, opens the official site, then calls official endpoints inside the browser session such as:
 
 ```text
@@ -436,7 +438,7 @@ ShowTimes/GetShowTimes
 
 The reason it uses a browser session is the official site/Akamai protection.
 
-This approach has NOT yet been integrated into this repo because the current GitHub Actions pipeline is intentionally lightweight Node/static JSON and we have not yet decided to add Playwright/Chrome just for Vie Show.
+Next step: inspect the official page's actual XHR request and response in a browser session, then test the endpoint from GitHub Actions without browser automation. Keep this adapter marked unavailable until direct access is proven; adding Playwright/Chrome solely for this source has a runtime and memory cost. Do not infer that the public directory listing means the schedule API is directly accessible.
 
 Do not assume the direct endpoint will work server-side without the browser cookies/session.
 
