@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "city": "kaohsiung",
+  "provider": "Kaohsiung City Government Environmental Protection Bureau",
+  "discovered_at": "2026-10-24",
+  "policy": "Use currently published district datasets with longitude/latitude. Do not use the delisted citywide dataset as current data.",
+  "expected_fields": ["Seq", "責任區", "車次", "回收日", "停留時間", "停留地點", "行政區", "村里", "經度", "緯度"],
+  "historical_citywide_dataset": {
+    "dataset_id": 98147,
+    "status": "delisted-historical-only"
+  },
+  "districts": [
+    {"name_zh":"苓雅區","dataset_id":107034,"dataset_url":"https://data.gov.tw/dataset/107034","json_url":"https://openapi.kcg.gov.tw/Api/Service/Get/6cb25697-b1e3-4dad-9221-3348e42950d2"},
+    {"name_zh":"燕巢區","dataset_id":107036,"dataset_url":"https://data.gov.tw/dataset/107036"},
+    {"name_zh":"茄萣區","dataset_id":107037,"dataset_url":"https://data.gov.tw/dataset/107037"},
+    {"name_zh":"林園區","dataset_id":107038,"dataset_url":"https://data.gov.tw/dataset/107038"},
+    {"name_zh":"岡山區","dataset_id":107041,"dataset_url":"https://data.gov.tw/dataset/107041"},
+    {"name_zh":"甲仙區","dataset_id":107042,"dataset_url":"https://data.gov.tw/dataset/107042"},
+    {"name_zh":"仁武區","dataset_id":107043,"dataset_url":"https://data.gov.tw/dataset/107043"},
+    {"name_zh":"田寮區","dataset_id":107045,"dataset_url":"https://data.gov.tw/dataset/107045"},
+    {"name_zh":"鳳山北區","dataset_id":107046,"dataset_url":"https://data.gov.tw/dataset/107046"},
+    {"name_zh":"小港區","dataset_id":107047,"dataset_url":"https://data.gov.tw/dataset/107047"},
+    {"name_zh":"大樹區","dataset_id":107048,"dataset_url":"https://data.gov.tw/dataset/107048"},
+    {"name_zh":"大寮區","dataset_id":107049,"dataset_url":"https://data.gov.tw/dataset/107049"},
+    {"name_zh":"三民東區","dataset_id":107050,"dataset_url":"https://data.gov.tw/dataset/107050","csv_url":"https://data.kcg.gov.tw/dataset/83792992-6167-4d79-b4ee-000944cc4a74/resource/a1e813f1-ae52-4b22-9fa7-e15512e41186/download/kcg03.csv"},
+    {"name_zh":"鹽埕區","dataset_id":107051,"dataset_url":"https://data.gov.tw/dataset/107051"},
+    {"name_zh":"彌陀區","dataset_id":107052,"dataset_url":"https://data.gov.tw/dataset/107052"},
+    {"name_zh":"橋頭區","dataset_id":107053,"dataset_url":"https://data.gov.tw/dataset/107053"},
+    {"name_zh":"旗津區","dataset_id":107054,"dataset_url":"https://data.gov.tw/dataset/107054"},
+    {"name_zh":"旗山區","dataset_id":107055,"dataset_url":"https://data.gov.tw/dataset/107055"},
+    {"name_zh":"鼓山區","dataset_id":107056,"dataset_url":"https://data.gov.tw/dataset/107056","json_url":"https://openapi.kcg.gov.tw/Api/Service/Get/89cdab3d-b395-46cc-a1d3-086b3f195e32"},
+    {"name_zh":"路竹區","dataset_id":107057,"dataset_url":"https://data.gov.tw/dataset/107057"},
+    {"name_zh":"楠梓區","dataset_id":107058,"dataset_url":"https://data.gov.tw/dataset/107058"},
+    {"name_zh":"前鎮區","dataset_id":107866,"dataset_url":"https://data.gov.tw/dataset/107866","json_url":"https://openapi.kcg.gov.tw/Api/Service/Get/f27d99dd-a453-4674-b260-cef29129e194"},
+    {"name_zh":"永安區","dataset_id":107868,"dataset_url":"https://data.gov.tw/dataset/107868"},
+    {"name_zh":"內門區","dataset_id":107870,"dataset_url":"https://data.gov.tw/dataset/107870"},
+    {"name_zh":"大社區","dataset_id":107871,"dataset_url":"https://data.gov.tw/dataset/107871"},
+    {"name_zh":"美濃區","dataset_id":107887,"dataset_url":"https://data.gov.tw/dataset/107887"},
+    {"name_zh":"三民西區","dataset_id":106982,"dataset_url":"https://data.gov.tw/dataset/106982"}
+  ],
+  "notes": [
+    "This catalog is intentionally partial until every currently published district resource is verified.",
+    "Known resource URLs are stored only when they were exposed by the official data.gov.tw page; missing resource URLs are discovered from the official dataset page before import.",
+    "District datasets expose coordinates and are preferred over the delisted former citywide dataset."
+  ]
+}
