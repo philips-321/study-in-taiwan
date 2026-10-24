@@ -47,11 +47,15 @@
   let logoColors = {};
   let locationLogoKeys = {};
   let locationEnglishNames = {};
+  let logoImages = {};
+  let logoBackgrounds = {};
   let markers = [];
   let userMarker = null;
   let selectedCity = 'all';
   let selectedCinemaId = '';
   let availableDates = [];
+  let showtimesDateIndex = {};
+  let dateLoadSequence = 0;
   let explicitSubtitleRows = 0;
   let knownShowtimeRows = 0;
   let dataGeneratedDate = '';
@@ -135,9 +139,12 @@
         const el=document.createElement('button');el.type='button';el.className=`cinema-marker${cinema&&selectedCinemaId===cinema.id?' selected':''}`;
         const logoKey=cinemaLogoKeys[cinema?.id]||locationLogoKeys[String(location.source_feature_id)]||`mapped-${location.source_feature_id||location.name||'cinema'}`;
         const locationEnglish=locationEnglishNames[String(location.source_feature_id)]||'';
-        const mark=logoMarks[logoKey]||((cinema?.name_en||locationEnglish||location.name||'C').match(/[A-Za-z0-9]+/g)||['C']).slice(0,2).map(x=>x[0]).join('').toUpperCase();
+        const localWordmark=String(cinema?.name_zh||location.name||'影城').replace(/[A-Za-z0-9 .,'’()&-]/g,'').replace(/(?:股份有限公司|有限公司|影城|戲院|大戲院|電影館|電影院|劇院|大劇院)+$/,'');
+        const mark=[...localWordmark].slice(-2).join('')||'影城';
         const logoColor=logoColors[logoKey]||'c87446';
-        el.innerHTML=`<span class="pin-shape" style="--logo-color:#${logoColor}"><span class="pin-icon" aria-hidden="true">${esc(mark)}</span></span>`;el.setAttribute('aria-label',`${cinema?.name_en||locationEnglish} ${cinema?.name_zh||location.name||'Cinema'}`.trim());
+        const logoImage=logoImages[logoKey]||'';
+        const logoBackground=logoBackgrounds[logoKey]||'#fff';
+        el.innerHTML=`<span class="pin-shape" style="--logo-color:#${logoColor}">${logoImage?`<span class="pin-logo-frame" style="--logo-bg:${logoBackground}"><img class="pin-logo" src="${esc(logoImage)}" alt="" decoding="async"></span>`:`<span class="pin-icon" aria-hidden="true">${esc(mark)}</span>`}</span>`;el.setAttribute('aria-label',`${cinema?.name_en||locationEnglish} ${cinema?.name_zh||location.name||'Cinema'}`.trim());el.title=`${cinema?.name_en||locationEnglish} · ${cinema?.name_zh||location.name||'Cinema'}`.trim();
         const shows=cinema?(showsByCity[location.city]?.showtimes||[]).filter(s=>s.cinema_id===cinema.id && (s.start_time||'').slice(0,10)===dateSelect.value):[];
         const address=cinema?.address||[displayName(location.city),location.street,location.house_number].filter(Boolean).join(' ');
         const addr=address?`<span class="nearby-note">${esc(address)}</span>`:'';
@@ -153,7 +160,8 @@
         }).join('');
         const venueName=cinema?.name_zh||location.name||'Cinema';
         const englishName=cinema?.name_en||locationEnglish;
-        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}<b>${esc(venueName)}</b>${englishName?`<br><span class="popup-english-name">${esc(englishName)}</span>`:''}<br><span class="nearby-note">${esc(cinema?.company_name||'')}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span>${filmRows?`<ul class="popup-movies">${filmRows}</ul>`:`<p class="nearby-note">No schedule is linked for this venue yet.</p>`}`);
+        const popupLogo=logoImage?`<div class="popup-brand-logo" style="background:${logoBackground}"><img src="${esc(logoImage)}" alt="${esc(englishName||venueName)} logo" loading="lazy"></div>`:'';
+        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}${popupLogo}<b>${esc(venueName)}</b>${englishName?`<br><span class="popup-english-name">${esc(englishName)}</span>`:''}<br><span class="nearby-note">${esc(cinema?.company_name||'')}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span>${filmRows?`<ul class="popup-movies">${filmRows}</ul>`:`<p class="nearby-note">No schedule is linked for this venue yet.</p>`}`);
         const marker=new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(point).setPopup(popup).addTo(map);
         marker._cinemaId=cinema?.id||'';marker._citySlug=location.city;
         if(cinema)el.addEventListener('click',()=>selectCinema(cinema.id,location.city,true));markers.push(marker);
@@ -166,15 +174,14 @@
     if(cinemaCount('unknown'))citySelect.insertAdjacentHTML('beforeend',`<option value="unknown">${esc(ui('unknownCity'))} · ${cinemaCount('unknown')}</option>`);
   }
   function setupDateOptions() {
-    const all=getAllShowtimes();
     const today=todayTaiwan();
-    availableDates=[...new Set(all.map(s=>(s.start_time||'').slice(0,10)).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today))].sort();
+    availableDates=Object.keys(showtimesDateIndex).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today).sort();
     if(!availableDates.length)availableDates=[today];
     let initial=availableDates.includes(today)?today:(availableDates[0]||today);
     dateSelect.innerHTML=availableDates.map(d=>`<option value="${d}">${d===today?`${esc(ui('today'))} · `:''}${esc(formatDate(d))} · ${countDate(d)}</option>`).join('');
     dateSelect.value=initial;syncDateControls();
   }
-  function countDate(date) { return getAllShowtimes().filter(s=>(s.start_time||'').slice(0,10)===date).length; }
+  function countDate(date) { return Number(showtimesDateIndex[date]?.total||0); }
   function formatDate(date,style='full') {
     if(date==='all-dates')return ui('allDates');
     const [y,m,d]=date.split('-').map(Number);const value=new Date(Date.UTC(y,m-1,d,12));
@@ -186,13 +193,27 @@
     $('#date-count').textContent=`${countDate(dateSelect.value)} ${ui('sessions')}`;
   }
   function setupLanguageFilters() {
+    const priorSubtitle=subtitleSelect.value||'all',priorAudio=audioSelect.value||'all';
     const allLabel=ui('anySubtitles');
     subtitleSelect.innerHTML=`<option value="all">${esc(allLabel)}</option>`+filterLanguages.map(code=>`<option value="${code}">${esc(languageNames[code]||code)} · ${fieldLangCount('subtitles',code)}</option>`).join('');
     audioSelect.innerHTML=`<option value="all">${esc(ui('anyAudio'))}</option>`+filterLanguages.map(code=>`<option value="${code}">${esc(languageNames[code]||code)} · ${fieldLangCount('audio_language',code)}</option>`).join('');
+    if([...subtitleSelect.options].some(option=>option.value===priorSubtitle))subtitleSelect.value=priorSubtitle;
+    if([...audioSelect.options].some(option=>option.value===priorAudio))audioSelect.value=priorAudio;
   }
   function selectedShowtimes(slug) {
     const list=showsByCity[slug]?.showtimes||[];
-    return list.filter(s=>(s.start_time||'').slice(0,10)===dateSelect.value);
+    return list;
+  }
+  async function loadDateShowtimes(date) {
+    const sequence=++dateLoadSequence;
+    const cities=Object.keys(showtimesDateIndex[date]?.cities||{});
+    const loaded=await Promise.all(cities.map(async slug=>{
+      try{return [slug,await loadJson(`data/showtimes/by-date/${date}/${slug}.json`)];}
+      catch(error){console.warn(`Showtimes unavailable for ${slug} on ${date}`,error);return [slug,{showtimes:[]}];}
+    }));
+    if(sequence!==dateLoadSequence||date!==dateSelect.value)return;
+    showsByCity=Object.fromEntries(loaded);
+    setupLanguageFilters();syncDateControls();renderMarkers();renderResults();
   }
   function selectedCities() {
     if(selectedCity!=='all')return [selectedCity];
@@ -248,8 +269,10 @@
         const co=cinema.company_name?`<div class="company-name">${esc(cinema.company_name)}</div>`:'';
         const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
         const photo=image?`<img class="cinema-photo" src="${esc(image)}" alt="${esc(cinema.name_zh||'Cinema building')}" loading="lazy">`:'';
+        const cardLogoKey=cinemaLogoKeys[cinema.id];
+        const cardLogo=logoImages[cardLogoKey]?`<img class="cinema-logo" style="background:${esc(logoBackgrounds[cardLogoKey]||'#fff')}" src="${esc(logoImages[cardLogoKey])}" alt="" loading="lazy" decoding="async">`:'';
         const location=cinemaPoint(cinema)||cinemaLocation(cinema,slug)?`<button class="show-on-map" type="button" data-cinema-id="${esc(cinema.id)}" data-city="${esc(slug)}">Show on map</button>`:'';
-        return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name-wrap"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div>${cinema.name_en?`<div class="cinema-name-en">${esc(cinema.name_en)}</div>`:''}</div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${location}</div>${moviesHtml}</article>`;
+        return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name-wrap">${cardLogo}<div class="cinema-name-text"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div>${cinema.name_en?`<div class="cinema-name-en">${esc(cinema.name_en)}</div>`:''}</div></div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${location}</div>${moviesHtml}</article>`;
       }).join('')}`;
     }).join('');
   }
@@ -312,7 +335,7 @@
     },()=>{mapCaption.textContent=ui('locationDenied');button.querySelector('[data-i18n]').textContent=ui('locate');button.disabled=false;},{enableHighAccuracy:true,timeout:12000,maximumAge:300000});
   }
   function changeDate(delta) {
-    if(delta<0)return;const index=availableDates.indexOf(dateSelect.value);if(index<0)return;const next=index+delta;if(next<0||next>=availableDates.length)return;dateSelect.value=availableDates[next];syncDateControls();renderMarkers();renderResults();
+    if(delta<0)return;const index=availableDates.indexOf(dateSelect.value);if(index<0)return;const next=index+delta;if(next<0||next>=availableDates.length)return;dateSelect.value=availableDates[next];syncDateControls();loadDateShowtimes(dateSelect.value);
   }
   async function init() {
     let savedLanguage='en',savedTheme='dark';try{savedLanguage=localStorage.getItem('cinema-language')||'en';savedTheme=localStorage.getItem('cinema-theme')||'dark';}catch{}
@@ -320,18 +343,20 @@
     buildMap();
     try {
       const [cityData,manifest,locationData,nameData]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}}))]);
-      cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};
-      cityDefs=cityData.cities.map(c=>({slug:c.slug,center:c.center}));dataGeneratedDate=(manifest?.generated_at||'').slice(0,10);
+      cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};logoImages=nameData.logo_images||{};logoBackgrounds=nameData.logo_backgrounds||{};
+      cityDefs=cityData.cities.map(c=>({slug:c.slug,center:c.center}));dataGeneratedDate=(manifest?.generated_at||'').slice(0,10);showtimesDateIndex=manifest?.showtimes_index||{};
       venueLocations=locationData.locations||[];
       const slugs=[...cityDefs.map(c=>c.slug),'unknown'];
       await Promise.all(slugs.map(async slug=>{
-        const [cinemas,shows]=await Promise.all([loadJson(`data/cinemas/${slug}.json`).catch(()=>({cinemas:[]})),loadJson(`data/showtimes/${slug}.json`).catch(()=>({showtimes:[]}))]);
+        const cinemas=await loadJson(`data/cinemas/${slug}.json`).catch(()=>({cinemas:[]}));
         cinemas.cinemas=(cinemas.cinemas||[]).map(cinema=>({...cinema,name_en:cinema.name_en||cinemaEnglishNames[cinema.id]}));
-        cinemaByCity[slug]=cinemas;showsByCity[slug]=shows;
+        cinemaByCity[slug]=cinemas;
       }));
-      for(const data of Object.values(showsByCity))for(const show of data.showtimes||[]){knownShowtimeRows++;if(Array.isArray(show.subtitles)&&show.subtitles.length)explicitSubtitleRows++;}
+      knownShowtimeRows=Number(manifest?.coverage?.showtime_rows||Object.values(showtimesDateIndex).reduce((sum,entry)=>sum+Number(entry.total||0),0));
+      explicitSubtitleRows=Number(manifest?.coverage?.explicit_subtitle_rows||0);
       setupCityOptions();setupDateOptions();setupLanguageFilters();
-      if(map?.loaded())renderMarkers();
+      if(dateSelect.value)await loadDateShowtimes(dateSelect.value);
+      else if(map?.loaded())renderMarkers();
       mapCaption.textContent=`${locationCount()} cinema locations · OpenStreetMap`;
       $('#updated').textContent=`${ui('dataUpdated')} · ${formatDate(dataGeneratedDate||todayTaiwan(),'short')} · ${ui('localTime')}`;
       $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
@@ -341,7 +366,7 @@
     }
   }
   citySelect.addEventListener('change',e=>{mapCaption.classList.remove('location-active');selectCity(e.target.value,true);});
-  dateSelect.addEventListener('change',()=>{syncDateControls();renderMarkers();renderResults();});
+  dateSelect.addEventListener('change',()=>{syncDateControls();loadDateShowtimes(dateSelect.value);});
   $('#date-prev').addEventListener('click',()=>changeDate(-1));$('#date-next').addEventListener('click',()=>changeDate(1));
   searchInput.addEventListener('input',renderResults);subtitleSelect.addEventListener('change',renderResults);audioSelect.addEventListener('change',renderResults);
   languageSelect.addEventListener('change',e=>setLanguage(e.target.value));$('#theme').addEventListener('click',()=>setTheme(document.querySelector('.app').dataset.theme==='dark'?'light':'dark'));
@@ -351,7 +376,7 @@
   $('#map-tools-toggle').addEventListener('click',()=>{const menu=$('#map-tools-menu'),open=menu.hidden;menu.hidden=!open;$('#map-tools-toggle').setAttribute('aria-expanded',String(open));});
   document.addEventListener('click',e=>{if(!$('#map-tools').contains(e.target)){ $('#map-tools-menu').hidden=true;$('#map-tools-toggle').setAttribute('aria-expanded','false');}});
   resultsEl.addEventListener('click',e=>{const button=e.target.closest('.show-on-map');if(button)selectCinema(button.dataset.cinemaId,button.dataset.city,true);});
-    $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1));syncDateControls();mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}selectCity('all',true);});
+    $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1));syncDateControls();loadDateShowtimes(dateSelect.value);mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}selectCity('all',true);});
   document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();searchInput.focus();}if(e.key==='Escape'&&document.activeElement===searchInput){searchInput.value='';renderResults();searchInput.blur();}});
   init();
 })();

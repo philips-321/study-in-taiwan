@@ -91,7 +91,12 @@ async function writeJson(file, data) {
 }
 async function removeOldJson(dir) {
   await fs.mkdir(dir, { recursive: true });
-  for (const name of await fs.readdir(dir)) if (name.endsWith('.json')) await fs.unlink(path.join(dir, name));
+  for (const name of await fs.readdir(dir)) {
+    const target = path.join(dir, name);
+    const stat = await fs.stat(target);
+    if (stat.isDirectory()) await removeOldJson(target);
+    else if (name.endsWith('.json')) await fs.unlink(target);
+  }
 }
 
 const generatedAt = new Date().toISOString();
@@ -231,7 +236,8 @@ await runSource('eslite-official-schedule', 'Eslite', fetchEsliteShowtimes);
 await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);
 
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
-const citySummary = {};
+const citySummary = {}, showtimesIndex = {};
+const coverage = { showtime_rows: 0, explicit_subtitle_rows: 0 };
 for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   const seen = new Set();
   const showtimes = showtimesByCity.get(slug)
@@ -270,11 +276,30 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
     cinemas
   });
   await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), { version: 3, city: slug, generated_at: generatedAt, sources: sourceStatus, showtimes });
+  const byDate = new Map();
+  for (const show of showtimes) {
+    coverage.showtime_rows++;
+    if (Array.isArray(show.subtitles) && show.subtitles.length) coverage.explicit_subtitle_rows++;
+    const date = String(show.start_time || '').slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
+    if (!byDate.has(date)) byDate.set(date, []);
+    byDate.get(date).push(show);
+  }
+  for (const [date, rows] of byDate) {
+    const index = showtimesIndex[date] ||= { total: 0, cities: {} };
+    index.total += rows.length;
+    index.cities[slug] = rows.length;
+    await writeJson(path.join(SHOWTIMES_DIR, 'by-date', date, `${slug}.json`), { version: 1, city: slug, date, showtimes: rows });
+  }
   citySummary[slug] = { cinemas: cinemas.length, active_cinemas: activeCount, unknown_cinemas: unknownCount, showtimes: showtimes.length };
 }
+for (const entry of Object.values(showtimesIndex)) entry.cities = Object.fromEntries(Object.entries(entry.cities).sort(([a], [b]) => a.localeCompare(b)));
 await writeJson(path.join(ROOT, 'manifest.json'), {
-  version: 7, generated_at: generatedAt, timezone: 'Asia/Taipei',
-  model: 'fixed per-city JSON files overwritten on refresh; no per-date archive files',
+  version: 8, generated_at: generatedAt, timezone: 'Asia/Taipei',
+  model: 'fixed per-city JSON snapshots plus per-date/per-city browser payloads; all files overwritten on refresh',
+  showtimes_index: showtimesIndex,
+  coverage,
+  showtimes_payload: 'The app loads date-and-city showtime chunks from showtimes/by-date; per-city showtime files remain as the complete source snapshot.',
   source_policy: 'official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete',
   operational_status_policy: 'fresh showtime evidence marks a cinema active; no fresh evidence stays unknown; closed status requires explicit verified evidence and is never inferred from missing showtimes',
   recommendation_policy: 'automatic recommendations should use recommendation_eligible=true; unknown cinemas require separate verification before recommendation',

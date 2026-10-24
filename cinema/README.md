@@ -23,10 +23,11 @@ Published files are overwritten in place:
 ```text
 cinema/data/cinemas/<city>.json
 cinema/data/showtimes/<city>.json
+cinema/data/showtimes/by-date/<date>/<city>.json
 cinema/data/manifest.json
 ```
 
-Do not create `showtimes-YYYY-MM-DD.json` archives. Git history is the audit/history layer.
+The per-city showtime files remain complete current snapshots for collection and fallback workflows. The browser uses the smaller date-and-city chunks listed in `manifest.json` and loads only the selected date. These are regenerated on each refresh, not retained as dated archives. Git history is the audit/history layer.
 
 Main updater:
 

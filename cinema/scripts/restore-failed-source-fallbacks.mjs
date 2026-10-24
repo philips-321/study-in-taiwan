@@ -26,7 +26,20 @@ async function readJson(file) {
 }
 
 async function writeJson(file, data) {
+  await fs.mkdir(path.dirname(file), { recursive: true });
   await fs.writeFile(file, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+}
+
+async function removeJsonFiles(dir) {
+  try {
+    for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
+      const target = path.join(dir, entry.name);
+      if (entry.isDirectory()) await removeJsonFiles(target);
+      else if (entry.name.endsWith('.json')) await fs.unlink(target);
+    }
+  } catch (error) {
+    if (error?.code !== 'ENOENT') throw error;
+  }
 }
 
 function rowKey(row) {
@@ -143,10 +156,38 @@ for (const [city, payload] of currentByCity) {
   await writeJson(path.join(CURRENT_DIR, `${city}.json`), payload);
 }
 
+const datePayloadRoot = path.join(CURRENT_DIR, 'by-date');
+await removeJsonFiles(datePayloadRoot);
+const showtimesIndex = {}, coverage = { showtime_rows: 0, explicit_subtitle_rows: 0 };
+for (const [city, payload] of currentByCity) {
+  const byDate = new Map();
+  for (const show of payload.showtimes) {
+    coverage.showtime_rows++;
+    if (Array.isArray(show.subtitles) && show.subtitles.length) coverage.explicit_subtitle_rows++;
+    const date = String(show.start_time || '').slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
+    if (!byDate.has(date)) byDate.set(date, []);
+    byDate.get(date).push(show);
+  }
+  for (const [date, rows] of byDate) {
+    const entry = showtimesIndex[date] ||= { total: 0, cities: {} };
+    entry.total += rows.length;
+    entry.cities[city] = rows.length;
+    await writeJson(path.join(datePayloadRoot, date, `${city}.json`), {
+      version: 1, city, date, showtimes: rows
+    });
+  }
+}
+for (const entry of Object.values(showtimesIndex)) {
+  entry.cities = Object.fromEntries(Object.entries(entry.cities).sort(([a], [b]) => a.localeCompare(b)));
+}
+
 const manifest = await readJson(MANIFEST);
 if (!manifest) throw new Error('Cinema manifest missing after refresh');
 manifest.sources ||= {};
 manifest.sources.showtimes = normalizedStatus;
+manifest.showtimes_index = showtimesIndex;
+manifest.coverage = coverage;
 manifest.resilience_policy = {
   retry_policy: 'one short workflow probe for the MOC source; source adapters remain independently isolated',
   circuit_breaker: 'failed source is marked degraded/open; no repeated hammering in the same run',
