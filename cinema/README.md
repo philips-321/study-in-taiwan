@@ -2,6 +2,12 @@
 
 Read this file first before changing the cinema pipeline.
 
+## Browser experience
+
+`cinema/index.html` is the public cinema browser. It loads the fixed per-city JSON files below `data/` and the city center coordinates from `garbage-truck/v2/data/cities.json`. The map bubbles show the number of registered cinemas in each city; selecting one filters the screening list. The panel supports a Taiwan-local date, cinema/movie search, and displays source-provided audio, subtitle, format, and hall information when present.
+
+The BAMID cinema master currently has no latitude/longitude fields. Until verified venue coordinates are added, map bubbles intentionally represent city centers, not individual cinema locations. Cinema addresses link to a map search so the page does not imply false venue precision. Keep `subtitles: null` distinct from an explicit subtitle language: null means the source did not provide verified subtitle information.
+
 This project is an ongoing maintained data pipeline, not a project with a meaningful completion percentage. Upstream cinema sites will change and adapters will need patching over time.
 
 ## Goal
