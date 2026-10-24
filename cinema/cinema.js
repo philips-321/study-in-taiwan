@@ -10,6 +10,8 @@
   const subtitleSelect = $('#subtitle-filter');
   const audioSelect = $('#audio-filter');
   const brandSelect = $('#brand-filter');
+  const movieDialog = document.createElement('dialog');
+  movieDialog.className = 'movie-details-dialog';
   const cityNames = {
     taipei:'Taipei City','new-taipei':'New Taipei City',keelung:'Keelung City',taoyuan:'Taoyuan City',
     'hsinchu-city':'Hsinchu City','hsinchu-county':'Hsinchu County',miaoli:'Miaoli County',taichung:'Taichung City',
@@ -57,6 +59,7 @@
   let availableDates = [];
   let showtimesDateIndex = {};
   let movieById = new Map();
+  let movieByTitle = new Map();
   let ticketPriceIndex = {cinemas:{}};
   const ticketPricesByCity = {};
   const ticketPriceRequests = {};
@@ -72,7 +75,14 @@
   let activePopup = null;
   let userPosition = null;
 
-  function movieFor(show) { return show?.movie_id ? (movieById.get(show.movie_id) || show) : show; }
+  function movieFor(show) {
+    if (show?.movie_id && movieById.has(show.movie_id)) return movieById.get(show.movie_id);
+    for (const title of [show?.movie_title, show?.movie_title_en, ...(show?.international_titles || [])]) {
+      const match = movieByTitle.get(normalizeSearch(title));
+      if (match) return match;
+    }
+    return show;
+  }
   function showtimeKey(show) {
     const movie = movieFor(show);
     return [show.cinema_id, normalizeSearch(movie.movie_title || movie.movie_title_en), show.start_time, show.hall || '', show.format || ''].join('|');
@@ -135,6 +145,36 @@
     const aliases={普:'g',普遍級:'g',g:'g',護:'p',保護級:'p',p:'p',輔12:'pg12',輔12級:'pg12',pg12:'pg12',輔15:'pg15',輔15級:'pg15',pg15:'pg15',限制級:'r',r:'r'};
     const code=aliases[raw]||raw;
     return (ratingNames[language]||ratingNames.en)[code]||ratingNames.en[code]||'';
+  }
+  const movieDetailLabels={
+    en:{details:'Movie details',genres:'Genres',rating:'Age rating',unknown:'Not listed',close:'Close'},
+    id:{details:'Detail film',genres:'Genre',rating:'Rating usia',unknown:'Belum tersedia',close:'Tutup'},
+    'zh-TW':{details:'電影資訊',genres:'類型',rating:'電影分級',unknown:'未提供',close:'關閉'},
+    ja:{details:'作品情報',genres:'ジャンル',rating:'年齢区分',unknown:'未掲載',close:'閉じる'},
+    ko:{details:'영화 정보',genres:'장르',rating:'관람 등급',unknown:'정보 없음',close:'닫기'},
+    vi:{details:'Thông tin phim',genres:'Thể loại',rating:'Độ tuổi',unknown:'Chưa có',close:'Đóng'},
+    th:{details:'ข้อมูลภาพยนตร์',genres:'ประเภท',rating:'ระดับอายุ',unknown:'ไม่มีข้อมูล',close:'ปิด'}
+  };
+  function movieDetailsMarkup(movie) {
+    const labels=movieDetailLabels[language]||movieDetailLabels.en;
+    const title=decodeEntities(movie.movie_title||movie.movie_title_en||'Untitled film');
+    const alternate=decodeEntities(movie.movie_title_en||'');
+    const aliases=[...new Set([...(movie.international_titles||[]),alternate].filter(value=>value&&normalizeSearch(value)!==normalizeSearch(title)))];
+    const posterUrl=safeUrl(movie.poster_url);
+    const poster=posterUrl?`<img class="movie-detail-poster" src="${esc(posterUrl)}" alt="${esc(title)}" decoding="async">`:`<div class="movie-detail-poster-empty">${esc(labels.unknown)}</div>`;
+    const genres=[...new Set(Array.isArray(movie.genres)?movie.genres:[])].map(displayGenre);
+    const rating=displayRating(movie.rating);
+    const conflict=Array.isArray(movie.rating_conflict)&&movie.rating_conflict.length?`<small class="movie-rating-conflict">${esc(movie.rating_conflict.map(displayRating).filter(Boolean).join(' · '))}</small>`:'';
+    return `<button class="movie-detail-close" type="button" data-movie-close aria-label="${esc(labels.close)}" title="${esc(labels.close)}">×</button><div class="movie-detail-layout">${poster}<div class="movie-detail-copy"><div class="movie-detail-eyebrow">${esc(labels.details)}</div><h2>${esc(title)}</h2>${aliases.map(alias=>`<div class="movie-detail-alias">${esc(alias)}</div>`).join('')}<div class="movie-detail-field"><b>${esc(labels.genres)}</b><div class="movie-detail-tags">${genres.length?genres.map(genre=>`<span class="tag genre-tag">${esc(genre)}</span>`).join(''):`<span class="movie-detail-unknown">${esc(labels.unknown)}</span>`}</div></div><div class="movie-detail-field"><b>${esc(labels.rating)}</b><span class="tag rating-tag" title="${esc(ageRatingTitles[language]||ageRatingTitles.en)}">${esc(rating||labels.unknown)}</span>${conflict}</div></div></div>`;
+  }
+  function openMovieDetails(movieId) {
+    const movie=movieById.get(movieId);
+    if(!movie)return;
+    movieDialog.innerHTML=movieDetailsMarkup(movie);
+    movieDialog.querySelector('.movie-detail-poster')?.addEventListener('error',event=>{
+      const fallback=document.createElement('div');fallback.className='movie-detail-poster-empty';fallback.textContent=(movieDetailLabels[language]||movieDetailLabels.en).unknown;event.currentTarget.replaceWith(fallback);
+    },{once:true});
+    movieDialog.showModal();
   }
   function safeUrl(value) {
     try { const url=new URL(value); return url.protocol === 'https:' ? url.href : ''; } catch { return ''; }
@@ -423,6 +463,7 @@
   }
   function movieCard(showtimes) {
     const first=showtimes[0],movie=movieFor(first),filmTitle=decodeEntities(movie.movie_title||'Untitled screening'),titleEn=decodeEntities(movie.movie_title_en||'');
+    const movieId=movie.movie_id||first.movie_id||'';
     const posterUrl=safeUrl(movie.poster_url),poster=posterUrl?`<img class="movie-poster" src="${esc(posterUrl)}" alt="" loading="lazy" decoding="async">`:'';
     const genres=[...new Set(Array.isArray(movie.genres)?movie.genres:[])].map(displayGenre);
     const rating=displayRating(movie.rating);
@@ -433,7 +474,8 @@
       const url=safeUrl(s.source_url),link=url?`<a class="detail-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(ui('sourceLink'))}</a>`:'';
       return `<div class="showtime-row">${day}${time?`<span class="time-chip">${esc(time)}</span>`:''}${meta.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}${audioBadge(s.audio_language)}${subtitleBadge(s.subtitles)}</div>${link}`;
     }).join('');
-    return `<div class="movie"><div class="movie-title-row">${poster}<div class="movie-title"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</div>${copyButton(filmTitle,ui('titleSource'))}</div>${titleEn?`<div class="movie-title-row movie-title-row-en"><div class="movie-en"><span class="movie-title-label">${esc(ui('international'))}</span>${esc(titleEn)}</div>${copyButton(titleEn,ui('international'))}</div>`:''}${movieMeta}${sessions}</div>`;
+    const titleContent=movieId?`<button class="movie-title movie-title-open" type="button" data-movie-id="${esc(movieId)}" aria-haspopup="dialog"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</button>`:`<div class="movie-title"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</div>`;
+    return `<div class="movie"><div class="movie-title-row">${poster}${titleContent}${copyButton(filmTitle,ui('titleSource'))}</div>${titleEn?`<div class="movie-title-row movie-title-row-en"><div class="movie-en"><span class="movie-title-label">${esc(ui('international'))}</span>${esc(titleEn)}</div>${copyButton(titleEn,ui('international'))}</div>`:''}${movieMeta}${sessions}</div>`;
   }
   function renderResults() {
     if(!Object.keys(cinemaByCity).length)return;
@@ -569,6 +611,8 @@
       cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};logoImages=nameData.logo_images||{};logoBackgrounds=nameData.logo_backgrounds||{};
       ticketPriceIndex=ticketIndex;
       movieById=new Map((movieIndex.movies||[]).map(movie=>[movie.movie_id,movie]));
+      movieByTitle=new Map();
+      for(const movie of movieIndex.movies||[])for(const title of [movie.movie_title,movie.movie_title_en,...(movie.international_titles||[])]){const key=normalizeSearch(title);if(key&&!movieByTitle.has(key))movieByTitle.set(key,movie);}
       cityDefs=cityData.cities.map(c=>({slug:c.slug,center:c.center}));dataGeneratedDate=(manifest?.generated_at||'').slice(0,10);showtimesDateIndex=manifest?.showtimes_index||{};
       venueLocations=locationData.locations||[];
       const slugs=[...cityDefs.map(c=>c.slug),'unknown'];
@@ -609,6 +653,7 @@
   $('#map-tools-toggle').addEventListener('click',()=>{const menu=$('#map-tools-menu'),open=menu.hidden;menu.hidden=!open;$('#map-tools-toggle').setAttribute('aria-expanded',String(open));});
   document.addEventListener('click',e=>{if(!$('#map-tools').contains(e.target)){ $('#map-tools-menu').hidden=true;$('#map-tools-toggle').setAttribute('aria-expanded','false');}});
   resultsEl.addEventListener('click',e=>{const button=e.target.closest('.show-on-map');if(button){if(app.dataset.mapVisible==='false')$('#map-view-toggle').click();selectCinema(button.dataset.cinemaId,button.dataset.city,true);}});
+  resultsEl.addEventListener('click',e=>{const button=e.target.closest('.movie-title-open');if(button)openMovieDetails(button.dataset.movieId);});
   resultsEl.addEventListener('click',async e=>{
     const button=e.target.closest('[data-copy]');if(!button)return;e.preventDefault();e.stopPropagation();
     const originalLabel=button.getAttribute('aria-label'),originalTitle=button.title;
@@ -624,6 +669,8 @@
     details.dataset.loaded='true';details.dataset.loading='false';
   },true);
   const app=document.querySelector('.app'),sheetGrab=$('#sheet-grab');
+  app.append(movieDialog);
+  movieDialog.addEventListener('click',event=>{if(event.target===movieDialog||event.target.closest('[data-movie-close]'))movieDialog.close();});
   const sheetLabel=updateMobileActionLabels;
   const toggleSheet=()=>{app.dataset.sheet=app.dataset.sheet==='expanded'?'half':app.dataset.sheet==='collapsed'?'half':'expanded';sheetLabel();};
   let sheetStartY=null,suppressSheetClick=false;
