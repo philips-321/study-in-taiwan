@@ -40,7 +40,9 @@
       "type": "object",
       "required": ["days"],
       "properties": {
-        "days": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 6}, "uniqueItems": true}
+        "known": {"type": "boolean"},
+        "days": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 6}, "uniqueItems": true},
+        "note": {"type": ["string", "null"]}
       }
     }
   }
