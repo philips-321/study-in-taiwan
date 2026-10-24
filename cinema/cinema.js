@@ -56,6 +56,7 @@
   let availableDates = [];
   let showtimesDateIndex = {};
   let dateLoadSequence = 0;
+  let liveShowtimesByCityDate = {};
   let explicitSubtitleRows = 0;
   let knownShowtimeRows = 0;
   let dataGeneratedDate = '';
@@ -204,15 +205,63 @@
     const list=showsByCity[slug]?.showtimes||[];
     return list;
   }
+  function cityFromAddress(address) {
+    const aliases=[['taipei',['臺北市','台北市']],['new-taipei',['新北市']],['keelung',['基隆市']],['taoyuan',['桃園市']],['hsinchu-city',['新竹市']],['hsinchu-county',['新竹縣']],['miaoli',['苗栗縣']],['taichung',['臺中市','台中市']],['changhua',['彰化縣']],['nantou',['南投縣']],['yunlin',['雲林縣']],['chiayi-city',['嘉義市']],['chiayi-county',['嘉義縣']],['tainan',['臺南市','台南市']],['kaohsiung',['高雄市']],['pingtung',['屏東縣']],['yilan',['宜蘭縣']],['hualien',['花蓮縣','花蓮市']],['taitung',['臺東縣','台東縣','台東市']],['penghu',['澎湖縣']],['kinmen',['金門縣']],['lienchiang',['連江縣']]];
+    const text=String(address||'');return aliases.find(([,names])=>names.some(name=>text.includes(name)))?.[0]||'unknown';
+  }
+  function localDateTime(iso) {
+    const value=new Date(iso);if(!Number.isFinite(value.getTime()))return null;
+    const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(value).map(part=>[part.type,part.value]));
+    return {date:`${parts.year}-${parts.month}-${parts.day}`,time:`${parts.hour}:${parts.minute}`};
+  }
+  async function loadLiveShowtimes() {
+    try {
+      const response=await fetch('https://capi.showtimes.com.tw/4/app/bootstrap',{headers:{accept:'application/json'},mode:'cors',credentials:'omit'});
+      if(!response.ok)throw new Error(`ShowTimes API ${response.status}`);
+      const payload=(await response.json())?.payload;
+      if(!payload||!Array.isArray(payload.corporations)||!Array.isArray(payload.programs)||!payload.eventsForCorporations)throw new Error('ShowTimes API response format changed');
+      const corporations=new Map(payload.corporations.map(c=>[Number(c.id),c])),programs=new Map(payload.programs.map(p=>[Number(p.id),p]));
+      const aliases=[['英語','en'],['日語','ja'],['韓語','ko'],['國語','zh'],['粵語','yue'],['越語','vi'],['泰語','th'],['菲語','fil'],['法語','fr'],['德語','de'],['西語','es'],['印尼語','id']];
+      const today=todayTaiwan(),byDate={};
+      for(const [corporationId,group] of Object.entries(payload.eventsForCorporations)){
+        const corporation=corporations.get(Number(corporationId));if(!corporation)continue;
+        const city=cityFromAddress(corporation.address),rooms=new Map((group.venues||[]).map(v=>[Number(v.id),v.room]));
+        const cinemas=cinemaByCity[city]?.cinemas||[];
+        const normalize=value=>String(value||'').replace(/臺/g,'台').toLowerCase().replace(/(?:電影城|電影院|電影館|影城|戲院|劇院|威秀|秀泰)/g,'').replace(/[\s　・·()（）\-_/]/g,'');
+        const venueKey=normalize(corporation.name);
+        const cinema=cinemas.find(c=>{const name=normalize(c.name_zh);return name&&(name.includes(venueKey)||venueKey.includes(name));});
+        if(!cinema)continue;
+        for(const event of group.events||[]){
+          if(event.status!=='active')continue;
+          const program=programs.get(Number(event.programId)),session=localDateTime(event.startedAt);
+          if(!program||!session||session.date<today||!program.name)continue;
+          const format=event.meta?.format||null,audio=aliases.find(([label])=>format?.endsWith(label))?.[1]||null,duration=Number(program.duration);
+          const date=byDate[session.date]||={};const shows=date[city]||=[];
+          shows.push({id:`showtimes-${event.id}`,cinema_id:cinema.id,cinema_name:corporation.name,movie_title:program.name,movie_title_en:program.nameAlternative||null,start_time:`${session.date}T${session.time}:00+08:00`,end_time:null,hall:rooms.get(Number(event.venueId))||null,format,audio_language:audio,subtitles:null,duration_minutes:Number.isFinite(duration)&&duration>0?Math.round(duration/60):null,source_event_id:String(event.id),source_url:`https://www.showtimes.com.tw/cinemas/${corporation.id}/`,source:'showtimes-official-api'});
+        }
+      }
+      liveShowtimesByCityDate=byDate;
+      for(const [date,cities] of Object.entries(byDate)){
+        const entry=showtimesDateIndex[date]||={total:0,cities:{}};
+        for(const [city,rows] of Object.entries(cities)){entry.total+=rows.length;entry.cities[city]=(entry.cities[city]||0)+rows.length;}
+      }
+      knownShowtimeRows+=Object.values(byDate).reduce((sum,cities)=>sum+Object.values(cities).reduce((n,rows)=>n+rows.length,0),0);
+    } catch(error) { console.warn('ShowTimes live feed unavailable; using saved schedules',error); }
+  }
   async function loadDateShowtimes(date) {
     const sequence=++dateLoadSequence;
-    const cities=Object.keys(showtimesDateIndex[date]?.cities||{});
+    const cities=[...new Set([...Object.keys(showtimesDateIndex[date]?.cities||{}),...Object.keys(liveShowtimesByCityDate[date]||{})])];
     const loaded=await Promise.all(cities.map(async slug=>{
       try{return [slug,await loadJson(`data/showtimes/by-date/${date}/${slug}.json`)];}
       catch(error){console.warn(`Showtimes unavailable for ${slug} on ${date}`,error);return [slug,{showtimes:[]}];}
     }));
     if(sequence!==dateLoadSequence||date!==dateSelect.value)return;
     showsByCity=Object.fromEntries(loaded);
+    for(const [slug,live] of Object.entries(liveShowtimesByCityDate[date]||{})){
+      const data=showsByCity[slug]||{showtimes:[]},keys=new Set(data.showtimes.map(show=>[show.cinema_id,show.movie_title,show.start_time,show.hall||'',show.format||''].join('|')));
+      for(const show of live){const key=[show.cinema_id,show.movie_title,show.start_time,show.hall||'',show.format||''].join('|');if(!keys.has(key)){data.showtimes.push(show);keys.add(key);}}
+      showsByCity[slug]=data;
+    }
     setupLanguageFilters();syncDateControls();renderMarkers();renderResults();
   }
   function selectedCities() {
@@ -354,6 +403,7 @@
       }));
       knownShowtimeRows=Number(manifest?.coverage?.showtime_rows||Object.values(showtimesDateIndex).reduce((sum,entry)=>sum+Number(entry.total||0),0));
       explicitSubtitleRows=Number(manifest?.coverage?.explicit_subtitle_rows||0);
+      if(manifest?.sources?.showtimes?.['showtimes-official-api']?.health!=='healthy')await loadLiveShowtimes();
       setupCityOptions();setupDateOptions();setupLanguageFilters();
       if(dateSelect.value)await loadDateShowtimes(dateSelect.value);
       else if(map?.loaded())renderMarkers();

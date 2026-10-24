@@ -512,7 +512,7 @@ spot-huashan-official-schedule
 atmovies-taipei-fallback
 ```
 
-The ShowTimes JSON feed was verified from this workspace and the collector now reads its nationwide corporation/event/program payload. Confirm GitHub Actions access on its next scheduled run. Next recommended health improvement: add count-drop/freshness checks so a normally large source suddenly returning zero or a tiny fraction of its usual rows is flagged as degraded even if the parser technically returns successfully.
+The ShowTimes JSON feed was verified from this workspace and contains nationwide corporation/event/program data. GitHub Actions currently receives HTTP 403 from the API, while the public feed allows cross-origin browser requests; the cinema page uses it live when the saved feed is degraded. Next recommended health improvement: add count-drop/freshness checks so a normally large source suddenly returning zero or a tiny fraction of its usual rows is flagged as degraded even if the parser technically returns successfully.
 
 ## Last verified workflow state
 
