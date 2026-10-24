@@ -31,15 +31,32 @@ json_files = sorted(DATA.rglob('*.json'))
 for path in json_files:
     load_json(path)
 
-# 2. Registry must contain exactly 22 unique jurisdictions.
+# 2. Registry must contain exactly Taiwan's 22 unique local jurisdictions.
+EXPECTED_JURISDICTIONS = {
+    'taipei', 'new-taipei', 'taoyuan', 'taichung', 'tainan', 'kaohsiung',
+    'keelung', 'hsinchu-city', 'chiayi-city',
+    'yilan', 'hsinchu-county', 'miaoli', 'changhua', 'nantou', 'yunlin',
+    'chiayi-county', 'pingtung', 'hualien', 'taitung', 'penghu', 'kinmen',
+    'lienchiang',
+}
 registry = load_json(DATA / 'cities.json')
 if registry:
     cities = registry.get('cities') or []
     slugs = [c.get('slug') for c in cities]
+    slug_set = set(slugs)
     if len(cities) != 22:
         fail(f'cities.json expected 22 jurisdictions, found {len(cities)}')
-    if len(set(slugs)) != len(slugs):
+    if len(slug_set) != len(slugs):
         fail('cities.json contains duplicate slugs')
+    if slug_set != EXPECTED_JURISDICTIONS:
+        missing = sorted(EXPECTED_JURISDICTIONS - slug_set)
+        extra = sorted(slug_set - EXPECTED_JURISDICTIONS)
+        fail(f'cities.json jurisdiction mismatch; missing={missing}, extra={extra}')
+    by_slug = {c.get('slug'): c for c in cities}
+    if by_slug.get('new-taipei', {}).get('name_zh') != '新北市':
+        fail('new-taipei must map to 新北市 / New Taipei City')
+    if by_slug.get('keelung', {}).get('name_zh') != '基隆市':
+        fail('keelung must map to 基隆市 / Keelung City')
 
 # 3. Per-city manifest/index/tile invariants.
 for manifest_path in sorted((DATA / 'cities').glob('*/manifest.json')):
@@ -129,6 +146,28 @@ workflow = (REPO / '.github/workflows/refresh-garbage-v2-city.yml').read_text(en
 for forbidden in ('wrangler d1', 'D1_DATABASE', 'database_id'):
     if forbidden.lower() in workflow.lower():
         fail(f'refresh-garbage-v2-city.yml contains forbidden D1 runtime token: {forbidden}')
+
+# 6. Mobile V2 regression contract.
+# The base mobile layout uses an auto-height second grid row. When #panel.collapsed
+# hides the body, that auto row must shrink so the map receives the freed space.
+main_html = (REPO / 'garbage-truck/index.html').read_text(encoding='utf-8')
+mobile_parity = (V2 / 'mobile-parity.js').read_text(encoding='utf-8')
+nationwide = (V2 / 'nationwide.js').read_text(encoding='utf-8')
+
+if 'grid-template-rows:minmax(0,1fr) auto' not in main_html:
+    fail('base mobile layout no longer exposes an auto-height sheet row')
+if '#panel.collapsed' not in main_html or 'classList.toggle("collapsed")' not in main_html:
+    fail('base mobile sheet collapse behavior is missing')
+if 'html[data-v2] #content{grid-template-rows:minmax(0,1fr) auto!important}' not in mobile_parity:
+    fail('V2 mobile sheet must override fixed-height nationwide rows with an auto sheet row')
+if 'html[data-v2] #cityV2{display:block!important' not in mobile_parity:
+    fail('V2 city selector must remain visible on narrow mobile screens for testing')
+if '.sheet-toggle{display:none!important}' in mobile_parity:
+    fail('V2 must not hide the mobile sheet toggle')
+if 'grid-template-rows:minmax(48dvh' in mobile_parity or 'grid-template-rows:minmax(50dvh' in mobile_parity:
+    fail('V2 mobile parity must not pin the panel to a fixed viewport-height row')
+if '#cityV2{display:none!important}' not in nationwide:
+    warnings.append('nationwide.js no longer hides #cityV2 at <=560px; mobile-parity override may be simplified')
 
 print(f'V2 JSON files parsed: {len(json_files)}')
 for warning in warnings:
