@@ -1,0 +1,62 @@
+name: Bootstrap Garbage Truck V2 Data
+
+on:
+  push:
+    paths:
+      - 'garbage-truck/v2/.bootstrap-trigger'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: garbage-truck-v2-bootstrap
+  cancel-in-progress: false
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install boundary tools
+        run: python -m pip install --disable-pip-version-check pyshp shapely
+
+      - name: Pull official Taiwan city/county boundaries
+        id: boundaries
+        continue-on-error: true
+        run: python garbage-truck/v2/scripts/import_city_boundaries.py
+
+      - name: Pull Tainan official garbage collection JSON
+        id: tainan
+        continue-on-error: true
+        run: python garbage-truck/v2/scripts/import_tainan.py --force
+
+      - name: Compile Tainan into small static JSON tiles
+        if: steps.tainan.outcome == 'success'
+        run: python garbage-truck/v2/scripts/compile_tiles.py --city tainan
+
+      - name: Commit successful pulls and source metadata
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add garbage-truck/v2/data/city-boundaries.geojson garbage-truck/v2/data/city-boundaries-source.json 2>/dev/null || true
+          git add garbage-truck/v2/data/cities/tainan 2>/dev/null || true
+          if git diff --cached --quiet; then echo 'No data changes to commit.'; exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'garbage-v2: pull official boundaries and Tainan data'
+          git push
+
+      - name: Report two-attempt failures
+        if: steps.boundaries.outcome == 'failure' || steps.tainan.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "boundaries=${{ steps.boundaries.outcome }}"
+          echo "tainan=${{ steps.tainan.outcome }}"
+          echo 'A failing source has already exhausted its two-attempt policy. Do not hammer it again; retry the source on Monday.'
+          exit 1
