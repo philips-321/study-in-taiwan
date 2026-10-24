@@ -1,0 +1,48 @@
+name: Scout Garbage Truck V2 Taichung Source
+
+on:
+  push:
+    paths:
+      - 'garbage-truck/v2/.taichung-scout-trigger'
+
+permissions:
+  contents: read
+
+tasks: {}
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch Taichung official static schedule once
+        shell: bash
+        run: |
+          set -euo pipefail
+          url='https://newdatacenter.taichung.gov.tw/api/v1/no-auth/resource.download?rid=68d1a87f-7baa-4b50-8408-c36a3a7eda68'
+          curl --fail --location --connect-timeout 20 --max-time 90 --retry 0 \
+            -A 'study-in-taiwan-garbage-v2/2.2 (+https://study-in-taiwan.com/garbage-truck/)' \
+            -D /tmp/taichung.headers -o /tmp/taichung.source "$url"
+          test -s /tmp/taichung.source
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json
+          p=Path('/tmp/taichung.source'); raw=p.read_bytes()
+          print('bytes',len(raw)); print('sha256',hashlib.sha256(raw).hexdigest())
+          print('head',repr(raw[:160]))
+          try:
+              obj=json.loads(raw.decode('utf-8-sig'))
+              print('json_type',type(obj).__name__)
+              if isinstance(obj,list):
+                  print('rows',len(obj)); print('sample_keys',sorted(obj[0].keys()) if obj and isinstance(obj[0],dict) else None)
+              elif isinstance(obj,dict): print('top_keys',sorted(obj.keys())[:30])
+          except Exception as e: print('json_parse_error',repr(e))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: taichung-official-static-scout
+          path: |
+            /tmp/taichung.source
+            /tmp/taichung.headers
+          retention-days: 1
