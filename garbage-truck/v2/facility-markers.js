@@ -103,6 +103,7 @@
           const tr = translations[frame.contentDocument.getElementById('lang').value] || translations.en;
           recyclingItem.querySelector('b').textContent = tr.recycling;
           foodItem.querySelector('b').textContent = tr.food;
+          foodItem.querySelector('i').setAttribute('aria-label', tr.food);
         };
         updateAcceptanceLabels();
         doc.getElementById('lang').addEventListener('change', () => setTimeout(updateAcceptanceLabels, 0));
