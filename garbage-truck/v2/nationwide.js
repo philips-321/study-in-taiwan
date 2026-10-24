@@ -23,7 +23,7 @@ function pointInRing(point,ring){const[x,y]=point;let inside=false;for(let i=0,j
 function pointInGeometry(point,geom){if(!geom)return false;if(geom.type==='Polygon'){if(!geom.coordinates.length||!pointInRing(point,geom.coordinates[0]))return false;for(let i=1;i<geom.coordinates.length;i++)if(pointInRing(point,geom.coordinates[i]))return false;return true}if(geom.type==='MultiPolygon')return geom.coordinates.some(p=>pointInGeometry(point,{type:'Polygon',coordinates:p}));return false}
 function d2(a,b){const dx=a[0]-b[0],dy=a[1]-b[1];return dx*dx+dy*dy}
 window.installNationwideV2=async function(frame){
- const d=frame.contentDocument,w=frame.contentWindow;if(!d||!w||d.getElementById('cityV2'))return;let registry,boundaries=null;
+ const d=frame.contentDocument,w=frame.contentWindow;if(!d||!w||d.getElementById('cityV2'))return;const map=w.__v2MapBridge||w.eval('map');if(!map||typeof map.flyTo!=='function'){console.error('V2 city navigation could not resolve MapLibre map');return}let registry,boundaries=null;
  try{const r=await fetch('data/cities.json',{cache:'force-cache'});if(!r.ok)throw Error(r.status);registry=await r.json();try{const br=await fetch('data/city-boundaries.geojson',{cache:'force-cache'});if(br.ok)boundaries=await br.json()}catch(e){console.warn('V2 boundaries unavailable; using nearest-center fallback',e)}}catch(e){console.error('V2 city registry failed',e);return}
  const controls=d.querySelector('.controls'),langSelect=d.getElementById('lang');if(!controls||!langSelect)return;
  const style=d.createElement('style');style.textContent=`#cityV2{max-width:190px}@media(max-width:800px){header{padding:10px 12px;gap:8px 10px}.brand{font-size:16px;line-height:1.2;min-width:0}.brand::before{width:86px;height:42px}.controls{gap:6px}#content{grid-template-rows:minmax(46vh,1fr) minmax(0,44vh)}#panel{max-height:44vh;max-height:44dvh;padding:12px}}@media(max-width:560px){#cityV2{display:none!important}.brand{font-size:15px;flex-basis:100%;margin-right:0}.brand::before{width:74px;height:36px}.controls{width:100%;display:flex;flex-wrap:nowrap}#locate{flex:1;min-width:0}header select{max-width:128px}}`;d.head.appendChild(style);
@@ -40,11 +40,11 @@ window.installNationwideV2=async function(frame){
  function flyToCity(city,token){
    return new Promise(resolve=>{
      let settled=false;
-     const finish=()=>{if(settled)return;settled=true;clearTimeout(timer);try{w.map.off('moveend',finish)}catch{}resolve(token===transitionToken)};
+     const finish=()=>{if(settled)return;settled=true;clearTimeout(timer);try{map.off('moveend',finish)}catch{}resolve(token===transitionToken)};
      const timer=setTimeout(finish,3500);
      try{
-       w.map.once('moveend',finish);
-       w.map.flyTo({center:city.center,zoom:city.kind==='city'?13.5:11.8,essential:true});
+       map.once('moveend',finish);
+       map.flyTo({center:city.center,zoom:city.kind==='city'?13.5:11.8,essential:true});
      }catch(e){console.warn('V2 city flyTo failed',e);finish()}
    });
  }
@@ -127,7 +127,7 @@ window.installNationwideV2=async function(frame){
  async function syncCityFromMap(){
    if(loadingCity)return;
    try{
-     const c=w.map.getCenter(),slug=detectCity(c.lng,c.lat);
+     const c=map.getCenter(),slug=detectCity(c.lng,c.lat);
      if(slug&&slug!==selected)await setCity(slug,{moveMap:false,persist:true});
      else updateBrand();
    }catch(e){console.warn('V2 map city detection failed',e)}
@@ -135,7 +135,7 @@ window.installNationwideV2=async function(frame){
 
  select.addEventListener('change',()=>setCity(select.value,{moveMap:true,persist:true}));
  langSelect.addEventListener('change',()=>{const t=txt(langSelect.value);select.setAttribute('aria-label',t.city);try{w.eval(`globalThis.__v2RouteSpecific=${JSON.stringify(t.route)};`);setTimeout(async()=>{w.eval("document.getElementById('todayGuide').innerHTML=todayGuide();");updateBrand();if(typeof window.__v2ShowScheduleOnly==='function')await window.__v2ShowScheduleOnly(frame,selected)},0)}catch{}});
- w.map.on('moveend',syncCityFromMap);
+ map.on('moveend',syncCityFromMap);
  await setCity(selected,{moveMap:true,persist:false});
 };
 })();
