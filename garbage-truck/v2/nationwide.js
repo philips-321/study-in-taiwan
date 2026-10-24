@@ -28,15 +28,114 @@ window.installNationwideV2=async function(frame){
  const controls=d.querySelector('.controls'),langSelect=d.getElementById('lang');if(!controls||!langSelect)return;
  const style=d.createElement('style');style.textContent=`#cityV2{max-width:190px}@media(max-width:800px){header{padding:10px 12px;gap:8px 10px}.brand{font-size:16px;line-height:1.2;min-width:0}.brand::before{width:86px;height:42px}.controls{gap:6px}#content{grid-template-rows:minmax(46vh,1fr) minmax(0,44vh)}#panel{max-height:44vh;max-height:44dvh;padding:12px}}@media(max-width:560px){#cityV2{display:none!important}.brand{font-size:15px;flex-basis:100%;margin-right:0}.brand::before{width:74px;height:36px}.controls{width:100%;display:flex;flex-wrap:nowrap}#locate{flex:1;min-width:0}header select{max-width:128px}}`;d.head.appendChild(style);
  const select=d.createElement('select');select.id='cityV2';select.dataset.testOnly='true';for(const c of registry.cities){const o=d.createElement('option');o.value=c.slug;o.textContent=`${c.name_zh} · ${c.name_en}`;select.appendChild(o)}if(TEST_CITY_SELECTOR)controls.insertBefore(select,langSelect);
- const bySlug=Object.fromEntries(registry.cities.map(x=>[x.slug,x])),zhToSlug=Object.fromEntries(registry.cities.map(x=>[x.name_zh,x.slug]));let selected=localStorage.getItem('garbageV2City');if(!bySlug[selected])selected='taipei';select.value=selected;let loadingCity=false;
+ const bySlug=Object.fromEntries(registry.cities.map(x=>[x.slug,x])),zhToSlug=Object.fromEntries(registry.cities.map(x=>[x.name_zh,x.slug]));
+ let selected=localStorage.getItem('garbageV2City');if(!bySlug[selected])selected='taipei';select.value=selected;
+ let loadingCity=false,transitionToken=0;
  function localizedCity(city,language){return city?.names?.[language]||city?.names?.en||city?.name_en?.replace(/\s+(City|County)$/,'')||''}
  function updateBrand(){const city=bySlug[selected]||bySlug.taipei;try{const tr=w.eval('T[lang]'),language=langSelect.value||'en';d.getElementById('brand').textContent=`${tr.brand} · ${city.name_zh} / ${localizedCity(city,language)}`}catch(e){console.warn('V2 brand city label failed',e)}}
  function detectCity(lng,lat){if(boundaries?.features?.length){const p=[lng,lat];for(const f of boundaries.features){if(pointInGeometry(p,f.geometry)){const zh=f.properties?.name_zh||f.properties?.COUNTYNAME||f.properties?.county;if(zhToSlug[zh])return zhToSlug[zh]}}}let best='taipei',score=Infinity;for(const c of registry.cities){const s=d2([lng,lat],c.center);if(s<score){score=s;best=c.slug}}return best}
  try{w.eval(`if(!globalThis.__v2OriginalTodayGuide)globalThis.__v2OriginalTodayGuide=todayGuide;todayGuide=function(){const c=globalThis.__v2SelectedCity||'taipei';if(c==='taipei')return globalThis.__v2OriginalTodayGuide();const tr=T[lang];return '<b>'+tr.today+'</b><br>• '+tr.general+'<br>• '+tr.food+'<br>• '+tr.recycling+'<br><span class="meta">'+esc(globalThis.__v2RouteSpecific||'')+'</span>'}`)}catch(e){console.warn(e)}
  let activeCityName=null;const relabel=root=>{if(!activeCityName||activeCityName==='New Taipei City')return;const walker=d.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;while((n=walker.nextNode()))if(n.nodeValue&&n.nodeValue.includes('New Taipei'))n.nodeValue=n.nodeValue.replaceAll('New Taipei',activeCityName)};new MutationObserver(ms=>{for(const m of ms)for(const n of m.addedNodes)if(n.nodeType===1)relabel(n)}).observe(d.body,{childList:true,subtree:true});
- async function loadCityData(city){const t=txt(langSelect.value);if(city.slug==='taipei'||city.slug==='new-taipei'){try{w.eval('cache.clear();init();');setTimeout(()=>{try{w.eval('ensure();render();');updateBrand()}catch{}},350)}catch(e){console.warn(e)}return}let manifest=null,tilesManifest=null;try{const mr=await fetch(`data/cities/${city.slug}/manifest.json`,{cache:'force-cache'});if(mr.ok)manifest=await mr.json();if(manifest?.status==='ready'){const tr=await fetch(`data/cities/${city.slug}/tiles/manifest.json`,{cache:'force-cache'});if(tr.ok)tilesManifest=await tr.json()}}catch(e){console.warn(e)}try{w.eval('cache.clear();clearTrucks();clearFacilities();');if(manifest?.status==='ready'&&tilesManifest?.tiles?.length){const src=[{city:city.slug,base:`v2/data/cities/${city.slug}/tiles/`,manifest:tilesManifest}];w.eval(`sources=${JSON.stringify(src)};operations={};facilities=[];`);setTimeout(()=>{try{w.eval('ensure();render();');relabel(d.body);updateBrand()}catch{}},250)}else{w.eval('sources=[];operations={};facilities=[];');const message=`${city.name_en}: ${t.pending}`,detail=`${t.route} ${t.static}`;w.eval(`statusEl.textContent=${JSON.stringify(message)};listEl.innerHTML='<div class="zoom-note">'+${JSON.stringify(detail)}+'</div>';document.getElementById('todayGuide').innerHTML=todayGuide();`);updateBrand()}}catch(e){console.error(e)}}
- async function setCity(slug,{moveMap=false,persist=true}={}){const city=bySlug[slug]||bySlug.taipei;if(loadingCity&&city.slug===selected)return;loadingCity=true;selected=city.slug;activeCityName=city.name_en;select.value=selected;if(persist)localStorage.setItem('garbageV2City',selected);const t=txt(langSelect.value);select.setAttribute('aria-label',t.city);try{w.eval(`globalThis.__v2SelectedCity=${JSON.stringify(selected)};globalThis.__v2RouteSpecific=${JSON.stringify(t.route)};`)}catch{}updateBrand();if(moveMap){try{w.map.flyTo({center:city.center,zoom:city.kind==='city'?13.5:11.8,essential:true})}catch(e){console.warn(e)}}await loadCityData(city);loadingCity=false}
- async function syncCityFromMap(){if(loadingCity)return;try{const c=w.map.getCenter(),slug=detectCity(c.lng,c.lat);if(slug&&slug!==selected)await setCity(slug,{moveMap:false,persist:true});else updateBrand()}catch(e){console.warn('V2 map city detection failed',e)}}
- select.addEventListener('change',()=>setCity(select.value,{moveMap:true,persist:true}));langSelect.addEventListener('change',()=>{const t=txt(langSelect.value);select.setAttribute('aria-label',t.city);try{w.eval(`globalThis.__v2RouteSpecific=${JSON.stringify(t.route)};`);setTimeout(()=>{w.eval("document.getElementById('todayGuide').innerHTML=todayGuide();");updateBrand()},0)}catch{}});w.map.on('moveend',syncCityFromMap);await setCity(selected,{moveMap:true,persist:false})
+
+ function flyToCity(city,token){
+   return new Promise(resolve=>{
+     let settled=false;
+     const finish=()=>{if(settled)return;settled=true;clearTimeout(timer);try{w.map.off('moveend',finish)}catch{}resolve(token===transitionToken)};
+     const timer=setTimeout(finish,3500);
+     try{
+       w.map.once('moveend',finish);
+       w.map.flyTo({center:city.center,zoom:city.kind==='city'?13.5:11.8,essential:true});
+     }catch(e){console.warn('V2 city flyTo failed',e);finish()}
+   });
+ }
+
+ async function loadCityData(city,token=transitionToken){
+   const t=txt(langSelect.value);
+   if(city.slug==='taipei'||city.slug==='new-taipei'){
+     try{
+       if(typeof window.__v2ForceBaseCity==='function')await window.__v2ForceBaseCity(frame,city.slug);
+       else{w.eval('cache.clear();init();');setTimeout(()=>{try{w.eval('ensure();render();')}catch{}},350)}
+       updateBrand();
+     }catch(e){console.warn(e)}
+     return;
+   }
+   let manifest=null,tilesManifest=null;
+   try{
+     const mr=await fetch(`data/cities/${city.slug}/manifest.json`,{cache:'force-cache'});
+     if(mr.ok)manifest=await mr.json();
+     if(manifest?.status==='ready'){
+       const tr=await fetch(`data/cities/${city.slug}/tiles/manifest.json`,{cache:'force-cache'});
+       if(tr.ok)tilesManifest=await tr.json();
+     }
+   }catch(e){console.warn(e)}
+   if(token!==transitionToken)return;
+   try{
+     if(manifest?.status==='ready'&&tilesManifest?.tiles?.length){
+       w.eval('cache.clear();clearTrucks();clearFacilities();');
+       const src=[{city:city.slug,base:`v2/data/cities/${city.slug}/tiles/`,manifest:tilesManifest}];
+       w.eval(`sources=${JSON.stringify(src)};operations={};facilities=[];`);
+       setTimeout(()=>{try{w.eval('ensure();render();');relabel(d.body);updateBrand()}catch{}},250);
+       return;
+     }
+     if(manifest?.status==='schedule-only'){
+       w.eval('cache.clear();clearTrucks();clearFacilities();sources=[];operations={};facilities=[];');
+       if(typeof window.__v2ShowScheduleOnly==='function'){
+         const rendered=await window.__v2ShowScheduleOnly(frame,city.slug);
+         if(rendered){updateBrand();return}
+       }
+       const detail=`${t.route} ${t.static}`;
+       w.eval(`statusEl.textContent=${JSON.stringify(city.name_en)};listEl.innerHTML='<div class="zoom-note">'+${JSON.stringify(detail)}+'</div>';document.getElementById('todayGuide').innerHTML=todayGuide();`);
+       updateBrand();
+       return;
+     }
+     w.eval('cache.clear();clearTrucks();clearFacilities();sources=[];operations={};facilities=[];');
+     const message=`${city.name_en}: ${t.pending}`,detail=`${t.route} ${t.static}`;
+     w.eval(`statusEl.textContent=${JSON.stringify(message)};listEl.innerHTML='<div class="zoom-note">'+${JSON.stringify(detail)}+'</div>';document.getElementById('todayGuide').innerHTML=todayGuide();`);
+     updateBrand();
+   }catch(e){console.error(e)}
+ }
+
+ async function commitCity(city,{persist=true,token=transitionToken}={}){
+   if(token!==transitionToken)return false;
+   selected=city.slug;activeCityName=city.name_en;select.value=selected;
+   if(persist)localStorage.setItem('garbageV2City',selected);
+   const t=txt(langSelect.value);select.setAttribute('aria-label',t.city);
+   try{w.eval(`globalThis.__v2SelectedCity=${JSON.stringify(selected)};globalThis.__v2RouteSpecific=${JSON.stringify(t.route)};`)}catch{}
+   updateBrand();
+   await loadCityData(city,token);
+   return token===transitionToken;
+ }
+
+ async function setCity(slug,{moveMap=false,persist=true}={}){
+   const city=bySlug[slug]||bySlug.taipei;
+   const token=++transitionToken;
+   if(moveMap){
+     loadingCity=true;
+     select.value=city.slug;
+     if(persist)localStorage.setItem('garbageV2City',city.slug);
+     const arrived=await flyToCity(city,token);
+     if(!arrived){if(token===transitionToken)loadingCity=false;return}
+     await commitCity(city,{persist:false,token});
+     if(token===transitionToken)loadingCity=false;
+     return;
+   }
+   loadingCity=true;
+   await commitCity(city,{persist,token});
+   if(token===transitionToken)loadingCity=false;
+ }
+
+ async function syncCityFromMap(){
+   if(loadingCity)return;
+   try{
+     const c=w.map.getCenter(),slug=detectCity(c.lng,c.lat);
+     if(slug&&slug!==selected)await setCity(slug,{moveMap:false,persist:true});
+     else updateBrand();
+   }catch(e){console.warn('V2 map city detection failed',e)}
+ }
+
+ select.addEventListener('change',()=>setCity(select.value,{moveMap:true,persist:true}));
+ langSelect.addEventListener('change',()=>{const t=txt(langSelect.value);select.setAttribute('aria-label',t.city);try{w.eval(`globalThis.__v2RouteSpecific=${JSON.stringify(t.route)};`);setTimeout(async()=>{w.eval("document.getElementById('todayGuide').innerHTML=todayGuide();");updateBrand();if(typeof window.__v2ShowScheduleOnly==='function')await window.__v2ShowScheduleOnly(frame,selected)},0)}catch{}});
+ w.map.on('moveend',syncCityFromMap);
+ await setCity(selected,{moveMap:true,persist:false});
 };
 })();
