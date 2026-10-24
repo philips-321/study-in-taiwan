@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "provider": "內政部國土測繪中心 / National Land Surveying Center",
+  "dataset": "直轄市、縣市界線(TWD97經緯度)",
+  "landing_url": "https://data.gov.tw/dataset/7442",
+  "attempted_download_url": "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip",
+  "alternate_official_download_url": "https://maps.nlsc.gov.tw/download/%E7%B8%A3%E5%B8%82%E7%95%8C%E7%B7%9A(TWD97%E7%B6%93%E7%B7%AF%E5%BA%A6).zip",
+  "checked_at": "2026-10-24T01:30:29+00:00",
+  "status": "attempted-endpoint-failed-after-2-requests",
+  "http_error": 403,
+  "next_retry_not_before": "2026-10-26T00:00:00+08:00",
+  "published_geojson": false,
+  "notes": "The TGOS direct endpoint returned HTTP 403 twice. Do not retry that endpoint before Monday. An alternate official NLSC download URL was discovered afterward and is stored for the next import. Until a boundary GeoJSON is published, V2 falls back to nearest registered city/county center for automatic title switching."
+}
