@@ -55,6 +55,9 @@
   let selectedCinemaId = '';
   let availableDates = [];
   let showtimesDateIndex = {};
+  let ticketPriceIndex = {cinemas:{}};
+  const ticketPricesByCity = {};
+  const ticketPriceRequests = {};
   let dateLoadSequence = 0;
   let showtimesPending = false;
   let liveShowtimesByCityDate = {};
@@ -71,6 +74,8 @@
     ko:['라이트 모드로 전환','다크 모드로 전환'], vi:['Chuyển sang giao diện sáng','Chuyển sang giao diện tối'], th:['เปลี่ยนเป็นโหมดสว่าง','เปลี่ยนเป็นโหมดมืด']
   };
   const mapActionLabels={en:['Hide map','Show map','Expand cinema list','Collapse cinema list'],id:['Sembunyikan peta','Tampilkan peta','Buka daftar bioskop','Kecilkan daftar bioskop'],'zh-TW':['隱藏地圖','顯示地圖','展開影城清單','收合影城清單'],ja:['地図を隠す','地図を表示','映画館リストを開く','リストを閉じる'],ko:['지도 숨기기','지도 보기','극장 목록 펼치기','극장 목록 접기'],vi:['Ẩn bản đồ','Hiện bản đồ','Mở danh sách rạp','Thu gọn danh sách'],th:['ซ่อนแผนที่','แสดงแผนที่','ขยายรายชื่อโรงภาพยนตร์','ย่อรายชื่อโรงภาพยนตร์']};
+  const ticketPriceLabels={en:{title:'Ticket prices · TWD',open:'Tap to load prices',loading:'Loading prices…',unavailable:'Prices are unavailable.'},id:{title:'Harga tiket · TWD',open:'Ketuk untuk memuat harga',loading:'Memuat harga…',unavailable:'Harga tidak tersedia.'},'zh-TW':{title:'票價 · TWD',open:'點擊載入票價',loading:'正在載入票價…',unavailable:'目前沒有票價資料。'},ja:{title:'チケット料金 · TWD',open:'タップして料金を表示',loading:'料金を読み込み中…',unavailable:'料金を取得できません。'},ko:{title:'티켓 가격 · TWD',open:'눌러서 가격 보기',loading:'가격 불러오는 중…',unavailable:'가격 정보를 사용할 수 없습니다.'},vi:{title:'Giá vé · TWD',open:'Nhấn để tải giá vé',loading:'Đang tải giá vé…',unavailable:'Không có thông tin giá vé.'},th:{title:'ราคาตั๋ว · TWD',open:'แตะเพื่อโหลดราคา',loading:'กำลังโหลดราคา…',unavailable:'ไม่มีข้อมูลราคา'}};
+  const ticketTypeLabels={'全票':{en:'Full ticket',id:'Tiket reguler','zh-TW':'全票',ja:'一般',ko:'일반',vi:'Vé thường',th:'ตั๋วทั่วไป'},'優待票':{en:'Concession',id:'Tiket diskon','zh-TW':'優待票',ja:'割引',ko:'할인',vi:'Vé ưu đãi',th:'ตั๋วส่วนลด'},'早場票':{en:'Matinee',id:'Tiket pertunjukan awal','zh-TW':'早場票',ja:'早朝割引',ko:'조조 할인',vi:'Vé suất sớm',th:'ตั๋วรอบเช้า'},'愛心票':{en:'Accessibility concession',id:'Tiket konsesi khusus','zh-TW':'愛心票',ja:'福祉割引',ko:'우대 할인',vi:'Vé ưu đãi đặc biệt',th:'ตั๋วส่วนลดพิเศษ'}};
   const subtitleCoverageLabels = {
     en:(n,total)=>`${n} of ${total} screenings have explicit subtitle details.`,
     'zh-TW':(n,total)=>`${total} 場次中有 ${n} 場由來源明確提供字幕資訊。`,
@@ -94,6 +99,16 @@
   }
   function safeUrl(value) {
     try { const url=new URL(value); return url.protocol === 'https:' ? url.href : ''; } catch { return ''; }
+  }
+  function getTicketPrices(slug) {
+    if(ticketPricesByCity[slug])return Promise.resolve(ticketPricesByCity[slug]);
+    if(ticketPriceRequests[slug])return ticketPriceRequests[slug];
+    ticketPriceRequests[slug]=loadJson(`data/ticket-prices/${slug}.json`).then(data=>(ticketPricesByCity[slug]=data)).finally(()=>{delete ticketPriceRequests[slug];});
+    return ticketPriceRequests[slug];
+  }
+  function ticketPriceMarkup(record,capturedOn) {
+    const formats=(record?.ticket_types||[]).map(type=>`<section class="ticket-price-format"><b>${esc(type.format)}</b><div>${(type.prices||[]).map(price=>`<span>${esc(ticketTypeLabels[price.label]?.[language]||price.label)} <strong>NT$ ${Number(price.twd).toLocaleString('en-US')}</strong></span>`).join('')}</div></section>`).join('');
+    return `${formats||`<span>${esc((ticketPriceLabels[language]||ticketPriceLabels.en).unavailable)}</span>`}<small>${esc((ticketPriceLabels[language]||ticketPriceLabels.en).source||'ShowTimes')}${capturedOn?` · ${esc(capturedOn)}`:''}</small>`;
   }
   function copyButton(value,what) {
     const labels={en:'Copy',id:'Salin','zh-TW':'複製',ja:'コピー',ko:'복사',vi:'Sao chép',th:'คัดลอก'};
@@ -344,7 +359,7 @@
       const showCount=records.reduce((n,x)=>n+x.shows.length,0),heading=selectedCity==='all'?`<div class="city-heading"><h2>${esc(displayName(slug))}</h2><span>${records.length} ${esc(ui('cinemas'))} · ${showCount} ${esc(ui('sessions'))}</span></div>`:'';
       return `${heading}${records.map(({cinema,shows})=>{
         const addressParts=splitAddress(cinema.address),floorLabel=language==='id'?'Lantai':language==='zh-TW'?'樓層':language==='ja'?'フロア':language==='ko'?'층':language==='vi'?'Tầng':language==='th'?'ชั้น':'Floor';
-        const address=cinema.address?`<div class="address-row"><div class="address-text"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.address)}" target="_blank" rel="noopener">${esc(addressParts.street)} ↗</a>${addressParts.floor?`<span class="address-floor">${esc(floorLabel)}: ${esc(addressParts.floor)}</span>`:''}</div>${copyButton(cinema.address,'address')}</div>`:esc(ui('addressUnavailable'));
+        const address=cinema.address?`<div class="address-row"><div class="address-text"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.address)}" target="_blank" rel="noopener">${esc(addressParts.street)} ↗</a>${addressParts.floor?`<span class="address-floor">${esc(floorLabel)}: ${esc(addressParts.floor)}</span>`:''}</div>${copyButton(addressParts.street,'address')}</div>`:esc(ui('addressUnavailable'));
         const movies=new Map();shows.sort((a,b)=>String(a.start_time).localeCompare(String(b.start_time))).forEach(s=>{const key=`${s.movie_title||''}|${s.movie_title_en||''}`;if(!movies.has(key))movies.set(key,[]);movies.get(key).push(s);});
         const moviesHtml=shows.length?[...movies.values()].map(movieCard).join(''):`<div class="empty-show">${esc(showtimesPending?'Loading showtimes…':ui('noSchedules'))}</div>`;
         const co=cinema.company_name?`<div class="company-name">${esc(cinema.company_name)}</div>`:'';
@@ -355,7 +370,9 @@
         const location=cinemaPoint(cinema)||cinemaLocation(cinema,slug)?`<button class="show-on-map" type="button" data-cinema-id="${esc(cinema.id)}" data-city="${esc(slug)}">Show on map</button>`:'';
         const distance=distanceFromUser(cinema,slug),distanceUnavailable=({en:'Distance unavailable',id:'Jarak tidak tersedia','zh-TW':'距離資訊不可用',ja:'距離を表示できません',ko:'거리 정보 없음',vi:'Chưa có khoảng cách',th:'ไม่มีข้อมูลระยะทาง'}[language]||'Distance unavailable');
         const distanceHtml=userPosition?(distance?`<span class="distance-badge" title="Distance from your location">⌖ ${esc(distance)}</span>`:`<span class="distance-badge unavailable">⌖ ${esc(distanceUnavailable)}</span>`):'';
-        return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name-wrap">${cardLogo}<div class="cinema-name-text"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div>${cinema.name_en?`<div class="cinema-name-en">${esc(cinema.name_en)}</div>`:''}</div></div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${distanceHtml} ${location}</div>${moviesHtml}</article>`;
+        const priceCity=ticketPriceIndex.cinemas?.[cinema.id],priceRecord=priceCity?ticketPricesByCity[priceCity]?.cinemas?.[cinema.id]:null,priceLabels=ticketPriceLabels[language]||ticketPriceLabels.en;
+        const pricesHtml=priceCity?`<details class="ticket-prices" data-price-city="${esc(priceCity)}" data-cinema-id="${esc(cinema.id)}"><summary>${esc(priceLabels.title)}</summary><div class="ticket-price-body">${priceRecord?ticketPriceMarkup(priceRecord,ticketPricesByCity[priceCity]?.captured_on):esc(priceLabels.open)}</div></details>`:'';
+        return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name-wrap">${cardLogo}<div class="cinema-name-text"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div>${cinema.name_en?`<div class="cinema-name-en">${esc(cinema.name_en)}</div>`:''}</div></div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${distanceHtml} ${location}</div>${pricesHtml}${moviesHtml}</article>`;
       }).join('')}`;
     }).join('');
   }
@@ -438,8 +455,9 @@
     let savedLanguage='en',savedTheme='dark';try{savedLanguage=localStorage.getItem('cinema-language')||'en';savedTheme=localStorage.getItem('cinema-theme')||'dark';}catch{}
     language=localeInfo[savedLanguage]?savedLanguage:'en';languageSelect.value=language;setTheme(savedTheme==='light'?'light':'dark');
     try {
-      const [cityData,manifest,locationData,nameData]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}}))]);
+      const [cityData,manifest,locationData,nameData,ticketIndex]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}})),loadJson('data/ticket-prices/index.json').catch(()=>({cinemas:{}}))]);
       cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};logoImages=nameData.logo_images||{};logoBackgrounds=nameData.logo_backgrounds||{};
+      ticketPriceIndex=ticketIndex;
       cityDefs=cityData.cities.map(c=>({slug:c.slug,center:c.center}));dataGeneratedDate=(manifest?.generated_at||'').slice(0,10);showtimesDateIndex=manifest?.showtimes_index||{};
       venueLocations=locationData.locations||[];
       const slugs=[...cityDefs.map(c=>c.slug),'unknown'];
@@ -486,6 +504,13 @@
     catch(error){console.warn('Could not copy text',error);button.setAttribute('aria-label',language==='id'?'Gagal menyalin':'Copy failed');}
     setTimeout(()=>{if(!button.isConnected)return;button.classList.remove('copied');button.setAttribute('aria-label',originalLabel);button.title=originalTitle;button.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg>';},1400);
   });
+  resultsEl.addEventListener('toggle',async e=>{
+    const details=e.target;if(!(details instanceof HTMLDetailsElement)||!details.matches('.ticket-prices')||!details.open||details.dataset.loaded==='true'||details.dataset.loading==='true')return;
+    const body=details.querySelector('.ticket-price-body'),labels=ticketPriceLabels[language]||ticketPriceLabels.en;details.dataset.loading='true';body.textContent=labels.loading;
+    try{const data=await getTicketPrices(details.dataset.priceCity),record=data.cinemas?.[details.dataset.cinemaId];body.innerHTML=record?ticketPriceMarkup(record,data.captured_on):labels.unavailable;}
+    catch(error){body.textContent=labels.unavailable;console.warn('Ticket price data could not be loaded',error);}
+    details.dataset.loaded='true';details.dataset.loading='false';
+  },true);
   const app=document.querySelector('.app'),sheetGrab=$('#sheet-grab');
   const sheetLabel=updateMobileActionLabels;
   const toggleSheet=()=>{app.dataset.sheet=app.dataset.sheet==='expanded'?'half':app.dataset.sheet==='collapsed'?'half':'expanded';sheetLabel();};

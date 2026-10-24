@@ -12,6 +12,8 @@ The annual BAMID master has no coordinates. The current OSM snapshot has 88 indi
 
 The current cinema dataset has `movie_title` and sometimes `movie_title_en`; it does not contain per-country title translations. The UI labels `movie_title_en` as the international title when supplied and does not derive localized titles from the interface language. Explicit subtitle coverage is sparse, so subtitle search must leave unknown values unclassified rather than inferring them from audio language.
 
+ShowTimes ticket prices are stored separately under `data/ticket-prices/`, split by city. The browser loads a city's small price file only when a visitor opens a priced cinema's ticket-price section. These are a dated ShowTimes bootstrap snapshot, currently covering 15 秀泰 branches; they are not live checkout quotes and do not cover other chains.
+
 This project is an ongoing maintained data pipeline, not a project with a meaningful completion percentage. Upstream cinema sites will change and adapters will need patching over time.
 
 ## Goal
@@ -25,6 +27,8 @@ cinema/data/cinemas/<city>.json
 cinema/data/showtimes/<city>.json
 cinema/data/showtimes/by-date/<date>/<city>.json
 cinema/data/manifest.json
+cinema/data/ticket-prices/index.json
+cinema/data/ticket-prices/<city>.json
 ```
 
 The per-city showtime files remain complete current snapshots for collection and fallback workflows. The browser uses the smaller date-and-city chunks listed in `manifest.json` and loads only the selected date. These are regenerated on each refresh, not retained as dated archives. Git history is the audit/history layer.
