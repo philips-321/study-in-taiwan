@@ -1,0 +1,59 @@
+name: Probe Garbage Truck V2 Keelung Source
+
+on:
+  push:
+    paths:
+      - 'garbage-truck/v2/.keelung-probe-request.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: garbage-truck-v2-keelung-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Probe official Keelung baseline source shape
+        run: python garbage-truck/v2/scripts/probe_keelung.py
+
+      - name: Commit source-shape metadata safely
+        shell: bash
+        run: |
+          set -euo pipefail
+          target='garbage-truck/v2/data/cities/keelung/source-probe.json'
+          if [[ ! -f "$target" ]]; then
+            echo 'Probe produced no metadata file.' >&2
+            exit 1
+          fi
+          git add "$target"
+          if git diff --cached --quiet; then
+            echo 'No probe metadata change.'
+            exit 0
+          fi
+          git diff --cached --binary > /tmp/keelung-probe.patch
+          git reset --hard HEAD
+          git fetch origin main
+          git reset --hard origin/main
+          git apply --index --3way /tmp/keelung-probe.patch
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'garbage-v2: record Keelung official source shape'
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo 'Could not publish probe metadata after three race-safe retries.' >&2
+          exit 1
