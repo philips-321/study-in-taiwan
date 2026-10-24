@@ -19,6 +19,9 @@ function apply(frame){
   @media(max-width:800px){
     html[data-v2] #content{grid-template-rows:minmax(0,1fr) auto!important}
     html[data-v2] .sheet-toggle{display:flex!important}
+    html[data-v2] #panel.collapsed{height:44px!important;min-height:44px!important;max-height:44px!important;padding:0!important;overflow:hidden!important}
+    html[data-v2] #panel.collapsed>:not(.sheet-toggle){display:none!important}
+    html[data-v2] #panel.collapsed .sheet-toggle{position:relative!important;top:auto!important;margin:0!important;width:100%!important;height:44px!important;min-height:44px!important;border-radius:0!important;flex:none!important}
   }
   @media(max-width:560px){
     html[data-v2] header{padding:10px 12px!important}
