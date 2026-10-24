@@ -8,7 +8,7 @@ Read this file first before changing the cinema pipeline.
 
 The location button puts the map at the browser's exact reported coordinates (zoom 15.6) and selects the nearest city for the list. The date navigator includes only dates from Taiwan's current date onward; the previous-date control is locked. Search matches Chinese and international movie titles, including HTML-encoded punctuation and curly/straight apostrophes. Movie cards can show official poster, genre, and age-rating metadata when provided by a source. Movie, audio, and explicitly verified subtitle filters remain available, as do English, Traditional Chinese, Indonesian, Japanese, Korean, Vietnamese, and Thai UI languages and dark/light themes. Keep `subtitles: null` distinct from an explicit subtitle language: null means the source did not provide verified subtitle information.
 
-The annual BAMID master has no coordinates. The current location snapshot has 96 individual map points, 47 linked to 107 BAMID records. The rest are OSM cinema points without a linked schedule record; BAMID venues still lacking a verified point remain in the address list without a pin. The points are a useful visible baseline, not full coverage. OSM attribution is shown on the map. Building photos are only shown when a sourced image URL exists; no photos are present in the current BAMID data.
+The annual BAMID master has no coordinates. The current location snapshot has 92 individual map points, 53 linked to 107 BAMID records. The rest are OSM cinema points without a linked schedule record; BAMID venues still lacking a verified point remain in the address list without a pin. The points are a useful visible baseline, not full coverage. OSM attribution is shown on the map. Building photos are only shown when a sourced image URL exists; no photos are present in the current BAMID data.
 
 The current cinema dataset has `movie_title` and sometimes `movie_title_en`; it does not contain per-country title translations. The UI labels `movie_title_en` as the international title when supplied and does not derive localized titles from the interface language. Search normalizes HTML entities, Unicode punctuation, and case on both the query and titles. Explicit subtitle coverage is sparse, so subtitle search must leave unknown values unclassified rather than inferring them from audio language.
 
@@ -29,9 +29,12 @@ To refresh the saved ShowTimes snapshot when the live collector is still blocked
 1. Fetch `https://capi.showtimes.com.tw/4/app/bootstrap` into a temporary file; do not commit the raw bootstrap payload.
 2. Run `node cinema/scripts/import-showtimes-bootstrap.mjs /path/to/bootstrap.json` from the repository root.
 3. The importer writes active events into `data/showtimes/by-date/<date>/<city>.json`, matches the 15 branches to BAMID cinema IDs, and updates `manifest.json`. It intentionally does not duplicate these ShowTimes events into the larger per-city source snapshots.
-4. Check date coverage, `poster_url`, `genres`, `rating`, source/freshness metadata, JSON validity, and `git diff --check` before committing.
+4. The importer also writes the small program catalog to `data/movie-metadata/showtimes.json` and enriches other providers' rows only when an international or Chinese title matches exactly and uniquely. Unmatched and ambiguous titles are left alone.
+5. Check date coverage, `poster_url`, `genres`, `rating`, source/freshness metadata, JSON validity, and `git diff --check` before committing.
 
 The browser loads only the selected date/city chunks. Posters use the official ShowTimes CDN with `loading="lazy"`; do not download or embed image bytes in JSON. Missing posters remain absent. Genre codes are localized in the UI. Age-rating codes are `g`, `p`, `pg12`, `pg15`, and `r`; `null` means unavailable. These ShowTimes event records do not declare subtitle languages, so leave `subtitles: null`.
+
+The 2026-10-24 indexed snapshot has 10,070 showtimes: 8,816 rows with an international title, 8,734 with a poster, 8,688 with genres, 7,710 with an age rating, and 79 with explicitly declared subtitles. Exact, unambiguous matching against ShowTimes program titles filled metadata on 3,393 rows from other showtime providers. The bootstrap does not cover every title, so remaining nulls are still unknown rather than guessed. Ticket price snapshots cover 15 ShowTimes branches; other chains need their own verified sources.
 
 When the scheduled update workflow runs, `restore-failed-source-fallbacks.mjs` must read previous `by-date` chunks as well as per-city snapshots. This preserves imported ShowTimes rows during a collector 403 without keeping a second full copy in per-city JSON. Do not remove this fallback path or make the importer write ShowTimes rows into both storage layouts.
 
@@ -590,14 +593,13 @@ b7d0bce  Parallelize Taipei fallback requests
 
 For a new ChatGPT/Codex session, continue in this order instead of restarting source research:
 
-1. Validate SPOT Huashan output content, especially that `C/E` becomes `subtitles: ["zh", "en"]` in generated JSON.
-2. Add source freshness/count-drop health checks.
-3. Investigate in89 Ximending `TheaterId=3` network calls and identify the actual data endpoint.
-4. Investigate whether Vie Show official endpoints can be used safely without Playwright; if not, decide whether adding a browser-based collector is worth the dependency/cost.
-5. Keep Eslite and ShowTimes official adapters as explicit 403 failures; do not waste time reparsing until HTTP access itself changes.
-6. Continue improving deterministic BAMID identity aliases where real active cinemas remain unmatched.
-7. Expand Taiwan-wide sources after Taipei source quality is solid enough for recommendation use.
-8. Wire verified data into the guest-facing recommendation UI only using `recommendation_eligible=true` or separate current verification.
+1. Find a trustworthy address-to-coordinate source for the 54 BAMID cinema records still missing a linked map pin. Do not bulk-apply low-confidence city or postcode geocodes.
+2. Add verified showtime collectors for Vie Show/MUVIE, in89, Eslite, Broadway, Global, and regional cinemas; retain current per-source failure state and date/city last-known-good fallback.
+3. Improve poster, genre, rating, and international-title coverage using exact, unique source matches only. Do not infer movie metadata from similar titles.
+4. Improve verified subtitle coverage from source-declared labels only; never infer subtitles from audio language.
+5. Add source freshness/count-drop health checks so a normally large source suddenly returning zero or a small fraction of its usual rows is flagged as degraded.
+6. Keep ticket prices sourced per brand and branch. Prices vary by venue, format, weekday, and promotions; do not copy a chain-wide generic amount into branch records.
+7. Keep current source-quality and operational-status requirements before wiring data into guest-facing recommendations.
 
 ## Canonical project tracking
 

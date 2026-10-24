@@ -184,12 +184,16 @@ for (const [city, payload] of currentByCity) {
 
 const datePayloadRoot = path.join(CURRENT_DIR, 'by-date');
 await removeJsonFiles(datePayloadRoot);
-const showtimesIndex = {}, coverage = { showtime_rows: 0, explicit_subtitle_rows: 0 };
+const showtimesIndex = {}, coverage = { showtime_rows: 0, explicit_subtitle_rows: 0, international_title_rows: 0, poster_rows: 0, genre_rows: 0, rating_rows: 0 };
 for (const [city, payload] of currentByCity) {
   const byDate = new Map();
   for (const show of payload.showtimes) {
     coverage.showtime_rows++;
     if (Array.isArray(show.subtitles) && show.subtitles.length) coverage.explicit_subtitle_rows++;
+    if (show.movie_title_en) coverage.international_title_rows++;
+    if (show.poster_url) coverage.poster_rows++;
+    if (Array.isArray(show.genres) && show.genres.length) coverage.genre_rows++;
+    if (show.rating) coverage.rating_rows++;
     const date = String(show.start_time || '').slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
     if (!byDate.has(date)) byDate.set(date, []);

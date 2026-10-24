@@ -15,6 +15,8 @@ const MOVIE_API = 'https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?
 const CINEMA_META_API = 'https://www.bamid.gov.tw/OpenData.aspx?SN=E6C57FC155564DEB';
 const ENGLISH_NAMES_FILE = path.join(ROOT, 'cinema-names-en.json');
 const englishCinemaNames = JSON.parse(await fs.readFile(ENGLISH_NAMES_FILE, 'utf8')).names || {};
+const movieMetadataPayload = await fs.readFile(path.join(ROOT, 'movie-metadata', 'showtimes.json'), 'utf8')
+  .then(text => JSON.parse(text)).catch(error => error?.code === 'ENOENT' ? { movies: [] } : Promise.reject(error));
 
 const CITY_MAP = [
   ['taipei', ['臺北市','台北市']], ['new-taipei', ['新北市']], ['keelung', ['基隆市']],
@@ -33,6 +35,28 @@ function citySlug(...parts) {
   return 'unknown';
 }
 function clean(v) { return typeof v === 'string' ? v.replace(/^\uFEFF/, '').trim() : v ?? null; }
+function movieKey(value) {
+  return String(value || '')
+    .replace(/&(?:amp|quot|apos|#39|rsquo|lsquo|rdquo|ldquo|ndash|mdash|hellip);/g, entity => ({
+      '&amp;': '&', '&quot;': '"', '&apos;': "'", '&#39;': "'", '&rsquo;': '’', '&lsquo;': '‘',
+      '&rdquo;': '”', '&ldquo;': '“', '&ndash;': '–', '&mdash;': '—', '&hellip;': '…'
+    })[entity] || entity)
+    .normalize('NFKC').toLocaleLowerCase()
+    .replace(/[’‘`´]/g, "'").replace(/[“”]/g, '"').replace(/[‐‑‒–—]/g, '-')
+    .replace(/[\s\u00a0]+/g, ' ').trim();
+}
+const movieMetadataByTitle = new Map(), ambiguousMovieTitles = new Set();
+for (const movie of movieMetadataPayload.movies || []) {
+  for (const title of [movie.movie_title, movie.movie_title_en].filter(Boolean)) {
+    const key = movieKey(title);
+    if (!key || ambiguousMovieTitles.has(key)) continue;
+    const prior = movieMetadataByTitle.get(key);
+    if (prior && JSON.stringify([prior.movie_title_en, prior.genres, prior.rating, prior.poster_url]) !== JSON.stringify([movie.movie_title_en, movie.genres, movie.rating, movie.poster_url])) {
+      movieMetadataByTitle.delete(key);
+      ambiguousMovieTitles.add(key);
+    } else movieMetadataByTitle.set(key, movie);
+  }
+}
 function stableId(...parts) { return crypto.createHash('sha1').update(parts.filter(Boolean).join('|')).digest('hex').slice(0, 16); }
 function toIsoLocal(value) {
   if (!value || typeof value !== 'string') return null;
@@ -235,9 +259,23 @@ await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuash
 await runSource('eslite-official-schedule', 'Eslite', fetchEsliteShowtimes);
 await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);
 
+let metadataEnrichedRows = 0;
+for (const rows of showtimesByCity.values()) for (const row of rows) {
+  const match = [...new Set([row.movie_title, row.movie_title_en].filter(Boolean).map(movieKey))]
+    .map(key => movieMetadataByTitle.get(key)).filter(Boolean);
+  const unique = [...new Map(match.map(movie => [movie.id, movie])).values()];
+  if (unique.length !== 1) continue;
+  const movie = unique[0]; let changed = false;
+  if (!row.movie_title_en && movie.movie_title_en) { row.movie_title_en = movie.movie_title_en; changed = true; }
+  if ((!Array.isArray(row.genres) || !row.genres.length) && Array.isArray(movie.genres) && movie.genres.length) { row.genres = movie.genres; changed = true; }
+  if (!row.rating && movie.rating) { row.rating = movie.rating; changed = true; }
+  if (!row.poster_url && movie.poster_url) { row.poster_url = movie.poster_url; changed = true; }
+  if (changed) { row.metadata_source = 'exact-title-match:showtimes-official-program'; metadataEnrichedRows++; }
+}
+
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
 const citySummary = {}, showtimesIndex = {};
-const coverage = { showtime_rows: 0, explicit_subtitle_rows: 0 };
+const coverage = { showtime_rows: 0, explicit_subtitle_rows: 0, international_title_rows: 0, poster_rows: 0, genre_rows: 0, rating_rows: 0 };
 for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   const seen = new Set();
   const showtimes = showtimesByCity.get(slug)
@@ -280,6 +318,10 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   for (const show of showtimes) {
     coverage.showtime_rows++;
     if (Array.isArray(show.subtitles) && show.subtitles.length) coverage.explicit_subtitle_rows++;
+    if (show.movie_title_en) coverage.international_title_rows++;
+    if (show.poster_url) coverage.poster_rows++;
+    if (Array.isArray(show.genres) && show.genres.length) coverage.genre_rows++;
+    if (show.rating) coverage.rating_rows++;
     const date = String(show.start_time || '').slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
     if (!byDate.has(date)) byDate.set(date, []);
@@ -314,7 +356,8 @@ await writeJson(path.join(ROOT, 'manifest.json'), {
   },
   sources: {
     cinema_master: { metadata: CINEMA_META_API, year: master.year, csv: master.url },
-    showtimes: sourceStatus
+    showtimes: sourceStatus,
+    movie_metadata: { source: movieMetadataPayload.source || null, retrieved_at: movieMetadataPayload.retrieved_at || null, programs: (movieMetadataPayload.movies || []).length, cross_source_exact_title_enriched_rows: metadataEnrichedRows }
   },
   cities: citySummary
 });

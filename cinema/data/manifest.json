@@ -601,7 +601,11 @@
   },
   "coverage": {
     "showtime_rows": 10070,
-    "explicit_subtitle_rows": 79
+    "explicit_subtitle_rows": 79,
+    "international_title_rows": 8816,
+    "poster_rows": 8734,
+    "genre_rows": 8688,
+    "rating_rows": 7710
   },
   "showtimes_payload": "The app loads date-and-city showtime chunks from showtimes/by-date; per-city showtime files remain as the complete source snapshot.",
   "source_policy": "official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete",
@@ -733,6 +737,12 @@
         "last_failure_at": null,
         "next_probe_at": null
       }
+    },
+    "movie_metadata": {
+      "source": "ShowTimes official bootstrap program records",
+      "retrieved_at": "2026-10-24",
+      "programs": 81,
+      "cross_source_exact_title_enriched_rows": 3393
     }
   },
   "cities": {
@@ -885,6 +895,7 @@
     "source": "ShowTimes official bootstrap supplied by user",
     "retrieved_at": "2026-10-24",
     "imported_active_events": 5341,
-    "note": "Snapshot rows are labeled last-known-good; future API refreshes replace them when fresh records arrive."
+    "note": "Snapshot rows are labeled last-known-good; future API refreshes replace them when fresh records arrive.",
+    "cross_source_metadata_enriched_rows": 3393
   }
 }

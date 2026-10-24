@@ -43,6 +43,32 @@ for (const corporation of data.corporations) {
 }
 
 const programs = new Map(data.programs.map(program => [program.id, program]));
+const movieTitleKey = value => String(value || '').replace(/&(?:amp|quot|apos|#39|rsquo|lsquo|rdquo|ldquo|ndash|mdash|hellip);/g, entity => ({
+  '&amp;': '&', '&quot;': '"', '&apos;': "'", '&#39;': "'", '&rsquo;': '’', '&lsquo;': '‘',
+  '&rdquo;': '”', '&ldquo;': '“', '&ndash;': '–', '&mdash;': '—', '&hellip;': '…'
+})[entity] || entity).normalize('NFKC').toLowerCase().replace(/[’‘`´]/g, "'").replace(/[“”]/g, '"').replace(/[‐‑‒–—]/g, '-').replace(/[\s\u00a0]+/g, ' ').trim();
+const movieMetadataByTitle = new Map(), ambiguousMovieTitles = new Set();
+for (const program of data.programs) for (const title of [program.name, program.nameAlternative].filter(Boolean)) {
+  const key = movieTitleKey(title);
+  if (!key || ambiguousMovieTitles.has(key)) continue;
+  const prior = movieMetadataByTitle.get(key);
+  const signature = movie => JSON.stringify([movie.nameAlternative || null, movie.genres || [], movie.rating || null, movie.coverImagePortrait?.url || null]);
+  if (prior && signature(prior) !== signature(program)) { movieMetadataByTitle.delete(key); ambiguousMovieTitles.add(key); }
+  else movieMetadataByTitle.set(key, program);
+}
+await write(path.join(ROOT, 'movie-metadata', 'showtimes.json'), {
+  version: 1,
+  source: 'ShowTimes official bootstrap program records',
+  retrieved_at: '2026-10-24',
+  movies: data.programs.map(program => ({
+    id: program.id,
+    movie_title: program.name,
+    movie_title_en: program.nameAlternative || null,
+    genres: Array.isArray(program.genres) ? program.genres : [],
+    rating: program.rating || null,
+    poster_url: program.coverImagePortrait?.url || null
+  }))
+});
 const rowsByCity = new Map();
 let skipped = 0;
 for (const [corporationId, group] of Object.entries(data.eventsForCorporations)) {
@@ -90,6 +116,7 @@ const cityFiles = (await fs.readdir(SHOW_DIR)).filter(name => name.endsWith('.js
 const manifestFile = path.join(ROOT, 'manifest.json');
 const manifest = await read(manifestFile);
 const completeRowsByCity = new Map();
+let crossSourceMetadataRows = 0;
 for (const file of cityFiles) {
   const city = file.replace(/\.json$/, '');
   const payload = await read(path.join(SHOW_DIR, file));
@@ -102,6 +129,18 @@ for (const file of cityFiles) {
     if (!seen.has(key)) { payload.showtimes.push(row); seen.add(key); }
   }
   const completeRows = payload.showtimes;
+  for (const row of completeRows) {
+    const matches = [...new Set([row.movie_title, row.movie_title_en].filter(Boolean).map(movieTitleKey))]
+      .map(key => movieMetadataByTitle.get(key)).filter(Boolean);
+    const unique = [...new Map(matches.map(program => [program.id, program])).values()];
+    if (unique.length !== 1) continue;
+    const program = unique[0]; let changed = false;
+    if (!row.movie_title_en && program.nameAlternative) { row.movie_title_en = program.nameAlternative; changed = true; }
+    if ((!Array.isArray(row.genres) || !row.genres.length) && Array.isArray(program.genres) && program.genres.length) { row.genres = program.genres; changed = true; }
+    if (!row.rating && program.rating) { row.rating = program.rating; changed = true; }
+    if (!row.poster_url && program.coverImagePortrait?.url) { row.poster_url = program.coverImagePortrait.url; changed = true; }
+    if (changed) { row.metadata_source = 'exact-title-match:showtimes-official-program'; crossSourceMetadataRows++; }
+  }
   completeRowsByCity.set(city, completeRows);
   const importedKeys = new Set(incoming.map(rowKey));
   payload.showtimes = payload.showtimes.filter(row => !importedKeys.has(rowKey(row)) || row.source !== 'showtimes-official-api');
@@ -123,12 +162,18 @@ for (const file of cityFiles) {
 }
 
 const importedUniqueRows = [...rowsByCity.values()].reduce((sum, rows) => sum + new Set(rows.map(rowKey)).size, 0);
+const persistedCrossSourceMetadataRows = [...completeRowsByCity.values()].reduce((sum, rows) => sum + rows.filter(row => row.metadata_source === 'exact-title-match:showtimes-official-program').length, 0);
 const oldIndex = new Map();
-let explicitSubtitleRows = 0;
+const coverage = { showtime_rows: 0, explicit_subtitle_rows: 0, international_title_rows: 0, poster_rows: 0, genre_rows: 0, rating_rows: 0 };
 for (const city of cityFiles.map(name => name.replace(/\.json$/, ''))) {
   const byDate = new Map();
   for (const show of completeRowsByCity.get(city) || []) {
-    if (Array.isArray(show.subtitles) && show.subtitles.length) explicitSubtitleRows++;
+    coverage.showtime_rows++;
+    if (Array.isArray(show.subtitles) && show.subtitles.length) coverage.explicit_subtitle_rows++;
+    if (show.movie_title_en) coverage.international_title_rows++;
+    if (show.poster_url) coverage.poster_rows++;
+    if (Array.isArray(show.genres) && show.genres.length) coverage.genre_rows++;
+    if (show.rating) coverage.rating_rows++;
     const date = String(show.start_time || '').slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
     (byDate.get(date) || byDate.set(date, []).get(date)).push(show);
@@ -151,10 +196,7 @@ for (const dateDir of await fs.readdir(path.join(SHOW_DIR, 'by-date'))) {
 }
 for (const entry of oldIndex.values()) entry.cities = Object.fromEntries(Object.entries(entry.cities).sort(([a], [b]) => a.localeCompare(b)));
 manifest.showtimes_index = Object.fromEntries([...oldIndex.entries()].sort(([a], [b]) => a.localeCompare(b)));
-manifest.coverage = {
-  showtime_rows: [...oldIndex.values()].reduce((sum, item) => sum + item.total, 0),
-  explicit_subtitle_rows: explicitSubtitleRows
-};
+manifest.coverage = coverage;
 manifest.sources ||= {};
 manifest.sources.showtimes ||= {};
 manifest.sources.showtimes['showtimes-official-api'] = {
@@ -166,11 +208,18 @@ manifest.sources.showtimes['showtimes-official-api'] = {
   fallback: 'imported-bootstrap-snapshot',
   error: 'Official ShowTimes API returned 403 to scheduled collector; rows loaded from supplied official bootstrap snapshot'
 };
+manifest.sources.movie_metadata = {
+  source: 'ShowTimes official bootstrap program records',
+  retrieved_at: '2026-10-24',
+  programs: data.programs.length,
+  cross_source_exact_title_enriched_rows: persistedCrossSourceMetadataRows
+};
 manifest.snapshot_import = {
   source: 'ShowTimes official bootstrap supplied by user',
   retrieved_at: '2026-10-24',
   imported_active_events: importedUniqueRows,
-  note: 'Snapshot rows are labeled last-known-good; future API refreshes replace them when fresh records arrive.'
+  note: 'Snapshot rows are labeled last-known-good; future API refreshes replace them when fresh records arrive.',
+  cross_source_metadata_enriched_rows: persistedCrossSourceMetadataRows
 };
 await write(manifestFile, manifest);
-console.log(JSON.stringify({ branches: corporationMatches.size, imported_active_events: importedUniqueRows, skipped, cities: Object.fromEntries([...rowsByCity].map(([city, rows]) => [city, new Set(rows.map(rowKey)).size])) }, null, 2));
+console.log(JSON.stringify({ branches: corporationMatches.size, imported_active_events: importedUniqueRows, cross_source_metadata_enriched_rows: persistedCrossSourceMetadataRows, skipped, cities: Object.fromEntries([...rowsByCity].map(([city, rows]) => [city, new Set(rows.map(rowKey)).size])) }, null, 2));
