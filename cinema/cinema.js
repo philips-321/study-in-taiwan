@@ -43,6 +43,7 @@
   let markers = [];
   let userMarker = null;
   let selectedCity = 'all';
+  let selectedCinemaId = '';
   let availableDates = [];
   let explicitSubtitleRows = 0;
   let knownShowtimeRows = 0;
@@ -92,6 +93,33 @@
     return cityNames[slug] || ui('unknownCity');
   }
   function cinemaCount(slug) { return (cinemaByCity[slug]?.cinemas || []).length; }
+  function cinemaPoint(cinema) {
+    const lng = Number(cinema?.longitude ?? cinema?.lng ?? cinema?.coordinates?.[0]);
+    const lat = Number(cinema?.latitude ?? cinema?.lat ?? cinema?.coordinates?.[1]);
+    return Number.isFinite(lng) && Number.isFinite(lat) && lng >= 118 && lng <= 123 && lat >= 20 && lat <= 27 ? [lng, lat] : null;
+  }
+  async function loadOsmCinemaPoints() {
+    const url='https://services-ap1.arcgis.com/iA7fZQOnjY9D67Zx/arcgis/rest/services/OSM_AS_Amenities/FeatureServer/0/query?where=amenity%3D%27cinema%27&geometry=117%2C20%2C123%2C27&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=true&outSR=4326&resultRecordCount=2000&f=geojson';
+    const response=await fetch(url,{cache:'force-cache',signal:AbortSignal.timeout(15000)});if(!response.ok)throw new Error(`OSM cinema layer: ${response.status}`);
+    const payload=await response.json(),features=payload.features||[];
+    const norm=s=>String(s||'').toLocaleLowerCase().replace(/臺/g,'台').replace(/[\s　·・\-]/g,'').replace(/(電影院|電影館|電影城|影城|戲院|theatre|cinema)/gi,'');
+    const entries=[];for(const slug of Object.keys(cinemaByCity))for(const cinema of cinemaByCity[slug]?.cinemas||[])entries.push({slug,cinema,key:norm(cinema.name_zh||cinema.name_en)});
+    for(const feature of features){
+      const point=feature.geometry?.coordinates,properties=feature.properties||{};
+      const sourceNames=[properties.name,properties.name_zh,properties['name:zh'],properties.name_en].filter(Boolean).map(norm);
+      if(!Array.isArray(point)||point.length<2||(!sourceNames.length&&!(properties.addr_street&&properties.addr_housenumber)))continue;
+      let hits=entries.filter(({key})=>key&&sourceNames.some(name=>name===key||(name.length>=4&&key.includes(name))||(key.length>=4&&name.includes(key))));
+      if(hits.length!==1&&properties.addr_street&&properties.addr_housenumber){
+        const street=norm(properties.addr_street),number=norm(properties.addr_housenumber);
+        hits=entries.filter(({cinema})=>{const address=norm(cinema.address);return street.length>=2&&address.includes(street)&&address.includes(number);});
+      }
+      if(hits.length!==1)continue;
+      const [lng,lat]=point;if(lng<118||lng>123||lat<20||lat>27)continue;
+      hits[0].cinema.longitude=lng;hits[0].cinema.latitude=lat;hits[0].cinema.coordinate_source='OpenStreetMap';
+      const image=safeUrl(properties.image);if(image)hits[0].cinema.image_url=image;
+    }
+    return entries.filter(({cinema})=>cinemaPoint(cinema)).length;
+  }
   function showtimeCount(slug) { return (showsByCity[slug]?.showtimes || []).length; }
   function getAllShowtimes() { return Object.values(showsByCity).flatMap((x)=>x.showtimes||[]); }
   function normalizeLang(value) {
@@ -112,19 +140,31 @@
     map.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
     map.addControl(new maplibregl.AttributionControl({compact:true}),'bottom-left');
     map.on('error',()=>{$('#map-error').hidden=false;});
+    map.on('click',handleMapSelection);
     map.on('load',()=>{if(cityDefs.length)renderMarkers();});
   }
   function renderMarkers() {
     if (!map||!map.loaded()) return;
     markers.forEach((m)=>m.remove()); markers=[];
-    cityDefs.forEach((city)=>{
-      const slug=city.slug,count=cinemaCount(slug); if(!count||!city.center)return;
-      const el=document.createElement('button');el.type='button';el.className=`cinema-marker${selectedCity===slug?' selected':''}`;el.textContent=String(count);el.setAttribute('aria-label',`${displayName(slug)}: ${count} cinemas`);
-      const popup=new maplibregl.Popup({offset:20,closeButton:false}).setHTML(`<b>${esc(displayName(slug))}</b><br>${count} ${esc(countWord(1))}<br><span class="nearby-note">${showtimeCount(slug)} ${esc(countWord(2))}</span>`);
-      const marker=new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(city.center).setPopup(popup).addTo(map);
-      el.addEventListener('click',()=>selectCity(slug,true));markers.push(marker);
+    selectedCities().forEach((slug)=>{
+      for (const cinema of cinemaByCity[slug]?.cinemas || []) {
+        const point=cinemaPoint(cinema); if(!point)continue;
+        const el=document.createElement('button');el.type='button';el.className=`cinema-marker${selectedCinemaId===cinema.id?' selected':''}`;el.textContent='⌂';el.setAttribute('aria-label',cinema.name_zh||cinema.name_en||'Cinema');
+        const shows=(showsByCity[slug]?.showtimes||[]).filter(s=>s.cinema_id===cinema.id && (s.start_time||'').slice(0,10)===dateSelect.value);
+        const addr=cinema.address?`<span class="nearby-note">${esc(cinema.address)}</span>`:'';
+        const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
+        const photo=image?`<img class="popup-photo" src="${esc(image)}" alt="${esc(cinema.name_zh||'Cinema building')}" loading="lazy">`:'';
+        const filmGroups=new Map();shows.forEach(show=>{const title=show.movie_title||'Untitled screening';if(!filmGroups.has(title))filmGroups.set(title,[]);filmGroups.get(title).push(show);});
+        const filmRows=[...filmGroups.entries()].slice(0,8).map(([title,rows])=>`<li><b>${esc(title)}</b><span>${rows.map(show=>formatTime(show.start_time)).filter(Boolean).join(' · ')}</span><small>${rows[0].audio_language?`${esc(ui('audio'))}: ${esc(audioLabel(rows[0].audio_language))} · `:''}${esc(ui('subtitles'))}: ${esc(subtitleLabel(rows[0].subtitles))}</small></li>`).join('');
+        const more=filmGroups.size>8?`<li class="popup-more">+ ${filmGroups.size-8} more films in the list</li>`:'';
+        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}<b>${esc(cinema.name_zh||cinema.name_en||'Cinema')}</b><br><span class="nearby-note">${esc(cinema.company_name||'')}${cinema.screens?` · ${esc(cinema.screens)} screens`:''}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span><ul class="popup-movies">${filmRows}${more}</ul>`);
+        const marker=new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(point).setPopup(popup).addTo(map);
+        marker._cinemaId=cinema.id;marker._citySlug=slug;
+        el.addEventListener('click',()=>selectCinema(cinema.id,slug,true));markers.push(marker);
+      }
     });
-    if(selectedCity==='all')map.fitBounds(new maplibregl.LngLatBounds([119.3,21.7],[122.1,25.5]),{padding:{top:70,right:65,bottom:90,left:65},duration:0});
+    const mapped=selectedCities().flatMap(slug=>(cinemaByCity[slug]?.cinemas||[]).filter(c=>cinemaPoint(c)).map(cinemaPoint));
+    if(selectedCity==='all'&&mapped.length){const bounds=mapped.reduce((b,p)=>b.extend(p),new maplibregl.LngLatBounds(mapped[0],mapped[0]));map.fitBounds(bounds,{padding:{top:70,right:65,bottom:90,left:65},maxZoom:10,duration:0});}
   }
   function setupCityOptions() {
     citySelect.innerHTML=`<option value="all">${esc(ui('allTaiwan'))}</option>`+cityDefs.filter(c=>cinemaCount(c.slug)>0).map(c=>`<option value="${esc(c.slug)}">${esc(displayName(c.slug))} · ${cinemaCount(c.slug)}</option>`).join('');
@@ -132,10 +172,11 @@
   }
   function setupDateOptions() {
     const all=getAllShowtimes();
-    availableDates=[...new Set(all.map(s=>(s.start_time||'').slice(0,10)).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)))].sort();
     const today=todayTaiwan();
-    let initial=availableDates.includes(today)?today:(availableDates.find(d=>d>=today)||availableDates.at(-1)||'all-dates');
-    dateSelect.innerHTML=`<option value="all-dates">${esc(ui('allDates'))} · ${all.length}</option>`+availableDates.map(d=>`<option value="${d}">${d===today?`${esc(ui('today'))} · `:''}${esc(formatDate(d))} · ${countDate(d)}</option>`).join('');
+    availableDates=[...new Set(all.map(s=>(s.start_time||'').slice(0,10)).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today))].sort();
+    if(!availableDates.length)availableDates=[today];
+    let initial=availableDates.includes(today)?today:(availableDates[0]||today);
+    dateSelect.innerHTML=availableDates.map(d=>`<option value="${d}">${d===today?`${esc(ui('today'))} · `:''}${esc(formatDate(d))} · ${countDate(d)}</option>`).join('');
     dateSelect.value=initial;syncDateControls();
   }
   function countDate(date) { return getAllShowtimes().filter(s=>(s.start_time||'').slice(0,10)===date).length; }
@@ -145,9 +186,9 @@
     return new Intl.DateTimeFormat(localeInfo[language].date,style==='short'?{timeZone:'UTC',day:'numeric',month:'short'}:{timeZone:'UTC',weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(value);
   }
   function syncDateControls() {
-    const idx=availableDates.indexOf(dateSelect.value),all=dateSelect.value==='all-dates';
-    $('#date-prev').disabled=all||idx<=0;$('#date-next').disabled=all||idx<0||idx>=availableDates.length-1;
-    $('#date-count').textContent=all?`${getAllShowtimes().length} ${ui('sessions')}`:`${countDate(dateSelect.value)} ${ui('sessions')}`;
+    const idx=availableDates.indexOf(dateSelect.value);
+    $('#date-prev').disabled=true;$('#date-next').disabled=idx<0||idx>=availableDates.length-1;
+    $('#date-count').textContent=`${countDate(dateSelect.value)} ${ui('sessions')}`;
   }
   function setupLanguageFilters() {
     const allLabel=ui('anySubtitles');
@@ -156,7 +197,7 @@
   }
   function selectedShowtimes(slug) {
     const list=showsByCity[slug]?.showtimes||[];
-    return dateSelect.value==='all-dates'?list:list.filter(s=>(s.start_time||'').slice(0,10)===dateSelect.value);
+    return list.filter(s=>(s.start_time||'').slice(0,10)===dateSelect.value);
   }
   function selectedCities() {
     if(selectedCity!=='all')return [selectedCity];
@@ -194,12 +235,12 @@
       for(const [key,shows] of perCinema)if(!byId.has(key))records.push({cinema:{id:key,name_zh:shows[0].cinema_name,city:slug,address:''},shows});
       const filtered=records.filter(({cinema,shows})=>{
         if((subtitle!=='all'||audio!=='all')&&!shows.length)return false;
-        if(!query)return true;
+        if(!query||selectedCinemaId===cinema.id)return true;
         return [cinema.name_zh,cinema.name_en,cinema.address,...shows.flatMap(s=>[s.movie_title,s.movie_title_en])].some(v=>decodeEntities(v).toLocaleLowerCase().includes(query));
       }).sort((a,b)=>(b.shows.length-a.shows.length)||String(a.cinema.name_zh).localeCompare(String(b.cinema.name_zh)));
       if(filtered.length)groups.push({slug,records:filtered});cinemaTotal+=filtered.length;sessionTotal+=filtered.reduce((n,x)=>n+x.shows.length,0);
     }
-    const dateLabel=dateSelect.value==='all-dates'?ui('allDates'):formatDate(dateSelect.value);
+    const dateLabel=formatDate(dateSelect.value);
     summaryEl.textContent=`${cinemaTotal} ${ui('cinemas')} · ${sessionTotal} ${ui('sessions')} · ${dateLabel}`;
     const cityCount=Object.values(cinemaByCity).reduce((n,x)=>n+(x.cinemas?.length||0),0);
     mapCaption.textContent=selectedCity==='all'?`${cityDefs.length} ${countWord(0)} · ${cityCount} ${countWord(1)}`:`${displayName(selectedCity)} · ${cinemaCount(selectedCity)} ${countWord(1)}`;
@@ -210,13 +251,32 @@
         const address=cinema.address?`<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.address)}" target="_blank" rel="noopener">${esc(cinema.address)} ↗</a>`:esc(ui('addressUnavailable'));
         const movies=new Map();shows.sort((a,b)=>String(a.start_time).localeCompare(String(b.start_time))).forEach(s=>{const key=`${s.movie_title||''}|${s.movie_title_en||''}`;if(!movies.has(key))movies.set(key,[]);movies.get(key).push(s);});
         const moviesHtml=shows.length?[...movies.values()].map(movieCard).join(''):`<div class="empty-show">${esc(ui('noSchedules'))}</div>`;
-        return `<article class="cinema"><div class="cinema-top"><div class="cinema-name">${esc(cinema.name_zh||cinema.name_en||'Cinema')}</div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div><div class="address">${address}</div>${moviesHtml}</article>`;
+        const co=cinema.company_name?`<div class="company-name">${esc(cinema.company_name)}</div>`:'';
+        const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
+        const photo=image?`<img class="cinema-photo" src="${esc(image)}" alt="${esc(cinema.name_zh||'Cinema building')}" loading="lazy">`:'';
+        const location=cinemaPoint(cinema)?`<button class="show-on-map" type="button" data-cinema-id="${esc(cinema.id)}" data-city="${esc(slug)}">Show on map</button>`:'';
+        return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${location}</div>${moviesHtml}</article>`;
       }).join('')}`;
     }).join('');
   }
   function selectCity(slug,fly) {
-    selectedCity=slug;citySelect.value=slug;renderResults();renderMarkers();
-    if(fly&&map){const city=cityDefs.find(c=>c.slug===slug);if(city?.center)map.flyTo({center:city.center,zoom:10.3,duration:850});else if(slug==='all')renderMarkers();}
+    selectedCity=slug;selectedCinemaId='';citySelect.value=slug;renderResults();renderMarkers();
+    if(fly&&map){const city=cityDefs.find(c=>c.slug===slug);if(city?.center)map.flyTo({center:city.center,zoom:10.3,duration:850});else if(slug==='all')map.fitBounds([[119.3,21.7],[122.1,25.5]],{padding:{top:70,right:65,bottom:90,left:65},duration:850});}
+  }
+  function selectCinema(id,slug,fly) {
+    selectedCity=slug;selectedCinemaId=id;citySelect.value=slug;renderResults();renderMarkers();
+    const card=document.getElementById(`cinema-${id}`);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});
+    if(fly&&map){const cinema=(cinemaByCity[slug]?.cinemas||[]).find(c=>c.id===id),point=cinemaPoint(cinema);if(point){map.flyTo({center:point,zoom:16,duration:700});markers.find(m=>m._cinemaId===id)?.togglePopup();}}
+  }
+  function handleMapSelection(event) {
+    if(!map)return;
+    const normalize=s=>String(s).toLocaleLowerCase().replace(/[\s　·・\-]/g,'').replace(/臺/g,'台');
+    const names=map.queryRenderedFeatures(event.point).map(f=>f.properties?.name||f.properties?.['name:zh']||f.properties?.name_zh||'').filter(Boolean).map(normalize);
+    if(!names.length)return;
+    for(const slug of selectedCities())for(const cinema of cinemaByCity[slug]?.cinemas||[]){
+      const name=normalize(cinema.name_zh||cinema.name_en||'');
+      if(name&&names.some(n=>n===name||n.includes(name)||name.includes(n))){selectCinema(cinema.id,slug,false);return;}
+    }
   }
   function setLanguage(code) {
     const priorDate=dateSelect.value;
@@ -225,7 +285,7 @@
     searchInput.placeholder=ui('placeholder');citySelect.setAttribute('aria-label',ui('city'));dateSelect.setAttribute('aria-label',ui('date'));
     languageSelect.setAttribute('aria-label',ui('language'));subtitleSelect.setAttribute('aria-label',ui('subtitles'));audioSelect.setAttribute('aria-label',ui('audio'));
     $('#date-prev').setAttribute('aria-label',ui('previous'));$('#date-next').setAttribute('aria-label',ui('next'));
-    setupCityOptions();citySelect.value=selectedCity;setupDateOptions();if(priorDate==='all-dates'||availableDates.includes(priorDate))dateSelect.value=priorDate;setupLanguageFilters();syncDateControls();
+    setupCityOptions();citySelect.value=selectedCity;setupDateOptions();if(availableDates.includes(priorDate))dateSelect.value=priorDate;setupLanguageFilters();syncDateControls();
     $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
     $('#updated').textContent=`${ui('dataUpdated')} · ${formatDate(dataGeneratedDate||todayTaiwan(),'short')} · ${ui('localTime')}`;
     setTheme(document.querySelector('.app').dataset.theme||'dark');
@@ -251,12 +311,14 @@
       const element=document.createElement('div');element.className='user-location-marker';
       if(map&&window.maplibregl)userMarker=new maplibregl.Marker({element}).setLngLat([user.lng,user.lat]).setPopup(new maplibregl.Popup({offset:15}).setText(currentLocationLabels[language]||currentLocationLabels.en)).addTo(map);
       const nearest=cityDefs.filter(c=>c.center&&cinemaCount(c.slug)>0).map(c=>({...c,distance:distanceKm(user,c.center)})).sort((a,b)=>a.distance-b.distance)[0];
-      if(nearest){selectCity(nearest.slug,false);if(map)map.flyTo({center:nearest.center,zoom:9.5,duration:900});mapCaption.textContent=`${ui('near')}: ${displayName(nearest.slug)} · ~${Math.round(nearest.distance)} ${ui('km')}`;mapCaption.classList.add('location-active');}
+      if(nearest)selectCity(nearest.slug,false);
+      if(map)map.flyTo({center:[user.lng,user.lat],zoom:15.6,duration:900});
+      mapCaption.textContent=currentLocationLabels[language]||currentLocationLabels.en;mapCaption.classList.add('location-active');
       button.querySelector('[data-i18n]').textContent=ui('locate');button.disabled=false;
     },()=>{mapCaption.textContent=ui('locationDenied');button.querySelector('[data-i18n]').textContent=ui('locate');button.disabled=false;},{enableHighAccuracy:true,timeout:12000,maximumAge:300000});
   }
   function changeDate(delta) {
-    const index=availableDates.indexOf(dateSelect.value);if(index<0)return;const next=index+delta;if(next<0||next>=availableDates.length)return;dateSelect.value=availableDates[next];syncDateControls();renderResults();
+    if(delta<0)return;const index=availableDates.indexOf(dateSelect.value);if(index<0)return;const next=index+delta;if(next<0||next>=availableDates.length)return;dateSelect.value=availableDates[next];syncDateControls();renderMarkers();renderResults();
   }
   async function init() {
     let savedLanguage='en',savedTheme='dark';try{savedLanguage=localStorage.getItem('cinema-language')||'en';savedTheme=localStorage.getItem('cinema-theme')||'dark';}catch{}
@@ -273,6 +335,7 @@
       for(const data of Object.values(showsByCity))for(const show of data.showtimes||[]){knownShowtimeRows++;if(Array.isArray(show.subtitles)&&show.subtitles.length)explicitSubtitleRows++;}
       setupCityOptions();setupDateOptions();setupLanguageFilters();
       if(map?.loaded())renderMarkers();
+      loadOsmCinemaPoints().then(count=>{if(count){renderMarkers();renderResults();mapCaption.textContent=`${count} mapped cinemas · OpenStreetMap`;}}).catch(error=>console.warn('Cinema coordinates unavailable',error));
       $('#updated').textContent=`${ui('dataUpdated')} · ${formatDate(dataGeneratedDate||todayTaiwan(),'short')} · ${ui('localTime')}`;
       $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
       setLanguage(language);renderResults();
@@ -281,12 +344,13 @@
     }
   }
   citySelect.addEventListener('change',e=>{mapCaption.classList.remove('location-active');selectCity(e.target.value,true);});
-  dateSelect.addEventListener('change',()=>{syncDateControls();renderResults();});
+  dateSelect.addEventListener('change',()=>{syncDateControls();renderMarkers();renderResults();});
   $('#date-prev').addEventListener('click',()=>changeDate(-1));$('#date-next').addEventListener('click',()=>changeDate(1));
   searchInput.addEventListener('input',renderResults);subtitleSelect.addEventListener('change',renderResults);audioSelect.addEventListener('change',renderResults);
   languageSelect.addEventListener('change',e=>setLanguage(e.target.value));$('#theme').addEventListener('click',()=>setTheme(document.querySelector('.app').dataset.theme==='dark'?'light':'dark'));
   $('#locate').addEventListener('click',locateMe);
-  $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1)||'all-dates');syncDateControls();mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}selectCity('all',true);});
+  resultsEl.addEventListener('click',e=>{const button=e.target.closest('.show-on-map');if(button)selectCinema(button.dataset.cinemaId,button.dataset.city,true);});
+    $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1));syncDateControls();mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}selectCity('all',true);});
   document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();searchInput.focus();}if(e.key==='Escape'&&document.activeElement===searchInput){searchInput.value='';renderResults();searchInput.blur();}});
   init();
 })();
