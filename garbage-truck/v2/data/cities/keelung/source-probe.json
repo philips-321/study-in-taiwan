@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "city": "keelung",
+  "checked_at": "2026-10-24T02:21:13+00:00",
+  "purpose": "One-time/bounded source-shape probe before writing a publishing importer.",
+  "publishable_route_data": false,
+  "sources": [
+    {
+      "kind": "official_csv",
+      "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+      "landing_url": "https://data.gov.tw/dataset/128678",
+      "checked_at": "2026-10-24T02:21:13+00:00",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "etag": "\"55ec41f61b5c4b8b8915f16d36acd943\"",
+      "last_modified": "Wed, 09 Sep 2026 03:39:06 GMT",
+      "attempt": 1,
+      "status": "reachable",
+      "byte_count": 263284,
+      "sha256": "57359e506beef48c4002096a4c0c2939c15e302c84e1088c51a720ec50134c55",
+      "format": "csv",
+      "encoding": "utf-8-sig",
+      "fields": [
+        "編號",
+        "班別",
+        "清運路線名稱",
+        "順序",
+        "stopId",
+        "清運點",
+        "經度",
+        "緯度",
+        "預估到達時間",
+        "預估離開時間",
+        "停留時間",
+        "回收日(星期幾)"
+      ],
+      "row_count": 1868,
+      "sample_rows": [
+        {
+          "編號": "1",
+          "班別": "一區隊",
+          "清運路線名稱": "1-1暖暖區八堵路185巷95號",
+          "順序": "1",
+          "stopId": "65f15b315e1fc1c5020f61be",
+          "清運點": "八堵路185巷95號",
+          "經度": "121.7252",
+          "緯度": "25.10089",
+          "預估到達時間": "17:47",
+          "預估離開時間": "17:50",
+          "停留時間": "沿線",
+          "回收日(星期幾)": "2,4,6"
+        },
+        {
+          "編號": "2",
+          "班別": "一區隊",
+          "清運路線名稱": "1-1暖暖區八堵路185巷95號",
+          "順序": "2",
+          "stopId": "65f15b315e1fc1c5020f61bf",
+          "清運點": "八堵路185巷52號",
+          "經度": "121.7252",
+          "緯度": "25.10172",
+          "預估到達時間": "17:50",
+          "預估離開時間": "17:52",
+          "停留時間": "沿線",
+          "回收日(星期幾)": "2,4,6"
+        },
+        {
+          "編號": "3",
+          "班別": "一區隊",
+          "清運路線名稱": "1-1暖暖區八堵路185巷95號",
+          "順序": "3",
+          "stopId": "65f15b315e1fc1c5020f61c0",
+          "清運點": "八堵路185巷7號",
+          "經度": "121.726",
+          "緯度": "25.10272",
+          "預估到達時間": "17:52",
+          "預估離開時間": "17:54",
+          "停留時間": "沿線",
+          "回收日(星期幾)": "2,4,6"
+        }
+      ]
+    },
+    {
+      "kind": "official_route_json_legacy_endpoint",
+      "url": "http://210.61.25.6/BSTruckMIS/subsystem/JSon/keelungroute.ashx",
+      "landing_url": "https://data.gov.tw/dataset/128678",
+      "checked_at": "2026-10-24T02:21:13+00:00",
+      "status": "unreachable-after-2-attempts",
+      "error": "URLError: <urlopen error timed out>"
+    }
+  ],
+  "recommended_source_kind": "official_csv",
+  "status": "source-shape-captured"
+}
