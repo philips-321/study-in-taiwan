@@ -33,29 +33,19 @@
       paint-order: stroke fill;
     }
     .legend-acceptance-v2__fish {
-      width: 29px;
-      height: 19px;
-      overflow: visible;
-    }
-    .legend-acceptance-v2__fish path {
-      fill: none;
-      stroke: #075b46;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .legend-acceptance-v2__fish circle {
-      fill: #075b46;
-      stroke: #fff;
-      stroke-width: 1;
+      display: block;
+      flex: none;
+      width: 34px;
+      height: 20px;
+      background-color: #075b46;
+      -webkit-mask: url("v2/assets/food-fishbone.webp") center / contain no-repeat;
+      mask: url("v2/assets/food-fishbone.webp") center / contain no-repeat;
     }
     :root[data-theme="dark"] .legend-acceptance-v2__recycle { color: #69e5ad; }
-    :root[data-theme="dark"] .legend-acceptance-v2__fish path { stroke: #69e5ad; }
-    :root[data-theme="dark"] .legend-acceptance-v2__fish circle { fill: #69e5ad; stroke: #152123; }
+    :root[data-theme="dark"] .legend-acceptance-v2__fish { background-color: #69e5ad; }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) .legend-acceptance-v2__recycle { color: #69e5ad; }
-      :root:not([data-theme="light"]) .legend-acceptance-v2__fish path { stroke: #69e5ad; }
-      :root:not([data-theme="light"]) .legend-acceptance-v2__fish circle { fill: #69e5ad; stroke: #152123; }
+      :root:not([data-theme="light"]) .legend-acceptance-v2__fish { background-color: #69e5ad; }
     }
   `;
 
@@ -106,7 +96,7 @@
         recyclingItem.innerHTML = '<i class="legend-acceptance-v2__recycle" aria-hidden="true">♻</i><b data-v2-legend-recycling></b>';
         const foodItem = doc.createElement('span');
         foodItem.className = 'legend-acceptance-v2';
-        foodItem.innerHTML = '<svg class="legend-acceptance-v2__fish" viewBox="0 0 44 24" aria-hidden="true"><path d="M8 12H34M8 12Q4 7 1 6L4 12 1 18Q4 17 8 12M34 12 42 5V19Z M12 12 17 5M12 12 17 19M19 12 24 5M19 12 24 19M26 12 31 5M26 12 31 19"/><circle cx="5" cy="11" r="1"/></svg><b data-v2-legend-food></b>';
+        foodItem.innerHTML = '<i class="legend-acceptance-v2__fish" role="img" aria-label="Food waste"></i><b data-v2-legend-food></b>';
         legend.append(recyclingItem, foodItem);
         const updateAcceptanceLabels = () => {
           const translations = frame.contentWindow.eval('T');
