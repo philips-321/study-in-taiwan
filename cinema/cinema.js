@@ -56,6 +56,7 @@
   let availableDates = [];
   let showtimesDateIndex = {};
   let dateLoadSequence = 0;
+  let showtimesPending = false;
   let liveShowtimesByCityDate = {};
   let explicitSubtitleRows = 0;
   let knownShowtimeRows = 0;
@@ -277,6 +278,7 @@
     } catch(error) { console.warn('ShowTimes live feed unavailable; using saved schedules',error); }
   }
   async function loadDateShowtimes(date) {
+    showtimesPending=true;
     const sequence=++dateLoadSequence;
     const cities=[...new Set([...Object.keys(showtimesDateIndex[date]?.cities||{}),...Object.keys(liveShowtimesByCityDate[date]||{})])];
     const loaded=await Promise.all(cities.map(async slug=>{
@@ -290,6 +292,7 @@
       for(const show of live){const key=[show.cinema_id,show.movie_title,show.start_time,show.hall||'',show.format||''].join('|');if(!keys.has(key)){data.showtimes.push(show);keys.add(key);}}
       showsByCity[slug]=data;
     }
+    showtimesPending=false;
     setupLanguageFilters();syncDateControls();renderMarkers();renderResults();
   }
   function selectedCities() {
@@ -343,7 +346,7 @@
         const addressParts=splitAddress(cinema.address),floorLabel=language==='id'?'Lantai':language==='zh-TW'?'樓層':language==='ja'?'フロア':language==='ko'?'층':language==='vi'?'Tầng':language==='th'?'ชั้น':'Floor';
         const address=cinema.address?`<div class="address-row"><div class="address-text"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.address)}" target="_blank" rel="noopener">${esc(addressParts.street)} ↗</a>${addressParts.floor?`<span class="address-floor">${esc(floorLabel)}: ${esc(addressParts.floor)}</span>`:''}</div>${copyButton(cinema.address,'address')}</div>`:esc(ui('addressUnavailable'));
         const movies=new Map();shows.sort((a,b)=>String(a.start_time).localeCompare(String(b.start_time))).forEach(s=>{const key=`${s.movie_title||''}|${s.movie_title_en||''}`;if(!movies.has(key))movies.set(key,[]);movies.get(key).push(s);});
-        const moviesHtml=shows.length?[...movies.values()].map(movieCard).join(''):`<div class="empty-show">${esc(ui('noSchedules'))}</div>`;
+        const moviesHtml=shows.length?[...movies.values()].map(movieCard).join(''):`<div class="empty-show">${esc(showtimesPending?'Loading showtimes…':ui('noSchedules'))}</div>`;
         const co=cinema.company_name?`<div class="company-name">${esc(cinema.company_name)}</div>`:'';
         const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
         const photo=image?`<img class="cinema-photo" src="${esc(image)}" alt="${esc(cinema.name_zh||'Cinema building')}" loading="lazy">`:'';
@@ -448,14 +451,19 @@
       }));
       knownShowtimeRows=Number(manifest?.coverage?.showtime_rows||Object.values(showtimesDateIndex).reduce((sum,entry)=>sum+Number(entry.total||0),0));
       explicitSubtitleRows=Number(manifest?.coverage?.explicit_subtitle_rows||0);
-      if(manifest?.sources?.showtimes?.['showtimes-official-api']?.health!=='healthy')await loadLiveShowtimes();
       setupCityOptions();setupDateOptions();setupLanguageFilters();
-      if(dateSelect.value)await loadDateShowtimes(dateSelect.value);
-      else if(map?.loaded())renderMarkers();
       mapCaption.textContent=`${locationCount()} cinema locations · OpenStreetMap`;
       $('#updated').textContent=`${ui('dataUpdated')} · ${formatDate(dataGeneratedDate||todayTaiwan(),'short')} · ${ui('localTime')}`;
       $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
-      setLanguage(language);renderResults();
+      setLanguage(language);
+      showtimesPending=true;renderResults();
+      const needsLive=manifest?.sources?.showtimes?.['showtimes-official-api']?.health!=='healthy';
+      if(needsLive)loadLiveShowtimes().then(()=>{
+        const priorDate=dateSelect.value;setupDateOptions();if(availableDates.includes(priorDate))dateSelect.value=priorDate;syncDateControls();
+        return loadDateShowtimes(dateSelect.value);
+      });
+      if(dateSelect.value)await loadDateShowtimes(dateSelect.value);
+      else if(map?.loaded())renderMarkers();
     } catch(error) {
       console.error('Cinema data could not be loaded',error);resultsEl.innerHTML='<div class="no-results">Cinema data could not be loaded.<br>Please refresh and try again.</div>';summaryEl.textContent='Data unavailable';
     }
