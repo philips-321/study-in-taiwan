@@ -46,20 +46,20 @@
   }
 
   async function showScheduleOnly(frame,slug){
-    if(!slug||slug==='taipei'||slug==='new-taipei')return;
+    if(!slug||slug==='taipei'||slug==='new-taipei')return null;
     const d=frame.contentDocument;
-    if(!d)return;
+    if(!d)return null;
     try{
       const mr=await fetch(`data/cities/${slug}/manifest.json`,{cache:'force-cache'});
-      if(!mr.ok)return;
+      if(!mr.ok)return null;
       const manifest=await mr.json();
-      if(manifest?.status!=='schedule-only')return;
+      if(manifest?.status!=='schedule-only')return null;
 
       const lang=d.getElementById('lang')?.value||'en';
       const t=textFor(lang);
       const status=d.getElementById('status');
       const list=d.getElementById('list');
-      if(!list)return;
+      if(!list)return null;
       const updated=manifest.source_updated?`<div class="meta">Source update: ${esc(manifest.source_updated)}</div>`:'';
 
       if(manifest.schedule_index){
@@ -68,7 +68,7 @@
           const sr=await fetch(`data/cities/${slug}/${manifest.schedule_index}`,{cache:'force-cache'});
           if(sr.ok)schedule=await sr.json();
         }catch(e){console.warn('V2 district schedule index unavailable',slug,e)}
-        if(!schedule)return;
+        if(!schedule)return null;
         const rowCount=Number(manifest.row_count??schedule.row_count??0);
         const areaCount=Number(manifest.area_count??schedule.area_count??0);
         const summary=t.recordsSummary(rowCount.toLocaleString(),areaCount.toLocaleString());
@@ -76,7 +76,7 @@
         const areas=[...(schedule.areas||[])].sort((a,b)=>Number(b.count||0)-Number(a.count||0)||String(a.area||'').localeCompare(String(b.area||''),'zh-Hant'));
         list.innerHTML=`<div class="zoom-note">${esc(summary)}${updated}</div>`+
           areas.map(x=>`<div class="row"><div><b>${esc(x.area||'—')}</b><div class="meta">${Number(x.count||0).toLocaleString()} ${esc(t.records)}</div></div></div>`).join('');
-        return;
+        return summary;
       }
 
       let routes=[];
@@ -97,7 +97,29 @@
       const rows=[...districts.entries()].sort((a,b)=>b[1].stops-a[1].stops||a[0].localeCompare(b[0],'zh-Hant'));
       list.innerHTML=`<div class="zoom-note">${esc(summary)}${updated}</div>`+
         rows.map(([name,x])=>`<div class="row"><div><b>${esc(name)}</b><div class="meta">${x.routes.toLocaleString()} ${esc(t.routes)} · ${x.stops.toLocaleString()} ${esc(t.stops)}</div></div></div>`).join('');
-    }catch(e){console.warn('V2 schedule-only presentation failed',slug,e)}
+      return summary;
+    }catch(e){console.warn('V2 schedule-only presentation failed',slug,e);return null}
+  }
+
+  let scheduleGuard=0;
+  async function stabilizeScheduleOnly(frame,select,slug){
+    const guard=++scheduleGuard;
+    const d=frame.contentDocument;
+    const status=d?.getElementById('status');
+    if(!status)return;
+    let expected=await showScheduleOnly(frame,slug);
+    if(!expected||guard!==scheduleGuard)return;
+    let busy=false;
+    const observer=new MutationObserver(async()=>{
+      if(busy||guard!==scheduleGuard||select.value!==slug||status.textContent===expected)return;
+      busy=true;
+      try{
+        const next=await showScheduleOnly(frame,slug);
+        if(next)expected=next;
+      }finally{busy=false}
+    });
+    observer.observe(status,{childList:true,characterData:true,subtree:true});
+    setTimeout(()=>observer.disconnect(),10000);
   }
 
   window.installNationwideV2=async function(frame){
@@ -108,14 +130,15 @@
     if(!select)return;
 
     await forceBaseCity(frame,select.value);
-    await showScheduleOnly(frame,select.value);
+    await stabilizeScheduleOnly(frame,select,select.value);
 
     select.addEventListener('change',()=>{
       const slug=select.value;
       if(slug==='taipei'||slug==='new-taipei'){
+        scheduleGuard++;
         setTimeout(()=>forceBaseCity(frame,slug),450);
       }else{
-        setTimeout(()=>showScheduleOnly(frame,slug),550);
+        stabilizeScheduleOnly(frame,select,slug);
       }
     });
     lang?.addEventListener('change',()=>setTimeout(()=>showScheduleOnly(frame,select.value),80));
