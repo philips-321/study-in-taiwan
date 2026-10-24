@@ -1,31 +1,6 @@
 (() => {
-const STARTS=window.V2_CITY_START_POINTS?.points||{};
-function centerArray(value){
-  if(Array.isArray(value)&&value.length>=2)return [Number(value[0]),Number(value[1])];
-  if(value&&Number.isFinite(Number(value.lng))&&Number.isFinite(Number(value.lat)))return [Number(value.lng),Number(value.lat)];
-  return null;
-}
-function matchStart(center){
-  const c=centerArray(center);if(!c)return null;
-  for(const [slug,p] of Object.entries(STARTS)){
-    const cc=p.city_center;if(!Array.isArray(cc))continue;
-    if(Math.abs(c[0]-cc[0])<0.0002&&Math.abs(c[1]-cc[1])<0.0002)return {slug,p};
-  }
-  return null;
-}
-function getMap(w){
-  if(w?.map)return w.map;
-  try{
-    const map=w?.eval?.('map');
-    if(map)w.map=map;
-    return map||null;
-  }catch(err){
-    console.warn('V2 map bridge unavailable',err);
-    return null;
-  }
-}
 function apply(frame){
-  const d=frame.contentDocument,w=frame.contentWindow;if(!d||!w||d.getElementById('v2MobileParity'))return;
+  const d=frame.contentDocument;if(!d||d.getElementById('v2MobileParity'))return;
   const s=d.createElement('style');s.id='v2MobileParity';s.textContent=`
   @media(max-width:800px){
     html[data-v2] #content{grid-template-rows:minmax(0,1fr) auto!important}
@@ -46,48 +21,6 @@ function apply(frame){
     html[data-v2] #status{margin-top:0!important}
   }`;
   d.head.appendChild(s);
-
-  let pendingSlug=null;
-  const map=getMap(w);
-  if(map&&!map.__v2CampusNavigationPatched){
-    const originalFlyTo=map.flyTo.bind(map);
-    map.flyTo=function(options={},eventData){
-      const matched=(pendingSlug&&STARTS[pendingSlug])?{slug:pendingSlug,p:STARTS[pendingSlug]}:matchStart(options?.center);
-      if(!matched)return originalFlyTo(options,eventData);
-      pendingSlug=null;
-      try{
-        map.stop();
-        return map.jumpTo({...options,center:matched.p.center,zoom:Number(matched.p.zoom)||14.3,bearing:0,pitch:0},eventData);
-      }catch(err){
-        console.warn('V2 campus jump failed; falling back to flyTo',matched.slug,err);
-        return originalFlyTo(options,eventData);
-      }
-    };
-    map.__v2CampusNavigationPatched=true;
-  }
-
-  function wireCitySelector(){
-    const select=d.getElementById('cityV2');
-    if(!select||select.dataset.campusNavWired==='1')return false;
-    select.dataset.campusNavWired='1';
-    select.addEventListener('change',()=>{
-      const slug=select.value;
-      pendingSlug=slug;
-      const p=STARTS[slug];
-      if(!p)return;
-      setTimeout(()=>{
-        if(select.value!==slug)return;
-        const currentMap=getMap(w);if(!currentMap)return;
-        try{currentMap.stop();currentMap.jumpTo({center:p.center,zoom:Number(p.zoom)||14.3,bearing:0,pitch:0})}catch(err){console.warn('V2 campus anchor reassert failed',slug,err)}
-      },900);
-    },true);
-    return true;
-  }
-  if(!wireCitySelector()){
-    const observer=new MutationObserver(()=>{if(wireCitySelector())observer.disconnect()});
-    observer.observe(d.body,{childList:true,subtree:true});
-    setTimeout(()=>observer.disconnect(),10000);
-  }
 }
 function hook(){
   const frame=document.getElementById('appFrame');
