@@ -13,6 +13,17 @@ function matchStart(center){
   }
   return null;
 }
+function getMap(w){
+  if(w?.map)return w.map;
+  try{
+    const map=w?.eval?.('map');
+    if(map)w.map=map;
+    return map||null;
+  }catch(err){
+    console.warn('V2 map bridge unavailable',err);
+    return null;
+  }
+}
 function apply(frame){
   const d=frame.contentDocument,w=frame.contentWindow;if(!d||!w||d.getElementById('v2MobileParity'))return;
   const s=d.createElement('style');s.id='v2MobileParity';s.textContent=`
@@ -37,21 +48,22 @@ function apply(frame){
   d.head.appendChild(s);
 
   let pendingSlug=null;
-  if(w.map&&!w.map.__v2CampusNavigationPatched){
-    const originalFlyTo=w.map.flyTo.bind(w.map);
-    w.map.flyTo=function(options={},eventData){
+  const map=getMap(w);
+  if(map&&!map.__v2CampusNavigationPatched){
+    const originalFlyTo=map.flyTo.bind(map);
+    map.flyTo=function(options={},eventData){
       const matched=(pendingSlug&&STARTS[pendingSlug])?{slug:pendingSlug,p:STARTS[pendingSlug]}:matchStart(options?.center);
       if(!matched)return originalFlyTo(options,eventData);
       pendingSlug=null;
       try{
-        w.map.stop();
-        return w.map.jumpTo({...options,center:matched.p.center,zoom:Number(matched.p.zoom)||14.3,bearing:0,pitch:0},eventData);
+        map.stop();
+        return map.jumpTo({...options,center:matched.p.center,zoom:Number(matched.p.zoom)||14.3,bearing:0,pitch:0},eventData);
       }catch(err){
         console.warn('V2 campus jump failed; falling back to flyTo',matched.slug,err);
         return originalFlyTo(options,eventData);
       }
     };
-    w.map.__v2CampusNavigationPatched=true;
+    map.__v2CampusNavigationPatched=true;
   }
 
   function wireCitySelector(){
@@ -65,7 +77,8 @@ function apply(frame){
       if(!p)return;
       setTimeout(()=>{
         if(select.value!==slug)return;
-        try{w.map.stop();w.map.jumpTo({center:p.center,zoom:Number(p.zoom)||14.3,bearing:0,pitch:0})}catch(err){console.warn('V2 campus anchor reassert failed',slug,err)}
+        const currentMap=getMap(w);if(!currentMap)return;
+        try{currentMap.stop();currentMap.jumpTo({center:p.center,zoom:Number(p.zoom)||14.3,bearing:0,pitch:0})}catch(err){console.warn('V2 campus anchor reassert failed',slug,err)}
       },900);
     },true);
     return true;
