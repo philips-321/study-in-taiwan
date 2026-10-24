@@ -3,8 +3,7 @@ name: Update Taiwan cinema JSON
 on:
   workflow_dispatch:
   schedule:
-    # 05:27 and 17:27 Taiwan time (UTC+8), avoiding common top-of-hour peaks.
-    - cron: '27 21 * * *'
+    # 17:27 Taiwan time (UTC+8), after common midweek schedule-release windows.
     - cron: '27 9 * * *'
   push:
     branches:

@@ -69,7 +69,7 @@ Scheduled workflow:
 .github/workflows/update-cinema-data.yml
 ```
 
-Schedule: approximately 05:27 and 17:27 Asia/Taipei, plus manual `workflow_dispatch`.
+Schedule: daily at 17:27 Asia/Taipei, plus manual `workflow_dispatch`.
 
 ## Source status summary
 
