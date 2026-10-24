@@ -11,6 +11,16 @@
       "metadata_updated": "2026-01-28 16:41:37",
       "update_frequency": "irregular",
       "notes": "Baseline saved before first successful import so later source changes can be compared."
+    },
+    {
+      "checked_at": "2026-10-24T01:33:46+00:00",
+      "provider": "Tainan City Government Open Data",
+      "landing_url": "https://data.tainan.gov.tw/DataSet/Detail/57aaa860-bb03-43c2-a797-73971d6cc73d",
+      "direct_download_url": "https://data.tainan.gov.tw/Resource/84df8cd6-8741-41ed-919c-5105a28ecd6d",
+      "status": "source-response-not-valid-json",
+      "metadata_updated": "2026-01-28 16:41:37",
+      "next_retry_not_before": "2026-10-26T00:00:00+08:00",
+      "notes": "GitHub runner received a response from the official direct-download endpoint, but it was not valid JSON. Nothing was published and the source is not retried before Monday unless manually overridden."
     }
   ]
 }
