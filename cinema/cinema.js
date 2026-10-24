@@ -41,6 +41,12 @@
   let cinemaByCity = {};
   let showsByCity = {};
   let venueLocations = [];
+  let cinemaEnglishNames = {};
+  let cinemaLogoKeys = {};
+  let logoMarks = {};
+  let logoColors = {};
+  let locationLogoKeys = {};
+  let locationEnglishNames = {};
   let markers = [];
   let userMarker = null;
   let selectedCity = 'all';
@@ -126,7 +132,12 @@
     for (const location of venueLocations.filter(item=>visibleSlugs.has(item.city))) {
         const cinema=location.cinema_id?cinemaIndex.get(location.cinema_id):null;
         const point=[location.longitude,location.latitude];
-        const el=document.createElement('button');el.type='button';el.className=`cinema-marker${cinema&&selectedCinemaId===cinema.id?' selected':''}`;el.innerHTML='<span class="pin-shape"><span class="pin-icon" aria-hidden="true">🎬</span></span>';el.setAttribute('aria-label',cinema?.name_zh||location.name||'Cinema');
+        const el=document.createElement('button');el.type='button';el.className=`cinema-marker${cinema&&selectedCinemaId===cinema.id?' selected':''}`;
+        const logoKey=cinemaLogoKeys[cinema?.id]||locationLogoKeys[String(location.source_feature_id)]||`mapped-${location.source_feature_id||location.name||'cinema'}`;
+        const locationEnglish=locationEnglishNames[String(location.source_feature_id)]||'';
+        const mark=logoMarks[logoKey]||((cinema?.name_en||locationEnglish||location.name||'C').match(/[A-Za-z0-9]+/g)||['C']).slice(0,2).map(x=>x[0]).join('').toUpperCase();
+        const logoColor=logoColors[logoKey]||'c87446';
+        el.innerHTML=`<span class="pin-shape" style="--logo-color:#${logoColor}"><span class="pin-icon" aria-hidden="true">${esc(mark)}</span></span>`;el.setAttribute('aria-label',`${cinema?.name_en||locationEnglish} ${cinema?.name_zh||location.name||'Cinema'}`.trim());
         const shows=cinema?(showsByCity[location.city]?.showtimes||[]).filter(s=>s.cinema_id===cinema.id && (s.start_time||'').slice(0,10)===dateSelect.value):[];
         const address=cinema?.address||[displayName(location.city),location.street,location.house_number].filter(Boolean).join(' ');
         const addr=address?`<span class="nearby-note">${esc(address)}</span>`:'';
@@ -141,7 +152,8 @@
           return `<li><b>${esc(title)}</b><span>${esc(times)}</span><small>${esc(details)}</small></li>`;
         }).join('');
         const venueName=cinema?.name_zh||location.name||'Cinema';
-        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}<b>${esc(venueName)}</b><br><span class="nearby-note">${esc(cinema?.company_name||'')}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span>${filmRows?`<ul class="popup-movies">${filmRows}</ul>`:`<p class="nearby-note">No schedule is linked for this venue yet.</p>`}`);
+        const englishName=cinema?.name_en||locationEnglish;
+        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}<b>${esc(venueName)}</b>${englishName?`<br><span class="popup-english-name">${esc(englishName)}</span>`:''}<br><span class="nearby-note">${esc(cinema?.company_name||'')}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span>${filmRows?`<ul class="popup-movies">${filmRows}</ul>`:`<p class="nearby-note">No schedule is linked for this venue yet.</p>`}`);
         const marker=new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(point).setPopup(popup).addTo(map);
         marker._cinemaId=cinema?.id||'';marker._citySlug=location.city;
         if(cinema)el.addEventListener('click',()=>selectCinema(cinema.id,location.city,true));markers.push(marker);
@@ -237,7 +249,7 @@
         const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
         const photo=image?`<img class="cinema-photo" src="${esc(image)}" alt="${esc(cinema.name_zh||'Cinema building')}" loading="lazy">`:'';
         const location=cinemaPoint(cinema)||cinemaLocation(cinema,slug)?`<button class="show-on-map" type="button" data-cinema-id="${esc(cinema.id)}" data-city="${esc(slug)}">Show on map</button>`:'';
-        return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${location}</div>${moviesHtml}</article>`;
+        return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name-wrap"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div>${cinema.name_en?`<div class="cinema-name-en">${esc(cinema.name_en)}</div>`:''}</div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${location}</div>${moviesHtml}</article>`;
       }).join('')}`;
     }).join('');
   }
@@ -307,12 +319,14 @@
     language=localeInfo[savedLanguage]?savedLanguage:'en';languageSelect.value=language;setTheme(savedTheme==='light'?'light':'dark');
     buildMap();
     try {
-      const [cityData,manifest,locationData]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]}))]);
+      const [cityData,manifest,locationData,nameData]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}}))]);
+      cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};
       cityDefs=cityData.cities.map(c=>({slug:c.slug,center:c.center}));dataGeneratedDate=(manifest?.generated_at||'').slice(0,10);
       venueLocations=locationData.locations||[];
       const slugs=[...cityDefs.map(c=>c.slug),'unknown'];
       await Promise.all(slugs.map(async slug=>{
         const [cinemas,shows]=await Promise.all([loadJson(`data/cinemas/${slug}.json`).catch(()=>({cinemas:[]})),loadJson(`data/showtimes/${slug}.json`).catch(()=>({showtimes:[]}))]);
+        cinemas.cinemas=(cinemas.cinemas||[]).map(cinema=>({...cinema,name_en:cinema.name_en||cinemaEnglishNames[cinema.id]}));
         cinemaByCity[slug]=cinemas;showsByCity[slug]=shows;
       }));
       for(const data of Object.values(showsByCity))for(const show of data.showtimes||[]){knownShowtimeRows++;if(Array.isArray(show.subtitles)&&show.subtitles.length)explicitSubtitleRows++;}

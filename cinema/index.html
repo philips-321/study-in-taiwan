@@ -8,9 +8,9 @@
   <link rel="canonical" href="https://study-in-taiwan.com/cinema/">
   <title>Taiwan Cinema Map · Search Films by Subtitle and Audio</title>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
-  <link rel="stylesheet" href="cinema.css?v=20261025d">
+  <link rel="stylesheet" href="cinema.css?v=20261025e">
   <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
-  <script defer src="cinema.js?v=20261025d"></script>
+  <script defer src="cinema.js?v=20261025e"></script>
 </head>
 <body>
   <main class="app">
@@ -38,18 +38,14 @@
             <button class="icon-button" id="theme" type="button" aria-label="Switch to light mode" title="Switch theme">☼</button>
           </div>
         </div>
-        <h1 data-i18n="title">Find a film.<br>Pick your version.</h1>
-        <p class="intro" data-i18n="intro">Search Taiwan showtimes by movie, subtitle, audio, and city.</p>
-        <div class="toolbar">
+        <div class="control-strip">
           <label class="city-control"><span class="sr-only" data-i18n="city">City</span><select id="city" aria-label="City"><option value="all">All Taiwan</option></select><span class="chevron">⌄</span></label>
           <button class="locate-button" id="locate" type="button"><span aria-hidden="true">⌖</span><span data-i18n="locate">Use my location</span></button>
-        </div>
-        <div class="date-nav">
-          <button class="step-button" id="date-prev" type="button" aria-label="Previous available date">‹</button>
-          <label class="date-select-wrap"><span class="sr-only" data-i18n="date">Showtime date</span><select id="date" aria-label="Showtime date"></select><span class="date-count" id="date-count"></span><span class="chevron">⌄</span></label>
-          <button class="step-button" id="date-next" type="button" aria-label="Next available date">›</button>
-        </div>
-        <div class="filter-row">
+          <div class="date-nav">
+            <button class="step-button" id="date-prev" type="button" aria-label="Previous available date">‹</button>
+            <label class="date-select-wrap"><span class="sr-only" data-i18n="date">Showtime date</span><select id="date" aria-label="Showtime date"></select><span class="date-count" id="date-count"></span><span class="chevron">⌄</span></label>
+            <button class="step-button" id="date-next" type="button" aria-label="Next available date">›</button>
+          </div>
           <label class="filter-control"><span class="filter-label" data-i18n="subtitles">Subtitles</span><select id="subtitle-filter" aria-label="Subtitle language"></select><span class="chevron">⌄</span></label>
           <label class="filter-control"><span class="filter-label" data-i18n="audio">Audio</span><select id="audio-filter" aria-label="Audio language"></select><span class="chevron">⌄</span></label>
         </div>

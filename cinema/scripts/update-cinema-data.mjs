@@ -13,6 +13,8 @@ const CINEMAS_DIR = path.join(ROOT, 'cinemas');
 const SHOWTIMES_DIR = path.join(ROOT, 'showtimes');
 const MOVIE_API = 'https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8';
 const CINEMA_META_API = 'https://www.bamid.gov.tw/OpenData.aspx?SN=E6C57FC155564DEB';
+const ENGLISH_NAMES_FILE = path.join(ROOT, 'cinema-names-en.json');
+const englishCinemaNames = JSON.parse(await fs.readFile(ENGLISH_NAMES_FILE, 'utf8')).names || {};
 
 const CITY_MAP = [
   ['taipei', ['臺北市','台北市']], ['new-taipei', ['新北市']], ['keelung', ['基隆市']],
@@ -247,6 +249,7 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
       const active = activeCinemaIds.has(cinema.id);
       return {
         ...cinema,
+        name_en: englishCinemaNames[cinema.id] || cinema.name_en || null,
         operational_status: active ? 'active' : 'unknown',
         recommendation_eligible: active,
         status_evidence: active ? 'fresh-showtime-source' : 'no-fresh-showtime-evidence',

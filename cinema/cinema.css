@@ -14,3 +14,59 @@
 .map-caption{top:68px;bottom:auto;left:14px;max-width:calc(100% - 78px);padding:7px 10px;font-size:11px}.map-legend{display:none}.map-credit{left:7px;right:auto;bottom:5px;font-size:8px}.maplibregl-marker.user-location-marker,.user-location-marker{width:20px;height:20px;border-radius:50%;background:#1687ff;border:3px solid #fff;box-shadow:0 0 0 8px #1687ff45,0 2px 10px #0008;z-index:5}.map-tools{position:absolute;z-index:5;top:14px;right:14px;display:flex;flex-direction:column;align-items:flex-end;gap:6px}.map-tools-toggle,.map-tools-menu button{width:40px;height:40px;border:1px solid #ffffff35;border-radius:9px;background:#111a20eF;color:white;box-shadow:0 3px 14px #0004;cursor:pointer;font-size:23px;line-height:1}.map-tools-toggle{font-size:24px;letter-spacing:2px}.map-tools-menu{display:flex;flex-direction:column;gap:5px}.map-tools-menu[hidden]{display:none}.map-tools-menu button{font-weight:700}.map-tools-menu button:hover,.map-tools-toggle:hover{background:#27343e}.maplibregl-ctrl-bottom-right,.maplibregl-ctrl-bottom-left{display:none!important}
 @media(max-width:760px){.map-caption{top:62px;left:10px;padding:6px 8px;font-size:10px}.map-tools{top:10px;right:10px}.map-tools-toggle,.map-tools-menu button{width:36px;height:36px}.map-credit{bottom:3px;left:5px}}
 .cinema-marker{width:40px;height:40px;border:0;padding:0;background:transparent;display:grid;place-items:center;cursor:pointer}.pin-shape{width:34px;height:34px;border:2px solid #fff0c5;border-radius:50% 50% 50% 8px;background:#da7840;display:grid;place-items:center;box-shadow:0 4px 12px #17253070;transform:rotate(-45deg)}.pin-icon{display:block;font-size:17px;line-height:1;transform:rotate(45deg)}.cinema-marker:hover .pin-shape{transform:rotate(-45deg) scale(1.12)}.cinema-marker.selected .pin-shape{background:#2f7e74;border-color:#e3f3dc;outline:3px solid #2f7e7455}
+/* Compact control row keeps the results and map visible without a large hero. */
+@media(min-width:761px){.app{grid-template-columns:minmax(0,1fr) minmax(455px,min(40vw,580px))}}
+.panel-head{padding-top:17px;padding-bottom:11px}
+.head-row{min-height:30px;margin-bottom:11px}
+.eyebrow{font-size:10px}
+.control-strip{display:flex;align-items:center;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:0 0 5px;margin:0 -2px 7px;scrollbar-color:#46515b transparent}
+.control-strip>*{flex:0 0 auto}
+.control-strip .city-control{width:118px;height:38px}
+.control-strip .city-control select{font-size:11px;padding-left:9px;padding-right:25px}
+.control-strip .locate-button{width:36px;height:38px;justify-content:center;padding:0;font-size:0}
+.control-strip .locate-button span:first-child{font-size:19px}
+.control-strip .date-nav{width:147px;grid-template-columns:27px minmax(0,1fr) 27px;gap:4px;margin:0}
+.control-strip .date-select-wrap{height:38px}
+.control-strip .date-select-wrap select{font-size:10px;padding:0 20px 0 7px}
+.control-strip .date-count,.control-strip .date-select-wrap .chevron{display:none}
+.control-strip .step-button{height:38px;font-size:20px}
+.control-strip .filter-control{width:103px;height:38px;padding:3px 18px 3px 7px}
+.control-strip .filter-label{font-size:8px}
+.control-strip .filter-control select{font-size:10px}
+.search{height:42px}
+.data-note{font-size:10px}
+.cinema-marker{width:44px;height:44px}
+.pin-shape{width:37px;height:37px;background:var(--logo-color,#c87446);border-radius:50% 50% 50% 8px}
+.pin-icon{font-size:10px;font-weight:800;letter-spacing:-.03em;max-width:27px;text-align:center;overflow:hidden;white-space:nowrap;transform:rotate(45deg)}
+.cinema-marker.selected .pin-shape{background:var(--logo-color,#2f7e74);border-color:#e3f3dc;outline:3px solid #2f7e7455}
+.cinema-name-wrap{min-width:0}
+.cinema-name-en,.popup-english-name{display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--muted);font-weight:500;letter-spacing:.01em}
+@media(max-width:760px){.panel-head{padding:10px 13px 8px}.head-row{margin-bottom:7px}.control-strip{margin-bottom:4px;scrollbar-width:none}.control-strip::-webkit-scrollbar{display:none}.control-strip .city-control{width:112px}.control-strip .date-nav{width:142px}.control-strip .filter-control{width:96px}.control-strip .locate-button{width:34px;height:37px}.data-note{margin-top:6px;font-size:9px}.summary{padding-top:7px}.cinema-name-en{font-size:11px}}
+/* Compact control row keeps the results and map visible without a large hero. */
+@media(min-width:761px){.app{grid-template-columns:minmax(0,1fr) minmax(455px,min(40vw,580px))}}
+.panel-head{padding-top:17px;padding-bottom:11px}
+.head-row{min-height:30px;margin-bottom:11px}
+.eyebrow{font-size:10px}
+.control-strip{display:flex;align-items:center;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:0 0 5px;margin:0 -2px 7px;scrollbar-color:#46515b transparent}
+.control-strip>*{flex:0 0 auto}
+.control-strip .city-control{width:118px;height:38px}
+.control-strip .city-control select{font-size:11px;padding-left:9px;padding-right:25px}
+.control-strip .locate-button{width:36px;height:38px;justify-content:center;padding:0;font-size:0}
+.control-strip .locate-button span:first-child{font-size:19px}
+.control-strip .date-nav{width:147px;grid-template-columns:27px minmax(0,1fr) 27px;gap:4px;margin:0}
+.control-strip .date-select-wrap{height:38px}
+.control-strip .date-select-wrap select{font-size:10px;padding:0 20px 0 7px}
+.control-strip .date-count,.control-strip .date-select-wrap .chevron{display:none}
+.control-strip .step-button{height:38px;font-size:20px}
+.control-strip .filter-control{width:103px;height:38px;padding:3px 18px 3px 7px}
+.control-strip .filter-label{font-size:8px}
+.control-strip .filter-control select{font-size:10px}
+.search{height:42px}
+.data-note{font-size:10px}
+.cinema-marker{width:44px;height:44px}
+.pin-shape{width:37px;height:37px;background:var(--logo-color,#c87446);border-radius:50% 50% 50% 8px}
+.pin-icon{font-size:10px;font-weight:800;letter-spacing:-.03em;max-width:27px;text-align:center;overflow:hidden;white-space:nowrap;transform:rotate(45deg)}
+.cinema-marker.selected .pin-shape{background:var(--logo-color,#2f7e74);border-color:#e3f3dc;outline:3px solid #2f7e7455}
+.cinema-name-wrap{min-width:0}
+.cinema-name-en,.popup-english-name{display:block;margin-top:2px;font-size:12px;line-height:1.4;color:var(--muted);font-weight:500;letter-spacing:.01em}
+@media(max-width:760px){.panel-head{padding:10px 13px 8px}.head-row{margin-bottom:7px}.control-strip{margin-bottom:4px;scrollbar-width:none}.control-strip::-webkit-scrollbar{display:none}.control-strip .city-control{width:112px}.control-strip .date-nav{width:142px}.control-strip .filter-control{width:96px}.control-strip .locate-button{width:34px;height:37px}.data-note{margin-top:6px;font-size:9px}.summary{padding-top:7px}.cinema-name-en{font-size:11px}}
