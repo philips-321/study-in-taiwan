@@ -1,21 +1,21 @@
 {
   "version": 3,
   "city": "pingtung",
-  "generated_at": "2026-10-24T18:58:48.331Z",
+  "generated_at": "2026-10-24T23:28:04.545Z",
   "sources": {
     "moc-culture-movie-api": {
       "ok": false,
-      "showtimes": 807,
+      "showtimes": 810,
       "error": "MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 6,
-      "fresh_showtimes": 173,
-      "fallback_showtimes": 634,
-      "fallback": "last-known-good",
+      "failure_count": 7,
+      "fresh_showtimes": 810,
+      "fallback_showtimes": 0,
+      "fallback": "unavailable",
       "last_success_at": "2026-10-23T19:07:14.709Z",
-      "last_failure_at": "2026-10-24T18:59:27.328Z",
-      "next_probe_at": "2026-10-24T19:29:27.328Z"
+      "last_failure_at": "2026-10-24T23:28:43.631Z",
+      "next_probe_at": "2026-10-24T23:58:43.631Z"
     },
     "miramar-official-api": {
       "ok": true,
@@ -26,20 +26,20 @@
       "fresh_showtimes": 357,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:59:27.328Z",
+      "last_success_at": "2026-10-24T23:28:43.631Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 2345,
+      "showtimes": 2237,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 2345,
+      "fresh_showtimes": 2237,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:59:27.328Z",
+      "last_success_at": "2026-10-24T23:28:43.631Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -49,13 +49,13 @@
       "error": "ShowTimes public API 403 Forbidden",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 1,
+      "failure_count": 2,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-10-24T18:59:27.328Z",
-      "next_probe_at": "2026-10-24T19:29:27.328Z"
+      "last_failure_at": "2026-10-24T23:28:43.631Z",
+      "next_probe_at": "2026-10-24T23:58:43.631Z"
     },
     "spot-huashan-official-schedule": {
       "ok": true,
@@ -66,7 +66,7 @@
       "fresh_showtimes": 79,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:59:27.328Z",
+      "last_success_at": "2026-10-24T23:28:43.631Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -76,13 +76,13 @@
       "error": "Eslite 403 Forbidden",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 6,
+      "failure_count": 7,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-10-24T18:59:27.328Z",
-      "next_probe_at": "2026-10-24T19:29:27.328Z"
+      "last_failure_at": "2026-10-24T23:28:43.631Z",
+      "next_probe_at": "2026-10-24T23:58:43.631Z"
     },
     "atmovies-taipei-fallback": {
       "ok": true,
@@ -90,12 +90,12 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-10-25: No showtimes parsed",
-        "t02a11/2026-10-25: No showtimes parsed",
         "t02a01/2026-10-29: No showtimes parsed",
         "t02a01/2026-10-30: No showtimes parsed",
+        "t02a11/2026-10-25: No showtimes parsed",
         "t02a11/2026-10-29: No showtimes parsed",
-        "t02a11/2026-10-30: No showtimes parsed",
         "t02a12/2026-10-25: No showtimes parsed",
+        "t02a11/2026-10-30: No showtimes parsed",
         "t02a12/2026-10-29: No showtimes parsed",
         "t02a12/2026-10-30: No showtimes parsed",
         "t02b14/2026-10-25: No showtimes parsed"
@@ -106,7 +106,7 @@
       "fresh_showtimes": 1229,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:59:27.328Z",
+      "last_success_at": "2026-10-24T23:28:43.631Z",
       "last_failure_at": null,
       "next_probe_at": null
     }
@@ -1100,6 +1100,27 @@
       "source": "ambassador-official-site"
     },
     {
+      "id": "e9204b33686acddd",
+      "cinema_id": "ec4911ca1e68c895",
+      "cinema_name": "屏東環球國賓影城",
+      "movie_title": "高年級實習生.",
+      "movie_title_en": null,
+      "rating": null,
+      "start_time": "2026-10-26T12:45:00+08:00",
+      "end_time": null,
+      "hall": "3廳 217席",
+      "format": "數位‧韓語版",
+      "audio_language": "ko",
+      "subtitles": null,
+      "duration_minutes": null,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": "4cbdc0c6-e464-4ef1-8ea4-e3626bcbbb84",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=41aae717-4464-49f4-ac26-fec2d16acbd6&DT=2026%2F10%2F26",
+      "source_role": null,
+      "source": "ambassador-official-site"
+    },
+    {
       "id": "4d97300a5668e6b3",
       "cinema_id": "ec4911ca1e68c895",
       "cinema_name": "屏東環球國賓影城",
@@ -1394,22 +1415,22 @@
       "source": "ambassador-official-site"
     },
     {
-      "id": "b3d468adcfb7529b",
+      "id": "cfdd0421e121f0bc",
       "cinema_id": "ec4911ca1e68c895",
       "cinema_name": "屏東環球國賓影城",
-      "movie_title": "泥面人",
+      "movie_title": "高年級實習生.",
       "movie_title_en": null,
       "rating": null,
-      "start_time": "2026-10-26T17:35:00+08:00",
+      "start_time": "2026-10-26T17:25:00+08:00",
       "end_time": null,
-      "hall": "1廳 208席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
+      "hall": "3廳 217席",
+      "format": "數位‧韓語版",
+      "audio_language": "ko",
       "subtitles": null,
       "duration_minutes": null,
       "price": null,
       "on_sales": null,
-      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_event_id": "4cbdc0c6-e464-4ef1-8ea4-e3626bcbbb84",
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=41aae717-4464-49f4-ac26-fec2d16acbd6&DT=2026%2F10%2F26",
       "source_role": null,
       "source": "ambassador-official-site"
@@ -1431,6 +1452,27 @@
       "price": null,
       "on_sales": null,
       "source_event_id": "723333bc-0afc-45db-815e-265c902456b5",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=41aae717-4464-49f4-ac26-fec2d16acbd6&DT=2026%2F10%2F26",
+      "source_role": null,
+      "source": "ambassador-official-site"
+    },
+    {
+      "id": "b3d468adcfb7529b",
+      "cinema_id": "ec4911ca1e68c895",
+      "cinema_name": "屏東環球國賓影城",
+      "movie_title": "泥面人",
+      "movie_title_en": null,
+      "rating": null,
+      "start_time": "2026-10-26T17:35:00+08:00",
+      "end_time": null,
+      "hall": "1廳 208席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "subtitles": null,
+      "duration_minutes": null,
+      "price": null,
+      "on_sales": null,
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=41aae717-4464-49f4-ac26-fec2d16acbd6&DT=2026%2F10%2F26",
       "source_role": null,
       "source": "ambassador-official-site"
@@ -4215,6 +4257,6 @@
       "showtimes-official-api",
       "eslite-official-schedule"
     ],
-    "restored_at": "2026-10-24T18:59:27.328Z"
+    "restored_at": "2026-10-24T23:28:43.631Z"
   }
 }

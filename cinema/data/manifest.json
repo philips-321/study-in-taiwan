@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "generated_at": "2026-10-24T18:58:48.331Z",
+  "generated_at": "2026-10-24T23:28:04.545Z",
   "timezone": "Asia/Taipei",
   "model": "fixed per-city JSON snapshots plus per-date/per-city browser payloads; all files overwritten on refresh",
   "showtimes_index": {
@@ -20,50 +20,50 @@
       }
     },
     "2026-10-25": {
-      "total": 764,
+      "total": 774,
       "cities": {
         "kaohsiung": 362,
         "new-taipei": 161,
         "pingtung": 39,
-        "taipei": 175,
-        "taoyuan": 27
+        "taipei": 162,
+        "taoyuan": 50
       }
     },
     "2026-10-26": {
-      "total": 1191,
+      "total": 1204,
       "cities": {
         "kaohsiung": 361,
         "new-taipei": 157,
-        "pingtung": 39,
-        "taipei": 607,
-        "taoyuan": 27
+        "pingtung": 41,
+        "taipei": 595,
+        "taoyuan": 50
       }
     },
     "2026-10-27": {
-      "total": 891,
+      "total": 933,
       "cities": {
         "kaohsiung": 85,
-        "new-taipei": 143,
+        "new-taipei": 185,
         "pingtung": 39,
         "taipei": 574,
         "taoyuan": 50
       }
     },
     "2026-10-28": {
-      "total": 894,
+      "total": 899,
       "cities": {
         "kaohsiung": 85,
         "new-taipei": 143,
         "pingtung": 39,
-        "taipei": 577,
+        "taipei": 582,
         "taoyuan": 50
       }
     },
     "2026-10-29": {
-      "total": 428,
+      "total": 439,
       "cities": {
-        "kaohsiung": 89,
-        "new-taipei": 140,
+        "kaohsiung": 91,
+        "new-taipei": 149,
         "pingtung": 39,
         "taipei": 112,
         "taoyuan": 48
@@ -212,19 +212,11 @@
         "nantou": 1
       }
     },
-    "2026-10-30": {
-      "total": 43,
-      "cities": {
-        "new-taipei": 27,
-        "taipei": 16
-      }
-    },
     "2026-10-31": {
-      "total": 128,
+      "total": 8,
       "cities": {
-        "new-taipei": 59,
-        "taipei": 24,
-        "taoyuan": 45
+        "new-taipei": 5,
+        "taipei": 3
       }
     },
     "2026-11-01": {
@@ -412,10 +404,28 @@
       "cities": {
         "taipei": 14
       }
+    },
+    "2026-09-19": {
+      "total": 1,
+      "cities": {
+        "unknown": 1
+      }
+    },
+    "2026-09-22": {
+      "total": 1,
+      "cities": {
+        "unknown": 1
+      }
+    },
+    "2026-10-09": {
+      "total": 1,
+      "cities": {
+        "unknown": 1
+      }
     }
   },
   "coverage": {
-    "showtime_rows": 4729,
+    "showtime_rows": 4650,
     "explicit_subtitle_rows": 79
   },
   "showtimes_payload": "The app loads date-and-city showtime chunks from showtimes/by-date; per-city showtime files remain as the complete source snapshot.",
@@ -440,17 +450,17 @@
     "showtimes": {
       "moc-culture-movie-api": {
         "ok": false,
-        "showtimes": 807,
+        "showtimes": 810,
         "error": "MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests",
         "health": "degraded",
         "circuit_state": "open",
-        "failure_count": 6,
-        "fresh_showtimes": 173,
-        "fallback_showtimes": 634,
-        "fallback": "last-known-good",
+        "failure_count": 7,
+        "fresh_showtimes": 810,
+        "fallback_showtimes": 0,
+        "fallback": "unavailable",
         "last_success_at": "2026-10-23T19:07:14.709Z",
-        "last_failure_at": "2026-10-24T18:59:27.328Z",
-        "next_probe_at": "2026-10-24T19:29:27.328Z"
+        "last_failure_at": "2026-10-24T23:28:43.631Z",
+        "next_probe_at": "2026-10-24T23:58:43.631Z"
       },
       "miramar-official-api": {
         "ok": true,
@@ -461,20 +471,20 @@
         "fresh_showtimes": 357,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-10-24T18:59:27.328Z",
+        "last_success_at": "2026-10-24T23:28:43.631Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
       "ambassador-official-site": {
         "ok": true,
-        "showtimes": 2345,
+        "showtimes": 2237,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "fresh_showtimes": 2345,
+        "fresh_showtimes": 2237,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-10-24T18:59:27.328Z",
+        "last_success_at": "2026-10-24T23:28:43.631Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
@@ -484,13 +494,13 @@
         "error": "ShowTimes public API 403 Forbidden",
         "health": "degraded",
         "circuit_state": "open",
-        "failure_count": 1,
+        "failure_count": 2,
         "fresh_showtimes": 0,
         "fallback_showtimes": 0,
         "fallback": "unavailable",
         "last_success_at": null,
-        "last_failure_at": "2026-10-24T18:59:27.328Z",
-        "next_probe_at": "2026-10-24T19:29:27.328Z"
+        "last_failure_at": "2026-10-24T23:28:43.631Z",
+        "next_probe_at": "2026-10-24T23:58:43.631Z"
       },
       "spot-huashan-official-schedule": {
         "ok": true,
@@ -501,7 +511,7 @@
         "fresh_showtimes": 79,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-10-24T18:59:27.328Z",
+        "last_success_at": "2026-10-24T23:28:43.631Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
@@ -511,13 +521,13 @@
         "error": "Eslite 403 Forbidden",
         "health": "degraded",
         "circuit_state": "open",
-        "failure_count": 6,
+        "failure_count": 7,
         "fresh_showtimes": 0,
         "fallback_showtimes": 0,
         "fallback": "unavailable",
         "last_success_at": null,
-        "last_failure_at": "2026-10-24T18:59:27.328Z",
-        "next_probe_at": "2026-10-24T19:29:27.328Z"
+        "last_failure_at": "2026-10-24T23:28:43.631Z",
+        "next_probe_at": "2026-10-24T23:58:43.631Z"
       },
       "atmovies-taipei-fallback": {
         "ok": true,
@@ -525,12 +535,12 @@
         "role": "fallback only for sources blocked/incomplete from GitHub Actions",
         "warnings": [
           "t02a01/2026-10-25: No showtimes parsed",
-          "t02a11/2026-10-25: No showtimes parsed",
           "t02a01/2026-10-29: No showtimes parsed",
           "t02a01/2026-10-30: No showtimes parsed",
+          "t02a11/2026-10-25: No showtimes parsed",
           "t02a11/2026-10-29: No showtimes parsed",
-          "t02a11/2026-10-30: No showtimes parsed",
           "t02a12/2026-10-25: No showtimes parsed",
+          "t02a11/2026-10-30: No showtimes parsed",
           "t02a12/2026-10-29: No showtimes parsed",
           "t02a12/2026-10-30: No showtimes parsed",
           "t02b14/2026-10-25: No showtimes parsed"
@@ -541,7 +551,7 @@
         "fresh_showtimes": 1229,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-10-24T18:59:27.328Z",
+        "last_success_at": "2026-10-24T23:28:43.631Z",
         "last_failure_at": null,
         "next_probe_at": null
       }
@@ -552,13 +562,13 @@
       "cinemas": 30,
       "active_cinemas": 12,
       "unknown_cinemas": 18,
-      "showtimes": 2214
+      "showtimes": 2157
     },
     "new-taipei": {
       "cinemas": 13,
       "active_cinemas": 3,
       "unknown_cinemas": 10,
-      "showtimes": 918
+      "showtimes": 888
     },
     "keelung": {
       "cinemas": 1,
@@ -570,7 +580,7 @@
       "cinemas": 9,
       "active_cinemas": 1,
       "unknown_cinemas": 8,
-      "showtimes": 247
+      "showtimes": 248
     },
     "hsinchu-city": {
       "cinemas": 2,
@@ -636,13 +646,13 @@
       "cinemas": 10,
       "active_cinemas": 2,
       "unknown_cinemas": 8,
-      "showtimes": 1151
+      "showtimes": 1153
     },
     "pingtung": {
       "cinemas": 2,
       "active_cinemas": 1,
       "unknown_cinemas": 1,
-      "showtimes": 195
+      "showtimes": 197
     },
     "yilan": {
       "cinemas": 2,
@@ -684,7 +694,7 @@
       "cinemas": 0,
       "active_cinemas": 0,
       "unknown_cinemas": 0,
-      "showtimes": 0
+      "showtimes": 3
     }
   },
   "resilience_policy": {

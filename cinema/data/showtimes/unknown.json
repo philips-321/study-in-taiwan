@@ -1,21 +1,21 @@
 {
   "version": 3,
   "city": "unknown",
-  "generated_at": "2026-10-24T18:58:48.331Z",
+  "generated_at": "2026-10-24T23:28:04.545Z",
   "sources": {
     "moc-culture-movie-api": {
       "ok": false,
-      "showtimes": 807,
+      "showtimes": 810,
       "error": "MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 6,
-      "fresh_showtimes": 173,
-      "fallback_showtimes": 634,
-      "fallback": "last-known-good",
+      "failure_count": 7,
+      "fresh_showtimes": 810,
+      "fallback_showtimes": 0,
+      "fallback": "unavailable",
       "last_success_at": "2026-10-23T19:07:14.709Z",
-      "last_failure_at": "2026-10-24T18:59:27.328Z",
-      "next_probe_at": "2026-10-24T19:29:27.328Z"
+      "last_failure_at": "2026-10-24T23:28:43.631Z",
+      "next_probe_at": "2026-10-24T23:58:43.631Z"
     },
     "miramar-official-api": {
       "ok": true,
@@ -26,20 +26,20 @@
       "fresh_showtimes": 357,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:59:27.328Z",
+      "last_success_at": "2026-10-24T23:28:43.631Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 2345,
+      "showtimes": 2237,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 2345,
+      "fresh_showtimes": 2237,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:59:27.328Z",
+      "last_success_at": "2026-10-24T23:28:43.631Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -49,13 +49,13 @@
       "error": "ShowTimes public API 403 Forbidden",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 1,
+      "failure_count": 2,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-10-24T18:59:27.328Z",
-      "next_probe_at": "2026-10-24T19:29:27.328Z"
+      "last_failure_at": "2026-10-24T23:28:43.631Z",
+      "next_probe_at": "2026-10-24T23:58:43.631Z"
     },
     "spot-huashan-official-schedule": {
       "ok": true,
@@ -66,7 +66,7 @@
       "fresh_showtimes": 79,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:59:27.328Z",
+      "last_success_at": "2026-10-24T23:28:43.631Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -76,13 +76,13 @@
       "error": "Eslite 403 Forbidden",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 6,
+      "failure_count": 7,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-10-24T18:59:27.328Z",
-      "next_probe_at": "2026-10-24T19:29:27.328Z"
+      "last_failure_at": "2026-10-24T23:28:43.631Z",
+      "next_probe_at": "2026-10-24T23:58:43.631Z"
     },
     "atmovies-taipei-fallback": {
       "ok": true,
@@ -90,12 +90,12 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-10-25: No showtimes parsed",
-        "t02a11/2026-10-25: No showtimes parsed",
         "t02a01/2026-10-29: No showtimes parsed",
         "t02a01/2026-10-30: No showtimes parsed",
+        "t02a11/2026-10-25: No showtimes parsed",
         "t02a11/2026-10-29: No showtimes parsed",
-        "t02a11/2026-10-30: No showtimes parsed",
         "t02a12/2026-10-25: No showtimes parsed",
+        "t02a11/2026-10-30: No showtimes parsed",
         "t02a12/2026-10-29: No showtimes parsed",
         "t02a12/2026-10-30: No showtimes parsed",
         "t02b14/2026-10-25: No showtimes parsed"
@@ -106,12 +106,70 @@
       "fresh_showtimes": 1229,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:59:27.328Z",
+      "last_success_at": "2026-10-24T23:28:43.631Z",
       "last_failure_at": null,
       "next_probe_at": null
     }
   },
-  "showtimes": [],
+  "showtimes": [
+    {
+      "id": "67bb5d3f6c7c5e3e",
+      "cinema_id": "1f9465ae6a1aaa52",
+      "cinema_name": "兌換券",
+      "movie_title": "2026 極度影癡套票｜高雄電影節",
+      "movie_title_en": null,
+      "start_time": "2026-09-19T13:00:00+08:00",
+      "end_time": "2026-10-26T21:00:00+08:00",
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": null,
+      "duration_minutes": null,
+      "price": "",
+      "on_sales": "Y",
+      "source_event_id": "6aaacecc26b324165c32e4e0",
+      "source_url": "https://www.opentix.life/program/2097284519051038721",
+      "source": "moc-culture-movie-api"
+    },
+    {
+      "id": "a564bd6e0464daf8",
+      "cinema_id": "1f9465ae6a1aaa52",
+      "cinema_name": "兌換券",
+      "movie_title": "2026女性影展套票",
+      "movie_title_en": null,
+      "start_time": "2026-09-22T20:00:00+08:00",
+      "end_time": "2026-10-25T23:59:00+08:00",
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": null,
+      "duration_minutes": null,
+      "price": "",
+      "on_sales": "Y",
+      "source_event_id": "6aaacecc26b324165c32e4de",
+      "source_url": "https://www.opentix.life/program/2097171706076893184",
+      "source": "moc-culture-movie-api"
+    },
+    {
+      "id": "adadb674b9e60cef",
+      "cinema_id": "1f9465ae6a1aaa52",
+      "cinema_name": "兌換券",
+      "movie_title": "XR組合套票｜TTXC XR DREAMLAND",
+      "movie_title_en": null,
+      "start_time": "2026-10-09T00:00:00+08:00",
+      "end_time": "2026-10-26T21:00:00+08:00",
+      "hall": null,
+      "format": null,
+      "audio_language": null,
+      "subtitles": null,
+      "duration_minutes": null,
+      "price": "",
+      "on_sales": "Y",
+      "source_event_id": "6aaacecc26b324165c32e4e1",
+      "source_url": "https://www.opentix.life/program/2097298366478225409",
+      "source": "moc-culture-movie-api"
+    }
+  ],
   "resilience": {
     "policy": "failed collectors preserve eligible future last-known-good rows while independent collectors continue",
     "restored_sources": [
@@ -119,6 +177,6 @@
       "showtimes-official-api",
       "eslite-official-schedule"
     ],
-    "restored_at": "2026-10-24T18:59:27.328Z"
+    "restored_at": "2026-10-24T23:28:43.631Z"
   }
 }
