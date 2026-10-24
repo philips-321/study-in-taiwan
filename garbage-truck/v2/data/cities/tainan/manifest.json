@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "city": "tainan",
+  "name_zh": "臺南市",
+  "name_en": "Tainan City",
+  "status": "source-found",
+  "source_priority": ["local_official", "moenv_national"],
+  "source_provider": "Tainan City Government Open Data",
+  "source_landing_url": "https://data.tainan.gov.tw/DataSet/Detail/57aaa860-bb03-43c2-a797-73971d6cc73d",
+  "source_direct_download_url": "https://data.tainan.gov.tw/Resource/84df8cd6-8741-41ed-919c-5105a28ecd6d",
+  "source_updated": "2026-01-28 16:41:37",
+  "route_count": 0,
+  "stop_count": 0,
+  "routes_index": "routes/index.json",
+  "tiles_manifest": "tiles/manifest.json",
+  "refresh": {
+    "mode": "manual",
+    "source_change_guard": true,
+    "network_attempts_per_request": 2,
+    "retry_after_failure": "next Monday",
+    "last_success": null,
+    "last_checked": null,
+    "last_attempt": null,
+    "last_attempt_status": null,
+    "next_retry_not_before": null
+  },
+  "notes": "Official Tainan JSON source has coordinates, route/time, collection days and recycling days. Importer is installed; food-waste schedule is not inferred when absent from source."
+}
