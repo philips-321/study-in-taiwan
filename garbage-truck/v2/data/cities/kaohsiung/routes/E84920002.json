@@ -1,0 +1,132 @@
+{
+  "version": 2,
+  "city": "kaohsiung",
+  "district": "那瑪夏區",
+  "route_id": "E84920002",
+  "route_name": "達卡線",
+  "collection_method": "沿線清運(不落地)",
+  "source": "moenv_national",
+  "source_updated": "115年10月21日",
+  "fetched_at": "2026-10-24T02:18:24+00:00",
+  "stops": [
+    {
+      "city": "kaohsiung",
+      "district": "那瑪夏區",
+      "route_id": "E84920002",
+      "route_name": "達卡線",
+      "collection_method": "沿線清運(不落地)",
+      "stop_order": 1,
+      "name": "自資收站出發",
+      "time": "16:40",
+      "lat": null,
+      "lng": null,
+      "geo_status": "unresolved",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            5
+          ]
+        },
+        "food": {
+          "known": true,
+          "days": []
+        },
+        "recycling": {
+          "known": true,
+          "days": [
+            1,
+            5
+          ]
+        }
+      },
+      "source": {
+        "provider": "MOENV nationwide garbage route database",
+        "url": "https://hwms.moenv.gov.tw/dispPageBox/trans.aspx?ddsPageID=LINEINFO&dbid=6351474991",
+        "source_updated": "115年10月21日",
+        "fetched_at": "2026-10-24T02:18:24+00:00"
+      }
+    },
+    {
+      "city": "kaohsiung",
+      "district": "那瑪夏區",
+      "route_id": "E84920002",
+      "route_name": "達卡線",
+      "collection_method": "沿線清運(不落地)",
+      "stop_order": 2,
+      "name": "瑪星哈蘭",
+      "time": "17:00",
+      "lat": null,
+      "lng": null,
+      "geo_status": "unresolved",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            3,
+            5
+          ]
+        },
+        "food": {
+          "known": true,
+          "days": []
+        },
+        "recycling": {
+          "known": true,
+          "days": [
+            1,
+            5
+          ]
+        }
+      },
+      "source": {
+        "provider": "MOENV nationwide garbage route database",
+        "url": "https://hwms.moenv.gov.tw/dispPageBox/trans.aspx?ddsPageID=LINEINFO&dbid=6351474991",
+        "source_updated": "115年10月21日",
+        "fetched_at": "2026-10-24T02:18:24+00:00"
+      }
+    },
+    {
+      "city": "kaohsiung",
+      "district": "那瑪夏區",
+      "route_id": "E84920002",
+      "route_name": "達卡線",
+      "collection_method": "沿線清運(不落地)",
+      "stop_order": 3,
+      "name": "達卡努瓦社區",
+      "time": "18:00",
+      "lat": null,
+      "lng": null,
+      "geo_status": "unresolved",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            3,
+            5
+          ]
+        },
+        "food": {
+          "known": true,
+          "days": []
+        },
+        "recycling": {
+          "known": true,
+          "days": [
+            1,
+            5
+          ]
+        }
+      },
+      "source": {
+        "provider": "MOENV nationwide garbage route database",
+        "url": "https://hwms.moenv.gov.tw/dispPageBox/trans.aspx?ddsPageID=LINEINFO&dbid=6351474991",
+        "source_updated": "115年10月21日",
+        "fetched_at": "2026-10-24T02:18:24+00:00"
+      }
+    }
+  ]
+}

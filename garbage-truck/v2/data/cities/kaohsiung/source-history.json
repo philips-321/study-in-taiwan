@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "city": "kaohsiung",
+  "checks": [
+    {
+      "checked_at": "2026-10-24T02:16:38+00:00",
+      "provider": "MOENV nationwide garbage route database",
+      "landing_url": "https://hwms.moenv.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE",
+      "direct_download_url": null,
+      "status": "checked",
+      "observed_source_updated": "115年10月21日",
+      "etag": null,
+      "last_modified": null,
+      "content_sha256": "d1033fd3ac25d566cc2f1c8d5b042a84d487d37909bdb81ebc0aa0355c03fb4a",
+      "http_status": 200
+    },
+    {
+      "checked_at": "2026-10-24T02:18:24+00:00",
+      "provider": "MOENV nationwide garbage route database",
+      "landing_url": "https://hwms.moenv.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE",
+      "direct_download_url": null,
+      "status": "published",
+      "observed_source_updated": "115年10月21日",
+      "route_count": 386,
+      "stop_count": 14168
+    }
+  ]
+}

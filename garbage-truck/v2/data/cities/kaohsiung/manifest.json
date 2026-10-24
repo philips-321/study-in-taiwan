@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "city": "kaohsiung",
+  "name_zh": "高雄市",
+  "name_en": "Kaohsiung City",
+  "status": "schedule-only",
+  "source_priority": [
+    "local_official",
+    "moenv_national"
+  ],
+  "refresh": {
+    "mode": "manual",
+    "source_change_guard": true,
+    "network_attempts_per_request": 2,
+    "retry_after_failure": "next Monday",
+    "stale_if_error": true,
+    "overwrite_on_empty": false,
+    "last_success": "2026-10-24T02:18:24+00:00",
+    "last_checked": "2026-10-24T02:18:24+00:00",
+    "last_attempt": "2026-10-24T02:18:24+00:00",
+    "last_attempt_status": "success",
+    "next_retry_not_before": null,
+    "last_error": null,
+    "last_attempt_failures": 0
+  },
+  "routes_index": "routes/index.json",
+  "tiles_manifest": "tiles/manifest.json",
+  "route_count": 386,
+  "stop_count": 14168,
+  "notes": "V2 static JSON. No D1. Manual refresh only. Published last-known-good is never replaced by a failed/partial source pull.",
+  "source_updated": "115年10月21日"
+}
