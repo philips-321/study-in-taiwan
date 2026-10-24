@@ -1,6 +1,6 @@
 {
-  "city": "kaohsiung",
+  "city": "keelung",
   "force": false,
-  "requested_at": "2026-10-24T10:00:00+08:00",
-  "reason": "Populate one city at a time using static JSON; use MOENV fallback while the current Kaohsiung official query platform has no verified bulk export endpoint."
+  "requested_at": "2026-10-24T10:27:00+08:00",
+  "reason": "Import the verified official Keelung coordinate CSV into static route JSON and small map tiles; no browser-time government API calls."
 }
