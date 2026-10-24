@@ -437,7 +437,6 @@
   async function init() {
     let savedLanguage='en',savedTheme='dark';try{savedLanguage=localStorage.getItem('cinema-language')||'en';savedTheme=localStorage.getItem('cinema-theme')||'dark';}catch{}
     language=localeInfo[savedLanguage]?savedLanguage:'en';languageSelect.value=language;setTheme(savedTheme==='light'?'light':'dark');
-    buildMap();
     try {
       const [cityData,manifest,locationData,nameData]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}}))]);
       cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};logoImages=nameData.logo_images||{};logoBackgrounds=nameData.logo_backgrounds||{};
@@ -457,6 +456,7 @@
       $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
       setLanguage(language);
       showtimesPending=true;renderResults();
+      buildMap();
       const needsLive=manifest?.sources?.showtimes?.['showtimes-official-api']?.health!=='healthy';
       if(needsLive)loadLiveShowtimes().then(()=>{
         const priorDate=dateSelect.value;setupDateOptions();if(availableDates.includes(priorDate))dateSelect.value=priorDate;syncDateControls();
