@@ -1,0 +1,287 @@
+{
+  "version": 1,
+  "tile_size_degrees": 0.1,
+  "cities": [
+    {
+      "city": "taipei",
+      "record_count": 30,
+      "source": "Taipei City Open Data",
+      "source_urls": [
+        "https://data.taipei/dataset/detail?id=6bb3304b-4f46-4bb0-8cd1-60c66dcd1cae",
+        "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=a6e90031-7ec4-4089-afb5-361a4efe7202"
+      ],
+      "tiles": [
+        {
+          "id": "25.0_121.4",
+          "file": "tiles/taipei/25.0_121.4.json",
+          "bounds": [
+            121.4,
+            25.0,
+            121.5,
+            25.1
+          ]
+        },
+        {
+          "id": "25.0_121.5",
+          "file": "tiles/taipei/25.0_121.5.json",
+          "bounds": [
+            121.5,
+            25.0,
+            121.6,
+            25.1
+          ]
+        },
+        {
+          "id": "25.0_121.6",
+          "file": "tiles/taipei/25.0_121.6.json",
+          "bounds": [
+            121.6,
+            25.0,
+            121.7,
+            25.1
+          ]
+        },
+        {
+          "id": "25.1_121.4",
+          "file": "tiles/taipei/25.1_121.4.json",
+          "bounds": [
+            121.4,
+            25.1,
+            121.5,
+            25.2
+          ]
+        },
+        {
+          "id": "25.1_121.5",
+          "file": "tiles/taipei/25.1_121.5.json",
+          "bounds": [
+            121.5,
+            25.1,
+            121.6,
+            25.2
+          ]
+        }
+      ]
+    },
+    {
+      "city": "new-taipei",
+      "record_count": 331,
+      "source": "New Taipei City official Golden Recycling Station CSV joined to its official map API coordinates",
+      "source_urls": [
+        "https://data.gov.tw/dataset/123351",
+        "https://data.ntpc.gov.tw/api/datasets/a381e1f4-86d0-4575-adb4-8d9b6a75e3c4/csv/file",
+        "https://recyclebank.epd.ntpc.gov.tw/Map/Index"
+      ],
+      "source_updated": "2026-09-04",
+      "source_pdf_rows": 343,
+      "coverage_note": "341 geocoded records returned by the official map API are included. The official PDF lists 343 rows, but the API sweep does not establish one-to-one coverage; record counts differ by district, so this dataset is partial. One 坪林區 API record has lat/lng 0 and is excluded.",
+      "acceptance_note": "Golden Recycling Stations accept recycling only in this map dataset. General trash and food waste are not marked as accepted. The official site asks visitors to confirm hours, exact address, and accepted items with the village office before visiting.",
+      "tiles": [
+        {
+          "id": "24.9_121.3",
+          "file": "tiles/new-taipei/24.9_121.3.json",
+          "bounds": [
+            121.3,
+            24.9,
+            121.4,
+            25.0
+          ]
+        },
+        {
+          "id": "24.9_121.4",
+          "file": "tiles/new-taipei/24.9_121.4.json",
+          "bounds": [
+            121.4,
+            24.9,
+            121.5,
+            25.0
+          ]
+        },
+        {
+          "id": "24.9_121.5",
+          "file": "tiles/new-taipei/24.9_121.5.json",
+          "bounds": [
+            121.5,
+            24.9,
+            121.6,
+            25.0
+          ]
+        },
+        {
+          "id": "24.9_121.6",
+          "file": "tiles/new-taipei/24.9_121.6.json",
+          "bounds": [
+            121.6,
+            24.9,
+            121.7,
+            25.0
+          ]
+        },
+        {
+          "id": "24.9_121.7",
+          "file": "tiles/new-taipei/24.9_121.7.json",
+          "bounds": [
+            121.7,
+            24.9,
+            121.8,
+            25.0
+          ]
+        },
+        {
+          "id": "25.0_121.3",
+          "file": "tiles/new-taipei/25.0_121.3.json",
+          "bounds": [
+            121.3,
+            25.0,
+            121.4,
+            25.1
+          ]
+        },
+        {
+          "id": "25.0_121.4",
+          "file": "tiles/new-taipei/25.0_121.4.json",
+          "bounds": [
+            121.4,
+            25.0,
+            121.5,
+            25.1
+          ]
+        },
+        {
+          "id": "25.0_121.5",
+          "file": "tiles/new-taipei/25.0_121.5.json",
+          "bounds": [
+            121.5,
+            25.0,
+            121.6,
+            25.1
+          ]
+        },
+        {
+          "id": "25.0_121.6",
+          "file": "tiles/new-taipei/25.0_121.6.json",
+          "bounds": [
+            121.6,
+            25.0,
+            121.7,
+            25.1
+          ]
+        },
+        {
+          "id": "25.0_121.7",
+          "file": "tiles/new-taipei/25.0_121.7.json",
+          "bounds": [
+            121.7,
+            25.0,
+            121.8,
+            25.1
+          ]
+        },
+        {
+          "id": "25.0_121.8",
+          "file": "tiles/new-taipei/25.0_121.8.json",
+          "bounds": [
+            121.8,
+            25.0,
+            121.9,
+            25.1
+          ]
+        },
+        {
+          "id": "25.0_121.9",
+          "file": "tiles/new-taipei/25.0_121.9.json",
+          "bounds": [
+            121.9,
+            25.0,
+            122.0,
+            25.1
+          ]
+        },
+        {
+          "id": "25.1_121.3",
+          "file": "tiles/new-taipei/25.1_121.3.json",
+          "bounds": [
+            121.3,
+            25.1,
+            121.4,
+            25.2
+          ]
+        },
+        {
+          "id": "25.1_121.4",
+          "file": "tiles/new-taipei/25.1_121.4.json",
+          "bounds": [
+            121.4,
+            25.1,
+            121.5,
+            25.2
+          ]
+        },
+        {
+          "id": "25.1_121.6",
+          "file": "tiles/new-taipei/25.1_121.6.json",
+          "bounds": [
+            121.6,
+            25.1,
+            121.7,
+            25.2
+          ]
+        },
+        {
+          "id": "25.1_121.7",
+          "file": "tiles/new-taipei/25.1_121.7.json",
+          "bounds": [
+            121.7,
+            25.1,
+            121.8,
+            25.2
+          ]
+        },
+        {
+          "id": "25.1_121.8",
+          "file": "tiles/new-taipei/25.1_121.8.json",
+          "bounds": [
+            121.8,
+            25.1,
+            121.9,
+            25.2
+          ]
+        },
+        {
+          "id": "25.2_121.4",
+          "file": "tiles/new-taipei/25.2_121.4.json",
+          "bounds": [
+            121.4,
+            25.2,
+            121.5,
+            25.3
+          ]
+        },
+        {
+          "id": "25.2_121.5",
+          "file": "tiles/new-taipei/25.2_121.5.json",
+          "bounds": [
+            121.5,
+            25.2,
+            121.6,
+            25.3
+          ]
+        },
+        {
+          "id": "25.2_121.6",
+          "file": "tiles/new-taipei/25.2_121.6.json",
+          "bounds": [
+            121.6,
+            25.2,
+            121.7,
+            25.3
+          ]
+        }
+      ],
+      "source_csv_rows": 346,
+      "source_csv_active_rows": 345,
+      "source_csv_paused_rows": 1,
+      "coordinate_join_note": "Map tiles include 331 operating CSV records where district, village, and official recycling address match the official map API. 6 operating records lacked an API coordinate match; 8 matched village records had a conflicting address and were excluded. One paused record is excluded. This is a partial geocoded subset."
+    }
+  ]
+}
