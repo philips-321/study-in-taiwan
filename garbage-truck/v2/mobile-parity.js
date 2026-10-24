@@ -17,6 +17,7 @@ function apply(frame){
   const d=frame.contentDocument,w=frame.contentWindow;if(!d||!w||d.getElementById('v2MobileParity'))return;
   const s=d.createElement('style');s.id='v2MobileParity';s.textContent=`
   @media(max-width:800px){
+    html[data-v2] #content{grid-template-rows:minmax(0,1fr) auto!important}
     html[data-v2] .sheet-toggle{display:flex!important}
   }
   @media(max-width:560px){
