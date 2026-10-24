@@ -29,3 +29,5 @@ district center or mark waste categories as accepted without source evidence.
 - **Hsinchu City:** 36 active recycling station records from the city DEP public API, including coordinates and opening-hour ranges. The newest record timestamp in the response is 2024-02-29; opening days are announced separately, so visitors should confirm the current schedule and accepted items with the DEP. Only recycling is marked accepted.
 
 - **Kaohsiung:** 213 operating ARM automatic recycling-machine points from the city DEP map API (214 source rows; one marked awaiting repair was excluded). The API has no last-updated field. Per-point accepted-item and schedule notes are retained from the official listing; general trash and food waste are not marked accepted.
+
+- **Taichung:** 149 of 151 Hope Recycling Station rows (two addresses shared one ambiguous coordinate and were excluded) plus 123 official smart recycling machine locations. The city CSVs provide coordinates; Hope Station schedules are shown as published, and smart machine hours are not listed. Per-machine accepted items are preserved. The source files have no update timestamp.

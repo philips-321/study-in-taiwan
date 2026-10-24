@@ -519,6 +519,167 @@
           ]
         }
       ]
+    },
+    {
+      "city": "taichung",
+      "record_count": 272,
+      "source": "Taichung City DEP public recycling map: Hope Recycling Stations and smart recycling machines",
+      "source_urls": [
+        "https://recycle.epb.taichung.gov.tw/maps/maps_04.asp",
+        "https://recycle.epb.taichung.gov.tw/maps/data04.csv",
+        "https://recycle.epb.taichung.gov.tw/maps/maps_06.asp",
+        "https://recycle.epb.taichung.gov.tw/maps/data06.csv"
+      ],
+      "retrieved": "2026-10-24",
+      "source_rows": {
+        "hope_recycling_stations": 151,
+        "smart_recycling_machines": 123
+      },
+      "excluded_ambiguous_coordinate_rows": 2,
+      "coverage_note": "Mapped 149 of 151 Hope Recycling Station rows after excluding two conflicting addresses at one identical coordinate, plus all 123 smart recycling machine rows. The city CSVs do not publish a last-updated timestamp.",
+      "acceptance_note": "Hope station listings do not specify accepted items at each site; visitors should confirm. Smart machine item lists from the official CSV are preserved per point. Only recycling is marked accepted.",
+      "tiles": [
+        {
+          "id": "24.0_120.6",
+          "file": "tiles/taichung/24.0_120.6.json",
+          "bounds": [
+            120.6,
+            24.0,
+            120.69999999999999,
+            24.1
+          ]
+        },
+        {
+          "id": "24.0_120.7",
+          "file": "tiles/taichung/24.0_120.7.json",
+          "bounds": [
+            120.7,
+            24.0,
+            120.8,
+            24.1
+          ]
+        },
+        {
+          "id": "24.1_120.5",
+          "file": "tiles/taichung/24.1_120.5.json",
+          "bounds": [
+            120.5,
+            24.1,
+            120.6,
+            24.200000000000003
+          ]
+        },
+        {
+          "id": "24.1_120.6",
+          "file": "tiles/taichung/24.1_120.6.json",
+          "bounds": [
+            120.6,
+            24.1,
+            120.69999999999999,
+            24.200000000000003
+          ]
+        },
+        {
+          "id": "24.1_120.7",
+          "file": "tiles/taichung/24.1_120.7.json",
+          "bounds": [
+            120.7,
+            24.1,
+            120.8,
+            24.200000000000003
+          ]
+        },
+        {
+          "id": "24.1_120.8",
+          "file": "tiles/taichung/24.1_120.8.json",
+          "bounds": [
+            120.8,
+            24.1,
+            120.89999999999999,
+            24.200000000000003
+          ]
+        },
+        {
+          "id": "24.2_120.5",
+          "file": "tiles/taichung/24.2_120.5.json",
+          "bounds": [
+            120.5,
+            24.2,
+            120.6,
+            24.3
+          ]
+        },
+        {
+          "id": "24.2_120.6",
+          "file": "tiles/taichung/24.2_120.6.json",
+          "bounds": [
+            120.6,
+            24.2,
+            120.69999999999999,
+            24.3
+          ]
+        },
+        {
+          "id": "24.2_120.7",
+          "file": "tiles/taichung/24.2_120.7.json",
+          "bounds": [
+            120.7,
+            24.2,
+            120.8,
+            24.3
+          ]
+        },
+        {
+          "id": "24.2_120.8",
+          "file": "tiles/taichung/24.2_120.8.json",
+          "bounds": [
+            120.8,
+            24.2,
+            120.89999999999999,
+            24.3
+          ]
+        },
+        {
+          "id": "24.3_120.5",
+          "file": "tiles/taichung/24.3_120.5.json",
+          "bounds": [
+            120.5,
+            24.3,
+            120.6,
+            24.400000000000002
+          ]
+        },
+        {
+          "id": "24.3_120.6",
+          "file": "tiles/taichung/24.3_120.6.json",
+          "bounds": [
+            120.6,
+            24.3,
+            120.69999999999999,
+            24.400000000000002
+          ]
+        },
+        {
+          "id": "24.3_120.7",
+          "file": "tiles/taichung/24.3_120.7.json",
+          "bounds": [
+            120.7,
+            24.3,
+            120.8,
+            24.400000000000002
+          ]
+        },
+        {
+          "id": "24.4_120.6",
+          "file": "tiles/taichung/24.4_120.6.json",
+          "bounds": [
+            120.6,
+            24.4,
+            120.69999999999999,
+            24.5
+          ]
+        }
+      ]
     }
   ]
 }

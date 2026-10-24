@@ -1,0 +1,4792 @@
+{
+  "version": 1,
+  "city": "taichung",
+  "source": "Taichung City DEP official recycling map CSVs",
+  "source_urls": [
+    "https://recycle.epb.taichung.gov.tw/maps/maps_04.asp",
+    "https://recycle.epb.taichung.gov.tw/maps/data04.csv",
+    "https://recycle.epb.taichung.gov.tw/maps/maps_06.asp",
+    "https://recycle.epb.taichung.gov.tw/maps/data06.csv"
+  ],
+  "retrieved": "2026-10-24",
+  "source_rows": {
+    "hope_recycling_stations": 151,
+    "smart_recycling_machines": 123
+  },
+  "excluded_ambiguous_coordinate_rows": 2,
+  "facilities": [
+    {
+      "id": "tc-hope-024bbb7b9279",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "希望資收站",
+      "address": "台中市豐原區田心路二段272巷1號",
+      "lng": 120.7199377,
+      "lat": 24.238062,
+      "hours": "每月每週三（9：00～11：00）",
+      "phone": "2527-3282",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-03171ea77faf",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "希望資收站",
+      "address": "台中市南屯區三厝里20鄰永春東七路802號",
+      "lng": 120.6316346,
+      "lat": 24.1479614,
+      "hours": "每月週一至週五（9：00～12：00）",
+      "phone": "2380-2763",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-0348a01dae3a",
+      "city": "taichung",
+      "district": "神岡區",
+      "name": "希望資收站",
+      "address": "台中市神岡區北庄路48之2號(北庄活動中心後面)",
+      "lng": 120.6661242,
+      "lat": 24.2582381,
+      "hours": "每月週六（9：00～12：00）",
+      "phone": "2562-1854",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-039131d81532",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "台中市北區柳川東路28號(活動中心)",
+      "lng": 120.6772597,
+      "lat": 24.1499665,
+      "hours": "每月每週六、日（9：00～12：00）",
+      "phone": "2201-0259",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-044a4c05c5be",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "希望資收站",
+      "address": "台中市烏日區五光里五光路105號旁",
+      "lng": 120.6529163,
+      "lat": 24.095009,
+      "hours": "每月第一、第三週週六（9：00～11：00）",
+      "phone": "2337-2378",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-054f392f88c7",
+      "city": "taichung",
+      "district": "后里區",
+      "name": "希望資收站",
+      "address": "台中市后里區圳寮路140之8號",
+      "lng": 120.7309407,
+      "lat": 24.3121001,
+      "hours": "每月第四週週六（9：00～12：00）",
+      "phone": "2556-1051",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-05fd70f38370",
+      "city": "taichung",
+      "district": "東區",
+      "name": "希望資收站",
+      "address": "臺中市東區十甲東路267號",
+      "lng": 120.7031486,
+      "lat": 24.1322925,
+      "hours": "每月週一至週五（9：00～16：00）",
+      "phone": "2213-4676",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-067679059490",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "臺中市南區興大路301巷40號",
+      "lng": 120.6703249,
+      "lat": 24.1170646,
+      "hours": "每月第三週日（8：00～10：00）",
+      "phone": "2285-6637",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-06802e5173d8",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區立德街70巷立德公園內(立德街76號旁巷子內)",
+      "lng": 120.7112956,
+      "lat": 24.153087,
+      "hours": "每月週三（8：00～12：00）",
+      "phone": "2395-8378",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-0809c3813859",
+      "city": "taichung",
+      "district": "清水區",
+      "name": "希望資收站",
+      "address": "鰲峰路、中清路八段橋下",
+      "lng": 120.5695446,
+      "lat": 24.2691015,
+      "hours": "每月週日（9：00～11：00）",
+      "phone": "2627-1576",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-0b9e83509236",
+      "city": "taichung",
+      "district": "大肚區",
+      "name": "希望資收站",
+      "address": "台中市大肚區沙田路二段646號旁(大肚活動中心)",
+      "lng": 120.5433964,
+      "lat": 24.1511254,
+      "hours": "每月週六（9：00～12：00）",
+      "phone": "2699-2379",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-0c619e8a6d6b",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區光興路516號",
+      "lng": 120.726925,
+      "lat": 24.1032059,
+      "hours": "每月週六（8：00～10：00）",
+      "phone": "2271-3369",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-0c8468433756",
+      "city": "taichung",
+      "district": "清水區",
+      "name": "希望資收站",
+      "address": "台中市清水區中社路32之2號",
+      "lng": 120.5566107,
+      "lat": 24.270327,
+      "hours": "每月週六（9：00～12：00）",
+      "phone": "2626-1397",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-0ca62515f8ce",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區復興北路16號",
+      "lng": 120.6577849,
+      "lat": 24.1217228,
+      "hours": "每月週一至週五（8：00～17：00）",
+      "phone": "2262-5689",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-0eee256cb5f6",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "希望資收站",
+      "address": "台中市北屯區遼寧路一段203號",
+      "lng": 120.694229,
+      "lat": 24.178506,
+      "hours": "每月週五（14：00～17：00）",
+      "phone": "22418838",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-148d61f1ec71",
+      "city": "taichung",
+      "district": "石岡區",
+      "name": "希望資收站",
+      "address": "石岡區九房里山下巷魚池旁",
+      "lng": 120.7845281,
+      "lat": 24.2717473,
+      "hours": "每月第三週六（08：00～10：00）",
+      "phone": "2572-1889",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-14bc963ac9f4",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "希望資收站",
+      "address": "台中市南屯區京展街222號",
+      "lng": 120.641334,
+      "lat": 24.136726,
+      "hours": "每月第三週六（8：00～10：00）",
+      "phone": "2384-9172",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-1527fb6201c1",
+      "city": "taichung",
+      "district": "大雅區",
+      "name": "希望資收站",
+      "address": "台中市大雅區永和路222號",
+      "lng": 120.645667,
+      "lat": 24.222884,
+      "hours": "每月每週一、四（9：00～11：00）",
+      "phone": "2560-8269 | 2569-4255 | 2568-4547(家)",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-17f5bbaa24ba",
+      "city": "taichung",
+      "district": "大肚區",
+      "name": "希望資收站",
+      "address": "台中市大肚區中沙路164巷5弄102號",
+      "lng": 120.576668,
+      "lat": 24.1734703,
+      "hours": "每月第二、第四週週日（9：00～11：00）",
+      "phone": "2691-6885",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-18280ffe9ad9",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區永和里南和路56號1樓（附近100公尺）",
+      "lng": 120.6665662,
+      "lat": 24.116364,
+      "hours": "每月每週六早上（11：00～17：00）",
+      "phone": "2265-5553",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-194bf38b6b58",
+      "city": "taichung",
+      "district": "清水區",
+      "name": "希望資收站",
+      "address": "台中市清水區中華路302號",
+      "lng": 120.563596,
+      "lat": 24.266663,
+      "hours": "每月第一、三週週六（9：00～11：00）",
+      "phone": "2622-4135",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-1b02ccc784fc",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "希望資收站",
+      "address": "台中市西屯區何安里四川東街49號",
+      "lng": 120.6510841,
+      "lat": 24.1646274,
+      "hours": "每月週六（9：00～12：00）",
+      "phone": "2312-4675",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-1b2b1520b5d6",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "希望資收站",
+      "address": "台中市烏日區湖日里公園路736巷102號",
+      "lng": 120.6176131,
+      "lat": 24.1043425,
+      "hours": "每月每週六（9：00～11：00）",
+      "phone": "2337-9360",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-1cb35c6fb35a",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "臺中市南區福田二街23號(福田水資源中心內一處地方)",
+      "lng": 120.659561,
+      "lat": 24.109034,
+      "hours": "每月第三週週六（10：00～12：00）",
+      "phone": "04-22634723",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-1ee6e9699eda",
+      "city": "taichung",
+      "district": "大安區",
+      "name": "希望資收站",
+      "address": "臺中市大安區福住里南北七路151號",
+      "lng": 120.6009999,
+      "lat": 24.3792401,
+      "hours": "每月第二、四週日（8：00～10：00）",
+      "phone": "2687-2379",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-1f8cb951da4f",
+      "city": "taichung",
+      "district": "霧峰區",
+      "name": "希望資收站",
+      "address": "台中市霧峰區成功路81號",
+      "lng": 120.7004766,
+      "lat": 24.0649046,
+      "hours": "每月第四週週六（09：00～11：00）",
+      "phone": "2330-1544",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-208c065691fa",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區華美街181號",
+      "lng": 120.656444,
+      "lat": 24.1462644,
+      "hours": "每月第二、第四週週三（16：00～18：00）",
+      "phone": "2301-2822",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-2165708369e8",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區工學二街236號(對面福德祠旁)",
+      "lng": 120.6611147,
+      "lat": 24.1126063,
+      "hours": "每月每週一（09:00~11:30 ）、每月每週六（13:30~16:00）",
+      "phone": "2261-0714",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-222664f8db4d",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "台中市北區邱厝里大義街20號",
+      "lng": 120.6816183,
+      "lat": 24.1582074,
+      "hours": "每月第一、第三週週六（15：00～17：00）",
+      "phone": "2235-7399",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-240baa9d7b75",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "希望資收站",
+      "address": "台中市烏日區長春街339號對面",
+      "lng": 120.6346427,
+      "lat": 24.1086609,
+      "hours": "每月週四（18：00～20：00）",
+      "phone": "2336-2773",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-24249015ae1a",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "希望資收站",
+      "address": "台中市南屯區文心南五路335號(活動中心)",
+      "lng": 120.640648,
+      "lat": 24.1317686,
+      "hours": "每月每週三（7：30～10：30）",
+      "phone": "2475-7681",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-26c39b91595a",
+      "city": "taichung",
+      "district": "龍井區",
+      "name": "希望資收站",
+      "address": "台中市龍井區遊園北路365號",
+      "lng": 120.5856681,
+      "lat": 24.1922087,
+      "hours": "每月農曆初二、十六（9：00～11：00）",
+      "phone": "2632-3568",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-26e1b4a957c2",
+      "city": "taichung",
+      "district": "東區",
+      "name": "希望資收站",
+      "address": "台中市東區合作里自強街2巷32號",
+      "lng": 120.6944564,
+      "lat": 24.1501149,
+      "hours": "每月第一週週六（9：00～11：00）",
+      "phone": "2360-3371 | 2360-9340",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-277dd379f983",
+      "city": "taichung",
+      "district": "東勢區",
+      "name": "希望資收站",
+      "address": "臺中市東勢區茂興里石城街178號",
+      "lng": 120.7901516,
+      "lat": 24.2855989,
+      "hours": "每月第三週五（09：00～12：00）",
+      "phone": "2588-6553",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-285a7895dbd5",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區瑞光街33號",
+      "lng": 120.679708,
+      "lat": 24.121485,
+      "hours": "每月週一至週六（9：00～16：30）",
+      "phone": "2286-0300",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-294534e73b35",
+      "city": "taichung",
+      "district": "龍井區",
+      "name": "希望資收站",
+      "address": "台中市龍井區龍山街95巷24號",
+      "lng": 120.5478276,
+      "lat": 24.2127095,
+      "hours": "每月週六（13：30～16：30）",
+      "phone": "2635-0458",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-2a99ef4530c8",
+      "city": "taichung",
+      "district": "東勢區",
+      "name": "希望資收站",
+      "address": "臺中市東勢區茂興里圓屯土地公前廣場",
+      "lng": 120.8034443,
+      "lat": 24.2988165,
+      "hours": "每月第三週日（09：00～12：00）",
+      "phone": "2588-6553",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-2aed977db1b5",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區振福路300巷1號(活動中心)",
+      "lng": 120.704599,
+      "lat": 24.149981,
+      "hours": "每月第一週週日（7：30～8：30）",
+      "phone": "2398-3488",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-2bb7662f0983",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "希望資收站",
+      "address": "台中市豐原區社興五街2號",
+      "lng": 120.702375,
+      "lat": 24.246196,
+      "hours": "每月第二、四週日（7：00～10：00）",
+      "phone": "2512-2130",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-2f14fef66c3e",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "希望資收站",
+      "address": "台中市北屯區和平里經補路15號旁邊（9號步道）",
+      "lng": 120.7304026,
+      "lat": 24.1805233,
+      "hours": "每月第一、第三週週六（9：00～12：00）",
+      "phone": "2239-2222",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-3398eb80f227",
+      "city": "taichung",
+      "district": "后里區",
+      "name": "希望資收站",
+      "address": "台中市后里區公館路21號",
+      "lng": 120.6603937,
+      "lat": 24.3089276,
+      "hours": "每月第一、三週日（8：00～10：00）",
+      "phone": "2556-4282",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-37529946d585",
+      "city": "taichung",
+      "district": "后里區",
+      "name": "希望資收站",
+      "address": "台中市后里區舊社路93之3號（天靈宮）",
+      "lng": 120.6990088,
+      "lat": 24.2949347,
+      "hours": "每月第四週日（6：00～8：00）",
+      "phone": "2556-6550（里長家）| 2558-0475（里辦）",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-395db04b8a7d",
+      "city": "taichung",
+      "district": "霧峰區",
+      "name": "希望資收站",
+      "address": "臺中市霧峰區吉峰里峰堤路69號",
+      "lng": 120.6896019,
+      "lat": 24.0704907,
+      "hours": "每月第一週五（9：00～11：00）",
+      "phone": "2330-9195",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-39bd581ba436",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "希望資收站",
+      "address": "台中市烏日區光日路228號(烏日社區活動中心旁的貨櫃屋)",
+      "lng": 120.623034,
+      "lat": 24.1075951,
+      "hours": "每月每週六（8：30～11：30）",
+      "phone": "2337-1644",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-39e6bbdcc23a",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區和昌街76號",
+      "lng": 120.6619507,
+      "lat": 24.1211879,
+      "hours": "每月每週六（ 09：00～11：00）",
+      "phone": "2262-2538",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-3eca2f439e9f",
+      "city": "taichung",
+      "district": "大甲區",
+      "name": "希望資收站",
+      "address": "台中市大甲區中山路一段823巷23號",
+      "lng": 120.6197697,
+      "lat": 24.3427446,
+      "hours": "每月每週四（8：00～10：00）",
+      "phone": "2687-0316",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-420170e61e14",
+      "city": "taichung",
+      "district": "大安區",
+      "name": "希望資收站",
+      "address": "台中市大安區福東一路137號",
+      "lng": 120.5862217,
+      "lat": 24.3347806,
+      "hours": "每月週六、日（5：30～10：30）",
+      "phone": "2671-0717",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-438d0220e908",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區中興東路99號(太平運動場)",
+      "lng": 120.7186241,
+      "lat": 24.1305542,
+      "hours": "每月週一（9：00～12：00）",
+      "phone": "22706655",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-43ed895e8518",
+      "city": "taichung",
+      "district": "沙鹿區",
+      "name": "希望資收站",
+      "address": "台中市沙鹿區興安路60巷口(綠光尋夢園)",
+      "lng": 120.5531634,
+      "lat": 24.2329904,
+      "hours": " 每月第二週週六（ 6：00-8：00）",
+      "phone": "2665-5637",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-471d5438c717",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "希望資收站",
+      "address": "台中市南屯區大墩14街127號",
+      "lng": 120.649855,
+      "lat": 24.15227,
+      "hours": "每月周日 9：00-11：00",
+      "phone": "2326-7870",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-4bdf01eb875d",
+      "city": "taichung",
+      "district": "東勢區",
+      "name": "希望資收站",
+      "address": "台中市東勢區中寧里文化街115巷3號 ",
+      "lng": 120.8245425,
+      "lat": 24.2555978,
+      "hours": "每天全時段開放",
+      "phone": "2588-6697",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-4dc945e6f1b4",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區樹德里大慶街2段49之68號 ",
+      "lng": 120.6466876,
+      "lat": 24.1174473,
+      "hours": "每月每週三、每週五（ 9：00～11：00）",
+      "phone": "2265-4526",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-4e0a484bb354",
+      "city": "taichung",
+      "district": "霧峰區",
+      "name": "希望資收站",
+      "address": "臺中市霧峰區六股里六股路51號",
+      "lng": 120.6890097,
+      "lat": 24.0378055,
+      "hours": "每月每週三、六（9：00～11：00）",
+      "phone": "2330-5595 | 2330-8902",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-4e78db54f374",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "希望資收站",
+      "address": "台中市北屯區國校巷43號",
+      "lng": 120.6884147,
+      "lat": 24.1645697,
+      "hours": "每月每週六（9：00～11：00）",
+      "phone": "2237-8967",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-504838587f9a",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區日興街與篤行路口（朝奉宮旁）",
+      "lng": 120.674017,
+      "lat": 24.1495848,
+      "hours": "每月每週六（8：00～10：00）",
+      "phone": "2203-8188",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-5131fce126a2",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "希望資收站",
+      "address": "台中市西屯區工業38路168號",
+      "lng": 120.5858477,
+      "lat": 24.1761633,
+      "hours": "每月第三週週六（8：30～10：30）",
+      "phone": " 2350-0715",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-51b007343d86",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "希望資收站",
+      "address": "台中市南屯區河南路四段150-2號",
+      "lng": 120.633994,
+      "lat": 24.156748,
+      "hours": "【八月份】為8/10及8/17（9：00～11：00)、【九月份】為9/14及9/21（9：00～11：00)、每月第二、第四週週六（9：00～11：00）",
+      "phone": "2258-9818",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-530fe64c236f",
+      "city": "taichung",
+      "district": "潭子區",
+      "name": "希望資收站",
+      "address": "台中市潭子區勝利路152號",
+      "lng": 120.6986316,
+      "lat": 24.2111398,
+      "hours": "每月週二、五（9：00～12：00）",
+      "phone": "2535-0378",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-54af38a88ff9",
+      "city": "taichung",
+      "district": "神岡區",
+      "name": "希望資收站",
+      "address": "台中市神岡區溪洲里國道四號下資源回收站",
+      "lng": 120.6821544,
+      "lat": 24.270536,
+      "hours": "每月每週日（08：00～12：00）",
+      "phone": " 2562-7121",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-562394a1ddcc",
+      "city": "taichung",
+      "district": "大安區",
+      "name": "希望資收站",
+      "address": "台中市大安區南埔里4鄰南安路400巷10號",
+      "lng": 120.5657731,
+      "lat": 24.3402628,
+      "hours": "每月週日（15：00～18：00）",
+      "phone": "2671-3836",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-5e837c71d484",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "希望資收站",
+      "address": "台中市北屯區遼寧路2段56號",
+      "lng": 120.6942032,
+      "lat": 24.1848445,
+      "hours": "每月第一週週日（9：00～11：00）",
+      "phone": "2243-1078",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-5f4732ca8868",
+      "city": "taichung",
+      "district": "石岡區",
+      "name": "希望資收站",
+      "address": "台中市石岡區大勇街1號(石岡里臨時活動中心）",
+      "lng": 120.7717275,
+      "lat": 24.2753826,
+      "hours": "每月第二、第四週週六（8：00～10：00）",
+      "phone": "2572-1730",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-5f79aefd89f4",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "希望資收站",
+      "address": "台中市豐原區翁子里5鄰豐勢路二段290巷12號",
+      "lng": 120.740187,
+      "lat": 24.2630275,
+      "hours": "每月每週三、每週五（8：00～12：00）",
+      "phone": "2513-2005",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-608058fd4169",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "台中市北區賴旺里中清路一段880巷11號(活動中心)",
+      "lng": 120.6701053,
+      "lat": 24.1734959,
+      "hours": "每月第二、四週六（9：00～11：30）",
+      "phone": "2296-1003",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-62bbf2462afd",
+      "city": "taichung",
+      "district": "潭子區",
+      "name": "希望資收站",
+      "address": "台中市潭子區潭秀里雅潭路1段39巷10號",
+      "lng": 120.7026121,
+      "lat": 24.2155742,
+      "hours": "每月週六（08：00～10：00）\n每月週五（15：00～17：00）",
+      "phone": "2532-0457",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-62ddb116a768",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "希望資收站",
+      "address": "台中市北屯區大連路三段203號前面(豐田公園)",
+      "lng": 120.6944994,
+      "lat": 24.1740341,
+      "hours": "每月週三（9：00～12：00）",
+      "phone": "2243-8492",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-67079454c54c",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區長億里6鄰太平三街59號",
+      "lng": 120.718832,
+      "lat": 24.11774,
+      "hours": "每月週日（7：00～11：30）",
+      "phone": "2278-5777",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-672f019b7c7f",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "臺中市南區復興路2段158號",
+      "lng": 120.663242,
+      "lat": 24.126344,
+      "hours": "每月週一至週五（9：00～17：00）",
+      "phone": "2265-2911 | 2261-7006",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-6740d7aa4f95",
+      "city": "taichung",
+      "district": "清水區",
+      "name": "希望資收站",
+      "address": "台中市清水區高美路409號",
+      "lng": 120.5630169,
+      "lat": 24.2918491,
+      "hours": "每月週六（8：00～11：00）",
+      "phone": "2626-3583",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-680d71f660da",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區模範街9巷9號",
+      "lng": 120.6639167,
+      "lat": 24.1478553,
+      "hours": "每月週六（15：00～17：00）",
+      "phone": "2302-8800",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-6a8a46613b40",
+      "city": "taichung",
+      "district": "清水區",
+      "name": "希望資收站",
+      "address": "台中市清水區中社里建國路126號",
+      "lng": 120.5575653,
+      "lat": 24.2709389,
+      "hours": "每月週四（9：00～12：00）",
+      "phone": "2628-0018",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-6af6c032f705",
+      "city": "taichung",
+      "district": "中區",
+      "name": "希望資收站",
+      "address": "臺中市中區興中街88號(活動中心)",
+      "lng": 120.6775832,
+      "lat": 24.1443111,
+      "hours": "每月第二、第四週週二（14：00～15：40）",
+      "phone": "2220-2911",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-6cd51dfd22c3",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區福隆里光興路1463巷8號(活動中心旁)",
+      "lng": 120.7315444,
+      "lat": 24.1258252,
+      "hours": "每月週一（8：30～10：30）、每月週六（9：00～11：00）",
+      "phone": "2278-6206",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-728d6b425ad7",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "希望資收站",
+      "address": "臺中市南屯區永定里18鄰黎明路二段71巷7號",
+      "lng": 120.63373,
+      "lat": 24.14441,
+      "hours": "每月週三（9：00～17：00）",
+      "phone": " 2385-3583",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-79b0728bac26",
+      "city": "taichung",
+      "district": "清水區",
+      "name": "希望資收站",
+      "address": "台中市清水區高美路365巷7-6號",
+      "lng": 120.5647023,
+      "lat": 24.2913442,
+      "hours": "不定時",
+      "phone": "26260991",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-7acb004cb597",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "希望資收站",
+      "address": "台中市西屯區福和里5鄰福安十街11巷6號",
+      "lng": 120.615508,
+      "lat": 24.174689,
+      "hours": "每月周五（ 9：00～12：00）",
+      "phone": "2350-8889",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-7be39496a531",
+      "city": "taichung",
+      "district": "東勢區",
+      "name": "希望資收站",
+      "address": "台中市東勢區上城街170巷16號",
+      "lng": 120.8360632,
+      "lat": 24.2164442,
+      "hours": "每月週一至週五（9：00～11：30）",
+      "phone": "2585-3520",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-7c41993a8bae",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "希望資收站",
+      "address": "臺中市大里區長榮里德芳路一段195號",
+      "lng": 120.6848254,
+      "lat": 24.1093432,
+      "hours": "每月第一、三週六（7：30～9：30）",
+      "phone": "2486-6887",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-7e8492819161",
+      "city": "taichung",
+      "district": "潭子區",
+      "name": "希望資收站",
+      "address": "高架鐵路邊潭子區農會；潭子街三段81號對面",
+      "lng": 120.7037104,
+      "lat": 24.2153625,
+      "hours": "每月週五（15：00～17：00）",
+      "phone": "2532-0457",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-7efa93eaa861",
+      "city": "taichung",
+      "district": "清水區",
+      "name": "希望資收站",
+      "address": "臺中市清水區三美路130號",
+      "lng": 120.5756456,
+      "lat": 24.2995647,
+      "hours": "每月第一、三週日（7：30～9：30）",
+      "phone": "2626-3802",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-7fd525945f33",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "希望資收站",
+      "address": "台中市豐原區陽明街77號",
+      "lng": 120.7194751,
+      "lat": 24.2468795,
+      "hours": "每月第二週週五（7：30～10：30）",
+      "phone": "2526-9003",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-7ffb4165f940",
+      "city": "taichung",
+      "district": "大甲區",
+      "name": "希望資收站",
+      "address": "台中市大甲區中山路二段56號",
+      "lng": 120.6505849,
+      "lat": 24.3768558,
+      "hours": "每月週六、日（8：00～17：00）",
+      "phone": "2681-6090",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-84998c3acfc5",
+      "city": "taichung",
+      "district": "大肚區",
+      "name": "希望資收站",
+      "address": "台中市大肚區瑞井里2鄰遊園路一段105-6號 ",
+      "lng": 120.5694778,
+      "lat": 24.1644247,
+      "hours": "每月第一、第三週週日（9：00～11：00）",
+      "phone": "2691-6310",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-863730ca25d2",
+      "city": "taichung",
+      "district": "后里區",
+      "name": "希望資收站",
+      "address": "台中市后里區泉州路19之2號",
+      "lng": 120.7249327,
+      "lat": 24.3130038,
+      "hours": "每月第四週週日（9：00～11：00）",
+      "phone": "2556-7710",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-88203b45f54d",
+      "city": "taichung",
+      "district": "大安區",
+      "name": "希望資收站",
+      "address": "台中市大安區中庄里南埔路78巷路口",
+      "lng": 120.579265,
+      "lat": 24.350139,
+      "hours": "每月週六（9：00～11：00）",
+      "phone": "2671-2263",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-8979619f00cb",
+      "city": "taichung",
+      "district": "新社區",
+      "name": "希望資收站",
+      "address": "臺中市新社區興義街217號",
+      "lng": 120.8113486,
+      "lat": 24.1931315,
+      "hours": "每月第一週五（15：00～16：00）",
+      "phone": "2581-8356",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-8cc9010e4ffc",
+      "city": "taichung",
+      "district": "沙鹿區",
+      "name": "希望資收站",
+      "address": "台中市沙鹿區清泉里東大路二段1579號(活動中心)",
+      "lng": 120.612437,
+      "lat": 24.2419034,
+      "hours": " 每月最後一週週五（ 9：00-11：00）",
+      "phone": "2615-1920",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-8f807a5b7e92",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區宜佳里宜佳街31巷7號對面",
+      "lng": 120.711339,
+      "lat": 24.139345,
+      "hours": "每月週三、六（ 9：00～12：00）",
+      "phone": "2277-9005",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-903e06eb5438",
+      "city": "taichung",
+      "district": "大肚區",
+      "name": "希望資收站",
+      "address": "臺中市大肚區山陽里沙田路3段950號(大肚區鎧鑫科技公司旁巷子往前100公尺的18啦開心農場內旁邊)",
+      "lng": 120.5406102,
+      "lat": 24.1706149,
+      "hours": "每月週六（8：30～10：30）",
+      "phone": "2699-5866",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-9081cc269e6c",
+      "city": "taichung",
+      "district": "后里區",
+      "name": "希望資收站",
+      "address": "台中市后里區大山路211號",
+      "lng": 120.7246749,
+      "lat": 24.3060989,
+      "hours": "108年【4/28（7：00～8：00）、5/19（7：00～8：00）、6/30（7：00～8：00）、7/21（7：00～8：00）、8/18（7：00～8：00）、9/22（7：00～8：00）、10/20（7：00～8：00）、11/17（7：00～8：00）、12/18（7：00～8：00）】",
+      "phone": "2556-6034",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-935f72d4ca68",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區德義里仁義街117號",
+      "lng": 120.6722554,
+      "lat": 24.1255056,
+      "hours": "每周一  8：00-10：00",
+      "phone": "2287-2447",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-93903d7a5c06",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "希望資收站",
+      "address": "台中市北屯區昌平路二段31巷15號",
+      "lng": 120.6829213,
+      "lat": 24.1895069,
+      "hours": "每月每週一、三（9：00～11：00）",
+      "phone": "2422-5302",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-9650c77bc194",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "台中市北區育德路122號",
+      "lng": 120.6707273,
+      "lat": 24.15777,
+      "hours": "每月週一至週五（ 9：00～18：00）",
+      "phone": "2202-5406",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-96d5394a35e1",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "希望資收站",
+      "address": "台中市大里區光正路2號",
+      "lng": 120.7101517,
+      "lat": 24.0863664,
+      "hours": "每月週一、三（9：00～11：00）",
+      "phone": "2491-2089",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-976d4ff62a49",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "希望資收站",
+      "address": "台中市豐原區鎌村路465巷90號",
+      "lng": 120.726711,
+      "lat": 24.2263309,
+      "hours": "每月第一、第三週週日（7：00～9：00）",
+      "phone": "2536-7874",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-99a31642acbf",
+      "city": "taichung",
+      "district": "石岡區",
+      "name": "希望資收站",
+      "address": "台中市石岡區龍興里萬仙街3號(活動中心)",
+      "lng": 120.7893666,
+      "lat": 24.2571647,
+      "hours": "每月週一至週五（9：00～13：00）",
+      "phone": "2581-5460",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-9d4ab37050cc",
+      "city": "taichung",
+      "district": "中區",
+      "name": "希望資收站",
+      "address": "台中市中區公園里11鄰自由路二段99號",
+      "lng": 120.6807969,
+      "lat": 24.141159,
+      "hours": "每月週三（ 14：00～17：00）",
+      "phone": "2220-6645",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-a14a27c83ba4",
+      "city": "taichung",
+      "district": "神岡區",
+      "name": "希望資收站",
+      "address": "台中市神岡區三民南路333巷106號",
+      "lng": 120.6489507,
+      "lat": 24.2499308,
+      "hours": "每月第二週週六（9：00～12：00）",
+      "phone": "2562-4429",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-a25d468d95fa",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "台中市北區長青里武昌路66號對面（長青活動中心）",
+      "lng": 120.6672317,
+      "lat": 24.1681182,
+      "hours": "每月週一、五（9：00～12：00）",
+      "phone": "2291-8691",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-a55c4d11fbce",
+      "city": "taichung",
+      "district": "外埔區",
+      "name": "希望資收站",
+      "address": "台中市外埔區六分路90號（活動中心）",
+      "lng": 120.6766188,
+      "lat": 24.3316594,
+      "hours": "每月週日（7：00～10：00）",
+      "phone": "2683-2614",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-a64987e3b373",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區福南街89號 ",
+      "lng": 120.6653642,
+      "lat": 24.1234905,
+      "hours": "每月周一、三、五（ 15：00～16：00）",
+      "phone": "2261-0878",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-a69e1aff4338",
+      "city": "taichung",
+      "district": "大肚區",
+      "name": "希望資收站",
+      "address": "台中市大肚區太平路30號",
+      "lng": 120.5725849,
+      "lat": 24.1715731,
+      "hours": "每月第一、第三週週六（15：00～17：00）",
+      "phone": "2691-0437",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-a85d3119da24",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "臺中市太平區新平路三段39號",
+      "lng": 120.7171878,
+      "lat": 24.1496791,
+      "hours": "每月第一、三週週六（9：00～12：00、14：00～17：00）",
+      "phone": "2393-0996",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-a9e67250d0f5",
+      "city": "taichung",
+      "district": "東區",
+      "name": "希望資收站",
+      "address": "台中市東區福明街118號",
+      "lng": 120.6915109,
+      "lat": 24.1464955,
+      "hours": "每月第二、第四週週六（9：00～11：00）",
+      "phone": "2211-5088",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-adba2057f4f9",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區大全街61巷9號",
+      "lng": 120.6674395,
+      "lat": 24.133976,
+      "hours": "每月第一、第三週週六（9：00～11：00）",
+      "phone": "2371-3710",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-b0b0abf1036c",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "希望資收站",
+      "address": "台中市豐原區圓環東路918號(活動中心)",
+      "lng": 120.7272289,
+      "lat": 24.2567088,
+      "hours": "每月第一、三週六（9：00～11：00）",
+      "phone": "2513-2523",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-b2f9e6422d08",
+      "city": "taichung",
+      "district": "新社區",
+      "name": "希望資收站",
+      "address": "台中市新社區中和里10鄰中興街185號",
+      "lng": 120.8236153,
+      "lat": 24.1633267,
+      "hours": "每月週日（8：00～12：00）",
+      "phone": "2593-1011",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-b3a1b6b51e5c",
+      "city": "taichung",
+      "district": "大肚區",
+      "name": "希望資收站",
+      "address": "台中市大肚區沙田路二段562巷108之5號(活動中心)",
+      "lng": 120.5453411,
+      "lat": 24.1489335,
+      "hours": "每月第一、三週日（8：00～10：00）",
+      "phone": "2699-0115",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-b5e9dbb3095c",
+      "city": "taichung",
+      "district": "后里區",
+      "name": "希望資收站",
+      "address": "台中市后里區水門路43-6號",
+      "lng": 120.6809549,
+      "lat": 24.3061603,
+      "hours": "每月周日（ 9：00～13：00）",
+      "phone": "2557-2134",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-b60cdce31b96",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區長安東路天橋下(屯區藝文中心停車場旁)",
+      "lng": 120.7328239,
+      "lat": 24.1568615,
+      "hours": "每月每週六（8：30～11：00）",
+      "phone": "2393-0236",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-b6c0e2ac678a",
+      "city": "taichung",
+      "district": "外埔區",
+      "name": "希望資收站",
+      "address": "台中市外埔區六分里六分路280巷8號",
+      "lng": 120.6543781,
+      "lat": 24.3324518,
+      "hours": "每月週六、日（8：00～12：00）",
+      "phone": "2683-2197",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-b6c4b488406e",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區民生路142-2號",
+      "lng": 120.6673492,
+      "lat": 24.1444455,
+      "hours": "每月第一週日（9：00～11：00）",
+      "phone": "22239053",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-ba034589f192",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區民權路281號",
+      "lng": 120.6681723,
+      "lat": 24.152958,
+      "hours": "每月每週星期一、二、四、五（ 8：30～12：00）",
+      "phone": "2322-1875",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-ba125cb14cdb",
+      "city": "taichung",
+      "district": "大甲區",
+      "name": "希望資收站",
+      "address": "台中市大甲區黎明路2-11號",
+      "lng": 120.652614,
+      "lat": 24.39151,
+      "hours": "每月週日（8：00～10：00）",
+      "phone": "2681-6536",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-c0f3ee4eb526",
+      "city": "taichung",
+      "district": "東區",
+      "name": "希望資收站",
+      "address": "台中市東區南京東路一段326號",
+      "lng": 120.6947499,
+      "lat": 24.1460639,
+      "hours": "每月每週一至週六（ 9：00～12：00、 14：00～18：00）",
+      "phone": "2211-2705",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-c4e78c53e8dd",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "希望資收站",
+      "address": "台中市烏日區溪南路一段506巷500號",
+      "lng": 120.6300853,
+      "lat": 24.0785655,
+      "hours": "每月每週三、日（14：00～17：00）",
+      "phone": "2335-3007",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-c6cd1300bbe0",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "台中市北區梅亭街447號",
+      "lng": 120.6755598,
+      "lat": 24.1603457,
+      "hours": "每月週四（13：30～15：00）",
+      "phone": "2205-9589",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-c8d45972b91c",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "希望資收站",
+      "address": "台中市西屯區何南里大隆路108號",
+      "lng": 120.649536,
+      "lat": 24.157207,
+      "hours": "每月週四（9：00～11：00、14：00～16：00）",
+      "phone": "2329-6865",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-cc5ea539b143",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區柳川東路一段97號",
+      "lng": 120.6585793,
+      "lat": 24.130765,
+      "hours": "每月週一、三、五（8：00～12：00）",
+      "phone": "2376-3080",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-ce0b3211fdbc",
+      "city": "taichung",
+      "district": "沙鹿區",
+      "name": "希望資收站",
+      "address": "台中市沙鹿區中清路六段263巷68號(沙鹿區公明里社區發展協會)",
+      "lng": 120.605315,
+      "lat": 24.2456144,
+      "hours": "每月第二、第四週週六（9：00～12：00）",
+      "phone": "2615-1578",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-cf5c020b030d",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "希望資收站",
+      "address": "台中市西屯區大墩17街88號3樓(活動中心)",
+      "lng": 120.6457677,
+      "lat": 24.155723,
+      "hours": "每月週五（9：00～11：00）",
+      "phone": "2322-3355",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-cf8be9a1efb9",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區西屯路一段９６之１號",
+      "lng": 120.6707528,
+      "lat": 24.1502445,
+      "hours": "第二、三、四週六",
+      "phone": "2203-8188",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-d05e5567a391",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "臺中市西區民生路126巷21號",
+      "lng": 120.670407,
+      "lat": 24.1423049,
+      "hours": "每月第二、四週一（16：30～18：00）",
+      "phone": "2222-1058",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-d0f116ed5133",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "臺中市北區太原路二段208號旁邊",
+      "lng": 120.681078,
+      "lat": 24.1651,
+      "hours": "每月每週三、日（19：00～21：00）",
+      "phone": "04-22362106",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-d224933fe9ee",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區長春里台中路42號",
+      "lng": 120.680384,
+      "lat": 24.13459,
+      "hours": "每月週三（10：00～12：00）",
+      "phone": "2223-0373",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-d6b1c8906e37",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區中山路一段313巷26號(里辦斜對面)",
+      "lng": 120.731393,
+      "lat": 24.144638,
+      "hours": "每月第二週六（09：00～11：00）",
+      "phone": "2393-1341",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-daf8c08f6a06",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區五權三街200號",
+      "lng": 120.6590818,
+      "lat": 24.1380939,
+      "hours": "每月每週六（9：00～11：00）",
+      "phone": "2372-9868",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-e1b22b0d19cd",
+      "city": "taichung",
+      "district": "新社區",
+      "name": "希望資收站",
+      "address": "台中市新社區興社街一段139號(活動中心)",
+      "lng": 120.8192169,
+      "lat": 24.2064367,
+      "hours": "每月第二、第四週週四（8：00～9：00）",
+      "phone": "2582-1327",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-e32a9f9925d1",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區崇倫街52-3號",
+      "lng": 120.6552794,
+      "lat": 24.1288684,
+      "hours": "每月週四（9：00～11：00）",
+      "phone": "2372-4508",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-e3883ed85f9a",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區中興街269號旁巷子(興農宮)",
+      "lng": 120.6601949,
+      "lat": 24.1535269,
+      "hours": "每月第一週日（9：00～11：00）",
+      "phone": "2321-3191",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-e4b76f653184",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "台中市太平區新坪里育才路2-1號(樂安宮)",
+      "lng": 120.7219111,
+      "lat": 24.1557213,
+      "hours": "每月週三至週四（9：00～12：00）",
+      "phone": "2391-5560",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-e502e1be36e0",
+      "city": "taichung",
+      "district": "元宮前",
+      "name": "希望資收站",
+      "address": "東寶三元宮前廣場（台中市潭子區東寶里昌平路三段492巷170弄21號）",
+      "lng": 120.675755,
+      "lat": 24.2071939,
+      "hours": "每月第一、第三週週日（7：00～9：00）",
+      "phone": "25341909",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-e899640ac3bb",
+      "city": "taichung",
+      "district": "石岡區",
+      "name": "希望資收站",
+      "address": "石岡區九房里九房巷124號前福德祠",
+      "lng": 120.778822,
+      "lat": 24.2759932,
+      "hours": "每月第一週六（08：00～10：00）",
+      "phone": "2572-1889",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-e91599e6f1b7",
+      "city": "taichung",
+      "district": "東區",
+      "name": "希望資收站",
+      "address": "台中市東區互助街27號",
+      "lng": 120.6823149,
+      "lat": 24.1341129,
+      "hours": "每月第三週五（9：00～12：00）",
+      "phone": "2222-2115",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-e93fdd0311cd",
+      "city": "taichung",
+      "district": "后里區",
+      "name": "希望資收站",
+      "address": "台中市后里區福興路67之1號",
+      "lng": 120.7412751,
+      "lat": 24.3218734,
+      "hours": "每月第三週日（6：00～8：00）",
+      "phone": "2556-7782",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-eb0f1ec366b2",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "台中市北區梅川里青島路二段147號",
+      "lng": 120.676053,
+      "lat": 24.1687519,
+      "hours": "每月第三週週五（15：00～17：00）",
+      "phone": "2291-8405",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-ed89bbcca454",
+      "city": "taichung",
+      "district": "南區",
+      "name": "希望資收站",
+      "address": "台中市南區南區工學路141號",
+      "lng": 120.6574196,
+      "lat": 24.1168103,
+      "hours": "每月週二、四（10：00～11：00）",
+      "phone": "2260-0022",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-eec37c3869b3",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "希望資收站",
+      "address": "台中市豐原區福德路4號",
+      "lng": 120.706679,
+      "lat": 24.2539994,
+      "hours": "每月第二、四週週日（7：00～8：30）",
+      "phone": "2520-6740",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-f284090d164c",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "希望資收站",
+      "address": "台中市西屯區安林路29號（永興宮）",
+      "lng": 120.6210641,
+      "lat": 24.1982423,
+      "hours": "每月週日（9：00～12：00）",
+      "phone": "24629207",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-f3c38286986d",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "希望資收站",
+      "address": "台中市豐原區中興里三村路98-1號",
+      "lng": 120.7078541,
+      "lat": 24.2415962,
+      "hours": "每月第一週週日（8：00～9：30）",
+      "phone": "2523-5204",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-f3cbcc8ea6a4",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "希望資收站",
+      "address": "台中市北屯區天津路4段212號",
+      "lng": 120.688795,
+      "lat": 24.168385,
+      "hours": "每月週三（9：00～11：00）",
+      "phone": "2233-8970",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-f657196fb150",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "希望資收站",
+      "address": "臺中市太平區光隆里光明路36之6號",
+      "lng": 120.7302105,
+      "lat": 24.1090791,
+      "hours": "每月一、三、五週六（8：00～10：00）",
+      "phone": "2278-9661",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-f6d8311f2a90",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "台中市北區北興街184號",
+      "lng": 120.6836714,
+      "lat": 24.1639883,
+      "hours": "每月週三、五（9：00～11：00、14：00～16：00）",
+      "phone": "2230-7497",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-f70483636cb8",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區五廊街143號",
+      "lng": 120.6641953,
+      "lat": 24.1378596,
+      "hours": "每月第一週一（14：00～16：00）、每月第三週日（9：00～11：00）",
+      "phone": "2376-1278",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-f98b91c525fc",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "希望資收站",
+      "address": "台中市南屯區南屯路二段495號",
+      "lng": 120.6389746,
+      "lat": 24.1382998,
+      "hours": "每月第四週六（9：00～10：00）",
+      "phone": "2381-7999",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-fccc5f961f59",
+      "city": "taichung",
+      "district": "北區",
+      "name": "希望資收站",
+      "address": "台中市北區西屯路一段319巷20號",
+      "lng": 120.662907,
+      "lat": 24.1596349,
+      "hours": "每月週日（9：00～12：00）",
+      "phone": "2322-8051",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-fef99c0b3e5f",
+      "city": "taichung",
+      "district": "霧峰區",
+      "name": "希望資收站",
+      "address": "台中市霧峰區萬豐里中正路150巷1號",
+      "lng": 120.6946249,
+      "lat": 24.0247025,
+      "hours": "每月每週五（9：00～11：00）",
+      "phone": "2332-5751",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-ff3222928539",
+      "city": "taichung",
+      "district": "西區",
+      "name": "希望資收站",
+      "address": "台中市西區柳川西路二段11號",
+      "lng": 120.6606473,
+      "lat": 24.1325904,
+      "hours": "每月第四週週三（9：00～11：00）",
+      "phone": "2371-3948",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-hope-ffbd5199b14d",
+      "city": "taichung",
+      "district": "大甲區",
+      "name": "希望資收站",
+      "address": "臺中市大甲區幼四路32之3號",
+      "lng": 120.6467213,
+      "lat": 24.4041639,
+      "hours": "每月第二、四週日（6：00～8：00）",
+      "phone": "2681-1130",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "The city listing does not specify accepted items by station. Confirm the items and schedule before visiting."
+    },
+    {
+      "id": "tc-smart-00752bad0b9d",
+      "city": "taichung",
+      "district": "東區",
+      "name": "7-ELEVEN 智德門市",
+      "address": "401臺中市東區大智路336號",
+      "lng": 120.690641,
+      "lat": 24.129676,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-0118ea7cc8d7",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "台新南屯大樓",
+      "address": "408 臺中市南屯區東興路二段187號",
+      "lng": 120.6528997,
+      "lat": 24.1412109,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-01983f19be81",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "全聯福利中心台中敦化店站",
+      "address": "406臺中市北屯區敦化路一段227號",
+      "lng": 120.673233,
+      "lat": 24.190119,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-05b8df116767",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "特力屋台中大墩店站",
+      "address": "408臺中市南屯區大墩路533號地下一樓",
+      "lng": 120.649753,
+      "lat": 24.149669,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-07008a65dce2",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "7-ELEVEN 美群門市",
+      "address": "412臺中市大里區美群路60號",
+      "lng": 120.7084262,
+      "lat": 24.08557118,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-0bbea5a76ac6",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "特力屋豐原店站",
+      "address": "420臺中市豐原區水源路420號",
+      "lng": 120.735561,
+      "lat": 24.257,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-0c55feeab75a",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "全聯福利中心台中中平店站",
+      "address": "407臺中市西屯區港尾里中平路1375號",
+      "lng": 120.656378,
+      "lat": 24.1958716,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-0d1167a97227",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "小北百貨台中天津店站",
+      "address": "406臺中市北屯區天津路三段108號",
+      "lng": 120.683612,
+      "lat": 24.169683,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-0d1b0f67bb7b",
+      "city": "taichung",
+      "district": "北區",
+      "name": "小北百貨台中健行店站",
+      "address": "404臺中市北區健行路835號",
+      "lng": 120.670307,
+      "lat": 24.158979,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-0d58d5df8843",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "7-ELEVEN 豐勇門市",
+      "address": "420臺中市豐原區三豐路一段155.157.159號1樓",
+      "lng": 120.72129,
+      "lat": 24.25811,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-0e276b4bf8d8",
+      "city": "taichung",
+      "district": "清水區",
+      "name": "全聯福利中心清水中山店站",
+      "address": "436臺中市清水區中山路8號",
+      "lng": 120.571669,
+      "lat": 24.259396,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-16a0a9d0d41b",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "全聯福利中心台中崇德八店站",
+      "address": "406臺中市北屯區崇德八路一段366、368號",
+      "lng": 120.682671,
+      "lat": 24.183823,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-1b60927b8379",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "小北百貨台中旅順店站",
+      "address": "406臺中市北屯區旅順路二段351號",
+      "lng": 120.695385,
+      "lat": 24.17366,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-1c3d8d42bef2",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "全聯福利中心台中惠文店站",
+      "address": "408臺中市南屯區惠文路338。338-1。338-2號",
+      "lng": 120.6432859,
+      "lat": 24.14389281,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-1c5d10ec062c",
+      "city": "taichung",
+      "district": "大甲區",
+      "name": "小北百貨台中大甲店站",
+      "address": "437臺中市大甲區光明路40號",
+      "lng": 120.624528,
+      "lat": 24.343999,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-207b081bdd9a",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "小北百貨台中樹孝店站",
+      "address": "411臺中市太平區樹孝路272號",
+      "lng": 120.719246,
+      "lat": 24.153832,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-225b3e658b5b",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "全聯福利中心豐原三豐店站",
+      "address": "420臺中市豐原區三豐路二段8號",
+      "lng": 120.720368,
+      "lat": 24.264404,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-281a76d1f5ab",
+      "city": "taichung",
+      "district": "南區",
+      "name": "中興大學興大圓廳",
+      "address": "402臺中市南區興大路145號",
+      "lng": 120.6773133,
+      "lat": 24.12344011,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-2c789447e885",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "7-ELEVEN 大道門市",
+      "address": "412臺中市大里區至善路188號",
+      "lng": 120.6983706,
+      "lat": 24.09466684,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-2cebcf2326d7",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "7-ELEVEN 精中門市",
+      "address": "411臺中市太平區太平一街220號",
+      "lng": 120.7196463,
+      "lat": 24.1157549,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-2d7ecd8680c6",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "7-ELEVEN 第一門市",
+      "address": "411臺中市太平區新福里中山路四段112、112-1.112-2號1樓",
+      "lng": 120.7051254,
+      "lat": 24.14867173,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-37bb63952bdc",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "7-ELEVEN 豐樂門市",
+      "address": "406 臺中市北屯區崇德路三段608號",
+      "lng": 120.686593,
+      "lat": 24.193805,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-39559ac81dfa",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "全家台中金順店站",
+      "address": "406臺中市北屯區軍福十三路303號",
+      "lng": 120.722668,
+      "lat": 24.172402,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-3d556219c5be",
+      "city": "taichung",
+      "district": "潭子區",
+      "name": "全聯福利中心潭子中山店站",
+      "address": "427臺中市潭子區中山路二段107號",
+      "lng": 120.7050125,
+      "lat": 24.21023049,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-4054a91e8dc4",
+      "city": "taichung",
+      "district": "大雅區",
+      "name": "小北百貨台中大雅店站",
+      "address": "428臺中市大雅區雅環路二段28號",
+      "lng": 120.653726,
+      "lat": 24.224922,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-44db58eeeec0",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "7-ELEVEN 米魯門市",
+      "address": "414臺中市烏日區光華街1號",
+      "lng": 120.626644,
+      "lat": 24.110819,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-44ec0b70be01",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "小北百貨台中逢甲店站",
+      "address": "407臺中市西屯區黎明路三段325號",
+      "lng": 120.637393,
+      "lat": 24.17977,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-4578c0c5ad92",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "全聯福利中心大里仁化店站",
+      "address": "412臺中市大里區仁化路500號",
+      "lng": 120.702908,
+      "lat": 24.096306,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-4595c7123576",
+      "city": "taichung",
+      "district": "東區",
+      "name": "7-ELEVEN 漢溪門市",
+      "address": "401臺中市東區十甲東路575號1樓",
+      "lng": 120.70793,
+      "lat": 24.1410007,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-45e3749cbba9",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "特力屋西屯店站",
+      "address": "407臺中市西屯區台灣大道四段528號(後門)",
+      "lng": 120.625662,
+      "lat": 24.178472,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-4a86dcad5f80",
+      "city": "taichung",
+      "district": "北區",
+      "name": "全聯福利中心天津店站",
+      "address": "404臺中市北區天津路二段171號",
+      "lng": 120.678754,
+      "lat": 24.169937,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-4be3e763e912",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "7-ELEVEN 后探門市",
+      "address": "406 臺中市北屯區崇德十路二段361號",
+      "lng": 120.676004,
+      "lat": 24.1937608,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-4cced893272b",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "全聯福利中心豐原大順店站",
+      "address": "420臺中市豐原區大順街121號",
+      "lng": 120.723432,
+      "lat": 24.260066,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-4dba8797cfb3",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "全聯福利中心豐原成功店站",
+      "address": "420臺中市豐原區成功路198號",
+      "lng": 120.708809,
+      "lat": 24.245902,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-509e61bf9daf",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "全聯福利中心台中北屯二店站",
+      "address": "406臺中市北屯區北屯路417號",
+      "lng": 120.699396,
+      "lat": 24.175683,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-529d531179ba",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "全聯福利中心台中博愛店站",
+      "address": "408臺中市南屯區黎明里大業路611巷22號",
+      "lng": 120.632954,
+      "lat": 24.15336015,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-53813d1d8b9e",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "7-ELEVEN 瑞聯門市",
+      "address": "407 臺中市西屯區福科路890號1樓",
+      "lng": 120.607363,
+      "lat": 24.1874845,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-53e4a903649a",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "7-ELEVEN 維樂門市",
+      "address": "411 臺中市太平區溪洲西路98號",
+      "lng": 120.712718,
+      "lat": 24.141432,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-54ef14f1a07e",
+      "city": "taichung",
+      "district": "潭子區",
+      "name": "7-ELEVEN 圓通南門市",
+      "address": "427臺中市潭子區圓通南路239號",
+      "lng": 120.703337,
+      "lat": 24.207079,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-559f670b5a5a",
+      "city": "taichung",
+      "district": "大甲區",
+      "name": "7-ELEVEN 媽祖門市",
+      "address": "437 臺中市大甲區光明路1號",
+      "lng": 120.625955,
+      "lat": 24.343599,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-579411ddfa15",
+      "city": "taichung",
+      "district": "中區",
+      "name": "小北百貨台中新成功店站",
+      "address": "400臺中市中區中華路一段44號",
+      "lng": 120.674943,
+      "lat": 24.143383,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-57f2736802e9",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "特力屋大里國光店站",
+      "address": "412臺中市大里區國光路二段363號",
+      "lng": 120.679866,
+      "lat": 24.108452,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-5a4e6af134b7",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "全家台中墩惠店站",
+      "address": "408臺中市南屯區惠文路288號",
+      "lng": 120.642745,
+      "lat": 24.141756,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-5b298330f424",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "全家太平溪洲店站",
+      "address": "411臺中市太平區溪洲路68號",
+      "lng": 120.716785,
+      "lat": 24.14179,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-5d7dedc1a526",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "全聯福利中心台中梅川東店站",
+      "address": "406臺中市北屯區梅川東路五段35號",
+      "lng": 120.681431,
+      "lat": 24.177668,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-5ed641362ba0",
+      "city": "taichung",
+      "district": "沙鹿區",
+      "name": "福壽實業沙鹿總廠站",
+      "address": "433台中市沙鹿區沙田路45號",
+      "lng": 120.558662,
+      "lat": 24.231264,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-6105ecf5ccb9",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "萬家福中清店方舟站",
+      "address": "407臺中市西屯區中清路三段436號",
+      "lng": 120.6530001,
+      "lat": 24.20844644,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-63fc7c80248f",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "小北百貨台中大順店站",
+      "address": "420臺中市豐原區大順街133號",
+      "lng": 120.72386,
+      "lat": 24.260426,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-6483a2231b40",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "全家烏日榮玉店站",
+      "address": "414臺中市烏日區高鐵路一段41號",
+      "lng": 120.601937,
+      "lat": 24.107084,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-661a88fd9d92",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "7-ELEVEN 豐贊",
+      "address": "420臺中市豐原區豐勢路二段979號1樓",
+      "lng": 120.7571585,
+      "lat": 24.27585767,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-66c048912125",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "東海大學",
+      "address": "407臺中市西屯區台灣大道四段1727號",
+      "lng": 120.6020271,
+      "lat": 24.1819312,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-6b8457f6f0d8",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "Q哥手機館台中文心家樂福店站",
+      "address": "408臺中市南屯區文心路一段521號地下一樓",
+      "lng": 120.6463054,
+      "lat": 24.15468415,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-6e24ddbb92e5",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "7-ELEVEN 紅億門市",
+      "address": "411臺中市太平區光興路572號576號",
+      "lng": 120.729048,
+      "lat": 24.104211,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-6ed80fe6321a",
+      "city": "taichung",
+      "district": "新社區",
+      "name": "7-ELEVEN 永源村門市",
+      "address": "426臺中市新社區東山街88-29號30號",
+      "lng": 120.79613,
+      "lat": 24.21791,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-741b611ba547",
+      "city": "taichung",
+      "district": "東區",
+      "name": "7-ELEVEN 東泓門市",
+      "address": "401臺中市東區東門路140號",
+      "lng": 120.69989,
+      "lat": 24.12732,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-7647b96ed6ff",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "全聯福利中心大里練武店站",
+      "address": "412臺中市大里區仁化路67號",
+      "lng": 120.728565,
+      "lat": 24.091326,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-7abfbb09bd48",
+      "city": "taichung",
+      "district": "大甲區",
+      "name": "全聯福利中心大甲黎明店站",
+      "address": "437臺中市大甲區黎明路2之301號",
+      "lng": 120.652864,
+      "lat": 24.389119,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-7b768db5ed64",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "小北百貨台中大墩店站",
+      "address": "408臺中市南屯區大墩路171號",
+      "lng": 120.649717,
+      "lat": 24.141076,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-7c4995b536ee",
+      "city": "taichung",
+      "district": "沙鹿區",
+      "name": "全家沙鹿金斗店站",
+      "address": "433台中市沙鹿區南斗路29號",
+      "lng": 120.568994,
+      "lat": 24.216756,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-7d1640aed006",
+      "city": "taichung",
+      "district": "大雅區",
+      "name": "7-ELEVEN 雅楓",
+      "address": "420臺中市大雅區民生路三段472號",
+      "lng": 120.6668854,
+      "lat": 24.23504311,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-7ee86d61a427",
+      "city": "taichung",
+      "district": "霧峰區",
+      "name": "朝陽科大一宿",
+      "address": "413臺中市霧峰區吉峰東路168號",
+      "lng": 120.71467,
+      "lat": 24.06968,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-836cda372cd8",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "全聯福利中心豐原田心店站",
+      "address": "420臺中市豐原區田心路二段182號",
+      "lng": 120.72103,
+      "lat": 24.239624,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-856d34dd6b98",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "小北百貨台中大里國光店站",
+      "address": "412臺中市大里區國光路二段321號",
+      "lng": 120.680235,
+      "lat": 24.107593,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-88879f71cff7",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "億進寢具南屯東興店",
+      "address": "408臺中市南屯區東興路二段238號",
+      "lng": 120.653188,
+      "lat": 24.142521,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-8ab7543f7b24",
+      "city": "taichung",
+      "district": "梧棲區",
+      "name": "特力屋梧棲中華店站",
+      "address": "435臺中市梧棲區中華路二段561號",
+      "lng": 120.557999,
+      "lat": 24.256141,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-8afcb32a4bce",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "7-ELEVEN 興祥門市",
+      "address": "414臺中市烏日區興祥街189號",
+      "lng": 120.63706,
+      "lat": 24.11012,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-8b2208b61fa9",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "小北百貨台中東榮店站",
+      "address": "412臺中市大里區東榮路36號",
+      "lng": 120.688536,
+      "lat": 24.110306,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-8bc30328a0b3",
+      "city": "taichung",
+      "district": "西區",
+      "name": "小北百貨台中精誠店站",
+      "address": "403臺中市西區精誠路187號",
+      "lng": 120.65526,
+      "lat": 24.148773,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-8cb3ae24ef7b",
+      "city": "taichung",
+      "district": "潭子區",
+      "name": "全家潭子甘蔗店站",
+      "address": "427臺中市潭子區勝利路289號",
+      "lng": 120.700466,
+      "lat": 24.213398,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-8ea02308d204",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "全聯福利中心台中河北東店站",
+      "address": "406臺中市北屯區河北東街66號",
+      "lng": 120.685218,
+      "lat": 24.177721,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-93588a7292d6",
+      "city": "taichung",
+      "district": "大雅區",
+      "name": "7-ELEVEN 德勝路門市",
+      "address": "428 臺中市大雅區民生路三段86號",
+      "lng": 120.6559371,
+      "lat": 24.2309306,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-93a6e0678c40",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "小北百貨台中仁化店站",
+      "address": "412臺中市大里區仁化路466號",
+      "lng": 120.7034133,
+      "lat": 24.09632468,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-953fb9ed7299",
+      "city": "taichung",
+      "district": "北區",
+      "name": "7-ELEVEN 奕慶門市",
+      "address": "404 臺中市北區五權路387號五常街13號15號",
+      "lng": 120.681114,
+      "lat": 24.153207,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-96a134aaa74e",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "全聯福利中心中工店站",
+      "address": "407臺中市西屯區中工二路2號",
+      "lng": 120.6170233,
+      "lat": 24.18221123,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-9ba4486130e3",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "7-ELEVEN 丰太門市",
+      "address": "411臺中市太平區永豐路351號1樓",
+      "lng": 120.703735,
+      "lat": 24.11199611,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-9d736715b87f",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "特力屋北屯店",
+      "address": "406臺中市北屯區北屯路407-1號",
+      "lng": 120.6984113,
+      "lat": 24.1736111,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-9debf9dedc8e",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "7-ELEVEN 大鵬門市",
+      "address": "407 臺中市西屯區長安路二段125號",
+      "lng": 120.6644883,
+      "lat": 24.1736793,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-a1cff94f4586",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "7-ELEVEN 東峰門市",
+      "address": "412臺中市大里區大峰路429號",
+      "lng": 120.6880596,
+      "lat": 24.08871933,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-a27d70600cd4",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "小北百貨台中永福店站",
+      "address": "407臺中市西屯區永福路168號",
+      "lng": 120.621516,
+      "lat": 24.185525,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-a3170b60bda0",
+      "city": "taichung",
+      "district": "西區",
+      "name": "小北百貨台中五權店站",
+      "address": "403臺中市西區五權路1之27號",
+      "lng": 120.665526,
+      "lat": 24.138197,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-a480cde607bf",
+      "city": "taichung",
+      "district": "南屯區",
+      "name": "全聯福利中心台中大昌店站",
+      "address": "408臺中市南屯區大墩五街98號",
+      "lng": 120.651984,
+      "lat": 24.141946,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-a5cc5eacf727",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "全家豐原中興店站",
+      "address": "420臺中市豐原區圓環南路76號",
+      "lng": 120.711384,
+      "lat": 24.246481,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-a6d5198f5ea3",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "逢甲忠勤樓",
+      "address": "407臺中市西屯區文華路100號",
+      "lng": 120.64654,
+      "lat": 24.17906,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-a7ede92ff0c5",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "小北百貨台中水湳店站",
+      "address": "406臺中市北屯區中清西二街29號",
+      "lng": 120.668315,
+      "lat": 24.174431,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-a885b53b27f8",
+      "city": "taichung",
+      "district": "南區",
+      "name": "小北百貨台中忠明店站",
+      "address": "402臺中市南區忠明南路1110號",
+      "lng": 120.666846,
+      "lat": 24.118652,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-ab341c118c45",
+      "city": "taichung",
+      "district": "大雅區",
+      "name": "7-ELEVEN 科邦門市",
+      "address": "428臺中市大雅區科雅一路8號5樓",
+      "lng": 120.620274,
+      "lat": 24.21242,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-ac9b002616af",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "7-ELEVEN 新大億門市",
+      "address": "411臺中市太平區大興路151號 151-1號",
+      "lng": 120.733627,
+      "lat": 24.155106,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-acb7d3975a5e",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "7-ELEVEN 丰瑞門市",
+      "address": "406臺中市北屯區四平路563號",
+      "lng": 120.681809,
+      "lat": 24.19494,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-ad511859f534",
+      "city": "taichung",
+      "district": "東區",
+      "name": "7-ELEVEN 鑫建德門市",
+      "address": "401臺中市東區建德街174.176.178.180號",
+      "lng": 120.692118,
+      "lat": 24.129558,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-b26f5e86cbc1",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "7-ELEVEN 松東門市",
+      "address": "406臺中市北屯區松竹路三段125號",
+      "lng": 120.682312,
+      "lat": 24.181664,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-b3f9449f8ebd",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "7-ELEVEN 愛心門市",
+      "address": "412 臺中市大里區愛心路43號",
+      "lng": 120.6791753,
+      "lat": 24.1013771,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-b6091940b21d",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "全聯福利中心烏日公園店站",
+      "address": "414臺中市烏日區公園路52號",
+      "lng": 120.6270547,
+      "lat": 24.10230193,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-b6e2c0fb0192",
+      "city": "taichung",
+      "district": "后里區",
+      "name": "7-ELEVEN 月湖門市",
+      "address": "421臺中市后里區公安路147-15號",
+      "lng": 120.70655,
+      "lat": 24.306717,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-baa8babc6608",
+      "city": "taichung",
+      "district": "清水區",
+      "name": "全聯福利中心清水五權店站",
+      "address": "436臺中市清水區民享路80號",
+      "lng": 120.56821,
+      "lat": 24.276655,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-bc7583c1de6b",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "7-ELEVEN 川越門市",
+      "address": "406 臺中市北屯區昌平東六路121號",
+      "lng": 120.69024,
+      "lat": 24.1857905,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-bdc42ecd6531",
+      "city": "taichung",
+      "district": "沙鹿區",
+      "name": "小北百貨沙鹿北勢東店站",
+      "address": "433臺中市沙鹿區北勢東路431、433、435、437、439號",
+      "lng": 120.577797,
+      "lat": 24.222479,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-bf0bdf81c338",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "衛生福利部豐原醫院站",
+      "address": "420臺中市豐原區安康路100號",
+      "lng": 120.725468,
+      "lat": 24.242566,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-c3ec92f9ab40",
+      "city": "taichung",
+      "district": "西區",
+      "name": "全聯福利中心台中美村店站",
+      "address": "403臺中市西區五權五街68號",
+      "lng": 120.662456,
+      "lat": 24.136727,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-c74facb91701",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "7-ELEVEN 祥順門市",
+      "address": "406臺中市北屯區祥順路二段93、95號",
+      "lng": 120.727203,
+      "lat": 24.165134,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-c8ccfe415af4",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "全聯福利中心大里甲堤店站",
+      "address": "412臺中市大里區甲堤南路300號",
+      "lng": 120.697241,
+      "lat": 24.107165,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-caf4edfb5797",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "7-ELEVEN 蘋果門市",
+      "address": "412臺中市大里區善化路155號",
+      "lng": 120.70203,
+      "lat": 24.09926,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-cde4af829826",
+      "city": "taichung",
+      "district": "神岡區",
+      "name": "全聯福利中心神岡中山店站",
+      "address": "429台中市神岡區中山路832號",
+      "lng": 120.678579,
+      "lat": 24.24969,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-ceca4f38e91b",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "全聯福利中心台中太原店站",
+      "address": "406臺中市北屯區太原路三段191-1號",
+      "lng": 120.691493,
+      "lat": 24.165056,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-d03df80b777e",
+      "city": "taichung",
+      "district": "大里區",
+      "name": "全聯福利中心塗城金德店站",
+      "address": "412臺中市大里區金德街16號",
+      "lng": 120.6939,
+      "lat": 24.091512,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-d53830927cd0",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "全家烏日長壽店站",
+      "address": "414臺中市烏日區健行路758號",
+      "lng": 120.58978,
+      "lat": 24.112175,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-d6a3f56801c4",
+      "city": "taichung",
+      "district": "大雅區",
+      "name": "全家大雅有春店站",
+      "address": "428臺中市大雅區雅潭路四段296號",
+      "lng": 120.662443,
+      "lat": 24.219708,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-da49a996f113",
+      "city": "taichung",
+      "district": "大雅區",
+      "name": "全聯福利中心大雅雅環店站",
+      "address": "428臺中市大雅區雅環路二段87號",
+      "lng": 120.652802,
+      "lat": 24.226354,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-db08f4cae204",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "7-ELEVEN 鑫佳慶門市",
+      "address": "411臺中市太平區大源二街1號1F",
+      "lng": 120.725156,
+      "lat": 24.14444,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-db29060a39c5",
+      "city": "taichung",
+      "district": "南區",
+      "name": "全家台中樹仔腳店站",
+      "address": "402臺中市南區復興路一段33號",
+      "lng": 120.646236,
+      "lat": 24.110542,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-dcfcaa43cbf1",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "7-ELEVEN 瑞興門市",
+      "address": "420臺中市豐原區中正路499號",
+      "lng": 120.71084,
+      "lat": 24.25056,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-de0406a5ff16",
+      "city": "taichung",
+      "district": "北區",
+      "name": "小北百貨台中進化北店站",
+      "address": "404臺中市北區進化北路363 號1 樓之 6",
+      "lng": 120.679917,
+      "lat": 24.162974,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-def6e2506fa2",
+      "city": "taichung",
+      "district": "豐原區",
+      "name": "7-ELEVEN 豐科門市",
+      "address": "420臺中市豐原區豐原大道七段381號1樓",
+      "lng": 120.71289,
+      "lat": 24.262106,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-e25a311881e8",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "小北百貨台中漢口店站",
+      "address": "407臺中市西屯區漢口路二段106號",
+      "lng": 120.660616,
+      "lat": 24.164372,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池."
+    },
+    {
+      "id": "tc-smart-e4010ee5d9c8",
+      "city": "taichung",
+      "district": "潭子區",
+      "name": "全聯福利中心潭子得天店站",
+      "address": "427臺中市潭子區得天街80號",
+      "lng": 120.701341,
+      "lat": 24.196877,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-e418f4bf9cde",
+      "city": "taichung",
+      "district": "西屯區",
+      "name": "萬家福西屯店",
+      "address": "407臺中市西屯區臺灣大道四段1086號",
+      "lng": 120.6151968,
+      "lat": 24.1857331,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-e525c67e5a87",
+      "city": "taichung",
+      "district": "太平區",
+      "name": "全家太平金城店站",
+      "address": "411臺中市太平區樹德路275號",
+      "lng": 120.712905,
+      "lat": 24.159466,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-e67eeec77c23",
+      "city": "taichung",
+      "district": "沙鹿區",
+      "name": "全聯福利中心沙鹿北勢東店站",
+      "address": "433臺中市沙鹿區北勢東路500號",
+      "lng": 120.576801,
+      "lat": 24.22481005,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-e8f2f0d8d1f1",
+      "city": "taichung",
+      "district": "烏日區",
+      "name": "全聯福利中心烏日環河店站",
+      "address": "414臺中市烏日區三榮九路9號",
+      "lng": 120.599607,
+      "lat": 24.106595,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-ea9f017d90c9",
+      "city": "taichung",
+      "district": "后里區",
+      "name": "7-ELEVEN 月眉門市",
+      "address": "421臺中市后里區民生路226號",
+      "lng": 120.71354,
+      "lat": 24.30657,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-eb4cd3ec32d9",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "全聯福利中心台中軍太店站",
+      "address": "406臺中市北屯區軍功路一段183號",
+      "lng": 120.715762,
+      "lat": 24.165388,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-eb94c17135ff",
+      "city": "taichung",
+      "district": "北屯區",
+      "name": "7-ELEVEN 松豪門市",
+      "address": "406 臺中市北屯區四平路218號",
+      "lng": 120.680358,
+      "lat": 24.189318,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    },
+    {
+      "id": "tc-smart-f7bb94e57660",
+      "city": "taichung",
+      "district": "潭子區",
+      "name": "全聯福利中心潭子潭豐店站",
+      "address": "427臺中市潭子區潭豐路二段888號",
+      "lng": 120.711135,
+      "lat": 24.234652,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 寶特瓶、鋁罐."
+    },
+    {
+      "id": "tc-smart-fb56f4c84a34",
+      "city": "taichung",
+      "district": "大雅區",
+      "name": "7-ELEVEN 興府門市",
+      "address": "428臺中市大雅區學府路51號",
+      "lng": 120.650826,
+      "lat": 24.216546,
+      "hours": "Hours not listed; check the host venue",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "listed",
+      "note": "Accepted items listed by the city: 電池、寶特瓶."
+    }
+  ]
+}
