@@ -9,6 +9,7 @@
   const languageSelect = $('#language');
   const subtitleSelect = $('#subtitle-filter');
   const audioSelect = $('#audio-filter');
+  const brandSelect = $('#brand-filter');
   const cityNames = {
     taipei:'Taipei City','new-taipei':'New Taipei City',keelung:'Keelung City',taoyuan:'Taoyuan City',
     'hsinchu-city':'Hsinchu City','hsinchu-county':'Hsinchu County',miaoli:'Miaoli County',taichung:'Taichung City',
@@ -76,6 +77,8 @@
   const mapActionLabels={en:['Hide map','Show map','Expand cinema list','Collapse cinema list'],id:['Sembunyikan peta','Tampilkan peta','Buka daftar bioskop','Kecilkan daftar bioskop'],'zh-TW':['隱藏地圖','顯示地圖','展開影城清單','收合影城清單'],ja:['地図を隠す','地図を表示','映画館リストを開く','リストを閉じる'],ko:['지도 숨기기','지도 보기','극장 목록 펼치기','극장 목록 접기'],vi:['Ẩn bản đồ','Hiện bản đồ','Mở danh sách rạp','Thu gọn danh sách'],th:['ซ่อนแผนที่','แสดงแผนที่','ขยายรายชื่อโรงภาพยนตร์','ย่อรายชื่อโรงภาพยนตร์']};
   const ticketPriceLabels={en:{title:'Ticket prices · TWD',open:'Tap to load prices',loading:'Loading prices…',unavailable:'Prices are unavailable.'},id:{title:'Harga tiket · TWD',open:'Ketuk untuk memuat harga',loading:'Memuat harga…',unavailable:'Harga tidak tersedia.'},'zh-TW':{title:'票價 · TWD',open:'點擊載入票價',loading:'正在載入票價…',unavailable:'目前沒有票價資料。'},ja:{title:'チケット料金 · TWD',open:'タップして料金を表示',loading:'料金を読み込み中…',unavailable:'料金を取得できません。'},ko:{title:'티켓 가격 · TWD',open:'눌러서 가격 보기',loading:'가격 불러오는 중…',unavailable:'가격 정보를 사용할 수 없습니다.'},vi:{title:'Giá vé · TWD',open:'Nhấn để tải giá vé',loading:'Đang tải giá vé…',unavailable:'Không có thông tin giá vé.'},th:{title:'ราคาตั๋ว · TWD',open:'แตะเพื่อโหลดราคา',loading:'กำลังโหลดราคา…',unavailable:'ไม่มีข้อมูลราคา'}};
   const ticketTypeLabels={'全票':{en:'Full ticket',id:'Tiket reguler','zh-TW':'全票',ja:'一般',ko:'일반',vi:'Vé thường',th:'ตั๋วทั่วไป'},'優待票':{en:'Concession',id:'Tiket diskon','zh-TW':'優待票',ja:'割引',ko:'할인',vi:'Vé ưu đãi',th:'ตั๋วส่วนลด'},'早場票':{en:'Matinee',id:'Tiket pertunjukan awal','zh-TW':'早場票',ja:'早朝割引',ko:'조조 할인',vi:'Vé suất sớm',th:'ตั๋วรอบเช้า'},'愛心票':{en:'Accessibility concession',id:'Tiket konsesi khusus','zh-TW':'愛心票',ja:'福祉割引',ko:'우대 할인',vi:'Vé ưu đãi đặc biệt',th:'ตั๋วส่วนลดพิเศษ'}};
+  const brandUi={en:{label:'Cinema brand',all:'All brands',vieshow:'VieShow group',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'Independent / local'},id:{label:'Brand bioskop',all:'Semua brand',vieshow:'Grup VieShow',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'Lokal / independen'},'zh-TW':{label:'影城品牌',all:'所有品牌',vieshow:'VieShow 集團',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'其他／在地影城'},ja:{label:'映画館ブランド',all:'すべてのブランド',vieshow:'VieShow グループ',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'その他／地域館'},ko:{label:'극장 브랜드',all:'모든 브랜드',vieshow:'VieShow 그룹',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'기타 / 지역 극장'},vi:{label:'Thương hiệu rạp',all:'Tất cả thương hiệu',vieshow:'Nhóm VieShow',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'Rạp địa phương / độc lập'},th:{label:'แบรนด์โรงภาพยนตร์',all:'ทุกแบรนด์',vieshow:'กลุ่ม VieShow',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'โรงภาพยนตร์ท้องถิ่น'}};
+  const sheetControlLabels={en:{hide:'Hide list · show full map',half:'½ list · ½ map'},id:{hide:'Tutup daftar · tampilkan peta',half:'½ daftar · ½ peta'},'zh-TW':{hide:'收合清單・顯示完整地圖',half:'½ 清單 · ½ 地圖'},ja:{hide:'リストを閉じて地図を表示',half:'½ リスト · ½ 地図'},ko:{hide:'목록 닫기 · 전체 지도 보기',half:'½ 목록 · ½ 지도'},vi:{hide:'Ẩn danh sách · hiện bản đồ',half:'½ danh sách · ½ bản đồ'},th:{hide:'ซ่อนรายการ · แสดงแผนที่',half:'½ รายการ · ½ แผนที่'}};
   const subtitleCoverageLabels = {
     en:(n,total)=>`${n} of ${total} screenings have explicit subtitle details.`,
     'zh-TW':(n,total)=>`${total} 場次中有 ${n} 場由來源明確提供字幕資訊。`,
@@ -245,6 +248,40 @@
     if([...subtitleSelect.options].some(option=>option.value===priorSubtitle))subtitleSelect.value=priorSubtitle;
     if([...audioSelect.options].some(option=>option.value===priorAudio))audioSelect.value=priorAudio;
   }
+  const cinemaBrandRules=[
+    ['vieshow','VieShow Cinemas',['威秀','vieshow']],['showtime','Showtime Cinemas',['秀泰','showtime']],
+    ['ambassador','Ambassador Theatres',['國賓','ambassador']],['in89','in89 Cinemas',['in89']],
+    ['century-asia','Century Asia Cinemas',['喜樂時代','century asia']],['shin-kong','Shin Kong Cinemas',['新光','shin kong']],
+    ['mld','MLD Cinemas',['美麗新','mld']],['broadway','Broadway Cinemas',['百老匯','broadway']],
+    ['spot','SPOT Cinemas',['光點','spot','大好天光']],['hala','Hala Cinemas',['哈拉','hala']],
+    ['miramar','Miramar Cinemas',['美麗華','miramar']],['wonderful','Wonderful Cinemas',['真善美','wonderful']]
+  ];
+  function cinemaBrand(cinema) {
+    const text=[cinema?.name_zh,cinema?.name_en,cinema?.company_name].filter(Boolean).join(' ').toLowerCase();
+    const rule=cinemaBrandRules.find(([, ,tokens])=>tokens.some(token=>text.includes(token.toLowerCase())));
+    if(!rule)return 'other';
+    if(rule[0]==='vieshow'&&text.includes('muvie'))return 'muvie';
+    return rule[0];
+  }
+  function brandMatches(cinema,filter=brandSelect.value) {
+    const brand=cinemaBrand(cinema);
+    if(filter==='all')return true;
+    if(filter==='vieshow-group')return brand==='vieshow'||brand==='muvie';
+    if(filter==='vieshow-standard')return brand==='vieshow';
+    return brand===filter;
+  }
+  function setupBrandOptions() {
+    const prior=brandSelect.value||'all',labels=brandUi[language]||brandUi.en,counters={};
+    for(const data of Object.values(cinemaByCity))for(const cinema of data.cinemas||[]){const brand=cinemaBrand(cinema);counters[brand]=(counters[brand]||0)+1;}
+    const total=Object.values(counters).reduce((sum,count)=>sum+count,0),options=[`<option value="all">${esc(labels.all)} · ${total}</option>`];
+    const vieshowCount=(counters.vieshow||0)+(counters.muvie||0);
+    if(vieshowCount)options.push(`<option value="vieshow-group">${esc(labels.vieshow)} · ${vieshowCount}</option>`,`<option value="vieshow-standard">　${esc(labels.vieshowStandard)} · ${counters.vieshow||0}</option>`,`<option value="muvie">　${esc(labels.muvie)} · ${counters.muvie||0}</option>`);
+    const sorted=cinemaBrandRules.filter(([id])=>id!=='vieshow').map(([id,name])=>({id,name,count:counters[id]||0})).filter(item=>item.count).sort((a,b)=>b.count-a.count||a.name.localeCompare(b.name));
+    for(const item of sorted)options.push(`<option value="${esc(item.id)}">${esc(item.name)} · ${item.count}</option>`);
+    if(counters.other)options.push(`<option value="other">${esc(labels.other)} · ${counters.other}</option>`);
+    brandSelect.innerHTML=options.join('');brandSelect.value=[...brandSelect.options].some(option=>option.value===prior)?prior:'all';
+    $('#brand-label').textContent=labels.label;brandSelect.setAttribute('aria-label',labels.label);
+  }
   function selectedShowtimes(slug) {
     const list=showsByCity[slug]?.showtimes||[];
     return list;
@@ -350,7 +387,7 @@
   }
   function renderResults() {
     if(!Object.keys(cinemaByCity).length)return;
-    const query=searchInput.value.trim().toLocaleLowerCase(),subtitle=subtitleSelect.value,audio=audioSelect.value,groups=[];
+    const query=searchInput.value.trim().toLocaleLowerCase(),subtitle=subtitleSelect.value,audio=audioSelect.value,brand=brandSelect.value||'all',groups=[];
     let cinemaTotal=0,sessionTotal=0;
     for(const slug of selectedCities()) {
       const cinemas=cinemaByCity[slug]?.cinemas||[],byId=new Map(cinemas.map(c=>[c.id,c])),todays=selectedShowtimes(slug),perCinema=new Map();
@@ -358,6 +395,7 @@
       const records=cinemas.map(c=>({cinema:c,shows:perCinema.get(c.id)||[]}));
       for(const [key,shows] of perCinema)if(!byId.has(key))records.push({cinema:{id:key,name_zh:shows[0].cinema_name,city:slug,address:''},shows});
       const filtered=records.filter(({cinema,shows})=>{
+        if(!brandMatches(cinema,brand))return false;
         if((subtitle!=='all'||audio!=='all')&&!shows.length)return false;
         if(!query||selectedCinemaId===cinema.id)return true;
         return [cinema.name_zh,cinema.name_en,cinema.address,...shows.flatMap(s=>[s.movie_title,s.movie_title_en])].some(v=>decodeEntities(v).toLocaleLowerCase().includes(query));
@@ -394,8 +432,10 @@
     if(fly&&map){const city=cityDefs.find(c=>c.slug===slug);if(city?.center)map.flyTo({center:city.center,zoom:10.3,duration:850});else if(slug==='all')map.fitBounds([[119.3,21.7],[122.1,25.5]],{padding:{top:70,right:65,bottom:90,left:65},duration:850});}
   }
   function selectCinema(id,slug,fly) {
-    selectedCity=slug;selectedCinemaId=id;citySelect.value=slug;renderResults();renderMarkers();
-    const card=document.getElementById(`cinema-${id}`);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});
+    selectedCity=slug;selectedCinemaId=id;citySelect.value=slug;
+    const cinema=(cinemaByCity[slug]?.cinemas||[]).find(c=>c.id===id);if(cinema&&!brandMatches(cinema))brandSelect.value='all';
+    renderResults();renderMarkers();
+    const card=document.getElementById(`cinema-${id}`);if(card){const resultTop=resultsEl.getBoundingClientRect().top,cardTop=card.getBoundingClientRect().top;resultsEl.scrollTo({top:Math.max(0,resultsEl.scrollTop+cardTop-resultTop-8),behavior:'smooth'});}
     if(fly&&map){const cinema=(cinemaByCity[slug]?.cinemas||[]).find(c=>c.id===id),location=cinemaPoint(cinema)||((loc)=>loc?[loc.longitude,loc.latitude]:null)(cinemaLocation(cinema,slug));if(location){map.flyTo({center:location,zoom:16,duration:700});markers.find(m=>m._cinemaId===id)?.togglePopup();}}
   }
   function handleMapSelection(event) {
@@ -415,7 +455,7 @@
     searchInput.placeholder=ui('placeholder');citySelect.setAttribute('aria-label',ui('city'));dateSelect.setAttribute('aria-label',ui('date'));
     languageSelect.setAttribute('aria-label',ui('language'));subtitleSelect.setAttribute('aria-label',ui('subtitles'));audioSelect.setAttribute('aria-label',ui('audio'));
     $('#date-prev').setAttribute('aria-label',ui('previous'));$('#date-next').setAttribute('aria-label',ui('next'));
-    setupCityOptions();citySelect.value=selectedCity;setupDateOptions();if(availableDates.includes(priorDate))dateSelect.value=priorDate;setupLanguageFilters();syncDateControls();
+    setupCityOptions();citySelect.value=selectedCity;setupDateOptions();if(availableDates.includes(priorDate))dateSelect.value=priorDate;setupLanguageFilters();setupBrandOptions();syncDateControls();
     updateMobileActionLabels();
     $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
     $('#updated').textContent=`${ui('dataUpdated')} · ${formatDate(dataGeneratedDate||todayTaiwan(),'short')} · ${ui('localTime')}`;
@@ -432,6 +472,9 @@
     const labels=mapActionLabels[language]||mapActionLabels.en,visible=app.dataset.mapVisible!=='false';
     const mapButton=$('#map-view-toggle');mapButton.setAttribute('aria-label',visible?labels[0]:labels[1]);mapButton.title=visible?labels[0]:labels[1];mapButton.textContent=visible?'▣':'▢';
     sheetGrab.setAttribute('aria-label',app.dataset.sheet==='expanded'?labels[3]:labels[2]);
+    const sheetLabels=sheetControlLabels[language]||sheetControlLabels.en,hidden=app.dataset.sheet==='hidden';
+    const collapse=$('#sheet-collapse'),expand=$('#sheet-expand');collapse.hidden=!visible||hidden;expand.hidden=!visible||!hidden;
+    collapse.setAttribute('aria-label',sheetLabels.hide);collapse.title=sheetLabels.hide;expand.setAttribute('aria-label',sheetLabels.half);expand.title=sheetLabels.half;expand.querySelector('span').textContent=sheetLabels.half;
   }
   function distanceKm(a,b) {
     const rad=x=>x*Math.PI/180,dLat=rad(b[1]-a.lat),dLon=rad(b[0]-a.lng),lat1=rad(a.lat),lat2=rad(b[1]);
@@ -502,7 +545,7 @@
   citySelect.addEventListener('change',e=>{mapCaption.classList.remove('location-active');selectCity(e.target.value,true);});
   dateSelect.addEventListener('change',()=>{syncDateControls();loadDateShowtimes(dateSelect.value);});
   $('#date-prev').addEventListener('click',()=>changeDate(-1));$('#date-next').addEventListener('click',()=>changeDate(1));
-  searchInput.addEventListener('input',renderResults);subtitleSelect.addEventListener('change',renderResults);audioSelect.addEventListener('change',renderResults);
+  searchInput.addEventListener('input',renderResults);subtitleSelect.addEventListener('change',renderResults);audioSelect.addEventListener('change',renderResults);brandSelect.addEventListener('change',renderResults);
   languageSelect.addEventListener('change',e=>setLanguage(e.target.value));$('#theme').addEventListener('click',()=>setTheme(document.querySelector('.app').dataset.theme==='dark'?'light':'dark'));
   $('#locate').addEventListener('click',locateMe);
   $('#map-locate').addEventListener('click',()=>{$('#map-tools-menu').hidden=true;$('#map-tools-toggle').setAttribute('aria-expanded','false');locateMe();});
@@ -531,7 +574,9 @@
   sheetGrab.addEventListener('pointerdown',e=>{sheetStartY=e.clientY;sheetGrab.setPointerCapture(e.pointerId);});
   sheetGrab.addEventListener('pointerup',e=>{if(sheetStartY===null)return;const delta=e.clientY-sheetStartY;if(Math.abs(delta)>45){app.dataset.sheet=delta<0?'expanded':'collapsed';sheetLabel();suppressSheetClick=true;setTimeout(()=>{suppressSheetClick=false;},0);}sheetStartY=null;});
   sheetGrab.addEventListener('click',()=>{if(suppressSheetClick)return;toggleSheet();});
-  $('#map-view-toggle').addEventListener('click',()=>{const visible=app.dataset.mapVisible!=='false';app.dataset.mapVisible=String(!visible);if(!visible&&app.dataset.sheet==='expanded')app.dataset.sheet='half';updateMobileActionLabels();if(!visible)requestAnimationFrame(()=>map?.resize());});
+  $('#sheet-collapse').addEventListener('click',()=>{app.dataset.sheet='hidden';updateMobileActionLabels();setTimeout(()=>map?.resize(),240);});
+  $('#sheet-expand').addEventListener('click',()=>{app.dataset.sheet='half';updateMobileActionLabels();requestAnimationFrame(()=>map?.resize());});
+  $('#map-view-toggle').addEventListener('click',()=>{const visible=app.dataset.mapVisible!=='false';app.dataset.mapVisible=String(!visible);if(!visible&&app.dataset.sheet==='expanded')app.dataset.sheet='half';if(!visible&&app.dataset.sheet==='hidden')app.dataset.sheet='half';updateMobileActionLabels();if(!visible)requestAnimationFrame(()=>map?.resize());});
     $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1));syncDateControls();loadDateShowtimes(dateSelect.value);mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}userPosition=null;selectCity('all',true);});
   document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();searchInput.focus();}if(e.key==='Escape'&&document.activeElement===searchInput){searchInput.value='';renderResults();searchInput.blur();}});
   init();
