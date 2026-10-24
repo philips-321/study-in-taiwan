@@ -319,6 +319,21 @@
     return subs.map(s=>languageNames[normalizeLang(s)]||s).join(', ');
   }
   function audioLabel(code) { return code ? (languageNames[normalizeLang(code)]||code) : ui('audioUnknown'); }
+  function shortLanguageCode(value) {
+    const code=normalizeLang(value),aliases={zh:'ZH',yue:'YUE',fil:'FIL'};
+    return aliases[code]||code.toUpperCase().slice(0,3);
+  }
+  function subtitleBadge(subs) {
+    const known=Array.isArray(subs)&&subs.length>0,codes=known?[...new Set(subs.map(shortLanguageCode))]:[];
+    const visible=known?`${codes.slice(0,2).join(' ')}${codes.length>2?` +${codes.length-2}`:''}`:'?';
+    const label=`${ui('subtitles')}: ${subtitleLabel(subs)}`;
+    return `<span class="tag icon-tag subtitle-tag" title="${esc(label)}"><span class="cc-mark" aria-hidden="true">CC</span><span aria-hidden="true">${esc(visible)}</span><span class="sr-only">${esc(label)}</span></span>`;
+  }
+  function audioBadge(code) {
+    if(!code)return '';
+    const label=`${ui('audio')}: ${audioLabel(code)}`;
+    return `<span class="tag icon-tag audio-tag" title="${esc(label)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3Z"></path><path d="M16 9a5 5 0 0 1 0 6M18.5 6.5a9 9 0 0 1 0 11"></path></svg><span aria-hidden="true">${esc(shortLanguageCode(code))}</span><span class="sr-only">${esc(label)}</span></span>`;
+  }
   function formatTime(value) {
     const d=new Date(value);if(Number.isNaN(d.getTime()))return '';
     return new Intl.DateTimeFormat(localeInfo[language].date,{timeZone:'Asia/Taipei',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(d);
@@ -327,11 +342,9 @@
     const first=showtimes[0],filmTitle=decodeEntities(first.movie_title||'Untitled screening'),titleEn=decodeEntities(first.movie_title_en||'');
     const sessions=showtimes.map(s=>{
       const day=dateSelect.value==='all-dates'?`<span class="tag">${esc(formatDate((s.start_time||'').slice(0,10),'short'))}</span>`:'';
-      const time=formatTime(s.start_time),meta=[s.format,s.hall].filter(Boolean),audio=audioLabel(s.audio_language);
-      if(s.audio_language)meta.push(`${ui('audio')}: ${audio}`);
-      meta.push(`${ui('subtitles')}: ${subtitleLabel(s.subtitles)}`);
+      const time=formatTime(s.start_time),meta=[s.format,s.hall].filter(Boolean);
       const url=safeUrl(s.source_url),link=url?`<a class="detail-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(ui('sourceLink'))}</a>`:'';
-      return `<div class="showtime-row">${day}${time?`<span class="time-chip">${esc(time)}</span>`:''}${meta.map(x=>`<span class="tag ${x.startsWith(`${ui('subtitles')}:`)?'sub':x.startsWith(`${ui('audio')}:`)?'audio':''}">${esc(x)}</span>`).join('')}</div>${link}`;
+      return `<div class="showtime-row">${day}${time?`<span class="time-chip">${esc(time)}</span>`:''}${meta.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}${audioBadge(s.audio_language)}${subtitleBadge(s.subtitles)}</div>${link}`;
     }).join('');
     return `<div class="movie"><div class="movie-title-row"><div class="movie-title"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</div>${copyButton(filmTitle,ui('titleSource'))}</div>${titleEn?`<div class="movie-title-row movie-title-row-en"><div class="movie-en"><span class="movie-title-label">${esc(ui('international'))}</span>${esc(titleEn)}</div>${copyButton(titleEn,ui('international'))}</div>`:''}${sessions}</div>`;
   }
