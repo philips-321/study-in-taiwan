@@ -38,8 +38,8 @@
       width: 34px;
       height: 20px;
       background-color: #075b46;
-      -webkit-mask: url("v2/assets/food-fishbone.webp") center / contain no-repeat;
-      mask: url("v2/assets/food-fishbone.webp") center / contain no-repeat;
+      -webkit-mask: url("v2/assets/food-fishbone.webp?v=018114e") center / contain no-repeat;
+      mask: url("v2/assets/food-fishbone.webp?v=018114e") center / contain no-repeat;
     }
     :root[data-theme="dark"] .legend-acceptance-v2__recycle { color: #69e5ad; }
     :root[data-theme="dark"] .legend-acceptance-v2__fish { background-color: #69e5ad; }
