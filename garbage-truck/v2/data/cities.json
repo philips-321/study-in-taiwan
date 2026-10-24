@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "coverage": "Taiwan 22 cities/counties",
+  "storage": "static-json",
+  "database": null,
+  "refresh_policy": {
+    "mode": "manual",
+    "default_min_interval_days": 30,
+    "stale_if_error": true,
+    "overwrite_on_empty": false,
+    "scheduled_cron": false,
+    "notes": "Refresh one city at a time. Keep last-known-good JSON when upstream sources fail."
+  },
+  "cities": [
+    {"slug":"taipei","name_zh":"臺北市","name_en":"Taipei City","kind":"city","center":[121.5654,25.033],"manifest":"cities/taipei/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"ready"},
+    {"slug":"new-taipei","name_zh":"新北市","name_en":"New Taipei City","kind":"city","center":[121.465,25.012],"manifest":"cities/new-taipei/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"ready"},
+    {"slug":"taoyuan","name_zh":"桃園市","name_en":"Taoyuan City","kind":"city","center":[121.301,24.9937],"manifest":"cities/taoyuan/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"taichung","name_zh":"臺中市","name_en":"Taichung City","kind":"city","center":[120.6736,24.1477],"manifest":"cities/taichung/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"tainan","name_zh":"臺南市","name_en":"Tainan City","kind":"city","center":[120.227,22.9997],"manifest":"cities/tainan/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"kaohsiung","name_zh":"高雄市","name_en":"Kaohsiung City","kind":"city","center":[120.3014,22.6273],"manifest":"cities/kaohsiung/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"keelung","name_zh":"基隆市","name_en":"Keelung City","kind":"city","center":[121.7419,25.1283],"manifest":"cities/keelung/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"hsinchu-city","name_zh":"新竹市","name_en":"Hsinchu City","kind":"city","center":[120.9675,24.8138],"manifest":"cities/hsinchu-city/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"chiayi-city","name_zh":"嘉義市","name_en":"Chiayi City","kind":"city","center":[120.4491,23.4801],"manifest":"cities/chiayi-city/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"yilan","name_zh":"宜蘭縣","name_en":"Yilan County","kind":"county","center":[121.7378,24.7021],"manifest":"cities/yilan/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"hsinchu-county","name_zh":"新竹縣","name_en":"Hsinchu County","kind":"county","center":[121.0022,24.839],"manifest":"cities/hsinchu-county/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"miaoli","name_zh":"苗栗縣","name_en":"Miaoli County","kind":"county","center":[120.8214,24.5602],"manifest":"cities/miaoli/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"changhua","name_zh":"彰化縣","name_en":"Changhua County","kind":"county","center":[120.544,24.0756],"manifest":"cities/changhua/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"nantou","name_zh":"南投縣","name_en":"Nantou County","kind":"county","center":[120.9719,23.9609],"manifest":"cities/nantou/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"yunlin","name_zh":"雲林縣","name_en":"Yunlin County","kind":"county","center":[120.4313,23.7092],"manifest":"cities/yunlin/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"chiayi-county","name_zh":"嘉義縣","name_en":"Chiayi County","kind":"county","center":[120.3329,23.4592],"manifest":"cities/chiayi-county/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"pingtung","name_zh":"屏東縣","name_en":"Pingtung County","kind":"county","center":[120.4942,22.6761],"manifest":"cities/pingtung/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"hualien","name_zh":"花蓮縣","name_en":"Hualien County","kind":"county","center":[121.6112,23.9911],"manifest":"cities/hualien/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"taitung","name_zh":"臺東縣","name_en":"Taitung County","kind":"county","center":[121.15,22.7554],"manifest":"cities/taitung/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"penghu","name_zh":"澎湖縣","name_en":"Penghu County","kind":"county","center":[119.5667,23.5667],"manifest":"cities/penghu/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"kinmen","name_zh":"金門縣","name_en":"Kinmen County","kind":"county","center":[118.3171,24.4321],"manifest":"cities/kinmen/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"lienchiang","name_zh":"連江縣","name_en":"Lienchiang County","kind":"county","center":[119.9517,26.1605],"manifest":"cities/lienchiang/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"}
+  ]
+}

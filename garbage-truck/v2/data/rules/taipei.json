@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "city": "taipei",
+  "verified": true,
+  "advisories": [
+    {
+      "id": "special-recyclables-lamps-batteries-cds",
+      "scope": "Taipei",
+      "items": ["batteries", "fluorescent lamps/tubes", "CDs"],
+      "official_schedule_days": [1, 2, 4, 5, 6],
+      "handoff": "recycling_truck",
+      "truck_zh": "資源回收車",
+      "broken_lamp": "Securely wrap and clearly mark broken lamps to protect collection workers; keep them separate from regular 3D recyclables.",
+      "note": "City advisory only. Do not apply this weekday rule to other cities."
+    }
+  ]
+}

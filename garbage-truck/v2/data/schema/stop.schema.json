@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Garbage Truck V2 normalized stop",
+  "type": "object",
+  "required": ["city", "route_id", "stop_order", "name", "time", "services", "source"],
+  "properties": {
+    "city": {"type": "string"},
+    "district": {"type": ["string", "null"]},
+    "route_id": {"type": "string"},
+    "route_name": {"type": ["string", "null"]},
+    "collection_method": {"type": ["string", "null"]},
+    "stop_order": {"type": "integer", "minimum": 1},
+    "name": {"type": "string"},
+    "time": {"type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$"},
+    "lat": {"type": ["number", "null"]},
+    "lng": {"type": ["number", "null"]},
+    "geo_status": {"enum": ["official", "cached", "unresolved"]},
+    "services": {
+      "type": "object",
+      "required": ["general", "food", "recycling"],
+      "properties": {
+        "general": {"$ref": "#/$defs/service"},
+        "food": {"$ref": "#/$defs/service"},
+        "recycling": {"$ref": "#/$defs/service"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["provider", "url"],
+      "properties": {
+        "provider": {"type": "string"},
+        "url": {"type": "string"},
+        "source_updated": {"type": ["string", "null"]},
+        "fetched_at": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "service": {
+      "type": "object",
+      "required": ["days"],
+      "properties": {
+        "days": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 6}, "uniqueItems": true}
+      }
+    }
+  }
+}

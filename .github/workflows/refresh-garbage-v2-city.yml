@@ -1,0 +1,78 @@
+name: Refresh Garbage Truck V2 City
+
+on:
+  workflow_dispatch:
+    inputs:
+      city:
+        description: "Refresh one city/county only"
+        required: true
+        type: choice
+        options:
+          - taipei
+          - new-taipei
+          - taoyuan
+          - taichung
+          - tainan
+          - kaohsiung
+          - keelung
+          - hsinchu-city
+          - chiayi-city
+          - yilan
+          - hsinchu-county
+          - miaoli
+          - changhua
+          - nantou
+          - yunlin
+          - chiayi-county
+          - pingtung
+          - hualien
+          - taitung
+          - penghu
+          - kinmen
+          - lienchiang
+      min_age_days:
+        description: "Do not hit upstream again if last good/cache is newer than this"
+        required: true
+        default: "30"
+        type: string
+      force:
+        description: "Ignore the age guard and re-check upstream"
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: garbage-truck-v2-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh one city from MOENV fallback
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--city "${{ inputs.city }}" --min-age-days "${{ inputs.min_age_days }}")
+          if [[ "${{ inputs.force }}" == "true" ]]; then args+=(--force); fi
+          python garbage-truck/v2/scripts/collect_moenv.py "${args[@]}"
+      - name: Compile mapped stops to small JSON tiles
+        run: python garbage-truck/v2/scripts/compile_tiles.py --city "${{ inputs.city }}"
+      - name: Commit last-known-good static JSON
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add "garbage-truck/v2/data/cities/${{ inputs.city }}"
+          if git diff --cached --quiet; then echo "No published data changes."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "garbage-v2: refresh ${{ inputs.city }} static data"
+          git push
