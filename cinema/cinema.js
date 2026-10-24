@@ -66,6 +66,9 @@
   let knownShowtimeRows = 0;
   let dataGeneratedDate = '';
   let map;
+  let mapDataReady = false;
+  let savedMapView = null;
+  let activePopup = null;
   let userPosition = null;
 
   const ui = (key) => localeInfo[language].ui[key] || localeInfo.en.ui[key] || key;
@@ -169,16 +172,42 @@
       return n+(normalizeLang(s.audio_language)===code?1:0);
     },0);
   }
+  function cinemaPopupContent(location,cinema,logoKey) {
+    const shows=cinema?(showsByCity[location.city]?.showtimes||[]).filter(s=>s.cinema_id===cinema.id&&(s.start_time||'').slice(0,10)===dateSelect.value):[];
+    const address=cinema?.address||[displayName(location.city),location.street,location.house_number].filter(Boolean).join(' ');
+    const addr=address?`<span class="nearby-note">${esc(address)}</span>`:'';
+    const image=safeUrl(cinema?.image_url||cinema?.photo_url||cinema?.image);
+    const photo=image?`<img class="popup-photo" src="${esc(image)}" alt="${esc(cinema?.name_zh||location.name||'Cinema building')}" loading="lazy">`:'';
+    const filmGroups=new Map();shows.forEach(show=>{const title=show.movie_title||'Untitled screening';if(!filmGroups.has(title))filmGroups.set(title,[]);filmGroups.get(title).push(show);});
+    const filmRows=[...filmGroups.entries()].map(([title,rows])=>{
+      const audios=[...new Set(rows.map(show=>normalizeLang(show.audio_language)).filter(Boolean))].map(code=>languageNames[code]||code);
+      const subtitles=[...new Set(rows.flatMap(show=>Array.isArray(show.subtitles)?show.subtitles.map(code=>languageNames[normalizeLang(code)]||code):[]))];
+      const times=rows.map(show=>formatTime(show.start_time)).filter(Boolean).join(' · ');
+      const details=[audios.length?`${ui('audio')}: ${audios.join(', ')}`:`${ui('audio')}: ${ui('audioUnknown')}`,`${ui('subtitles')}: ${subtitles.length?subtitles.join(', '):ui('subtitleUnknown')}`].join(' · ');
+      return `<li><b>${esc(title)}</b><span>${esc(times)}</span><small>${esc(details)}</small></li>`;
+    }).join('');
+    const venueName=cinema?.name_zh||location.name||'Cinema',locationEnglish=locationEnglishNames[String(location.source_feature_id)]||'';
+    const englishName=cinema?.name_en||locationEnglish,logoImage=logoImages[logoKey]||'',logoBackground=logoBackgrounds[logoKey]||'#fff';
+    const popupLogo=logoImage?`<div class="popup-brand-logo" style="background:${esc(logoBackground)}"><img src="${esc(logoImage)}" alt="${esc(englishName||venueName)} logo" loading="lazy"></div>`:'';
+    return `${photo}${popupLogo}<b>${esc(venueName)}</b>${englishName?`<br><span class="popup-english-name">${esc(englishName)}</span>`:''}<br><span class="nearby-note">${esc(cinema?.company_name||'')}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span>${filmRows?`<ul class="popup-movies">${filmRows}</ul>`:`<p class="nearby-note">No schedule is linked for this venue yet.</p>`}`;
+  }
   function buildMap() {
+    if(map||!mapDataReady)return;
     if (!window.maplibregl) { $('#map-error').hidden=false; $('#map-error').textContent='The map library did not load. Browse cinemas from the list.'; return; }
-    map=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/liberty',center:[121,23.8],zoom:6.4,attributionControl:false});
+    const restore=savedMapView;
+    map=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/liberty',center:restore?.center||[121,23.8],zoom:restore?.zoom||6.4,attributionControl:false,maxTileCacheSize:32,maxTileCacheZoomLevels:2});
     map.on('error',()=>{$('#map-error').hidden=false;});
     map.on('click',handleMapSelection);
-    map.on('load',()=>{if(cityDefs.length)renderMarkers();});
+    map.on('load',()=>{if(cityDefs.length)renderMarkers(!restore);if(userPosition)showUserMarker();savedMapView=null;});
   }
-  function renderMarkers() {
+  function destroyMap() {
+    if(!map)return;
+    const center=map.getCenter();savedMapView={center:[center.lng,center.lat],zoom:map.getZoom()};
+    activePopup?.remove();activePopup=null;markers=[];userMarker=null;map.remove();map=null;
+  }
+  function renderMarkers(fitAll=true) {
     if (!map||!map.loaded()) return;
-    markers.forEach((m)=>m.remove()); markers=[];
+    activePopup?.remove();activePopup=null;markers.forEach((m)=>m.remove());markers=[];
     const visibleSlugs=new Set(selectedCities());
     const cinemaIndex=new Map(Object.values(cinemaByCity).flatMap(data=>data.cinemas||[]).map(cinema=>[cinema.id,cinema]));
     for (const location of venueLocations.filter(item=>visibleSlugs.has(item.city))) {
@@ -193,29 +222,13 @@
         const logoImage=logoImages[logoKey]||'';
         const logoBackground=logoBackgrounds[logoKey]||'#fff';
         el.innerHTML=`<span class="pin-shape" style="--logo-color:#${logoColor}">${logoImage?`<span class="pin-logo-frame" style="--logo-bg:${logoBackground}"><img class="pin-logo" src="${esc(logoImage)}" alt="" decoding="async"></span>`:`<span class="pin-icon" aria-hidden="true">${esc(mark)}</span>`}</span>`;el.setAttribute('aria-label',`${cinema?.name_en||locationEnglish} ${cinema?.name_zh||location.name||'Cinema'}`.trim());el.title=`${cinema?.name_en||locationEnglish} · ${cinema?.name_zh||location.name||'Cinema'}`.trim();
-        const shows=cinema?(showsByCity[location.city]?.showtimes||[]).filter(s=>s.cinema_id===cinema.id && (s.start_time||'').slice(0,10)===dateSelect.value):[];
-        const address=cinema?.address||[displayName(location.city),location.street,location.house_number].filter(Boolean).join(' ');
-        const addr=address?`<span class="nearby-note">${esc(address)}</span>`:'';
-        const image=safeUrl(cinema?.image_url||cinema?.photo_url||cinema?.image);
-        const photo=image?`<img class="popup-photo" src="${esc(image)}" alt="${esc(cinema?.name_zh||location.name||'Cinema building')}" loading="lazy">`:'';
-        const filmGroups=new Map();shows.forEach(show=>{const title=show.movie_title||'Untitled screening';if(!filmGroups.has(title))filmGroups.set(title,[]);filmGroups.get(title).push(show);});
-        const filmRows=[...filmGroups.entries()].map(([title,rows])=>{
-          const audios=[...new Set(rows.map(show=>normalizeLang(show.audio_language)).filter(Boolean))].map(code=>languageNames[code]||code);
-          const subtitles=[...new Set(rows.flatMap(show=>Array.isArray(show.subtitles)?show.subtitles.map(code=>languageNames[normalizeLang(code)]||code):[]))];
-          const times=rows.map(show=>formatTime(show.start_time)).filter(Boolean).join(' · ');
-          const details=[audios.length?`${ui('audio')}: ${audios.join(', ')}`:`${ui('audio')}: ${ui('audioUnknown')}`,`${ui('subtitles')}: ${subtitles.length?subtitles.join(', '):ui('subtitleUnknown')}`].join(' · ');
-          return `<li><b>${esc(title)}</b><span>${esc(times)}</span><small>${esc(details)}</small></li>`;
-        }).join('');
-        const venueName=cinema?.name_zh||location.name||'Cinema';
-        const englishName=cinema?.name_en||locationEnglish;
-        const popupLogo=logoImage?`<div class="popup-brand-logo" style="background:${logoBackground}"><img src="${esc(logoImage)}" alt="${esc(englishName||venueName)} logo" loading="lazy"></div>`:'';
-        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}${popupLogo}<b>${esc(venueName)}</b>${englishName?`<br><span class="popup-english-name">${esc(englishName)}</span>`:''}<br><span class="nearby-note">${esc(cinema?.company_name||'')}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span>${filmRows?`<ul class="popup-movies">${filmRows}</ul>`:`<p class="nearby-note">No schedule is linked for this venue yet.</p>`}`);
-        const marker=new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(point).setPopup(popup).addTo(map);
+        const marker=new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(point).addTo(map);
         marker._cinemaId=cinema?.id||'';marker._citySlug=location.city;
-        if(cinema)el.addEventListener('click',()=>selectCinema(cinema.id,location.city,true));markers.push(marker);
+        marker._openCinemaPopup=()=>{if(!map)return;activePopup?.remove();activePopup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setLngLat(point).setHTML(cinemaPopupContent(location,cinema,logoKey)).addTo(map);};
+        el.addEventListener('click',event=>{event.stopPropagation();if(cinema){selectCinema(cinema.id,location.city,false);map?.flyTo({center:point,zoom:16,duration:700});}marker._openCinemaPopup();});markers.push(marker);
     }
     const mapped=venueLocations.filter(item=>visibleSlugs.has(item.city)).map(item=>[item.longitude,item.latitude]);
-    if(selectedCity==='all'&&mapped.length){const bounds=mapped.reduce((b,p)=>b.extend(p),new maplibregl.LngLatBounds(mapped[0],mapped[0]));map.fitBounds(bounds,{padding:{top:70,right:65,bottom:90,left:65},maxZoom:10,duration:0});}
+    if(fitAll&&selectedCity==='all'&&mapped.length){const bounds=mapped.reduce((b,p)=>b.extend(p),new maplibregl.LngLatBounds(mapped[0],mapped[0]));map.fitBounds(bounds,{padding:{top:70,right:65,bottom:90,left:65},maxZoom:10,duration:0});}
   }
   function setupCityOptions() {
     citySelect.innerHTML=`<option value="all">${esc(ui('allTaiwan'))}</option>`+cityDefs.filter(c=>cinemaCount(c.slug)>0).map(c=>`<option value="${esc(c.slug)}">${esc(displayName(c.slug))} · ${cinemaCount(c.slug)}</option>`).join('');
@@ -436,7 +449,7 @@
     const cinema=(cinemaByCity[slug]?.cinemas||[]).find(c=>c.id===id);if(cinema&&!brandMatches(cinema))brandSelect.value='all';
     renderResults();renderMarkers();
     const card=document.getElementById(`cinema-${id}`);if(card){const resultTop=resultsEl.getBoundingClientRect().top,cardTop=card.getBoundingClientRect().top;resultsEl.scrollTo({top:Math.max(0,resultsEl.scrollTop+cardTop-resultTop-8),behavior:'smooth'});}
-    if(fly&&map){const cinema=(cinemaByCity[slug]?.cinemas||[]).find(c=>c.id===id),location=cinemaPoint(cinema)||((loc)=>loc?[loc.longitude,loc.latitude]:null)(cinemaLocation(cinema,slug));if(location){map.flyTo({center:location,zoom:16,duration:700});markers.find(m=>m._cinemaId===id)?.togglePopup();}}
+    if(fly&&map){const cinema=(cinemaByCity[slug]?.cinemas||[]).find(c=>c.id===id),location=cinemaPoint(cinema)||((loc)=>loc?[loc.longitude,loc.latitude]:null)(cinemaLocation(cinema,slug));if(location){map.flyTo({center:location,zoom:16,duration:700});markers.find(m=>m._cinemaId===id)?._openCinemaPopup?.();}}
   }
   function handleMapSelection(event) {
     if(!map)return;
@@ -487,6 +500,12 @@
     const distance=distanceKm(userPosition,location);
     return distance<1?`${Math.round(distance*1000)} m`:`${distance<10?distance.toFixed(1):Math.round(distance)} km`;
   }
+  function showUserMarker() {
+    if(!map||!window.maplibregl||!userPosition)return;
+    if(userMarker)userMarker.remove();
+    const element=document.createElement('div');element.className='user-location-marker';
+    userMarker=new maplibregl.Marker({element}).setLngLat([userPosition.lng,userPosition.lat]).setPopup(new maplibregl.Popup({offset:15}).setText(currentLocationLabels[language]||currentLocationLabels.en)).addTo(map);
+  }
   function locateMe() {
     const button=$('#locate');
     if(!navigator.geolocation){mapCaption.textContent=ui('locationDenied');return;}
@@ -494,9 +513,7 @@
     navigator.geolocation.getCurrentPosition(pos=>{
       const user={lat:pos.coords.latitude,lng:pos.coords.longitude};
       userPosition=user;
-      if(userMarker)userMarker.remove();
-      const element=document.createElement('div');element.className='user-location-marker';
-      if(map&&window.maplibregl)userMarker=new maplibregl.Marker({element}).setLngLat([user.lng,user.lat]).setPopup(new maplibregl.Popup({offset:15}).setText(currentLocationLabels[language]||currentLocationLabels.en)).addTo(map);
+      showUserMarker();
       const nearest=cityDefs.filter(c=>c.center&&cinemaCount(c.slug)>0).map(c=>({...c,distance:distanceKm(user,c.center)})).sort((a,b)=>a.distance-b.distance)[0];
       if(nearest)selectCity(nearest.slug,false);
       if(map)map.flyTo({center:[user.lng,user.lat],zoom:15.6,duration:900});
@@ -530,6 +547,7 @@
       $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
       setLanguage(language);
       showtimesPending=true;renderResults();
+      mapDataReady=true;
       buildMap();
       const needsLive=manifest?.sources?.showtimes?.['showtimes-official-api']?.health!=='healthy';
       if(needsLive)loadLiveShowtimes().then(()=>{
@@ -576,7 +594,12 @@
   sheetGrab.addEventListener('click',()=>{if(suppressSheetClick)return;toggleSheet();});
   $('#sheet-collapse').addEventListener('click',()=>{app.dataset.sheet='hidden';updateMobileActionLabels();setTimeout(()=>map?.resize(),240);});
   $('#sheet-expand').addEventListener('click',()=>{app.dataset.sheet='half';updateMobileActionLabels();requestAnimationFrame(()=>map?.resize());});
-  $('#map-view-toggle').addEventListener('click',()=>{const visible=app.dataset.mapVisible!=='false';app.dataset.mapVisible=String(!visible);if(!visible&&app.dataset.sheet==='expanded')app.dataset.sheet='half';if(!visible&&app.dataset.sheet==='hidden')app.dataset.sheet='half';updateMobileActionLabels();if(!visible)requestAnimationFrame(()=>map?.resize());});
+  $('#map-view-toggle').addEventListener('click',()=>{
+    const visible=app.dataset.mapVisible!=='false';
+    if(visible){destroyMap();app.dataset.mapVisible='false';}
+    else{app.dataset.mapVisible='true';if(app.dataset.sheet==='expanded'||app.dataset.sheet==='hidden')app.dataset.sheet='half';}
+    updateMobileActionLabels();if(!visible)requestAnimationFrame(buildMap);
+  });
     $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1));syncDateControls();loadDateShowtimes(dateSelect.value);mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}userPosition=null;selectCity('all',true);});
   document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();searchInput.focus();}if(e.key==='Escape'&&document.activeElement===searchInput){searchInput.value='';renderResults();searchInput.blur();}});
   init();
