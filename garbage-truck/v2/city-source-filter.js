@@ -25,9 +25,9 @@
   function esc(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 
   async function forceBaseCity(frame,slug){
-    if(slug!=='taipei'&&slug!=='new-taipei')return;
+    if(slug!=='taipei'&&slug!=='new-taipei')return null;
     const w=frame.contentWindow,d=frame.contentDocument;
-    if(!w||!d)return;
+    if(!w||!d)return null;
     const cfg=slug==='taipei'
       ? {city:'taipei',manifest:'data/manifest.json',base:'data/',operation:'data/operations/taipei.json',facility:'data/facilities/taipei.json'}
       : {city:'new-taipei',manifest:'data/new-taipei/manifest.json',base:'data/new-taipei/',operation:'data/operations/new-taipei.json',facility:null};
@@ -42,7 +42,7 @@
       await ensure();render();
       return {city:sources[0].city,sourceCount:sources.length};
     })()`;
-    try{return await w.eval(js)}catch(err){console.error('V2 base-city source isolation failed',slug,err)}
+    try{return await w.eval(js)}catch(err){console.error('V2 base-city source isolation failed',slug,err);return null}
   }
 
   async function showScheduleOnly(frame,slug){
@@ -101,46 +101,10 @@
     }catch(e){console.warn('V2 schedule-only presentation failed',slug,e);return null}
   }
 
-  let scheduleGuard=0;
-  async function stabilizeScheduleOnly(frame,select,slug){
-    const guard=++scheduleGuard;
-    const d=frame.contentDocument;
-    const status=d?.getElementById('status');
-    if(!status)return;
-    let expected=await showScheduleOnly(frame,slug);
-    if(!expected||guard!==scheduleGuard)return;
-    let busy=false;
-    const observer=new MutationObserver(async()=>{
-      if(busy||guard!==scheduleGuard||select.value!==slug||status.textContent===expected)return;
-      busy=true;
-      try{
-        const next=await showScheduleOnly(frame,slug);
-        if(next)expected=next;
-      }finally{busy=false}
-    });
-    observer.observe(status,{childList:true,characterData:true,subtree:true});
-    setTimeout(()=>observer.disconnect(),10000);
-  }
+  window.__v2ForceBaseCity=forceBaseCity;
+  window.__v2ShowScheduleOnly=showScheduleOnly;
 
   window.installNationwideV2=async function(frame){
     await originalInstall(frame);
-    const d=frame.contentDocument;
-    const select=d?.getElementById('cityV2');
-    const lang=d?.getElementById('lang');
-    if(!select)return;
-
-    await forceBaseCity(frame,select.value);
-    await stabilizeScheduleOnly(frame,select,select.value);
-
-    select.addEventListener('change',()=>{
-      const slug=select.value;
-      if(slug==='taipei'||slug==='new-taipei'){
-        scheduleGuard++;
-        setTimeout(()=>forceBaseCity(frame,slug),450);
-      }else{
-        stabilizeScheduleOnly(frame,select,slug);
-      }
-    });
-    lang?.addEventListener('change',()=>setTimeout(()=>showScheduleOnly(frame,select.value),80));
   };
 })();
