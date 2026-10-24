@@ -610,6 +610,7 @@
   "dedup_policy": "same normalized cinema/movie/time/hall/format is emitted once; official sources run before fallback sources and therefore win exact duplicates",
   "fields": {
     "audio_language": "source-declared spoken/dubbed language when available",
+    "poster_url": "official ShowTimes movie poster URL when the program provides artwork",
     "subtitles": "verified subtitle language codes when source explicitly declares them; null means unknown",
     "duration_minutes": "source-declared running time when available",
     "source_role": "why a fallback record was used, when applicable",

@@ -331,7 +331,7 @@
           if(!program||!session||session.date<today||!program.name)continue;
           const format=event.meta?.format||null,audio=aliases.find(([label])=>format?.endsWith(label))?.[1]||null,duration=Number(program.duration);
           const date=byDate[session.date]||={};const shows=date[city]||=[];
-          shows.push({id:`showtimes-${event.id}`,cinema_id:cinema.id,cinema_name:corporation.name,movie_title:program.name,movie_title_en:program.nameAlternative||null,start_time:`${session.date}T${session.time}:00+08:00`,end_time:null,hall:rooms.get(Number(event.venueId))||null,format,audio_language:audio,subtitles:null,duration_minutes:Number.isFinite(duration)&&duration>0?Math.round(duration/60):null,source_event_id:String(event.id),source_url:`https://www.showtimes.com.tw/cinemas/${corporation.id}/`,source:'showtimes-official-api'});
+          shows.push({id:`showtimes-${event.id}`,cinema_id:cinema.id,cinema_name:corporation.name,movie_title:program.name,movie_title_en:program.nameAlternative||null,poster_url:program.coverImagePortrait?.url||null,start_time:`${session.date}T${session.time}:00+08:00`,end_time:null,hall:rooms.get(Number(event.venueId))||null,format,audio_language:audio,subtitles:null,duration_minutes:Number.isFinite(duration)&&duration>0?Math.round(duration/60):null,source_event_id:String(event.id),source_url:`https://www.showtimes.com.tw/cinemas/${corporation.id}/`,source:'showtimes-official-api'});
         }
       }
       liveShowtimesByCityDate=byDate;
@@ -390,13 +390,14 @@
   }
   function movieCard(showtimes) {
     const first=showtimes[0],filmTitle=decodeEntities(first.movie_title||'Untitled screening'),titleEn=decodeEntities(first.movie_title_en||'');
+    const posterUrl=safeUrl(first.poster_url),poster=posterUrl?`<img class="movie-poster" src="${esc(posterUrl)}" alt="" loading="lazy" decoding="async">`:'';
     const sessions=showtimes.map(s=>{
       const day=dateSelect.value==='all-dates'?`<span class="tag">${esc(formatDate((s.start_time||'').slice(0,10),'short'))}</span>`:'';
       const time=formatTime(s.start_time),meta=[s.format,s.hall].filter(Boolean);
       const url=safeUrl(s.source_url),link=url?`<a class="detail-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(ui('sourceLink'))}</a>`:'';
       return `<div class="showtime-row">${day}${time?`<span class="time-chip">${esc(time)}</span>`:''}${meta.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}${audioBadge(s.audio_language)}${subtitleBadge(s.subtitles)}</div>${link}`;
     }).join('');
-    return `<div class="movie"><div class="movie-title-row"><div class="movie-title"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</div>${copyButton(filmTitle,ui('titleSource'))}</div>${titleEn?`<div class="movie-title-row movie-title-row-en"><div class="movie-en"><span class="movie-title-label">${esc(ui('international'))}</span>${esc(titleEn)}</div>${copyButton(titleEn,ui('international'))}</div>`:''}${sessions}</div>`;
+    return `<div class="movie"><div class="movie-title-row">${poster}<div class="movie-title"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</div>${copyButton(filmTitle,ui('titleSource'))}</div>${titleEn?`<div class="movie-title-row movie-title-row-en"><div class="movie-en"><span class="movie-title-label">${esc(ui('international'))}</span>${esc(titleEn)}</div>${copyButton(titleEn,ui('international'))}</div>`:''}${sessions}</div>`;
   }
   function renderResults() {
     if(!Object.keys(cinemaByCity).length)return;
