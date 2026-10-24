@@ -31,10 +31,13 @@ on:
           - kinmen
           - lienchiang
       force:
-        description: "Override unchanged-source or Monday cooldown checks"
+        description: "Override unchanged-source or cooldown checks"
         required: true
         default: false
         type: boolean
+  push:
+    paths:
+      - 'garbage-truck/v2/.refresh-request.json'
 
 permissions:
   contents: write
@@ -49,9 +52,40 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Resolve explicit one-city request
+        id: request
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            city='${{ inputs.city }}'
+            force='${{ inputs.force }}'
+          else
+            readarray -t request < <(python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('garbage-truck/v2/.refresh-request.json')
+          d = json.loads(p.read_text(encoding='utf-8'))
+          print(d.get('city', ''))
+          print('true' if d.get('force', False) else 'false')
+          PY
+            )
+            city="${request[0]:-}"
+            force="${request[1]:-false}"
+          fi
+          case "$city" in
+            taipei|new-taipei|taoyuan|taichung|tainan|kaohsiung|keelung|hsinchu-city|chiayi-city|yilan|hsinchu-county|miaoli|changhua|nantou|yunlin|chiayi-county|pingtung|hualien|taitung|penghu|kinmen|lienchiang) ;;
+            *) echo "Invalid city request: $city" >&2; exit 1 ;;
+          esac
+          echo "city=$city" >> "$GITHUB_OUTPUT"
+          echo "force=$force" >> "$GITHUB_OUTPUT"
+          echo "Explicit refresh request: city=$city force=$force"
 
       - name: Check preferred source and refresh one city/county
         id: collect
@@ -60,35 +94,65 @@ jobs:
         run: |
           set -euo pipefail
           force=()
-          if [[ "${{ inputs.force }}" == "true" ]]; then force+=(--force); fi
-          if [[ "${{ inputs.city }}" == "tainan" ]]; then
+          if [[ "${{ steps.request.outputs.force }}" == "true" ]]; then force+=(--force); fi
+          city='${{ steps.request.outputs.city }}'
+          if [[ "$city" == "tainan" ]]; then
             echo "Using Tainan City Government official JSON source."
             python garbage-truck/v2/scripts/import_tainan.py "${force[@]}"
           else
             echo "Using MOENV nationwide fallback until a verified local official adapter is available."
-            python garbage-truck/v2/scripts/collect_moenv.py --city "${{ inputs.city }}" "${force[@]}"
+            python garbage-truck/v2/scripts/collect_moenv.py --city "$city" "${force[@]}"
           fi
 
       - name: Compile mapped stops to small JSON tiles
         if: steps.collect.outcome == 'success'
-        run: python garbage-truck/v2/scripts/compile_tiles.py --city "${{ inputs.city }}"
+        run: python garbage-truck/v2/scripts/compile_tiles.py --city "${{ steps.request.outputs.city }}"
 
-      - name: Commit published JSON or source-check metadata
+      - name: Commit published JSON or source-check metadata without overwriting newer main
         if: always()
         shell: bash
         run: |
           set -euo pipefail
-          path="garbage-truck/v2/data/cities/${{ inputs.city }}"
+          city='${{ steps.request.outputs.city }}'
+          path="garbage-truck/v2/data/cities/$city"
           if [[ ! -e "$path" ]]; then echo "No city data/metadata directory created."; exit 0; fi
           git add "$path"
           if git diff --cached --quiet; then echo "No static JSON or source metadata changes."; exit 0; fi
+
+          git diff --cached --binary > /tmp/garbage-v2-city.patch
+          git reset --hard HEAD
+          git fetch origin main
+          git reset --hard origin/main
+          if ! git apply --index --3way /tmp/garbage-v2-city.patch; then
+            echo 'Generated city data overlaps newer main changes; refusing to overwrite them.' >&2
+            exit 1
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "garbage-v2: refresh/check ${{ inputs.city }} source"
-          git push
+          git commit -m "garbage-v2: refresh/check $city source"
 
-      - name: Mark upstream failure after metadata is preserved
-        if: steps.collect.outcome == 'failure'
-        run: |
-          echo "Collector/importer stopped after its two-attempt upstream policy. Source metadata was preserved; next normal retry is Monday."
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt ${attempt} raced with newer main; rebasing generated-only commit."
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo 'Could not publish city snapshot after three race-safe retries.' >&2
           exit 1
+
+      - name: Report source status without destroying last-known-good data
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo '### Garbage Truck V2 one-city refresh'
+            echo "- city: ${{ steps.request.outputs.city }}"
+            echo "- collector: ${{ steps.collect.outcome }}"
+            if [[ "${{ steps.collect.outcome }}" == 'failure' ]]; then
+              echo '- Upstream failed after its retry policy. Existing last-known-good static JSON remains authoritative; no empty replacement was published.'
+              echo '- Respect the source cooldown before another normal retry.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
