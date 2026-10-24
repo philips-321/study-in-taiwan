@@ -4,9 +4,11 @@ Read this file first before changing the cinema pipeline.
 
 ## Browser experience
 
-`cinema/index.html` is the public cinema browser. It loads the fixed per-city JSON files below `data/` and the city center coordinates from `garbage-truck/v2/data/cities.json`. The map bubbles show the number of registered cinemas in each city; selecting one filters the screening list. The panel supports a Taiwan-local date, cinema/movie search, and displays source-provided audio, subtitle, format, and hall information when present.
+`cinema/index.html` is the public cinema browser. It loads the fixed per-city JSON files below `data/` and the city center coordinates from `garbage-truck/v2/data/cities.json`. The map bubbles show the number of registered cinemas in each city; selecting one filters the screening list. The panel supports cinema/movie search, a date navigator limited to dates present in the data (plus all recorded dates), audio and explicitly verified subtitle filters, location-based nearest-city selection, and English, Traditional Chinese, Indonesian, Japanese, Korean, Vietnamese, and Thai UI languages. A dark/light theme is available.
 
-The BAMID cinema master currently has no latitude/longitude fields. Until verified venue coordinates are added, map bubbles intentionally represent city centers, not individual cinema locations. Cinema addresses link to a map search so the page does not imply false venue precision. Keep `subtitles: null` distinct from an explicit subtitle language: null means the source did not provide verified subtitle information.
+The BAMID cinema master currently has no latitude/longitude fields. Until verified venue coordinates are added, map bubbles intentionally represent city centers, not individual cinema locations. Location access therefore selects the nearest city center, not a verified nearest theater. Cinema addresses link to a map search so the page does not imply false venue precision. Keep `subtitles: null` distinct from an explicit subtitle language: null means the source did not provide verified subtitle information.
+
+The current cinema dataset has `movie_title` and sometimes `movie_title_en`; it does not contain per-country title translations. The UI labels `movie_title_en` as the international title when supplied and does not derive localized titles from the interface language. Explicit subtitle coverage is sparse, so subtitle search must leave unknown values unclassified rather than inferring them from audio language.
 
 This project is an ongoing maintained data pipeline, not a project with a meaningful completion percentage. Upstream cinema sites will change and adapters will need patching over time.
 

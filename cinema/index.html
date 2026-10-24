@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#10151b">
-  <meta name="description" content="Explore Taiwan cinemas and current movie showtimes by city, with audio and subtitle details when available.">
-  <title>Taiwan Cinema Map · Study in Taiwan</title>
+  <meta name="description" content="Search Taiwan cinema showtimes by film, verified subtitles, audio language, city, and date.">
+  <link rel="canonical" href="https://study-in-taiwan.com/cinema/">
+  <title>Taiwan Cinema Map · Search Films by Subtitle and Audio</title>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
-  <link rel="stylesheet" href="cinema.css">
+  <link rel="stylesheet" href="cinema.css?v=20261025a">
   <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
-  <script defer src="cinema.js"></script>
+  <script defer src="cinema.js?v=20261025a"></script>
 </head>
 <body>
   <main class="app">
@@ -23,15 +24,31 @@
     </section>
     <aside class="panel" id="panel">
       <header class="panel-head">
-        <div class="eyebrow">FIND YOUR NEXT SCREENING</div>
-        <h1>Movies, around<br>the corner.</h1>
-        <p class="intro">Browse cinemas across Taiwan and see what’s showing today.</p>
-        <div class="toolbar">
-          <label class="city-control"><span class="sr-only">City</span><select id="city"><option value="all">All Taiwan</option></select><span class="chevron">⌄</span></label>
-          <label class="date-control"><span class="sr-only">Showtime date</span><input type="date" id="date"><span class="cal-icon">▦</span></label>
+        <div class="head-row">
+          <div class="eyebrow" data-i18n="eyebrow">SCREENINGS ACROSS TAIWAN</div>
+          <div class="head-actions">
+            <label class="language-control"><span class="sr-only" data-i18n="language">Language</span><select id="language" aria-label="Language"><option value="en">EN</option><option value="zh-TW">繁中</option><option value="id">ID</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="vi">VI</option><option value="th">TH</option></select></label>
+            <button class="icon-button" id="theme" type="button" aria-label="Switch to light mode" title="Switch theme">☼</button>
+          </div>
         </div>
-        <label class="search"><span class="search-icon">⌕</span><span class="sr-only">Search films or cinemas</span><input id="search" type="search" placeholder="Search a movie or cinema…"><kbd>/</kbd></label>
-        <div class="summary"><span id="summary">Loading cinemas…</span><button id="reset" type="button">Reset</button></div>
+        <h1 data-i18n="title">Find a film.<br>Pick your version.</h1>
+        <p class="intro" data-i18n="intro">Search Taiwan showtimes by movie, subtitle, audio, and city.</p>
+        <div class="toolbar">
+          <label class="city-control"><span class="sr-only" data-i18n="city">City</span><select id="city" aria-label="City"><option value="all">All Taiwan</option></select><span class="chevron">⌄</span></label>
+          <button class="locate-button" id="locate" type="button"><span aria-hidden="true">⌖</span><span data-i18n="locate">Use my location</span></button>
+        </div>
+        <div class="date-nav">
+          <button class="step-button" id="date-prev" type="button" aria-label="Previous available date">‹</button>
+          <label class="date-select-wrap"><span class="sr-only" data-i18n="date">Showtime date</span><select id="date" aria-label="Showtime date"></select><span class="date-count" id="date-count"></span><span class="chevron">⌄</span></label>
+          <button class="step-button" id="date-next" type="button" aria-label="Next available date">›</button>
+        </div>
+        <div class="filter-row">
+          <label class="filter-control"><span class="filter-label" data-i18n="subtitles">Subtitles</span><select id="subtitle-filter" aria-label="Subtitle language"></select><span class="chevron">⌄</span></label>
+          <label class="filter-control"><span class="filter-label" data-i18n="audio">Audio</span><select id="audio-filter" aria-label="Audio language"></select><span class="chevron">⌄</span></label>
+        </div>
+        <label class="search"><span class="search-icon">⌕</span><span class="sr-only" data-i18n="search">Search films or cinemas</span><input id="search" type="search" placeholder="Search a movie or cinema…"><kbd>/</kbd></label>
+        <div class="data-note" id="data-note"></div>
+        <div class="summary"><span id="summary" data-i18n="loading">Loading cinemas…</span><button id="reset" type="button" data-i18n="reset">Reset</button></div>
       </header>
       <div class="results" id="results" aria-live="polite"><div class="loading"><span></span> Loading showtimes</div></div>
       <footer class="panel-foot"><span id="updated">Data from cinema schedules</span><span class="foot-mark">電影 · TAIWAN</span></footer>
