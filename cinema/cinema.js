@@ -155,9 +155,14 @@
         const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
         const photo=image?`<img class="popup-photo" src="${esc(image)}" alt="${esc(cinema.name_zh||'Cinema building')}" loading="lazy">`:'';
         const filmGroups=new Map();shows.forEach(show=>{const title=show.movie_title||'Untitled screening';if(!filmGroups.has(title))filmGroups.set(title,[]);filmGroups.get(title).push(show);});
-        const filmRows=[...filmGroups.entries()].slice(0,8).map(([title,rows])=>`<li><b>${esc(title)}</b><span>${rows.map(show=>formatTime(show.start_time)).filter(Boolean).join(' · ')}</span><small>${rows[0].audio_language?`${esc(ui('audio'))}: ${esc(audioLabel(rows[0].audio_language))} · `:''}${esc(ui('subtitles'))}: ${esc(subtitleLabel(rows[0].subtitles))}</small></li>`).join('');
-        const more=filmGroups.size>8?`<li class="popup-more">+ ${filmGroups.size-8} more films in the list</li>`:'';
-        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}<b>${esc(cinema.name_zh||cinema.name_en||'Cinema')}</b><br><span class="nearby-note">${esc(cinema.company_name||'')}${cinema.screens?` · ${esc(cinema.screens)} screens`:''}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span><ul class="popup-movies">${filmRows}${more}</ul>`);
+        const filmRows=[...filmGroups.entries()].map(([title,rows])=>{
+          const audios=[...new Set(rows.map(show=>normalizeLang(show.audio_language)).filter(Boolean))].map(code=>languageNames[code]||code);
+          const subtitles=[...new Set(rows.flatMap(show=>Array.isArray(show.subtitles)?show.subtitles.map(code=>languageNames[normalizeLang(code)]||code):[]))];
+          const times=rows.map(show=>formatTime(show.start_time)).filter(Boolean).join(' · ');
+          const details=[audios.length?`${ui('audio')}: ${audios.join(', ')}`:`${ui('audio')}: ${ui('audioUnknown')}`,`${ui('subtitles')}: ${subtitles.length?subtitles.join(', '):ui('subtitleUnknown')}`].join(' · ');
+          return `<li><b>${esc(title)}</b><span>${esc(times)}</span><small>${esc(details)}</small></li>`;
+        }).join('');
+        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}<b>${esc(cinema.name_zh||cinema.name_en||'Cinema')}</b><br><span class="nearby-note">${esc(cinema.company_name||'')}${cinema.screens?` · ${esc(cinema.screens)} screens`:''}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span><ul class="popup-movies">${filmRows}</ul>`);
         const marker=new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(point).setPopup(popup).addTo(map);
         marker._cinemaId=cinema.id;marker._citySlug=slug;
         el.addEventListener('click',()=>selectCinema(cinema.id,slug,true));markers.push(marker);
