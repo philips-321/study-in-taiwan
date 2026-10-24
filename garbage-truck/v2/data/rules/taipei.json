@@ -1,17 +1,40 @@
 {
-  "version": 1,
+  "version": 2,
   "city": "taipei",
   "verified": true,
+  "verified_at": "2026-10-24",
   "advisories": [
     {
       "id": "special-recyclables-lamps-batteries-cds",
-      "scope": "Taipei",
-      "items": ["batteries", "fluorescent lamps/tubes", "CDs"],
-      "official_schedule_days": [1, 2, 4, 5, 6],
+      "scope": "Taipei City only",
+      "items": [
+        "batteries",
+        "fluorescent lamps/tubes",
+        "CDs"
+      ],
+      "category_zh": "其他類",
+      "official_category_schedule_days": [1, 2, 4, 5, 6],
       "handoff": "recycling_truck",
       "truck_zh": "資源回收車",
-      "broken_lamp": "Securely wrap and clearly mark broken lamps to protect collection workers; keep them separate from regular 3D recyclables.",
-      "note": "City advisory only. Do not apply this weekday rule to other cities."
+      "broken_lamp": "Securely wrap and clearly mark broken lamps to protect collection workers; keep fluorescent lamps separate from regular 3D recyclables.",
+      "interpretation": "This stores Taipei's official category guidance. It is not inherited by other cities unless that city's own official source is verified. Actual front-line acceptance may be more permissive than the category schedule.",
+      "official_sources": [
+        {
+          "title": "臺北市資源回收分類與回收時間一覽表 / DEP guidance",
+          "url": "https://www.dep.gov.taipei/News_Content.aspx?n=B18D1A1E2787E330&s=97012D996F76C178&sms=305AECD29BED80F5",
+          "observed_updated": "2026-08-04"
+        },
+        {
+          "title": "廢日光燈管或廢玻璃容器如何回收？",
+          "url": "https://www.dep.gov.taipei/News_Content.aspx?n=ACEFA960B5A4ACD7&s=37625B7E10B981DC",
+          "observed_updated": "2026-10"
+        },
+        {
+          "title": "看圖做回收：其他類包含燈管、電池、光碟片",
+          "url": "https://www.dep.gov.taipei/News_Content.aspx?n=CB6D5C560DE4D2DD&s=FE88A00C88AE46BF&sms=72544237BBE4C5F6",
+          "published": "2020-01-25"
+        }
+      ]
     }
   ]
 }
