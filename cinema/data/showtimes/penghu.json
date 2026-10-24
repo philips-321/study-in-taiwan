@@ -1,7 +1,7 @@
 {
   "version": 3,
   "city": "penghu",
-  "generated_at": "2026-10-24T18:58:48.331Z",
+  "generated_at": "2026-10-24T00:00:00.000Z",
   "sources": {
     "moc-culture-movie-api": {
       "ok": false,
@@ -46,16 +46,11 @@
     "showtimes-official-api": {
       "ok": false,
       "showtimes": 0,
-      "error": "ShowTimes public API 403 Forbidden",
-      "health": "degraded",
-      "circuit_state": "open",
-      "failure_count": 1,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
-      "last_success_at": null,
-      "last_failure_at": "2026-10-24T18:59:27.328Z",
-      "next_probe_at": "2026-10-24T19:29:27.328Z"
+      "health": "degraded",
+      "error": "Official ShowTimes API returned 403 to scheduled collector; rows loaded from supplied official bootstrap snapshot"
     },
     "spot-huashan-official-schedule": {
       "ok": true,
