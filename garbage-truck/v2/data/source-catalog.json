@@ -1,17 +1,12 @@
 {
-  "version": 1,
+  "version": 2,
   "policy": {
     "runtime": "static JSON only",
     "database": null,
     "refresh": "manual, one city/county at a time",
     "network_attempts_per_request": 2,
     "retry_after_failure": "next Monday",
-    "compare_before_full_refresh": [
-      "source-provided update date",
-      "ETag",
-      "Last-Modified",
-      "content SHA-256"
-    ],
+    "compare_before_full_refresh": ["source-provided update date","ETag","Last-Modified","content SHA-256"],
     "history": "Each imported city stores source-history.json so changes can be compared over time."
   },
   "national_fallback": {
@@ -23,48 +18,12 @@
     "notes": "Public route pages; no verified bulk download endpoint stored yet."
   },
   "cities": {
-    "taipei": {
-      "local_official": {
-        "provider": "Taipei Open Data",
-        "landing_url": "https://data.taipei/dataset/detail?id=6bb3304b-4f46-4bb0-8cd1-60c66dcd1cae",
-        "direct_download_url": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=a6e90031-7ec4-4089-afb5-361a4efe7202",
-        "format": "CSV",
-        "status": "in-use"
-      }
-    },
-    "new-taipei": {
-      "local_official": {
-        "provider": "New Taipei Open Data",
-        "landing_url": "https://data.ntpc.gov.tw/datasets/edc3ad26-8ae7-4916-a00b-bc6048d19bf8",
-        "direct_download_url": "https://data.ntpc.gov.tw/api/datasets/edc3ad26-8ae7-4916-a00b-bc6048d19bf8/csv/file",
-        "format": "CSV",
-        "status": "in-use"
-      }
-    },
-    "tainan": {
-      "local_official": {
-        "provider": "Tainan City Government Open Data",
-        "landing_url": "https://data.tainan.gov.tw/DataSet/Detail/57aaa860-bb03-43c2-a797-73971d6cc73d",
-        "direct_download_url": "https://data.tainan.gov.tw/Resource/84df8cd6-8741-41ed-919c-5105a28ecd6d",
-        "format": "JSON",
-        "dataset_fields": ["AREA","ROUTEID","ROUTEORDER","VILLAGE","POINTNAME","TIME","LONGITUDE","LATITUDE","WORDDAY","RECYCLEDAY"],
-        "metadata_updated": "2026-01-28 16:41:37",
-        "update_frequency": "irregular",
-        "status": "source-found-not-imported",
-        "notes": "Preferred over MOENV for map geometry because the official dataset exposes coordinates."
-      }
-    },
-    "taoyuan": {
-      "local_official": {
-        "provider": "Taoyuan Open Data",
-        "landing_url": "https://opendata.tycg.gov.tw/",
-        "direct_download_url": null,
-        "status": "dataset-known-link-discovery-pending",
-        "notes": "Platform news confirms a dataset named 垃圾車清運點資訊; store the exact dataset/download URL when verified."
-      }
-    },
-    "taichung": {"local_official":{"status":"discovery-pending"}},
-    "kaohsiung": {"local_official":{"status":"discovery-pending"}},
+    "taipei": {"local_official":{"provider":"Taipei Open Data","landing_url":"https://data.taipei/dataset/detail?id=6bb3304b-4f46-4bb0-8cd1-60c66dcd1cae","direct_download_url":"https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=a6e90031-7ec4-4089-afb5-361a4efe7202","format":"CSV","status":"in-use"}},
+    "new-taipei": {"local_official":{"provider":"New Taipei Open Data","landing_url":"https://data.ntpc.gov.tw/datasets/edc3ad26-8ae7-4916-a00b-bc6048d19bf8","direct_download_url":"https://data.ntpc.gov.tw/api/datasets/edc3ad26-8ae7-4916-a00b-bc6048d19bf8/csv/file","format":"CSV","status":"in-use"}},
+    "tainan": {"local_official":{"provider":"Tainan City Government Open Data","landing_url":"https://data.tainan.gov.tw/DataSet/Detail/57aaa860-bb03-43c2-a797-73971d6cc73d","direct_download_url":"https://data.tainan.gov.tw/Resource/84df8cd6-8741-41ed-919c-5105a28ecd6d","format":"JSON","dataset_fields":["AREA","ROUTEID","ROUTEORDER","VILLAGE","POINTNAME","TIME","LONGITUDE","LATITUDE","WORKDAY/WORDDAY","RECYCLEDAY"],"metadata_updated":"2026-01-28 16:41:37","update_frequency":"irregular","status":"cooldown-until-2026-10-26","notes":"Preferred over MOENV for map geometry because the official dataset exposes coordinates. 2026-10-24 pull returned content that was not valid JSON; do not retry before Monday."}},
+    "taoyuan": {"local_official":{"provider":"Taoyuan Open Data","landing_url":"https://opendata.tycg.gov.tw/","direct_download_url":null,"status":"dataset-known-link-discovery-pending","notes":"Platform has a dataset named 垃圾車清運點資訊; exact current dataset/download URL still needs verification."}},
+    "taichung": {"local_official":{"provider":"Taichung City Government Environmental Protection Bureau","landing_url":"https://data.gov.tw/dataset/84004","direct_download_url":"https://newdatacenter.taichung.gov.tw/api/v1/no-auth/resource.download?rid=68d1a87f-7baa-4b50-8408-c36a3a7eda68","format":"JSON/octet-stream","metadata_updated":"2026-07-31 11:59","update_frequency":"irregular","dataset_fields":["area","village","car_licence","caption","task_type","g_d1_time_s/e..g_d7_time_s/e","r_d1_time_s/e..r_d7_time_s/e"],"status":"source-found","notes":"Static fixed-point schedule source. It does not expose coordinates in the documented fields. Dynamic GPS is a separate source and must not be called from user browsers."},"dynamic_gps":{"landing_url":"https://data.gov.tw/dataset/83558","direct_download_url":"https://newdatacenter.taichung.gov.tw/api/v1/no-auth/resource.download?rid=c923ad20-2ec6-43b9-b3ab-54527e99f7bc","fields":["lineid","car","time","location","X","Y","SpeedValue","OverSpeed"],"policy":"snapshot/cache only; never browser-polled","status":"source-found-not-enabled"}},
+    "kaohsiung": {"local_official":{"landing_url":"https://data.gov.tw/dataset/98147","status":"citywide-historical-district-sources-current","notes":"Old citywide dataset is delisted; current official datasets are split by district and include longitude/latitude."}},
     "keelung": {"local_official":{"status":"discovery-pending"}},
     "hsinchu-city": {"local_official":{"status":"discovery-pending"}},
     "chiayi-city": {"local_official":{"status":"discovery-pending"}},
