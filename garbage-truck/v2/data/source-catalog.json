@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "policy": {
+    "runtime": "static JSON only",
+    "database": null,
+    "refresh": "manual, one city/county at a time",
+    "network_attempts_per_request": 2,
+    "retry_after_failure": "next Monday",
+    "compare_before_full_refresh": [
+      "source-provided update date",
+      "ETag",
+      "Last-Modified",
+      "content SHA-256"
+    ],
+    "history": "Each imported city stores source-history.json so changes can be compared over time."
+  },
+  "national_fallback": {
+    "provider": "MOENV nationwide garbage route database",
+    "landing_url": "https://hwms.moenv.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE",
+    "direct_download_url": null,
+    "observed_source_updated": "115年10月21日",
+    "observed_on": "2026-10-24",
+    "notes": "Public route pages; no verified bulk download endpoint stored yet."
+  },
+  "cities": {
+    "taipei": {
+      "local_official": {
+        "provider": "Taipei Open Data",
+        "landing_url": "https://data.taipei/dataset/detail?id=6bb3304b-4f46-4bb0-8cd1-60c66dcd1cae",
+        "direct_download_url": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=a6e90031-7ec4-4089-afb5-361a4efe7202",
+        "format": "CSV",
+        "status": "in-use"
+      }
+    },
+    "new-taipei": {
+      "local_official": {
+        "provider": "New Taipei Open Data",
+        "landing_url": "https://data.ntpc.gov.tw/datasets/edc3ad26-8ae7-4916-a00b-bc6048d19bf8",
+        "direct_download_url": "https://data.ntpc.gov.tw/api/datasets/edc3ad26-8ae7-4916-a00b-bc6048d19bf8/csv/file",
+        "format": "CSV",
+        "status": "in-use"
+      }
+    },
+    "tainan": {
+      "local_official": {
+        "provider": "Tainan City Government Open Data",
+        "landing_url": "https://data.tainan.gov.tw/DataSet/Detail/57aaa860-bb03-43c2-a797-73971d6cc73d",
+        "direct_download_url": "https://data.tainan.gov.tw/Resource/84df8cd6-8741-41ed-919c-5105a28ecd6d",
+        "format": "JSON",
+        "dataset_fields": ["AREA","ROUTEID","ROUTEORDER","VILLAGE","POINTNAME","TIME","LONGITUDE","LATITUDE","WORDDAY","RECYCLEDAY"],
+        "metadata_updated": "2026-01-28 16:41:37",
+        "update_frequency": "irregular",
+        "status": "source-found-not-imported",
+        "notes": "Preferred over MOENV for map geometry because the official dataset exposes coordinates."
+      }
+    },
+    "taoyuan": {
+      "local_official": {
+        "provider": "Taoyuan Open Data",
+        "landing_url": "https://opendata.tycg.gov.tw/",
+        "direct_download_url": null,
+        "status": "dataset-known-link-discovery-pending",
+        "notes": "Platform news confirms a dataset named 垃圾車清運點資訊; store the exact dataset/download URL when verified."
+      }
+    },
+    "taichung": {"local_official":{"status":"discovery-pending"}},
+    "kaohsiung": {"local_official":{"status":"discovery-pending"}},
+    "keelung": {"local_official":{"status":"discovery-pending"}},
+    "hsinchu-city": {"local_official":{"status":"discovery-pending"}},
+    "chiayi-city": {"local_official":{"status":"discovery-pending"}},
+    "yilan": {"local_official":{"status":"discovery-pending"}},
+    "hsinchu-county": {"local_official":{"status":"discovery-pending"}},
+    "miaoli": {"local_official":{"status":"discovery-pending"}},
+    "changhua": {"local_official":{"status":"discovery-pending"}},
+    "nantou": {"local_official":{"status":"discovery-pending"}},
+    "yunlin": {"local_official":{"status":"discovery-pending"}},
+    "chiayi-county": {"local_official":{"status":"discovery-pending"}},
+    "pingtung": {"local_official":{"status":"discovery-pending"}},
+    "hualien": {"local_official":{"status":"discovery-pending"}},
+    "taitung": {"local_official":{"status":"discovery-pending"}},
+    "penghu": {"local_official":{"status":"discovery-pending"}},
+    "kinmen": {"local_official":{"status":"discovery-pending"}},
+    "lienchiang": {"local_official":{"status":"discovery-pending"}}
+  }
+}
