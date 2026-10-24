@@ -289,6 +289,60 @@
       "source_csv_active_rows": 345,
       "source_csv_paused_rows": 1,
       "coordinate_join_note": "Map tiles include 331 operating CSV records where district, village, and official recycling address match the official map API. 6 operating records lacked an API coordinate match; 8 matched village records had a conflicting address and were excluded. One paused record is excluded. This is a partial geocoded subset."
+    },
+    {
+      "city": "hsinchu-city",
+      "record_count": 36,
+      "source": "Hsinchu City DEP Resource Recycling Network public API",
+      "source_urls": [
+        "https://hccepb.ihc-recycle.com.tw/recycling_stations/",
+        "https://hccepb-api.ihc-recycle.com.tw/v1/recycling_stations"
+      ],
+      "source_updated": "2024-02-29",
+      "coverage_note": "All 36 records marked active in the city API and having coordinates are mapped. The latest source record update is 2024-02-29; users should confirm current opening days and accepted items with Hsinchu City DEP.",
+      "acceptance_note": "Official source is a resource recycling station list, so only recycling is marked accepted. General trash and food waste are not marked accepted. Opening days are announced separately.",
+      "tiles": [
+        {
+          "id": "24.7_120.9",
+          "file": "tiles/hsinchu-city/24.7_120.9.json",
+          "bounds": [
+            120.9,
+            24.7,
+            121.0,
+            24.8
+          ]
+        },
+        {
+          "id": "24.7_121.0",
+          "file": "tiles/hsinchu-city/24.7_121.0.json",
+          "bounds": [
+            121.0,
+            24.7,
+            121.1,
+            24.8
+          ]
+        },
+        {
+          "id": "24.8_120.9",
+          "file": "tiles/hsinchu-city/24.8_120.9.json",
+          "bounds": [
+            120.9,
+            24.8,
+            121.0,
+            24.900000000000002
+          ]
+        },
+        {
+          "id": "24.8_121.0",
+          "file": "tiles/hsinchu-city/24.8_121.0.json",
+          "bounds": [
+            121.0,
+            24.8,
+            121.1,
+            24.900000000000002
+          ]
+        }
+      ]
     }
   ]
 }

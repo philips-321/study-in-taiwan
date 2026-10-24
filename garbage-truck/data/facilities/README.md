@@ -25,3 +25,5 @@ These are manual static files; the site does not query a database at runtime.
 When refreshing data, keep source URLs, update dates, coverage counts, and
 acceptance limits in the manifest. Do not infer facility coordinates from a
 district center or mark waste categories as accepted without source evidence.
+
+- **Hsinchu City:** 36 active recycling station records from the city DEP public API, including coordinates and opening-hour ranges. The newest record timestamp in the response is 2024-02-29; opening days are announced separately, so visitors should confirm the current schedule and accepted items with the DEP. Only recycling is marked accepted.

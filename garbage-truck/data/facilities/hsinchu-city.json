@@ -1,0 +1,622 @@
+{
+  "version": 1,
+  "city": "hsinchu-city",
+  "source": "Hsinchu City DEP Resource Recycling Network API",
+  "source_url": "https://hccepb-api.ihc-recycle.com.tw/v1/recycling_stations",
+  "source_page": "https://hccepb.ihc-recycle.com.tw/recycling_stations/",
+  "source_updated": "2024-02-29",
+  "facilities": [
+    {
+      "id": "hc-1",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "科園市民活動中心",
+      "address": "新竹市民享一街36號",
+      "lng": 121.0093926,
+      "lat": 24.7825215,
+      "hours": "Days announced separately · 08:00–10:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-10",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "南大市民活動中心",
+      "address": "新竹市西大路72巷55號",
+      "lng": 120.9711032,
+      "lat": 24.7969569,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-11",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "新竹市柴橋人文關懷協會",
+      "address": "新竹市明湖路608巷7弄18號",
+      "lng": 120.966409,
+      "lat": 24.775983,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-12",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "湖濱市民活動中心",
+      "address": "新竹市明湖路456巷23弄23之1號",
+      "lng": 120.9657302,
+      "lat": 24.7824231,
+      "hours": "Days announced separately · 08:30–10:30",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-15",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "士林市民活動中心",
+      "address": "新竹市吉羊路96號",
+      "lng": 120.95455,
+      "lat": 24.8240711,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-16",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "民富公園",
+      "address": "民富街 新竹監獄旁",
+      "lng": 120.958374,
+      "lat": 24.80589,
+      "hours": "Days announced separately · 08:30–10:30",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-18",
+      "city": "hsinchu-city",
+      "district": "香山區",
+      "name": "東香市民活動中心",
+      "address": "新竹市東香路二段21號",
+      "lng": 120.952445,
+      "lat": 24.772837,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-19",
+      "city": "hsinchu-city",
+      "district": "香山區",
+      "name": "茄苳里辦公處旁停車場",
+      "address": "新竹市五福路二段738號",
+      "lng": 120.951683,
+      "lat": 24.757415,
+      "hours": "Days announced separately · 08:00–10:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-20",
+      "city": "hsinchu-city",
+      "district": "香山區",
+      "name": "虎林市民活動中心",
+      "address": "新竹市虎林街123巷12弄1號",
+      "lng": 120.941103,
+      "lat": 24.809245,
+      "hours": "Opening days and hours announced separately",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-21",
+      "city": "hsinchu-city",
+      "district": "香山區",
+      "name": "頂福市民活動中心",
+      "address": "新竹市中華路四段271巷3-1號",
+      "lng": 120.946966,
+      "lat": 24.792906,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-22",
+      "city": "hsinchu-city",
+      "district": "香山區",
+      "name": "新竹市西濱路4段303號",
+      "address": "新竹市西濱路4段303號",
+      "lng": 120.914159,
+      "lat": 24.770266,
+      "hours": "Days announced separately · 08:30–10:30",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-23",
+      "city": "hsinchu-city",
+      "district": "香山區",
+      "name": "港南順天宮",
+      "address": "新竹市海埔路74巷15號",
+      "lng": 120.92388,
+      "lat": 24.819322,
+      "hours": "Days announced separately · 08:00–10:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-24",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "曲溪市民活動中心",
+      "address": "新竹市成德路18號",
+      "lng": 120.9566789,
+      "lat": 24.7946892,
+      "hours": "Days announced separately · 09:30–11:30",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-26",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "金華市民活動中心",
+      "address": "新竹市光華二街68號",
+      "lng": 120.9758593,
+      "lat": 24.8193114,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-27",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "南勢市民活動中心",
+      "address": "新竹市南勢6街11號",
+      "lng": 120.9481422,
+      "lat": 24.8022801,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-28",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "海濱市民活動中心",
+      "address": "新竹市聖軍路26號",
+      "lng": 120.9289959,
+      "lat": 24.841041,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-29",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "康樂市民活動中心",
+      "address": "新竹市東大路三段357巷6號",
+      "lng": 120.9434471,
+      "lat": 24.8362087,
+      "hours": "Days announced separately · 08:30–10:30",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-3",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "新竹市千甲社區休閒中心",
+      "address": "新竹市東區千甲路387號",
+      "lng": 121.0131599,
+      "lat": 24.8069986,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-30",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "湳中市民活動中心",
+      "address": "新竹市武陵路111-1號",
+      "lng": 120.9666838,
+      "lat": 24.8190086,
+      "hours": "Days announced separately · 08:30–10:30",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-31",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "北門市場停車場",
+      "address": "新竹市西大路582巷23號對面",
+      "lng": 120.9627466,
+      "lat": 24.807322,
+      "hours": "Days announced separately · 14:00–16:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-32",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "舊港市民活動中心",
+      "address": "新竹市舊港里6鄰54號",
+      "lng": 120.9421215,
+      "lat": 24.8456437,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-33",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "光華市民活動中心",
+      "address": "新竹市湳雅街88號",
+      "lng": 120.9722882,
+      "lat": 24.8191148,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-36",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "新竹市明湖路1050巷1號",
+      "address": "新竹市明湖路1050巷1號",
+      "lng": 120.9787083,
+      "lat": 24.7670811,
+      "hours": "Days announced separately · 09:30–11:30",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-37",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "古賢里集會所",
+      "address": "新竹市東大路三段110巷15號旁1樓",
+      "lng": 120.9571404,
+      "lat": 24.8304316,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-38",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "新雅社區發展協會",
+      "address": "新竹市成功路192巷205號",
+      "lng": 120.9445904,
+      "lat": 24.8125309,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-40",
+      "city": "hsinchu-city",
+      "district": "香山區",
+      "name": "牛埔市民活動中心",
+      "address": "新竹市育德街190號",
+      "lng": 120.942143,
+      "lat": 24.794198,
+      "hours": "Days announced separately · 09:30–11:30",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-41",
+      "city": "hsinchu-city",
+      "district": "香山區",
+      "name": "虎山里集會所",
+      "address": "新竹市華江街69巷50號",
+      "lng": 120.919368,
+      "lat": 24.80873,
+      "hours": "Days announced separately · 08:00–10:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-42",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "境福里里辦公室",
+      "address": "新竹市中正路505號",
+      "lng": 120.9575641,
+      "lat": 24.8163243,
+      "hours": "Days announced separately · 08:30–10:30",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-43",
+      "city": "hsinchu-city",
+      "district": "北區",
+      "name": "北新公園",
+      "address": "新竹市延平路一段159巷",
+      "lng": 120.956507,
+      "lat": 24.8037683,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-45",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "新竹市高峰路325巷8弄14號",
+      "address": "新竹市高峰路325巷8弄14號",
+      "lng": 120.981032,
+      "lat": 24.780893,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-46",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "南大路473巷23弄24號",
+      "address": "南大路473巷23弄24號",
+      "lng": 120.9673794,
+      "lat": 24.7946144,
+      "hours": "Days announced separately · 09:00–12:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-5",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "建功文教",
+      "address": "新竹市光復路二段298巷7弄14號",
+      "lng": 120.9989829,
+      "lat": 24.7955901,
+      "hours": "Days announced separately · 08:00–10:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-6",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "光鎮社區巡守隊",
+      "address": "新竹市南大路808巷1-1號",
+      "lng": 120.9661704,
+      "lat": 24.7888979,
+      "hours": "Days announced separately · 08:00–10:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-7",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "新竹市學府路61巷2弄3號",
+      "address": "新竹市學府路61巷2弄3號",
+      "lng": 120.97567,
+      "lat": 24.7941547,
+      "hours": "Days announced separately · 18:00–20:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-8",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "頂溪埔福德宮",
+      "address": "新竹市經國路一段210-1號",
+      "lng": 120.992803,
+      "lat": 24.814909,
+      "hours": "Days announced separately · 09:00–11:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    },
+    {
+      "id": "hc-9",
+      "city": "hsinchu-city",
+      "district": "東區",
+      "name": "東園社區活動中心",
+      "address": "新竹市忠孝路414號",
+      "lng": 120.983428,
+      "lat": 24.8034171,
+      "hours": "Days announced separately · 08:00–10:00",
+      "accept": {
+        "general": false,
+        "recycling": true,
+        "food": false
+      },
+      "status": "active",
+      "note": "Official listing says opening days are announced separately; confirm current schedule and accepted items with Hsinchu City DEP before visiting."
+    }
+  ]
+}
