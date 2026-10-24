@@ -61,6 +61,7 @@
   let knownShowtimeRows = 0;
   let dataGeneratedDate = '';
   let map;
+  let userPosition = null;
 
   const ui = (key) => localeInfo[language].ui[key] || localeInfo.en.ui[key] || key;
   const themeLabels = {
@@ -68,6 +69,7 @@
     id:['Ganti ke mode terang','Ganti ke mode gelap'], ja:['ライトモードに切り替え','ダークモードに切り替え'],
     ko:['라이트 모드로 전환','다크 모드로 전환'], vi:['Chuyển sang giao diện sáng','Chuyển sang giao diện tối'], th:['เปลี่ยนเป็นโหมดสว่าง','เปลี่ยนเป็นโหมดมืด']
   };
+  const mapActionLabels={en:['Hide map','Show map','Expand cinema list','Collapse cinema list'],id:['Sembunyikan peta','Tampilkan peta','Buka daftar bioskop','Kecilkan daftar bioskop'],'zh-TW':['隱藏地圖','顯示地圖','展開影城清單','收合影城清單'],ja:['地図を隠す','地図を表示','映画館リストを開く','リストを閉じる'],ko:['지도 숨기기','지도 보기','극장 목록 펼치기','극장 목록 접기'],vi:['Ẩn bản đồ','Hiện bản đồ','Mở danh sách rạp','Thu gọn danh sách'],th:['ซ่อนแผนที่','แสดงแผนที่','ขยายรายชื่อโรงภาพยนตร์','ย่อรายชื่อโรงภาพยนตร์']};
   const subtitleCoverageLabels = {
     en:(n,total)=>`${n} of ${total} screenings have explicit subtitle details.`,
     'zh-TW':(n,total)=>`${total} 場次中有 ${n} 場由來源明確提供字幕資訊。`,
@@ -92,6 +94,28 @@
   function safeUrl(value) {
     try { const url=new URL(value); return url.protocol === 'https:' ? url.href : ''; } catch { return ''; }
   }
+  function copyButton(value,what) {
+    const labels={en:'Copy',id:'Salin','zh-TW':'複製',ja:'コピー',ko:'복사',vi:'Sao chép',th:'คัดลอก'};
+    const target=what==='address'?({en:'address',id:'alamat','zh-TW':'地址',ja:'住所',ko:'주소',vi:'địa chỉ',th:'ที่อยู่'}[language]||'address'):what;
+    const label=`${labels[language]||labels.en} ${target}`;
+    return `<button class="copy-button" type="button" data-copy="${esc(value)}" aria-label="${esc(label)}" title="${esc(label)}"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button>`;
+  }
+  function splitAddress(address) {
+    const value=String(address||'').trim(),match=value.match(/^(.*?號)(.*)$/);
+    if(!match)return {street:value,floor:''};
+    const street=match[1],tail=match[2].trim();
+    if(!tail)return {street,floor:''};
+    if(!tail.startsWith('之'))return {street,floor:tail};
+    const floor=tail.match(/\s+(?:B\d+|\d+(?:[-、至]\d+)?(?:樓|層|F))/i);
+    if(!floor)return {street:street+tail,floor:''};
+    const index=floor.index+floor[0].indexOf(floor[0].trim());
+    return {street:street+tail.slice(0,index).trimEnd(),floor:tail.slice(index).trim()};
+  }
+  async function writeClipboard(value) {
+    if(navigator.clipboard?.writeText)return navigator.clipboard.writeText(value);
+    const input=document.createElement('textarea');input.value=value;input.style.position='fixed';input.style.opacity='0';document.body.append(input);input.select();
+    const copied=document.execCommand('copy');input.remove();if(!copied)throw new Error('Clipboard copy failed');
+  }
   function loadJson(url) {
     return fetch(url,{cache:'no-cache'}).then((r)=>{if(!r.ok)throw new Error(`${r.status} ${url}`);return r.json();});
   }
@@ -107,7 +131,11 @@
     return Number.isFinite(lng) && Number.isFinite(lat) && lng >= 118 && lng <= 123 && lat >= 20 && lat <= 27 ? [lng, lat] : null;
   }
   function cinemaLocation(cinema,slug=cinema?.city) {
-    return venueLocations.find(location=>location.cinema_id===cinema?.id&&location.city===slug)||null;
+    const normalize=value=>String(value||'').replace(/臺/g,'台').toLowerCase().replace(/(?:電影城|電影院|電影館|影城|戲院|劇院|威秀|秀泰)/g,'').replace(/[\s　・·()（）\-_/]/g,'');
+    const name=normalize(cinema?.name_zh),samePlace=location=>{const other=normalize(location.name);return name&&other&&(name===other||name.includes(other)||other.includes(name));};
+    const direct=venueLocations.find(location=>location.cinema_id===cinema?.id&&location.city===slug);if(direct&&samePlace(direct))return direct;
+    const matches=venueLocations.filter(location=>location.city===slug&&samePlace(location));
+    return matches.length===1?matches[0]:null;
   }
   function getAllShowtimes() { return Object.values(showsByCity).flatMap((x)=>x.showtimes||[]); }
   function normalizeLang(value) {
@@ -287,7 +315,7 @@
       const url=safeUrl(s.source_url),link=url?`<a class="detail-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(ui('sourceLink'))}</a>`:'';
       return `<div class="showtime-row">${day}${time?`<span class="time-chip">${esc(time)}</span>`:''}${meta.map(x=>`<span class="tag ${x.startsWith(`${ui('subtitles')}:`)?'sub':x.startsWith(`${ui('audio')}:`)?'audio':''}">${esc(x)}</span>`).join('')}</div>${link}`;
     }).join('');
-    return `<div class="movie"><div class="movie-title"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</div>${titleEn?`<div class="movie-en"><span class="movie-title-label">${esc(ui('international'))}</span>${esc(titleEn)}</div>`:''}${sessions}</div>`;
+    return `<div class="movie"><div class="movie-title-row"><div class="movie-title"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</div>${copyButton(filmTitle,ui('titleSource'))}</div>${titleEn?`<div class="movie-title-row movie-title-row-en"><div class="movie-en"><span class="movie-title-label">${esc(ui('international'))}</span>${esc(titleEn)}</div>${copyButton(titleEn,ui('international'))}</div>`:''}${sessions}</div>`;
   }
   function renderResults() {
     if(!Object.keys(cinemaByCity).length)return;
@@ -312,7 +340,8 @@
     resultsEl.innerHTML=groups.map(({slug,records})=>{
       const showCount=records.reduce((n,x)=>n+x.shows.length,0),heading=selectedCity==='all'?`<div class="city-heading"><h2>${esc(displayName(slug))}</h2><span>${records.length} ${esc(ui('cinemas'))} · ${showCount} ${esc(ui('sessions'))}</span></div>`:'';
       return `${heading}${records.map(({cinema,shows})=>{
-        const address=cinema.address?`<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.address)}" target="_blank" rel="noopener">${esc(cinema.address)} ↗</a>`:esc(ui('addressUnavailable'));
+        const addressParts=splitAddress(cinema.address),floorLabel=language==='id'?'Lantai':language==='zh-TW'?'樓層':language==='ja'?'フロア':language==='ko'?'층':language==='vi'?'Tầng':language==='th'?'ชั้น':'Floor';
+        const address=cinema.address?`<div class="address-row"><div class="address-text"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.address)}" target="_blank" rel="noopener">${esc(addressParts.street)} ↗</a>${addressParts.floor?`<span class="address-floor">${esc(floorLabel)}: ${esc(addressParts.floor)}</span>`:''}</div>${copyButton(cinema.address,'address')}</div>`:esc(ui('addressUnavailable'));
         const movies=new Map();shows.sort((a,b)=>String(a.start_time).localeCompare(String(b.start_time))).forEach(s=>{const key=`${s.movie_title||''}|${s.movie_title_en||''}`;if(!movies.has(key))movies.set(key,[]);movies.get(key).push(s);});
         const moviesHtml=shows.length?[...movies.values()].map(movieCard).join(''):`<div class="empty-show">${esc(ui('noSchedules'))}</div>`;
         const co=cinema.company_name?`<div class="company-name">${esc(cinema.company_name)}</div>`:'';
@@ -321,7 +350,9 @@
         const cardLogoKey=cinemaLogoKeys[cinema.id];
         const cardLogo=logoImages[cardLogoKey]?`<img class="cinema-logo" style="background:${esc(logoBackgrounds[cardLogoKey]||'#fff')}" src="${esc(logoImages[cardLogoKey])}" alt="" loading="lazy" decoding="async">`:'';
         const location=cinemaPoint(cinema)||cinemaLocation(cinema,slug)?`<button class="show-on-map" type="button" data-cinema-id="${esc(cinema.id)}" data-city="${esc(slug)}">Show on map</button>`:'';
-        return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name-wrap">${cardLogo}<div class="cinema-name-text"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div>${cinema.name_en?`<div class="cinema-name-en">${esc(cinema.name_en)}</div>`:''}</div></div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${location}</div>${moviesHtml}</article>`;
+        const distance=distanceFromUser(cinema,slug),distanceUnavailable=({en:'Distance unavailable',id:'Jarak tidak tersedia','zh-TW':'距離資訊不可用',ja:'距離を表示できません',ko:'거리 정보 없음',vi:'Chưa có khoảng cách',th:'ไม่มีข้อมูลระยะทาง'}[language]||'Distance unavailable');
+        const distanceHtml=userPosition?(distance?`<span class="distance-badge" title="Distance from your location">⌖ ${esc(distance)}</span>`:`<span class="distance-badge unavailable">⌖ ${esc(distanceUnavailable)}</span>`):'';
+        return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name-wrap">${cardLogo}<div class="cinema-name-text"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div>${cinema.name_en?`<div class="cinema-name-en">${esc(cinema.name_en)}</div>`:''}</div></div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${distanceHtml} ${location}</div>${moviesHtml}</article>`;
       }).join('')}`;
     }).join('');
   }
@@ -352,6 +383,7 @@
     languageSelect.setAttribute('aria-label',ui('language'));subtitleSelect.setAttribute('aria-label',ui('subtitles'));audioSelect.setAttribute('aria-label',ui('audio'));
     $('#date-prev').setAttribute('aria-label',ui('previous'));$('#date-next').setAttribute('aria-label',ui('next'));
     setupCityOptions();citySelect.value=selectedCity;setupDateOptions();if(availableDates.includes(priorDate))dateSelect.value=priorDate;setupLanguageFilters();syncDateControls();
+    updateMobileActionLabels();
     $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
     $('#updated').textContent=`${ui('dataUpdated')} · ${formatDate(dataGeneratedDate||todayTaiwan(),'short')} · ${ui('localTime')}`;
     setTheme(document.querySelector('.app').dataset.theme||'dark');
@@ -363,9 +395,21 @@
     const dark=theme==='dark',label=(themeLabels[language]||themeLabels.en)[dark?0:1];$('#theme').textContent=dark?'☼':'☾';$('#theme').setAttribute('aria-label',label);$('#theme').title=label;
     try{localStorage.setItem('cinema-theme',theme);}catch{}
   }
+  function updateMobileActionLabels() {
+    const labels=mapActionLabels[language]||mapActionLabels.en,visible=app.dataset.mapVisible!=='false';
+    const mapButton=$('#map-view-toggle');mapButton.setAttribute('aria-label',visible?labels[0]:labels[1]);mapButton.title=visible?labels[0]:labels[1];mapButton.textContent=visible?'▣':'▢';
+    sheetGrab.setAttribute('aria-label',app.dataset.sheet==='expanded'?labels[3]:labels[2]);
+  }
   function distanceKm(a,b) {
     const rad=x=>x*Math.PI/180,dLat=rad(b[1]-a.lat),dLon=rad(b[0]-a.lng),lat1=rad(a.lat),lat2=rad(b[1]);
     const x=Math.sin(dLat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLon/2)**2;return 6371*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
+  }
+  function distanceFromUser(cinema,slug) {
+    if(!userPosition)return null;
+    const point=cinemaPoint(cinema),location=point||((item)=>item?[Number(item.longitude),Number(item.latitude)]:null)(cinemaLocation(cinema,slug));
+    if(!location||!location.every(Number.isFinite))return null;
+    const distance=distanceKm(userPosition,location);
+    return distance<1?`${Math.round(distance*1000)} m`:`${distance<10?distance.toFixed(1):Math.round(distance)} km`;
   }
   function locateMe() {
     const button=$('#locate');
@@ -373,6 +417,7 @@
     button.disabled=true;button.querySelector('[data-i18n]').textContent=ui('locating');
     navigator.geolocation.getCurrentPosition(pos=>{
       const user={lat:pos.coords.latitude,lng:pos.coords.longitude};
+      userPosition=user;
       if(userMarker)userMarker.remove();
       const element=document.createElement('div');element.className='user-location-marker';
       if(map&&window.maplibregl)userMarker=new maplibregl.Marker({element}).setLngLat([user.lng,user.lat]).setPopup(new maplibregl.Popup({offset:15}).setText(currentLocationLabels[language]||currentLocationLabels.en)).addTo(map);
@@ -425,8 +470,23 @@
   $('#map-zoom-in').addEventListener('click',()=>map?.zoomIn({duration:250}));$('#map-zoom-out').addEventListener('click',()=>map?.zoomOut({duration:250}));
   $('#map-tools-toggle').addEventListener('click',()=>{const menu=$('#map-tools-menu'),open=menu.hidden;menu.hidden=!open;$('#map-tools-toggle').setAttribute('aria-expanded',String(open));});
   document.addEventListener('click',e=>{if(!$('#map-tools').contains(e.target)){ $('#map-tools-menu').hidden=true;$('#map-tools-toggle').setAttribute('aria-expanded','false');}});
-  resultsEl.addEventListener('click',e=>{const button=e.target.closest('.show-on-map');if(button)selectCinema(button.dataset.cinemaId,button.dataset.city,true);});
-    $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1));syncDateControls();loadDateShowtimes(dateSelect.value);mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}selectCity('all',true);});
+  resultsEl.addEventListener('click',e=>{const button=e.target.closest('.show-on-map');if(button){if(app.dataset.mapVisible==='false')$('#map-view-toggle').click();selectCinema(button.dataset.cinemaId,button.dataset.city,true);}});
+  resultsEl.addEventListener('click',async e=>{
+    const button=e.target.closest('[data-copy]');if(!button)return;e.preventDefault();e.stopPropagation();
+    const originalLabel=button.getAttribute('aria-label'),originalTitle=button.title;
+    try{await writeClipboard(button.dataset.copy);button.classList.add('copied');button.setAttribute('aria-label',language==='id'?'Tersalin':'Copied');button.title=language==='id'?'Tersalin':'Copied';button.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>';}
+    catch(error){console.warn('Could not copy text',error);button.setAttribute('aria-label',language==='id'?'Gagal menyalin':'Copy failed');}
+    setTimeout(()=>{if(!button.isConnected)return;button.classList.remove('copied');button.setAttribute('aria-label',originalLabel);button.title=originalTitle;button.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg>';},1400);
+  });
+  const app=document.querySelector('.app'),sheetGrab=$('#sheet-grab');
+  const sheetLabel=updateMobileActionLabels;
+  const toggleSheet=()=>{app.dataset.sheet=app.dataset.sheet==='expanded'?'half':app.dataset.sheet==='collapsed'?'half':'expanded';sheetLabel();};
+  let sheetStartY=null,suppressSheetClick=false;
+  sheetGrab.addEventListener('pointerdown',e=>{sheetStartY=e.clientY;sheetGrab.setPointerCapture(e.pointerId);});
+  sheetGrab.addEventListener('pointerup',e=>{if(sheetStartY===null)return;const delta=e.clientY-sheetStartY;if(Math.abs(delta)>45){app.dataset.sheet=delta<0?'expanded':'collapsed';sheetLabel();suppressSheetClick=true;setTimeout(()=>{suppressSheetClick=false;},0);}sheetStartY=null;});
+  sheetGrab.addEventListener('click',()=>{if(suppressSheetClick)return;toggleSheet();});
+  $('#map-view-toggle').addEventListener('click',()=>{const visible=app.dataset.mapVisible!=='false';app.dataset.mapVisible=String(!visible);if(!visible&&app.dataset.sheet==='expanded')app.dataset.sheet='half';updateMobileActionLabels();if(!visible)requestAnimationFrame(()=>map?.resize());});
+    $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1));syncDateControls();loadDateShowtimes(dateSelect.value);mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}userPosition=null;selectCity('all',true);});
   document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();searchInput.focus();}if(e.key==='Escape'&&document.activeElement===searchInput){searchInput.value='';renderResults();searchInput.blur();}});
   init();
 })();
