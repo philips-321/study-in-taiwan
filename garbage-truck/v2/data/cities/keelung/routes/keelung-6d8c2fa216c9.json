@@ -1,0 +1,541 @@
+{
+  "version": 2,
+  "city": "keelung",
+  "district": "中山區",
+  "team": "二區隊",
+  "route_id": "keelung-6d8c2fa216c9",
+  "route_name": "28-1中山區中平街",
+  "source": "keelung_local_official",
+  "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+  "fetched_at": "2026-10-24T02:34:09+00:00",
+  "stops": [
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 1,
+      "name": "調和街266巷(悠活台北村)",
+      "time": "16:00",
+      "departure_time": "16:10",
+      "source_stop_id": "69c5f32a87b52e2565eae1e2",
+      "lat": 25.127831,
+      "lng": 121.798762,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 2,
+      "name": "中平街65號",
+      "time": "17:05",
+      "departure_time": "17:08",
+      "source_stop_id": "65f15b315e1fc1c5020f64bd",
+      "lat": 25.142537,
+      "lng": 121.722519,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 3,
+      "name": "中平街132號",
+      "time": "17:08",
+      "departure_time": "17:15",
+      "source_stop_id": "65f15b315e1fc1c5020f64be",
+      "lat": 25.142687,
+      "lng": 121.722687,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 4,
+      "name": "中平街89巷",
+      "time": "17:20",
+      "departure_time": "17:22",
+      "source_stop_id": "65f15b315e1fc1c5020f64bf",
+      "lat": 25.14241,
+      "lng": 121.7232,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 5,
+      "name": "新西街73巷口",
+      "time": "17:22",
+      "departure_time": "17:23",
+      "source_stop_id": "66b1c798393bf0ba5ecbc339",
+      "lat": 25.138399,
+      "lng": 121.725938,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 6,
+      "name": "中平街41號",
+      "time": "17:23",
+      "departure_time": "17:25",
+      "source_stop_id": "65f15b315e1fc1c5020f64c0",
+      "lat": 25.141988,
+      "lng": 121.723288,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 7,
+      "name": "中平街28號",
+      "time": "17:25",
+      "departure_time": "17:28",
+      "source_stop_id": "65f15b315e1fc1c5020f64c1",
+      "lat": 25.141735,
+      "lng": 121.723389,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 8,
+      "name": "中平街7號",
+      "time": "17:28",
+      "departure_time": "17:30",
+      "source_stop_id": "65f15b315e1fc1c5020f64c2",
+      "lat": 25.142399,
+      "lng": 121.724174,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 9,
+      "name": "新西街205號",
+      "time": "17:30",
+      "departure_time": "17:35",
+      "source_stop_id": "65f15b315e1fc1c5020f64c3",
+      "lat": 25.141642,
+      "lng": 121.725112,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 10,
+      "name": "新西街141巷",
+      "time": "17:35",
+      "departure_time": "17:37",
+      "source_stop_id": "65f15b315e1fc1c5020f64c4",
+      "lat": 25.141317,
+      "lng": 121.726059,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 11,
+      "name": "新西街西定橋上",
+      "time": "17:37",
+      "departure_time": "17:38",
+      "source_stop_id": "65f15b315e1fc1c5020f64c5",
+      "lat": 25.141096,
+      "lng": 121.726494,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    },
+    {
+      "city": "keelung",
+      "district": "中山區",
+      "route_id": "keelung-6d8c2fa216c9",
+      "route_name": "28-1中山區中平街",
+      "collection_method": "沿線",
+      "stop_order": 12,
+      "name": "西定路398巷口",
+      "time": "17:38",
+      "departure_time": "17:40",
+      "source_stop_id": "65f15b315e1fc1c5020f64c6",
+      "lat": 25.141005,
+      "lng": 121.726929,
+      "geo_status": "official",
+      "services": {
+        "general": {
+          "known": true,
+          "days": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "note": "Keelung city cleanup-service closure pattern: Wednesday and Sunday off; source CSV supplies stop time but not a separate general-waste weekday field."
+        },
+        "food": {
+          "known": false,
+          "days": [],
+          "note": "Food-waste collection weekdays are not exposed by this official route CSV; do not infer them."
+        },
+        "recycling": {
+          "known": true,
+          "days": [],
+          "note": "Parsed directly from 回收日(星期幾) in the official Keelung CSV."
+        }
+      },
+      "source": {
+        "provider": "Keelung City Environmental Protection Bureau Open Data",
+        "url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+        "source_updated": "Wed, 09 Sep 2026 03:39:06 GMT",
+        "fetched_at": "2026-10-24T02:34:09+00:00"
+      }
+    }
+  ]
+}

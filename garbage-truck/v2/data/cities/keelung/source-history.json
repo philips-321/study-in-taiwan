@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "city": "keelung",
+  "checks": [
+    {
+      "checked_at": "2026-10-24T02:34:09+00:00",
+      "provider": "Keelung City Environmental Protection Bureau Open Data",
+      "landing_url": "https://data.gov.tw/dataset/128678",
+      "direct_download_url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+      "status": "checked",
+      "etag": "\"55ec41f61b5c4b8b8915f16d36acd943\"",
+      "last_modified": "Wed, 09 Sep 2026 03:39:06 GMT",
+      "content_sha256": "57359e506beef48c4002096a4c0c2939c15e302c84e1088c51a720ec50134c55",
+      "http_status": 200
+    },
+    {
+      "checked_at": "2026-10-24T02:34:09+00:00",
+      "provider": "Keelung City Environmental Protection Bureau Open Data",
+      "landing_url": "https://data.gov.tw/dataset/128678",
+      "direct_download_url": "https://opendata-kl.askeycloud.com/route_klepb.csv",
+      "status": "published",
+      "last_modified": "Wed, 09 Sep 2026 03:39:06 GMT",
+      "etag": "\"55ec41f61b5c4b8b8915f16d36acd943\"",
+      "content_sha256": "57359e506beef48c4002096a4c0c2939c15e302c84e1088c51a720ec50134c55",
+      "route_count": 92,
+      "stop_count": 1868,
+      "invalid_row_count": 0
+    }
+  ]
+}
