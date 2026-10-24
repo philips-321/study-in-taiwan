@@ -53,15 +53,21 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Check source and refresh one city from MOENV fallback
+      - name: Check preferred source and refresh one city/county
         id: collect
         continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
-          args=(--city "${{ inputs.city }}")
-          if [[ "${{ inputs.force }}" == "true" ]]; then args+=(--force); fi
-          python garbage-truck/v2/scripts/collect_moenv.py "${args[@]}"
+          force=()
+          if [[ "${{ inputs.force }}" == "true" ]]; then force+=(--force); fi
+          if [[ "${{ inputs.city }}" == "tainan" ]]; then
+            echo "Using Tainan City Government official JSON source."
+            python garbage-truck/v2/scripts/import_tainan.py "${force[@]}"
+          else
+            echo "Using MOENV nationwide fallback until a verified local official adapter is available."
+            python garbage-truck/v2/scripts/collect_moenv.py --city "${{ inputs.city }}" "${force[@]}"
+          fi
 
       - name: Compile mapped stops to small JSON tiles
         if: steps.collect.outcome == 'success'
@@ -84,5 +90,5 @@ jobs:
       - name: Mark upstream failure after metadata is preserved
         if: steps.collect.outcome == 'failure'
         run: |
-          echo "Collector stopped after its two-attempt upstream policy. Source metadata was preserved; next normal retry is Monday."
+          echo "Collector/importer stopped after its two-attempt upstream policy. Source metadata was preserved; next normal retry is Monday."
           exit 1
