@@ -1,0 +1,36 @@
+name: Import Garbage Truck V2 Taichung Scout
+
+on:
+  push:
+    paths:
+      - 'garbage-truck/v2/.taichung-import-trigger'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download already-fetched official Taichung artifact
+        run: gh run download 40050581419 -n taichung-official-static-scout -D /tmp/taichung-artifact
+      - name: Normalize and split into district JSON
+        run: python garbage-truck/v2/scripts/import_taichung.py --input /tmp/taichung-artifact/taichung.source
+      - name: Commit static schedule data
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add garbage-truck/v2/data/cities/taichung
+          if git diff --cached --quiet; then echo 'No Taichung changes.'; exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'garbage-v2: import Taichung official static schedule'
+          git pull --rebase origin main
+          git push
