@@ -343,6 +343,182 @@
           ]
         }
       ]
+    },
+    {
+      "city": "kaohsiung",
+      "record_count": 213,
+      "source": "Kaohsiung City DEP ARM automatic recycling-machine map",
+      "source_urls": [
+        "https://recycle.ksepb.kcg.gov.tw/RecycleMachine/arm/map",
+        "https://recycle.ksepb.kcg.gov.tw/api/recyclemachine/0f938867-0993-4d94-97e5-04586c4f42b7"
+      ],
+      "retrieved": "2026-10-24",
+      "source_rows": 214,
+      "excluded_not_operating_rows": 1,
+      "coverage_note": "The public city map API returned 214 records: 213 marked operating and 1 marked awaiting repair. Only operating records with coordinates are mapped. The API does not provide a last-updated timestamp.",
+      "acceptance_note": "Listed ARM service items and the city API remarks are preserved per point. These are recycling machines; general trash and food waste are not marked accepted. For ECOCO-branded locations, the city listing directs users to ECOCO for hours and item details.",
+      "tiles": [
+        {
+          "id": "22.4_120.3",
+          "file": "tiles/kaohsiung/22.4_120.3.json",
+          "bounds": [
+            120.3,
+            22.4,
+            120.39999999999999,
+            22.5
+          ]
+        },
+        {
+          "id": "22.5_120.3",
+          "file": "tiles/kaohsiung/22.5_120.3.json",
+          "bounds": [
+            120.3,
+            22.5,
+            120.39999999999999,
+            22.6
+          ]
+        },
+        {
+          "id": "22.5_120.4",
+          "file": "tiles/kaohsiung/22.5_120.4.json",
+          "bounds": [
+            120.4,
+            22.5,
+            120.5,
+            22.6
+          ]
+        },
+        {
+          "id": "22.6_120.2",
+          "file": "tiles/kaohsiung/22.6_120.2.json",
+          "bounds": [
+            120.2,
+            22.6,
+            120.3,
+            22.700000000000003
+          ]
+        },
+        {
+          "id": "22.6_120.3",
+          "file": "tiles/kaohsiung/22.6_120.3.json",
+          "bounds": [
+            120.3,
+            22.6,
+            120.39999999999999,
+            22.700000000000003
+          ]
+        },
+        {
+          "id": "22.6_120.4",
+          "file": "tiles/kaohsiung/22.6_120.4.json",
+          "bounds": [
+            120.4,
+            22.6,
+            120.5,
+            22.700000000000003
+          ]
+        },
+        {
+          "id": "22.7_120.2",
+          "file": "tiles/kaohsiung/22.7_120.2.json",
+          "bounds": [
+            120.2,
+            22.7,
+            120.3,
+            22.8
+          ]
+        },
+        {
+          "id": "22.7_120.3",
+          "file": "tiles/kaohsiung/22.7_120.3.json",
+          "bounds": [
+            120.3,
+            22.7,
+            120.39999999999999,
+            22.8
+          ]
+        },
+        {
+          "id": "22.7_120.4",
+          "file": "tiles/kaohsiung/22.7_120.4.json",
+          "bounds": [
+            120.4,
+            22.7,
+            120.5,
+            22.8
+          ]
+        },
+        {
+          "id": "22.8_120.1",
+          "file": "tiles/kaohsiung/22.8_120.1.json",
+          "bounds": [
+            120.1,
+            22.8,
+            120.19999999999999,
+            22.900000000000002
+          ]
+        },
+        {
+          "id": "22.8_120.2",
+          "file": "tiles/kaohsiung/22.8_120.2.json",
+          "bounds": [
+            120.2,
+            22.8,
+            120.3,
+            22.900000000000002
+          ]
+        },
+        {
+          "id": "22.8_120.3",
+          "file": "tiles/kaohsiung/22.8_120.3.json",
+          "bounds": [
+            120.3,
+            22.8,
+            120.39999999999999,
+            22.900000000000002
+          ]
+        },
+        {
+          "id": "22.8_120.4",
+          "file": "tiles/kaohsiung/22.8_120.4.json",
+          "bounds": [
+            120.4,
+            22.8,
+            120.5,
+            22.900000000000002
+          ]
+        },
+        {
+          "id": "22.9_120.2",
+          "file": "tiles/kaohsiung/22.9_120.2.json",
+          "bounds": [
+            120.2,
+            22.9,
+            120.3,
+            23.0
+          ]
+        },
+        {
+          "id": "22.9_120.5",
+          "file": "tiles/kaohsiung/22.9_120.5.json",
+          "bounds": [
+            120.5,
+            22.9,
+            120.6,
+            23.0
+          ]
+        },
+        {
+          "id": "23.2_120.7",
+          "file": "tiles/kaohsiung/23.2_120.7.json",
+          "bounds": [
+            120.7,
+            23.2,
+            120.8,
+            23.3
+          ]
+        }
+      ]
     }
   ]
 }
