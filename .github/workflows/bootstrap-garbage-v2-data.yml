@@ -1,9 +1,6 @@
 name: Bootstrap Garbage Truck V2 Data
 
 on:
-  push:
-    paths:
-      - 'garbage-truck/v2/.bootstrap-trigger'
   workflow_dispatch:
 
 permissions:
@@ -19,6 +16,8 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -39,24 +38,55 @@ jobs:
         if: steps.tainan.outcome == 'success'
         run: python garbage-truck/v2/scripts/compile_tiles.py --city tainan
 
-      - name: Commit successful pulls and source metadata
+      - name: Commit successful pulls without overwriting newer main changes
         if: always()
         shell: bash
         run: |
           set -euo pipefail
           git add garbage-truck/v2/data/city-boundaries.geojson garbage-truck/v2/data/city-boundaries-source.json 2>/dev/null || true
           git add garbage-truck/v2/data/cities/tainan 2>/dev/null || true
-          if git diff --cached --quiet; then echo 'No data changes to commit.'; exit 0; fi
+          if git diff --cached --quiet; then
+            echo 'No successful data changes to commit.'
+            exit 0
+          fi
+
+          # Preserve only the generated-data delta, then replay it on the latest main.
+          # This prevents a long-running refresh from pushing an old checkout over newer work.
+          git diff --cached --binary > /tmp/garbage-v2-generated.patch
+          git reset --hard HEAD
+          git fetch origin main
+          git reset --hard origin/main
+          if ! git apply --index --3way /tmp/garbage-v2-generated.patch; then
+            echo 'Generated data overlaps newer main changes; refusing to overwrite them.' >&2
+            exit 1
+          fi
+
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'garbage-v2: pull official boundaries and Tainan data'
-          git push
+          git commit -m 'garbage-v2: refresh successful official-source snapshots'
 
-      - name: Report two-attempt failures
-        if: steps.boundaries.outcome == 'failure' || steps.tainan.outcome == 'failure'
+          # A second writer can still land between fetch and push. Rebase and retry safely.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt ${attempt} raced with a newer main; rebasing generated-only commit."
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo 'Could not push generated snapshot after three race-safe retries.' >&2
+          exit 1
+
+      - name: Report upstream source status
+        if: always()
         shell: bash
         run: |
-          echo "boundaries=${{ steps.boundaries.outcome }}"
-          echo "tainan=${{ steps.tainan.outcome }}"
-          echo 'A failing source has already exhausted its two-attempt policy. Do not hammer it again; retry the source on Monday.'
-          exit 1
+          {
+            echo '### Garbage Truck V2 bootstrap source status'
+            echo "- boundaries: ${{ steps.boundaries.outcome }}"
+            echo "- tainan: ${{ steps.tainan.outcome }}"
+            if [ "${{ steps.boundaries.outcome }}" = 'failure' ] || [ "${{ steps.tainan.outcome }}" = 'failure' ]; then
+              echo '- One or more upstream sources failed after their retry policy. Existing last-known-good static data was preserved; this is an upstream warning, not a reason to publish empty data.'
+              echo '- Do not hammer the failing source. Respect the recorded cooldown before retrying.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
