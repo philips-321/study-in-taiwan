@@ -611,6 +611,8 @@
   "fields": {
     "audio_language": "source-declared spoken/dubbed language when available",
     "poster_url": "official ShowTimes movie poster URL when the program provides artwork",
+    "genres": "official ShowTimes program genre codes; localized for display by the browser",
+    "rating": "official ShowTimes Taiwan age-rating code (g, p, pg12, pg15, r); null means unavailable",
     "subtitles": "verified subtitle language codes when source explicitly declares them; null means unknown",
     "duration_minutes": "source-declared running time when available",
     "source_role": "why a fallback record was used, when applicable",

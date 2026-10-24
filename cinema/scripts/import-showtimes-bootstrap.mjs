@@ -63,6 +63,7 @@ for (const [corporationId, group] of Object.entries(data.eventsForCorporations))
       movie_title: program.name,
       movie_title_en: program.nameAlternative || null,
       poster_url: program.coverImagePortrait?.url || null,
+      genres: Array.isArray(program.genres) ? program.genres : [],
       rating: program.rating || null,
       start_time: start,
       end_time: null,
