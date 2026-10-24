@@ -30,13 +30,8 @@ on:
           - penghu
           - kinmen
           - lienchiang
-      min_age_days:
-        description: "Do not hit upstream again if last good/cache is newer than this"
-        required: true
-        default: "30"
-        type: string
       force:
-        description: "Ignore the age guard and re-check upstream"
+        description: "Override unchanged-source or Monday cooldown checks"
         required: true
         default: false
         type: boolean
@@ -57,22 +52,37 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Refresh one city from MOENV fallback
+
+      - name: Check source and refresh one city from MOENV fallback
+        id: collect
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
-          args=(--city "${{ inputs.city }}" --min-age-days "${{ inputs.min_age_days }}")
+          args=(--city "${{ inputs.city }}")
           if [[ "${{ inputs.force }}" == "true" ]]; then args+=(--force); fi
           python garbage-truck/v2/scripts/collect_moenv.py "${args[@]}"
+
       - name: Compile mapped stops to small JSON tiles
+        if: steps.collect.outcome == 'success'
         run: python garbage-truck/v2/scripts/compile_tiles.py --city "${{ inputs.city }}"
-      - name: Commit last-known-good static JSON
+
+      - name: Commit published JSON or source-check metadata
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
-          git add "garbage-truck/v2/data/cities/${{ inputs.city }}"
-          if git diff --cached --quiet; then echo "No published data changes."; exit 0; fi
+          path="garbage-truck/v2/data/cities/${{ inputs.city }}"
+          if [[ ! -e "$path" ]]; then echo "No city data/metadata directory created."; exit 0; fi
+          git add "$path"
+          if git diff --cached --quiet; then echo "No static JSON or source metadata changes."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "garbage-v2: refresh ${{ inputs.city }} static data"
+          git commit -m "garbage-v2: refresh/check ${{ inputs.city }} source"
           git push
+
+      - name: Mark upstream failure after metadata is preserved
+        if: steps.collect.outcome == 'failure'
+        run: |
+          echo "Collector stopped after its two-attempt upstream policy. Source metadata was preserved; next normal retry is Monday."
+          exit 1
