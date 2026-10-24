@@ -1,0 +1,62 @@
+name: Discover Garbage Truck V2 Kaohsiung District Resources
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Recheck districts that already have a verified resource URL"
+        required: true
+        default: false
+        type: boolean
+      limit:
+        description: "Maximum district pages to probe (0 = all missing-resource entries)"
+        required: true
+        default: "0"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: garbage-truck-v2-kaohsiung-resource-discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Discover resource links from official data.gov.tw district pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--limit '${{ inputs.limit }}')
+          if [[ '${{ inputs.force }}' == 'true' ]]; then args+=(--force); fi
+          python garbage-truck/v2/scripts/discover_kaohsiung_district_resources.py "${args[@]}"
+      - name: Commit catalog metadata safely
+        shell: bash
+        run: |
+          set -euo pipefail
+          target='garbage-truck/v2/data/cities/kaohsiung/district-source-catalog.json'
+          git add "$target"
+          if git diff --cached --quiet; then echo 'No catalog changes.'; exit 0; fi
+          git diff --cached --binary > /tmp/kaohsiung-resource-catalog.patch
+          git reset --hard HEAD
+          git fetch origin main
+          git reset --hard origin/main
+          git apply --index --3way /tmp/kaohsiung-resource-catalog.patch
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'garbage-v2: refresh Kaohsiung district resource catalog'
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
