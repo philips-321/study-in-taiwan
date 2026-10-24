@@ -6,7 +6,7 @@
 <title>Garbage Truck Map v2 Preview | Study in Taiwan</title>
 <meta name="robots" content="noindex,nofollow">
 <style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0c1416}#appFrame{display:block;border:0;width:100%;height:100%;background:#fff}</style>
-<script src="i18n/en-id.js"></script><script src="i18n/vi-ms.js"></script><script src="i18n/ja-ko.js"></script><script src="i18n/th-fil.js"></script><script src="i18n/my-hi.js"></script><script src="i18n/zh.js"></script><script src="i18n/fr-de.js"></script><script src="i18n/es-nl.js"></script><script src="i18n/taipei-other-patch.js"></script><script src="data/city-start-points.js?v=20261024c"></script><script src="nationwide.js?v=20261024c"></script><script src="city-source-filter.js?v=20261024c"></script><script src="mobile-parity.js?v=20261024c"></script>
+<script src="i18n/en-id.js"></script><script src="i18n/vi-ms.js"></script><script src="i18n/ja-ko.js"></script><script src="i18n/th-fil.js"></script><script src="i18n/my-hi.js"></script><script src="i18n/zh.js"></script><script src="i18n/fr-de.js"></script><script src="i18n/es-nl.js"></script><script src="i18n/taipei-other-patch.js"></script><script src="data/city-start-points.js?v=20261024d"></script><script src="nationwide.js?v=20261024d"></script><script src="city-source-filter.js?v=20261024d"></script><script src="mobile-parity.js?v=20261024d"></script>
 </head>
 <body>
 <iframe id="appFrame" src="../" title="Garbage Truck Map v2 preview" allow="geolocation; clipboard-write"></iframe>
@@ -14,7 +14,32 @@
 const V2_OPTIONS=[["zh-TW","繁體中文"],["en","English"],["id","Indonesia"],["vi","Tiếng Việt"],["ms","Bahasa Melayu"],["ja","日本語"],["ko","한국어"],["th","ไทย"],["fil","Filipino"],["my","မြန်မာ"],["hi","हिन्दी"],["zh-CN","简体中文"],["fr","Français"],["de","Deutsch"],["es","Español"],["nl","Nederlands"]];
 const V2_A11Y={"zh-TW":{"language":"語言","dark":"切換至深色模式","light":"切換至淺色模式","hide":"隱藏列表","show":"顯示列表"},"en":{"language":"Language","dark":"Switch to dark mode","light":"Switch to light mode","hide":"Hide list","show":"Show list"},"id":{"language":"Bahasa","dark":"Ganti ke mode gelap","light":"Ganti ke mode terang","hide":"Sembunyikan daftar","show":"Tampilkan daftar"},"vi":{"language":"Ngôn ngữ","dark":"Chuyển sang chế độ tối","light":"Chuyển sang chế độ sáng","hide":"Ẩn danh sách","show":"Hiện danh sách"},"ms":{"language":"Bahasa","dark":"Tukar ke mod gelap","light":"Tukar ke mod cerah","hide":"Sembunyikan senarai","show":"Tunjukkan senarai"},"ja":{"language":"言語","dark":"ダークモードに切り替え","light":"ライトモードに切り替え","hide":"リストを隠す","show":"リストを表示"},"ko":{"language":"언어","dark":"다크 모드로 전환","light":"라이트 모드로 전환","hide":"목록 숨기기","show":"목록 표시"},"th":{"language":"ภาษา","dark":"เปลี่ยนเป็นโหมดมืด","light":"เปลี่ยนเป็นโหมดสว่าง","hide":"ซ่อนรายการ","show":"แสดงรายการ"},"fil":{"language":"Wika","dark":"Lumipat sa dark mode","light":"Lumipat sa light mode","hide":"Itago ang listahan","show":"Ipakita ang listahan"},"my":{"language":"ဘာသာစကား","dark":"အမှောင်မုဒ်သို့ ပြောင်းရန်","light":"အလင်းမုဒ်သို့ ပြောင်းရန်","hide":"စာရင်းဖျောက်ရန်","show":"စာရင်းပြရန်"},"hi":{"language":"भाषा","dark":"डार्क मोड पर जाएँ","light":"लाइट मोड पर जाएँ","hide":"सूची छिपाएँ","show":"सूची दिखाएँ"},"zh-CN":{"language":"语言","dark":"切换到深色模式","light":"切换到浅色模式","hide":"隐藏列表","show":"显示列表"},"fr":{"language":"Langue","dark":"Passer en mode sombre","light":"Passer en mode clair","hide":"Masquer la liste","show":"Afficher la liste"},"de":{"language":"Sprache","dark":"Zum dunklen Modus wechseln","light":"Zum hellen Modus wechseln","hide":"Liste ausblenden","show":"Liste anzeigen"},"es":{"language":"Idioma","dark":"Cambiar al modo oscuro","light":"Cambiar al modo claro","hide":"Ocultar lista","show":"Mostrar lista"},"nl":{"language":"Taal","dark":"Naar donkere modus schakelen","light":"Naar lichte modus schakelen","hide":"Lijst verbergen","show":"Lijst tonen"}};
 const frame=document.getElementById('appFrame');
-function patchV2(){const w=frame.contentWindow,d=frame.contentDocument;if(!w||!d)return;try{const translations=window.V2_TRANSLATIONS||{};w.eval(`Object.assign(T, ${JSON.stringify(translations)});`);try{const labels={};for(const [code,x] of Object.entries(V2_A11Y))labels[code]={dark:x.dark,light:x.light,hide:x.hide,show:x.show};w.eval(`Object.assign(L, ${JSON.stringify(labels)});`)}catch(err){console.warn('v2 auxiliary labels patch skipped',err)}const select=d.getElementById('lang');if(!select)throw Error('Language selector not found');const current=translations[select.value]?select.value:'en';select.innerHTML='';for(const [value,label] of V2_OPTIONS){const option=d.createElement('option');option.value=value;option.textContent=label;select.appendChild(option)}function applySelectedLanguage(){const value=translations[select.value]?select.value:'en',ui=V2_A11Y[value]||V2_A11Y.en;select.setAttribute('aria-label',ui.language);w.eval(`lang=${JSON.stringify(value)};applyLang();`)}select.value=current;applySelectedLanguage();select.addEventListener('change',()=>setTimeout(applySelectedLanguage,0));d.documentElement.dataset.v2='multilingual-nationwide';if(window.installNationwideV2)window.installNationwideV2(frame)}catch(err){console.error('v2 patch failed',err)}}
+function prepareV2MapBridge(w){
+  if(!w)return null;
+  let map=w.map;
+  if(!map){try{map=w.eval('map');w.map=map}catch(err){console.error('v2 map bridge failed',err);return null}}
+  if(!map||map.__v2CampusNavigationPatched)return map;
+  const starts=window.V2_CITY_START_POINTS?.points||{};
+  const originalFlyTo=map.flyTo.bind(map);
+  const matchStart=center=>{
+    const c=Array.isArray(center)?[Number(center[0]),Number(center[1])]:center&&Number.isFinite(Number(center.lng))&&Number.isFinite(Number(center.lat))?[Number(center.lng),Number(center.lat)]:null;
+    if(!c)return null;
+    for(const p of Object.values(starts)){
+      const cc=p?.city_center;
+      if(Array.isArray(cc)&&Math.abs(c[0]-Number(cc[0]))<0.0002&&Math.abs(c[1]-Number(cc[1]))<0.0002)return p;
+    }
+    return null;
+  };
+  map.flyTo=function(options={},eventData){
+    const p=matchStart(options?.center);
+    if(!p)return originalFlyTo(options,eventData);
+    map.stop();
+    return map.jumpTo({...options,center:p.center,zoom:Number(p.zoom)||14.3,bearing:0,pitch:0},eventData);
+  };
+  map.__v2CampusNavigationPatched=true;
+  return map;
+}
+function patchV2(){const w=frame.contentWindow,d=frame.contentDocument;if(!w||!d)return;try{prepareV2MapBridge(w);const translations=window.V2_TRANSLATIONS||{};w.eval(`Object.assign(T, ${JSON.stringify(translations)});`);try{const labels={};for(const [code,x] of Object.entries(V2_A11Y))labels[code]={dark:x.dark,light:x.light,hide:x.hide,show:x.show};w.eval(`Object.assign(L, ${JSON.stringify(labels)});`)}catch(err){console.warn('v2 auxiliary labels patch skipped',err)}const select=d.getElementById('lang');if(!select)throw Error('Language selector not found');const current=translations[select.value]?select.value:'en';select.innerHTML='';for(const [value,label] of V2_OPTIONS){const option=d.createElement('option');option.value=value;option.textContent=label;select.appendChild(option)}function applySelectedLanguage(){const value=translations[select.value]?select.value:'en',ui=V2_A11Y[value]||V2_A11Y.en;select.setAttribute('aria-label',ui.language);w.eval(`lang=${JSON.stringify(value)};applyLang();`)}select.value=current;applySelectedLanguage();select.addEventListener('change',()=>setTimeout(applySelectedLanguage,0));d.documentElement.dataset.v2='multilingual-nationwide';if(window.installNationwideV2)window.installNationwideV2(frame)}catch(err){console.error('v2 patch failed',err)}}
 frame.addEventListener('load',patchV2);
 </script>
 </body></html>
