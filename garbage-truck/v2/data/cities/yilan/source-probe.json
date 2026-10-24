@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "city": "yilan",
+  "checked_at": "2026-10-24T02:28:50+00:00",
+  "purpose": "Bounded source-shape probe before publishing importer.",
+  "publishable_route_data": false,
+  "sources": [
+    {
+      "kind": "official_csv",
+      "url": "https://opendata.ilepb.gov.tw/ILEPB04004?format=csv&media=file",
+      "landing_url": "https://data.gov.tw/dataset/128901",
+      "checked_at": "2026-10-24T02:28:50+00:00",
+      "status": "unreachable-after-2-attempts",
+      "error": "HTTPError: HTTP Error 500: Internal Server Error"
+    },
+    {
+      "kind": "official_json",
+      "url": "https://opendata.ilepb.gov.tw/ILEPB04004?media=file",
+      "landing_url": "https://data.gov.tw/dataset/128901",
+      "checked_at": "2026-10-24T02:28:50+00:00",
+      "status": "unreachable-after-2-attempts",
+      "error": "HTTPError: HTTP Error 500: Internal Server Error"
+    }
+  ],
+  "recommended_source_kind": null,
+  "status": "no-parseable-source-reachable"
+}
