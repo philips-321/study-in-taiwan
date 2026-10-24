@@ -66,7 +66,7 @@
       element.innerHTML = '<img class="facility-marker-v2__image" src="v2/assets/fixed-dropoff-bin.webp" alt="">';
 
       const popup = new maplibregl.Popup({ offset: 22 }).setHTML(
-        `<b>${esc(facility.name)}</b><br><small>${esc(facility.district)} · ${esc(T[lang].facilityTitle)}</small><br>${esc(facility.address)}<br><b>${esc(T[lang].hours)}:</b> ${esc(facility.hours)}<br><b>${esc(T[lang].accepts)}:</b> ${esc(acceptanceLabel(facility))}${facility.note ? `<br><small>${esc(facility.note)}</small>` : ''}<br><small>${esc(T[lang].bag)}</small><br><a href="${gmaps(facility.lat, facility.lng)}" target="_blank" rel="noopener">${T[lang].maps}</a>`
+        `<b>${esc(facility.name)}</b><br><small>${esc(facility.district)} · ${esc(T[lang].facilityTitle)}</small><br>${esc(facility.address)}<br><b>${esc(T[lang].hours)}:</b> ${esc(facility.hours)}<br><b>${esc(T[lang].accepts)}:</b> ${esc(acceptanceLabel(facility))}${facility.note ? `<br><small>${esc(facility.note)}</small>` : ''}${facility.city === "taipei" && facility.accept?.general ? `<br><small>${esc(T[lang].bag)}</small>` : ''}<br><a href="${gmaps(facility.lat, facility.lng)}" target="_blank" rel="noopener">${T[lang].maps}</a>`
       );
       facilityMarkers.push(new maplibregl.Marker({ element, anchor: 'bottom' })
         .setLngLat([facility.lng, facility.lat])
