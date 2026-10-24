@@ -19,10 +19,11 @@
     "network_attempts_per_request": 2,
     "retry_after_failure": "next Monday",
     "last_success": null,
-    "last_checked": null,
-    "last_attempt": null,
-    "last_attempt_status": null,
-    "next_retry_not_before": null
+    "last_checked": "2026-10-24T01:33:46+00:00",
+    "last_attempt": "2026-10-24T01:33:46+00:00",
+    "last_attempt_status": "source-response-not-valid-json",
+    "next_retry_not_before": "2026-10-26T00:00:00+08:00",
+    "last_error": "Official direct-download endpoint returned a response that could not be parsed as JSON. No data was published."
   },
-  "notes": "Official Tainan JSON source has coordinates, route/time, collection days and recycling days. Importer is installed; food-waste schedule is not inferred when absent from source."
+  "notes": "Official Tainan source has coordinates, route/time, collection days and recycling days. Importer is installed; food-waste schedule is not inferred when absent from source. Source is in Monday cooldown after the 2026-10-24 unsuccessful pull."
 }
