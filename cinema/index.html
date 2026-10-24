@@ -8,17 +8,24 @@
   <link rel="canonical" href="https://study-in-taiwan.com/cinema/">
   <title>Taiwan Cinema Map · Search Films by Subtitle and Audio</title>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
-  <link rel="stylesheet" href="cinema.css?v=20261025b">
+  <link rel="stylesheet" href="cinema.css?v=20261025d">
   <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
-  <script defer src="cinema.js?v=20261025b"></script>
+  <script defer src="cinema.js?v=20261025d"></script>
 </head>
 <body>
   <main class="app">
     <section class="map-wrap" aria-label="Map of cinemas across Taiwan">
       <div id="map"></div>
       <a class="brand" href="../" aria-label="Study in Taiwan home"><span class="brand-icon">◉</span><span>TAIWAN<br><b>CINEMA MAP</b></span></a>
-      <div class="map-caption"><span class="live-dot"></span><span id="map-caption">Explore cinemas by city</span></div>
-      <div class="map-legend"><span class="legend-bubble">⌂</span><span>Individual cinemas</span></div>
+      <div class="map-caption"><span class="live-dot"></span><span id="map-caption">Cinema locations</span></div>
+      <div class="map-tools" id="map-tools">
+        <button class="map-tools-toggle" id="map-tools-toggle" type="button" aria-label="Map controls" aria-expanded="false" title="Map controls">⋯</button>
+        <div class="map-tools-menu" id="map-tools-menu" hidden>
+          <button type="button" id="map-zoom-in" aria-label="Zoom in" title="Zoom in">+</button>
+          <button type="button" id="map-zoom-out" aria-label="Zoom out" title="Zoom out">−</button>
+          <button type="button" id="map-locate" aria-label="Use my location" title="Use my location">⌖</button>
+        </div>
+      </div>
       <div id="map-error" class="map-error" hidden>Map tiles unavailable. You can still browse cinemas from the list.</div>
       <div class="map-credit">Map © OpenStreetMap · OpenFreeMap</div>
     </section>

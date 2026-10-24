@@ -40,6 +40,7 @@
   let cityDefs = [];
   let cinemaByCity = {};
   let showsByCity = {};
+  let venueLocations = [];
   let markers = [];
   let userMarker = null;
   let selectedCity = 'all';
@@ -51,10 +52,6 @@
   let map;
 
   const ui = (key) => localeInfo[language].ui[key] || localeInfo.en.ui[key] || key;
-  const countWords = {
-    en:['cities','cinemas','sessions'], 'zh-TW':['縣市','影城','場次'], id:['kota','bioskop','jadwal'],
-    ja:['都市','映画館','上映'], ko:['도시','극장','회차'], vi:['thành phố','rạp','suất'], th:['เมือง','โรงภาพยนตร์','รอบ']
-  };
   const themeLabels = {
     en:['Switch to light mode','Switch to dark mode'], 'zh-TW':['切換至淺色模式','切換至深色模式'],
     id:['Ganti ke mode terang','Ganti ke mode gelap'], ja:['ライトモードに切り替え','ダークモードに切り替え'],
@@ -70,7 +67,6 @@
     th:(n,total)=>`${n} จาก ${total} รอบมีข้อมูลคำบรรยายที่แหล่งข่าวระบุชัดเจน`
   };
   const currentLocationLabels = {en:'Your location','zh-TW':'您的位置',id:'Lokasi Anda',ja:'現在地',ko:'내 위치',vi:'Vị trí của bạn',th:'ตำแหน่งของคุณ'};
-  const countWord = (index) => (countWords[language] || countWords.en)[index];
   function todayTaiwan() {
     return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
   }
@@ -93,34 +89,15 @@
     return cityNames[slug] || ui('unknownCity');
   }
   function cinemaCount(slug) { return (cinemaByCity[slug]?.cinemas || []).length; }
+  function locationCount(slug='all') { return venueLocations.filter(location=>slug==='all'||location.city===slug).length; }
   function cinemaPoint(cinema) {
     const lng = Number(cinema?.longitude ?? cinema?.lng ?? cinema?.coordinates?.[0]);
     const lat = Number(cinema?.latitude ?? cinema?.lat ?? cinema?.coordinates?.[1]);
     return Number.isFinite(lng) && Number.isFinite(lat) && lng >= 118 && lng <= 123 && lat >= 20 && lat <= 27 ? [lng, lat] : null;
   }
-  async function loadOsmCinemaPoints() {
-    const url='https://services-ap1.arcgis.com/iA7fZQOnjY9D67Zx/arcgis/rest/services/OSM_AS_Amenities/FeatureServer/0/query?where=amenity%3D%27cinema%27&geometry=117%2C20%2C123%2C27&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=true&outSR=4326&resultRecordCount=2000&f=geojson';
-    const response=await fetch(url,{cache:'force-cache',signal:AbortSignal.timeout(15000)});if(!response.ok)throw new Error(`OSM cinema layer: ${response.status}`);
-    const payload=await response.json(),features=payload.features||[];
-    const norm=s=>String(s||'').toLocaleLowerCase().replace(/臺/g,'台').replace(/[\s　·・\-]/g,'').replace(/(電影院|電影館|電影城|影城|戲院|theatre|cinema)/gi,'');
-    const entries=[];for(const slug of Object.keys(cinemaByCity))for(const cinema of cinemaByCity[slug]?.cinemas||[])entries.push({slug,cinema,key:norm(cinema.name_zh||cinema.name_en)});
-    for(const feature of features){
-      const point=feature.geometry?.coordinates,properties=feature.properties||{};
-      const sourceNames=[properties.name,properties.name_zh,properties['name:zh'],properties.name_en].filter(Boolean).map(norm);
-      if(!Array.isArray(point)||point.length<2||(!sourceNames.length&&!(properties.addr_street&&properties.addr_housenumber)))continue;
-      let hits=entries.filter(({key})=>key&&sourceNames.some(name=>name===key||(name.length>=4&&key.includes(name))||(key.length>=4&&name.includes(key))));
-      if(hits.length!==1&&properties.addr_street&&properties.addr_housenumber){
-        const street=norm(properties.addr_street),number=norm(properties.addr_housenumber);
-        hits=entries.filter(({cinema})=>{const address=norm(cinema.address);return street.length>=2&&address.includes(street)&&address.includes(number);});
-      }
-      if(hits.length!==1)continue;
-      const [lng,lat]=point;if(lng<118||lng>123||lat<20||lat>27)continue;
-      hits[0].cinema.longitude=lng;hits[0].cinema.latitude=lat;hits[0].cinema.coordinate_source='OpenStreetMap';
-      const image=safeUrl(properties.image);if(image)hits[0].cinema.image_url=image;
-    }
-    return entries.filter(({cinema})=>cinemaPoint(cinema)).length;
+  function cinemaLocation(cinema,slug=cinema?.city) {
+    return venueLocations.find(location=>location.cinema_id===cinema?.id&&location.city===slug)||null;
   }
-  function showtimeCount(slug) { return (showsByCity[slug]?.showtimes || []).length; }
   function getAllShowtimes() { return Object.values(showsByCity).flatMap((x)=>x.showtimes||[]); }
   function normalizeLang(value) {
     if (!value) return '';
@@ -137,8 +114,6 @@
   function buildMap() {
     if (!window.maplibregl) { $('#map-error').hidden=false; $('#map-error').textContent='The map library did not load. Browse cinemas from the list.'; return; }
     map=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/liberty',center:[121,23.8],zoom:6.4,attributionControl:false});
-    map.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
-    map.addControl(new maplibregl.AttributionControl({compact:true}),'bottom-left');
     map.on('error',()=>{$('#map-error').hidden=false;});
     map.on('click',handleMapSelection);
     map.on('load',()=>{if(cityDefs.length)renderMarkers();});
@@ -146,14 +121,17 @@
   function renderMarkers() {
     if (!map||!map.loaded()) return;
     markers.forEach((m)=>m.remove()); markers=[];
-    selectedCities().forEach((slug)=>{
-      for (const cinema of cinemaByCity[slug]?.cinemas || []) {
-        const point=cinemaPoint(cinema); if(!point)continue;
-        const el=document.createElement('button');el.type='button';el.className=`cinema-marker${selectedCinemaId===cinema.id?' selected':''}`;el.textContent='⌂';el.setAttribute('aria-label',cinema.name_zh||cinema.name_en||'Cinema');
-        const shows=(showsByCity[slug]?.showtimes||[]).filter(s=>s.cinema_id===cinema.id && (s.start_time||'').slice(0,10)===dateSelect.value);
-        const addr=cinema.address?`<span class="nearby-note">${esc(cinema.address)}</span>`:'';
-        const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
-        const photo=image?`<img class="popup-photo" src="${esc(image)}" alt="${esc(cinema.name_zh||'Cinema building')}" loading="lazy">`:'';
+    const visibleSlugs=new Set(selectedCities());
+    const cinemaIndex=new Map(Object.values(cinemaByCity).flatMap(data=>data.cinemas||[]).map(cinema=>[cinema.id,cinema]));
+    for (const location of venueLocations.filter(item=>visibleSlugs.has(item.city))) {
+        const cinema=location.cinema_id?cinemaIndex.get(location.cinema_id):null;
+        const point=[location.longitude,location.latitude];
+        const el=document.createElement('button');el.type='button';el.className=`cinema-marker${cinema&&selectedCinemaId===cinema.id?' selected':''}`;el.innerHTML='<span class="pin-shape"><span class="pin-icon" aria-hidden="true">🎬</span></span>';el.setAttribute('aria-label',cinema?.name_zh||location.name||'Cinema');
+        const shows=cinema?(showsByCity[location.city]?.showtimes||[]).filter(s=>s.cinema_id===cinema.id && (s.start_time||'').slice(0,10)===dateSelect.value):[];
+        const address=cinema?.address||[displayName(location.city),location.street,location.house_number].filter(Boolean).join(' ');
+        const addr=address?`<span class="nearby-note">${esc(address)}</span>`:'';
+        const image=safeUrl(cinema?.image_url||cinema?.photo_url||cinema?.image);
+        const photo=image?`<img class="popup-photo" src="${esc(image)}" alt="${esc(cinema?.name_zh||location.name||'Cinema building')}" loading="lazy">`:'';
         const filmGroups=new Map();shows.forEach(show=>{const title=show.movie_title||'Untitled screening';if(!filmGroups.has(title))filmGroups.set(title,[]);filmGroups.get(title).push(show);});
         const filmRows=[...filmGroups.entries()].map(([title,rows])=>{
           const audios=[...new Set(rows.map(show=>normalizeLang(show.audio_language)).filter(Boolean))].map(code=>languageNames[code]||code);
@@ -162,13 +140,13 @@
           const details=[audios.length?`${ui('audio')}: ${audios.join(', ')}`:`${ui('audio')}: ${ui('audioUnknown')}`,`${ui('subtitles')}: ${subtitles.length?subtitles.join(', '):ui('subtitleUnknown')}`].join(' · ');
           return `<li><b>${esc(title)}</b><span>${esc(times)}</span><small>${esc(details)}</small></li>`;
         }).join('');
-        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}<b>${esc(cinema.name_zh||cinema.name_en||'Cinema')}</b><br><span class="nearby-note">${esc(cinema.company_name||'')}${cinema.screens?` · ${esc(cinema.screens)} screens`:''}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span><ul class="popup-movies">${filmRows}</ul>`);
+        const venueName=cinema?.name_zh||location.name||'Cinema';
+        const popup=new maplibregl.Popup({offset:20,closeButton:true,maxWidth:'340px'}).setHTML(`${photo}<b>${esc(venueName)}</b><br><span class="nearby-note">${esc(cinema?.company_name||'')}</span><br>${addr}<br><span class="nearby-note">${shows.length} ${esc(ui('sessions'))}</span>${filmRows?`<ul class="popup-movies">${filmRows}</ul>`:`<p class="nearby-note">No schedule is linked for this venue yet.</p>`}`);
         const marker=new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(point).setPopup(popup).addTo(map);
-        marker._cinemaId=cinema.id;marker._citySlug=slug;
-        el.addEventListener('click',()=>selectCinema(cinema.id,slug,true));markers.push(marker);
-      }
-    });
-    const mapped=selectedCities().flatMap(slug=>(cinemaByCity[slug]?.cinemas||[]).filter(c=>cinemaPoint(c)).map(cinemaPoint));
+        marker._cinemaId=cinema?.id||'';marker._citySlug=location.city;
+        if(cinema)el.addEventListener('click',()=>selectCinema(cinema.id,location.city,true));markers.push(marker);
+    }
+    const mapped=venueLocations.filter(item=>visibleSlugs.has(item.city)).map(item=>[item.longitude,item.latitude]);
     if(selectedCity==='all'&&mapped.length){const bounds=mapped.reduce((b,p)=>b.extend(p),new maplibregl.LngLatBounds(mapped[0],mapped[0]));map.fitBounds(bounds,{padding:{top:70,right:65,bottom:90,left:65},maxZoom:10,duration:0});}
   }
   function setupCityOptions() {
@@ -247,8 +225,7 @@
     }
     const dateLabel=formatDate(dateSelect.value);
     summaryEl.textContent=`${cinemaTotal} ${ui('cinemas')} · ${sessionTotal} ${ui('sessions')} · ${dateLabel}`;
-    const cityCount=Object.values(cinemaByCity).reduce((n,x)=>n+(x.cinemas?.length||0),0);
-    mapCaption.textContent=selectedCity==='all'?`${cityDefs.length} ${countWord(0)} · ${cityCount} ${countWord(1)}`:`${displayName(selectedCity)} · ${cinemaCount(selectedCity)} ${countWord(1)}`;
+    mapCaption.textContent=selectedCity==='all'?`${locationCount()} cinema locations · OpenStreetMap`:`${displayName(selectedCity)} · ${locationCount(selectedCity)} mapped locations`;
     if(!groups.length){resultsEl.innerHTML=`<div class="no-results">${esc(ui('noResults'))}<br>${esc(ui('dataNote'))}</div>`;return;}
     resultsEl.innerHTML=groups.map(({slug,records})=>{
       const showCount=records.reduce((n,x)=>n+x.shows.length,0),heading=selectedCity==='all'?`<div class="city-heading"><h2>${esc(displayName(slug))}</h2><span>${records.length} ${esc(ui('cinemas'))} · ${showCount} ${esc(ui('sessions'))}</span></div>`:'';
@@ -259,7 +236,7 @@
         const co=cinema.company_name?`<div class="company-name">${esc(cinema.company_name)}</div>`:'';
         const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
         const photo=image?`<img class="cinema-photo" src="${esc(image)}" alt="${esc(cinema.name_zh||'Cinema building')}" loading="lazy">`:'';
-        const location=cinemaPoint(cinema)?`<button class="show-on-map" type="button" data-cinema-id="${esc(cinema.id)}" data-city="${esc(slug)}">Show on map</button>`:'';
+        const location=cinemaPoint(cinema)||cinemaLocation(cinema,slug)?`<button class="show-on-map" type="button" data-cinema-id="${esc(cinema.id)}" data-city="${esc(slug)}">Show on map</button>`:'';
         return `<article class="cinema${selectedCinemaId===cinema.id?' selected':''}" id="cinema-${esc(cinema.id)}">${photo}<div class="cinema-top"><div class="cinema-name">${esc((cinema.name_zh||cinema.name_en||'Cinema').replace(/([\u3400-\u9fff])([A-Za-z0-9])/g,'$1 $2').replace(/([A-Za-z0-9])([\u3400-\u9fff])/g,'$1 $2'))}</div><span class="status-pill ${shows.length?'':'unknown'}">${shows.length?`${shows.length} ${esc(ui('sessions'))}`:esc(ui('noSchedules'))}</span></div>${co}<div class="address">${address}</div><div class="cinema-meta">${cinema.screens?`${esc(cinema.screens)} screens`:''}${cinema.phone?` · ${esc(cinema.phone)}`:''} ${location}</div>${moviesHtml}</article>`;
       }).join('')}`;
     }).join('');
@@ -271,7 +248,7 @@
   function selectCinema(id,slug,fly) {
     selectedCity=slug;selectedCinemaId=id;citySelect.value=slug;renderResults();renderMarkers();
     const card=document.getElementById(`cinema-${id}`);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});
-    if(fly&&map){const cinema=(cinemaByCity[slug]?.cinemas||[]).find(c=>c.id===id),point=cinemaPoint(cinema);if(point){map.flyTo({center:point,zoom:16,duration:700});markers.find(m=>m._cinemaId===id)?.togglePopup();}}
+    if(fly&&map){const cinema=(cinemaByCity[slug]?.cinemas||[]).find(c=>c.id===id),location=cinemaPoint(cinema)||((loc)=>loc?[loc.longitude,loc.latitude]:null)(cinemaLocation(cinema,slug));if(location){map.flyTo({center:location,zoom:16,duration:700});markers.find(m=>m._cinemaId===id)?.togglePopup();}}
   }
   function handleMapSelection(event) {
     if(!map)return;
@@ -330,8 +307,9 @@
     language=localeInfo[savedLanguage]?savedLanguage:'en';languageSelect.value=language;setTheme(savedTheme==='light'?'light':'dark');
     buildMap();
     try {
-      const [cityData,manifest]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null)]);
+      const [cityData,manifest,locationData]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]}))]);
       cityDefs=cityData.cities.map(c=>({slug:c.slug,center:c.center}));dataGeneratedDate=(manifest?.generated_at||'').slice(0,10);
+      venueLocations=locationData.locations||[];
       const slugs=[...cityDefs.map(c=>c.slug),'unknown'];
       await Promise.all(slugs.map(async slug=>{
         const [cinemas,shows]=await Promise.all([loadJson(`data/cinemas/${slug}.json`).catch(()=>({cinemas:[]})),loadJson(`data/showtimes/${slug}.json`).catch(()=>({showtimes:[]}))]);
@@ -340,7 +318,7 @@
       for(const data of Object.values(showsByCity))for(const show of data.showtimes||[]){knownShowtimeRows++;if(Array.isArray(show.subtitles)&&show.subtitles.length)explicitSubtitleRows++;}
       setupCityOptions();setupDateOptions();setupLanguageFilters();
       if(map?.loaded())renderMarkers();
-      loadOsmCinemaPoints().then(count=>{if(count){renderMarkers();renderResults();mapCaption.textContent=`${count} mapped cinemas · OpenStreetMap`;}}).catch(error=>console.warn('Cinema coordinates unavailable',error));
+      mapCaption.textContent=`${locationCount()} cinema locations · OpenStreetMap`;
       $('#updated').textContent=`${ui('dataUpdated')} · ${formatDate(dataGeneratedDate||todayTaiwan(),'short')} · ${ui('localTime')}`;
       $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
       setLanguage(language);renderResults();
@@ -354,6 +332,10 @@
   searchInput.addEventListener('input',renderResults);subtitleSelect.addEventListener('change',renderResults);audioSelect.addEventListener('change',renderResults);
   languageSelect.addEventListener('change',e=>setLanguage(e.target.value));$('#theme').addEventListener('click',()=>setTheme(document.querySelector('.app').dataset.theme==='dark'?'light':'dark'));
   $('#locate').addEventListener('click',locateMe);
+  $('#map-locate').addEventListener('click',()=>{$('#map-tools-menu').hidden=true;$('#map-tools-toggle').setAttribute('aria-expanded','false');locateMe();});
+  $('#map-zoom-in').addEventListener('click',()=>map?.zoomIn({duration:250}));$('#map-zoom-out').addEventListener('click',()=>map?.zoomOut({duration:250}));
+  $('#map-tools-toggle').addEventListener('click',()=>{const menu=$('#map-tools-menu'),open=menu.hidden;menu.hidden=!open;$('#map-tools-toggle').setAttribute('aria-expanded',String(open));});
+  document.addEventListener('click',e=>{if(!$('#map-tools').contains(e.target)){ $('#map-tools-menu').hidden=true;$('#map-tools-toggle').setAttribute('aria-expanded','false');}});
   resultsEl.addEventListener('click',e=>{const button=e.target.closest('.show-on-map');if(button)selectCinema(button.dataset.cinemaId,button.dataset.city,true);});
     $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1));syncDateControls();mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}selectCity('all',true);});
   document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();searchInput.focus();}if(e.key==='Escape'&&document.activeElement===searchInput){searchInput.value='';renderResults();searchInput.blur();}});
