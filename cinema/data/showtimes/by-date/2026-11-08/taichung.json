@@ -1,59 +1,36 @@
 {
-  "version": 1,
+  "version": 2,
+  "schema": "normalized-movie-references",
   "city": "taichung",
   "date": "2026-11-08",
   "showtimes": [
     {
       "id": "fd67380fd0621981",
       "cinema_id": "d0408434529e9e36",
-      "cinema_name": "台中站前秀泰影城",
-      "movie_title": "EXO PLANET #6 - EXhOrizon [dot] in CINEMAS",
-      "movie_title_en": "EXO PLANET #6 - EXhOrizon [dot] in CINEMAS",
-      "poster_url": "https://assets.showtimes.com.tw/images/42674fcd02a3521d1c87367edec2e444.jpg",
-      "genres": [
-        "livestream"
-      ],
-      "rating": null,
       "start_time": "2026-11-08T16:00:00.000+08:00",
-      "end_time": null,
       "hall": "1館9廳",
       "format": "數位 韓語",
       "audio_language": "ko",
-      "subtitles": null,
-      "duration_minutes": 210,
-      "price": null,
-      "on_sales": null,
       "source_event_id": "4816794",
       "source_url": "https://www.showtimes.com.tw/cinemas/53/",
       "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
       "freshness": "last-known-good",
-      "source": "showtimes-official-api"
+      "source": "showtimes-official-api",
+      "movie_id": "m_f1e434b97271"
     },
     {
       "id": "a4500a0bd459b1fd",
       "cinema_id": "fc41f9ba7672f9c4",
-      "cinema_name": "台中文心秀泰影城",
-      "movie_title": "學園偶像大師 LIVE TOUR -標- FINAL公演 LIVE VIEWING",
-      "movie_title_en": "學園偶像大師 LIVE TOUR -標- FINAL公演 LIVE VIEWING",
-      "poster_url": "https://assets.showtimes.com.tw/images/94b2854f8c2a5d1e930363df3389700d.jpg",
-      "genres": [
-        "livestream"
-      ],
-      "rating": null,
       "start_time": "2026-11-08T16:00:00.000+08:00",
-      "end_time": null,
       "hall": "13廳",
       "format": "數位 日語",
       "audio_language": "ja",
-      "subtitles": null,
-      "duration_minutes": 240,
-      "price": null,
-      "on_sales": null,
       "source_event_id": "4800461",
       "source_url": "https://www.showtimes.com.tw/cinemas/56/",
       "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
       "freshness": "last-known-good",
-      "source": "showtimes-official-api"
+      "source": "showtimes-official-api",
+      "movie_id": "m_4c86ad639cce"
     }
   ]
 }

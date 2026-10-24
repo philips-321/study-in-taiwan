@@ -1,11 +1,13 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { buildMovieIndex, compactShowtime, expandShowtime, knownAgeRating, movieIdForRow, normalizeMovieTitle, screeningKey } from './movie-schema.mjs';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node cinema/scripts/import-showtimes-bootstrap.mjs <bootstrap.json>');
 const ROOT = path.resolve('cinema/data');
 const SHOW_DIR = path.join(ROOT, 'showtimes');
+const MOVIES_FILE = path.join(ROOT, 'movies', 'index.json');
 const read = async file => JSON.parse(await fs.readFile(file, 'utf8'));
 const write = async (file, data) => {
   await fs.mkdir(path.dirname(file), { recursive: true });
@@ -23,9 +25,10 @@ const localDateTime = value => {
   if (!Number.isFinite(date.getTime())) return null;
   return new Date(date.getTime() + 8 * 60 * 60 * 1000).toISOString().replace('Z', '+08:00');
 };
-const rowKey = row => [row.cinema_id, row.movie_title, row.start_time, row.hall || '', row.format || ''].join('|');
+const rowKey = screeningKey;
 const data = (await read(path.resolve(input))).payload;
 if (!data?.corporations || !data?.programs || !data?.eventsForCorporations) throw new Error('Unsupported ShowTimes bootstrap schema');
+const previousMovieIndex = await read(MOVIES_FILE).catch(error => error?.code === 'ENOENT' ? { movies: [] } : Promise.reject(error));
 
 const cinemaFiles = (await fs.readdir(path.join(ROOT, 'cinemas'))).filter(name => name.endsWith('.json'));
 const cinemas = [];
@@ -43,14 +46,7 @@ for (const corporation of data.corporations) {
 }
 
 const programs = new Map(data.programs.map(program => [program.id, program]));
-const movieTitleKey = value => String(value || '').replace(/&(?:amp|quot|apos|#39|rsquo|lsquo|rdquo|ldquo|ndash|mdash|hellip);/g, entity => ({
-  '&amp;': '&', '&quot;': '"', '&apos;': "'", '&#39;': "'", '&rsquo;': '’', '&lsquo;': '‘',
-  '&rdquo;': '”', '&ldquo;': '“', '&ndash;': '–', '&mdash;': '—', '&hellip;': '…'
-})[entity] || entity).normalize('NFKC').toLowerCase().replace(/[’‘`´]/g, "'").replace(/[“”]/g, '"').replace(/[‐‑‒–—]/g, '-').replace(/[\s\u00a0]+/g, ' ').trim();
-const knownAgeRating = value => {
-  const raw = String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]/g, '');
-  return ({ '普': 'g', '普遍級': 'g', g: 'g', '護': 'p', '保護級': 'p', p: 'p', '輔12': 'pg12', '輔12級': 'pg12', pg12: 'pg12', '輔15': 'pg15', '輔15級': 'pg15', pg15: 'pg15', '限制級': 'r', r: 'r' })[raw] || null;
-};
+const movieTitleKey = normalizeMovieTitle;
 const movieMetadataByTitle = new Map(), ambiguousMovieTitles = new Set();
 for (const program of data.programs) for (const title of [program.name, program.nameAlternative].filter(Boolean)) {
   const key = movieTitleKey(title);
@@ -119,20 +115,48 @@ for (const [corporationId, group] of Object.entries(data.eventsForCorporations))
 const cityFiles = (await fs.readdir(SHOW_DIR)).filter(name => name.endsWith('.json'));
 const manifestFile = path.join(ROOT, 'manifest.json');
 const manifest = await read(manifestFile);
+const movieById = new Map((previousMovieIndex.movies || []).map(movie => [movie.movie_id, movie]));
+const previousRowsByCity = new Map(cityFiles.map(file => [file.replace(/\.json$/, ''), []]));
+const appendPreviousRows = (city, rows) => {
+  const bucket = previousRowsByCity.get(city) || [];
+  const seen = new Set(bucket.map(rowKey));
+  for (const stored of rows || []) {
+    const row = expandShowtime(stored, movieById);
+    if (row.source === 'showtimes-official-api') continue;
+    const key = rowKey(row);
+    if (!seen.has(key)) { bucket.push(row); seen.add(key); }
+  }
+  previousRowsByCity.set(city, bucket);
+};
+for (const file of cityFiles) {
+  const city = file.replace(/\.json$/, '');
+  const payload = await read(path.join(SHOW_DIR, file));
+  appendPreviousRows(city, payload.showtimes);
+}
+const previousDateRoot = path.join(SHOW_DIR, 'by-date');
+for (const date of await fs.readdir(previousDateRoot).catch(error => error?.code === 'ENOENT' ? [] : Promise.reject(error))) {
+  const datePath = path.join(previousDateRoot, date);
+  if (!(await fs.stat(datePath)).isDirectory()) continue;
+  for (const file of await fs.readdir(datePath)) {
+    if (!file.endsWith('.json')) continue;
+    const city = file.replace(/\.json$/, '');
+    const payload = await read(path.join(datePath, file));
+    appendPreviousRows(city, payload.showtimes);
+  }
+}
 const completeRowsByCity = new Map();
 let crossSourceMetadataRows = 0;
 for (const file of cityFiles) {
   const city = file.replace(/\.json$/, '');
   const payload = await read(path.join(SHOW_DIR, file));
-  payload.showtimes = payload.showtimes.filter(row => row.source !== 'showtimes-official-api');
+  const baseRows = previousRowsByCity.get(city) || [];
   const incoming = rowsByCity.get(city) || [];
-  payload.showtimes = payload.showtimes.filter(row => row.source !== 'showtimes-official-api');
-  const seen = new Set(payload.showtimes.map(rowKey));
+  const completeRows = [...baseRows];
+  const seen = new Set(completeRows.map(rowKey));
   for (const row of incoming) {
     const key = rowKey(row);
-    if (!seen.has(key)) { payload.showtimes.push(row); seen.add(key); }
+    if (!seen.has(key)) { completeRows.push(row); seen.add(key); }
   }
-  const completeRows = payload.showtimes;
   for (const row of completeRows) {
     const matches = [...new Set([row.movie_title, row.movie_title_en].filter(Boolean).map(movieTitleKey))]
       .map(key => movieMetadataByTitle.get(key)).filter(Boolean);
@@ -147,10 +171,12 @@ for (const file of cityFiles) {
   }
   completeRowsByCity.set(city, completeRows);
   const importedKeys = new Set(incoming.map(rowKey));
-  payload.showtimes = payload.showtimes.filter(row => !importedKeys.has(rowKey(row)) || row.source !== 'showtimes-official-api');
   const uniqueIncoming = importedKeys.size;
-  payload.showtimes.sort((a, b) => String(a.start_time).localeCompare(String(b.start_time)));
+  completeRows.sort((a, b) => String(a.start_time).localeCompare(String(b.start_time)));
   payload.generated_at = '2026-10-24T00:00:00.000Z';
+  payload.version = 4;
+  payload.showtime_count = completeRows.length;
+  payload.showtimes = [];
   payload.sources ||= {};
   payload.sources['showtimes-official-api'] = {
     ok: false,
@@ -164,6 +190,24 @@ for (const file of cityFiles) {
   if (manifest.cities?.[city]) manifest.cities[city].showtimes = completeRows.length;
   await write(path.join(SHOW_DIR, file), payload);
 }
+
+const allRows = [...completeRowsByCity.values()].flat();
+const programMetadata = data.programs.map(program => ({
+  movie_title: program.name,
+  movie_title_en: program.nameAlternative || null,
+  poster_url: program.coverImagePortrait?.url || null,
+  genres: Array.isArray(program.genres) ? program.genres : [],
+  rating: program.rating || null,
+  duration_minutes: Number.isFinite(program.duration) ? Math.round(program.duration / 60) : null,
+  source: 'showtimes-official-program'
+}));
+const activeMovieIds = new Set(allRows.map(movieIdForRow).filter(Boolean));
+const activePreviousMovies = (previousMovieIndex.movies || []).filter(movie => activeMovieIds.has(movie.movie_id));
+const movieIndex = buildMovieIndex(allRows, programMetadata, activePreviousMovies);
+movieIndex.generated_at = '2026-10-24T00:00:00.000Z';
+movieIndex.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
+await write(MOVIES_FILE, movieIndex);
+const mappedCinemaIds = new Set(cinemas.map(cinema => cinema.id));
 
 const importedUniqueRows = [...rowsByCity.values()].reduce((sum, rows) => sum + new Set(rows.map(rowKey)).size, 0);
 const persistedCrossSourceMetadataRows = [...completeRowsByCity.values()].reduce((sum, rows) => sum + rows.filter(row => row.metadata_source === 'exact-title-match:showtimes-official-program').length, 0);
@@ -179,7 +223,7 @@ for (const city of cityFiles.map(name => name.replace(/\.json$/, ''))) {
     if (show.poster_url) { coverage.poster_rows++; distinctPosterUrls.add(show.poster_url); }
     if (Array.isArray(show.genres) && show.genres.length) { coverage.genre_rows++; for (const genre of show.genres) distinctGenreCodes.add(genre); }
     if (knownAgeRating(show.rating)) coverage.rating_rows++;
-    const movieKey = `${movieTitleKey(show.movie_title)}|${movieTitleKey(show.movie_title_en)}`;
+    const movieKey = movieIdForRow(show);
     if (movieKey !== '|') {
       const unique = uniqueMovieCoverage.get(movieKey) || { international: false, poster: false, genres: false, rating: false };
       unique.international ||= Boolean(show.movie_title_en);
@@ -197,7 +241,10 @@ for (const city of cityFiles.map(name => name.replace(/\.json$/, ''))) {
     entry.total += shows.length;
     entry.cities[city] = shows.length;
     oldIndex.set(date, entry);
-    await write(path.join(SHOW_DIR, 'by-date', date, `${city}.json`), { version: 1, city, date, showtimes: shows });
+    await write(path.join(SHOW_DIR, 'by-date', date, `${city}.json`), {
+      version: 2, schema: 'normalized-movie-references', city, date,
+      showtimes: shows.map(show => compactShowtime(show, mappedCinemaIds))
+    });
   }
 }
 coverage.unique_title_pairs = {
@@ -220,6 +267,10 @@ for (const dateDir of await fs.readdir(path.join(SHOW_DIR, 'by-date'))) {
 for (const entry of oldIndex.values()) entry.cities = Object.fromEntries(Object.entries(entry.cities).sort(([a], [b]) => a.localeCompare(b)));
 manifest.showtimes_index = Object.fromEntries([...oldIndex.entries()].sort(([a], [b]) => a.localeCompare(b)));
 manifest.coverage = coverage;
+manifest.version = 8;
+manifest.model = 'normalized movie catalog plus per-date/per-city screening references; date chunks are the only persisted showtime rows';
+manifest.movie_catalog = 'movies/index.json; movie title, poster, genres, rating, and runtime are stored once and referenced by movie_id';
+manifest.showtimes_payload = 'The app loads only the selected date-and-city chunks from showtimes/by-date. Each screening row references movie_id; cinema labels resolve through cinema_id.';
 manifest.sources ||= {};
 manifest.sources.showtimes ||= {};
 manifest.sources.showtimes['showtimes-official-api'] = {

@@ -56,6 +56,7 @@
   let selectedCinemaId = '';
   let availableDates = [];
   let showtimesDateIndex = {};
+  let movieById = new Map();
   let ticketPriceIndex = {cinemas:{}};
   const ticketPricesByCity = {};
   const ticketPriceRequests = {};
@@ -70,6 +71,12 @@
   let savedMapView = null;
   let activePopup = null;
   let userPosition = null;
+
+  function movieFor(show) { return show?.movie_id ? (movieById.get(show.movie_id) || show) : show; }
+  function showtimeKey(show) {
+    const movie = movieFor(show);
+    return [show.cinema_id, normalizeSearch(movie.movie_title || movie.movie_title_en), show.start_time, show.hall || '', show.format || ''].join('|');
+  }
 
   const ui = (key) => localeInfo[language].ui[key] || localeInfo.en.ui[key] || key;
   const themeLabels = {
@@ -204,7 +211,7 @@
     const addr=address?`<span class="nearby-note">${esc(address)}</span>`:'';
     const image=safeUrl(cinema?.image_url||cinema?.photo_url||cinema?.image);
     const photo=image?`<img class="popup-photo" src="${esc(image)}" alt="${esc(cinema?.name_zh||location.name||'Cinema building')}" loading="lazy">`:'';
-    const filmGroups=new Map();shows.forEach(show=>{const title=show.movie_title||'Untitled screening';if(!filmGroups.has(title))filmGroups.set(title,[]);filmGroups.get(title).push(show);});
+    const filmGroups=new Map();shows.forEach(show=>{const movie=movieFor(show),title=movie.movie_title||movie.movie_title_en||'Untitled screening';if(!filmGroups.has(title))filmGroups.set(title,[]);filmGroups.get(title).push(show);});
     const filmRows=[...filmGroups.entries()].map(([title,rows])=>{
       const audios=[...new Set(rows.map(show=>normalizeLang(show.audio_language)).filter(Boolean))].map(code=>languageNames[code]||code);
       const subtitles=[...new Set(rows.flatMap(show=>Array.isArray(show.subtitles)?show.subtitles.map(code=>languageNames[normalizeLang(code)]||code):[]))];
@@ -379,8 +386,8 @@
     if(sequence!==dateLoadSequence||date!==dateSelect.value)return;
     showsByCity=Object.fromEntries(loaded);
     for(const [slug,live] of Object.entries(liveShowtimesByCityDate[date]||{})){
-      const data=showsByCity[slug]||{showtimes:[]},keys=new Set(data.showtimes.map(show=>[show.cinema_id,show.movie_title,show.start_time,show.hall||'',show.format||''].join('|')));
-      for(const show of live){const key=[show.cinema_id,show.movie_title,show.start_time,show.hall||'',show.format||''].join('|');if(!keys.has(key)){data.showtimes.push(show);keys.add(key);}}
+      const data=showsByCity[slug]||{showtimes:[]},keys=new Set(data.showtimes.map(showtimeKey));
+      for(const show of live){const key=showtimeKey(show);if(!keys.has(key)){data.showtimes.push(show);keys.add(key);}}
       showsByCity[slug]=data;
     }
     showtimesPending=false;
@@ -415,10 +422,10 @@
     return new Intl.DateTimeFormat(localeInfo[language].date,{timeZone:'Asia/Taipei',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(d);
   }
   function movieCard(showtimes) {
-    const first=showtimes[0],filmTitle=decodeEntities(first.movie_title||'Untitled screening'),titleEn=decodeEntities(first.movie_title_en||'');
-    const posterUrl=safeUrl(first.poster_url),poster=posterUrl?`<img class="movie-poster" src="${esc(posterUrl)}" alt="" loading="lazy" decoding="async">`:'';
-    const genres=[...new Set(Array.isArray(first.genres)?first.genres:[])].map(displayGenre);
-    const rating=displayRating(first.rating);
+    const first=showtimes[0],movie=movieFor(first),filmTitle=decodeEntities(movie.movie_title||'Untitled screening'),titleEn=decodeEntities(movie.movie_title_en||'');
+    const posterUrl=safeUrl(movie.poster_url),poster=posterUrl?`<img class="movie-poster" src="${esc(posterUrl)}" alt="" loading="lazy" decoding="async">`:'';
+    const genres=[...new Set(Array.isArray(movie.genres)?movie.genres:[])].map(displayGenre);
+    const rating=displayRating(movie.rating);
     const movieMeta=genres.length||rating?`<div class="movie-taxonomy">${genres.map(genre=>`<span class="tag genre-tag">${esc(genre)}</span>`).join('')}${rating?`<span class="tag rating-tag" title="${esc(ageRatingTitles[language]||ageRatingTitles.en)}">${esc(rating)}</span>`:''}</div>`:'';
     const sessions=showtimes.map(s=>{
       const day=dateSelect.value==='all-dates'?`<span class="tag">${esc(formatDate((s.start_time||'').slice(0,10),'short'))}</span>`:'';
@@ -441,7 +448,7 @@
         if(!brandMatches(cinema,brand))return false;
         if((subtitle!=='all'||audio!=='all')&&!shows.length)return false;
         if(!query||selectedCinemaId===cinema.id)return true;
-        return [cinema.name_zh,cinema.name_en,cinema.address,...shows.flatMap(s=>[s.movie_title,s.movie_title_en])].some(v=>normalizeSearch(v).includes(query));
+        return [cinema.name_zh,cinema.name_en,cinema.address,...shows.flatMap(s=>{const movie=movieFor(s);return [movie.movie_title,movie.movie_title_en,...(movie.international_titles||[])];})].some(v=>normalizeSearch(v).includes(query));
       }).sort((a,b)=>(b.shows.length-a.shows.length)||String(a.cinema.name_zh).localeCompare(String(b.cinema.name_zh)));
       if(filtered.length)groups.push({slug,records:filtered});cinemaTotal+=filtered.length;sessionTotal+=filtered.reduce((n,x)=>n+x.shows.length,0);
     }
@@ -454,7 +461,7 @@
       return `${heading}${records.map(({cinema,shows})=>{
         const addressParts=splitAddress(cinema.address),floorLabel=language==='id'?'Lantai':language==='zh-TW'?'樓層':language==='ja'?'フロア':language==='ko'?'층':language==='vi'?'Tầng':language==='th'?'ชั้น':'Floor';
         const address=cinema.address?`<div class="address-row"><div class="address-text"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.address)}" target="_blank" rel="noopener">${esc(addressParts.street)} ↗</a>${addressParts.floor?`<span class="address-floor">${esc(floorLabel)}: ${esc(addressParts.floor)}</span>`:''}</div>${copyButton(addressParts.street,'address')}</div>`:esc(ui('addressUnavailable'));
-        const movies=new Map();shows.sort((a,b)=>String(a.start_time).localeCompare(String(b.start_time))).forEach(s=>{const key=`${s.movie_title||''}|${s.movie_title_en||''}`;if(!movies.has(key))movies.set(key,[]);movies.get(key).push(s);});
+        const movies=new Map();shows.sort((a,b)=>String(a.start_time).localeCompare(String(b.start_time))).forEach(s=>{const movie=movieFor(s),key=s.movie_id||`${movie.movie_title||''}|${movie.movie_title_en||''}`;if(!movies.has(key))movies.set(key,[]);movies.get(key).push(s);});
         const moviesHtml=shows.length?[...movies.values()].map(movieCard).join(''):`<div class="empty-show">${esc(showtimesPending?'Loading showtimes…':ui('noSchedules'))}</div>`;
         const co=cinema.company_name?`<div class="company-name">${esc(cinema.company_name)}</div>`:'';
         const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
@@ -558,9 +565,10 @@
     let savedLanguage='en',savedTheme='dark';try{savedLanguage=localStorage.getItem('cinema-language')||'en';savedTheme=localStorage.getItem('cinema-theme')||'dark';}catch{}
     language=localeInfo[savedLanguage]?savedLanguage:'en';languageSelect.value=language;setTheme(savedTheme==='light'?'light':'dark');
     try {
-      const [cityData,manifest,locationData,nameData,ticketIndex]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}})),loadJson('data/ticket-prices/index.json').catch(()=>({cinemas:{}}))]);
+      const [cityData,manifest,locationData,nameData,ticketIndex,movieIndex]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}})),loadJson('data/ticket-prices/index.json').catch(()=>({cinemas:{}})),loadJson('data/movies/index.json').catch(()=>({movies:[]}))]);
       cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};logoImages=nameData.logo_images||{};logoBackgrounds=nameData.logo_backgrounds||{};
       ticketPriceIndex=ticketIndex;
+      movieById=new Map((movieIndex.movies||[]).map(movie=>[movie.movie_id,movie]));
       cityDefs=cityData.cities.map(c=>({slug:c.slug,center:c.center}));dataGeneratedDate=(manifest?.generated_at||'').slice(0,10);showtimesDateIndex=manifest?.showtimes_index||{};
       venueLocations=locationData.locations||[];
       const slugs=[...cityDefs.map(c=>c.slug),'unknown'];

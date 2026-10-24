@@ -51,7 +51,11 @@ cinema/data/ticket-prices/index.json
 cinema/data/ticket-prices/<city>.json
 ```
 
-Per-city showtime files hold collector output. The browser uses date-and-city chunks listed in `manifest.json` and loads only the selected date. The imported ShowTimes snapshot is stored only in those chunks, not duplicated in per-city files. On refresh, the fallback workflow reads previous date/city chunks to retain future ShowTimes records while its collector is blocked. Generated date chunks are refreshed in place, not retained as dated archives; Git history is the audit/history layer.
+`data/showtimes/by-date/<date>/<city>.json` is the only durable store for screening rows. Each screening stores a `movie_id`; the film's titles, poster URL, genres, age rating, runtime, and metadata sources live once in `data/movies/index.json`. Cinema names resolve through `cinema_id`. Per-city `data/showtimes/<city>.json` files contain source health and a count only; they must not duplicate screening rows. The browser reads only the selected date/city chunks and resolves movie metadata through the catalog, avoiding per-screening copies in both JSON and browser row objects.
+
+On refresh, `restore-failed-source-fallbacks.mjs` reads previous date/city chunks and their matching movie catalog to retain future last-known-good records while a collector is blocked. The workflow snapshots both before updating. Generated date chunks are refreshed in place, not retained as dated archives; Git history is the audit/history layer. `movie_id` is derived from the normalized primary title; keep that identity stable when importing and deduplicating sessions. Distinct start times, halls, formats, and cinemas remain separate screening rows.
+
+The 2026-10-24 normalization pass retained all 10,070 screening rows across 293 referenced movie identities, with 304 movie records including catalog programs that have no current screening. It consolidated repeated poster URLs to 64 and repeated the movie metadata only once per catalog entry. JSON storage for showtime files dropped from about 7.2 MB to about 5.1 MB including the catalog and small city status files. These byte savings reduce transfer and parsed row overhead; actual browser memory also depends on map tiles, images, and rendering.
 
 Main updater:
 

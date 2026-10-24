@@ -1,33 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
+  "schema": "normalized-movie-references",
   "city": "yunlin",
   "date": "2026-10-29",
   "showtimes": [
     {
       "id": "62a3a3b1d7b44e9f",
       "cinema_id": "757bc5cac5b68cc9",
-      "cinema_name": "北港秀泰影城",
-      "movie_title": "IU CONCERT：THE GOLDEN HOUR",
-      "movie_title_en": "IU CONCERT：THE GOLDEN HOUR",
-      "poster_url": "https://assets.showtimes.com.tw/images/bf619b20755975e231d775c9adf245c7.jpg",
-      "genres": [
-        "concert"
-      ],
-      "rating": "g",
       "start_time": "2026-10-29T18:30:00.000+08:00",
-      "end_time": null,
       "hall": "1廳",
       "format": "數位 韓語",
       "audio_language": "ko",
-      "subtitles": null,
-      "duration_minutes": 171,
-      "price": null,
-      "on_sales": null,
       "source_event_id": "4809096",
       "source_url": "https://www.showtimes.com.tw/cinemas/58/",
       "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
       "freshness": "last-known-good",
-      "source": "showtimes-official-api"
+      "source": "showtimes-official-api",
+      "movie_id": "m_8d5d979398a8"
     }
   ]
 }

@@ -1,91 +1,50 @@
 {
-  "version": 1,
+  "version": 2,
+  "schema": "normalized-movie-references",
   "city": "hualien",
   "date": "2026-12-18",
   "showtimes": [
     {
       "id": "d344956753d28d71",
       "cinema_id": "0bc190790a97a92b",
-      "cinema_name": "花蓮秀泰影城",
-      "movie_title": "復仇者聯盟：末日崛起",
-      "movie_title_en": "AVENGERS: DOOMSDAY",
-      "poster_url": "https://assets.showtimes.com.tw/images/6b74bcaafde0cc0d5f0c9c260c9ab52f.jpg",
-      "genres": [
-        "action",
-        "adventure",
-        "science fiction"
-      ],
-      "rating": null,
       "start_time": "2026-12-18T11:30:00.000+08:00",
-      "end_time": null,
       "hall": "5廳",
       "format": "數位 英語",
       "audio_language": "en",
-      "subtitles": null,
-      "duration_minutes": 170,
-      "price": null,
-      "on_sales": null,
       "source_event_id": "4809692",
       "source_url": "https://www.showtimes.com.tw/cinemas/3/",
       "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
       "freshness": "last-known-good",
-      "source": "showtimes-official-api"
+      "source": "showtimes-official-api",
+      "movie_id": "m_a887d2a45e21"
     },
     {
       "id": "bad16eabbdf258b0",
       "cinema_id": "0bc190790a97a92b",
-      "cinema_name": "花蓮秀泰影城",
-      "movie_title": "復仇者聯盟：末日崛起",
-      "movie_title_en": "AVENGERS: DOOMSDAY",
-      "poster_url": "https://assets.showtimes.com.tw/images/6b74bcaafde0cc0d5f0c9c260c9ab52f.jpg",
-      "genres": [
-        "action",
-        "adventure",
-        "science fiction"
-      ],
-      "rating": null,
       "start_time": "2026-12-18T14:40:00.000+08:00",
-      "end_time": null,
       "hall": "5廳",
       "format": "數位 英語",
       "audio_language": "en",
-      "subtitles": null,
-      "duration_minutes": 170,
-      "price": null,
-      "on_sales": null,
       "source_event_id": "4809693",
       "source_url": "https://www.showtimes.com.tw/cinemas/3/",
       "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
       "freshness": "last-known-good",
-      "source": "showtimes-official-api"
+      "source": "showtimes-official-api",
+      "movie_id": "m_a887d2a45e21"
     },
     {
       "id": "f64e3513cfbf6bb3",
       "cinema_id": "0bc190790a97a92b",
-      "cinema_name": "花蓮秀泰影城",
-      "movie_title": "復仇者聯盟：末日崛起",
-      "movie_title_en": "AVENGERS: DOOMSDAY",
-      "poster_url": "https://assets.showtimes.com.tw/images/6b74bcaafde0cc0d5f0c9c260c9ab52f.jpg",
-      "genres": [
-        "action",
-        "adventure",
-        "science fiction"
-      ],
-      "rating": null,
       "start_time": "2026-12-18T19:30:00.000+08:00",
-      "end_time": null,
       "hall": "1廳",
       "format": "數位 英語",
       "audio_language": "en",
-      "subtitles": null,
-      "duration_minutes": 170,
-      "price": null,
-      "on_sales": null,
       "source_event_id": "4809856",
       "source_url": "https://www.showtimes.com.tw/cinemas/3/",
       "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
       "freshness": "last-known-good",
-      "source": "showtimes-official-api"
+      "source": "showtimes-official-api",
+      "movie_id": "m_a887d2a45e21"
     }
   ]
 }

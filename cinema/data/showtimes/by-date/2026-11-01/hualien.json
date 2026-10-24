@@ -1,33 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
+  "schema": "normalized-movie-references",
   "city": "hualien",
   "date": "2026-11-01",
   "showtimes": [
     {
       "id": "924b77c6cd6d207e",
       "cinema_id": "0bc190790a97a92b",
-      "cinema_name": "花蓮秀泰影城",
-      "movie_title": "IU CONCERT：THE WINNING",
-      "movie_title_en": "IU CONCERT：THE WINNING",
-      "poster_url": "https://assets.showtimes.com.tw/images/82b57b24197617cb7b73be2f70595528.jpg",
-      "genres": [
-        "concert"
-      ],
-      "rating": "g",
       "start_time": "2026-11-01T13:40:00.000+08:00",
-      "end_time": null,
       "hall": "4廳",
       "format": "數位 韓語",
       "audio_language": "ko",
-      "subtitles": null,
-      "duration_minutes": 124,
-      "price": null,
-      "on_sales": null,
       "source_event_id": "4808273",
       "source_url": "https://www.showtimes.com.tw/cinemas/3/",
       "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
       "freshness": "last-known-good",
-      "source": "showtimes-official-api"
+      "source": "showtimes-official-api",
+      "movie_id": "m_86af9fdc3eb1"
     }
   ]
 }

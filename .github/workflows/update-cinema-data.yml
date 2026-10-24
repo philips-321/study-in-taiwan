@@ -48,6 +48,9 @@ jobs:
           if [ -d cinema/data/showtimes ]; then
             cp -a cinema/data/showtimes/. /tmp/cinema-showtimes-prev/
           fi
+          if [ -f cinema/data/movies/index.json ]; then
+            cp cinema/data/movies/index.json /tmp/cinema-movies-prev.json
+          fi
 
       - name: Probe MOC movie source once
         id: moc_probe
@@ -78,6 +81,7 @@ jobs:
       - name: Restore failed-source last-known-good rows and source health
         env:
           CINEMA_PREVIOUS_SHOWTIMES_DIR: /tmp/cinema-showtimes-prev
+          CINEMA_PREVIOUS_MOVIES_FILE: /tmp/cinema-movies-prev.json
           CINEMA_FORCE_FAILED_SOURCES: ${{ steps.moc_probe.outputs.available == 'true' && '' || 'moc-culture-movie-api' }}
           CINEMA_FORCED_SOURCE_ERROR: MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests
         run: node cinema/scripts/restore-failed-source-fallbacks.mjs
