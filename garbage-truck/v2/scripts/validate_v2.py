@@ -51,6 +51,8 @@ for manifest_path in sorted((DATA / 'cities').glob('*/manifest.json')):
     status = manifest.get('status')
     route_index_path = city_dir / (manifest.get('routes_index') or 'routes/index.json')
     route_index = load_json(route_index_path) if route_index_path.exists() else None
+    schedule_index_path = city_dir / manifest['schedule_index'] if manifest.get('schedule_index') else None
+    schedule_index = load_json(schedule_index_path) if schedule_index_path and schedule_index_path.exists() else None
 
     if manifest.get('route_count', 0) or manifest.get('stop_count', 0):
         if route_index is None:
@@ -63,6 +65,25 @@ for manifest_path in sorted((DATA / 'cities').glob('*/manifest.json')):
                 fail(f'{city}: route_count manifest={manifest.get("route_count")} index={route_count}')
             if int(manifest.get('stop_count') or 0) != stop_count:
                 fail(f'{city}: stop_count manifest={manifest.get("stop_count")} index={stop_count}')
+
+    if manifest.get('schedule_index'):
+        if schedule_index is None:
+            fail(f'{city}: schedule_index declared but file is missing')
+        else:
+            areas = schedule_index.get('areas') or []
+            row_count = int(schedule_index.get('row_count') or 0)
+            area_count = int(schedule_index.get('area_count') or 0)
+            area_row_sum = sum(int(a.get('count') or 0) for a in areas)
+            if row_count <= 0:
+                fail(f'{city}: schedule index has no rows')
+            if area_count != len(areas):
+                fail(f'{city}: schedule area_count={area_count} but areas={len(areas)}')
+            if area_row_sum != row_count:
+                fail(f'{city}: schedule area row sum={area_row_sum} but row_count={row_count}')
+            if manifest.get('row_count') is not None and int(manifest['row_count']) != row_count:
+                fail(f'{city}: manifest row_count={manifest["row_count"]} index={row_count}')
+            if manifest.get('area_count') is not None and int(manifest['area_count']) != area_count:
+                fail(f'{city}: manifest area_count={manifest["area_count"]} index={area_count}')
 
     tile_manifest_path = city_dir / (manifest.get('tiles_manifest') or 'tiles/manifest.json')
     if status == 'ready':
@@ -81,8 +102,10 @@ for manifest_path in sorted((DATA / 'cities').glob('*/manifest.json')):
                 if tile_sum != mapped:
                     fail(f'{city}: tile counts sum={tile_sum} but mapped_stop_count={mapped}')
     elif status == 'schedule-only':
-        if int(manifest.get('route_count') or 0) <= 0 or int(manifest.get('stop_count') or 0) <= 0:
-            fail(f'{city}: status=schedule-only but no schedule counts are present')
+        has_route_model = int(manifest.get('route_count') or 0) > 0 and int(manifest.get('stop_count') or 0) > 0 and route_index is not None
+        has_schedule_model = schedule_index is not None and int(schedule_index.get('row_count') or 0) > 0
+        if not (has_route_model or has_schedule_model):
+            fail(f'{city}: status=schedule-only but neither route-index nor schedule-index coverage is present')
         if tile_manifest_path.exists():
             tiles = load_json(tile_manifest_path)
             if tiles and int(tiles.get('mapped_stop_count') or 0) > 0:
