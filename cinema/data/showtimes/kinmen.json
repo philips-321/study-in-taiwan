@@ -1,7 +1,7 @@
 {
   "version": 3,
   "city": "kinmen",
-  "generated_at": "2026-10-24T18:11:03.764Z",
+  "generated_at": "2026-10-24T18:41:51.192Z",
   "sources": {
     "moc-culture-movie-api": {
       "ok": false,
@@ -9,13 +9,13 @@
       "error": "MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 4,
+      "failure_count": 5,
       "fresh_showtimes": 173,
       "fallback_showtimes": 634,
       "fallback": "last-known-good",
       "last_success_at": "2026-10-23T19:07:14.709Z",
-      "last_failure_at": "2026-10-24T18:11:40.779Z",
-      "next_probe_at": "2026-10-24T18:41:40.779Z"
+      "last_failure_at": "2026-10-24T18:42:29.710Z",
+      "next_probe_at": "2026-10-24T19:12:29.710Z"
     },
     "miramar-official-api": {
       "ok": true,
@@ -26,20 +26,20 @@
       "fresh_showtimes": 357,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:11:40.779Z",
+      "last_success_at": "2026-10-24T18:42:29.710Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 2311,
+      "showtimes": 2327,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 2311,
+      "fresh_showtimes": 2327,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:11:40.779Z",
+      "last_success_at": "2026-10-24T18:42:29.710Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -49,13 +49,13 @@
       "error": "ShowTimes source failed: 台北欣欣秀泰影城: 403 Forbidden; 大巨蛋秀泰影城: 403 Forbidden",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 4,
+      "failure_count": 5,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-10-24T18:11:40.779Z",
-      "next_probe_at": "2026-10-24T18:41:40.779Z"
+      "last_failure_at": "2026-10-24T18:42:29.710Z",
+      "next_probe_at": "2026-10-24T19:12:29.710Z"
     },
     "spot-huashan-official-schedule": {
       "ok": true,
@@ -66,7 +66,7 @@
       "fresh_showtimes": 79,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:11:40.779Z",
+      "last_success_at": "2026-10-24T18:42:29.710Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -76,13 +76,13 @@
       "error": "Eslite 403 Forbidden",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 4,
+      "failure_count": 5,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-10-24T18:11:40.779Z",
-      "next_probe_at": "2026-10-24T18:41:40.779Z"
+      "last_failure_at": "2026-10-24T18:42:29.710Z",
+      "next_probe_at": "2026-10-24T19:12:29.710Z"
     },
     "atmovies-taipei-fallback": {
       "ok": true,
@@ -90,15 +90,15 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-10-25: No showtimes parsed",
+        "t02a11/2026-10-25: No showtimes parsed",
         "t02a01/2026-10-29: No showtimes parsed",
         "t02a01/2026-10-30: No showtimes parsed",
-        "t02a11/2026-10-25: No showtimes parsed",
+        "t02a11/2026-10-30: No showtimes parsed",
         "t02a11/2026-10-29: No showtimes parsed",
         "t02a12/2026-10-25: No showtimes parsed",
-        "t02a11/2026-10-30: No showtimes parsed",
-        "t02b14/2026-10-25: No showtimes parsed",
         "t02a12/2026-10-29: No showtimes parsed",
-        "t02a12/2026-10-30: No showtimes parsed"
+        "t02a12/2026-10-30: No showtimes parsed",
+        "t02b14/2026-10-25: No showtimes parsed"
       ],
       "health": "healthy",
       "circuit_state": "closed",
@@ -106,7 +106,7 @@
       "fresh_showtimes": 1229,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T18:11:40.779Z",
+      "last_success_at": "2026-10-24T18:42:29.710Z",
       "last_failure_at": null,
       "next_probe_at": null
     }
@@ -119,6 +119,6 @@
       "showtimes-official-site",
       "eslite-official-schedule"
     ],
-    "restored_at": "2026-10-24T18:11:40.779Z"
+    "restored_at": "2026-10-24T18:42:29.710Z"
   }
 }

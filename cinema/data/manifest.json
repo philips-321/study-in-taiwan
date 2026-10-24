@@ -1,282 +1,8 @@
 {
   "version": 8,
-  "generated_at": "2026-10-24T18:11:03.764Z",
+  "generated_at": "2026-10-24T18:41:51.192Z",
   "timezone": "Asia/Taipei",
   "model": "fixed per-city JSON snapshots plus per-date/per-city browser payloads; all files overwritten on refresh",
-  "source_policy": "official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete",
-  "operational_status_policy": "fresh showtime evidence marks a cinema active; no fresh evidence stays unknown; closed status requires explicit verified evidence and is never inferred from missing showtimes",
-  "recommendation_policy": "automatic recommendations should use recommendation_eligible=true; unknown cinemas require separate verification before recommendation",
-  "dedup_policy": "same normalized cinema/movie/time/hall/format is emitted once; official sources run before fallback sources and therefore win exact duplicates",
-  "fields": {
-    "audio_language": "source-declared spoken/dubbed language when available",
-    "subtitles": "verified subtitle language codes when source explicitly declares them; null means unknown",
-    "duration_minutes": "source-declared running time when available",
-    "source_role": "why a fallback record was used, when applicable",
-    "operational_status": "active when supported by fresh showtime evidence; otherwise unknown unless explicitly verified closed in a future override layer",
-    "recommendation_eligible": "true only when current evidence supports automatic recommendation"
-  },
-  "sources": {
-    "cinema_master": {
-      "metadata": "https://www.bamid.gov.tw/OpenData.aspx?SN=E6C57FC155564DEB",
-      "year": 2025,
-      "csv": "https://file.moc.gov.tw/001/Upload/510/relfile/16158/247043/ed396c28-93b3-4a58-9845-25a1e127c095.csv"
-    },
-    "showtimes": {
-      "moc-culture-movie-api": {
-        "ok": false,
-        "showtimes": 807,
-        "error": "MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests",
-        "health": "degraded",
-        "circuit_state": "open",
-        "failure_count": 4,
-        "fresh_showtimes": 173,
-        "fallback_showtimes": 634,
-        "fallback": "last-known-good",
-        "last_success_at": "2026-10-23T19:07:14.709Z",
-        "last_failure_at": "2026-10-24T18:11:40.779Z",
-        "next_probe_at": "2026-10-24T18:41:40.779Z"
-      },
-      "miramar-official-api": {
-        "ok": true,
-        "showtimes": 357,
-        "health": "healthy",
-        "circuit_state": "closed",
-        "failure_count": 0,
-        "fresh_showtimes": 357,
-        "fallback_showtimes": 0,
-        "fallback": null,
-        "last_success_at": "2026-10-24T18:11:40.779Z",
-        "last_failure_at": null,
-        "next_probe_at": null
-      },
-      "ambassador-official-site": {
-        "ok": true,
-        "showtimes": 2311,
-        "health": "healthy",
-        "circuit_state": "closed",
-        "failure_count": 0,
-        "fresh_showtimes": 2311,
-        "fallback_showtimes": 0,
-        "fallback": null,
-        "last_success_at": "2026-10-24T18:11:40.779Z",
-        "last_failure_at": null,
-        "next_probe_at": null
-      },
-      "showtimes-official-site": {
-        "ok": false,
-        "showtimes": 0,
-        "error": "ShowTimes source failed: 台北欣欣秀泰影城: 403 Forbidden; 大巨蛋秀泰影城: 403 Forbidden",
-        "health": "degraded",
-        "circuit_state": "open",
-        "failure_count": 4,
-        "fresh_showtimes": 0,
-        "fallback_showtimes": 0,
-        "fallback": "unavailable",
-        "last_success_at": null,
-        "last_failure_at": "2026-10-24T18:11:40.779Z",
-        "next_probe_at": "2026-10-24T18:41:40.779Z"
-      },
-      "spot-huashan-official-schedule": {
-        "ok": true,
-        "showtimes": 79,
-        "health": "healthy",
-        "circuit_state": "closed",
-        "failure_count": 0,
-        "fresh_showtimes": 79,
-        "fallback_showtimes": 0,
-        "fallback": null,
-        "last_success_at": "2026-10-24T18:11:40.779Z",
-        "last_failure_at": null,
-        "next_probe_at": null
-      },
-      "eslite-official-schedule": {
-        "ok": false,
-        "showtimes": 0,
-        "error": "Eslite 403 Forbidden",
-        "health": "degraded",
-        "circuit_state": "open",
-        "failure_count": 4,
-        "fresh_showtimes": 0,
-        "fallback_showtimes": 0,
-        "fallback": "unavailable",
-        "last_success_at": null,
-        "last_failure_at": "2026-10-24T18:11:40.779Z",
-        "next_probe_at": "2026-10-24T18:41:40.779Z"
-      },
-      "atmovies-taipei-fallback": {
-        "ok": true,
-        "showtimes": 1229,
-        "role": "fallback only for sources blocked/incomplete from GitHub Actions",
-        "warnings": [
-          "t02a01/2026-10-25: No showtimes parsed",
-          "t02a01/2026-10-29: No showtimes parsed",
-          "t02a01/2026-10-30: No showtimes parsed",
-          "t02a11/2026-10-25: No showtimes parsed",
-          "t02a11/2026-10-29: No showtimes parsed",
-          "t02a12/2026-10-25: No showtimes parsed",
-          "t02a11/2026-10-30: No showtimes parsed",
-          "t02b14/2026-10-25: No showtimes parsed",
-          "t02a12/2026-10-29: No showtimes parsed",
-          "t02a12/2026-10-30: No showtimes parsed"
-        ],
-        "health": "healthy",
-        "circuit_state": "closed",
-        "failure_count": 0,
-        "fresh_showtimes": 1229,
-        "fallback_showtimes": 0,
-        "fallback": null,
-        "last_success_at": "2026-10-24T18:11:40.779Z",
-        "last_failure_at": null,
-        "next_probe_at": null
-      }
-    }
-  },
-  "cities": {
-    "taipei": {
-      "cinemas": 30,
-      "active_cinemas": 12,
-      "unknown_cinemas": 18,
-      "showtimes": 2192
-    },
-    "new-taipei": {
-      "cinemas": 13,
-      "active_cinemas": 3,
-      "unknown_cinemas": 10,
-      "showtimes": 846
-    },
-    "keelung": {
-      "cinemas": 1,
-      "active_cinemas": 0,
-      "unknown_cinemas": 1,
-      "showtimes": 0
-    },
-    "taoyuan": {
-      "cinemas": 9,
-      "active_cinemas": 1,
-      "unknown_cinemas": 8,
-      "showtimes": 248
-    },
-    "hsinchu-city": {
-      "cinemas": 2,
-      "active_cinemas": 0,
-      "unknown_cinemas": 2,
-      "showtimes": 0
-    },
-    "hsinchu-county": {
-      "cinemas": 1,
-      "active_cinemas": 0,
-      "unknown_cinemas": 1,
-      "showtimes": 0
-    },
-    "miaoli": {
-      "cinemas": 1,
-      "active_cinemas": 0,
-      "unknown_cinemas": 1,
-      "showtimes": 0
-    },
-    "taichung": {
-      "cinemas": 13,
-      "active_cinemas": 0,
-      "unknown_cinemas": 13,
-      "showtimes": 0
-    },
-    "changhua": {
-      "cinemas": 1,
-      "active_cinemas": 0,
-      "unknown_cinemas": 1,
-      "showtimes": 2
-    },
-    "nantou": {
-      "cinemas": 2,
-      "active_cinemas": 0,
-      "unknown_cinemas": 2,
-      "showtimes": 1
-    },
-    "yunlin": {
-      "cinemas": 2,
-      "active_cinemas": 0,
-      "unknown_cinemas": 2,
-      "showtimes": 0
-    },
-    "chiayi-city": {
-      "cinemas": 3,
-      "active_cinemas": 0,
-      "unknown_cinemas": 3,
-      "showtimes": 0
-    },
-    "chiayi-county": {
-      "cinemas": 0,
-      "active_cinemas": 0,
-      "unknown_cinemas": 0,
-      "showtimes": 0
-    },
-    "tainan": {
-      "cinemas": 9,
-      "active_cinemas": 0,
-      "unknown_cinemas": 9,
-      "showtimes": 1
-    },
-    "kaohsiung": {
-      "cinemas": 10,
-      "active_cinemas": 2,
-      "unknown_cinemas": 8,
-      "showtimes": 1168
-    },
-    "pingtung": {
-      "cinemas": 2,
-      "active_cinemas": 1,
-      "unknown_cinemas": 1,
-      "showtimes": 195
-    },
-    "yilan": {
-      "cinemas": 2,
-      "active_cinemas": 0,
-      "unknown_cinemas": 2,
-      "showtimes": 0
-    },
-    "hualien": {
-      "cinemas": 2,
-      "active_cinemas": 0,
-      "unknown_cinemas": 2,
-      "showtimes": 0
-    },
-    "taitung": {
-      "cinemas": 1,
-      "active_cinemas": 0,
-      "unknown_cinemas": 1,
-      "showtimes": 0
-    },
-    "penghu": {
-      "cinemas": 1,
-      "active_cinemas": 0,
-      "unknown_cinemas": 1,
-      "showtimes": 0
-    },
-    "kinmen": {
-      "cinemas": 2,
-      "active_cinemas": 0,
-      "unknown_cinemas": 2,
-      "showtimes": 0
-    },
-    "lienchiang": {
-      "cinemas": 0,
-      "active_cinemas": 0,
-      "unknown_cinemas": 0,
-      "showtimes": 0
-    },
-    "unknown": {
-      "cinemas": 0,
-      "active_cinemas": 0,
-      "unknown_cinemas": 0,
-      "showtimes": 0
-    }
-  },
-  "resilience_policy": {
-    "retry_policy": "one short workflow probe for the MOC source; source adapters remain independently isolated",
-    "circuit_breaker": "failed source is marked degraded/open; no repeated hammering in the same run",
-    "fallback_policy": "eligible future last-known-good rows are retained and explicitly labeled; fresh rows win deduplication",
-    "stale_status_policy": "fallback rows are restored after cinema operational status is computed, so stale fallback does not mark a cinema active"
-  },
   "showtimes_index": {
     "2026-11-29": {
       "total": 16,
@@ -294,12 +20,12 @@
       }
     },
     "2026-10-25": {
-      "total": 799,
+      "total": 800,
       "cities": {
         "kaohsiung": 362,
         "new-taipei": 161,
         "pingtung": 39,
-        "taipei": 187,
+        "taipei": 188,
         "taoyuan": 50
       }
     },
@@ -314,39 +40,33 @@
       }
     },
     "2026-10-27": {
-      "total": 891,
+      "total": 900,
       "cities": {
         "kaohsiung": 85,
         "new-taipei": 143,
         "pingtung": 39,
-        "taipei": 574,
+        "taipei": 583,
         "taoyuan": 50
       }
     },
     "2026-10-28": {
-      "total": 908,
+      "total": 894,
       "cities": {
         "kaohsiung": 85,
         "new-taipei": 143,
         "pingtung": 39,
-        "taipei": 591,
+        "taipei": 577,
         "taoyuan": 50
       }
     },
     "2026-10-29": {
-      "total": 427,
+      "total": 399,
       "cities": {
-        "kaohsiung": 79,
-        "new-taipei": 149,
+        "kaohsiung": 89,
+        "new-taipei": 165,
         "pingtung": 39,
-        "taipei": 112,
+        "taipei": 58,
         "taoyuan": 48
-      }
-    },
-    "2026-10-30": {
-      "total": 27,
-      "cities": {
-        "kaohsiung": 27
       }
     },
     "2026-11-06": {
@@ -493,10 +213,11 @@
       }
     },
     "2026-10-31": {
-      "total": 9,
+      "total": 24,
       "cities": {
         "new-taipei": 5,
-        "taipei": 4
+        "taipei": 3,
+        "taoyuan": 16
       }
     },
     "2026-11-01": {
@@ -673,6 +394,12 @@
         "taipei": 6
       }
     },
+    "2026-10-30": {
+      "total": 44,
+      "cities": {
+        "taipei": 44
+      }
+    },
     "2026-12-21": {
       "total": 14,
       "cities": {
@@ -690,5 +417,279 @@
     "showtime_rows": 4653,
     "explicit_subtitle_rows": 79
   },
-  "showtimes_payload": "The app loads date-and-city showtime chunks from showtimes/by-date; per-city showtime files remain as the complete source snapshot."
+  "showtimes_payload": "The app loads date-and-city showtime chunks from showtimes/by-date; per-city showtime files remain as the complete source snapshot.",
+  "source_policy": "official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete",
+  "operational_status_policy": "fresh showtime evidence marks a cinema active; no fresh evidence stays unknown; closed status requires explicit verified evidence and is never inferred from missing showtimes",
+  "recommendation_policy": "automatic recommendations should use recommendation_eligible=true; unknown cinemas require separate verification before recommendation",
+  "dedup_policy": "same normalized cinema/movie/time/hall/format is emitted once; official sources run before fallback sources and therefore win exact duplicates",
+  "fields": {
+    "audio_language": "source-declared spoken/dubbed language when available",
+    "subtitles": "verified subtitle language codes when source explicitly declares them; null means unknown",
+    "duration_minutes": "source-declared running time when available",
+    "source_role": "why a fallback record was used, when applicable",
+    "operational_status": "active when supported by fresh showtime evidence; otherwise unknown unless explicitly verified closed in a future override layer",
+    "recommendation_eligible": "true only when current evidence supports automatic recommendation"
+  },
+  "sources": {
+    "cinema_master": {
+      "metadata": "https://www.bamid.gov.tw/OpenData.aspx?SN=E6C57FC155564DEB",
+      "year": 2025,
+      "csv": "https://file.moc.gov.tw/001/Upload/510/relfile/16158/247043/ed396c28-93b3-4a58-9845-25a1e127c095.csv"
+    },
+    "showtimes": {
+      "moc-culture-movie-api": {
+        "ok": false,
+        "showtimes": 807,
+        "error": "MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests",
+        "health": "degraded",
+        "circuit_state": "open",
+        "failure_count": 5,
+        "fresh_showtimes": 173,
+        "fallback_showtimes": 634,
+        "fallback": "last-known-good",
+        "last_success_at": "2026-10-23T19:07:14.709Z",
+        "last_failure_at": "2026-10-24T18:42:29.710Z",
+        "next_probe_at": "2026-10-24T19:12:29.710Z"
+      },
+      "miramar-official-api": {
+        "ok": true,
+        "showtimes": 357,
+        "health": "healthy",
+        "circuit_state": "closed",
+        "failure_count": 0,
+        "fresh_showtimes": 357,
+        "fallback_showtimes": 0,
+        "fallback": null,
+        "last_success_at": "2026-10-24T18:42:29.710Z",
+        "last_failure_at": null,
+        "next_probe_at": null
+      },
+      "ambassador-official-site": {
+        "ok": true,
+        "showtimes": 2327,
+        "health": "healthy",
+        "circuit_state": "closed",
+        "failure_count": 0,
+        "fresh_showtimes": 2327,
+        "fallback_showtimes": 0,
+        "fallback": null,
+        "last_success_at": "2026-10-24T18:42:29.710Z",
+        "last_failure_at": null,
+        "next_probe_at": null
+      },
+      "showtimes-official-site": {
+        "ok": false,
+        "showtimes": 0,
+        "error": "ShowTimes source failed: 台北欣欣秀泰影城: 403 Forbidden; 大巨蛋秀泰影城: 403 Forbidden",
+        "health": "degraded",
+        "circuit_state": "open",
+        "failure_count": 5,
+        "fresh_showtimes": 0,
+        "fallback_showtimes": 0,
+        "fallback": "unavailable",
+        "last_success_at": null,
+        "last_failure_at": "2026-10-24T18:42:29.710Z",
+        "next_probe_at": "2026-10-24T19:12:29.710Z"
+      },
+      "spot-huashan-official-schedule": {
+        "ok": true,
+        "showtimes": 79,
+        "health": "healthy",
+        "circuit_state": "closed",
+        "failure_count": 0,
+        "fresh_showtimes": 79,
+        "fallback_showtimes": 0,
+        "fallback": null,
+        "last_success_at": "2026-10-24T18:42:29.710Z",
+        "last_failure_at": null,
+        "next_probe_at": null
+      },
+      "eslite-official-schedule": {
+        "ok": false,
+        "showtimes": 0,
+        "error": "Eslite 403 Forbidden",
+        "health": "degraded",
+        "circuit_state": "open",
+        "failure_count": 5,
+        "fresh_showtimes": 0,
+        "fallback_showtimes": 0,
+        "fallback": "unavailable",
+        "last_success_at": null,
+        "last_failure_at": "2026-10-24T18:42:29.710Z",
+        "next_probe_at": "2026-10-24T19:12:29.710Z"
+      },
+      "atmovies-taipei-fallback": {
+        "ok": true,
+        "showtimes": 1229,
+        "role": "fallback only for sources blocked/incomplete from GitHub Actions",
+        "warnings": [
+          "t02a01/2026-10-25: No showtimes parsed",
+          "t02a11/2026-10-25: No showtimes parsed",
+          "t02a01/2026-10-29: No showtimes parsed",
+          "t02a01/2026-10-30: No showtimes parsed",
+          "t02a11/2026-10-30: No showtimes parsed",
+          "t02a11/2026-10-29: No showtimes parsed",
+          "t02a12/2026-10-25: No showtimes parsed",
+          "t02a12/2026-10-29: No showtimes parsed",
+          "t02a12/2026-10-30: No showtimes parsed",
+          "t02b14/2026-10-25: No showtimes parsed"
+        ],
+        "health": "healthy",
+        "circuit_state": "closed",
+        "failure_count": 0,
+        "fresh_showtimes": 1229,
+        "fallback_showtimes": 0,
+        "fallback": null,
+        "last_success_at": "2026-10-24T18:42:29.710Z",
+        "last_failure_at": null,
+        "next_probe_at": null
+      }
+    }
+  },
+  "cities": {
+    "taipei": {
+      "cinemas": 30,
+      "active_cinemas": 12,
+      "unknown_cinemas": 18,
+      "showtimes": 2177
+    },
+    "new-taipei": {
+      "cinemas": 13,
+      "active_cinemas": 3,
+      "unknown_cinemas": 10,
+      "showtimes": 862
+    },
+    "keelung": {
+      "cinemas": 1,
+      "active_cinemas": 0,
+      "unknown_cinemas": 1,
+      "showtimes": 0
+    },
+    "taoyuan": {
+      "cinemas": 9,
+      "active_cinemas": 1,
+      "unknown_cinemas": 8,
+      "showtimes": 264
+    },
+    "hsinchu-city": {
+      "cinemas": 2,
+      "active_cinemas": 0,
+      "unknown_cinemas": 2,
+      "showtimes": 0
+    },
+    "hsinchu-county": {
+      "cinemas": 1,
+      "active_cinemas": 0,
+      "unknown_cinemas": 1,
+      "showtimes": 0
+    },
+    "miaoli": {
+      "cinemas": 1,
+      "active_cinemas": 0,
+      "unknown_cinemas": 1,
+      "showtimes": 0
+    },
+    "taichung": {
+      "cinemas": 13,
+      "active_cinemas": 0,
+      "unknown_cinemas": 13,
+      "showtimes": 0
+    },
+    "changhua": {
+      "cinemas": 1,
+      "active_cinemas": 0,
+      "unknown_cinemas": 1,
+      "showtimes": 2
+    },
+    "nantou": {
+      "cinemas": 2,
+      "active_cinemas": 0,
+      "unknown_cinemas": 2,
+      "showtimes": 1
+    },
+    "yunlin": {
+      "cinemas": 2,
+      "active_cinemas": 0,
+      "unknown_cinemas": 2,
+      "showtimes": 0
+    },
+    "chiayi-city": {
+      "cinemas": 3,
+      "active_cinemas": 0,
+      "unknown_cinemas": 3,
+      "showtimes": 0
+    },
+    "chiayi-county": {
+      "cinemas": 0,
+      "active_cinemas": 0,
+      "unknown_cinemas": 0,
+      "showtimes": 0
+    },
+    "tainan": {
+      "cinemas": 9,
+      "active_cinemas": 0,
+      "unknown_cinemas": 9,
+      "showtimes": 1
+    },
+    "kaohsiung": {
+      "cinemas": 10,
+      "active_cinemas": 2,
+      "unknown_cinemas": 8,
+      "showtimes": 1151
+    },
+    "pingtung": {
+      "cinemas": 2,
+      "active_cinemas": 1,
+      "unknown_cinemas": 1,
+      "showtimes": 195
+    },
+    "yilan": {
+      "cinemas": 2,
+      "active_cinemas": 0,
+      "unknown_cinemas": 2,
+      "showtimes": 0
+    },
+    "hualien": {
+      "cinemas": 2,
+      "active_cinemas": 0,
+      "unknown_cinemas": 2,
+      "showtimes": 0
+    },
+    "taitung": {
+      "cinemas": 1,
+      "active_cinemas": 0,
+      "unknown_cinemas": 1,
+      "showtimes": 0
+    },
+    "penghu": {
+      "cinemas": 1,
+      "active_cinemas": 0,
+      "unknown_cinemas": 1,
+      "showtimes": 0
+    },
+    "kinmen": {
+      "cinemas": 2,
+      "active_cinemas": 0,
+      "unknown_cinemas": 2,
+      "showtimes": 0
+    },
+    "lienchiang": {
+      "cinemas": 0,
+      "active_cinemas": 0,
+      "unknown_cinemas": 0,
+      "showtimes": 0
+    },
+    "unknown": {
+      "cinemas": 0,
+      "active_cinemas": 0,
+      "unknown_cinemas": 0,
+      "showtimes": 0
+    }
+  },
+  "resilience_policy": {
+    "retry_policy": "one short workflow probe for the MOC source; source adapters remain independently isolated",
+    "circuit_breaker": "failed source is marked degraded/open; no repeated hammering in the same run",
+    "fallback_policy": "eligible future last-known-good rows are retained and explicitly labeled; fresh rows win deduplication",
+    "stale_status_policy": "fallback rows are restored after cinema operational status is computed, so stale fallback does not mark a cinema active"
+  }
 }
