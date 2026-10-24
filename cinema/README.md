@@ -55,7 +55,7 @@ cinema/data/ticket-prices/<city>.json
 
 On refresh, `restore-failed-source-fallbacks.mjs` reads previous date/city chunks and their matching movie catalog to retain future last-known-good records while a collector is blocked. The workflow snapshots both before updating. Generated date chunks are refreshed in place, not retained as dated archives; Git history is the audit/history layer. `movie_id` is derived from the normalized primary title; keep that identity stable when importing and deduplicating sessions. Distinct start times, halls, formats, and cinemas remain separate screening rows.
 
-The 2026-10-24 normalization pass retained all 10,070 screening rows across 293 referenced movie identities, with 304 movie records including catalog programs that have no current screening. It consolidated repeated poster URLs to 64 and repeated the movie metadata only once per catalog entry. JSON storage for showtime files dropped from about 7.2 MB to about 5.1 MB including the catalog and small city status files. These byte savings reduce transfer and parsed row overhead; actual browser memory also depends on map tiles, images, and rendering.
+The 2026-10-24 normalization pass retained all 10,070 screening rows across 293 referenced movie identities. The catalog contains only films referenced by a screening, not extra program listings with no current showtime. It consolidated repeated poster URLs to 64 and repeated the movie metadata only once per catalog entry. JSON storage for showtime files dropped from about 13.7 MB to about 5.2 MB including the catalog and small city status files. These byte savings reduce transfer and parsed row overhead; actual browser memory also depends on map tiles, images, and rendering.
 
 Main updater:
 

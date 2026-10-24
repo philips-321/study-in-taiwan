@@ -279,7 +279,8 @@ for (const rows of showtimesByCity.values()) for (const row of rows) {
 const allShowtimeRows = [...showtimesByCity.values()].flat();
 const activeMovieIds = new Set(allShowtimeRows.map(movieIdForRow).filter(Boolean));
 const activePreviousMovies = (previousMovieCatalog.movies || []).filter(movie => activeMovieIds.has(movie.movie_id));
-const movieIndex = buildMovieIndex(allShowtimeRows, movieMetadataPayload.movies || [], activePreviousMovies);
+const activeProgramMetadata = (movieMetadataPayload.movies || []).filter(movie => activeMovieIds.has(movieIdForRow(movie)));
+const movieIndex = buildMovieIndex(allShowtimeRows, activeProgramMetadata, activePreviousMovies);
 movieIndex.generated_at = generatedAt;
 movieIndex.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
 const mappedCinemaIds = new Set([...cinemasByCity.values()].flatMap(cinemaMap => [...cinemaMap.keys()]));

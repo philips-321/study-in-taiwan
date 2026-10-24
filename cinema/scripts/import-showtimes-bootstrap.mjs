@@ -203,7 +203,8 @@ const programMetadata = data.programs.map(program => ({
 }));
 const activeMovieIds = new Set(allRows.map(movieIdForRow).filter(Boolean));
 const activePreviousMovies = (previousMovieIndex.movies || []).filter(movie => activeMovieIds.has(movie.movie_id));
-const movieIndex = buildMovieIndex(allRows, programMetadata, activePreviousMovies);
+const activeProgramMetadata = programMetadata.filter(movie => activeMovieIds.has(movieIdForRow(movie)));
+const movieIndex = buildMovieIndex(allRows, activeProgramMetadata, activePreviousMovies);
 movieIndex.generated_at = '2026-10-24T00:00:00.000Z';
 movieIndex.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
 await write(MOVIES_FILE, movieIndex);
