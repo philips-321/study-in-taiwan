@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "city": "taichung",
+  "name_zh": "臺中市",
+  "name_en": "Taichung City",
+  "status": "schedule-only",
+  "source_priority": [
+    "local_official",
+    "moenv_national"
+  ],
+  "source_provider": "Taichung City Government Environmental Protection Bureau",
+  "source_landing_url": "https://data.gov.tw/dataset/84004",
+  "source_direct_download_url": "https://newdatacenter.taichung.gov.tw/api/v1/no-auth/resource.download?rid=68d1a87f-7baa-4b50-8408-c36a3a7eda68",
+  "source_updated": "2026-07-31 11:59",
+  "source_content_sha256": "7f8928d07190ff2c545a7dafe0b018190bf8d93f04590cabe5df0890267b0fe6",
+  "row_count": 20090,
+  "area_count": 29,
+  "mapped_stop_count": 0,
+  "schedule_index": "schedule/index.json",
+  "tiles_manifest": "tiles/manifest.json",
+  "refresh": {
+    "mode": "manual",
+    "network_attempts_per_request": 2,
+    "retry_after_failure": "next Monday",
+    "last_success": "2026-10-24T01:39:09+00:00",
+    "last_checked": "2026-10-24T01:39:09+00:00",
+    "last_attempt_status": "success",
+    "next_retry_not_before": null
+  },
+  "notes": "Official static schedule imported and split into 29 district JSON files. Source has no documented lat/lng, so this city remains schedule-only until coordinates are resolved from an official/cached source."
+}
