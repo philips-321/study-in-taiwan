@@ -99,6 +99,9 @@ jobs:
           if [[ "$city" == "tainan" ]]; then
             echo "Using Tainan City Government official JSON source."
             python garbage-truck/v2/scripts/import_tainan.py "${force[@]}"
+          elif [[ "$city" == "keelung" ]]; then
+            echo "Using Keelung City Environmental Protection Bureau official coordinate CSV."
+            python garbage-truck/v2/scripts/import_keelung.py "${force[@]}"
           else
             echo "Using MOENV nationwide fallback until a verified local official adapter is available."
             python garbage-truck/v2/scripts/collect_moenv.py --city "$city" "${force[@]}"
