@@ -1,144 +1,101 @@
-const CINEMAS = [
-  {
-    id: 2,
-    cinema_name: '台北欣欣秀泰影城',
-    city: 'taipei',
-    address: '台北市中山區林森北路247號'
-  },
-  {
-    id: 91,
-    cinema_name: '大巨蛋秀泰影城',
-    city: 'taipei',
-    address: '台北市信義區光復南路105號2樓'
-  }
+const API = 'https://capi.showtimes.com.tw/4/app/bootstrap';
+const SCHEDULES_URL = 'https://www.showtimes.com.tw/cinemas/';
+
+const CITY_ALIASES = [
+  ['taipei', ['臺北市', '台北市']], ['new-taipei', ['新北市']], ['keelung', ['基隆市']],
+  ['taoyuan', ['桃園市']], ['hsinchu-city', ['新竹市']], ['hsinchu-county', ['新竹縣']],
+  ['miaoli', ['苗栗縣']], ['taichung', ['臺中市', '台中市']], ['changhua', ['彰化縣']],
+  ['nantou', ['南投縣']], ['yunlin', ['雲林縣']], ['chiayi-city', ['嘉義市']],
+  ['chiayi-county', ['嘉義縣']], ['tainan', ['臺南市', '台南市']], ['kaohsiung', ['高雄市']],
+  ['pingtung', ['屏東縣']], ['yilan', ['宜蘭縣']], ['hualien', ['花蓮縣', '花蓮市']],
+  ['taitung', ['臺東縣', '台東縣', '台東市']], ['penghu', ['澎湖縣']], ['kinmen', ['金門縣']],
+  ['lienchiang', ['連江縣']]
 ];
 
-const BASE = 'https://www.showtimes.com.tw';
+const AUDIO_LANGUAGES = [
+  ['英語', 'en'], ['日語', 'ja'], ['韓語', 'ko'], ['國語', 'zh'],
+  ['粵語', 'yue'], ['越語', 'vi'], ['泰語', 'th'], ['菲語', 'fil'],
+  ['法語', 'fr'], ['德語', 'de'], ['西語', 'es'], ['印尼語', 'id'],
+  ['馬來語', 'ms'], ['印度語', 'hi']
+];
 
-function decodeHtml(value) {
-  return String(value || '')
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/&amp;/gi, '&')
-    .replace(/&lt;/gi, '<')
-    .replace(/&gt;/gi, '>')
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;|&apos;/gi, "'")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)));
+function cityFromAddress(address) {
+  const text = String(address || '');
+  return CITY_ALIASES.find(([, aliases]) => aliases.some(alias => text.includes(alias)))?.[0] || 'unknown';
 }
 
-function htmlToLines(html) {
-  return decodeHtml(
-    String(html || '')
-      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '\n')
-      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '\n')
-      .replace(/<br\s*\/?>/gi, '\n')
-      .replace(/<\/\s*(?:p|div|li|h[1-6]|tr|td|th|section|article)\s*>/gi, '\n')
-      .replace(/<[^>]+>/g, ' ')
-  )
-    .split(/\n+/)
-    .map(line => line.replace(/\s+/g, ' ').trim())
-    .filter(Boolean);
+function taipeiDateTime(iso) {
+  const value = new Date(iso);
+  if (!Number.isFinite(value.getTime())) return null;
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+  }).formatToParts(value);
+  const part = Object.fromEntries(parts.map(item => [item.type, item.value]));
+  return { date: `${part.year}-${part.month}-${part.day}`, time: `${part.hour}:${part.minute}` };
 }
 
-function resolveDate(month, day) {
-  const now = new Date();
-  const currentYear = now.getUTCFullYear();
-  const currentMonth = now.getUTCMonth() + 1;
-  let year = currentYear;
-  if (month < currentMonth - 6) year += 1;
-  else if (month > currentMonth + 6) year -= 1;
-  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-}
-
-function parseSessions(line) {
-  const matches = [...String(line || '').matchAll(/(\d{2}:\d{2})(?:\s+([^\d]*?))?(?=\s+\d{2}:\d{2}|$)/g)];
-  return matches.map(match => {
-    const details = (match[2] || '').replace(/\s+/g, ' ').trim();
-    const languageMatch = details.match(/(?:^|\s)(英語|日語|國語|韓語|粵語|越語|泰語|菲語|法語|德語|西語|阿拉伯語|多元語)$/);
-    const audio_language = languageMatch?.[1] || null;
-    const format = audio_language ? details.slice(0, details.length - audio_language.length).trim() || null : details || null;
-    return { time: match[1], format, audio_language };
-  });
-}
-
-function parsePage(html, cinema) {
-  const lines = htmlToLines(html);
-  const rows = [];
-  let movie = null;
-  let date = null;
-  let started = false;
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    if (line === '場次表' || line.includes('場次表')) {
-      started = true;
-      continue;
-    }
-    if (!started) continue;
-
-    const dateMatch = line.match(/^(\d{1,2})月(\d{1,2})日(?:\s+週.)?$/);
-    if (dateMatch) {
-      date = resolveDate(Number(dateMatch[1]), Number(dateMatch[2]));
-      continue;
-    }
-
-    const sessions = parseSessions(line);
-    if (sessions.length && movie && date) {
-      for (const session of sessions) {
-        rows.push({
-          cinema_name: cinema.cinema_name,
-          city: cinema.city,
-          address: cinema.address,
-          movie_title: movie,
-          movie_title_en: null,
-          rating: null,
-          date,
-          time: session.time,
-          hall: null,
-          format: session.format,
-          audio_language: session.audio_language,
-          subtitles: null,
-          source_url: `${BASE}/cinemas/${cinema.id}/`,
-          source: 'showtimes-official-site'
-        });
-      }
-      continue;
-    }
-
-    const next = lines[i + 1] || '';
-    if (/^\d{1,2}月\d{1,2}日(?:\s+週.)?$/.test(next)) {
-      movie = line.replace(/^#+\s*/, '').trim();
-      date = null;
-    }
-  }
-
-  return rows;
+function audioLanguage(format) {
+  const value = String(format || '');
+  return AUDIO_LANGUAGES.find(([label]) => value.endsWith(label))?.[1] || null;
 }
 
 export async function fetchShowTimesShowtimes() {
-  const rows = [];
-  const errors = [];
+  const response = await fetch(API, {
+    headers: {
+      accept: 'application/json',
+      'accept-language': 'zh-TW,zh;q=0.9,en;q=0.7',
+      origin: 'https://www.showtimes.com.tw',
+      referer: 'https://www.showtimes.com.tw/',
+      'user-agent': 'study-in-taiwan-cinema-data/1.0'
+    }
+  });
+  if (!response.ok) throw new Error(`ShowTimes public API ${response.status} ${response.statusText}`);
 
-  for (const cinema of CINEMAS) {
-    const url = `${BASE}/cinemas/${cinema.id}/`;
-    try {
-      const response = await fetch(url, {
-        headers: {
-          accept: 'text/html,application/xhtml+xml',
-          'accept-language': 'zh-TW,zh;q=0.9,en;q=0.7',
-          'user-agent': 'study-in-taiwan-cinema-data/1.0'
-        }
+  const payload = (await response.json())?.payload;
+  if (!payload || !Array.isArray(payload.corporations) || !Array.isArray(payload.programs) || !payload.eventsForCorporations) {
+    throw new Error('ShowTimes public API response format changed');
+  }
+
+  const corporations = new Map(payload.corporations.map(corporation => [Number(corporation.id), corporation]));
+  const programs = new Map(payload.programs.map(program => [Number(program.id), program]));
+  const rows = [];
+
+  for (const [corporationId, group] of Object.entries(payload.eventsForCorporations)) {
+    const corporation = corporations.get(Number(corporationId));
+    if (!corporation) continue;
+    const city = cityFromAddress(corporation.address);
+    const rooms = new Map((group.venues || []).map(venue => [Number(venue.id), venue.room]));
+
+    for (const event of group.events || []) {
+      if (event.status !== 'active') continue;
+      const program = programs.get(Number(event.programId));
+      const session = taipeiDateTime(event.startedAt);
+      if (!program || !session || !program.name) continue;
+      const format = event.meta?.format || null;
+      const duration = Number(program.duration);
+
+      rows.push({
+        cinema_name: corporation.name,
+        city,
+        address: corporation.address || null,
+        movie_title: program.name,
+        movie_title_en: program.nameAlternative || null,
+        rating: program.rating || null,
+        date: session.date,
+        time: session.time,
+        hall: rooms.get(Number(event.venueId)) || null,
+        format,
+        audio_language: audioLanguage(format),
+        subtitles: null,
+        duration_minutes: Number.isFinite(duration) && duration > 0 ? Math.round(duration / 60) : null,
+        source_event_id: String(event.id),
+        source_url: `${SCHEDULES_URL}${corporation.id}/`,
+        source: 'showtimes-official-api'
       });
-      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-      const parsed = parsePage(await response.text(), cinema);
-      if (!parsed.length) throw new Error('No showtimes parsed; site format may have changed');
-      rows.push(...parsed);
-    } catch (error) {
-      errors.push(`${cinema.cinema_name}: ${String(error?.message || error)}`);
     }
   }
 
-  if (!rows.length) throw new Error(`ShowTimes source failed: ${errors.join('; ')}`);
-  rows.source_errors = errors;
+  if (!rows.length) throw new Error('ShowTimes public API returned no active showtimes');
   return rows;
 }

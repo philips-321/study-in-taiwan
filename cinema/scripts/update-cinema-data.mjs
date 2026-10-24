@@ -172,7 +172,7 @@ const sourceStatus = {
   'moc-culture-movie-api': { ok: true, showtimes: [...showtimesByCity.values()].reduce((n, rows) => n + rows.length, 0) },
   'miramar-official-api': { ok: false, showtimes: 0 },
   'ambassador-official-site': { ok: false, showtimes: 0 },
-  'showtimes-official-site': { ok: false, showtimes: 0 },
+  'showtimes-official-api': { ok: false, showtimes: 0 },
   'spot-huashan-official-schedule': { ok: false, showtimes: 0 },
   'eslite-official-schedule': { ok: false, showtimes: 0 },
   'atmovies-taipei-fallback': { ok: false, showtimes: 0, role: 'fallback only for sources blocked/incomplete from GitHub Actions' }
@@ -230,7 +230,7 @@ async function runSource(sourceName, label, loader) {
 
 await runSource('miramar-official-api', 'Miramar', fetchMiramarShowtimes);
 await runSource('ambassador-official-site', 'Ambassador', fetchAmbassadorShowtimes);
-await runSource('showtimes-official-site', 'ShowTimes', fetchShowTimesShowtimes);
+await runSource('showtimes-official-api', 'ShowTimes', fetchShowTimesShowtimes);
 await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuashanShowtimes);
 await runSource('eslite-official-schedule', 'Eslite', fetchEsliteShowtimes);
 await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);

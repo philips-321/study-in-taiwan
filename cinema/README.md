@@ -495,10 +495,11 @@ Every source must remain visible in `manifest.json`, including failed sources.
 
 A workflow should not silently look healthy just because at least one adapter returned rows.
 
-Current known blocked sources:
+Current source access notes:
 
 ```text
-showtimes-official-site -> HTTP 403 from GitHub Actions
+ShowTimes public JSON: https://capi.showtimes.com.tw/4/app/bootstrap
+ShowTimes HTML pages: previously returned HTTP 403 from GitHub Actions
 eslite-official-schedule -> HTTP 403 from GitHub Actions
 ```
 
@@ -511,11 +512,11 @@ spot-huashan-official-schedule
 atmovies-taipei-fallback
 ```
 
-Next recommended health improvement: add count-drop/freshness checks so a normally large source suddenly returning zero or a tiny fraction of its usual rows is flagged as degraded even if the parser technically returns successfully.
+The ShowTimes JSON feed was verified from this workspace and the collector now reads its nationwide corporation/event/program payload. Confirm GitHub Actions access on its next scheduled run. Next recommended health improvement: add count-drop/freshness checks so a normally large source suddenly returning zero or a tiny fraction of its usual rows is flagged as degraded even if the parser technically returns successfully.
 
 ## Last verified workflow state
 
-Verified on 2026-10-24 from GitHub Actions run 24 after Ambassador retry patch:
+Historical baseline verified on 2026-10-24 from GitHub Actions run 24 before the ShowTimes JSON API integration:
 
 ```text
 miramar-official-api:           355
