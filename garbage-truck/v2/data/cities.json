@@ -1,22 +1,24 @@
 {
-  "version": 2,
+  "version": 3,
   "coverage": "Taiwan 22 cities/counties",
   "storage": "static-json",
   "database": null,
   "refresh_policy": {
     "mode": "manual",
-    "default_min_interval_days": 30,
+    "source_change_guard": true,
+    "network_attempts_per_request": 2,
+    "retry_after_failure": "next Monday",
     "stale_if_error": true,
     "overwrite_on_empty": false,
     "scheduled_cron": false,
-    "notes": "Refresh one city at a time. Keep last-known-good JSON when upstream sources fail."
+    "notes": "Check one city at a time. Compare the source's own update marker before a full crawl. After two upstream failures, stop and defer the next normal retry until Monday. Preserve last-known-good JSON and source-check history."
   },
   "cities": [
     {"slug":"taipei","name_zh":"臺北市","name_en":"Taipei City","kind":"city","center":[121.5654,25.033],"manifest":"cities/taipei/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"ready"},
     {"slug":"new-taipei","name_zh":"新北市","name_en":"New Taipei City","kind":"city","center":[121.465,25.012],"manifest":"cities/new-taipei/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"ready"},
     {"slug":"taoyuan","name_zh":"桃園市","name_en":"Taoyuan City","kind":"city","center":[121.301,24.9937],"manifest":"cities/taoyuan/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
     {"slug":"taichung","name_zh":"臺中市","name_en":"Taichung City","kind":"city","center":[120.6736,24.1477],"manifest":"cities/taichung/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
-    {"slug":"tainan","name_zh":"臺南市","name_en":"Tainan City","kind":"city","center":[120.227,22.9997],"manifest":"cities/tainan/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
+    {"slug":"tainan","name_zh":"臺南市","name_en":"Tainan City","kind":"city","center":[120.227,22.9997],"manifest":"cities/tainan/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"source-found"},
     {"slug":"kaohsiung","name_zh":"高雄市","name_en":"Kaohsiung City","kind":"city","center":[120.3014,22.6273],"manifest":"cities/kaohsiung/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
     {"slug":"keelung","name_zh":"基隆市","name_en":"Keelung City","kind":"city","center":[121.7419,25.1283],"manifest":"cities/keelung/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
     {"slug":"hsinchu-city","name_zh":"新竹市","name_en":"Hsinchu City","kind":"city","center":[120.9675,24.8138],"manifest":"cities/hsinchu-city/manifest.json","source_priority":["local_official","moenv_national"],"map_status":"pending-import"},
