@@ -45,6 +45,11 @@ function movieKey(value) {
     .replace(/[’‘`´]/g, "'").replace(/[“”]/g, '"').replace(/[‐‑‒–—]/g, '-')
     .replace(/[\s\u00a0]+/g, ' ').trim();
 }
+function knownAgeRating(value) {
+  const raw = String(value || '').normalize('NFKC').toLowerCase().replace(/[\s　]/g, '');
+  return ({ '普': 'g', '普遍級': 'g', g: 'g', '護': 'p', '保護級': 'p', p: 'p', '輔12': 'pg12', '輔12級': 'pg12', pg12: 'pg12', '輔15': 'pg15', '輔15級': 'pg15', pg15: 'pg15', '限制級': 'r', r: 'r' })[raw] || null;
+}
+function moviePairKey(row) { return `${movieKey(row.movie_title)}|${movieKey(row.movie_title_en)}`; }
 const movieMetadataByTitle = new Map(), ambiguousMovieTitles = new Set();
 for (const movie of movieMetadataPayload.movies || []) {
   for (const title of [movie.movie_title, movie.movie_title_en].filter(Boolean)) {
@@ -276,6 +281,7 @@ for (const rows of showtimesByCity.values()) for (const row of rows) {
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
 const citySummary = {}, showtimesIndex = {};
 const coverage = { showtime_rows: 0, explicit_subtitle_rows: 0, international_title_rows: 0, poster_rows: 0, genre_rows: 0, rating_rows: 0 };
+const uniqueMovieCoverage = new Map(), distinctPosterUrls = new Set(), distinctGenreCodes = new Set();
 for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   const seen = new Set();
   const showtimes = showtimesByCity.get(slug)
@@ -319,9 +325,18 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
     coverage.showtime_rows++;
     if (Array.isArray(show.subtitles) && show.subtitles.length) coverage.explicit_subtitle_rows++;
     if (show.movie_title_en) coverage.international_title_rows++;
-    if (show.poster_url) coverage.poster_rows++;
-    if (Array.isArray(show.genres) && show.genres.length) coverage.genre_rows++;
-    if (show.rating) coverage.rating_rows++;
+    if (show.poster_url) { coverage.poster_rows++; distinctPosterUrls.add(show.poster_url); }
+    if (Array.isArray(show.genres) && show.genres.length) { coverage.genre_rows++; for (const genre of show.genres) distinctGenreCodes.add(genre); }
+    if (knownAgeRating(show.rating)) coverage.rating_rows++;
+    const titleKey = moviePairKey(show);
+    if (titleKey !== '|') {
+      const unique = uniqueMovieCoverage.get(titleKey) || { international: false, poster: false, genres: false, rating: false };
+      unique.international ||= Boolean(show.movie_title_en);
+      unique.poster ||= Boolean(show.poster_url);
+      unique.genres ||= Array.isArray(show.genres) && show.genres.length > 0;
+      unique.rating ||= Boolean(knownAgeRating(show.rating));
+      uniqueMovieCoverage.set(titleKey, unique);
+    }
     const date = String(show.start_time || '').slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
     if (!byDate.has(date)) byDate.set(date, []);
@@ -335,6 +350,15 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   }
   citySummary[slug] = { cinemas: cinemas.length, active_cinemas: activeCount, unknown_cinemas: unknownCount, showtimes: showtimes.length };
 }
+coverage.unique_title_pairs = {
+  title_pairs: uniqueMovieCoverage.size,
+  with_international_title: [...uniqueMovieCoverage.values()].filter(movie => movie.international).length,
+  with_poster: [...uniqueMovieCoverage.values()].filter(movie => movie.poster).length,
+  distinct_posters: distinctPosterUrls.size,
+  with_genres: [...uniqueMovieCoverage.values()].filter(movie => movie.genres).length,
+  distinct_genre_codes: distinctGenreCodes.size,
+  with_known_age_rating: [...uniqueMovieCoverage.values()].filter(movie => movie.rating).length
+};
 for (const entry of Object.values(showtimesIndex)) entry.cities = Object.fromEntries(Object.entries(entry.cities).sort(([a], [b]) => a.localeCompare(b)));
 await writeJson(path.join(ROOT, 'manifest.json'), {
   version: 8, generated_at: generatedAt, timezone: 'Asia/Taipei',

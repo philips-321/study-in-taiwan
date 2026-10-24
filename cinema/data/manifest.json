@@ -605,7 +605,16 @@
     "international_title_rows": 8816,
     "poster_rows": 8734,
     "genre_rows": 8688,
-    "rating_rows": 7710
+    "rating_rows": 7602,
+    "unique_title_pairs": {
+      "title_pairs": 303,
+      "with_international_title": 96,
+      "with_poster": 73,
+      "distinct_posters": 64,
+      "with_genres": 67,
+      "distinct_genre_codes": 16,
+      "with_known_age_rating": 71
+    }
   },
   "showtimes_payload": "The app loads date-and-city showtime chunks from showtimes/by-date; per-city showtime files remain as the complete source snapshot.",
   "source_policy": "official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete",

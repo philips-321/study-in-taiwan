@@ -124,7 +124,9 @@
     return (genreNames[language]||genreNames.en)[code]||genreNames.en[code]||code.replace(/\b\w/g,c=>c.toUpperCase());
   }
   function displayRating(value) {
-    const code=String(value||'').toLowerCase();
+    const raw=String(value||'').normalize('NFKC').toLowerCase().replace(/[\s　]/g,'');
+    const aliases={普:'g',普遍級:'g',g:'g',護:'p',保護級:'p',p:'p',輔12:'pg12',輔12級:'pg12',pg12:'pg12',輔15:'pg15',輔15級:'pg15',pg15:'pg15',限制級:'r',r:'r'};
+    const code=aliases[raw]||raw;
     return (ratingNames[language]||ratingNames.en)[code]||ratingNames.en[code]||'';
   }
   function safeUrl(value) {
