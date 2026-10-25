@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "reviewed_on": "2026-10-25",
+  "method": "manual browser review, cinema by cinema",
+  "entries": [
+    {
+      "cinema_id": "5130fcc97b11b16d",
+      "cinema_name": "員林大戲院",
+      "city": "changhua",
+      "source_url": "https://www.atmovies.com.tw/showtime/t04703/a47/",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "schedule-visible",
+      "observed_fields": [
+        "address",
+        "phone",
+        "date",
+        "movie_title_zh",
+        "runtime",
+        "format",
+        "showtime",
+        "refresh_time"
+      ],
+      "notes": "The page showed 2026-10-23 screenings, updated at 18:00. Use as a fallback only; the venue website link points to Facebook."
+    },
+    {
+      "cinema_id": "e20ff150d90cfea0",
+      "cinema_name": "嘉年華戲院",
+      "city": "chiayi-city",
+      "source_url": "https://www.3d-movies.tw/time.aspx",
+      "source_type": "official",
+      "browser_status": "selector-visible-schedule-not-rendered-in-extraction",
+      "observed_fields": [
+        "date_or_venue_selector",
+        "schedule_publication_policy",
+        "address",
+        "phone"
+      ],
+      "notes": "Official site says some schedules are announced as late as the day before. Browser page text did not expose the selected screening rows."
+    },
+    {
+      "cinema_id": "7b54c922f6cc6f74",
+      "cinema_name": "嘉義秀泰影城",
+      "city": "chiayi-city",
+      "source_url": "https://www.showtimes.com.tw/cinemas/9/",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "observed_fields": [
+        "movie_title",
+        "date",
+        "showtime",
+        "hall_or_format",
+        "audio_language",
+        "address",
+        "phone"
+      ]
+    },
+    {
+      "cinema_id": "3420199bc644cf09",
+      "cinema_name": "嘉義影食匯in89豪華影城",
+      "city": "chiayi-city",
+      "source_url": "https://www.in89cinemax.com/film.aspx?TheaterId=17",
+      "source_type": "official",
+      "browser_status": "javascript-shell-no-screening-rows",
+      "observed_fields": [
+        "cinema_id_in_url",
+        "address",
+        "movie_time_section"
+      ],
+      "notes": "The page has a `{{ hall }}` placeholder in the browser result. Do not import it as a completed schedule."
+    },
+    {
+      "cinema_id": "f8d37545467089d9",
+      "cinema_name": "新竹巨城威秀影城",
+      "city": "hsinchu-city",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=9",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "observed_fields": [
+        "movie_title_zh",
+        "movie_title_en",
+        "date",
+        "showtime",
+        "format",
+        "audio_language",
+        "address",
+        "phone",
+        "screen_count",
+        "ticket_prices"
+      ],
+      "notes": "The official page states weekly schedules normally publish Wednesday for Friday through the following Thursday. Ticket prices were separately recorded in ticket-prices/hsinchu-city.json.",
+      "transcribed_date": "2026-10-25",
+      "transcribed_sessions": 15,
+      "transcribed_note": "15 English-audio showtimes from the visible 10/25 schedule group are in showtimes/by-date/2026-10-25/hsinchu-city.json. The source did not state subtitle languages for these showings."
+    },
+    {
+      "cinema_id": "fb50a15c37b733c3",
+      "cinema_name": "新竹大遠百威秀影城",
+      "city": "hsinchu-city",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=7",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "observed_fields": [
+        "movie_title_zh",
+        "movie_title_en",
+        "date",
+        "showtime",
+        "format",
+        "audio_language",
+        "address",
+        "phone",
+        "screen_count"
+      ]
+    },
+    {
+      "cinema_id": "df48f3de96b1afc2",
+      "cinema_name": "竹北百老匯影城",
+      "city": "hsinchu-county",
+      "source_url": "https://www.broadway-cineplex.com.tw/",
+      "source_type": "official",
+      "browser_status": "javascript-placeholders",
+      "observed_fields": [
+        "booking_selectors",
+        "current_movies_section",
+        "phone_numbers"
+      ],
+      "notes": "The extracted page contains template placeholders instead of rendered schedule rows."
+    },
+    {
+      "cinema_id": "758a39fe5ae9a51d",
+      "cinema_name": "花蓮新天堂樂園威秀影城",
+      "city": "hualien",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "observed_fields": [
+        "movie_title_zh",
+        "movie_title_en",
+        "date",
+        "showtime",
+        "format",
+        "audio_language",
+        "address",
+        "phone",
+        "screen_count"
+      ]
+    },
+    {
+      "cinema_id": "afa3562511df19d5",
+      "cinema_name": "高雄SKM PARK國賓影城",
+      "city": "kaohsiung",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=f760950a-94b6-4e04-9573-831ed7283c5c&DT=2026%2F10%2F25",
+      "source_type": "official",
+      "browser_status": "branch-schedule-not-selected",
+      "observed_fields": [
+        "movie_title_zh",
+        "movie_title_en",
+        "schedule_search_controls",
+        "venue_identity"
+      ],
+      "notes": "The official page exposes a nationwide film list and branch/date controls. The branch/date screening rows were not isolated in this review."
+    },
+    {
+      "cinema_id": "8f25580bc6455651",
+      "cinema_name": "新月豪華影城",
+      "city": "yilan",
+      "source_url": "https://www.lunacinemax.com.tw/",
+      "source_type": "official",
+      "browser_status": "http-403",
+      "observed_fields": [
+        "official_movie_time_section_from_search_result"
+      ],
+      "notes": "Direct browser open returned 403. A third-party schedule exists but was not treated as official data."
+    },
+    {
+      "cinema_id": "01ff4bc24e3038a2",
+      "cinema_name": "板橋大遠百威秀影城",
+      "city": "new-taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=4",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "observed_fields": [
+        "movie_title_zh",
+        "movie_title_en",
+        "date",
+        "showtime",
+        "format",
+        "audio_language",
+        "address",
+        "phone",
+        "screen_count"
+      ]
+    }
+  ],
+  "title_audit": {
+    "checked_on": "2026-10-25",
+    "manual_screening_rows_checked": 15,
+    "manual_screening_rows_reused_existing_movie_records": true,
+    "result": "All seven linked movie records already had international titles; no duplicate movie records were created.",
+    "filled_from_existing_exact_title_matches": [
+      {
+        "movie_id": "m_4fd20f1b6c01",
+        "movie_title_en": "Tears of the Lost Army in Golden Triangle",
+        "matched_movie_id": "m_229ab21fb9a2"
+      },
+      {
+        "movie_id": "m_865532b39cd8",
+        "movie_title_en": "All About Lily Chou-Chou",
+        "matched_movie_id": "m_05c755e897ee"
+      },
+      {
+        "movie_id": "m_714c13145d82",
+        "movie_title_en": "THE INTERN",
+        "matched_movie_id": "m_7f82a61deb49"
+      }
+    ],
+    "repaired_truncated_title": {
+      "movie_id": "m_a3db5d15e834",
+      "previous": "BTS WORLD TOUR ARIRANG IN SÃO PAULO:: LIVE V",
+      "corrected": "BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: LIVE VIEWING",
+      "sources": [
+        "https://www.btsliveviewing.com/participating-territories",
+        "https://www.cinemark.com/movies/bts-world-tour-arirang-in-sao-paulo-live-viewing"
+      ]
+    },
+    "display_check": "International titles wrap in the movie list; the movie title styles do not apply line-clamp or ellipsis."
+  }
+}

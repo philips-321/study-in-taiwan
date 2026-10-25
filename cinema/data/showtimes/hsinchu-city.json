@@ -104,6 +104,16 @@
       "last_success_at": "2026-10-24T18:59:27.328Z",
       "last_failure_at": null,
       "next_probe_at": null
+    },
+    "vieshow-official-site": {
+      "ok": true,
+      "showtimes": 15,
+      "fresh_showtimes": 15,
+      "fallback_showtimes": 0,
+      "health": "manual-browser-verified",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=9",
+      "captured_on": "2026-10-25",
+      "note": "One selected date and one branch transcribed manually; subtitle information was not listed."
     }
   },
   "showtimes": [],
@@ -116,6 +126,6 @@
     ],
     "restored_at": "2026-10-24T18:59:27.328Z"
   },
-  "showtime_count": 0,
+  "showtime_count": 15,
   "schema": "normalized-movie-references"
 }

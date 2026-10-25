@@ -4,7 +4,9 @@ Read this file first before changing the cinema pipeline.
 
 ## Browser experience
 
-Use [SOURCE-RESEARCH-LIST.md](SOURCE-RESEARCH-LIST.md) for clickable source-search and map links for all 107 cinema records. The editable [CSV tracker](SOURCE-RESEARCH-LIST.csv) has a blank column for each official schedule/source URL you find; send the filled file or paste the source links back so they can be checked and integrated.
+For the current nationwide source-completion pass, research each cinema by opening its actual website in a browser and recording the source URL and observed fields in `SOURCE-RESEARCH-NOTES.md`, `SOURCE-RESEARCH-LIST.csv`, and `data/research/observed-sources.json`. Do not use GitHub Actions to browse, collect, or refresh this research. A workflow run is not a substitute for inspecting each cinema's source.
+
+Use [SOURCE-RESEARCH-LIST.md](SOURCE-RESEARCH-LIST.md) for clickable source-search and map links for all 107 cinema records. Record inspected pages and limitations in [SOURCE-RESEARCH-NOTES.md](SOURCE-RESEARCH-NOTES.md), and put the best confirmed source link in [SOURCE-RESEARCH-LIST.csv](SOURCE-RESEARCH-LIST.csv).
 
 `cinema/index.html` is the public cinema browser. It loads static JSON files below `data/` and individual OSM venue points from `data/locations.json`; the visitor's browser never calls cinema schedule APIs. Browser caching follows the static host's cache headers. Pins sit at their source coordinates, never at a city center; matched pins open the cinema record and the selected day's screenings. BAMID names, company, address, phone, and screen count are shown when available. A location can include an optional `image_url` for a sourced building photo.
 
@@ -14,7 +16,7 @@ The annual BAMID master has no coordinates. The current location snapshot has 92
 
 The current cinema dataset has `movie_title` and sometimes `movie_title_en`; it does not contain per-country title translations. The UI labels `movie_title_en` as the international title when supplied and does not derive localized titles from the interface language. Search normalizes HTML entities, Unicode punctuation, and case on both the query and titles. Explicit subtitle coverage is sparse, so subtitle search must leave unknown values unclassified rather than inferring them from audio language.
 
-ShowTimes ticket prices are stored separately under `data/ticket-prices/`, split by city. The browser loads a city's small price file only when a visitor opens a priced cinema's ticket-price section. These are a dated ShowTimes bootstrap snapshot, currently covering 15 秀泰 branches; they are not live checkout quotes and do not cover other chains.
+Ticket prices are stored separately under `data/ticket-prices/`, split by city. The browser loads a city's small price file only when a visitor opens a priced cinema's ticket-price section. The data includes a dated ShowTimes bootstrap snapshot for 15 秀泰 branches and one manually verified VieShow branch (新竹巨城威秀影城); these are not live checkout quotes.
 
 This project is an ongoing maintained data pipeline, not a project with a meaningful completion percentage. Upstream cinema sites will change and adapters will need patching over time.
 

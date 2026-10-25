@@ -35,7 +35,7 @@
       }
     },
     "2026-10-25": {
-      "total": 1669,
+      "total": 1684,
       "cities": {
         "chiayi-city": 61,
         "hualien": 47,
@@ -48,7 +48,8 @@
         "taipei": 327,
         "taitung": 37,
         "taoyuan": 27,
-        "yunlin": 16
+        "yunlin": 16,
+        "hsinchu-city": 15
       }
     },
     "2026-10-26": {
@@ -781,9 +782,9 @@
     },
     "hsinchu-city": {
       "cinemas": 2,
-      "active_cinemas": 0,
+      "active_cinemas": 1,
       "unknown_cinemas": 2,
-      "showtimes": 0
+      "showtimes": 15
     },
     "hsinchu-county": {
       "cinemas": 1,
@@ -907,5 +908,16 @@
     "note": "Snapshot rows are labeled last-known-good; future API refreshes replace them when fresh records arrive.",
     "cross_source_metadata_enriched_rows": 3393
   },
-  "movie_catalog": "movies/index.json; movie title, poster, genres, rating, and runtime are stored once and referenced by movie_id"
+  "movie_catalog": "movies/index.json; movie title, poster, genres, rating, and runtime are stored once and referenced by movie_id",
+  "manual_research_updates": [
+    {
+      "date": "2026-10-25",
+      "city": "hsinchu-city",
+      "cinema_id": "f8d37545467089d9",
+      "source": "vieshow-official-site",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=9",
+      "added_showtimes": 15,
+      "note": "Selected-date schedule manually transcribed; subtitle data not stated."
+    }
+  ]
 }
