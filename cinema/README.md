@@ -1,10 +1,10 @@
 # Taiwan Cinema / Showtime Collector
 
-Read this file first before changing the cinema pipeline.
+Read [USER-RULES.md](USER-RULES.md) first before any cinema work, then read this file. The user's manual-browser and no-GitHub-Actions rule overrides older technical notes below.
 
 ## Browser experience
 
-For the current nationwide source-completion pass, research each cinema by opening its actual website in a browser and recording the source URL and observed fields in `SOURCE-RESEARCH-NOTES.md`, `SOURCE-RESEARCH-LIST.csv`, and `data/research/observed-sources.json`. Do not use GitHub Actions to browse, collect, or refresh this research. A workflow run is not a substitute for inspecting each cinema's source.
+For source completion, open each cinema source in a browser one at a time. Record source URLs, observed fields, and access/rendering issues in `SOURCE-RESEARCH-NOTES.md`, `SOURCE-RESEARCH-LIST.csv`, and `data/research/observed-sources.json`. Do not use GitHub Actions to browse, collect, or refresh cinema data. Do not create scheduled workers. Make requested updates manually from browser-verified sources.
 
 Use [SOURCE-RESEARCH-LIST.md](SOURCE-RESEARCH-LIST.md) for clickable source-search and map links for all 107 cinema records. Record inspected pages and limitations in [SOURCE-RESEARCH-NOTES.md](SOURCE-RESEARCH-NOTES.md), and put the best confirmed source link in [SOURCE-RESEARCH-LIST.csv](SOURCE-RESEARCH-LIST.csv).
 
@@ -22,25 +22,17 @@ This project is an ongoing maintained data pipeline, not a project with a meanin
 
 ## Goal
 
-## Chat handoff and routine ShowTimes update
+## Chat handoff and manual data updates
 
-For a new chat, read this README first, then inspect the current git branch and `data/manifest.json`. Do not restart source discovery until checking the source notes below.
+For a new chat, read `USER-RULES.md`, this README, the current git branch, `data/manifest.json`, `SOURCE-RESEARCH-NOTES.md`, and `data/research/observed-sources.json`. Continue the source tracker; do not restart research.
 
-ShowTimes' bootstrap contains corporation, venue, event, and program data. Programs include international titles, genre codes, Taiwan age-rating codes, and portrait poster artwork. The browser reads the normalized `data/movies/index.json` catalog once; date/city session rows refer to movies with `movie_id`.
+The site serves static JSON so all visitors reuse the same saved data; the browser must not call a schedule API per visit. Keep browser caching enabled and keep the JSON normalized and split by city and date. Store each movie's titles and available metadata once in `data/movies/index.json`; date/city screening rows reference its `movie_id`.
 
-To refresh the saved ShowTimes snapshot when the live collector is still blocked in GitHub Actions:
-
-1. Fetch `https://capi.showtimes.com.tw/4/app/bootstrap` into a temporary file; do not commit the raw bootstrap payload.
-2. Run `node cinema/scripts/import-showtimes-bootstrap.mjs /path/to/bootstrap.json` from the repository root.
-3. The importer writes active events into `data/showtimes/by-date/<date>/<city>.json`, matches the 15 branches to BAMID cinema IDs, and updates `manifest.json`. It intentionally does not duplicate these ShowTimes events into the larger per-city source snapshots.
-4. The importer also writes the small program catalog to `data/movie-metadata/showtimes.json` and enriches other providers' rows only when an international or Chinese title matches exactly and uniquely. Unmatched and ambiguous titles are left alone.
-5. Check date coverage, `poster_url`, `genres`, `rating`, source/freshness metadata, JSON validity, and `git diff --check` before committing.
-
-The browser loads only the selected date/city chunks and the small movie catalog. It does not call the ShowTimes bootstrap API on page load, so visitor traffic cannot multiply requests to ShowTimes. The scheduled GitHub workflow refreshes the static JSON once per Taiwan calendar day and skips further runs when the JSON was already generated that day. Poster thumbnails use the official ShowTimes CDN with `loading="lazy"`; the detail card shows an animated loading label while its poster loads. Do not download or embed image bytes in JSON. Missing posters remain absent. Genre codes are localized in the UI. Age-rating codes are `g`, `p`, `pg12`, `pg15`, and `r`; `null` means unavailable. These ShowTimes event records do not declare subtitle languages, so leave `subtitles: null`.
+Manually add screenings only after opening that cinema's source and confirming the date, title, time, and any explicitly declared audio/subtitle or format details. Cite the source URL on each row. Do not treat a legacy importer or scheduled workflow as the collection method. Leave unknown metadata null. Keep posters as reused URLs, use lazy loading, and never embed poster image bytes in JSON. Genre and age-rating values come from the source or an exact existing movie record, not guesses.
 
 Coverage fields ending in `_rows` count individual screenings. In the normalized 2026-10-24 snapshot, 10,070 screenings refer to 293 films. Of those films, 93 have an international title, 71 have a poster (64 distinct poster URLs), 65 have genres (16 genre codes), and 68 have a recognized age rating. Explicit subtitles appear on 79 screenings. Exact, unambiguous matching against ShowTimes program titles filled metadata on 3,393 screening rows from other providers. Remaining nulls are unknown, not guessed. Ticket price snapshots cover 15 ShowTimes branches; other chains need their own verified sources.
 
-When the scheduled update workflow runs, `restore-failed-source-fallbacks.mjs` must read previous `by-date` chunks as well as per-city snapshots. This preserves imported ShowTimes rows during a collector 403 without keeping a second full copy in per-city JSON. Do not remove this fallback path or make the importer write ShowTimes rows into both storage layouts.
+Legacy import and fallback scripts remain in the repository as historical implementation details. Do not trigger or rely on their GitHub workflow for cinema updates; follow `USER-RULES.md`.
 
 Maintain current Taiwan cinema/showtime data as fixed per-city JSON files for `study-in-taiwan.com`, without Cloudflare D1 while static JSON is sufficient.
 
@@ -57,25 +49,13 @@ cinema/data/ticket-prices/<city>.json
 
 `data/showtimes/by-date/<date>/<city>.json` is the only durable store for screening rows. Each screening stores a `movie_id`; the film's titles, poster URL, genres, age rating, runtime, and metadata sources live once in `data/movies/index.json`. Cinema names resolve through `cinema_id`. Per-city `data/showtimes/<city>.json` files contain source health and a count only; they must not duplicate screening rows. The browser reads only the selected date/city chunks and resolves movie metadata through the catalog, avoiding per-screening copies in both JSON and browser row objects.
 
-On refresh, `restore-failed-source-fallbacks.mjs` reads previous date/city chunks and their matching movie catalog to retain future last-known-good records while a collector is blocked. The workflow snapshots both before updating. Generated date chunks are refreshed in place, not retained as dated archives; Git history is the audit/history layer. `movie_id` is derived from the normalized primary title; keep that identity stable when importing and deduplicating sessions. Distinct start times, halls, formats, and cinemas remain separate screening rows.
+The older fallback workflow is documented in the historical adapter notes only. For the user's manual update process, preserve the existing date/city chunks and edit only records confirmed by browser sources. Git history is the audit/history layer. Keep `movie_id` stable for an existing film; distinct start times, halls, formats, and cinemas remain separate screening rows.
 
 The 2026-10-24 normalization pass retained all 10,070 screening rows across 293 referenced movie identities. The catalog contains only films referenced by a screening, not extra program listings with no current showtime. It consolidated repeated poster URLs to 64 and repeated the movie metadata only once per catalog entry. JSON storage for showtime files dropped from about 13.7 MB to about 5.2 MB including the catalog and small city status files. These byte savings reduce transfer and parsed row overhead; actual browser memory also depends on map tiles, images, and rendering.
 
-Main updater:
+## Historical adapter and source notes
 
-```text
-cinema/scripts/update-cinema-data.mjs
-```
-
-Scheduled workflow:
-
-```text
-.github/workflows/update-cinema-data.yml
-```
-
-Schedule: daily at 17:27 Asia/Taipei, plus manual `workflow_dispatch`.
-
-## Source status summary
+The table and adapter documentation below describe earlier implementation work. They are reference material only, not instructions to run automation or a statement that a source is currently complete. Follow the manual-browser rule above for new data.
 
 | Source | Method | Current status | Notes |
 |---|---|---|---|
