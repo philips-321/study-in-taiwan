@@ -1,0 +1,100 @@
+name: Branch runtime cleanup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/branch-runtime-cleanup.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: branch-runtime-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Remove human analytics remnants from every non-main branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*'
+
+          while IFS= read -r remote; do
+            branch="${remote#origin/}"
+            [ "$branch" = "HEAD" ] && continue
+            [ "$branch" = "main" ] && continue
+            echo "=== $branch ==="
+            git checkout -B "$branch" "origin/$branch"
+
+            python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          delete_paths = [
+              Path('.github/workflows/inject-human-analytics.yml'),
+              Path('scripts/inject-human-analytics.py'),
+              Path('human-analytics.js'),
+              Path('public/human-analytics.js'),
+          ]
+          for p in delete_paths:
+              if p.exists() and p.is_file():
+                  p.unlink()
+                  print('deleted', p)
+
+          script_re = re.compile(
+              r'\s*<script\b[^>]*\bsrc=["\']/human-analytics\.js["\'][^>]*>\s*</script>',
+              re.I,
+          )
+          loader_re = re.compile(
+              r"if\s*\(\s*!document\.querySelector\(\s*['\"]script\[data-human-analytics\]['\"]\s*\)\s*\)\s*\{\s*const\s+s\s*=\s*document\.createElement\(\s*['\"]script['\"]\s*\);\s*s\.src\s*=\s*['\"]/human-analytics\.js['\"];\s*s\.defer\s*=\s*true;\s*s\.dataset\.humanAnalytics\s*=\s*['\"]1['\"];\s*document\.head\.appendChild\(s\);\s*\}",
+              re.I,
+          )
+          exts = {'.html', '.htm', '.js', '.mjs', '.cjs'}
+          for p in Path('.').rglob('*'):
+              if not p.is_file() or p.suffix.lower() not in exts:
+                  continue
+              try:
+                  old = p.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              new = script_re.sub('', old)
+              new = loader_re.sub('', new)
+              if new != old:
+                  p.write_text(new, encoding='utf-8')
+                  print('cleaned', p)
+
+          leftovers = []
+          for p in Path('.').rglob('*'):
+              if not p.is_file() or p.suffix.lower() not in exts:
+                  continue
+              if '/.git/' in f'/{p.as_posix()}/':
+                  continue
+              try:
+                  text = p.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              if ('/human-analytics.js' in text or 'data-human-analytics' in text or 'humanAnalytics' in text):
+                  leftovers.append(str(p))
+          if leftovers:
+              raise SystemExit('leftover runtime references: ' + ', '.join(leftovers))
+          PY
+
+            if ! git diff --quiet; then
+              git add -A
+              git commit -m "Remove human analytics remnants from ${branch} [skip ci]"
+              git push origin HEAD:"$branch"
+            else
+              echo "clean"
+            fi
+          done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin | sort)
