@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { buildMovieIndex, compactShowtime, knownAgeRating, movieIdForRow, screeningKey } from './movie-schema.mjs';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
 import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
@@ -15,6 +16,10 @@ const MOVIE_API = 'https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?
 const CINEMA_META_API = 'https://www.bamid.gov.tw/OpenData.aspx?SN=E6C57FC155564DEB';
 const ENGLISH_NAMES_FILE = path.join(ROOT, 'cinema-names-en.json');
 const englishCinemaNames = JSON.parse(await fs.readFile(ENGLISH_NAMES_FILE, 'utf8')).names || {};
+const movieMetadataPayload = await fs.readFile(path.join(ROOT, 'movie-metadata', 'showtimes.json'), 'utf8')
+  .then(text => JSON.parse(text)).catch(error => error?.code === 'ENOENT' ? { movies: [] } : Promise.reject(error));
+const previousMovieCatalog = await fs.readFile(path.join(ROOT, 'movies', 'index.json'), 'utf8')
+  .then(text => JSON.parse(text)).catch(error => error?.code === 'ENOENT' ? { movies: [] } : Promise.reject(error));
 
 const CITY_MAP = [
   ['taipei', ['臺北市','台北市']], ['new-taipei', ['新北市']], ['keelung', ['基隆市']],
@@ -33,6 +38,28 @@ function citySlug(...parts) {
   return 'unknown';
 }
 function clean(v) { return typeof v === 'string' ? v.replace(/^\uFEFF/, '').trim() : v ?? null; }
+function movieKey(value) {
+  return String(value || '')
+    .replace(/&(?:amp|quot|apos|#39|rsquo|lsquo|rdquo|ldquo|ndash|mdash|hellip);/g, entity => ({
+      '&amp;': '&', '&quot;': '"', '&apos;': "'", '&#39;': "'", '&rsquo;': '’', '&lsquo;': '‘',
+      '&rdquo;': '”', '&ldquo;': '“', '&ndash;': '–', '&mdash;': '—', '&hellip;': '…'
+    })[entity] || entity)
+    .normalize('NFKC').toLocaleLowerCase()
+    .replace(/[’‘`´]/g, "'").replace(/[“”]/g, '"').replace(/[‐‑‒–—]/g, '-')
+    .replace(/[\s\u00a0]+/g, ' ').trim();
+}
+const movieMetadataByTitle = new Map(), ambiguousMovieTitles = new Set();
+for (const movie of movieMetadataPayload.movies || []) {
+  for (const title of [movie.movie_title, movie.movie_title_en].filter(Boolean)) {
+    const key = movieKey(title);
+    if (!key || ambiguousMovieTitles.has(key)) continue;
+    const prior = movieMetadataByTitle.get(key);
+    if (prior && JSON.stringify([prior.movie_title_en, prior.genres, prior.rating, prior.poster_url]) !== JSON.stringify([movie.movie_title_en, movie.genres, movie.rating, movie.poster_url])) {
+      movieMetadataByTitle.delete(key);
+      ambiguousMovieTitles.add(key);
+    } else movieMetadataByTitle.set(key, movie);
+  }
+}
 function stableId(...parts) { return crypto.createHash('sha1').update(parts.filter(Boolean).join('|')).digest('hex').slice(0, 16); }
 function toIsoLocal(value) {
   if (!value || typeof value !== 'string') return null;
@@ -235,14 +262,39 @@ await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuash
 await runSource('eslite-official-schedule', 'Eslite', fetchEsliteShowtimes);
 await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);
 
+let metadataEnrichedRows = 0;
+for (const rows of showtimesByCity.values()) for (const row of rows) {
+  const match = [...new Set([row.movie_title, row.movie_title_en].filter(Boolean).map(movieKey))]
+    .map(key => movieMetadataByTitle.get(key)).filter(Boolean);
+  const unique = [...new Map(match.map(movie => [movie.id, movie])).values()];
+  if (unique.length !== 1) continue;
+  const movie = unique[0]; let changed = false;
+  if (!row.movie_title_en && movie.movie_title_en) { row.movie_title_en = movie.movie_title_en; changed = true; }
+  if ((!Array.isArray(row.genres) || !row.genres.length) && Array.isArray(movie.genres) && movie.genres.length) { row.genres = movie.genres; changed = true; }
+  if (!row.rating && movie.rating) { row.rating = movie.rating; changed = true; }
+  if (!row.poster_url && movie.poster_url) { row.poster_url = movie.poster_url; changed = true; }
+  if (changed) { row.metadata_source = 'exact-title-match:showtimes-official-program'; metadataEnrichedRows++; }
+}
+
+const allShowtimeRows = [...showtimesByCity.values()].flat();
+const activeMovieIds = new Set(allShowtimeRows.map(movieIdForRow).filter(Boolean));
+const activePreviousMovies = (previousMovieCatalog.movies || []).filter(movie => activeMovieIds.has(movie.movie_id));
+const activeProgramMetadata = (movieMetadataPayload.movies || []).filter(movie => activeMovieIds.has(movieIdForRow(movie)));
+const movieIndex = buildMovieIndex(allShowtimeRows, activeProgramMetadata, activePreviousMovies);
+movieIndex.generated_at = generatedAt;
+movieIndex.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
+const mappedCinemaIds = new Set([...cinemasByCity.values()].flatMap(cinemaMap => [...cinemaMap.keys()]));
+
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);
+await writeJson(path.join(ROOT, 'movies', 'index.json'), movieIndex);
 const citySummary = {}, showtimesIndex = {};
-const coverage = { showtime_rows: 0, explicit_subtitle_rows: 0 };
+const coverage = { showtime_rows: 0, explicit_subtitle_rows: 0, international_title_rows: 0, poster_rows: 0, genre_rows: 0, rating_rows: 0 };
+const uniqueMovieCoverage = new Map(), distinctPosterUrls = new Set(), distinctGenreCodes = new Set();
 for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
   const seen = new Set();
   const showtimes = showtimesByCity.get(slug)
     .filter(row => {
-      const key = [row.cinema_id, row.movie_title, row.start_time, row.hall || '', row.format || ''].join('|');
+      const key = screeningKey(row);
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
@@ -275,11 +327,27 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
     status_policy: 'active requires fresh showtime evidence; absence of showtimes is unknown, never inferred closed',
     cinemas
   });
-  await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), { version: 3, city: slug, generated_at: generatedAt, sources: sourceStatus, showtimes });
+  await writeJson(path.join(SHOWTIMES_DIR, `${slug}.json`), {
+    version: 4, city: slug, generated_at: generatedAt, showtime_count: showtimes.length,
+    sources: sourceStatus, showtimes: []
+  });
   const byDate = new Map();
   for (const show of showtimes) {
     coverage.showtime_rows++;
     if (Array.isArray(show.subtitles) && show.subtitles.length) coverage.explicit_subtitle_rows++;
+    if (show.movie_title_en) coverage.international_title_rows++;
+    if (show.poster_url) { coverage.poster_rows++; distinctPosterUrls.add(show.poster_url); }
+    if (Array.isArray(show.genres) && show.genres.length) { coverage.genre_rows++; for (const genre of show.genres) distinctGenreCodes.add(genre); }
+    if (knownAgeRating(show.rating)) coverage.rating_rows++;
+    const titleKey = movieIdForRow(show);
+    if (titleKey !== '|') {
+      const unique = uniqueMovieCoverage.get(titleKey) || { international: false, poster: false, genres: false, rating: false };
+      unique.international ||= Boolean(show.movie_title_en);
+      unique.poster ||= Boolean(show.poster_url);
+      unique.genres ||= Array.isArray(show.genres) && show.genres.length > 0;
+      unique.rating ||= Boolean(knownAgeRating(show.rating));
+      uniqueMovieCoverage.set(titleKey, unique);
+    }
     const date = String(show.start_time || '').slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
     if (!byDate.has(date)) byDate.set(date, []);
@@ -289,17 +357,30 @@ for (const slug of [...CITY_MAP.map(([s]) => s), 'unknown']) {
     const index = showtimesIndex[date] ||= { total: 0, cities: {} };
     index.total += rows.length;
     index.cities[slug] = rows.length;
-    await writeJson(path.join(SHOWTIMES_DIR, 'by-date', date, `${slug}.json`), { version: 1, city: slug, date, showtimes: rows });
+    await writeJson(path.join(SHOWTIMES_DIR, 'by-date', date, `${slug}.json`), {
+      version: 2, schema: 'normalized-movie-references', city: slug, date,
+      showtimes: rows.map(row => compactShowtime(row, mappedCinemaIds))
+    });
   }
   citySummary[slug] = { cinemas: cinemas.length, active_cinemas: activeCount, unknown_cinemas: unknownCount, showtimes: showtimes.length };
 }
+coverage.unique_title_pairs = {
+  title_pairs: uniqueMovieCoverage.size,
+  with_international_title: [...uniqueMovieCoverage.values()].filter(movie => movie.international).length,
+  with_poster: [...uniqueMovieCoverage.values()].filter(movie => movie.poster).length,
+  distinct_posters: distinctPosterUrls.size,
+  with_genres: [...uniqueMovieCoverage.values()].filter(movie => movie.genres).length,
+  distinct_genre_codes: distinctGenreCodes.size,
+  with_known_age_rating: [...uniqueMovieCoverage.values()].filter(movie => movie.rating).length
+};
 for (const entry of Object.values(showtimesIndex)) entry.cities = Object.fromEntries(Object.entries(entry.cities).sort(([a], [b]) => a.localeCompare(b)));
 await writeJson(path.join(ROOT, 'manifest.json'), {
   version: 8, generated_at: generatedAt, timezone: 'Asia/Taipei',
-  model: 'fixed per-city JSON snapshots plus per-date/per-city browser payloads; all files overwritten on refresh',
+  model: 'normalized movie catalog plus per-date/per-city screening references; collectors keep source rows in memory and date chunks are the only persisted showtime records',
   showtimes_index: showtimesIndex,
   coverage,
-  showtimes_payload: 'The app loads date-and-city showtime chunks from showtimes/by-date; per-city showtime files remain as the complete source snapshot.',
+  movie_catalog: 'movies/index.json; movie title, poster, genres, rating, and runtime are stored once and referenced by movie_id',
+  showtimes_payload: 'The app loads only the selected date-and-city chunks from showtimes/by-date. Each screening row references movie_id; cinema labels resolve through cinema_id.',
   source_policy: 'official sources preferred; clearly labeled fallback used only where official automation is blocked or incomplete',
   operational_status_policy: 'fresh showtime evidence marks a cinema active; no fresh evidence stays unknown; closed status requires explicit verified evidence and is never inferred from missing showtimes',
   recommendation_policy: 'automatic recommendations should use recommendation_eligible=true; unknown cinemas require separate verification before recommendation',
@@ -314,7 +395,8 @@ await writeJson(path.join(ROOT, 'manifest.json'), {
   },
   sources: {
     cinema_master: { metadata: CINEMA_META_API, year: master.year, csv: master.url },
-    showtimes: sourceStatus
+    showtimes: sourceStatus,
+    movie_metadata: { source: movieMetadataPayload.source || null, retrieved_at: movieMetadataPayload.retrieved_at || null, programs: (movieMetadataPayload.movies || []).length, cross_source_exact_title_enriched_rows: metadataEnrichedRows }
   },
   cities: citySummary
 });

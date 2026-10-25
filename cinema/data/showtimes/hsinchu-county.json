@@ -1,21 +1,21 @@
 {
-  "version": 3,
+  "version": 4,
   "city": "hsinchu-county",
-  "generated_at": "2026-10-24T23:28:04.545Z",
+  "generated_at": "2026-10-24T00:00:00.000Z",
   "sources": {
     "moc-culture-movie-api": {
       "ok": false,
-      "showtimes": 810,
+      "showtimes": 807,
       "error": "MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 7,
-      "fresh_showtimes": 810,
-      "fallback_showtimes": 0,
-      "fallback": "unavailable",
+      "failure_count": 6,
+      "fresh_showtimes": 173,
+      "fallback_showtimes": 634,
+      "fallback": "last-known-good",
       "last_success_at": "2026-10-23T19:07:14.709Z",
-      "last_failure_at": "2026-10-24T23:28:43.631Z",
-      "next_probe_at": "2026-10-24T23:58:43.631Z"
+      "last_failure_at": "2026-10-24T18:59:27.328Z",
+      "next_probe_at": "2026-10-24T19:29:27.328Z"
     },
     "miramar-official-api": {
       "ok": true,
@@ -26,36 +26,31 @@
       "fresh_showtimes": 357,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T23:28:43.631Z",
+      "last_success_at": "2026-10-24T18:59:27.328Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 2237,
+      "showtimes": 2345,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 2237,
+      "fresh_showtimes": 2345,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T23:28:43.631Z",
+      "last_success_at": "2026-10-24T18:59:27.328Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "showtimes-official-api": {
       "ok": false,
       "showtimes": 0,
-      "error": "ShowTimes public API 403 Forbidden",
-      "health": "degraded",
-      "circuit_state": "open",
-      "failure_count": 2,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
-      "last_success_at": null,
-      "last_failure_at": "2026-10-24T23:28:43.631Z",
-      "next_probe_at": "2026-10-24T23:58:43.631Z"
+      "health": "degraded",
+      "error": "Official ShowTimes API returned 403 to scheduled collector; rows loaded from supplied official bootstrap snapshot"
     },
     "spot-huashan-official-schedule": {
       "ok": true,
@@ -66,7 +61,7 @@
       "fresh_showtimes": 79,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T23:28:43.631Z",
+      "last_success_at": "2026-10-24T18:59:27.328Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -76,13 +71,13 @@
       "error": "Eslite 403 Forbidden",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 7,
+      "failure_count": 6,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-10-24T23:28:43.631Z",
-      "next_probe_at": "2026-10-24T23:58:43.631Z"
+      "last_failure_at": "2026-10-24T18:59:27.328Z",
+      "next_probe_at": "2026-10-24T19:29:27.328Z"
     },
     "atmovies-taipei-fallback": {
       "ok": true,
@@ -90,12 +85,12 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-10-25: No showtimes parsed",
+        "t02a11/2026-10-25: No showtimes parsed",
         "t02a01/2026-10-29: No showtimes parsed",
         "t02a01/2026-10-30: No showtimes parsed",
-        "t02a11/2026-10-25: No showtimes parsed",
         "t02a11/2026-10-29: No showtimes parsed",
-        "t02a12/2026-10-25: No showtimes parsed",
         "t02a11/2026-10-30: No showtimes parsed",
+        "t02a12/2026-10-25: No showtimes parsed",
         "t02a12/2026-10-29: No showtimes parsed",
         "t02a12/2026-10-30: No showtimes parsed",
         "t02b14/2026-10-25: No showtimes parsed"
@@ -106,7 +101,7 @@
       "fresh_showtimes": 1229,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-10-24T23:28:43.631Z",
+      "last_success_at": "2026-10-24T18:59:27.328Z",
       "last_failure_at": null,
       "next_probe_at": null
     }
@@ -119,6 +114,8 @@
       "showtimes-official-api",
       "eslite-official-schedule"
     ],
-    "restored_at": "2026-10-24T23:28:43.631Z"
-  }
+    "restored_at": "2026-10-24T18:59:27.328Z"
+  },
+  "showtime_count": 0,
+  "schema": "normalized-movie-references"
 }

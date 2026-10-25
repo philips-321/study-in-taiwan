@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "source": "OpenStreetMap amenity=cinema locations from regional ArcGIS queries",
+  "source": "OpenStreetMap locations enriched with official ShowTimes corporation coordinates",
   "source_url": "https://services-ap1.arcgis.com/iA7fZQOnjY9D67Zx/arcgis/rest/services/OSM_AS_Amenities/FeatureServer/0",
   "attribution": "© OpenStreetMap contributors",
   "retrieved_at": "2026-10-24",
@@ -68,7 +68,8 @@
       "longitude": 120.689843000178,
       "latitude": 24.1404263005785,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "d0408434529e9e36"
     },
     {
       "source_feature_id": 6811672,
@@ -87,7 +88,8 @@
       "longitude": 120.7061046,
       "latitude": 24.252212,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "7f9f49b0f891b19e"
     },
     {
       "source_feature_id": 30664639,
@@ -106,7 +108,8 @@
       "longitude": 120.2202552997,
       "latitude": 22.9467594003456,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "14b8214762818432"
     },
     {
       "source_feature_id": 5796269,
@@ -198,7 +201,8 @@
       "longitude": 120.493476899829,
       "latitude": 22.6731178002719,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "ec4911ca1e68c895"
     },
     {
       "source_feature_id": 5680195,
@@ -235,7 +239,8 @@
       "longitude": 121.540676600162,
       "latitude": 24.9917450003379,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "ca71a7fc4415892a"
     },
     {
       "source_feature_id": 7255494,
@@ -416,7 +421,8 @@
       "longitude": 121.5579044,
       "latitude": 25.0834457,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "b8450eabc146ac0f"
     },
     {
       "source_feature_id": 7341327,
@@ -596,7 +602,8 @@
       "longitude": 121.0271491,
       "latitude": 24.8190871,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "df48f3de96b1afc2"
     },
     {
       "source_feature_id": 35101728,
@@ -633,16 +640,18 @@
       "longitude": 120.4477037,
       "latitude": 23.4855994,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "7b54c922f6cc6f74"
     },
     {
       "source_feature_id": 5832613,
       "name": "秀泰電影院",
-      "city": "chiayi-county",
+      "city": "yunlin",
       "longitude": 120.299278799874,
       "latitude": 23.5700832002693,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "757bc5cac5b68cc9"
     },
     {
       "source_feature_id": 7195628,
@@ -670,7 +679,8 @@
       "longitude": 121.2024298,
       "latitude": 25.0020445,
       "street": null,
-      "house_number": null
+      "house_number": null,
+      "cinema_id": "12d76a4689377275"
     },
     {
       "source_feature_id": 5854803,
@@ -835,6 +845,54 @@
       "street": null,
       "house_number": "3",
       "cinema_id": "1fd71390ad48865f"
+    },
+    {
+      "source_feature_id": "showtimes-corporation-91",
+      "name": "大巨蛋秀泰影城",
+      "city": "taipei",
+      "longitude": 121.5596,
+      "latitude": 25.0424,
+      "street": "台北市信義區光復南路105號2樓",
+      "house_number": null,
+      "cinema_id": "680545a43a5093a6",
+      "source": "showtimes-official-bootstrap"
+    },
+    {
+      "source_feature_id": "showtimes-corporation-59",
+      "name": "台中麗寶秀泰影城",
+      "city": "taichung",
+      "longitude": 120.596,
+      "latitude": 24.284,
+      "street": "台中市后里區月眉東路二段181號3樓",
+      "house_number": null,
+      "cinema_id": "a8e6f550f7aee40b",
+      "source": "showtimes-official-bootstrap"
+    },
+    {
+      "source_feature_id": "showtimes-corporation-84",
+      "name": "高雄岡山秀泰影城",
+      "city": "kaohsiung",
+      "longitude": 120.2963,
+      "latitude": 22.7946,
+      "street": "高雄市岡山區捷安路1巷2號4樓",
+      "house_number": null,
+      "cinema_id": "5c35b8e61739d367",
+      "source": "showtimes-official-bootstrap"
+    },
+    {
+      "source_feature_id": "showtimes-corporation-87",
+      "name": "高雄夢時代秀泰影城",
+      "city": "kaohsiung",
+      "longitude": 120.306946,
+      "latitude": 22.594999,
+      "street": "高雄市前鎮區中華五路789號8樓",
+      "house_number": null,
+      "cinema_id": "b7843607f93e577c",
+      "source": "showtimes-official-bootstrap"
     }
+  ],
+  "sources": [
+    "OpenStreetMap amenity=cinema",
+    "ShowTimes official bootstrap corporation coordinates"
   ]
 }

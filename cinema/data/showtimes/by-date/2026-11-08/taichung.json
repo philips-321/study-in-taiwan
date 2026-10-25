@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "schema": "normalized-movie-references",
+  "city": "taichung",
+  "date": "2026-11-08",
+  "showtimes": [
+    {
+      "id": "fd67380fd0621981",
+      "cinema_id": "d0408434529e9e36",
+      "start_time": "2026-11-08T16:00:00.000+08:00",
+      "hall": "1館9廳",
+      "format": "數位 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4816794",
+      "source_url": "https://www.showtimes.com.tw/cinemas/53/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_f1e434b97271"
+    },
+    {
+      "id": "a4500a0bd459b1fd",
+      "cinema_id": "fc41f9ba7672f9c4",
+      "start_time": "2026-11-08T16:00:00.000+08:00",
+      "hall": "13廳",
+      "format": "數位 日語",
+      "audio_language": "ja",
+      "source_event_id": "4800461",
+      "source_url": "https://www.showtimes.com.tw/cinemas/56/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_4c86ad639cce"
+    }
+  ]
+}

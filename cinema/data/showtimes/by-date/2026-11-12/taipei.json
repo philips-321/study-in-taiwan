@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "schema": "normalized-movie-references",
+  "city": "taipei",
+  "date": "2026-11-12",
+  "showtimes": [
+    {
+      "id": "dcd997b6a82478ae",
+      "cinema_id": "74592dcd403b6eb2",
+      "start_time": "2026-11-12T18:00:00.000+08:00",
+      "hall": "2廳",
+      "format": "數位 日語",
+      "audio_language": "ja",
+      "source_event_id": "4809884",
+      "source_url": "https://www.showtimes.com.tw/cinemas/2/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_3f4fd81440e8"
+    },
+    {
+      "id": "17d0d785c0082184",
+      "cinema_id": "680545a43a5093a6",
+      "start_time": "2026-11-12T18:00:00.000+08:00",
+      "hall": "13廳",
+      "format": "數位 日語",
+      "audio_language": "ja",
+      "source_event_id": "4809892",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_3f4fd81440e8"
+    }
+  ]
+}

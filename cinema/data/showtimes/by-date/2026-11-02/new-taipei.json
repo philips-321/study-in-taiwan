@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "schema": "normalized-movie-references",
+  "city": "new-taipei",
+  "date": "2026-11-02",
+  "showtimes": [
+    {
+      "id": "01ea030431c6c897",
+      "cinema_id": "ac63d7b0f653cff3",
+      "start_time": "2026-11-02T15:30:00.000+08:00",
+      "hall": "10廳",
+      "format": "數位 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4808969",
+      "source_url": "https://www.showtimes.com.tw/cinemas/54/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_86af9fdc3eb1"
+    },
+    {
+      "id": "acb8f421f23405fd",
+      "cinema_id": "6763778191e9e511",
+      "start_time": "2026-11-02T18:00:00.000+08:00",
+      "hall": "1廳",
+      "format": "數位 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4809086",
+      "source_url": "https://www.showtimes.com.tw/cinemas/55/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_86af9fdc3eb1"
+    },
+    {
+      "id": "11a5ed15754a0f60",
+      "cinema_id": "ac63d7b0f653cff3",
+      "start_time": "2026-11-02T19:30:00.000+08:00",
+      "hall": "巨幕1廳",
+      "format": "SCREENX 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4808970",
+      "source_url": "https://www.showtimes.com.tw/cinemas/54/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_86af9fdc3eb1"
+    }
+  ]
+}

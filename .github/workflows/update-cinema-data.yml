@@ -3,8 +3,7 @@ name: Update Taiwan cinema JSON
 on:
   workflow_dispatch:
   schedule:
-    # 05:27 and 17:27 Taiwan time (UTC+8), avoiding common top-of-hour peaks.
-    - cron: '27 21 * * *'
+    # 17:27 Taiwan time (UTC+8), after common midweek schedule-release windows.
     - cron: '27 9 * * *'
   push:
     branches:
@@ -48,6 +47,9 @@ jobs:
           if [ -d cinema/data/showtimes ]; then
             cp -a cinema/data/showtimes/. /tmp/cinema-showtimes-prev/
           fi
+          if [ -f cinema/data/movies/index.json ]; then
+            cp cinema/data/movies/index.json /tmp/cinema-movies-prev.json
+          fi
 
       - name: Probe MOC movie source once
         id: moc_probe
@@ -78,6 +80,7 @@ jobs:
       - name: Restore failed-source last-known-good rows and source health
         env:
           CINEMA_PREVIOUS_SHOWTIMES_DIR: /tmp/cinema-showtimes-prev
+          CINEMA_PREVIOUS_MOVIES_FILE: /tmp/cinema-movies-prev.json
           CINEMA_FORCE_FAILED_SOURCES: ${{ steps.moc_probe.outputs.available == 'true' && '' || 'moc-culture-movie-api' }}
           CINEMA_FORCED_SOURCE_ERROR: MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests
         run: node cinema/scripts/restore-failed-source-fallbacks.mjs
@@ -90,9 +93,11 @@ jobs:
           test -s cinema/data/showtimes/taipei.json
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
+          import path from 'node:path';
           const manifest = JSON.parse(fs.readFileSync('cinema/data/manifest.json', 'utf8'));
           if (!manifest.generated_at || !manifest.cities) throw new Error('Invalid cinema manifest');
           if (!manifest.sources?.cinema_master?.year) throw new Error('Missing cinema master source');
+          const readJson = file => JSON.parse(fs.readFileSync(file, 'utf8'));
           const requiredSources = [
             'moc-culture-movie-api',
             'miramar-official-api',
@@ -113,7 +118,79 @@ jobs:
               throw new Error(`Invalid counts for ${city}`);
             }
           }
+
+          const movieCatalog = readJson('cinema/data/movies/index.json');
+          const movieIds = new Set();
+          for (const movie of movieCatalog.movies || []) {
+            if (!movie.movie_id || movieIds.has(movie.movie_id)) throw new Error(`Missing or duplicate movie_id: ${movie.movie_id}`);
+            movieIds.add(movie.movie_id);
+          }
+          const indexedRows = new Map();
+          const sessionKeys = new Set();
+          const referencedMovieIds = new Set();
+          let totalRows = 0;
+          let referencedMovies = 0;
+          for (const date of fs.readdirSync('cinema/data/showtimes/by-date')) {
+            const dateDir = path.join('cinema/data/showtimes/by-date', date);
+            if (!fs.statSync(dateDir).isDirectory()) continue;
+            for (const filename of fs.readdirSync(dateDir).filter(name => name.endsWith('.json'))) {
+              const city = filename.slice(0, -5);
+              const file = path.join(dateDir, filename);
+              const chunk = readJson(file);
+              if (chunk.version !== 2 || chunk.schema !== 'normalized-movie-references' || chunk.date !== date || chunk.city !== city) {
+                throw new Error(`Invalid normalized date/city chunk: ${file}`);
+              }
+              for (const row of chunk.showtimes || []) {
+                totalRows++;
+                if (!row.cinema_id || !row.start_time) throw new Error(`Screening missing cinema or time: ${file}`);
+                if (row.movie_id) {
+                  if (!movieIds.has(row.movie_id)) throw new Error(`Unknown movie_id ${row.movie_id}: ${file}`);
+                  referencedMovies++;
+                  referencedMovieIds.add(row.movie_id);
+                  for (const field of ['movie_title', 'movie_title_en', 'poster_url', 'genres', 'rating', 'duration_minutes']) {
+                    if (Object.hasOwn(row, field)) throw new Error(`Movie field ${field} repeated on screening in ${file}`);
+                  }
+                } else if (!row.movie_title && !row.movie_title_en) {
+                  throw new Error(`Screening has neither a movie_id nor a title: ${file}`);
+                }
+                const key = [row.cinema_id, row.movie_id || row.movie_title_en || row.movie_title, row.start_time, row.hall || '', row.format || ''].join('|');
+                if (sessionKeys.has(key)) throw new Error(`Duplicate screening session: ${key}`);
+                sessionKeys.add(key);
+                indexedRows.set(`${date}|${city}`, (indexedRows.get(`${date}|${city}`) || 0) + 1);
+              }
+            }
+          }
+          if (totalRows !== manifest.coverage?.showtime_rows) {
+            throw new Error(`Showtime count mismatch: files=${totalRows}, manifest=${manifest.coverage?.showtime_rows}`);
+          }
+          if (referencedMovieIds.size !== manifest.coverage?.unique_title_pairs?.title_pairs) {
+            throw new Error(`Unique movie count mismatch: files=${referencedMovieIds.size}, manifest=${manifest.coverage?.unique_title_pairs?.title_pairs}`);
+          }
+          if (referencedMovieIds.size !== movieIds.size) {
+            throw new Error(`Unreferenced movie records in catalog: referenced=${referencedMovieIds.size}, catalog=${movieIds.size}`);
+          }
+          for (const date of Object.keys(manifest.showtimes_index || {})) {
+            const index = manifest.showtimes_index[date];
+            let dateTotal = 0;
+            for (const [city, count] of Object.entries(index.cities || {})) {
+              const actual = indexedRows.get(`${date}|${city}`) || 0;
+              if (actual !== count) throw new Error(`Date/city count mismatch for ${date}/${city}: files=${actual}, manifest=${count}`);
+              dateTotal += actual;
+            }
+            if (dateTotal !== index.total) throw new Error(`Date total mismatch for ${date}: files=${dateTotal}, manifest=${index.total}`);
+          }
+          for (const [key, count] of indexedRows) {
+            const [date, city] = key.split('|');
+            if (manifest.showtimes_index?.[date]?.cities?.[city] !== count) throw new Error(`Unindexed date/city chunk: ${date}/${city}`);
+          }
+          for (const city of fs.readdirSync('cinema/data/showtimes').filter(name => name.endsWith('.json'))) {
+            const payload = readJson(path.join('cinema/data/showtimes', city));
+            const slug = city.slice(0, -5);
+            if ((payload.showtimes || []).length !== 0) throw new Error(`Per-city duplicate screening rows found in ${city}`);
+            if (payload.showtime_count !== manifest.cities?.[slug]?.showtimes) throw new Error(`City showtime count mismatch for ${slug}`);
+          }
           console.log(JSON.stringify({ cities: manifest.cities, sources: manifest.sources.showtimes }, null, 2));
+          console.log(`Validated ${totalRows} screening rows, ${referencedMovieIds.size} referenced films, and ${sessionKeys.size} unique sessions.`);
           NODE
 
       - name: Commit changed JSON only

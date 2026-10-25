@@ -1,5 +1,6 @@
 {
-  "version": 1,
+  "version": 2,
+  "schema": "normalized-movie-references",
   "city": "new-taipei",
   "date": "2026-12-26",
   "showtimes": [
@@ -7,39 +8,29 @@
       "id": "d05781e84cd0faee",
       "cinema_id": "f69326db9dc60c8c",
       "cinema_name": "府中15",
-      "movie_title": "【府中15】紀錄片放映院《嘰嘰王子：宇宙無敵》",
-      "movie_title_en": null,
       "start_time": "2026-12-26T10:30:00+08:00",
       "end_time": "2026-12-26T12:00:00+08:00",
-      "hall": null,
-      "format": null,
-      "audio_language": null,
-      "subtitles": null,
-      "duration_minutes": null,
-      "price": "",
       "on_sales": "Y",
       "source_event_id": "6ad7a1c726b3245efc7536e9",
       "source_url": "https://www.opentix.life/program/2110564668282400769",
-      "source": "moc-culture-movie-api"
+      "source": "moc-culture-movie-api",
+      "source_role": "last-known-good;last-known-good;last-known-good",
+      "freshness": "last-known-good",
+      "movie_id": "m_372face756ad"
     },
     {
       "id": "935ca8121aa0b2a7",
       "cinema_id": "f69326db9dc60c8c",
       "cinema_name": "府中15",
-      "movie_title": "【府中15】紀錄片放映院《人生海海》",
-      "movie_title_en": null,
       "start_time": "2026-12-26T16:20:00+08:00",
       "end_time": "2026-12-26T17:30:00+08:00",
-      "hall": null,
-      "format": null,
-      "audio_language": null,
-      "subtitles": null,
-      "duration_minutes": null,
-      "price": "",
       "on_sales": "Y",
       "source_event_id": "6ad7a1c726b3245efc7536dc",
       "source_url": "https://www.opentix.life/program/2110293362307796993",
-      "source": "moc-culture-movie-api"
+      "source": "moc-culture-movie-api",
+      "source_role": "last-known-good;last-known-good;last-known-good",
+      "freshness": "last-known-good",
+      "movie_id": "m_f50c014e39b7"
     }
   ]
 }

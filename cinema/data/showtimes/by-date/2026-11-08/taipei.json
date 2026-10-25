@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "schema": "normalized-movie-references",
+  "city": "taipei",
+  "date": "2026-11-08",
+  "showtimes": [
+    {
+      "id": "4236254ce80e8912",
+      "cinema_id": "74592dcd403b6eb2",
+      "start_time": "2026-11-08T16:00:00.000+08:00",
+      "hall": "3廳",
+      "format": "數位 日語",
+      "audio_language": "ja",
+      "source_event_id": "4800444",
+      "source_url": "https://www.showtimes.com.tw/cinemas/2/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_4c86ad639cce"
+    },
+    {
+      "id": "3895aba3ab2ae66c",
+      "cinema_id": "74592dcd403b6eb2",
+      "start_time": "2026-11-08T16:00:00.000+08:00",
+      "hall": "4廳",
+      "format": "數位 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4815770",
+      "source_url": "https://www.showtimes.com.tw/cinemas/2/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_f1e434b97271"
+    },
+    {
+      "id": "3d6a40aa1ce61b0b",
+      "cinema_id": "680545a43a5093a6",
+      "start_time": "2026-11-08T16:00:00.000+08:00",
+      "hall": "13廳",
+      "format": "數位 日語",
+      "audio_language": "ja",
+      "source_event_id": "4800458",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_4c86ad639cce"
+    },
+    {
+      "id": "fe5cee1588c2de64",
+      "cinema_id": "680545a43a5093a6",
+      "start_time": "2026-11-08T16:00:00.000+08:00",
+      "hall": "8廳",
+      "format": "數位 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4815767",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_f1e434b97271"
+    }
+  ]
+}

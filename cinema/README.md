@@ -6,17 +6,37 @@ Read this file first before changing the cinema pipeline.
 
 `cinema/index.html` is the public cinema browser. It loads the fixed per-city JSON files below `data/` and individual OSM venue points from `data/locations.json`. Pins sit at their source coordinates, never at a city center; matched pins open the cinema record and the selected day's screenings. BAMID names, company, address, phone, and screen count are shown when available. A location can include an optional `image_url` for a sourced building photo.
 
-The location button puts the map at the browser's exact reported coordinates (zoom 15.6) and selects the nearest city for the list. The date navigator includes only dates from Taiwan's current date onward; the previous-date control is locked. Movie, audio, and explicitly verified subtitle filters remain available, as do English, Traditional Chinese, Indonesian, Japanese, Korean, Vietnamese, and Thai UI languages and dark/light themes. Keep `subtitles: null` distinct from an explicit subtitle language: null means the source did not provide verified subtitle information.
+The location button puts the map at the browser's exact reported coordinates (zoom 15.6) and selects the nearest city for the list. The date navigator includes only dates from Taiwan's current date onward; the previous-date control is locked. Search matches Chinese and international movie titles, including HTML-encoded punctuation and curly/straight apostrophes. A film title opens a detail card with the catalog poster, international title, genres, and age rating when supplied; missing metadata is labeled as unavailable. Keep `subtitles: null` distinct from an explicit subtitle language: null means the source did not provide verified subtitle information. Movie, audio, and explicitly verified subtitle filters remain available, as do English, Traditional Chinese, Indonesian, Japanese, Korean, Vietnamese, and Thai UI languages and dark/light themes.
 
-The annual BAMID master has no coordinates. The current OSM snapshot has 88 individual map points, 39 linked to 107 BAMID records by venue name or address. The rest are OSM cinema points without a linked schedule record; BAMID venues still lacking a verified point remain in the address list without a pin. The points are a useful visible baseline, not full coverage. OSM attribution is shown on the map. Building photos are only shown when a sourced image URL exists; no photos are present in the current BAMID data.
+The annual BAMID master has no coordinates. The current location snapshot has 92 individual map points, 53 linked to 107 BAMID records. The rest are OSM cinema points without a linked schedule record; BAMID venues still lacking a verified point remain in the address list without a pin. The points are a useful visible baseline, not full coverage. OSM attribution is shown on the map. Building photos are only shown when a sourced image URL exists; no photos are present in the current BAMID data.
 
-The current cinema dataset has `movie_title` and sometimes `movie_title_en`; it does not contain per-country title translations. The UI labels `movie_title_en` as the international title when supplied and does not derive localized titles from the interface language. Explicit subtitle coverage is sparse, so subtitle search must leave unknown values unclassified rather than inferring them from audio language.
+The current cinema dataset has `movie_title` and sometimes `movie_title_en`; it does not contain per-country title translations. The UI labels `movie_title_en` as the international title when supplied and does not derive localized titles from the interface language. Search normalizes HTML entities, Unicode punctuation, and case on both the query and titles. Explicit subtitle coverage is sparse, so subtitle search must leave unknown values unclassified rather than inferring them from audio language.
 
 ShowTimes ticket prices are stored separately under `data/ticket-prices/`, split by city. The browser loads a city's small price file only when a visitor opens a priced cinema's ticket-price section. These are a dated ShowTimes bootstrap snapshot, currently covering 15 秀泰 branches; they are not live checkout quotes and do not cover other chains.
 
 This project is an ongoing maintained data pipeline, not a project with a meaningful completion percentage. Upstream cinema sites will change and adapters will need patching over time.
 
 ## Goal
+
+## Chat handoff and routine ShowTimes update
+
+For a new chat, read this README first, then inspect the current git branch and `data/manifest.json`. Do not restart source discovery until checking the source notes below.
+
+ShowTimes' bootstrap contains corporation, venue, event, and program data. Programs include international titles, genre codes, Taiwan age-rating codes, and portrait poster artwork. The browser reads the normalized `data/movies/index.json` catalog once; date/city session rows refer to movies with `movie_id`.
+
+To refresh the saved ShowTimes snapshot when the live collector is still blocked in GitHub Actions:
+
+1. Fetch `https://capi.showtimes.com.tw/4/app/bootstrap` into a temporary file; do not commit the raw bootstrap payload.
+2. Run `node cinema/scripts/import-showtimes-bootstrap.mjs /path/to/bootstrap.json` from the repository root.
+3. The importer writes active events into `data/showtimes/by-date/<date>/<city>.json`, matches the 15 branches to BAMID cinema IDs, and updates `manifest.json`. It intentionally does not duplicate these ShowTimes events into the larger per-city source snapshots.
+4. The importer also writes the small program catalog to `data/movie-metadata/showtimes.json` and enriches other providers' rows only when an international or Chinese title matches exactly and uniquely. Unmatched and ambiguous titles are left alone.
+5. Check date coverage, `poster_url`, `genres`, `rating`, source/freshness metadata, JSON validity, and `git diff --check` before committing.
+
+The browser loads only the selected date/city chunks and the small movie catalog. Poster thumbnails use the official ShowTimes CDN with `loading="lazy"`; the detail card loads the poster when opened. Do not download or embed image bytes in JSON. Missing posters remain absent. Genre codes are localized in the UI. Age-rating codes are `g`, `p`, `pg12`, `pg15`, and `r`; `null` means unavailable. These ShowTimes event records do not declare subtitle languages, so leave `subtitles: null`.
+
+Coverage fields ending in `_rows` count individual screenings. In the normalized 2026-10-24 snapshot, 10,070 screenings refer to 293 films. Of those films, 93 have an international title, 71 have a poster (64 distinct poster URLs), 65 have genres (16 genre codes), and 68 have a recognized age rating. Explicit subtitles appear on 79 screenings. Exact, unambiguous matching against ShowTimes program titles filled metadata on 3,393 screening rows from other providers. Remaining nulls are unknown, not guessed. Ticket price snapshots cover 15 ShowTimes branches; other chains need their own verified sources.
+
+When the scheduled update workflow runs, `restore-failed-source-fallbacks.mjs` must read previous `by-date` chunks as well as per-city snapshots. This preserves imported ShowTimes rows during a collector 403 without keeping a second full copy in per-city JSON. Do not remove this fallback path or make the importer write ShowTimes rows into both storage layouts.
 
 Maintain current Taiwan cinema/showtime data as fixed per-city JSON files for `study-in-taiwan.com`, without Cloudflare D1 while static JSON is sufficient.
 
@@ -31,7 +51,11 @@ cinema/data/ticket-prices/index.json
 cinema/data/ticket-prices/<city>.json
 ```
 
-The per-city showtime files remain complete current snapshots for collection and fallback workflows. The browser uses the smaller date-and-city chunks listed in `manifest.json` and loads only the selected date. These are regenerated on each refresh, not retained as dated archives. Git history is the audit/history layer.
+`data/showtimes/by-date/<date>/<city>.json` is the only durable store for screening rows. Each screening stores a `movie_id`; the film's titles, poster URL, genres, age rating, runtime, and metadata sources live once in `data/movies/index.json`. Cinema names resolve through `cinema_id`. Per-city `data/showtimes/<city>.json` files contain source health and a count only; they must not duplicate screening rows. The browser reads only the selected date/city chunks and resolves movie metadata through the catalog, avoiding per-screening copies in both JSON and browser row objects.
+
+On refresh, `restore-failed-source-fallbacks.mjs` reads previous date/city chunks and their matching movie catalog to retain future last-known-good records while a collector is blocked. The workflow snapshots both before updating. Generated date chunks are refreshed in place, not retained as dated archives; Git history is the audit/history layer. `movie_id` is derived from the normalized primary title; keep that identity stable when importing and deduplicating sessions. Distinct start times, halls, formats, and cinemas remain separate screening rows.
+
+The 2026-10-24 normalization pass retained all 10,070 screening rows across 293 referenced movie identities. The catalog contains only films referenced by a screening, not extra program listings with no current showtime. It consolidated repeated poster URLs to 64 and repeated the movie metadata only once per catalog entry. JSON storage for showtime files dropped from about 13.7 MB to about 5.2 MB including the catalog and small city status files. These byte savings reduce transfer and parsed row overhead; actual browser memory also depends on map tiles, images, and rendering.
 
 Main updater:
 
@@ -45,7 +69,7 @@ Scheduled workflow:
 .github/workflows/update-cinema-data.yml
 ```
 
-Schedule: approximately 05:27 and 17:27 Asia/Taipei, plus manual `workflow_dispatch`.
+Schedule: daily at 17:27 Asia/Taipei, plus manual `workflow_dispatch`.
 
 ## Source status summary
 
@@ -56,7 +80,7 @@ Schedule: approximately 05:27 and 17:27 Asia/Taipei, plus manual `workflow_dispa
 | Miramar / 美麗華大直 | Official booking API | WORKING | Best source quality; direct structured JSON |
 | Ambassador / 國賓 | Official TheaterList + per-theater/per-date HTML | WORKING | Parallel fetch + retry; title parser fixed |
 | SPOT Huashan / 光點華山 | Official schedule HTML table | WORKING | 79 rows in verified run; preserves C/E subtitle metadata |
-| ShowTimes / 秀泰 | Official cinema HTML pages | BLOCKED from GitHub Actions | HTTP 403 on both tested Taipei cinemas |
+| ShowTimes / 秀泰 | Official bootstrap JSON + cinema pages | Live bootstrap path available; scheduled GitHub collector currently BLOCKED | Imported 5,341 active screenings from the supplied official bootstrap, 2026-10-24 to 2026-12-22; labeled last-known-good |
 | Eslite Art House / 誠品電影院 | Official schedule HTML | BLOCKED from GitHub Actions | Parser exists, but runner gets HTTP 403 |
 | AtMovies Taipei fallback | Aggregator HTML by cinema/date | WORKING fallback | Used only for gaps where official automation is blocked/incomplete |
 | Vie Show / 威秀 + MUVIE | Official automation not yet integrated | FALLBACK ACTIVE | AtMovies fallback currently covers selected Taipei branches |
@@ -265,13 +289,23 @@ Official URL pattern:
 https://www.showtimes.com.tw/cinemas/<id>/
 ```
 
-Parser can extract:
+The page parser can extract:
 
 - movie title
 - date
 - session time
 - format
 - explicit spoken language label when present
+
+The public bootstrap endpoint is:
+
+```text
+https://capi.showtimes.com.tw/4/app/bootstrap
+```
+
+It includes all 15 ShowTimes corporations, venues, active events, and program records with alternative/international titles, genre codes, age-rating codes, runtimes, and poster URLs. The current imported snapshot contains 5,341 distinct active events across 15 branches and 10 cities, dated 2026-10-24 through 2026-12-22. It is a dated snapshot, not a guarantee that every future schedule is already published.
+
+Use `cinema/scripts/import-showtimes-bootstrap.mjs` to refresh the static snapshot from a downloaded bootstrap JSON. Keep ShowTimes events in date/city chunks only; the fallback workflow also restores from those chunks.
 
 Problem:
 
@@ -393,6 +427,8 @@ This adapter is fallback only. Official sources should replace its records when 
 
 Current state: selected Taipei branches are served through the AtMovies fallback above.
 
+Official-source check, 2026-10-24: Vie Show publishes its own [Show Times page](https://www.vscinemas.com.tw/ShowTimes/) and says its schedule is a rolling window: Friday releases generally open from Wednesday for Friday through the following Thursday; some Wednesday/Thursday releases open separately earlier in the week. Treat that horizon as the expected official coverage instead of expecting months of dates from this source. The official site directory also exposes a `vsweb/api/GetLstDicCinema/` endpoint path, consistent with the venue-list API used by the existing reference scraper. This is a lead to verify in a browser session, not yet a confirmed endpoint contract or reliable server-side collector.
+
 A useful reference implementation was found in the public `RabbitKM/cinema-showtime-pipeline` project. Its Vie Show scraper uses Playwright, opens the official site, then calls official endpoints inside the browser session such as:
 
 ```text
@@ -402,7 +438,7 @@ ShowTimes/GetShowTimes
 
 The reason it uses a browser session is the official site/Akamai protection.
 
-This approach has NOT yet been integrated into this repo because the current GitHub Actions pipeline is intentionally lightweight Node/static JSON and we have not yet decided to add Playwright/Chrome just for Vie Show.
+Next step: inspect the official page's actual XHR request and response in a browser session, then test the endpoint from GitHub Actions without browser automation. Keep this adapter marked unavailable until direct access is proven; adding Playwright/Chrome solely for this source has a runtime and memory cost. Do not infer that the public directory listing means the schedule API is directly accessible.
 
 Do not assume the direct endpoint will work server-side without the browser cookies/session.
 
@@ -516,7 +552,7 @@ spot-huashan-official-schedule
 atmovies-taipei-fallback
 ```
 
-The ShowTimes JSON feed was verified from this workspace and contains nationwide corporation/event/program data. GitHub Actions currently receives HTTP 403 from the API, while the public feed allows cross-origin browser requests; the cinema page uses it live when the saved feed is degraded. Next recommended health improvement: add count-drop/freshness checks so a normally large source suddenly returning zero or a tiny fraction of its usual rows is flagged as degraded even if the parser technically returns successfully.
+The ShowTimes JSON feed was verified from this workspace and contains nationwide corporation/event/program data. GitHub Actions currently receives HTTP 403 from the API, while the public feed allows cross-origin browser requests; the cinema page uses it live when the saved feed is degraded. The imported static snapshot is retained through failed refreshes using date/city chunks. Next recommended health improvement: add count-drop/freshness checks so a normally large source suddenly returning zero or a tiny fraction of its usual rows is flagged as degraded even if the parser technically returns successfully.
 
 ## Last verified workflow state
 
@@ -563,14 +599,13 @@ b7d0bce  Parallelize Taipei fallback requests
 
 For a new ChatGPT/Codex session, continue in this order instead of restarting source research:
 
-1. Validate SPOT Huashan output content, especially that `C/E` becomes `subtitles: ["zh", "en"]` in generated JSON.
-2. Add source freshness/count-drop health checks.
-3. Investigate in89 Ximending `TheaterId=3` network calls and identify the actual data endpoint.
-4. Investigate whether Vie Show official endpoints can be used safely without Playwright; if not, decide whether adding a browser-based collector is worth the dependency/cost.
-5. Keep Eslite and ShowTimes official adapters as explicit 403 failures; do not waste time reparsing until HTTP access itself changes.
-6. Continue improving deterministic BAMID identity aliases where real active cinemas remain unmatched.
-7. Expand Taiwan-wide sources after Taipei source quality is solid enough for recommendation use.
-8. Wire verified data into the guest-facing recommendation UI only using `recommendation_eligible=true` or separate current verification.
+1. Find a trustworthy address-to-coordinate source for the 54 BAMID cinema records still missing a linked map pin. Do not bulk-apply low-confidence city or postcode geocodes.
+2. Add verified showtime collectors for Vie Show/MUVIE, in89, Eslite, Broadway, Global, and regional cinemas; retain current per-source failure state and date/city last-known-good fallback.
+3. Improve poster, genre, rating, and international-title coverage using exact, unique source matches only. Do not infer movie metadata from similar titles.
+4. Improve verified subtitle coverage from source-declared labels only; never infer subtitles from audio language.
+5. Add source freshness/count-drop health checks so a normally large source suddenly returning zero or a small fraction of its usual rows is flagged as degraded.
+6. Keep ticket prices sourced per brand and branch. Prices vary by venue, format, weekday, and promotions; do not copy a chain-wide generic amount into branch records.
+7. Keep current source-quality and operational-status requirements before wiring data into guest-facing recommendations.
 
 ## Canonical project tracking
 

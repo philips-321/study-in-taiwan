@@ -10,6 +10,8 @@
   const subtitleSelect = $('#subtitle-filter');
   const audioSelect = $('#audio-filter');
   const brandSelect = $('#brand-filter');
+  const movieDialog = document.createElement('dialog');
+  movieDialog.className = 'movie-details-dialog';
   const cityNames = {
     taipei:'Taipei City','new-taipei':'New Taipei City',keelung:'Keelung City',taoyuan:'Taoyuan City',
     'hsinchu-city':'Hsinchu City','hsinchu-county':'Hsinchu County',miaoli:'Miaoli County',taichung:'Taichung City',
@@ -56,6 +58,8 @@
   let selectedCinemaId = '';
   let availableDates = [];
   let showtimesDateIndex = {};
+  let movieById = new Map();
+  let movieByTitle = new Map();
   let ticketPriceIndex = {cinemas:{}};
   const ticketPricesByCity = {};
   const ticketPriceRequests = {};
@@ -71,6 +75,19 @@
   let activePopup = null;
   let userPosition = null;
 
+  function movieFor(show) {
+    if (show?.movie_id && movieById.has(show.movie_id)) return movieById.get(show.movie_id);
+    for (const title of [show?.movie_title, show?.movie_title_en, ...(show?.international_titles || [])]) {
+      const match = movieByTitle.get(normalizeSearch(title));
+      if (match) return match;
+    }
+    return show;
+  }
+  function showtimeKey(show) {
+    const movie = movieFor(show);
+    return [show.cinema_id, normalizeSearch(movie.movie_title || movie.movie_title_en), show.start_time, show.hall || '', show.format || ''].join('|');
+  }
+
   const ui = (key) => localeInfo[language].ui[key] || localeInfo.en.ui[key] || key;
   const themeLabels = {
     en:['Switch to light mode','Switch to dark mode'], 'zh-TW':['切換至淺色模式','切換至深色模式'],
@@ -81,7 +98,7 @@
   const ticketPriceLabels={en:{title:'Ticket prices · TWD',open:'Tap to load prices',loading:'Loading prices…',unavailable:'Prices are unavailable.'},id:{title:'Harga tiket · TWD',open:'Ketuk untuk memuat harga',loading:'Memuat harga…',unavailable:'Harga tidak tersedia.'},'zh-TW':{title:'票價 · TWD',open:'點擊載入票價',loading:'正在載入票價…',unavailable:'目前沒有票價資料。'},ja:{title:'チケット料金 · TWD',open:'タップして料金を表示',loading:'料金を読み込み中…',unavailable:'料金を取得できません。'},ko:{title:'티켓 가격 · TWD',open:'눌러서 가격 보기',loading:'가격 불러오는 중…',unavailable:'가격 정보를 사용할 수 없습니다.'},vi:{title:'Giá vé · TWD',open:'Nhấn để tải giá vé',loading:'Đang tải giá vé…',unavailable:'Không có thông tin giá vé.'},th:{title:'ราคาตั๋ว · TWD',open:'แตะเพื่อโหลดราคา',loading:'กำลังโหลดราคา…',unavailable:'ไม่มีข้อมูลราคา'}};
   const ticketTypeLabels={'全票':{en:'Full ticket',id:'Tiket reguler','zh-TW':'全票',ja:'一般',ko:'일반',vi:'Vé thường',th:'ตั๋วทั่วไป'},'優待票':{en:'Concession',id:'Tiket diskon','zh-TW':'優待票',ja:'割引',ko:'할인',vi:'Vé ưu đãi',th:'ตั๋วส่วนลด'},'早場票':{en:'Matinee',id:'Tiket pertunjukan awal','zh-TW':'早場票',ja:'早朝割引',ko:'조조 할인',vi:'Vé suất sớm',th:'ตั๋วรอบเช้า'},'愛心票':{en:'Accessibility concession',id:'Tiket konsesi khusus','zh-TW':'愛心票',ja:'福祉割引',ko:'우대 할인',vi:'Vé ưu đãi đặc biệt',th:'ตั๋วส่วนลดพิเศษ'}};
   const brandUi={en:{label:'Cinema brand',all:'All brands',vieshow:'VieShow group',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'Independent / local'},id:{label:'Brand bioskop',all:'Semua brand',vieshow:'Grup VieShow',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'Lokal / independen'},'zh-TW':{label:'影城品牌',all:'所有品牌',vieshow:'VieShow 集團',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'其他／在地影城'},ja:{label:'映画館ブランド',all:'すべてのブランド',vieshow:'VieShow グループ',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'その他／地域館'},ko:{label:'극장 브랜드',all:'모든 브랜드',vieshow:'VieShow 그룹',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'기타 / 지역 극장'},vi:{label:'Thương hiệu rạp',all:'Tất cả thương hiệu',vieshow:'Nhóm VieShow',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'Rạp địa phương / độc lập'},th:{label:'แบรนด์โรงภาพยนตร์',all:'ทุกแบรนด์',vieshow:'กลุ่ม VieShow',vieshowStandard:'VieShow Cinemas',muvie:'MUVIE CINEMAS',other:'โรงภาพยนตร์ท้องถิ่น'}};
-  const sheetControlLabels={en:{hide:'Hide list · show full map',half:'open list'},id:{hide:'Tutup daftar · tampilkan peta',half:'buka daftar'},'zh-TW':{hide:'收合清單・顯示完整地圖',half:'開啟清單'},ja:{hide:'リストを閉じて地図を表示',half:'リストを開く'},ko:{hide:'목록 닫기 · 전체 지도 보기',half:'목록 열기'},vi:{hide:'Ẩn danh sách · hiện bản đồ',half:'mở danh sách'},th:{hide:'ซ่อนรายการ · แสดงแผนที่',half:'เปิดรายการ'}};
+  const sheetControlLabels={en:{hide:'Hide list · show full map',half:'Open list'},id:{hide:'Tutup daftar · tampilkan peta',half:'buka daftar'},'zh-TW':{hide:'收合清單・顯示完整地圖',half:'開啟清單'},ja:{hide:'リストを閉じて地図を表示',half:'リストを開く'},ko:{hide:'목록 닫기 · 전체 지도 보기',half:'목록 열기'},vi:{hide:'Ẩn danh sách · hiện bản đồ',half:'mở danh sách'},th:{hide:'ซ่อนรายการ · แสดงแผนที่',half:'เปิดรายการ'}};
   const subtitleCoverageLabels = {
     en:(n,total)=>`${n} of ${total} screenings have explicit subtitle details.`,
     'zh-TW':(n,total)=>`${total} 場次中有 ${n} 場由來源明確提供字幕資訊。`,
@@ -102,6 +119,62 @@
     return String(value ?? '').replace(/&(?:amp|quot|apos|#39|rsquo|lsquo|rdquo|ldquo|ndash|mdash|hellip);/g,(entity)=>({
       '&amp;':'&','&quot;':'"','&apos;':"'",'&#39;':"'",'&rsquo;':'’','&lsquo;':'‘','&rdquo;':'”','&ldquo;':'“','&ndash;':'–','&mdash;':'—','&hellip;':'…'
     }[entity]||entity));
+  }
+  function normalizeSearch(value) {
+    return decodeEntities(value).normalize('NFKC').toLocaleLowerCase()
+      .replace(/[’‘`´]/g,"'").replace(/[“”]/g,'"').replace(/[‐‑‒–—]/g,'-')
+      .replace(/[\s\u00a0]+/g,' ').trim();
+  }
+  const genreNames={
+    en:{action:'Action',adventure:'Adventure',animation:'Animation',comedy:'Comedy',concert:'Concert',documentary:'Documentary',domestic:'Local film',drama:'Drama',fantasy:'Fantasy',history:'History',horror:'Horror',livestream:'Live stream',music:'Music',mystery:'Mystery',romance:'Romance', 'science fiction':'Science fiction',thriller:'Thriller'},
+    id:{action:'Aksi',adventure:'Petualangan',animation:'Animasi',comedy:'Komedi',concert:'Konser',documentary:'Dokumenter',domestic:'Film lokal',drama:'Drama',fantasy:'Fantasi',history:'Sejarah',horror:'Horor',livestream:'Siaran langsung',music:'Musik',mystery:'Misteri',romance:'Romantis','science fiction':'Fiksi ilmiah',thriller:'Thriller'},
+    'zh-TW':{action:'動作',adventure:'冒險',animation:'動畫',comedy:'喜劇',concert:'演唱會',documentary:'紀錄片',domestic:'國片',drama:'劇情',fantasy:'奇幻',history:'歷史',horror:'恐怖',livestream:'直播',music:'音樂',mystery:'懸疑',romance:'愛情','science fiction':'科幻',thriller:'驚悚'}
+  };
+  const ratingNames={
+    en:{g:'G · General',p:'P · Guidance',pg12:'PG 12',pg15:'PG 15',r:'R · 18+'},
+    id:{g:'G · Umum',p:'P · Bimbingan',pg12:'PG 12',pg15:'PG 15',r:'R · 18+'},
+    'zh-TW':{g:'普遍級 G',p:'保護級 P',pg12:'輔12級',pg15:'輔15級',r:'限制級 R · 18+'}
+  };
+  const ageRatingTitles={en:'Age rating',id:'Batas usia','zh-TW':'電影分級',ja:'年齢区分',ko:'관람 등급',vi:'Phân loại độ tuổi',th:'ระดับอายุ'};
+  function displayGenre(value) {
+    const code=String(value||'').trim().toLowerCase();
+    return (genreNames[language]||genreNames.en)[code]||genreNames.en[code]||code.replace(/\b\w/g,c=>c.toUpperCase());
+  }
+  function displayRating(value) {
+    const raw=String(value||'').normalize('NFKC').toLowerCase().replace(/[\s　]/g,'');
+    const aliases={普:'g',普遍級:'g',g:'g',護:'p',保護級:'p',p:'p',輔12:'pg12',輔12級:'pg12',pg12:'pg12',輔15:'pg15',輔15級:'pg15',pg15:'pg15',限制級:'r',r:'r'};
+    const code=aliases[raw]||raw;
+    return (ratingNames[language]||ratingNames.en)[code]||ratingNames.en[code]||'';
+  }
+  const movieDetailLabels={
+    en:{details:'Movie details',genres:'Genres',rating:'Age rating',unknown:'Not listed',close:'Close'},
+    id:{details:'Detail film',genres:'Genre',rating:'Rating usia',unknown:'Belum tersedia',close:'Tutup'},
+    'zh-TW':{details:'電影資訊',genres:'類型',rating:'電影分級',unknown:'未提供',close:'關閉'},
+    ja:{details:'作品情報',genres:'ジャンル',rating:'年齢区分',unknown:'未掲載',close:'閉じる'},
+    ko:{details:'영화 정보',genres:'장르',rating:'관람 등급',unknown:'정보 없음',close:'닫기'},
+    vi:{details:'Thông tin phim',genres:'Thể loại',rating:'Độ tuổi',unknown:'Chưa có',close:'Đóng'},
+    th:{details:'ข้อมูลภาพยนตร์',genres:'ประเภท',rating:'ระดับอายุ',unknown:'ไม่มีข้อมูล',close:'ปิด'}
+  };
+  function movieDetailsMarkup(movie) {
+    const labels=movieDetailLabels[language]||movieDetailLabels.en;
+    const title=decodeEntities(movie.movie_title||movie.movie_title_en||'Untitled film');
+    const alternate=decodeEntities(movie.movie_title_en||'');
+    const aliases=[...new Set([...(movie.international_titles||[]),alternate].filter(value=>value&&normalizeSearch(value)!==normalizeSearch(title)))];
+    const posterUrl=safeUrl(movie.poster_url);
+    const poster=posterUrl?`<img class="movie-detail-poster" src="${esc(posterUrl)}" alt="${esc(title)}" decoding="async">`:`<div class="movie-detail-poster-empty">${esc(labels.unknown)}</div>`;
+    const genres=[...new Set(Array.isArray(movie.genres)?movie.genres:[])].map(displayGenre);
+    const rating=displayRating(movie.rating);
+    const conflict=Array.isArray(movie.rating_conflict)&&movie.rating_conflict.length?`<small class="movie-rating-conflict">${esc(movie.rating_conflict.map(displayRating).filter(Boolean).join(' · '))}</small>`:'';
+    return `<button class="movie-detail-close" type="button" data-movie-close aria-label="${esc(labels.close)}" title="${esc(labels.close)}">×</button><div class="movie-detail-layout">${poster}<div class="movie-detail-copy"><div class="movie-detail-eyebrow">${esc(labels.details)}</div><h2>${esc(title)}</h2>${aliases.map(alias=>`<div class="movie-detail-alias">${esc(alias)}</div>`).join('')}<div class="movie-detail-field"><b>${esc(labels.genres)}</b><div class="movie-detail-tags">${genres.length?genres.map(genre=>`<span class="tag genre-tag">${esc(genre)}</span>`).join(''):`<span class="movie-detail-unknown">${esc(labels.unknown)}</span>`}</div></div><div class="movie-detail-field"><b>${esc(labels.rating)}</b><span class="tag rating-tag" title="${esc(ageRatingTitles[language]||ageRatingTitles.en)}">${esc(rating||labels.unknown)}</span>${conflict}</div></div></div>`;
+  }
+  function openMovieDetails(movieId) {
+    const movie=movieById.get(movieId);
+    if(!movie)return;
+    movieDialog.innerHTML=movieDetailsMarkup(movie);
+    movieDialog.querySelector('.movie-detail-poster')?.addEventListener('error',event=>{
+      const fallback=document.createElement('div');fallback.className='movie-detail-poster-empty';fallback.textContent=(movieDetailLabels[language]||movieDetailLabels.en).unknown;event.currentTarget.replaceWith(fallback);
+    },{once:true});
+    movieDialog.showModal();
   }
   function safeUrl(value) {
     try { const url=new URL(value); return url.protocol === 'https:' ? url.href : ''; } catch { return ''; }
@@ -178,7 +251,7 @@
     const addr=address?`<span class="nearby-note">${esc(address)}</span>`:'';
     const image=safeUrl(cinema?.image_url||cinema?.photo_url||cinema?.image);
     const photo=image?`<img class="popup-photo" src="${esc(image)}" alt="${esc(cinema?.name_zh||location.name||'Cinema building')}" loading="lazy">`:'';
-    const filmGroups=new Map();shows.forEach(show=>{const title=show.movie_title||'Untitled screening';if(!filmGroups.has(title))filmGroups.set(title,[]);filmGroups.get(title).push(show);});
+    const filmGroups=new Map();shows.forEach(show=>{const movie=movieFor(show),title=movie.movie_title||movie.movie_title_en||'Untitled screening';if(!filmGroups.has(title))filmGroups.set(title,[]);filmGroups.get(title).push(show);});
     const filmRows=[...filmGroups.entries()].map(([title,rows])=>{
       const audios=[...new Set(rows.map(show=>normalizeLang(show.audio_language)).filter(Boolean))].map(code=>languageNames[code]||code);
       const subtitles=[...new Set(rows.flatMap(show=>Array.isArray(show.subtitles)?show.subtitles.map(code=>languageNames[normalizeLang(code)]||code):[]))];
@@ -331,7 +404,7 @@
           if(!program||!session||session.date<today||!program.name)continue;
           const format=event.meta?.format||null,audio=aliases.find(([label])=>format?.endsWith(label))?.[1]||null,duration=Number(program.duration);
           const date=byDate[session.date]||={};const shows=date[city]||=[];
-          shows.push({id:`showtimes-${event.id}`,cinema_id:cinema.id,cinema_name:corporation.name,movie_title:program.name,movie_title_en:program.nameAlternative||null,start_time:`${session.date}T${session.time}:00+08:00`,end_time:null,hall:rooms.get(Number(event.venueId))||null,format,audio_language:audio,subtitles:null,duration_minutes:Number.isFinite(duration)&&duration>0?Math.round(duration/60):null,source_event_id:String(event.id),source_url:`https://www.showtimes.com.tw/cinemas/${corporation.id}/`,source:'showtimes-official-api'});
+          shows.push({id:`showtimes-${event.id}`,cinema_id:cinema.id,cinema_name:corporation.name,movie_title:program.name,movie_title_en:program.nameAlternative||null,poster_url:program.coverImagePortrait?.url||null,genres:Array.isArray(program.genres)?program.genres:[],rating:program.rating||null,start_time:`${session.date}T${session.time}:00+08:00`,end_time:null,hall:rooms.get(Number(event.venueId))||null,format,audio_language:audio,subtitles:null,duration_minutes:Number.isFinite(duration)&&duration>0?Math.round(duration/60):null,source_event_id:String(event.id),source_url:`https://www.showtimes.com.tw/cinemas/${corporation.id}/`,source:'showtimes-official-api'});
         }
       }
       liveShowtimesByCityDate=byDate;
@@ -353,8 +426,8 @@
     if(sequence!==dateLoadSequence||date!==dateSelect.value)return;
     showsByCity=Object.fromEntries(loaded);
     for(const [slug,live] of Object.entries(liveShowtimesByCityDate[date]||{})){
-      const data=showsByCity[slug]||{showtimes:[]},keys=new Set(data.showtimes.map(show=>[show.cinema_id,show.movie_title,show.start_time,show.hall||'',show.format||''].join('|')));
-      for(const show of live){const key=[show.cinema_id,show.movie_title,show.start_time,show.hall||'',show.format||''].join('|');if(!keys.has(key)){data.showtimes.push(show);keys.add(key);}}
+      const data=showsByCity[slug]||{showtimes:[]},keys=new Set(data.showtimes.map(showtimeKey));
+      for(const show of live){const key=showtimeKey(show);if(!keys.has(key)){data.showtimes.push(show);keys.add(key);}}
       showsByCity[slug]=data;
     }
     showtimesPending=false;
@@ -389,18 +462,24 @@
     return new Intl.DateTimeFormat(localeInfo[language].date,{timeZone:'Asia/Taipei',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(d);
   }
   function movieCard(showtimes) {
-    const first=showtimes[0],filmTitle=decodeEntities(first.movie_title||'Untitled screening'),titleEn=decodeEntities(first.movie_title_en||'');
+    const first=showtimes[0],movie=movieFor(first),filmTitle=decodeEntities(movie.movie_title||'Untitled screening'),titleEn=decodeEntities(movie.movie_title_en||'');
+    const movieId=movie.movie_id||first.movie_id||'';
+    const posterUrl=safeUrl(movie.poster_url),poster=posterUrl?`<img class="movie-poster" src="${esc(posterUrl)}" alt="" loading="lazy" decoding="async">`:'';
+    const genres=[...new Set(Array.isArray(movie.genres)?movie.genres:[])].map(displayGenre);
+    const rating=displayRating(movie.rating);
+    const movieMeta=genres.length||rating?`<div class="movie-taxonomy">${genres.map(genre=>`<span class="tag genre-tag">${esc(genre)}</span>`).join('')}${rating?`<span class="tag rating-tag" title="${esc(ageRatingTitles[language]||ageRatingTitles.en)}">${esc(rating)}</span>`:''}</div>`:'';
     const sessions=showtimes.map(s=>{
       const day=dateSelect.value==='all-dates'?`<span class="tag">${esc(formatDate((s.start_time||'').slice(0,10),'short'))}</span>`:'';
       const time=formatTime(s.start_time),meta=[s.format,s.hall].filter(Boolean);
       const url=safeUrl(s.source_url),link=url?`<a class="detail-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(ui('sourceLink'))}</a>`:'';
       return `<div class="showtime-row">${day}${time?`<span class="time-chip">${esc(time)}</span>`:''}${meta.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}${audioBadge(s.audio_language)}${subtitleBadge(s.subtitles)}</div>${link}`;
     }).join('');
-    return `<div class="movie"><div class="movie-title-row"><div class="movie-title"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</div>${copyButton(filmTitle,ui('titleSource'))}</div>${titleEn?`<div class="movie-title-row movie-title-row-en"><div class="movie-en"><span class="movie-title-label">${esc(ui('international'))}</span>${esc(titleEn)}</div>${copyButton(titleEn,ui('international'))}</div>`:''}${sessions}</div>`;
+    const titleContent=movieId?`<button class="movie-title movie-title-open" type="button" data-movie-id="${esc(movieId)}" aria-haspopup="dialog"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</button>`:`<div class="movie-title"><span class="movie-title-label">${esc(ui('titleSource'))}</span>${esc(filmTitle)}</div>`;
+    return `<div class="movie"><div class="movie-title-row">${poster}${titleContent}${copyButton(filmTitle,ui('titleSource'))}</div>${titleEn?`<div class="movie-title-row movie-title-row-en"><div class="movie-en"><span class="movie-title-label">${esc(ui('international'))}</span>${esc(titleEn)}</div>${copyButton(titleEn,ui('international'))}</div>`:''}${movieMeta}${sessions}</div>`;
   }
   function renderResults() {
     if(!Object.keys(cinemaByCity).length)return;
-    const query=searchInput.value.trim().toLocaleLowerCase(),subtitle=subtitleSelect.value,audio=audioSelect.value,brand=brandSelect.value||'all',groups=[];
+    const query=normalizeSearch(searchInput.value),subtitle=subtitleSelect.value,audio=audioSelect.value,brand=brandSelect.value||'all',groups=[];
     let cinemaTotal=0,sessionTotal=0;
     for(const slug of selectedCities()) {
       const cinemas=cinemaByCity[slug]?.cinemas||[],byId=new Map(cinemas.map(c=>[c.id,c])),todays=selectedShowtimes(slug),perCinema=new Map();
@@ -411,7 +490,7 @@
         if(!brandMatches(cinema,brand))return false;
         if((subtitle!=='all'||audio!=='all')&&!shows.length)return false;
         if(!query||selectedCinemaId===cinema.id)return true;
-        return [cinema.name_zh,cinema.name_en,cinema.address,...shows.flatMap(s=>[s.movie_title,s.movie_title_en])].some(v=>decodeEntities(v).toLocaleLowerCase().includes(query));
+        return [cinema.name_zh,cinema.name_en,cinema.address,...shows.flatMap(s=>{const movie=movieFor(s);return [movie.movie_title,movie.movie_title_en,...(movie.international_titles||[])];})].some(v=>normalizeSearch(v).includes(query));
       }).sort((a,b)=>(b.shows.length-a.shows.length)||String(a.cinema.name_zh).localeCompare(String(b.cinema.name_zh)));
       if(filtered.length)groups.push({slug,records:filtered});cinemaTotal+=filtered.length;sessionTotal+=filtered.reduce((n,x)=>n+x.shows.length,0);
     }
@@ -424,7 +503,7 @@
       return `${heading}${records.map(({cinema,shows})=>{
         const addressParts=splitAddress(cinema.address),floorLabel=language==='id'?'Lantai':language==='zh-TW'?'樓層':language==='ja'?'フロア':language==='ko'?'층':language==='vi'?'Tầng':language==='th'?'ชั้น':'Floor';
         const address=cinema.address?`<div class="address-row"><div class="address-text"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.address)}" target="_blank" rel="noopener">${esc(addressParts.street)} ↗</a>${addressParts.floor?`<span class="address-floor">${esc(floorLabel)}: ${esc(addressParts.floor)}</span>`:''}</div>${copyButton(addressParts.street,'address')}</div>`:esc(ui('addressUnavailable'));
-        const movies=new Map();shows.sort((a,b)=>String(a.start_time).localeCompare(String(b.start_time))).forEach(s=>{const key=`${s.movie_title||''}|${s.movie_title_en||''}`;if(!movies.has(key))movies.set(key,[]);movies.get(key).push(s);});
+        const movies=new Map();shows.sort((a,b)=>String(a.start_time).localeCompare(String(b.start_time))).forEach(s=>{const movie=movieFor(s),key=s.movie_id||`${movie.movie_title||''}|${movie.movie_title_en||''}`;if(!movies.has(key))movies.set(key,[]);movies.get(key).push(s);});
         const moviesHtml=shows.length?[...movies.values()].map(movieCard).join(''):`<div class="empty-show">${esc(showtimesPending?'Loading showtimes…':ui('noSchedules'))}</div>`;
         const co=cinema.company_name?`<div class="company-name">${esc(cinema.company_name)}</div>`:'';
         const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
@@ -528,9 +607,12 @@
     let savedLanguage='en',savedTheme='dark';try{savedLanguage=localStorage.getItem('cinema-language')||'en';savedTheme=localStorage.getItem('cinema-theme')||'dark';}catch{}
     language=localeInfo[savedLanguage]?savedLanguage:'en';languageSelect.value=language;setTheme(savedTheme==='light'?'light':'dark');
     try {
-      const [cityData,manifest,locationData,nameData,ticketIndex]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}})),loadJson('data/ticket-prices/index.json').catch(()=>({cinemas:{}}))]);
+      const [cityData,manifest,locationData,nameData,ticketIndex,movieIndex]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}})),loadJson('data/ticket-prices/index.json').catch(()=>({cinemas:{}})),loadJson('data/movies/index.json').catch(()=>({movies:[]}))]);
       cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};logoImages=nameData.logo_images||{};logoBackgrounds=nameData.logo_backgrounds||{};
       ticketPriceIndex=ticketIndex;
+      movieById=new Map((movieIndex.movies||[]).map(movie=>[movie.movie_id,movie]));
+      movieByTitle=new Map();
+      for(const movie of movieIndex.movies||[])for(const title of [movie.movie_title,movie.movie_title_en,...(movie.international_titles||[])]){const key=normalizeSearch(title);if(key&&!movieByTitle.has(key))movieByTitle.set(key,movie);}
       cityDefs=cityData.cities.map(c=>({slug:c.slug,center:c.center}));dataGeneratedDate=(manifest?.generated_at||'').slice(0,10);showtimesDateIndex=manifest?.showtimes_index||{};
       venueLocations=locationData.locations||[];
       const slugs=[...cityDefs.map(c=>c.slug),'unknown'];
@@ -571,6 +653,7 @@
   $('#map-tools-toggle').addEventListener('click',()=>{const menu=$('#map-tools-menu'),open=menu.hidden;menu.hidden=!open;$('#map-tools-toggle').setAttribute('aria-expanded',String(open));});
   document.addEventListener('click',e=>{if(!$('#map-tools').contains(e.target)){ $('#map-tools-menu').hidden=true;$('#map-tools-toggle').setAttribute('aria-expanded','false');}});
   resultsEl.addEventListener('click',e=>{const button=e.target.closest('.show-on-map');if(button){if(app.dataset.mapVisible==='false')$('#map-view-toggle').click();selectCinema(button.dataset.cinemaId,button.dataset.city,true);}});
+  resultsEl.addEventListener('click',e=>{const button=e.target.closest('.movie-title-open');if(button)openMovieDetails(button.dataset.movieId);});
   resultsEl.addEventListener('click',async e=>{
     const button=e.target.closest('[data-copy]');if(!button)return;e.preventDefault();e.stopPropagation();
     const originalLabel=button.getAttribute('aria-label'),originalTitle=button.title;
@@ -586,6 +669,8 @@
     details.dataset.loaded='true';details.dataset.loading='false';
   },true);
   const app=document.querySelector('.app'),sheetGrab=$('#sheet-grab');
+  app.append(movieDialog);
+  movieDialog.addEventListener('click',event=>{if(event.target===movieDialog||event.target.closest('[data-movie-close]'))movieDialog.close();});
   const sheetLabel=updateMobileActionLabels;
   const toggleSheet=()=>{app.dataset.sheet=app.dataset.sheet==='expanded'?'half':app.dataset.sheet==='collapsed'?'half':'expanded';sheetLabel();};
   let sheetStartY=null,suppressSheetClick=false;

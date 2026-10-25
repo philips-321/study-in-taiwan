@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "schema": "normalized-movie-references",
+  "city": "chiayi-city",
+  "date": "2026-11-05",
+  "showtimes": [
+    {
+      "id": "f7b598e0aa149c7d",
+      "cinema_id": "7b54c922f6cc6f74",
+      "start_time": "2026-11-05T18:00:00.000+08:00",
+      "hall": "2廳",
+      "format": "數位 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4808605",
+      "source_url": "https://www.showtimes.com.tw/cinemas/9/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_86af9fdc3eb1"
+    },
+    {
+      "id": "13a8bf4f991c14fa",
+      "cinema_id": "7b54c922f6cc6f74",
+      "start_time": "2026-11-05T19:50:00.000+08:00",
+      "hall": "巨幕1廳",
+      "format": "SCREENX 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4808606",
+      "source_url": "https://www.showtimes.com.tw/cinemas/9/",
+      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24",
+      "freshness": "last-known-good",
+      "source": "showtimes-official-api",
+      "movie_id": "m_86af9fdc3eb1"
+    }
+  ]
+}
