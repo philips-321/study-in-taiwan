@@ -109,5 +109,4 @@ map.on("load",init);map.on("moveend",ensureViewportData);map.on("zoomend",ensure
 document.getElementById("lang").addEventListener("change",e=>{lang=e.target.value;applyLang()});
 document.getElementById("locate").addEventListener("click",()=>{const tr=T[lang];if(!navigator.geolocation){statusEl.textContent=tr.unsupported;return}statusEl.textContent=tr.getting;navigator.geolocation.getCurrentPosition(pos=>{userPos={lat:pos.coords.latitude,lng:pos.coords.longitude};if(userMarker)userMarker.remove();const el=document.createElement("div");el.className="user-dot";userMarker=new maplibregl.Marker({element:el}).setLngLat([userPos.lng,userPos.lat]).addTo(map);map.flyTo({center:[userPos.lng,userPos.lat],zoom:16})},()=>{statusEl.textContent=tr.blocked},{enableHighAccuracy:true,timeout:10000,maximumAge:0})});
 </script>
-<script src="/human-analytics.js" defer></script>
 </body></html>
