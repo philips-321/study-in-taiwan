@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "reviewed_on": "2026-10-25",
+  "matches": [
+    {
+      "source_feature_id": 5650375,
+      "location_name": "台鋁影城",
+      "city": "kaohsiung",
+      "cinema_id": "785b0aaafc496ce0",
+      "cinema_name": "台鋁影城",
+      "match_basis": "OSM feature name, city, and MLD location match the active official MLD cinema venue; official booking page confirms current screenings.",
+      "evidence_url": "https://booking.mldcinema.com/Browsing/QuickTickets/Compare",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 5652139,
+      "location_name": "Vieshow",
+      "city": "kaohsiung",
+      "cinema_id": "2e33433ca052e5dd",
+      "cinema_name": "高雄大遠百威秀影城",
+      "match_basis": "Official VieShow page confirms the branch at 三多四路21號13樓, 16 screens, and visible 10/25 schedule; OSM pin is labeled Vieshow in Kaohsiung near this branch.",
+      "evidence_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=18",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 5796689,
+      "location_name": "華納威秀",
+      "city": "tainan",
+      "cinema_id": "692aebc297877ec2",
+      "cinema_name": "台南FOCUS威秀影城",
+      "match_basis": "OSM point lies at the official branch location on 中山路166號; official VieShow page confirms the FOCUS branch address, phone, and 10/25 screening schedule.",
+      "evidence_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=22",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 5857660,
+      "location_name": "南投大戲院",
+      "city": "nantou",
+      "cinema_id": "40b1b5887858aded",
+      "cinema_name": "南投戲院",
+      "match_basis": "Official theater site confirms the same Nantou cinema at 南投市大同街87號; OSM point city corrected from Changhua to Nantou",
+      "evidence_url": "https://nantoutheater.com/contact",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 6383536,
+      "location_name": "新光影城",
+      "city": "taichung",
+      "cinema_id": "9598ae26696bb28a",
+      "cinema_name": "台中新光影城",
+      "match_basis": "OSM cinema name and city match the Taichung Shin Kong branch; venue listing address identifies the Shin Kong Mitsukoshi 13F/14F location, consistent with the mapped branch.",
+      "evidence_url": "https://www.atmovies.com.tw/showtime/t04401/a04/20261025/",
+      "reviewed_on": "2026-10-25",
+      "limitations": "The browser-rendered @movies schedule content is an image and not extractable as text; the official skcinemas.com page timed out. No showtimes imported."
+    },
+    {
+      "source_feature_id": 6811672,
+      "location_name": "親親影城",
+      "city": "taichung",
+      "cinema_id": "18ed2c265bbcc977",
+      "cinema_name": "親親大戲院",
+      "match_basis": "Official Chin Chin schedule page confirms the venue, address 北屯路14號 and phone; map pin name and city identify the same branch.",
+      "evidence_url": "https://www.ccmovie.com.tw/product.php?_path=product_showtimes",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 7195628,
+      "location_name": "新月影城(1.3.4F)",
+      "city": "yilan",
+      "cinema_id": "8f25580bc6455651",
+      "cinema_name": "新月豪華影城",
+      "match_basis": "Same Yilan cinema and branch name; official site was checked but returned 403, fallback listing confirms branch/address",
+      "evidence_url": "https://www.lunacinemax.com.tw/",
+      "reviewed_on": "2026-10-25",
+      "limitations": "Official cinema site blocked this browser with HTTP 403; no schedule imported."
+    },
+    {
+      "source_feature_id": 7196946,
+      "location_name": "威秀影城",
+      "city": "hsinchu-city",
+      "cinema_id": "fb50a15c37b733c3",
+      "cinema_name": "新竹大遠百威秀影城",
+      "match_basis": "OSM point at the official branch address; official site lists 新竹市西大路323號8樓",
+      "evidence_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=7",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 7197776,
+      "location_name": "威秀影城",
+      "city": "hsinchu-city",
+      "cinema_id": "f8d37545467089d9",
+      "cinema_name": "新竹巨城威秀影城",
+      "match_basis": "OSM point name/city and coordinate near the official Big City branch; official site lists 新竹市民權路176號4樓之3",
+      "evidence_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=9",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 7217949,
+      "location_name": "星橋國際影城",
+      "city": "taoyuan",
+      "cinema_id": "8a2c78238c246672",
+      "cinema_name": "星橋國際影城",
+      "match_basis": "OSM feature branch name and Taoyuan location match the official SBC Cinema venue; official booking page exposes date-specific sessions.",
+      "evidence_url": "https://www.sbcmovies.com.tw/browsing/Cinemas/Details/1001",
+      "reviewed_on": "2026-10-25",
+      "limitations": "The source labels select title variants as Chi/Fr/Jap; no subtitle values or auditorium numbers were visible in the extracted schedule text. The ambiguous title SAYANG was not added."
+    },
+    {
+      "source_feature_id": 7246533,
+      "location_name": "佳佳影城",
+      "city": "taipei",
+      "cinema_id": "ca71a7fc4415892a",
+      "cinema_name": "景美佳佳戲院",
+      "match_basis": "The official master address/venue matches the map pin; the directly opened @movies branch page confirms the same address and date-specific schedule.",
+      "evidence_url": "https://origin.atmovies.com.tw/showtime/t02f05/a02/20261027/",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 7260847,
+      "location_name": "板橋大遠百威秀",
+      "city": "new-taipei",
+      "cinema_id": "01ff4bc24e3038a2",
+      "cinema_name": "板橋大遠百威秀影城",
+      "match_basis": "OSM feature branch name and address match the official VieShow branch address 新北市板橋區新站路28號10樓",
+      "evidence_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=4",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 7283454,
+      "location_name": "新光影城",
+      "city": "taipei",
+      "cinema_id": "4fa2390a26e73a65",
+      "cinema_name": "台北獅子林新光影城",
+      "match_basis": "OSM point carries 西寧南路36號; @movies branch page confirms 台北市萬華區西寧南路36號4、5樓, phone, and schedule at this cinema.",
+      "evidence_url": "https://www.atmovies.com.tw/showtime/t02b05/a02/20261025/",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 7287389,
+      "location_name": "國賓影城@微風廣場",
+      "city": "taipei",
+      "cinema_id": "d9a17e260f26a5ec",
+      "cinema_name": "微風影城",
+      "match_basis": "Map pin address and branch name match the official Breeze Cinema location at 復興南路一段39號8樓; dated branch schedule was visible on @movies.",
+      "evidence_url": "https://www.atmovies.com.tw/showtime/t02a03/a02/20261025/",
+      "reviewed_on": "2026-10-25",
+      "limitations": "Schedule source is aggregator; hall, format, audio, and subtitles were not displayed."
+    },
+    {
+      "source_feature_id": 7292818,
+      "location_name": "總督3D數位影城",
+      "city": "taipei",
+      "cinema_id": "b11ec81197b97388",
+      "cinema_name": "總督大戲院",
+      "match_basis": "Official Governor Cinema page gives the same 松山區長安東路二段219號 address, cinema name and phone; OSM pin identifies the Governor 3D cinema at that address.",
+      "evidence_url": "https://www.governor.com.tw/aboutus.php",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 21478643,
+      "location_name": "秀泰影城",
+      "city": "kaohsiung",
+      "cinema_id": "5c35b8e61739d367",
+      "cinema_name": "高雄岡山秀泰影城",
+      "match_basis": "Official ShowTimes branch page confirms the name, city, address, and 10/25 schedule",
+      "evidence_url": "https://www.showtimes.com.tw/cinemas/84/",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 21543176,
+      "location_name": "喜樂時代影城",
+      "city": "taipei",
+      "cinema_id": "ffc2e1b99a630f3d",
+      "cinema_name": "喜樂時代影城南港店",
+      "match_basis": "OSM pin label, company/branch, and city align with Century Asia’s Nangang branch; company official page lists 南港店 and address 台北市南港區忠孝東路7段299號.",
+      "evidence_url": "https://www.centuryasia.com.tw/book.html?sid=Nangang",
+      "reviewed_on": "2026-10-25",
+      "limitations": "Official schedule page renders template placeholders; no current date-specific session rows were readable."
+    },
+    {
+      "source_feature_id": 27168640,
+      "location_name": "威秀影城",
+      "city": "new-taipei",
+      "cinema_id": "719e1a68f2f3f9f5",
+      "cinema_name": "中和環球威秀影城",
+      "match_basis": "OSM location is at the official Global Mall branch; Vie Show branch page confirms 中和 location, address and current 10/25 schedule.",
+      "evidence_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=25",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "source_feature_id": 28916732,
+      "location_name": "光點華山電影館",
+      "city": "taipei",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "華山電影藝術館",
+      "match_basis": "Official venue page confirms the same Huashan cinema and address 台北市中正區八德路一段1號",
+      "evidence_url": "https://www.spot-hs.org.tw/aboutus/location.html",
+      "reviewed_on": "2026-10-25"
+    }
+  ]
+}

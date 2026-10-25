@@ -7,35 +7,45 @@
       "cinema_id": "5130fcc97b11b16d",
       "cinema_name": "員林大戲院",
       "city": "changhua",
-      "source_url": "https://www.atmovies.com.tw/showtime/t04703/a47/",
+      "source_url": "https://showtimes.magichour.tw/cinema/c60a4447b7b",
       "source_type": "aggregator; official source not confirmed",
-      "browser_status": "schedule-visible",
+      "browser_status": "dated-schedule-visible",
       "observed_fields": [
-        "address",
-        "phone",
         "date",
         "movie_title_zh",
-        "runtime",
-        "format",
-        "showtime",
-        "refresh_time"
+        "showtime"
       ],
-      "notes": "The page showed 2026-10-23 screenings, updated at 18:00. Use as a fallback only; the venue website link points to Facebook."
+      "notes": "Direct branch page explicitly labels 10/25 (Sun) and lists six film titles with 25 times. No halls, formats, audio, or subtitle labels.",
+      "reviewed_on": "2026-10-25"
     },
     {
       "cinema_id": "e20ff150d90cfea0",
       "cinema_name": "嘉年華戲院",
       "city": "chiayi-city",
-      "source_url": "https://www.3d-movies.tw/time.aspx",
-      "source_type": "official",
-      "browser_status": "selector-visible-schedule-not-rendered-in-extraction",
+      "source_url": "https://showtimes.magichour.tw/cinema/cf79b446e05",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
       "observed_fields": [
-        "date_or_venue_selector",
-        "schedule_publication_policy",
-        "address",
-        "phone"
+        "date",
+        "movie_title_zh",
+        "showtime"
       ],
-      "notes": "Official site says some schedules are announced as late as the day before. Browser page text did not expose the selected screening rows."
+      "notes": "Directly opened branch page explicitly labels 10/25 (Sun), 2026, and lists 17 film titles with 72 session times. No halls, formats, audio, or subtitle labels are shown. The official cinema site schedule selector did not render in browser extraction; this aggregator page was used as a dated fallback."
+    },
+    {
+      "cinema_id": "3420199bc644cf09",
+      "cinema_name": "嘉義影食匯in89豪華影城",
+      "city": "chiayi-city",
+      "source_url": "https://showtimes.magichour.tw/cinema/c38def788f6",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Directly opened branch schedule explicitly labels 2026-10-25 and lists 54 screening times across 24 film titles. This import stores title/time; hall, format, audio, and subtitle details remain null in this pass.",
+      "reviewed_on": "2026-10-25"
     },
     {
       "cinema_id": "7b54c922f6cc6f74",
@@ -55,18 +65,22 @@
       ]
     },
     {
-      "cinema_id": "3420199bc644cf09",
-      "cinema_name": "嘉義影食匯in89豪華影城",
-      "city": "chiayi-city",
-      "source_url": "https://www.in89cinemax.com/film.aspx?TheaterId=17",
+      "cinema_id": "fb50a15c37b733c3",
+      "cinema_name": "新竹大遠百威秀影城",
+      "city": "hsinchu-city",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=7",
       "source_type": "official",
-      "browser_status": "javascript-shell-no-screening-rows",
+      "browser_status": "schedule-visible",
+      "reviewed_on": "2026-10-25",
       "observed_fields": [
-        "cinema_id_in_url",
-        "address",
-        "movie_time_section"
+        "date",
+        "movie_title_zh",
+        "international_title",
+        "showtime",
+        "format",
+        "audio_language"
       ],
-      "notes": "The page has a `{{ hall }}` placeholder in the browser result. Do not import it as a completed schedule."
+      "notes": "Official VieShow branch page displays 10/25 (Sun) with titles, international titles, audio labels, formats including Gold Class, and times. 35 sessions were manually saved for 2026-10-25. The page does not show room numbers or subtitle languages, so those remain absent/null."
     },
     {
       "cinema_id": "f8d37545467089d9",
@@ -93,37 +107,23 @@
       "transcribed_note": "15 English-audio showtimes from the visible 10/25 schedule group are in showtimes/by-date/2026-10-25/hsinchu-city.json. The source did not state subtitle languages for these showings."
     },
     {
-      "cinema_id": "fb50a15c37b733c3",
-      "cinema_name": "新竹大遠百威秀影城",
-      "city": "hsinchu-city",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=7",
-      "source_type": "official",
-      "browser_status": "schedule-visible",
-      "observed_fields": [
-        "movie_title_zh",
-        "movie_title_en",
-        "date",
-        "showtime",
-        "format",
-        "audio_language",
-        "address",
-        "phone",
-        "screen_count"
-      ]
-    },
-    {
       "cinema_id": "df48f3de96b1afc2",
       "cinema_name": "竹北百老匯影城",
       "city": "hsinchu-county",
-      "source_url": "https://www.broadway-cineplex.com.tw/",
-      "source_type": "official",
-      "browser_status": "javascript-placeholders",
+      "source_url": "https://www.atmovies.com.tw/showtime/t03510/a35/",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
       "observed_fields": [
-        "booking_selectors",
-        "current_movies_section",
-        "phone_numbers"
+        "address",
+        "phone",
+        "date",
+        "movie_title_zh",
+        "runtime",
+        "showtime",
+        "version_language"
       ],
-      "notes": "The extracted page contains template placeholders instead of rendered schedule rows."
+      "notes": "Directly opened branch page explicitly shows 2026-10-25 and was updated 18:00; imported 67 title/time entries. Official booking page renders template placeholders. Hall and subtitles not shown.",
+      "reviewed_on": "2026-10-25"
     },
     {
       "cinema_id": "758a39fe5ae9a51d",
@@ -131,18 +131,29 @@
       "city": "hualien",
       "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21",
       "source_type": "official",
-      "browser_status": "schedule-visible",
+      "browser_status": "dated-schedule-visible",
       "observed_fields": [
-        "movie_title_zh",
-        "movie_title_en",
         "date",
-        "showtime",
-        "format",
-        "audio_language",
-        "address",
-        "phone",
-        "screen_count"
-      ]
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Directly opened branch schedule explicitly labels 2026-10-25 and lists 10 screening times across 7 film titles. This import stores title/time; hall, format, audio, and subtitle details remain null in this pass.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "785b0aaafc496ce0",
+      "cinema_name": "台鋁影城",
+      "city": "kaohsiung",
+      "source_url": "https://booking.mldcinema.com/Browsing/QuickTickets/Compare",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Official ticketing page displayed a 2026-10-25 block with 16 visible remaining sessions from 19:00 onward. The page text did not expose formats, halls, audio, or subtitles; all those fields remain null."
     },
     {
       "cinema_id": "afa3562511df19d5",
@@ -160,16 +171,233 @@
       "notes": "The official page exposes a nationwide film list and branch/date controls. The branch/date screening rows were not isolated in this review."
     },
     {
-      "cinema_id": "8f25580bc6455651",
-      "cinema_name": "新月豪華影城",
-      "city": "yilan",
-      "source_url": "https://www.lunacinemax.com.tw/",
-      "source_type": "official",
-      "browser_status": "http-403",
+      "cinema_id": "c49578bdeb514807",
+      "cinema_name": "高雄大立in89豪華影城",
+      "city": "kaohsiung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c68e05c7196",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
       "observed_fields": [
-        "official_movie_time_section_from_search_result"
+        "date",
+        "movie_title_zh",
+        "showtime"
       ],
-      "notes": "Direct browser open returned 403. A third-party schedule exists but was not treated as official data."
+      "notes": "Directly opened branch schedule explicitly labels 2026-10-25 and lists 80 screening times across 25 film titles. This import stores title/time; hall, format, audio, and subtitle details remain null in this pass.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "2e33433ca052e5dd",
+      "cinema_name": "高雄大遠百威秀影城",
+      "city": "kaohsiung",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=18",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "international_title",
+        "showtime",
+        "format",
+        "audio_language",
+        "address",
+        "phone",
+        "screen_count"
+      ],
+      "notes": "Official page confirms address 三多四路21號13樓 and displays 10/25 schedule. 45 sessions visible from 17:45 onward manually transcribed, including IMAX, 4DX and Gold Class labels. No subtitle labels; after-midnight sessions excluded from the 10/25 chunk."
+    },
+    {
+      "cinema_id": "1564a49f71c52c4a",
+      "cinema_name": "金獅影城",
+      "city": "kinmen",
+      "source_url": "https://showtimes.magichour.tw/cinema/c07dc93d40f",
+      "source_type": "aggregator",
+      "browser_status": "opened-date-specific-page",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "transcribed_date": "2026-10-25",
+      "transcribed_rows": 32,
+      "notes": "Directly opened Magic Hour cinema page explicitly labels 10/25 and lists 14 films/32 times. No language, hall, or format labels were present, so they remain unknown. The cinema is still active on the reviewed date; the operator announcement reported final operating date 2026-10-31. @movies branch page opened but still showed its older 10/16 schedule."
+    },
+    {
+      "cinema_id": "65d825b5140e9fa9",
+      "cinema_name": "金門昇恆昌國賓影城",
+      "city": "kinmen",
+      "source_url": "https://www.cna.com.tw/news/aloc/202604080368.aspx",
+      "source_type": "news citing operator announcement",
+      "browser_status": "directly-opened",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "closure_date",
+        "closure_reason"
+      ],
+      "notes": "CNA directly opened article reports that Ambassador Theatres announced the branch would close after 2026-05-04 due to lease expiry. Master marked closed; map location is retained, no stale showtimes added."
+    },
+    {
+      "cinema_id": "ee199f2acd555b37",
+      "cinema_name": "頭份尚順威秀影城",
+      "city": "miaoli",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=10",
+      "source_type": "official",
+      "browser_status": "dated-schedule-visible; remaining same-day block",
+      "observed_fields": [
+        "branch_name_zh_en",
+        "address",
+        "screen_count",
+        "ticket_prices",
+        "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "format",
+        "audio_language",
+        "showtime"
+      ],
+      "notes": "Official page explicitly shows selected 10/25 tab and 9 remaining same-day session times when opened. It exposes format/audio labels in the broader listing, but only title/time rows were imported in this pass; no halls/subtitles shown. Partial same-day visibility; not a complete all-day listing.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "40b1b5887858aded",
+      "cinema_name": "南投戲院",
+      "city": "nantou",
+      "source_url": "https://nantoutheater.com/showings",
+      "source_type": "official",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "hall",
+        "branch_address",
+        "phone",
+        "runtime",
+        "release_date"
+      ],
+      "notes": "Official page selected 2026-10-25 and showed four films/six remaining same-day sessions with halls. It did not expose audio, format, or subtitle information for these remaining entries; those fields stay null."
+    },
+    {
+      "cinema_id": "5a8e854557da8367",
+      "cinema_name": "山明電影院",
+      "city": "nantou",
+      "source_url": "https://www.shanmingcinema.com.tw/showtimes.php",
+      "source_type": "official",
+      "browser_status": "opened-title-detail-pages",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date_range",
+        "movie_title_zh",
+        "movie_title_en",
+        "rating",
+        "duration",
+        "format",
+        "hall",
+        "showtime",
+        "branch_address"
+      ],
+      "transcribed_date": "2026-10-25",
+      "transcribed_rows": 15,
+      "notes": "Official current-title list links to individual schedule pages. Five title detail pages show a shared 2026-10-23 to 10-28 schedule range and explicitly list 10/25 applicable times/halls. Fifteen sessions saved. The page lists classifications/runtimes, but movie catalog already has metadata; subtitle and audio-language details were not shown and remain unknown."
+    },
+    {
+      "cinema_id": "719e1a68f2f3f9f5",
+      "cinema_name": "中和環球威秀影城",
+      "city": "new-taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=25",
+      "source_type": "official",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "branch_name_zh_en",
+        "address",
+        "phone",
+        "screen_count",
+        "ticket_prices",
+        "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "format",
+        "audio_language",
+        "showtime"
+      ],
+      "notes": "The official branch page has a selected 2026-10-25 tab and shows 20 remaining same-day screening rows at the review time. No hall numbers or subtitle languages are shown in extracted text. The page lists 10 screens and branch-level regular/3D price tiers; price data is not duplicated into screening rows."
+    },
+    {
+      "cinema_id": "cf2a2d27ba5ba2a8",
+      "cinema_name": "喜樂時代影城永和店",
+      "city": "new-taipei",
+      "source_url": "https://www.moovietime.com/cinemas/centuryasia-Beyond",
+      "source_type": "aggregator; dated branch schedule",
+      "browser_status": "dated-branch-listing-visible",
+      "observed_fields": [
+        "cinema_name",
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "refresh_time"
+      ],
+      "notes": "Directly opened 2026-10-25 branch schedule, refreshed 06:09. Transcribed 72 dated sessions across 28 movie titles. Aggregator states its listing data comes from cinema websites; does not expose hall/audio/subtitle/format details.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "47df5fba03472430",
+      "cinema_name": "天台戲院",
+      "city": "new-taipei",
+      "source_url": "https://origin.atmovies.com.tw/showtime/t02e04/a02/",
+      "source_type": "aggregator",
+      "browser_status": "opened-date-specific-page",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_titles",
+        "showtimes",
+        "branch_address",
+        "phone",
+        "source_updated_at"
+      ],
+      "transcribed_date": "2026-10-25",
+      "transcribed_rows": 25,
+      "notes": "Directly opened @movies dated branch page. It displayed the 2026-10-25 schedule with eight titles and 25 sessions, update time 18:00, address and phone. Only the Sumikkogurashi row explicitly said 中文版; audio for other listings and subtitles remain unknown. No halls/formats were displayed."
+    },
+    {
+      "cinema_id": "3831da6ae664fad3",
+      "cinema_name": "新店裕隆城威秀影城",
+      "city": "new-taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=28",
+      "source_type": "official",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "branch_name_zh_en",
+        "address",
+        "screen_count",
+        "ticket_prices",
+        "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "format",
+        "audio_language",
+        "showtime"
+      ],
+      "notes": "Official branch page explicitly shows selected 10/25 tab and 14 remaining same-day session times at review. Only the readable rows under 10/25 were saved; page describes releasing a one-week block on Wednesdays. No hall or subtitle languages are shown in extracted listing. This observed block may not represent full all-day schedule.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "a15851ac9eeccb48",
+      "cinema_name": "新莊鴻金寶麻吉影城",
+      "city": "new-taipei",
+      "source_url": "https://www.moovietime.com/cinemas/independent-machi",
+      "source_type": "aggregator; dated branch schedule",
+      "browser_status": "dated-branch-listing-visible",
+      "observed_fields": [
+        "cinema_name",
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "refresh_time"
+      ],
+      "notes": "Directly opened 2026-10-25 branch schedule, refreshed 06:15. Transcribed 37 sessions across 9 movie titles, including one 00:00 Whalefall and one 00:00 Other Mommy session filed to 2026-10-26. Aggregator states its listing data comes from cinema websites; does not expose hall/audio/subtitle/format details. Direct operator booking page https://fmmfilmmate.tixi.com.tw/ was also opened and displays some halls/times, but no selected date in readable output; those were not imported.",
+      "reviewed_on": "2026-10-25"
     },
     {
       "cinema_id": "01ff4bc24e3038a2",
@@ -179,16 +407,930 @@
       "source_type": "official",
       "browser_status": "schedule-visible",
       "observed_fields": [
+        "date",
         "movie_title_zh",
         "movie_title_en",
+        "showtime",
+        "format",
+        "audio_language",
+        "address",
+        "phone",
+        "screen_count",
+        "ticket_prices"
+      ],
+      "reviewed_on": "2026-10-25",
+      "notes": "Official VieShow page exposes 10/25/2026 sessions. At the time reviewed (18:10 Taiwan time), the visible current-date block contained 17 remaining sessions starting 18:35; earlier same-day sessions were not listed in that current-date block. Official venue page lists 9 screens and branch-specific ticket prices by format. Room numbers and subtitles were not shown in the extracted text; those fields remain unknown."
+    },
+    {
+      "cinema_id": "a976a9f1cdf76e8e",
+      "cinema_name": "林口MITSUI OUTLET PARK威秀影城",
+      "city": "new-taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=5",
+      "source_type": "official",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
         "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "showtime",
+        "format",
+        "audio_language",
+        "ticket_prices"
+      ],
+      "notes": "Directly opened official branch page shows the 10/25 date tab and 25 sessions with international titles, formats, and audio. The page text does not expose hall numbers or subtitles. Official ticket prices also appear on the page."
+    },
+    {
+      "cinema_id": "1fd71390ad48865f",
+      "cinema_name": "美麗新宏匯影城",
+      "city": "new-taipei",
+      "source_url": "https://travel.udn.com/travel/story/7205/9219674",
+      "source_type": "press report quoting the operator announcement; official booking site also checked",
+      "browser_status": "closed-no-current-schedule",
+      "observed_fields": [
+        "branch_identity",
+        "closure_date",
+        "operator_announcement",
+        "booking_site_branch_listing"
+      ],
+      "notes": "The opened report states that Miranew announced this branch stopped operation on 2025-12-22. Current Miranew booking page no longer lists the Honghui branch in its visible cinema list. No current showtimes imported; keep map pin linked but show closed status."
+    },
+    {
+      "cinema_id": "454a06074601ed9c",
+      "cinema_name": "澎湖in89豪華影城",
+      "city": "penghu",
+      "source_url": "https://showtimes.magichour.tw/cinema/ce161777026",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Directly opened branch schedule explicitly labels 2026-10-25 and lists 31 screening times across 17 film titles. This import stores title/time; hall, format, audio, and subtitle details remain null in this pass.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "cfcdd8c5a019bd3f",
+      "cinema_name": "台中Tiger City威秀影城",
+      "city": "taichung",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=12",
+      "source_type": "official",
+      "browser_status": "dated-schedule-visible; remaining same-day block",
+      "observed_fields": [
+        "branch_name_zh_en",
+        "address",
+        "screen_count",
+        "ticket_prices",
+        "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "format",
+        "audio_language",
+        "showtime"
+      ],
+      "notes": "Official MUVIE page explicitly labels 10/25 and lists 23 visible sessions, with four sessions explicitly marked next day and filed under 10/26. Source text has format/audio labels, but imported rows currently preserve title and time only; halls/subtitles remain null. Listing may be a remaining-same-day block, not a full-day schedule.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "7cf79c12e5a5270c",
+      "cinema_name": "台中大遠百威秀影城",
+      "city": "taichung",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=11",
+      "source_type": "official",
+      "browser_status": "dated-schedule-visible; remaining same-day block",
+      "observed_fields": [
+        "branch_name_zh_en",
+        "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "format",
+        "audio_language",
+        "showtime",
+        "ticket_prices"
+      ],
+      "notes": "Official branch page explicitly labels 10/25 and displayed five remaining same-day session times at review. This is a partial same-day block, not a complete all-day schedule. The broader listing includes audio/format, but only title/time rows were imported in this pass; halls/subtitles are not shown.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "9598ae26696bb28a",
+      "cinema_name": "台中新光影城",
+      "city": "taichung",
+      "source_url": "https://twshowtimes.com/cinemas/skcinemas-taichung/2026-10-25/",
+      "source_type": "aggregator; independently operated schedule index",
+      "browser_status": "dated-schedule-visible",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "age_rating",
+        "format",
+        "audio_language",
+        "showtime"
+      ],
+      "notes": "Manually transcribed from the opened date-specific 2026-10-25 branch page; 26 films and 64 times. Shows Taiwan ratings, select formats/audio labels. No hall/subtitle data."
+    },
+    {
+      "cinema_id": "84c8a585cab096b5",
+      "cinema_name": "日日新大戲院",
+      "city": "taichung",
+      "source_url": "https://www.atmovies.com.tw/showtime/t04404/a04/20261024/",
+      "source_type": "official site checked; @movies aggregator reviewed",
+      "browser_status": "official-site-forbidden; aggregator-current-date-unavailable",
+      "observed_fields": [
+        "cinema_identity",
+        "address",
+        "phone",
+        "date",
+        "schedule_rendering_or_limitations"
+      ],
+      "notes": "Official srm.com.tw returned HTTP 403. The directly opened @movies dated page only exposed 2026-10-24 and its schedule as an image; no current-date readable schedule was available."
+    },
+    {
+      "cinema_id": "84c8a585cab096b5",
+      "cinema_name": "日日新大戲院",
+      "city": "taichung",
+      "source_url": "https://showtimes.magichour.tw/cinema/cc8653b4e21",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "The directly opened page labels 10/25 and lists 12 films / 55 sessions. Several sessions after midnight were stored in the 10/26 date chunk. Hall, format, audio, and subtitles are not listed.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "18ed2c265bbcc977",
+      "cinema_name": "親親大戲院",
+      "city": "taichung",
+      "source_url": "https://www.ccmovie.com.tw/product.php?_path=product_showtimes",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "international_title",
+        "runtime",
+        "genre",
+        "hall",
+        "audio_language",
+        "showtime",
+        "phone",
+        "address"
+      ],
+      "notes": "Official branch schedule page exposes 10/25, 10/26, and 10/27 schedules. 46 sessions across 13 films were transcribed for 10/25. Subtitle languages were not listed. The OSM feature is already linked to this master cinema."
+    },
+    {
+      "cinema_id": "7f9f49b0f891b19e",
+      "cinema_name": "豐原in89豪華影城",
+      "city": "taichung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c244ae65409",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "audio_language",
+        "format"
+      ],
+      "notes": "Directly opened page explicitly labels 10/25 and lists 29 film titles and 74 showtimes. Audio and room/hall labels were saved only where stated; subtitles remain unknown."
+    },
+    {
+      "cinema_id": "a254972ff2dbb85b",
+      "cinema_name": "今日戲院",
+      "city": "tainan",
+      "source_url": "https://www.cm-movie.com.tw/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91/",
+      "source_type": "operator history page; not a schedule",
+      "browser_status": "multipurpose-venue-confirmed; no dated schedule",
+      "observed_fields": [
+        "2025 operating model",
+        "venue history",
+        "address context"
+      ],
+      "notes": "The operator says the venue transitioned in March 2025 to a multipurpose cultural space, retaining selected film-festival screenings. No date-specific 2026-10-25 program is published. Cinema showtime status remains unknown; no screenings are imported.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "692aebc297877ec2",
+      "cinema_name": "台南FOCUS威秀影城",
+      "city": "tainan",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=22",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "international_title",
         "showtime",
         "format",
         "audio_language",
         "address",
         "phone",
         "screen_count"
-      ]
+      ],
+      "notes": "Official branch page confirms address 中山路166號11樓 and exposes its 10/25 schedule. 52 sessions manually transcribed. No halls or subtitle languages are displayed."
+    },
+    {
+      "cinema_id": "2677bacaeb7d8d3d",
+      "cinema_name": "台南南紡威秀影城",
+      "city": "tainan",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=16",
+      "source_type": "official",
+      "browser_status": "dated-schedule-visible; remaining same-day block",
+      "observed_fields": [
+        "branch_name_zh_en",
+        "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "format",
+        "audio_language",
+        "showtime",
+        "ticket_prices"
+      ],
+      "notes": "Official branch page explicitly labels 10/25 and exposed 20 visible remaining same-day sessions across 15 film records. This is not a complete all-day listing. Page shows format/audio labels, but current imported rows preserve title/time only; no hall or subtitle labels.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "1cb2ad9bb7e14f9f",
+      "cinema_name": "台南大遠百威秀影城",
+      "city": "tainan",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=15",
+      "source_type": "official",
+      "browser_status": "dated-schedule-visible; remaining same-day block",
+      "observed_fields": [
+        "branch_name_zh_en",
+        "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "format",
+        "audio_language",
+        "showtime",
+        "ticket_prices"
+      ],
+      "notes": "Official branch page explicitly labels 10/25 and showed 9 remaining same-day screenings across 8 existing film records plus the newly cataloged Jin-Roh 4K restoration. This is not a complete all-day listing. The page displays format/audio but this import preserves title/time only; no hall/subtitle data was shown.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "4fa2390a26e73a65",
+      "cinema_name": "台北獅子林新光影城",
+      "city": "taipei",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b05/a02/20261025/",
+      "source_type": "aggregator",
+      "browser_status": "indexed-schedule-visible-official-page-timeout",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "audio_version_for_two_titles",
+        "showtime",
+        "address",
+        "phone"
+      ],
+      "notes": "Official SK Cinemas page timed out in browser. @movies listing for 2026-10-25 explicitly exposed nine title/time rows; two show language/version labels and other rows do not, so unknown audio and all subtitles remain null. Data is labeled aggregator, not official."
+    },
+    {
+      "cinema_id": "14904f55b4c30ea4",
+      "cinema_name": "哈拉影城",
+      "city": "taipei",
+      "source_url": "https://halarcity.com.tw/Browsing/Cinemas/Details/0000000001",
+      "source_type": "official",
+      "browser_status": "opened-dated-official-pages",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "audio_language",
+        "screening_type",
+        "branch_address",
+        "phone"
+      ],
+      "transcribed_date": "2026-10-25",
+      "transcribed_rows": 16,
+      "notes": "Official Hala cinema detail page explicitly lists 10/25 schedules for ten titles. The official QuickTickets comparison page separately lists two 10/25 parent-child Chinese showings. Sixteen sessions saved using existing movie IDs. No halls or subtitle languages were exposed."
+    },
+    {
+      "cinema_id": "7b209adf3838f023",
+      "cinema_name": "喜樂時代影城今日店",
+      "city": "taipei",
+      "source_url": "https://ximen.centuryasia.com.tw/ticket_online.aspx",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "international_title",
+        "showtime",
+        "hall",
+        "format",
+        "audio_language",
+        "rating",
+        "runtime"
+      ],
+      "notes": "Official cinema schedule pages 1–3 list 10/25 screenings, hall and source audio labels. No subtitle labels are shown, so subtitles remain null. 45 sessions manually transcribed for 2026-10-25; official contact page lists address 台北市萬華區峨嵋街52號1樓, matching OSM feature 7282835."
+    },
+    {
+      "cinema_id": "ffc2e1b99a630f3d",
+      "cinema_name": "喜樂時代影城南港店",
+      "city": "taipei",
+      "source_url": "https://www.centuryasia.com.tw/book.html?sid=Nangang",
+      "source_type": "official",
+      "browser_status": "javascript-placeholders",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "venue_selector",
+        "film_detail_template",
+        "hall_template",
+        "showtime_template"
+      ],
+      "notes": "Official ticket page rendered template placeholders for cinema/date/movie/session and did not expose actual rows. @movies latest source page found was not retrievable (timeout); the opened Magic Hour page showed only 10/23 and 10/24 despite search snippets mentioning 10/25, so no 10/25 rows were imported."
+    },
+    {
+      "cinema_id": "ffc2e1b99a630f3d",
+      "cinema_name": "喜樂時代影城南港店",
+      "city": "taipei",
+      "source_url": "https://showtimes.magichour.tw/cinema/cbe29efc0b6",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "audio_language"
+      ],
+      "notes": "Fresh browser read exposes the complete 10/25 block (supersedes the earlier cached-page note that only showed 10/24): 51 titles, 142 sessions. Source-listed audio languages were preserved; halls and subtitles were not listed.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "d9a17e260f26a5ec",
+      "cinema_name": "微風影城",
+      "city": "taipei",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a03/a02/20261025/",
+      "source_type": "aggregator",
+      "browser_status": "schedule-visible",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "address",
+        "phone",
+        "refresh_time"
+      ],
+      "notes": "@movies rendered the 2026-10-25 showtime list in browser text and reported update time 2026-10-24 18:25. It exposed titles and times, but no branch session formats, halls, audio, or subtitles. Schedule rows are labeled aggregator."
+    },
+    {
+      "cinema_id": "ca71a7fc4415892a",
+      "cinema_name": "景美佳佳戲院",
+      "city": "taipei",
+      "source_url": "https://origin.atmovies.com.tw/showtime/t02f05/a02/20261027/",
+      "source_type": "aggregator",
+      "browser_status": "schedule-visible",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "international_title",
+        "runtime",
+        "hall",
+        "showtime",
+        "address",
+        "phone"
+      ],
+      "notes": "Directly opened @movies branch/date page for 2026-10-27; it shows six titles with international titles, runtime, room names and 12 times. No age ratings or subtitles displayed. Aggregator source, not official."
+    },
+    {
+      "cinema_id": "b11ec81197b97388",
+      "cinema_name": "總督大戲院",
+      "city": "taipei",
+      "source_url": "https://www.governor.com.tw/aboutus.php",
+      "source_type": "official",
+      "browser_status": "venue-details-visible-schedule-not-readable",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "venue_name",
+        "address",
+        "phone",
+        "screen_count"
+      ],
+      "notes": "Official venue page confirms address 長安東路二段219號 and states two auditoriums. The official homepage exposes 今日熱映 as image-based content; browser text extraction does not reveal showtimes. No schedule imported."
+    },
+    {
+      "cinema_id": "b11ec81197b97388",
+      "cinema_name": "總督大戲院",
+      "city": "taipei",
+      "source_url": "https://showtimes.magichour.tw/cinema/cf91204ef87",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "The directly opened page labels 10/25 and lists four films / ten sessions. Hall, format, audio, and subtitles are not listed.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "58aceabee919fb31",
+      "cinema_name": "美麗新大直皇家影城",
+      "city": "taipei",
+      "source_url": "https://showtimes.magichour.tw/cinema/c1664dd57a1",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "hall",
+        "audio_language",
+        "showtime",
+        "address",
+        "phone"
+      ],
+      "notes": "Direct branch page explicitly labels 10/25 (Sun), lists 11 films and 46 sessions in 皇家廳. No format or subtitle labels are shown.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "8e09faf24bf0485d",
+      "cinema_name": "龍祥百老匯影城",
+      "city": "taipei",
+      "source_url": "https://showtimes.magichour.tw/cinema/c1099617e7e",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Direct branch page explicitly labels 10/25 (Sun) and lists 19 film titles with 63 showtimes. No hall, format, audio, or subtitle labels.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "12d76a4689377275",
+      "cinema_name": "喜樂時代桃園A19影城",
+      "city": "taoyuan",
+      "source_url": "https://www.atmovies.com.tw/showtime/t03316/a03/",
+      "source_type": "aggregator quoting operator closure notice",
+      "browser_status": "closure-confirmed",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "address",
+        "phone",
+        "closure_date"
+      ],
+      "notes": "Opened page states the branch ended operations after its final screening on 2026-01-04. No schedule rows imported; map point retained and master status marked closed."
+    },
+    {
+      "cinema_id": "a07e94ac5664ad37",
+      "cinema_name": "威尼斯影城",
+      "city": "taoyuan",
+      "source_url": "https://origin.atmovies.com.tw/showtime/t03303/a03/20261025/",
+      "source_type": "official site checked; @movies aggregator reviewed",
+      "browser_status": "official-forbidden; aggregator-image-unreadable; ticket-engine-too-large",
+      "observed_fields": [
+        "cinema_identity",
+        "address",
+        "phone",
+        "date",
+        "schedule_rendering_or_limitations"
+      ],
+      "notes": "Official showtime page returned HTTP 403. The direct @movies page showed 2026-10-25 and 18:46 refresh time but the actual schedule as an unreadable image. Official ticket engine exceeded browser extraction size (7MB); no schedule rows could be inspected."
+    },
+    {
+      "cinema_id": "a07e94ac5664ad37",
+      "cinema_name": "威尼斯影城",
+      "city": "taoyuan",
+      "source_url": "https://showtimes.magichour.tw/cinema/cecda84e2cb",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "The directly opened page labels 10/25 and lists 18 films / 106 sessions. Sessions marked after midnight were stored in the 10/26 date chunk. Hall, format, audio, and subtitles are not listed.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "8a2c78238c246672",
+      "cinema_name": "星橋國際影城",
+      "city": "taoyuan",
+      "source_url": "https://www.sbcmovies.com.tw/browsing/Cinemas/Details/1001",
+      "source_type": "official",
+      "browser_status": "schedule-visible",
+      "reviewed_on": "2026-10-25",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "showtime",
+        "rating",
+        "language_variant"
+      ],
+      "notes": "Official SBC booking page exposed multiple future date blocks and the 2026-10-25 date-specific sessions; 72 rows were matched to existing catalog movie IDs and saved. One visible film title (SAYANG) could not be confidently matched to an existing catalog record and was not imported. Hall and subtitle details were not exposed."
+    },
+    {
+      "cinema_id": "4553f6d29b7e0ab2",
+      "cinema_name": "桃園站前in89豪華影城",
+      "city": "taoyuan",
+      "source_url": "https://www.atmovies.com.tw/showtime/t03307/a03/20261025/",
+      "source_type": "aggregator; dated branch listing",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "address",
+        "phone",
+        "date",
+        "movie_title_zh",
+        "runtime",
+        "showtime",
+        "version_language"
+      ],
+      "notes": "Opened @movies branch page explicitly dated 2026-10-25 and refreshed 2026-10-24 23:25; transcribed 47 session times across 21 title groups. @movies movie-detail page identifies 鬼入室 as The House It Keeps. Halls and audio/subtitle labels are not exposed in the branch schedule.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "8f25580bc6455651",
+      "cinema_name": "新月豪華影城",
+      "city": "yilan",
+      "source_url": "https://www.atmovies.com.tw/showtime/t03905/a39/",
+      "source_type": "aggregator; official schedule source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "address",
+        "phone",
+        "date",
+        "movie_title_zh",
+        "runtime",
+        "showtime",
+        "version_language",
+        "refresh_time"
+      ],
+      "notes": "Directly opened branch page explicitly shows 2026-10-25, refreshed at 00:34, with 16 films and 73 listed times. No formats, halls, audio, or subtitles shown; only Chinese version labels are retained.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "c697fdf332cf0850",
+      "cinema_name": "環球中華影城",
+      "city": "yunlin",
+      "source_url": "https://showtimes.magichour.tw/cinema/c24719a2201",
+      "source_type": "aggregator; official source not confirmed",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "The directly opened page labels 10/25 and lists 13 films / 56 sessions. The page gives no hall, format, audio, or subtitle labels.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "c36f64f601a18c19",
+      "cinema_name": "樂聲影城",
+      "city": "taipei",
+      "source_url": "https://www.luxcinema.com.tw/web/2020.php?type=ShowTimes",
+      "source_type": "official cinema schedule",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "movie_title_en",
+        "showtime",
+        "screen category labels on selected sessions"
+      ],
+      "notes": "Official schedule page directly labels the 2026-10-25 block and lists 10 titles with 23 times in the visible block. Stored title/time sessions only; hall identifiers, audio language, and subtitles were not consistently exposed per screening. The 00:xx times appearing in the block were excluded from this import; only times 15:30–23:50 were saved.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "10c63f8de8649fcc",
+      "cinema_name": "新光天母影城",
+      "city": "taipei",
+      "source_url": "https://www.moovietime.com/cinemas/skcinemas-1005?date=2026-10-25",
+      "source_type": "aggregator (Moovie Time; page says source data comes from cinema websites)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "title_zh",
+        "showtime",
+        "B.O.X label for four sessions"
+      ],
+      "notes": "Opened branch and selected 2026-10-25 directly. Schedule updated 10/25 06:04. 42 title/time rows saved; B.O.X labels retained on four sessions. No hall number, audio, or subtitle values shown. Direct @movies dated page was also opened but showed a blank schedule shell.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "fb49c0eb0cd2b7cd",
+      "cinema_name": "新民生戲院",
+      "city": "taipei",
+      "source_url": "https://travel.udn.com/travel/story/7160/9245406",
+      "source_type": "news report quoting the cinema official closure announcement",
+      "browser_status": "closure-confirmed",
+      "observed_fields": [
+        "closure date",
+        "official announcement summary"
+      ],
+      "notes": "UDN report says the cinema officially announced closure at the end of 2026-01-31. Its old @movies listing is stale (last dated 2025-05-20) and was not used for schedules.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "fb93ad5f8950d65e",
+      "cinema_name": "台南新光影城",
+      "city": "tainan",
+      "source_url": "https://cdn.atmovies.com.tw/showtime/t06607/a06/20261025/",
+      "source_type": "@movies aggregator",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "runtime",
+        "showtime",
+        "explicit version labels (Japanese/Chinese)"
+      ],
+      "notes": "Opened exact 2026-10-25 branch/date page. Last update shown 2026/10/24 23:11. Transcribed 47 title/time entries; stored audio language only where page explicitly labels Japanese or Chinese version. No hall or subtitle labels shown.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "3071c450f8e42deb",
+      "cinema_name": "台中iFG遠雄廣場威秀影城",
+      "city": "taichung",
+      "source_url": "https://origin.atmovies.com.tw/showtime/t04409/a04/20261025/",
+      "source_type": "@movies aggregator; branch identity cross-checked against official Vieshow page",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "title_zh",
+        "runtime",
+        "showtime",
+        "explicit version labels"
+      ],
+      "notes": "@movies exact page explicitly labels 2026-10-25 and refreshed at 2026/10/25 21:19. Transcribed 67 rows. Official Vieshow branch detail id=26 independently confirms current English name, address, phone, company, screen count and ticket formats; its schedule embed exposes mixed date blocks, so only the clearly date-labeled @movies data was used. Explicit Japanese/Chinese version labels stored as audio language.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "699829fd94ac6d73",
+      "cinema_name": "喜樂時代影城高雄總圖店",
+      "city": "kaohsiung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c38cef5102f",
+      "source_type": "Magic Hour aggregator",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "audio_language"
+      ],
+      "notes": "Opened branch page with explicit 10/25 and 10/26 sections. 82 10/25 sessions saved, retaining explicit language labels (including Mandarin, Cantonese, Korean, Japanese, English, French). No halls or subtitle details shown. Some listed film sessions were matched against existing normalized movie IDs.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "48dd9d30f73ece53",
+      "cinema_name": "環球影城",
+      "city": "kaohsiung",
+      "source_url": "https://showtimes.magichour.tw/cinema/cebd06ef8c5",
+      "source_type": "Magic Hour aggregator",
+      "browser_status": "dated-schedule-visible-but-stale-for-current-date",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Opened branch page. The latest readable schedule block is 2026-10-24 only; no 10/25 block is present, so no rows were copied into current-date data. Active status remains unknown pending current-date evidence.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "e060ce6fcd128989",
+      "cinema_name": "in89駁二電影院",
+      "city": "kaohsiung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c5a3e565853",
+      "source_type": "Magic Hour aggregator",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "explicit audio language labels",
+        "BOOM room labels"
+      ],
+      "notes": "Opened actual branch page with explicit 10/25 and 10/26 sections. 43 10/25 rows saved. Explicit audio language labels and BOOM hall labels retained. Other halls/formats/subtitles not shown. Existing movie IDs reused.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "21ea5948a31721df",
+      "cinema_name": "桃園統領威秀影城",
+      "city": "taoyuan",
+      "source_url": "https://origin.atmovies.com.tw/showtime/t03308/a03/20261025/",
+      "source_type": "@movies aggregator",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "runtime",
+        "showtime",
+        "explicit version labels"
+      ],
+      "notes": "Opened exact 2026-10-25 date page, last source update shown as 2026/10/22 15:43. 109 rows saved after matching film titles to existing movie IDs; explicit Chinese/Japanese version labels were retained for titles that showed them. No halls, audio, or subtitles are present for unlabeled screenings.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "14587ce107fa2a13",
+      "cinema_name": "中影屏東影城",
+      "city": "pingtung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c31ca053fa7",
+      "source_type": "aggregator; Magic Hour (operator source not confirmed on opened page)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Opened branch page explicitly labels 10/25 (Sun), lists 19 titles and 47 times. No halls, formats, audio, subtitles, or official-source linkage exposed in readable page.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "c417e32ef975fafc",
+      "cinema_name": "南台影城",
+      "city": "tainan",
+      "source_url": "https://www.moovietime.com/cinemas/independent-nantai",
+      "source_type": "aggregator; Moovie Time (page attributes schedules to cinema websites)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Direct branch page labels 10/25 and says data refreshed 10/25 06:15; 11 film titles and 47 times visible. Official operator page was also opened and exposes title/time blocks, but dates there are release dates rather than a selected schedule date. No hall, format, audio, subtitle labels on the dated page.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "07a7306480fdbf03",
+      "cinema_name": "桃園新光影城",
+      "city": "taoyuan",
+      "source_url": "https://www.atmovies.com.tw/showtime/t03315/a03/20261025/",
+      "source_type": "aggregator; @movies (atmovies.com.tw)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "explicit_version_language"
+      ],
+      "notes": "Directly opened exact branch/date page for 2026-10-25; update timestamp 2026/10/24 20:32. Lists 23 movie titles and 67 times. Chinese/Japanese version labels are recorded only for the two explicitly labeled Poupelle version sessions. No halls or subtitle labels.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "36eb08cbc0a2c346",
+      "cinema_name": "桃知道威秀影城",
+      "city": "taoyuan",
+      "source_url": "https://www.moovietime.com/cinemas/vieshow-taoyuan-taiwanzhidao",
+      "source_type": "aggregator; Moovie Time (states showtime data from cinema websites)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Direct branch page explicitly labels 10/25 and says refreshed 10/25 06:23; 10 film titles and 23 times are visible. Official Vieshow links are exposed for some times. No hall, format, audio, subtitle labels. @movies exact date URL opened but its readable page rendered no movie list; Moovie Time is the source used.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "b2156062da72f956",
+      "cinema_name": "全美戲院",
+      "city": "tainan",
+      "source_url": "https://www.moovietime.com/cinemas/independent-chuanmei",
+      "source_type": "aggregator; Moovie Time (states showtime data from cinema websites)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Direct branch page explicitly labels 10/25 and says refreshed 10/25 06:15; three movie titles and four times visible. No halls, format, audio, or subtitle labels.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "48dd9d30f73ece53",
+      "cinema_name": "環球影城",
+      "city": "kaohsiung",
+      "source_url": "https://www.moovietime.com/cinemas/independent-umovie",
+      "source_type": "aggregator; Moovie Time (states showtime data from cinema websites)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Direct branch page explicitly labels 10/25 and says refreshed 10/25 06:15; 16 film titles / 69 times shown. Some after-midnight times are absent; no hall, format, audio, or subtitle labels.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "dc423d2c07f6571c",
+      "cinema_name": "王牌映畫影城",
+      "city": "taichung",
+      "source_url": "https://showtimes.magichour.tw/cinema/cd3ef1e7e43",
+      "source_type": "aggregator; Magic Hour (operator source not confirmed on opened page)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Direct branch page labels 10/25 and lists 27 films and 55 times. No hall, format, audio, subtitle labels. New catalog entries created only for source titles absent from the existing catalog after exact-title comparison; no unsupported poster/genre/rating metadata added.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "3ac5369b1e1edf71",
+      "cinema_name": "全球影城",
+      "city": "taichung",
+      "source_url": "https://www.ucc-cinema.com.tw/product.html",
+      "source_type": "official cinema website",
+      "browser_status": "dated-range-schedule-visible",
+      "observed_fields": [
+        "date_range",
+        "movie_title_zh",
+        "movie_title_en",
+        "showtime"
+      ],
+      "notes": "Official operator page explicitly labels a schedule range 10/23–10/29, which includes 10/25; lists 7 film titles and 47 times. Address/phone on same page match cinema master. No hall labels captured.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "7ecfd57492a43ef3",
+      "cinema_name": "時代戲院二館",
+      "city": "taichung",
+      "source_url": "https://www.timescinema.com.tw/times.php?pageNum_showtimes=0&showtimes=2178",
+      "source_type": "official cinema website",
+      "browser_status": "dated-range-schedule-visible",
+      "observed_fields": [
+        "date_range",
+        "movie_title_zh",
+        "showtime",
+        "hall"
+      ],
+      "notes": "Official schedule page tab explicitly covers 10/24–10/26, including 10/25, and lists five 2館 titles with 19 times and hall labels. Official location page confirms 2館 address matches this mapped cinema record.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "61cc60cb6f32651f",
+      "cinema_name": "美麗新台茂影城",
+      "city": "taoyuan",
+      "source_url": "https://showtimes.magichour.tw/cinema/c51ff88ec90",
+      "source_type": "aggregator; Magic Hour (operator source not confirmed on opened page)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime",
+        "format",
+        "hall",
+        "explicit_audio_version"
+      ],
+      "notes": "Direct branch page labels 10/25 and lists 16 films / 51 times. IMAX and Royal Hall tags plus explicit Poupelle language versions are retained; no subtitle details. Page also displays a starting ticket price, but no per-format pricing breakdown, so no ticket-price record was added.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "1059473f086628f7",
+      "cinema_name": "日新大戲院",
+      "city": "yilan",
+      "source_url": "https://www.moovietime.com/cinemas/independent-ilan-rixin",
+      "source_type": "aggregator; Moovie Time (states showtime data from cinema websites)",
+      "browser_status": "dated-schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie_title_zh",
+        "showtime"
+      ],
+      "notes": "Direct branch page address 17-1號 matches mapped cinema and explicitly labels 10/25; refreshed 06:15; 5 films and 18 times. No hall, format, audio, or subtitle data.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "80090ba98f0571f6",
+      "cinema_name": "in89豪華數位影城",
+      "city": "taipei",
+      "source_url": "https://www.cna.com.tw/news/amov/202605200262.aspx",
+      "source_type": "CNA report quoting the cinema’s official closure notice",
+      "browser_status": "closure-confirmed",
+      "observed_fields": [
+        "venue_identity",
+        "closure_date"
+      ],
+      "notes": "CNA reports that the official in89 site announced the Ximen venue would end business on 2026-05-31. This master record shares the exact address and phone with the other mapped Ximen in89 record, so both refer to the same closed physical venue.",
+      "reviewed_on": "2026-10-25"
+    },
+    {
+      "cinema_id": "b311f3204b81a053",
+      "cinema_name": "映捌玖數位影城有限公司",
+      "city": "taipei",
+      "source_url": "https://www.cna.com.tw/news/amov/202605200262.aspx",
+      "source_type": "CNA report quoting the cinema’s official closure notice",
+      "browser_status": "closure-confirmed",
+      "observed_fields": [
+        "venue_identity",
+        "closure_date"
+      ],
+      "notes": "CNA reports that the official in89 site announced the Ximen venue would end business on 2026-05-31. This master record shares the exact address and phone with the other mapped Ximen in89 record, so both refer to the same closed physical venue.",
+      "reviewed_on": "2026-10-25"
     }
   ],
   "title_audit": {
