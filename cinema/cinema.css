@@ -204,3 +204,21 @@
 .movie-detail-poster-wrap.is-loading .movie-detail-poster{opacity:0}
 .movie-poster-loading{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:10px;color:var(--muted);font-size:13px}
 .movie-detail-poster-wrap:not(.is-loading) .movie-poster-loading{display:none}
+
+.share-control{position:relative;z-index:25;flex:none}
+.share-button{display:grid;place-items:center}
+.share-button svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.share-menu{position:absolute;top:calc(100% + 7px);right:0;z-index:50;width:min(240px,calc(100vw - 24px));padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);box-shadow:0 12px 32px #0008}
+.share-menu[hidden]{display:none}
+.share-menu-heading{padding:5px 8px 8px;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.04em}
+.share-option{display:flex;align-items:center;gap:10px;width:100%;min-height:38px;padding:6px 8px;border:0;border-radius:5px;background:transparent;color:var(--text);text-align:left;font-size:12px;cursor:pointer}
+.share-option:hover,.share-option:focus-visible{outline:0;background:var(--surface)}
+.share-option>span:first-child{display:grid;width:18px;height:18px;place-items:center;color:var(--accent);font-size:16px;font-weight:700}
+.share-option .whatsapp-mark{border:1px solid #32b97c;border-radius:5px;color:#32b97c;font-size:8px;letter-spacing:-.3px}
+.share-option .facebook-mark{font-family:Arial,sans-serif;font-size:18px}
+.share-menu-hint,.share-feedback{margin:6px 8px 2px;color:var(--muted);font-size:10px;line-height:1.45}
+.share-feedback:empty{display:none}
+.share-feedback{color:var(--green)}
+.app[data-theme="light"] .share-menu{background:#fffefa;box-shadow:0 12px 32px #18212830}
+.app[data-theme="light"] .share-option:hover,.app[data-theme="light"] .share-option:focus-visible{background:#f0eee7}
+@media(max-width:760px){.head-row .eyebrow{min-width:0;flex:1;max-width:none}.head-actions{flex:none}}

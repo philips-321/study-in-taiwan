@@ -209,6 +209,52 @@
     const input=document.createElement('textarea');input.value=value;input.style.position='fixed';input.style.opacity='0';document.body.append(input);input.select();
     const copied=document.execCommand('copy');input.remove();if(!copied)throw new Error('Clipboard copy failed');
   }
+  const shareLabels={
+    en:{heading:'Share Cinema',whatsapp:'WhatsApp',facebook:'Facebook',instagram:'Instagram',more:'More apps',copy:'Copy website link',hint:'Instagram uses your device share menu when available.',copied:'Cinema website link copied.',instagramCopied:'Link copied. Paste it into Instagram.',failed:'Could not copy the link.',pageTitle:'Taiwan Cinema Map',shareText:'Explore cinema locations and showtimes across Taiwan.'},
+    'zh-TW':{heading:'分享 Cinema 網站',whatsapp:'WhatsApp',facebook:'Facebook',instagram:'Instagram',more:'其他分享方式',copy:'複製網站連結',hint:'若裝置支援，Instagram 會出現在裝置的分享選單中。',copied:'已複製 Cinema 網站連結。',instagramCopied:'已複製連結，請貼到 Instagram。',failed:'無法複製連結。',pageTitle:'台灣影城地圖',shareText:'查看全台影城位置與電影場次。'},
+    id:{heading:'Bagikan situs Cinema',whatsapp:'WhatsApp',facebook:'Facebook',instagram:'Instagram',more:'Aplikasi lainnya',copy:'Salin tautan situs',hint:'Instagram tersedia lewat menu berbagi perangkat jika didukung.',copied:'Tautan situs Cinema disalin.',instagramCopied:'Tautan disalin. Tempelkan ke Instagram.',failed:'Tautan tidak bisa disalin.',pageTitle:'Peta Bioskop Taiwan',shareText:'Lihat lokasi bioskop dan jadwal film di Taiwan.'},
+    ja:{heading:'Cinema のウェブサイトを共有',whatsapp:'WhatsApp',facebook:'Facebook',instagram:'Instagram',more:'その他のアプリ',copy:'ウェブサイトのリンクをコピー',hint:'対応端末では、Instagram は端末の共有メニューに表示されます。',copied:'Cinema のリンクをコピーしました。',instagramCopied:'リンクをコピーしました。Instagram に貼り付けてください。',failed:'リンクをコピーできませんでした。',pageTitle:'台湾シネママップ',shareText:'台湾の映画館と上映スケジュールをチェック。'},
+    ko:{heading:'Cinema 웹사이트 공유',whatsapp:'WhatsApp',facebook:'Facebook',instagram:'Instagram',more:'다른 앱',copy:'웹사이트 링크 복사',hint:'지원되는 기기에서는 Instagram이 기기 공유 메뉴에 표시됩니다.',copied:'Cinema 링크를 복사했습니다.',instagramCopied:'링크를 복사했습니다. Instagram에 붙여 넣으세요.',failed:'링크를 복사하지 못했습니다.',pageTitle:'대만 영화관 지도',shareText:'대만 영화관 위치와 상영 시간을 확인하세요.'},
+    vi:{heading:'Chia sẻ trang Cinema',whatsapp:'WhatsApp',facebook:'Facebook',instagram:'Instagram',more:'Ứng dụng khác',copy:'Sao chép liên kết trang web',hint:'Nếu thiết bị hỗ trợ, Instagram sẽ xuất hiện trong bảng chia sẻ.',copied:'Đã sao chép liên kết Cinema.',instagramCopied:'Đã sao chép liên kết. Hãy dán vào Instagram.',failed:'Không thể sao chép liên kết.',pageTitle:'Bản đồ rạp chiếu phim Đài Loan',shareText:'Khám phá vị trí rạp và lịch chiếu phim tại Đài Loan.'},
+    th:{heading:'แชร์เว็บไซต์ Cinema',whatsapp:'WhatsApp',facebook:'Facebook',instagram:'Instagram',more:'แอปอื่น ๆ',copy:'คัดลอกลิงก์เว็บไซต์',hint:'หากอุปกรณ์รองรับ Instagram จะแสดงในเมนูแชร์ของอุปกรณ์',copied:'คัดลอกลิงก์ Cinema แล้ว',instagramCopied:'คัดลอกลิงก์แล้ว วางใน Instagram ได้เลย',failed:'คัดลอกลิงก์ไม่สำเร็จ',pageTitle:'แผนที่โรงภาพยนตร์ไต้หวัน',shareText:'ดูที่ตั้งโรงภาพยนตร์และรอบฉายในไต้หวัน'}
+  };
+  function syncShareLabels() {
+    const labels=shareLabels[language]||shareLabels.en;
+    $('#share-toggle').setAttribute('aria-label',labels.heading);$('#share-toggle').title=labels.heading;
+    $('#share-menu').setAttribute('aria-label',labels.heading);$('#share-heading').textContent=labels.heading;$('#share-hint').textContent=labels.hint;
+    document.querySelectorAll('[data-share-label]').forEach(el=>{el.textContent=labels[el.dataset.shareLabel]||shareLabels.en[el.dataset.shareLabel];});
+  }
+  function setShareMenu(open) {
+    const menu=$('#share-menu'),button=$('#share-toggle');menu.hidden=!open;button.setAttribute('aria-expanded',String(open));
+    if(open)$('#share-feedback').textContent='';
+  }
+  function cinemaShareUrl() {
+    const canonical=document.querySelector('link[rel="canonical"]')?.href;
+    return canonical?new URL(canonical,location.href).href:new URL('./',location.href).href;
+  }
+  async function shareCinema(action) {
+    const labels=shareLabels[language]||shareLabels.en,url=cinemaShareUrl();
+    if(action==='whatsapp'){
+      window.open(`https://wa.me/?text=${encodeURIComponent(`${labels.shareText} ${url}`)}`,'_blank','noopener,noreferrer');setShareMenu(false);return;
+    }
+    if(action==='facebook'){
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,'_blank','noopener,noreferrer');setShareMenu(false);return;
+    }
+    if(action==='copy'){
+      try{await writeClipboard(url);$('#share-feedback').textContent=labels.copied;}
+      catch(error){console.warn('Could not copy Cinema link',error);$('#share-feedback').textContent=labels.failed;}
+      return;
+    }
+    if(action==='instagram'||action==='more'){
+      if(typeof navigator.share==='function'){
+        try{await navigator.share({title:labels.pageTitle,text:labels.shareText,url});setShareMenu(false);}
+        catch(error){if(error?.name!=='AbortError'){console.warn('Native sharing unavailable',error);try{await writeClipboard(url);$('#share-feedback').textContent=action==='instagram'?labels.instagramCopied:labels.copied;}catch{$('#share-feedback').textContent=labels.failed;}}}
+      }else{
+        try{await writeClipboard(url);$('#share-feedback').textContent=action==='instagram'?labels.instagramCopied:labels.copied;}
+        catch(error){console.warn('Could not copy Cinema link',error);$('#share-feedback').textContent=labels.failed;}
+      }
+    }
+  }
   function loadJson(url) {
     return fetch(url).then((r)=>{if(!r.ok)throw new Error(`${r.status} ${url}`);return r.json();});
   }
@@ -498,7 +544,7 @@
     languageSelect.setAttribute('aria-label',ui('language'));subtitleSelect.setAttribute('aria-label',ui('subtitles'));audioSelect.setAttribute('aria-label',ui('audio'));
     $('#date-prev').setAttribute('aria-label',ui('previous'));$('#date-next').setAttribute('aria-label',ui('next'));
     setupCityOptions();citySelect.value=selectedCity;setupDateOptions();if(availableDates.includes(priorDate))dateSelect.value=priorDate;setupLanguageFilters();setupBrandOptions();syncDateControls();
-    updateMobileActionLabels();
+    updateMobileActionLabels();syncShareLabels();
     $('#data-note').textContent=`${ui('dataNote')} ${(subtitleCoverageLabels[language]||subtitleCoverageLabels.en)(explicitSubtitleRows,knownShowtimeRows)}`;
     $('#updated').textContent=`${ui('dataUpdated')} · ${formatDate(dataGeneratedDate||todayTaiwan(),'short')} · ${ui('localTime')}`;
     setTheme(document.querySelector('.app').dataset.theme||'dark');
@@ -632,5 +678,9 @@
   });
     $('#reset').addEventListener('click',()=>{searchInput.value='';subtitleSelect.value='all';audioSelect.value='all';dateSelect.value=availableDates.includes(todayTaiwan())?todayTaiwan():(availableDates.find(d=>d>=todayTaiwan())||availableDates.at(-1));syncDateControls();loadDateShowtimes(dateSelect.value);mapCaption.classList.remove('location-active');if(userMarker){userMarker.remove();userMarker=null;}userPosition=null;selectCity('all',true);});
   document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();searchInput.focus();}if(e.key==='Escape'&&document.activeElement===searchInput){searchInput.value='';renderResults();searchInput.blur();}});
+  $('#share-toggle').addEventListener('click',()=>setShareMenu($('#share-menu').hidden));
+  $('#share-menu').addEventListener('click',event=>{const option=event.target.closest('[data-share-action]');if(option)shareCinema(option.dataset.shareAction);});
+  document.addEventListener('click',event=>{if(!$('#share-control').contains(event.target))setShareMenu(false);});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!$('#share-menu').hidden){setShareMenu(false);$('#share-toggle').focus();}});
   init();
 })();

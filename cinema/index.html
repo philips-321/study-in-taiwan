@@ -12,9 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://tiles.openfreemap.org">
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
-  <link rel="stylesheet" href="cinema.css?v=20261025w">
+  <link rel="stylesheet" href="cinema.css?v=20261026a">
   <script defer src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
-  <script defer src="cinema.js?v=20261025w"></script>
+  <script defer src="cinema.js?v=20261026a"></script>
 </head>
 <body>
   <main class="app" data-sheet="half" data-map-visible="true">
@@ -41,6 +41,19 @@
           <div class="eyebrow" data-i18n="eyebrow">SCREENINGS ACROSS TAIWAN</div>
           <div class="head-actions">
             <label class="language-control"><span class="sr-only" data-i18n="language">Language</span><select id="language" aria-label="Language"><option value="en">EN</option><option value="zh-TW">繁中</option><option value="id">ID</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="vi">VI</option><option value="th">TH</option></select></label>
+            <div class="share-control" id="share-control">
+              <button class="icon-button share-button" id="share-toggle" type="button" aria-label="Share Cinema website" title="Share Cinema website" aria-haspopup="true" aria-expanded="false" aria-controls="share-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m0 0L7 8m5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"></path></svg></button>
+              <div class="share-menu" id="share-menu" aria-label="Share Cinema website" hidden>
+                <div class="share-menu-heading" id="share-heading">Share Cinema</div>
+                <button class="share-option" type="button" data-share-action="whatsapp"><span aria-hidden="true" class="whatsapp-mark">WA</span><span data-share-label="whatsapp">WhatsApp</span></button>
+                <button class="share-option" type="button" data-share-action="facebook"><span aria-hidden="true" class="facebook-mark">f</span><span data-share-label="facebook">Facebook</span></button>
+                <button class="share-option" type="button" data-share-action="instagram"><span aria-hidden="true">◎</span><span data-share-label="instagram">Instagram</span></button>
+                <button class="share-option" type="button" data-share-action="more"><span aria-hidden="true">↗</span><span data-share-label="more">More apps</span></button>
+                <button class="share-option" type="button" data-share-action="copy"><span aria-hidden="true">▢</span><span data-share-label="copy">Copy website link</span></button>
+                <p class="share-menu-hint" id="share-hint">Instagram uses your device's share menu when available.</p>
+                <div class="share-feedback" id="share-feedback" aria-live="polite"></div>
+              </div>
+            </div>
             <button class="icon-button" id="theme" type="button" aria-label="Switch to light mode" title="Switch theme">☼</button>
             <button class="icon-button sheet-collapse" id="sheet-collapse" type="button" aria-label="Hide list and show full map" title="Hide list and show full map">⌄</button>
             <button class="icon-button map-view-toggle" id="map-view-toggle" type="button" aria-label="Hide map" title="Hide map">▣</button>
