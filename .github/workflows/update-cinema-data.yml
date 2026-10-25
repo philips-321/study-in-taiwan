@@ -39,7 +39,35 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Skip if cinema JSON was refreshed today in Taiwan
+        id: daily_guard
+        run: |
+          set -euo pipefail
+          today="$(TZ=Asia/Taipei date +%F)"
+          latest="$(node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const manifest = JSON.parse(fs.readFileSync('cinema/data/manifest.json', 'utf8'));
+          const localDate = value => {
+            const timestamp = Date.parse(value || '');
+            if (!Number.isFinite(timestamp)) return '';
+            const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+              timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
+            }).formatToParts(new Date(timestamp)).map(part => [part.type, part.value]));
+            return `${parts.year}-${parts.month}-${parts.day}`;
+          };
+          const dates = [localDate(manifest.generated_at), manifest.refresh_policy?.last_completed_taiwan_date].filter(Boolean).sort();
+          process.stdout.write(dates.at(-1) || '');
+          NODE
+          )"
+          if [ "$latest" = "$today" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Cinema JSON is already current for Taiwan date $today; skipping source/API requests."
+          else
+            echo 'skip=false' >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Preserve previous showtimes for last-known-good fallback
+        if: steps.daily_guard.outputs.skip != 'true'
         run: |
           set -euo pipefail
           rm -rf /tmp/cinema-showtimes-prev
@@ -52,6 +80,7 @@ jobs:
           fi
 
       - name: Probe MOC movie source once
+        if: steps.daily_guard.outputs.skip != 'true'
         id: moc_probe
         shell: bash
         run: |
@@ -66,6 +95,7 @@ jobs:
           fi
 
       - name: Refresh cinema JSON
+        if: steps.daily_guard.outputs.skip != 'true'
         shell: bash
         env:
           MOC_AVAILABLE: ${{ steps.moc_probe.outputs.available }}
@@ -78,6 +108,7 @@ jobs:
           fi
 
       - name: Restore failed-source last-known-good rows and source health
+        if: steps.daily_guard.outputs.skip != 'true'
         env:
           CINEMA_PREVIOUS_SHOWTIMES_DIR: /tmp/cinema-showtimes-prev
           CINEMA_PREVIOUS_MOVIES_FILE: /tmp/cinema-movies-prev.json
@@ -86,6 +117,7 @@ jobs:
         run: node cinema/scripts/restore-failed-source-fallbacks.mjs
 
       - name: Validate generated JSON
+        if: steps.daily_guard.outputs.skip != 'true'
         run: |
           set -euo pipefail
           test -s cinema/data/manifest.json
@@ -193,7 +225,27 @@ jobs:
           console.log(`Validated ${totalRows} screening rows, ${referencedMovieIds.size} referenced films, and ${sessionKeys.size} unique sessions.`);
           NODE
 
+      - name: Record completed Taiwan refresh date
+        if: steps.daily_guard.outputs.skip != 'true'
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const file = 'cinema/data/manifest.json';
+          const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+            timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
+          }).formatToParts(new Date()).map(part => [part.type, part.value]));
+          const date = `${parts.year}-${parts.month}-${parts.day}`;
+          manifest.refresh_policy = {
+            ...(manifest.refresh_policy || {}),
+            cadence: 'at most once per Taiwan calendar day',
+            last_completed_taiwan_date: date
+          };
+          fs.writeFileSync(file, `${JSON.stringify(manifest, null, 2)}\n`);
+          NODE
+
       - name: Commit changed JSON only
+        if: steps.daily_guard.outputs.skip != 'true'
         run: |
           set -euo pipefail
           if [ -z "$(git status --porcelain -- cinema/data)" ]; then
