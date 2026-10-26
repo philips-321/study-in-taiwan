@@ -70,6 +70,9 @@ jobs:
         if: steps.daily_guard.outputs.skip != 'true'
         run: |
           set -euo pipefail
+          rm -rf /tmp/cinema-data-prev
+          mkdir -p /tmp/cinema-data-prev
+          cp -a cinema/data/. /tmp/cinema-data-prev/
           rm -rf /tmp/cinema-showtimes-prev
           mkdir -p /tmp/cinema-showtimes-prev
           if [ -d cinema/data/showtimes ]; then
@@ -112,9 +115,16 @@ jobs:
         env:
           CINEMA_PREVIOUS_SHOWTIMES_DIR: /tmp/cinema-showtimes-prev
           CINEMA_PREVIOUS_MOVIES_FILE: /tmp/cinema-movies-prev.json
-          CINEMA_FORCE_FAILED_SOURCES: ${{ steps.moc_probe.outputs.available == 'true' && '' || 'moc-culture-movie-api' }}
+          CINEMA_MOC_AVAILABLE: ${{ steps.moc_probe.outputs.available }}
           CINEMA_FORCED_SOURCE_ERROR: MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests
         run: node cinema/scripts/restore-failed-source-fallbacks.mjs
+
+      - name: Isolate repeated city data failures and write report
+        if: steps.daily_guard.outputs.skip != 'true'
+        env:
+          CINEMA_PREVIOUS_DATA_DIR: /tmp/cinema-data-prev
+          CINEMA_CITY_UPDATE_STATE: .github/cinema-city-update-health.json
+        run: node cinema/scripts/apply-city-update-policy.mjs
 
       - name: Validate generated JSON
         if: steps.daily_guard.outputs.skip != 'true'
@@ -248,14 +258,14 @@ jobs:
         if: steps.daily_guard.outputs.skip != 'true'
         run: |
           set -euo pipefail
-          if [ -z "$(git status --porcelain -- cinema/data)" ]; then
-            echo 'No cinema data changes.'
+          if [ -z "$(git status --porcelain -- cinema/data .github/cinema-city-update-health.json)" ]; then
+            echo 'No cinema data or city-health changes.'
             exit 0
           fi
 
           git config user.name 'cinema-data-bot'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add cinema/data
+          git add cinema/data .github/cinema-city-update-health.json
           git commit -m 'Update Taiwan cinema JSON [skip ci]'
 
           # main may move while collectors are running. Retry from current main

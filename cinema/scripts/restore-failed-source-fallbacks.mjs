@@ -14,6 +14,7 @@ const forcedFailures = new Set(
     .map(value => value.trim())
     .filter(Boolean)
 );
+if (process.env.CINEMA_MOC_AVAILABLE === 'false') forcedFailures.add('moc-culture-movie-api');
 const forcedError = process.env.CINEMA_FORCED_SOURCE_ERROR || 'Source probe failed before collector run';
 const now = new Date();
 const nowIso = now.toISOString();

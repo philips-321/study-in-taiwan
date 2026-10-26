@@ -1,10 +1,16 @@
 # Taiwan Cinema / Showtime Collector
 
-Read [USER-RULES.md](USER-RULES.md) first before any cinema work, then read this file. The user's manual-browser and no-GitHub-Actions rule overrides older technical notes below.
+Read [USER-RULES.md](USER-RULES.md) first before any cinema work, then read this file. Manual source research must use a browser one cinema at a time; the user-authorized API refresh workflow cannot replace that research.
 
 ## Browser experience
 
-For source completion, open each cinema source in a browser one at a time. Record source URLs, observed fields, and access/rendering issues in `SOURCE-RESEARCH-NOTES.md`, `SOURCE-RESEARCH-LIST.csv`, and `data/research/observed-sources.json`. Do not use GitHub Actions to browse, collect, or refresh cinema data. Do not create scheduled workers. Make requested updates manually from browser-verified sources.
+For source completion, open each cinema source in a browser one at a time. Record source URLs, observed fields, and access/rendering issues in `SOURCE-RESEARCH-NOTES.md`, `SOURCE-RESEARCH-LIST.csv`, and `data/research/observed-sources.json`. GitHub Actions must never browse cinema pages or perform manual source research. The existing scheduled API refresh may update the static snapshot with its configured endpoints and must follow the city failure policy below.
+
+### City refresh failure policy
+
+`update-cinema-data.yml` treats a city summary/count integrity mismatch as a city-level refresh failure. It records at most one failure per Taiwan calendar day in `.github/cinema-city-update-health.json`. The first failed day is reported while other cities continue. After failures on two consecutive Taiwan dates, that city's cinema and showtime JSON stays at its last-known-good version; date/city indexes and the manifest are rebuilt around it, and the GitHub Actions run summary lists it for manual browser research. Other cities continue through the refresh.
+
+The hold is deliberate and persists until manual browser research fixes the city's records. In the same change that records verified data, remove that city's entire entry from `.github/cinema-city-update-health.json` so the next scheduled refresh can resume it. A missing schedule alone is not a city failure and must never be interpreted as a cinema closure. The source collectors may still fetch a nationwide feed once; the held city's output is restored from its last-known-good files and excluded from the refreshed snapshot.
 
 Use [SOURCE-RESEARCH-LIST.md](SOURCE-RESEARCH-LIST.md) for clickable source-search and map links for all 107 cinema records. Record inspected pages and limitations in [SOURCE-RESEARCH-NOTES.md](SOURCE-RESEARCH-NOTES.md), and put the best confirmed source link in [SOURCE-RESEARCH-LIST.csv](SOURCE-RESEARCH-LIST.csv).
 
