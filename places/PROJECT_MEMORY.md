@@ -2,7 +2,7 @@
 
 ## Mission
 
-Build and maintain `https://study-in-taiwan.com/places/`: an Indonesian-first, source-checkable guide to food, attractions, photo spots, and practical places near Taiwan hotels in Taiwan. Readers include travellers going out as a couple and groups of 9–11. The first UI languages are Indonesian, English, and Traditional Chinese.
+Build and maintain `https://study-in-taiwan.com/places/`: an Indonesian-first, source-checkable guide to food, attractions, photo spots, and practical places near selected hotels in Taiwan. Readers include travellers going out as a couple and groups of 9–11. The first UI languages are Indonesian, English, and Traditional Chinese.
 
 ## User requirements
 
@@ -27,6 +27,7 @@ Build and maintain `https://study-in-taiwan.com/places/`: an Indonesian-first, s
 - Coordinates come from Taiwan Tourism Administration's lodging open-data JSON and are recorded with exact map links in `data/hotels/index.json`. E-House and Bade registry snapshots were last updated 2025-07-23; the official In Joy record was updated 2026-09-16; Legend was updated 2026-06-08. These hotel records establish identity/coordinates but are not recent evidence for nearby shops' current status.
 - Created the index and four hotel pages. On 2026-10-28, added the first verified place record: 港園牛肉麵 (Gang Yuan Beef Noodle), 350 m straight-line from Legend Hotel Pier 2. It has a Google Maps CID match, a direct visit article dated 2026-09-14, and corroborating official tourism address information. No photo is used because reuse permission was not confirmed.
 - Nearby research remains incomplete for all other radii/categories and hotels; the three other hotels have no place records yet. The hotel records still use coordinate-search Maps URLs rather than separately confirmed Google place identities.
+- Public copy and hotel JSON have been generalized; they omit sponsor branding and itinerary order/date labels. Commit `2dfbc81` was pushed to `main` on 2026-10-28 Asia/Taipei. GitHub Pages reports the latest build as `built` with no error.
 
 ## Data policy
 

@@ -4,7 +4,7 @@ Last updated: 2026-10-28 (Asia/Taipei)
 
 ## Mission
 
-Build the maintained, multilingual, source-backed `/places/` guide for verified Taiwan hotels in Taiwan and useful nearby food, sights, photo spots, and practical stops. Keep the public content in static HTML and small JSON files, with no D1.
+Build the maintained, multilingual, source-backed `/places/` guide for selected hotels in Taiwan and useful nearby food, sights, photo spots, and practical stops. Keep the public content in static HTML and small JSON files, with no D1.
 
 ## Progress
 
@@ -15,12 +15,15 @@ Build the maintained, multilingual, source-backed `/places/` guide for verified 
 - [x] Establish four hotel areas and record their official names, addresses, and coordinates.
 - [x] Verify hotel identity, address, and coordinates against Taiwan Tourism Administration open data.
 - [x] Build the `/places/` index shell and four individual hotel pages in Indonesian, English, and Traditional Chinese.
+- [x] Generalize public branding and remove itinerary order/date labels and requester notes from public HTML and hotel JSON.
+- [x] Commit and push the initial guide to `main`; GitHub Pages reports a successful build with no error.
 - [ ] Verify exact Google Maps place identity/place ID for each hotel, in addition to coordinate-pin links.
 - [ ] Build categorized/radius JSON chunks for places around each hotel.
 - [ ] Research and verify current local recommendations, keeping evidence from the last 90 days where possible.
 - [ ] Check place identities and map pins; add legal photo links/credits when available.
-- [ ] Add all hotel/place pages to the `/places/` index and site sitemap.
-- [ ] Review source coverage, stale/unknown status labels, accessibility, and language switching before publishing.
+- [x] Link the four hotel pages and the first verified place from the `/places/` index.
+- [ ] Add `/places/` URLs to the site sitemap.
+- [ ] Continue reviewing source coverage, status labels, accessibility, and language switching as the guide grows.
 
 ## Coverage tracker
 
@@ -62,5 +65,7 @@ Next bounded slice: Taipei · Wanhua · 東驛 E-HOUSE / E-house 155 · food and
 - Status is `verified_active` based on the direct visit article within 90 days, checked 2026-10-28. Holiday hours need rechecking. No claim that 9–11 can sit together; no photo included because reuse terms were unclear.
 - Updated the Legend Hotel page and Places index; added the data chunk to the manifest and updated coverage to 1 place / 1 verified active.
 - Next: Taipei/Wanhua, E-House 155, food/practical, 0–500 m.
+- Generalized all public `/places` branding: removed sponsor name, sequence numbers, stay date labels, and requester-specific notes from public HTML and hotel JSON.
+- Committed as `2dfbc81` and pushed to `main`. GitHub Pages API reports status `built`, no build error, at 2026-10-28 00:11 Asia/Taipei. Production URL: `https://study-in-taiwan.com/places/`.
 
 - Generalized the public guide branding and removed requester-specific hotel order/date labels and traveler notes from the public HTML and hotel JSON before publishing.
