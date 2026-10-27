@@ -17,6 +17,7 @@ Build the maintained, multilingual, source-backed `/places/` guide for selected 
 - [x] Build the `/places/` index shell and four individual hotel pages in Indonesian, English, and Traditional Chinese.
 - [x] Generalize public branding and remove itinerary order/date labels and requester notes from public HTML and hotel JSON.
 - [x] Commit and push the initial guide to `main`; GitHub Pages reports a successful build with no error.
+- [x] Revise the public UI to remove internal process copy and hotel coordinate metadata; align language controls at the upper right on every page.
 - [ ] Verify exact Google Maps place identity/place ID for each hotel, in addition to coordinate-pin links.
 - [ ] Build categorized/radius JSON chunks for places around each hotel.
 - [ ] Research and verify current local recommendations, keeping evidence from the last 90 days where possible.
@@ -67,5 +68,6 @@ Next bounded slice: Taipei · Wanhua · 東驛 E-HOUSE / E-house 155 · food and
 - Next: Taipei/Wanhua, E-House 155, food/practical, 0–500 m.
 - Generalized all public `/places` branding: removed sponsor name, sequence numbers, stay date labels, and requester-specific notes from public HTML and hotel JSON.
 - Committed as `2dfbc81` and pushed to `main`. GitHub Pages API reports status `built`, no build error, at 2026-10-28 00:11 Asia/Taipei. Production URL: `https://study-in-taiwan.com/places/`.
+- Revised the public UI after review: removed hotel coordinate/registry lines, the process-method section, and implementation notes from visitor pages; removed the site name from the upper-left header; standardized the ID / EN / 繁中 selector at the upper right on the index and every hotel page. Language choice now persists across these pages.
 
 - Generalized the public guide branding and removed requester-specific hotel order/date labels and traveler notes from the public HTML and hotel JSON before publishing.

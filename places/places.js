@@ -1,15 +1,160 @@
-const copy={
-  id:{eyebrow:'Panduan area hotel Taiwan',title:'Taiwan, gampang dijelajahi dari hotel.',lede:'Temukan tempat makan, wisata, dan spot foto dekat hotel. Tiap rekomendasi punya sumber, koordinat, tautan peta, serta status verifikasi.',hotelLabel:'Pilih hotel',allHotels:'Semua hotel',radiusLabel:'Jarak lurus dari hotel',anyDistance:'Semua jarak',categoryLabel:'Kategori',allCategories:'Semua kategori',food:'Makan & minum',sightseeing:'Wisata',photoSpot:'Spot foto',shopping:'Belanja',culture:'Budaya',practical:'Kebutuhan',status:'Empat hotel awal sudah terdaftar. Riset tempat dan koordinat sedang berjalan.',hotelsEyebrow:'Titik awal',hotelsTitle:'Hotel yang tercakup',distNote:'Jarak pada kartu adalah radius garis lurus, bukan jarak jalan kaki.',nearbyEyebrow:'Hasil riset',nearbyTitle:'Tempat dekat hotel',emptyTitle:'Riset tempat sedang berjalan',emptyText:'Hotel sudah dicatat. Kami akan menambahkan tempat satu per satu setelah nama, aktivitas terbaru, koordinat, dan tautan peta cocok dengan sumber.',methodTitle:'Cara data ini dijaga tetap berguna',rule1:'Utamakan sumber aktif atau tulisan terbaru dalam 90 hari terakhir.',rule2:'Posting lama saja tidak membuktikan tempat masih buka.',rule3:'Setiap tempat punya tautan sumber dan titik peta yang dicek.',rule4:'Taichung: cek rute bus dan pilihan kendaraan; jangan mengandalkan MRT.',rule5:'Untuk rombongan 9–11 orang, kapasitas dan reservasi harus didukung sumber.',footer:'Data tempat disimpan sebagai JSON statis; tanpa Cloudflare D1.',ledger:'Lihat progres proyek',map:'Buka titik di Google Maps',hotelPage:'Buka halaman hotel'},
-  en:{eyebrow:'Taiwan hotel-area guide',title:'Explore Taiwan, starting from your hotel.',lede:'Find food, sights, and photo spots nearby. Every recommendation will include sources, coordinates, a map link, and a verification status.',hotelLabel:'Choose a hotel',allHotels:'All hotels',radiusLabel:'Straight-line radius',anyDistance:'Any distance',categoryLabel:'Category',allCategories:'All categories',food:'Food & drink',sightseeing:'Sightseeing',photoSpot:'Photo spots',shopping:'Shopping',culture:'Culture',practical:'Essentials',status:'Four starting hotels are listed. Nearby-place and coordinate research is underway.',hotelsEyebrow:'Starting points',hotelsTitle:'Hotels covered by this guide',distNote:'Distances are straight-line radii, not walking routes.',nearbyEyebrow:'Research',nearbyTitle:'Places near the hotels',emptyTitle:'Place research is underway',emptyText:'Hotels are recorded. Places will be added after their names, recent activity, coordinates, and map links have been checked against sources.',methodTitle:'How the data stays useful',rule1:'Prefer active sources or posts from the last 90 days.',rule2:'An old post alone does not prove a place is still open.',rule3:'Every place will have source links and a checked map point.',rule4:'Taichung: verify bus routes and other transport; do not rely on MRT.',rule5:'For groups of 9–11, capacity and reservations need source evidence.',footer:'Place data is stored in static JSON; no Cloudflare D1.',ledger:'View project progress',map:'Open point in Google Maps',hotelPage:'Open hotel page'},
-  'zh-Hant':{eyebrow:'台灣飯店周邊指南',title:'從飯店出發，輕鬆探索台灣。',lede:'尋找飯店附近的美食、景點與拍照地點。每項推薦都會附上來源、座標、地圖連結及查證狀態。',hotelLabel:'選擇飯店',allHotels:'所有飯店',radiusLabel:'直線距離範圍',anyDistance:'不限距離',categoryLabel:'分類',allCategories:'所有分類',food:'美食與飲品',sightseeing:'觀光景點',photoSpot:'拍照景點',shopping:'購物',culture:'文化',practical:'生活所需',status:'已登錄四間起始飯店，正在查證周邊地點與座標。',hotelsEyebrow:'起點',hotelsTitle:'本指南涵蓋的飯店',distNote:'卡片距離為直線半徑，不是步行距離。',nearbyEyebrow:'查證資料',nearbyTitle:'飯店附近地點',emptyTitle:'正在研究周邊地點',emptyText:'飯店已記錄。確認地點名稱、近期營業資訊、座標與地圖連結後，才會逐一新增。',methodTitle:'資料查證方式',rule1:'優先採用仍有效的官方來源或最近 90 天內的文章。',rule2:'僅有舊文章不足以證明店家仍在營業。',rule3:'每個地點都會附上來源連結及已確認的地圖位置。',rule4:'台中需確認公車及其他交通方式，不預設捷運可用。',rule5:'9–11 人團體須以來源確認接待量與預約方式。',footer:'地點資料使用靜態 JSON 儲存，不使用 Cloudflare D1。',ledger:'查看專案進度',map:'在 Google 地圖開啟位置',hotelPage:'查看飯店頁面'}
+const copy = {
+  id: {
+    eyebrow: 'PANDUAN TEMPAT DI TAIWAN',
+    title: 'Temukan Taiwan dari sekitar hotel.',
+    lede: 'Cari tempat makan, wisata, spot foto, dan kebutuhan praktis dekat hotel.',
+    hotelLabel: 'Pilih area hotel', allHotels: 'Semua area', radiusLabel: 'Jarak garis lurus', anyDistance: 'Semua jarak',
+    categoryLabel: 'Kategori', allCategories: 'Semua kategori', food: 'Makan & minum', sightseeing: 'Wisata',
+    photoSpot: 'Spot foto', shopping: 'Belanja', culture: 'Budaya', practical: 'Kebutuhan',
+    status: 'Satu rekomendasi makanan tersedia di Kaohsiung.', hotelsEyebrow: 'AREA', hotelsTitle: 'Pilih area hotel',
+    distNote: 'Jarak adalah garis lurus, bukan jarak jalan kaki.', nearbyEyebrow: 'PILIHAN', nearbyTitle: 'Tempat sekitar hotel',
+    emptyTitle: 'Belum ada pilihan untuk filter ini', emptyText: 'Coba area, jarak, atau kategori lain.',
+    map: 'Google Maps', hotelPage: 'Lihat area', sources: 'Sumber', active: 'Aktif menurut kunjungan terbaru', review: 'Perlu dicek',
+    radius: 'm garis lurus', date: 'Sumber terbaru'
+  },
+  en: {
+    eyebrow: 'TAIWAN PLACES GUIDE',
+    title: 'Explore Taiwan around your hotel.',
+    lede: 'Find food, sights, photo spots, and practical places nearby.',
+    hotelLabel: 'Choose a hotel area', allHotels: 'All areas', radiusLabel: 'Straight-line distance', anyDistance: 'Any distance',
+    categoryLabel: 'Category', allCategories: 'All categories', food: 'Food & drink', sightseeing: 'Sightseeing',
+    photoSpot: 'Photo spots', shopping: 'Shopping', culture: 'Culture', practical: 'Essentials',
+    status: 'One food recommendation is listed in Kaohsiung.', hotelsEyebrow: 'AREAS', hotelsTitle: 'Choose a hotel area',
+    distNote: 'Distances are straight-line, not walking routes.', nearbyEyebrow: 'PLACES', nearbyTitle: 'Places near hotels',
+    emptyTitle: 'No places match these filters', emptyText: 'Try another area, distance, or category.',
+    map: 'Google Maps', hotelPage: 'View area', sources: 'Sources', active: 'Recent visit reported', review: 'Needs checking',
+    radius: 'm straight-line', date: 'Recent source'
+  },
+  'zh-Hant': {
+    eyebrow: '台灣周邊地點指南',
+    title: '從飯店附近開始探索台灣。',
+    lede: '尋找附近的美食、景點、拍照地點與生活所需。',
+    hotelLabel: '選擇飯店區域', allHotels: '所有區域', radiusLabel: '直線距離', anyDistance: '不限距離',
+    categoryLabel: '分類', allCategories: '所有分類', food: '美食與飲品', sightseeing: '景點',
+    photoSpot: '拍照地點', shopping: '購物', culture: '文化', practical: '生活所需',
+    status: '高雄目前有一項美食推薦。', hotelsEyebrow: '區域', hotelsTitle: '選擇飯店區域',
+    distNote: '距離為直線距離，並非步行距離。', nearbyEyebrow: '地點', nearbyTitle: '飯店附近地點',
+    emptyTitle: '沒有符合條件的地點', emptyText: '請嘗試其他區域、距離或分類。',
+    map: 'Google 地圖', hotelPage: '查看區域', sources: '來源', active: '近期實訪報導', review: '待確認',
+    radius: '公尺直線距離', date: '近期來源'
+  }
 };
-let lang='id', hotels=[], places=[];
-const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const tr=key=>copy[lang][key]||copy.id[key]||key;
-function hotelCard(h){const name=h.name[lang]||h.name.en||h.name.local;const address=h.address[lang]||h.address.en||h.address.local;return `<article class="hotel-card" data-hotel="${escapeHtml(h.id)}"><h3>${escapeHtml(name)}</h3><div class="local-name">${escapeHtml(h.name.local)} · ${escapeHtml(h.city)}${h.district?`, ${escapeHtml(h.district)}`:''}</div><address>${escapeHtml(address)}</address><div class="card-actions"><a class="button primary" href="${escapeHtml(h.google_maps_url)}" target="_blank" rel="noopener">${tr('map')} ↗</a><a class="button" href="hotels/${escapeHtml(h.id)}.html">${tr('hotelPage')}</a></div></article>`}
-function placeCard(p){const name=p.name[lang]||p.name.en||p.name.local;const summary=p.summary?.[lang]||p.summary?.en||'';const distance=p.hotel_distances?.[0]?.distance_m;const status=p.status==='verified_active'?'Verified active / Aktif terverifikasi':'Needs review';const sources=(p.sources||[]).map(s=>`<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.title||s.url)}</a>${s.published_at?` · ${escapeHtml(s.published_at)}`:''}</li>`).join('');return `<article class="place-card" data-hotel="${escapeHtml(p.hotel_distances?.[0]?.hotel_id||'')}" data-category="${escapeHtml(p.category)}" data-distance="${Number(distance)||0}"><span class="hotel-order">${escapeHtml(status)}</span><h3>${escapeHtml(name)}</h3><div class="local-name">${escapeHtml(p.name.local)} · ${escapeHtml(p.address?.local||'')}</div><p>${escapeHtml(summary)}</p><p class="progress">${escapeHtml(p.city||'Kaohsiung')} · ${distance} m radius ${lang==='zh-Hant'?'直線距離':lang==='en'?'straight-line radius':'jarak garis lurus'} · ${escapeHtml(p.status_note||'')}</p>${p.group_notes?`<p class="note">${escapeHtml(p.group_notes)}</p>`:''}<div class="card-actions"><a class="button primary" href="${escapeHtml(p.google_maps?.url||'#')}" target="_blank" rel="noopener">${tr('map')} ↗</a><a class="button" href="hotels/${escapeHtml(p.hotel_distances?.[0]?.hotel_id||'')}.html">${tr('hotelPage')}</a></div><details><summary>${lang==='zh-Hant'?'來源與查證日期':lang==='en'?'Sources and checked dates':'Sumber dan tanggal pengecekan'}</summary><ul>${sources}</ul></details></article>`}
-async function init(){try{const [hotelData,manifest]=await Promise.all([fetch('./data/hotels/index.json').then(r=>r.json()),fetch('./data/manifest.json').then(r=>r.json())]);hotels=hotelData.hotels||[];document.querySelector('#hotel-grid').innerHTML=hotels.map(hotelCard).join('');const select=document.querySelector('#hotel-filter');for(const h of hotels){const option=document.createElement('option');option.value=h.id;option.textContent=`${h.city} · ${h.name[lang]||h.name.en}`;select.append(option)}const chunks=await Promise.all((manifest.files||[]).map(file=>fetch(`./data/${file}`).then(r=>r.json())));places=chunks.flatMap(chunk=>chunk.places||[]);document.querySelector('#place-grid').innerHTML=places.map(placeCard).join('');document.querySelector('#status-text').textContent=manifest.notice?.[lang]||tr('status');document.querySelector('#updated').textContent=`Updated / diperbarui: ${manifest.updated_at||'—'}`;document.querySelector('#result-count').textContent=String(places.length);document.querySelector('#empty-state').hidden=places.length>0}catch{document.querySelector('#status-text').textContent='Hotel or place data could not be loaded / Data hotel atau tempat belum dapat dimuat.'}}
-function setLanguage(next){lang=copy[next]?next:'id';document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=tr(el.dataset.i18n));document.querySelectorAll('.lang').forEach(button=>{const active=button.dataset.lang===lang;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active))});if(hotels.length){document.querySelector('#hotel-grid').innerHTML=hotels.map(hotelCard).join('');const options=[...document.querySelector('#hotel-filter').options].slice(1);options.forEach((option,index)=>{const h=hotels[index];option.textContent=`${h.city} · ${h.name[lang]||h.name.en}`})}if(places.length)document.querySelector('#place-grid').innerHTML=places.map(placeCard).join('')}
-document.querySelectorAll('.lang').forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
-document.querySelectorAll('#hotel-filter,#radius-filter,#category-filter').forEach(control=>control.addEventListener('change',()=>{const hotel=document.querySelector('#hotel-filter').value,radius=document.querySelector('#radius-filter').value,category=document.querySelector('#category-filter').value;document.querySelectorAll('.place-card').forEach(card=>{const distance=Number(card.dataset.distance||0);card.hidden=(hotel!=='all'&&card.dataset.hotel!==hotel)||(radius!=='all'&&distance>Number(radius))||(category!=='all'&&card.dataset.category!==category)})}));
-init();
+
+let lang = 'id';
+let hotels = [];
+let places = [];
+try { lang = localStorage.getItem('places-language') || 'id'; } catch {}
+if (!copy[lang]) lang = 'id';
+
+const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+}[char]));
+const tr = key => copy[lang][key] || copy.id[key] || key;
+
+function hotelCard(hotel) {
+  const name = hotel.name[lang] || hotel.name.en || hotel.name.local;
+  const address = hotel.address[lang] || hotel.address.en || hotel.address.local;
+  return `<article class="hotel-card" data-hotel="${escapeHtml(hotel.id)}">
+    <h3>${escapeHtml(name)}</h3>
+    <div class="local-name">${escapeHtml(hotel.name.local)} · ${escapeHtml(hotel.city)}${hotel.district ? `, ${escapeHtml(hotel.district)}` : ''}</div>
+    <address>${escapeHtml(address)}</address>
+    <div class="card-actions">
+      <a class="button primary" href="${escapeHtml(hotel.google_maps_url)}" target="_blank" rel="noopener">${tr('map')} ↗</a>
+      <a class="button" href="hotels/${escapeHtml(hotel.id)}.html">${tr('hotelPage')}</a>
+    </div>
+  </article>`;
+}
+
+function placeCard(place) {
+  const name = place.name[lang] || place.name.en || place.name.local;
+  const summary = place.summary?.[lang] || place.summary?.en || '';
+  const distance = place.hotel_distances?.[0]?.distance_m;
+  const sources = (place.sources || []).map(source => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.title || source.url)}</a>${source.published_at ? ` · ${escapeHtml(source.published_at)}` : ''}</li>`).join('');
+  const status = place.status === 'verified_active' ? tr('active') : tr('review');
+  const area = place.city || 'Kaohsiung';
+  return `<article class="place-card" data-hotel="${escapeHtml(place.hotel_distances?.[0]?.hotel_id || '')}" data-category="${escapeHtml(place.category)}" data-distance="${Number(distance) || 0}">
+    <span class="hotel-order">${escapeHtml(status)}</span>
+    <h3>${escapeHtml(name)}</h3>
+    <div class="local-name">${escapeHtml(place.name.local)} · ${escapeHtml(place.address?.local || '')}</div>
+    <p>${escapeHtml(summary)}</p>
+    <p class="progress">${escapeHtml(area)} · ${distance} ${tr('radius')}</p>
+    ${place.group_notes ? `<p class="note">${escapeHtml(place.group_notes)}</p>` : ''}
+    <div class="card-actions">
+      <a class="button primary" href="${escapeHtml(place.google_maps?.url || '#')}" target="_blank" rel="noopener">${tr('map')} ↗</a>
+      <a class="button" href="hotels/${escapeHtml(place.hotel_distances?.[0]?.hotel_id || '')}.html">${tr('hotelPage')}</a>
+    </div>
+    <details><summary>${tr('sources')}</summary><ul>${sources}</ul></details>
+  </article>`;
+}
+
+function setLanguage(next) {
+  lang = copy[next] ? next : 'id';
+  try { localStorage.setItem('places-language', lang); } catch {}
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = tr(element.dataset.i18n); });
+  document.querySelectorAll('[data-lang-content]').forEach(element => {
+    element.hidden = element.dataset.langContent !== lang;
+  });
+  document.querySelectorAll('.lang').forEach(button => {
+    const active = button.dataset.lang === lang;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+  const hotelGrid = document.querySelector('#hotel-grid');
+  if (hotelGrid && hotels.length) hotelGrid.innerHTML = hotels.map(hotelCard).join('');
+  const placeGrid = document.querySelector('#place-grid');
+  if (placeGrid && places.length) placeGrid.innerHTML = places.map(placeCard).join('');
+  const hotelFilter = document.querySelector('#hotel-filter');
+  if (hotelFilter && hotels.length) {
+    [...hotelFilter.options].slice(1).forEach((option, index) => {
+      const hotel = hotels[index];
+      option.textContent = `${hotel.city} · ${hotel.name[lang] || hotel.name.en}`;
+    });
+  }
+}
+
+async function initIndex() {
+  const hotelGrid = document.querySelector('#hotel-grid');
+  if (!hotelGrid) return;
+  try {
+    const [hotelData, manifest] = await Promise.all([
+      fetch('./data/hotels/index.json').then(response => response.json()),
+      fetch('./data/manifest.json').then(response => response.json())
+    ]);
+    hotels = hotelData.hotels || [];
+    hotelGrid.innerHTML = hotels.map(hotelCard).join('');
+    const hotelFilter = document.querySelector('#hotel-filter');
+    for (const hotel of hotels) {
+      const option = document.createElement('option');
+      option.value = hotel.id;
+      option.textContent = `${hotel.city} · ${hotel.name[lang] || hotel.name.en}`;
+      hotelFilter.append(option);
+    }
+    const chunks = await Promise.all((manifest.files || []).map(file => fetch(`./data/${file}`).then(response => response.json())));
+    places = chunks.flatMap(chunk => chunk.places || []);
+    document.querySelector('#place-grid').innerHTML = places.map(placeCard).join('');
+    document.querySelector('#status-text').textContent = manifest.notice?.[lang] || tr('status');
+    document.querySelector('#result-count').textContent = String(places.length);
+    document.querySelector('#empty-state').hidden = places.length > 0;
+    setLanguage(lang);
+  } catch {
+    const status = document.querySelector('#status-text');
+    if (status) status.textContent = tr('status');
+  }
+}
+
+document.querySelectorAll('.lang').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
+document.querySelectorAll('#hotel-filter, #radius-filter, #category-filter').forEach(control => control.addEventListener('change', () => {
+  const hotel = document.querySelector('#hotel-filter').value;
+  const radius = document.querySelector('#radius-filter').value;
+  const category = document.querySelector('#category-filter').value;
+  document.querySelectorAll('#place-grid .place-card').forEach(card => {
+    const distance = Number(card.dataset.distance || 0);
+    card.hidden = (hotel !== 'all' && card.dataset.hotel !== hotel) ||
+      (radius !== 'all' && distance > Number(radius)) ||
+      (category !== 'all' && card.dataset.category !== category);
+  });
+}));
+
+setLanguage(lang);
+initIndex();

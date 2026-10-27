@@ -25,6 +25,12 @@ This is a static, source-backed guide for useful places near the hotels supplied
 - Taichung recommendations must not assume MRT coverage. State the actual transport mode and verify current bus/transit details before presenting them.
 - Group outings for 9–11 people should note capacity/reservation evidence where available; do not imply a venue can seat a group without support.
 
+## Public page presentation
+
+- Keep public copy focused on visitor decisions. Keep research workflow, implementation details (including static JSON and D1), raw hotel coordinates, and registry update logs in project notes/data, not page copy.
+- Do not show the site/domain name in the upper-left header. Use a small `Places` link there.
+- Keep the ID / EN / 繁中 language controls at the upper right on every page with the same styling and behavior. Do not move them to the bottom of a page.
+
 ## Current scope
 
 Four starting hotels were supplied directly by the user and matched against Taiwan Tourism Administration records. Their official registry coordinates and hotel pages are recorded in `data/hotels/index.json`. Stay dates are kept as supplied because the month/year were not given. Nearby-place records are still being researched; no place distances have been guessed.

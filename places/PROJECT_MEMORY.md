@@ -18,6 +18,13 @@ Build and maintain `https://study-in-taiwan.com/places/`: an Indonesian-first, s
 - Update `TASK_LEDGER.md` every work session so a future run can see what's complete, where, and what is next.
 - Research is scheduled to continue hourly.
 
+## Public interface rules
+
+- Keep public pages visitor-focused. Do not show internal research methodology, JSON/D1 implementation notes, hotel coordinate values, registry update logs, or workflow progress explanations.
+- Do not put the site/domain brand in the upper-left header. Use only a small `Places` back link on detail pages.
+- Put the language selector at the upper right on every page, using the same ID / EN / 繁中 buttons and styling. Never place language choices in the footer or only at the bottom of a page.
+- Preserve the language control position and visual style when creating or editing pages; carry the selected language across the index and hotel pages.
+
 ## Current state (2026-10-28 Asia/Taipei)
 
 - Main repository: `/workspace/study-in-taiwan`, public domain `study-in-taiwan.com`.
