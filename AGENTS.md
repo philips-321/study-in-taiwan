@@ -94,3 +94,15 @@ Aturan ini berlaku untuk setiap agen. Pertahankan aturan khusus proyek di atas. 
 - Repo baru harus menerima bagian ini sebelum workflow dibuat. Pertahankan satu versi policy dan catat penyebarannya; jangan membuat workflow berbayar untuk menyinkronkan policy. Jangan menyebarkan rincian billing/receipt privat ke repo publik.
 
 <!-- END SHARED ACTIONS BUDGET POLICY v1 -->
+
+<!-- BEGIN SOURCE SNAPSHOT REUSE POLICY v1 -->
+## Baca snapshot sebelum mengambil sumber lagi
+
+- Pertanyaan atau permintaan laporan bukan izin untuk menjalankan collector, dispatch Actions, atau mengambil ulang API. Cari snapshot JSON/manifest yang sudah ada pada repo proyek terkait terlebih dahulu.
+- Gunakan nilai yang sudah dibaca dalam sesi ini selama sumbernya sama. Cantumkan waktu pengumpulan dan rentang data; jangan mengganti timestamp lama menjadi sekarang atau menyebut data lama sebagai live.
+- Jika perlu data lebih rinci, baca shard/raw snapshot yang sama. Jangan mengambil ulang semua domain hanya karena satu bagian laporan belum dibaca.
+- Pisahkan refresh sumber dari pemrosesan laporan. Builder laporan harus offline, tanpa kredensial dan tanpa fallback HTTP tersembunyi. Error/skema berubah menjaga snapshot terakhir; tidak memicu retry/fanout tanpa batas.
+- Refresh baru hanya jika diminta eksplisit atau ada jadwal refresh yang memang disetujui dan masih dalam budget. TTL hanya mencegah pengambilan terlalu cepat; TTL kedaluwarsa tidak dengan sendirinya memberi izin fetch.
+- Satu sumber/window/domain diambil sekali dan dibagikan ke semua laporan yang membutuhkannya. Simpan raw JSON yang diperlukan beserta generated_at, rentang, cap/sampling, dan identitas sumber; shard/kompres jika besar. Jangan membuat duplikat dataset di setiap repo tanpa kebutuhan.
+- Commit hasil dan snapshot penting segera; jangan menahan satu-satunya salinan di artifact yang akan kedaluwarsa. Bedakan cache ringkas dari raw evidence; jangan mengaku bisa membangun ulang raw detail yang sebelumnya tidak pernah disimpan.
+<!-- END SOURCE SNAPSHOT REUSE POLICY v1 -->
