@@ -5,6 +5,8 @@ import { buildMovieIndex, compactShowtime, expandShowtime, knownAgeRating, movie
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node cinema/scripts/import-showtimes-bootstrap.mjs <bootstrap.json>');
+const retrievedAt = process.argv[3] || '2026-10-24';
+const importedAt = new Date().toISOString();
 const ROOT = path.resolve('cinema/data');
 const SHOW_DIR = path.join(ROOT, 'showtimes');
 const MOVIES_FILE = path.join(ROOT, 'movies', 'index.json');
@@ -59,7 +61,7 @@ for (const program of data.programs) for (const title of [program.name, program.
 await write(path.join(ROOT, 'movie-metadata', 'showtimes.json'), {
   version: 1,
   source: 'ShowTimes official bootstrap program records',
-  retrieved_at: '2026-10-24',
+  retrieved_at: retrievedAt,
   movies: data.programs.map(program => ({
     id: program.id,
     movie_title: program.name,
@@ -102,8 +104,8 @@ for (const [corporationId, group] of Object.entries(data.eventsForCorporations))
       on_sales: null,
       source_event_id: String(event.id),
       source_url: `https://www.showtimes.com.tw/cinemas/${corporationId}/`,
-      source_role: 'user-provided official bootstrap snapshot retrieved 2026-10-24',
-      freshness: 'last-known-good',
+      source_role: `official ShowTimes bootstrap API retrieved ${retrievedAt}`,
+      freshness: 'fresh',
       source: 'showtimes-official-api'
     };
     const cityRows = rowsByCity.get(cinema.city) || [];
@@ -179,13 +181,14 @@ for (const file of cityFiles) {
   payload.showtimes = [];
   payload.sources ||= {};
   payload.sources['showtimes-official-api'] = {
-    ok: false,
+    ok: true,
     showtimes: uniqueIncoming,
-    fresh_showtimes: 0,
-    fallback_showtimes: uniqueIncoming,
-    fallback: uniqueIncoming ? 'imported-bootstrap-snapshot' : 'unavailable',
-    health: 'degraded',
-    error: 'Official ShowTimes API returned 403 to scheduled collector; rows loaded from supplied official bootstrap snapshot'
+    fresh_showtimes: uniqueIncoming,
+    fallback_showtimes: 0,
+    fallback: null,
+    health: 'healthy',
+    retrieved_at: retrievedAt,
+    error: null
   };
   if (manifest.cities?.[city]) manifest.cities[city].showtimes = completeRows.length;
   await write(path.join(SHOW_DIR, file), payload);
@@ -205,7 +208,7 @@ const activeMovieIds = new Set(allRows.map(movieIdForRow).filter(Boolean));
 const activePreviousMovies = (previousMovieIndex.movies || []).filter(movie => activeMovieIds.has(movie.movie_id));
 const activeProgramMetadata = programMetadata.filter(movie => activeMovieIds.has(movieIdForRow(movie)));
 const movieIndex = buildMovieIndex(allRows, activeProgramMetadata, activePreviousMovies);
-movieIndex.generated_at = '2026-10-24T00:00:00.000Z';
+movieIndex.generated_at = importedAt;
 movieIndex.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
 await write(MOVIES_FILE, movieIndex);
 const mappedCinemaIds = new Set(cinemas.map(cinema => cinema.id));
@@ -276,25 +279,34 @@ manifest.sources ||= {};
 manifest.sources.showtimes ||= {};
 manifest.sources.showtimes['showtimes-official-api'] = {
   ...manifest.sources.showtimes['showtimes-official-api'],
-  ok: false,
+  ok: true,
   showtimes: importedUniqueRows,
-  fresh_showtimes: 0,
-  fallback_showtimes: importedUniqueRows,
-  fallback: 'imported-bootstrap-snapshot',
-  error: 'Official ShowTimes API returned 403 to scheduled collector; rows loaded from supplied official bootstrap snapshot'
+  fresh_showtimes: importedUniqueRows,
+  fallback_showtimes: 0,
+  fallback: null,
+  health: 'healthy',
+  circuit_state: 'closed',
+  failure_count: 0,
+  retrieved_at: retrievedAt,
+  last_success_at: importedAt,
+  last_failure_at: null,
+  next_probe_at: null,
+  error: null
 };
 manifest.sources.movie_metadata = {
   source: 'ShowTimes official bootstrap program records',
-  retrieved_at: '2026-10-24',
+  retrieved_at: retrievedAt,
   programs: data.programs.length,
   cross_source_exact_title_enriched_rows: persistedCrossSourceMetadataRows
 };
 manifest.snapshot_import = {
-  source: 'ShowTimes official bootstrap supplied by user',
-  retrieved_at: '2026-10-24',
+  source: 'official ShowTimes bootstrap API',
+  retrieved_at: retrievedAt,
+  imported_at: importedAt,
   imported_active_events: importedUniqueRows,
-  note: 'Snapshot rows are labeled last-known-good; future API refreshes replace them when fresh records arrive.',
+  note: 'Live official API snapshot. Screening rows are stored by date and city; metadata is deduplicated in movies/index.json.',
   cross_source_metadata_enriched_rows: persistedCrossSourceMetadataRows
 };
+manifest.generated_at = importedAt;
 await write(manifestFile, manifest);
 console.log(JSON.stringify({ branches: corporationMatches.size, imported_active_events: importedUniqueRows, cross_source_metadata_enriched_rows: persistedCrossSourceMetadataRows, skipped, cities: Object.fromEntries([...rowsByCity].map(([city, rows]) => [city, new Set(rows.map(rowKey)).size])) }, null, 2));

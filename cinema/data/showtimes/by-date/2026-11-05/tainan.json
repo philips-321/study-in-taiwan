@@ -5,6 +5,19 @@
   "date": "2026-11-05",
   "showtimes": [
     {
+      "id": "863a85bc41fc7df5",
+      "cinema_id": "692aebc297877ec2",
+      "start_time": "2026-11-05T18:30:00+08:00",
+      "format": "首映場(日)",
+      "audio_language": "ja",
+      "source_event_id": "309878",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=22",
+      "source_role": "official VieShow branch schedule reviewed 2026-10-27",
+      "freshness": "fresh",
+      "source": "vieshow-official-browser",
+      "movie_id": "m_730baf7f4574"
+    },
+    {
       "id": "786d228dd99bfd89",
       "cinema_id": "14b8214762818432",
       "start_time": "2026-11-05T19:00:00.000+08:00",
@@ -13,10 +26,36 @@
       "audio_language": "ko",
       "source_event_id": "4809068",
       "source_url": "https://www.showtimes.com.tw/cinemas/60/",
-      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24;last-known-good",
-      "freshness": "last-known-good",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
+      "freshness": "fresh",
       "source": "showtimes-official-api",
       "movie_id": "m_86af9fdc3eb1"
+    },
+    {
+      "id": "1e75e14687890b6b",
+      "cinema_id": "2677bacaeb7d8d3d",
+      "start_time": "2026-11-05T19:00:00+08:00",
+      "format": "IMAX 首映場(日)",
+      "audio_language": "ja",
+      "source_event_id": "708325",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=16",
+      "source_role": "official VieShow branch schedule reviewed 2026-10-27",
+      "freshness": "fresh",
+      "source": "vieshow-official-browser",
+      "movie_id": "m_730baf7f4574"
+    },
+    {
+      "id": "cc35fa8589df5ccf",
+      "cinema_id": "1cb2ad9bb7e14f9f",
+      "start_time": "2026-11-05T20:50:00+08:00",
+      "format": "首映場(日)",
+      "audio_language": "ja",
+      "source_event_id": "912406",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=15",
+      "source_role": "official VieShow branch schedule reviewed 2026-10-27",
+      "freshness": "fresh",
+      "source": "vieshow-official-browser",
+      "movie_id": "m_730baf7f4574"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "version": 8,
-  "generated_at": "2026-10-26T16:41:53.809Z",
+  "generated_at": "2026-10-27T02:22:10.759Z",
   "timezone": "Asia/Taipei",
-  "model": "normalized movie catalog plus per-date/per-city screening references; collectors keep source rows in memory and date chunks are the only persisted showtime records",
+  "model": "normalized movie catalog plus per-date/per-city screening references; date chunks are the only persisted showtime rows",
   "showtimes_index": {
     "2026-01-01": {
       "total": 1,
@@ -47,106 +47,114 @@
       }
     },
     "2026-10-26": {
-      "total": 36,
+      "total": 12,
       "cities": {
-        "kaohsiung": 3,
-        "taichung": 12,
-        "taipei": 21
+        "taipei": 12
       }
     },
     "2026-10-27": {
-      "total": 1393,
+      "total": 2636,
       "cities": {
-        "chiayi-city": 56,
-        "hualien": 48,
-        "kaohsiung": 225,
+        "chiayi-city": 62,
+        "hsinchu-city": 79,
+        "hualien": 76,
+        "kaohsiung": 328,
         "keelung": 45,
-        "new-taipei": 277,
+        "miaoli": 49,
+        "new-taipei": 527,
         "pingtung": 39,
-        "taichung": 252,
-        "tainan": 21,
-        "taipei": 327,
+        "taichung": 330,
+        "tainan": 214,
+        "taipei": 648,
         "taitung": 37,
-        "taoyuan": 50,
+        "taoyuan": 186,
         "yunlin": 16
       }
     },
     "2026-10-28": {
-      "total": 1773,
+      "total": 3039,
       "cities": {
-        "chiayi-city": 60,
-        "hualien": 48,
-        "kaohsiung": 224,
+        "chiayi-city": 62,
+        "hsinchu-city": 83,
+        "hualien": 76,
+        "kaohsiung": 334,
         "keelung": 45,
-        "new-taipei": 251,
+        "miaoli": 49,
+        "new-taipei": 502,
         "pingtung": 39,
-        "taichung": 250,
-        "tainan": 21,
-        "taipei": 732,
+        "taichung": 327,
+        "tainan": 218,
+        "taipei": 1063,
         "taitung": 37,
-        "taoyuan": 50,
+        "taoyuan": 188,
         "yunlin": 16
       }
     },
     "2026-10-29": {
-      "total": 526,
+      "total": 542,
       "cities": {
         "chiayi-city": 1,
-        "hualien": 1,
-        "kaohsiung": 72,
-        "new-taipei": 151,
+        "hsinchu-city": 4,
+        "hualien": 48,
+        "kaohsiung": 77,
+        "new-taipei": 163,
         "pingtung": 39,
-        "taichung": 3,
-        "tainan": 1,
-        "taipei": 208,
+        "taichung": 4,
+        "tainan": 5,
+        "taipei": 146,
         "taitung": 1,
-        "taoyuan": 48,
+        "taoyuan": 53,
         "yunlin": 1
       }
     },
     "2026-10-30": {
-      "total": 30,
+      "total": 78,
       "cities": {
         "chiayi-city": 2,
+        "hsinchu-city": 4,
         "hualien": 1,
-        "kaohsiung": 4,
+        "kaohsiung": 10,
         "keelung": 1,
-        "new-taipei": 3,
-        "taichung": 5,
-        "tainan": 1,
-        "taipei": 11,
+        "new-taipei": 16,
+        "taichung": 6,
+        "tainan": 6,
+        "taipei": 25,
         "taitung": 1,
+        "taoyuan": 5,
         "yunlin": 1
       }
     },
     "2026-10-31": {
-      "total": 83,
+      "total": 124,
       "cities": {
         "chiayi-city": 4,
+        "hsinchu-city": 3,
         "hualien": 1,
-        "kaohsiung": 41,
+        "kaohsiung": 46,
         "keelung": 1,
-        "new-taipei": 10,
+        "new-taipei": 20,
         "taichung": 10,
-        "tainan": 1,
-        "taipei": 12,
+        "tainan": 7,
+        "taipei": 25,
         "taitung": 1,
-        "taoyuan": 1,
+        "taoyuan": 5,
         "yunlin": 1
       }
     },
     "2026-11-01": {
-      "total": 34,
+      "total": 63,
       "cities": {
         "chiayi-city": 2,
+        "hsinchu-city": 1,
         "hualien": 1,
-        "kaohsiung": 4,
+        "kaohsiung": 9,
         "keelung": 1,
-        "new-taipei": 9,
-        "taichung": 6,
-        "tainan": 1,
-        "taipei": 8,
+        "new-taipei": 14,
+        "taichung": 9,
+        "tainan": 6,
+        "taipei": 16,
         "taitung": 1,
+        "taoyuan": 2,
         "yunlin": 1
       }
     },
@@ -166,16 +174,16 @@
       }
     },
     "2026-11-03": {
-      "total": 25,
+      "total": 27,
       "cities": {
         "chiayi-city": 2,
         "hualien": 1,
-        "kaohsiung": 4,
+        "kaohsiung": 5,
         "keelung": 1,
         "new-taipei": 3,
         "taichung": 6,
         "tainan": 1,
-        "taipei": 5,
+        "taipei": 6,
         "taitung": 1,
         "yunlin": 1
       }
@@ -196,50 +204,62 @@
       }
     },
     "2026-11-05": {
-      "total": 30,
+      "total": 49,
       "cities": {
         "chiayi-city": 2,
-        "hualien": 1,
-        "kaohsiung": 5,
+        "hsinchu-city": 2,
+        "hualien": 2,
+        "kaohsiung": 6,
         "keelung": 1,
-        "new-taipei": 4,
-        "taichung": 6,
-        "tainan": 1,
-        "taipei": 8,
+        "miaoli": 1,
+        "new-taipei": 8,
+        "taichung": 7,
+        "tainan": 4,
+        "taipei": 12,
         "taitung": 1,
+        "taoyuan": 2,
         "yunlin": 1
       }
     },
     "2026-11-06": {
-      "total": 7,
+      "total": 12,
       "cities": {
-        "kaohsiung": 6,
-        "new-taipei": 1
+        "hsinchu-city": 1,
+        "kaohsiung": 7,
+        "new-taipei": 2,
+        "tainan": 1,
+        "taoyuan": 1
       }
     },
     "2026-11-07": {
-      "total": 31,
+      "total": 63,
       "cities": {
         "chiayi-city": 2,
-        "kaohsiung": 9,
-        "new-taipei": 7,
-        "taichung": 5,
-        "taipei": 8
+        "hsinchu-city": 3,
+        "kaohsiung": 13,
+        "new-taipei": 14,
+        "taichung": 7,
+        "tainan": 5,
+        "taipei": 16,
+        "taoyuan": 3
       }
     },
     "2026-11-08": {
-      "total": 19,
+      "total": 37,
       "cities": {
-        "kaohsiung": 6,
-        "new-taipei": 7,
-        "taichung": 2,
-        "taipei": 4
+        "hsinchu-city": 2,
+        "kaohsiung": 8,
+        "new-taipei": 11,
+        "taichung": 3,
+        "tainan": 3,
+        "taipei": 8,
+        "taoyuan": 2
       }
     },
     "2026-11-10": {
-      "total": 6,
+      "total": 7,
       "cities": {
-        "kaohsiung": 6
+        "kaohsiung": 7
       }
     },
     "2026-11-11": {
@@ -280,9 +300,10 @@
       }
     },
     "2026-11-17": {
-      "total": 9,
+      "total": 10,
       "cities": {
-        "kaohsiung": 9
+        "kaohsiung": 9,
+        "new-taipei": 1
       }
     },
     "2026-11-18": {
@@ -320,9 +341,14 @@
       }
     },
     "2026-11-24": {
-      "total": 9,
+      "total": 15,
       "cities": {
-        "kaohsiung": 9
+        "hsinchu-city": 1,
+        "kaohsiung": 10,
+        "new-taipei": 1,
+        "tainan": 1,
+        "taipei": 1,
+        "taoyuan": 1
       }
     },
     "2026-11-25": {
@@ -423,108 +449,56 @@
       }
     },
     "2026-12-16": {
-      "total": 89,
+      "total": 39,
       "cities": {
-        "chiayi-city": 6,
         "hualien": 3,
-        "kaohsiung": 14,
-        "keelung": 3,
-        "new-taipei": 10,
-        "taichung": 23,
-        "tainan": 3,
-        "taipei": 21,
-        "taitung": 3,
+        "kaohsiung": 5,
+        "new-taipei": 9,
+        "taichung": 7,
+        "tainan": 5,
+        "taipei": 7,
         "yunlin": 3
       }
     },
     "2026-12-17": {
-      "total": 78,
+      "total": 7,
       "cities": {
-        "chiayi-city": 6,
-        "hualien": 3,
-        "kaohsiung": 12,
-        "keelung": 3,
-        "new-taipei": 10,
-        "taichung": 19,
-        "tainan": 3,
-        "taipei": 16,
-        "taitung": 3,
+        "new-taipei": 1,
+        "taichung": 3,
         "yunlin": 3
       }
     },
     "2026-12-18": {
-      "total": 78,
+      "total": 4,
       "cities": {
-        "chiayi-city": 6,
-        "hualien": 3,
-        "kaohsiung": 12,
-        "keelung": 3,
-        "new-taipei": 10,
-        "taichung": 19,
-        "tainan": 3,
-        "taipei": 16,
-        "taitung": 3,
-        "yunlin": 3
+        "new-taipei": 1,
+        "taichung": 3
       }
     },
     "2026-12-19": {
-      "total": 79,
+      "total": 5,
       "cities": {
-        "chiayi-city": 6,
-        "hualien": 3,
-        "kaohsiung": 12,
-        "keelung": 3,
-        "new-taipei": 11,
-        "taichung": 19,
-        "tainan": 3,
-        "taipei": 16,
-        "taitung": 3,
-        "yunlin": 3
+        "new-taipei": 2,
+        "taichung": 3
       }
     },
     "2026-12-20": {
-      "total": 78,
+      "total": 4,
       "cities": {
-        "chiayi-city": 6,
-        "hualien": 3,
-        "kaohsiung": 12,
-        "keelung": 3,
-        "new-taipei": 10,
-        "taichung": 19,
-        "tainan": 3,
-        "taipei": 16,
-        "taitung": 3,
-        "yunlin": 3
+        "new-taipei": 1,
+        "taichung": 3
       }
     },
     "2026-12-21": {
-      "total": 77,
+      "total": 3,
       "cities": {
-        "chiayi-city": 6,
-        "hualien": 3,
-        "kaohsiung": 12,
-        "keelung": 3,
-        "new-taipei": 9,
-        "taichung": 19,
-        "tainan": 3,
-        "taipei": 16,
-        "taitung": 3,
-        "yunlin": 3
+        "taichung": 3
       }
     },
     "2026-12-22": {
-      "total": 77,
+      "total": 3,
       "cities": {
-        "chiayi-city": 6,
-        "hualien": 3,
-        "kaohsiung": 12,
-        "keelung": 3,
-        "new-taipei": 9,
-        "taichung": 19,
-        "tainan": 3,
-        "taipei": 16,
-        "taitung": 3,
-        "yunlin": 3
+        "taichung": 3
       }
     },
     "2026-12-23": {
@@ -571,20 +545,20 @@
     }
   },
   "coverage": {
-    "showtime_rows": 4863,
+    "showtime_rows": 7075,
     "explicit_subtitle_rows": 79,
-    "international_title_rows": 4523,
-    "poster_rows": 4318,
-    "genre_rows": 4301,
-    "rating_rows": 3824,
+    "international_title_rows": 6771,
+    "poster_rows": 5977,
+    "genre_rows": 5961,
+    "rating_rows": 6000,
     "unique_title_pairs": {
-      "title_pairs": 203,
-      "with_international_title": 89,
-      "with_poster": 63,
-      "distinct_posters": 58,
-      "with_genres": 60,
+      "title_pairs": 226,
+      "with_international_title": 118,
+      "with_poster": 67,
+      "distinct_posters": 59,
+      "with_genres": 64,
       "distinct_genre_codes": 16,
-      "with_known_age_rating": 66
+      "with_known_age_rating": 69
     }
   },
   "movie_catalog": "movies/index.json; movie title, poster, genres, rating, and runtime are stored once and referenced by movie_id",
@@ -648,18 +622,19 @@
         "next_probe_at": null
       },
       "showtimes-official-api": {
-        "ok": false,
-        "showtimes": 2714,
-        "error": "ShowTimes public API 403 Forbidden",
-        "health": "degraded",
-        "circuit_state": "open",
-        "failure_count": 1,
-        "fresh_showtimes": 0,
-        "fallback_showtimes": 2714,
-        "fallback": "last-known-good",
-        "last_success_at": null,
-        "last_failure_at": "2026-10-26T16:42:31.661Z",
-        "next_probe_at": "2026-10-26T17:12:31.661Z"
+        "ok": true,
+        "showtimes": 2152,
+        "error": null,
+        "health": "healthy",
+        "circuit_state": "closed",
+        "failure_count": 0,
+        "fresh_showtimes": 2152,
+        "fallback_showtimes": 0,
+        "fallback": null,
+        "last_success_at": "2026-10-27T02:22:10.759Z",
+        "last_failure_at": null,
+        "next_probe_at": null,
+        "retrieved_at": "2026-10-27"
       },
       "spot-huashan-official-schedule": {
         "ok": true,
@@ -713,13 +688,37 @@
         "last_success_at": "2026-10-26T16:42:31.661Z",
         "last_failure_at": null,
         "next_probe_at": null
+      },
+      "vieshow-official-browser": {
+        "ok": true,
+        "manual_snapshot": true,
+        "health": "healthy",
+        "circuit_state": "closed",
+        "failure_count": 0,
+        "showtimes": 2774,
+        "fresh_showtimes": 2774,
+        "fallback_showtimes": 0,
+        "fallback": null,
+        "reviewed_at": "2026-10-27",
+        "reviewed_branches": 20,
+        "source_url": "https://www.vscinemas.com.tw/theater/index.aspx",
+        "fields": [
+          "date",
+          "movie title",
+          "international title",
+          "showtime",
+          "format",
+          "explicit audio language"
+        ],
+        "subtitles": "not supplied; stored as unknown",
+        "last_success_at": "2026-10-27T02:19:11.397Z"
       }
     },
     "movie_metadata": {
       "source": "ShowTimes official bootstrap program records",
-      "retrieved_at": "2026-10-24",
-      "programs": 81,
-      "cross_source_exact_title_enriched_rows": 1614
+      "retrieved_at": "2026-10-27",
+      "programs": 87,
+      "cross_source_exact_title_enriched_rows": 40
     }
   },
   "cities": {
@@ -727,31 +726,31 @@
       "cinemas": 30,
       "active_cinemas": 12,
       "unknown_cinemas": 18,
-      "showtimes": 1515
+      "showtimes": 2039
     },
     "new-taipei": {
       "cinemas": 13,
       "active_cinemas": 3,
       "unknown_cinemas": 10,
-      "showtimes": 862
+      "showtimes": 1366
     },
     "keelung": {
       "cinemas": 1,
       "active_cinemas": 0,
       "unknown_cinemas": 1,
-      "showtimes": 118
+      "showtimes": 97
     },
     "taoyuan": {
       "cinemas": 9,
       "active_cinemas": 1,
       "unknown_cinemas": 8,
-      "showtimes": 149
+      "showtimes": 448
     },
     "hsinchu-city": {
       "cinemas": 2,
       "active_cinemas": 0,
       "unknown_cinemas": 2,
-      "showtimes": 0
+      "showtimes": 183
     },
     "hsinchu-county": {
       "cinemas": 1,
@@ -763,13 +762,13 @@
       "cinemas": 1,
       "active_cinemas": 0,
       "unknown_cinemas": 1,
-      "showtimes": 0
+      "showtimes": 99
     },
     "taichung": {
       "cinemas": 13,
       "active_cinemas": 0,
       "unknown_cinemas": 13,
-      "showtimes": 707
+      "showtimes": 747
     },
     "changhua": {
       "cinemas": 1,
@@ -787,13 +786,13 @@
       "cinemas": 2,
       "active_cinemas": 0,
       "unknown_cinemas": 2,
-      "showtimes": 61
+      "showtimes": 46
     },
     "chiayi-city": {
       "cinemas": 3,
       "active_cinemas": 0,
       "unknown_cinemas": 3,
-      "showtimes": 177
+      "showtimes": 143
     },
     "chiayi-county": {
       "cinemas": 0,
@@ -805,13 +804,13 @@
       "cinemas": 9,
       "active_cinemas": 0,
       "unknown_cinemas": 9,
-      "showtimes": 72
+      "showtimes": 479
     },
     "kaohsiung": {
       "cinemas": 10,
       "active_cinemas": 2,
       "unknown_cinemas": 8,
-      "showtimes": 854
+      "showtimes": 1015
     },
     "pingtung": {
       "cinemas": 2,
@@ -829,13 +828,13 @@
       "cinemas": 2,
       "active_cinemas": 0,
       "unknown_cinemas": 2,
-      "showtimes": 125
+      "showtimes": 211
     },
     "taitung": {
       "cinemas": 1,
       "active_cinemas": 0,
       "unknown_cinemas": 1,
-      "showtimes": 103
+      "showtimes": 82
     },
     "penghu": {
       "cinemas": 1,
@@ -871,5 +870,143 @@
   "refresh_policy": {
     "cadence": "at most once per Taiwan calendar day",
     "last_completed_taiwan_date": "2026-10-27"
+  },
+  "snapshot_import": {
+    "source": "official ShowTimes bootstrap API",
+    "retrieved_at": "2026-10-27",
+    "imported_at": "2026-10-27T02:22:10.759Z",
+    "imported_active_events": 2152,
+    "note": "Live official API snapshot. Screening rows are stored by date and city; metadata is deduplicated in movies/index.json.",
+    "cross_source_metadata_enriched_rows": 40
+  },
+  "vieshow_browser_snapshot": {
+    "source": "official VieShow branch pages, sequential browser review",
+    "index_url": "https://www.vscinemas.com.tw/theater/index.aspx",
+    "reviewed_at": "2026-10-27",
+    "imported_at": "2026-10-27T02:19:11.397Z",
+    "branches": 20,
+    "sessions": 2774,
+    "branches_list": [
+      {
+        "name": "台北信義威秀影城",
+        "cinema_id": "0a13c96a4123d0b5",
+        "city": "taipei",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=1"
+      },
+      {
+        "name": "台北南港LaLaport威秀影城",
+        "cinema_id": "06e26c038c52d33d",
+        "city": "taipei",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=34"
+      },
+      {
+        "name": "台北京站威秀影城",
+        "cinema_id": "97564919bff574aa",
+        "city": "taipei",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=2"
+      },
+      {
+        "name": "台北西門威秀影城",
+        "cinema_id": "29fa20640d772416",
+        "city": "taipei",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=31"
+      },
+      {
+        "name": "新店裕隆城威秀影城",
+        "cinema_id": "3831da6ae664fad3",
+        "city": "new-taipei",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=28"
+      },
+      {
+        "name": "板橋大遠百威秀影城",
+        "cinema_id": "01ff4bc24e3038a2",
+        "city": "new-taipei",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=4"
+      },
+      {
+        "name": "中和環球威秀影城",
+        "cinema_id": "719e1a68f2f3f9f5",
+        "city": "new-taipei",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=25"
+      },
+      {
+        "name": "林口MITSUI OUTLET PARK威秀影城",
+        "cinema_id": "a976a9f1cdf76e8e",
+        "city": "new-taipei",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=5"
+      },
+      {
+        "name": "桃園統領威秀影城",
+        "cinema_id": "21ea5948a31721df",
+        "city": "taoyuan",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=20"
+      },
+      {
+        "name": "桃園桃知道威秀影城",
+        "cinema_id": "36eb08cbc0a2c346",
+        "city": "taoyuan",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=29"
+      },
+      {
+        "name": "新竹大遠百威秀影城",
+        "cinema_id": "fb50a15c37b733c3",
+        "city": "hsinchu-city",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=7"
+      },
+      {
+        "name": "新竹巨城威秀影城",
+        "cinema_id": "f8d37545467089d9",
+        "city": "hsinchu-city",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=9"
+      },
+      {
+        "name": "頭份尚順威秀影城",
+        "cinema_id": "ee199f2acd555b37",
+        "city": "miaoli",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=10"
+      },
+      {
+        "name": "台中大遠百威秀影城",
+        "cinema_id": "7cf79c12e5a5270c",
+        "city": "taichung",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=11"
+      },
+      {
+        "name": "台中iFG 遠雄廣場威秀影城",
+        "cinema_id": "3071c450f8e42deb",
+        "city": "taichung",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=26"
+      },
+      {
+        "name": "台南大遠百威秀影城",
+        "cinema_id": "1cb2ad9bb7e14f9f",
+        "city": "tainan",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=15"
+      },
+      {
+        "name": "台南FOCUS 威秀影城",
+        "cinema_id": "692aebc297877ec2",
+        "city": "tainan",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=22"
+      },
+      {
+        "name": "台南南紡威秀影城",
+        "cinema_id": "2677bacaeb7d8d3d",
+        "city": "tainan",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=16"
+      },
+      {
+        "name": "高雄大遠百威秀影城",
+        "cinema_id": "2e33433ca052e5dd",
+        "city": "kaohsiung",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=18"
+      },
+      {
+        "name": "花蓮新天堂樂園威秀影城",
+        "cinema_id": "758a39fe5ae9a51d",
+        "city": "hualien",
+        "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21"
+      }
+    ]
   }
 }

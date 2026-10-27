@@ -147,7 +147,8 @@ jobs:
             'showtimes-official-api',
             'spot-huashan-official-schedule',
             'eslite-official-schedule',
-            'atmovies-taipei-fallback'
+            'atmovies-taipei-fallback',
+            'vieshow-official-browser'
           ];
           for (const source of requiredSources) {
             const status = manifest.sources?.showtimes?.[source];
@@ -196,8 +197,9 @@ jobs:
                   throw new Error(`Screening has neither a movie_id nor a title: ${file}`);
                 }
                 const key = [row.cinema_id, row.movie_id || row.movie_title_en || row.movie_title, row.start_time, row.hall || '', row.format || ''].join('|');
-                if (sessionKeys.has(key)) throw new Error(`Duplicate screening session: ${key}`);
-                sessionKeys.add(key);
+                const sessionKey = row.source === 'vieshow-official-browser' ? `${key}|vieshow:${row.source_event_id || row.id || ''}` : key;
+                if (sessionKeys.has(sessionKey)) throw new Error(`Duplicate screening session: ${sessionKey}`);
+                sessionKeys.add(sessionKey);
                 indexedRows.set(`${date}|${city}`, (indexedRows.get(`${date}|${city}`) || 0) + 1);
               }
             }

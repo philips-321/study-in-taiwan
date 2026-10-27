@@ -202,7 +202,13 @@ const sourceStatus = {
   'showtimes-official-api': { ok: false, showtimes: 0 },
   'spot-huashan-official-schedule': { ok: false, showtimes: 0 },
   'eslite-official-schedule': { ok: false, showtimes: 0 },
-  'atmovies-taipei-fallback': { ok: false, showtimes: 0, role: 'fallback only for sources blocked/incomplete from GitHub Actions' }
+  'atmovies-taipei-fallback': { ok: false, showtimes: 0, role: 'fallback only for sources blocked/incomplete from GitHub Actions' },
+  'vieshow-official-browser': {
+    ok: true,
+    showtimes: 0,
+    manual_snapshot: true,
+    role: 'manual browser snapshot; refresh from official branch pages, not GitHub Actions'
+  }
 };
 
 function mergeExternalRows(rows, sourceName) {

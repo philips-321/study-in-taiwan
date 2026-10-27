@@ -19,6 +19,12 @@ export function movieIdForRow(row) {
 }
 
 export function screeningKey(row) {
+  const key = [row.cinema_id, movieIdForRow(row) || normalizeMovieTitle(row.movie_title_en || row.movie_title), row.start_time, row.hall || '', row.format || ''].join('|');
+  if (row.source === 'vieshow-official-browser') return `${key}|vieshow:${row.source_event_id || row.id || ''}`;
+  return key;
+}
+
+export function screeningIdentityKey(row) {
   return [row.cinema_id, movieIdForRow(row) || normalizeMovieTitle(row.movie_title_en || row.movie_title), row.start_time, row.hall || '', row.format || ''].join('|');
 }
 

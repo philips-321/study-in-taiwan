@@ -12,6 +12,8 @@ For source completion, open each cinema source in a browser one at a time. Recor
 
 The hold is deliberate and persists until manual browser research fixes the city's records. In the same change that records verified data, remove that city's entire entry from `.github/cinema-city-update-health.json` so the next scheduled refresh can resume it. A missing schedule alone is not a city failure and must never be interpreted as a cinema closure. The source collectors may still fetch a nationwide feed once; the held city's output is restored from its last-known-good files and excluded from the refreshed snapshot.
 
+City counts must be checked against the durable date/city chunks. Per-city status files intentionally have an empty `showtimes` array, so that array must never be used to set `manifest.cities[*].showtimes`.
+
 Use [SOURCE-RESEARCH-LIST.md](SOURCE-RESEARCH-LIST.md) for clickable source-search and map links for all 107 cinema records. Record inspected pages and limitations in [SOURCE-RESEARCH-NOTES.md](SOURCE-RESEARCH-NOTES.md), and put the best confirmed source link in [SOURCE-RESEARCH-LIST.csv](SOURCE-RESEARCH-LIST.csv).
 
 `cinema/index.html` is the public cinema browser. It loads static JSON files below `data/` and individual OSM venue points from `data/locations.json`; the visitor's browser never calls cinema schedule APIs. Browser caching follows the static host's cache headers. Pins sit at their source coordinates, never at a city center; matched pins open the cinema record and the selected day's screenings. BAMID names, company, address, phone, and screen count are shown when available. A location can include an optional `image_url` for a sourced building photo.
@@ -22,9 +24,13 @@ The annual BAMID master has no coordinates. The current location snapshot has 92
 
 The current cinema dataset has `movie_title` and sometimes `movie_title_en`; it does not contain per-country title translations. The UI labels `movie_title_en` as the international title when supplied and does not derive localized titles from the interface language. Search normalizes HTML entities, Unicode punctuation, and case on both the query and titles. Explicit subtitle coverage is sparse, so subtitle search must leave unknown values unclassified rather than inferring them from audio language.
 
-Ticket prices are stored separately under `data/ticket-prices/`, split by city. The browser loads a city's small price file only when a visitor opens a priced cinema's ticket-price section. The data includes a dated ShowTimes bootstrap snapshot for 15 秀泰 branches and one manually verified VieShow branch (新竹巨城威秀影城); these are not live checkout quotes.
+Ticket prices are stored separately under `data/ticket-prices/`, split by city. The browser loads a city's small price file only when a visitor opens a priced cinema's ticket-price section. The data includes a dated ShowTimes bootstrap snapshot for 15 秀泰 branches; these are not live checkout quotes.
 
 This project is an ongoing maintained data pipeline, not a project with a meaningful completion percentage. Upstream cinema sites will change and adapters will need patching over time.
+
+## Current coverage gaps
+
+There is no single public API/database here that provides all brands and all 22 city/county areas. The active ShowTimes bootstrap covers only its 15 branches. VieShow required 20 official branch pages to be reviewed individually; it is stored as a manual snapshot. Future rows are currently present in 15 areas and absent in Hsinchu County, Nantou, Chiayi County, Yilan, Penghu, Kinmen, and Lienchiang. Continue researching the other mapped chains and unlinked venues; do not infer that an area or cinema is closed from missing schedules.
 
 ## Goal
 
@@ -36,7 +42,7 @@ The site serves static JSON so all visitors reuse the same saved data; the brows
 
 Manually add screenings only after opening that cinema's source and confirming the date, title, time, and any explicitly declared audio/subtitle or format details. Cite the source URL on each row. Do not treat a legacy importer or scheduled workflow as the collection method. Leave unknown metadata null. Keep posters as reused URLs, use lazy loading, and never embed poster image bytes in JSON. Genre and age-rating values come from the source or an exact existing movie record, not guesses.
 
-Coverage fields ending in `_rows` count individual screenings. In the normalized 2026-10-24 snapshot, 10,070 screenings refer to 293 films. Of those films, 93 have an international title, 71 have a poster (64 distinct poster URLs), 65 have genres (16 genre codes), and 68 have a recognized age rating. Explicit subtitles appear on 79 screenings. Exact, unambiguous matching against ShowTimes program titles filled metadata on 3,393 screening rows from other providers. Remaining nulls are unknown, not guessed. Ticket price snapshots cover 15 ShowTimes branches; other chains need their own verified sources.
+Coverage fields ending in `_rows` count individual screenings. Latest saved-data audit (2026-10-27): 7,075 screening rows refer to 226 deduplicated films; 7,031 are dated today or later across 55 dates, through 2026-12-31. This includes 2,152 active events from the official ShowTimes bootstrap across 15 branches, plus 2,774 sessions manually reviewed in the browser across 20 VieShow branches. ShowTimes data runs through 2026-12-22; VieShow's published branch schedules run through 2026-12-16. ShowTimes supplies posters, genres, age ratings, runtimes, hall names, formats, and explicit audio labels; VieShow supplies international titles, times, formats, and audio labels. Neither source provides verified subtitle languages in these records. Across the catalog, 118 films have an international title, 67 have a poster (59 distinct poster URLs), 64 have genres (16 genre codes), and 69 have a recognized age rating. Explicit subtitles appear on 79 screenings. Future showtime rows exist in 15 of the 22 official city/county areas and link to 50 BAMID records; seven areas have no future indexed rows: Hsinchu County, Nantou, Chiayi County, Yilan, Penghu, Kinmen, and Lienchiang. That is missing source coverage, not evidence of closure. Eight venues with future rows do not link to BAMID records. The ShowTimes API is one chain's feed, not a nationwide all-brand database. Remaining nulls are unknown, not guessed. Ticket price snapshots cover 15 ShowTimes branches; other chains need their own verified sources.
 
 Legacy import and fallback scripts remain in the repository as historical implementation details. Do not trigger or rely on their GitHub workflow for cinema updates; follow `USER-RULES.md`.
 
@@ -57,7 +63,7 @@ cinema/data/ticket-prices/<city>.json
 
 The older fallback workflow is documented in the historical adapter notes only. For the user's manual update process, preserve the existing date/city chunks and edit only records confirmed by browser sources. Git history is the audit/history layer. Keep `movie_id` stable for an existing film; distinct start times, halls, formats, and cinemas remain separate screening rows.
 
-The 2026-10-24 normalization pass retained all 10,070 screening rows across 293 referenced movie identities. The catalog contains only films referenced by a screening, not extra program listings with no current showtime. It consolidated repeated poster URLs to 64 and repeated the movie metadata only once per catalog entry. JSON storage for showtime files dropped from about 13.7 MB to about 5.2 MB including the catalog and small city status files. These byte savings reduce transfer and parsed row overhead; actual browser memory also depends on map tiles, images, and rendering.
+The 2026-10-24 normalization pass retained 10,070 screening rows across 293 referenced movie identities at that time; later refreshes replace and extend that snapshot. The catalog contains only films referenced by a screening, not extra program listings with no current showtime. It consolidated repeated poster URLs to 64 and repeated the movie metadata only once per catalog entry. JSON storage for showtime files dropped from about 13.7 MB to about 5.2 MB including the catalog and small city status files. These byte savings reduce transfer and parsed row overhead; actual browser memory also depends on map tiles, images, and rendering.
 
 ## Historical adapter and source notes
 
@@ -66,14 +72,14 @@ The table and adapter documentation below describe earlier implementation work. 
 | Source | Method | Current status | Notes |
 |---|---|---|---|
 | BAMID national cinema master | Official metadata endpoint -> newest annual CSV | WORKING | Stable cinema identity/master data, not showtimes |
-| Ministry of Culture movie API | Official JSON API | WORKING but sparse | Supplemental cultural/event screenings only |
+| Ministry of Culture movie API | Official JSON API | WORKING but sparse | Latest saved snapshot has 270 rows total, including 268 future rows; supplemental cultural/event screenings only |
 | Miramar / 美麗華大直 | Official booking API | WORKING | Best source quality; direct structured JSON |
 | Ambassador / 國賓 | Official TheaterList + per-theater/per-date HTML | WORKING | Parallel fetch + retry; title parser fixed |
 | SPOT Huashan / 光點華山 | Official schedule HTML table | WORKING | 79 rows in verified run; preserves C/E subtitle metadata |
-| ShowTimes / 秀泰 | Official bootstrap JSON + cinema pages | Live bootstrap path available; scheduled GitHub collector currently BLOCKED | Imported 5,341 active screenings from the supplied official bootstrap, 2026-10-24 to 2026-12-22; labeled last-known-good |
+| ShowTimes / 秀泰 | Official bootstrap JSON + cinema pages | Live bootstrap JSON verified 2026-10-27; scheduled GitHub collector may still receive 403 | Imported 2,152 active events for 15 branches from the live bootstrap, 2026-10-27 to 2026-12-22; stored in normalized date/city JSON |
 | Eslite Art House / 誠品電影院 | Official schedule HTML | BLOCKED from GitHub Actions | Parser exists, but runner gets HTTP 403 |
 | AtMovies Taipei fallback | Aggregator HTML by cinema/date | WORKING fallback | Used only for gaps where official automation is blocked/incomplete |
-| Vie Show / 威秀 + MUVIE | Official automation not yet integrated | FALLBACK ACTIVE | AtMovies fallback currently covers selected Taipei branches |
+| Vie Show / 威秀 + MUVIE | Official branch pages manually reviewed in browser | Manual snapshot active; 2,774 sessions across 20 branches; no GitHub Action browser collection | Manually refresh and retain as last-known-good; AtMovies remains a Taipei fallback |
 | Wonderful / 真善美 | Official stable automation not yet integrated | FALLBACK ACTIVE | AtMovies fallback currently used |
 | SPOT Taipei / 光點台北 | Official stable automation not yet integrated | FALLBACK ACTIVE | AtMovies fallback currently used |
 | in89 Taipei Ximending | Official site identified (`TheaterId=3`) | RESEARCH ONLY | Client-rendered; stable underlying data endpoint not yet identified |
@@ -124,7 +130,7 @@ Status: works, but it is not a commercial cinema showtime feed. It is useful mai
 
 Do not treat it as nationwide commercial coverage.
 
-Latest runs have ranged from 0 to only a few current showtimes. Low count here is not necessarily a parser failure.
+Latest saved snapshot reports 270 event rows total, including 268 future rows. This is expected: the API is a supplemental cultural/event feed, not a commercial-cinema timetable for all cities.
 
 ## 3. Miramar / 美麗華大直 — WORKING OFFICIAL API
 
@@ -258,19 +264,12 @@ Latest verified run: 79 official SPOT Huashan showtimes.
 
 Do not go back to the old line parser unless the upstream markup changes again.
 
-## 6. ShowTimes / 秀泰 — OFFICIAL PARSER EXISTS, GITHUB RUNNER BLOCKED
+## 6. ShowTimes / 秀泰 — OFFICIAL BOOTSTRAP FEED
 
 Adapter:
 
 ```text
 cinema/scripts/sources/showtimes.mjs
-```
-
-Currently configured Taipei cinemas:
-
-```text
-台北欣欣秀泰影城 -> cinema id 2
-大巨蛋秀泰影城   -> cinema id 91
 ```
 
 Official URL pattern:
@@ -287,29 +286,43 @@ The page parser can extract:
 - format
 - explicit spoken language label when present
 
-The public bootstrap endpoint is:
+The live public bootstrap endpoint is:
 
 ```text
 https://capi.showtimes.com.tw/4/app/bootstrap
 ```
 
-It includes all 15 ShowTimes corporations, venues, active events, and program records with alternative/international titles, genre codes, age-rating codes, runtimes, and poster URLs. The current imported snapshot contains 5,341 distinct active events across 15 branches and 10 cities, dated 2026-10-24 through 2026-12-22. It is a dated snapshot, not a guarantee that every future schedule is already published.
+It includes 15 ShowTimes corporations, venues, active events, and program records with alternative/international titles, genre codes, age-rating codes, runtimes, and poster URLs. A sequential browser review on 2026-10-27 opened all 15 official branch pages. Thirteen rendered their schedule within the first wait; 台北欣欣秀泰影城 and 大巨蛋秀泰影城 needed a longer wait. The official bootstrap API returned 2,152 active events across 15 branches in 10 cities, dated 2026-10-27 through 2026-12-22. This is a dated snapshot, not a guarantee that every future schedule is already published. Subtitle languages are not supplied in these API records and stay unknown.
 
-Use `cinema/scripts/import-showtimes-bootstrap.mjs` to refresh the static snapshot from a downloaded bootstrap JSON. Keep ShowTimes events in date/city chunks only; the fallback workflow also restores from those chunks.
+For a manual refresh, open/review the ShowTimes branch pages one by one, download the public bootstrap JSON, then run `node cinema/scripts/import-showtimes-bootstrap.mjs <bootstrap.json> YYYY-MM-DD`. The importer replaces only ShowTimes rows, preserves other-source screenings, deduplicates movie metadata in `data/movies/index.json`, and writes screenings to date/city chunks. Keep ShowTimes events in date/city chunks only; the fallback workflow also restores from those chunks.
 
 Problem:
 
-GitHub Actions consistently receives:
+The scheduled GitHub Actions collector currently receives:
 
 ```text
 403 Forbidden
 ```
 
-for both tested Taipei official pages.
+from the public bootstrap API, while browser requests from the manual research environment succeed. This currently blocks automated refresh of this source from GitHub Actions, not manual browser/API review.
 
 This is an access/WAF problem, not currently a parsing problem.
 
 Do not spend time repeatedly rewriting the parser unless the HTTP response changes from 403 to a normal page. First test whether the runner can fetch the page at all.
+
+## Vie Show / 威秀 — MANUAL BROWSER SNAPSHOT
+
+Official venue directory:
+
+```text
+https://www.vscinemas.com.tw/theater/index.aspx
+```
+
+Each official branch page publishes date tabs and HTML schedule blocks. On 2026-10-27, the 20 listed branch pages were opened one at a time in a browser and yielded 2,774 upcoming sessions through 2026-12-16. The saved fields are date, Chinese/international title, time, format, and explicit audio label. The pages do not expose verified subtitles or hall numbers. Keep those fields unknown.
+
+The collected page data is imported with `cinema/scripts/import-vieshow-browser-snapshot.mjs`. The scheduled GitHub Action does not browse VieShow pages. It preserves the manually reviewed schedule rows as last-known-good data until the next manual browser review; the importer replaces only rows from this source and keeps the per-date/per-city JSON model.
+
+This is not a nationwide cinema feed. The official directory has no single schedule export for every Taiwan cinema, and a VieShow snapshot does not cover unrelated companies.
 
 ## 7. Eslite Art House / 誠品電影院 — OFFICIAL PARSER EXISTS, GITHUB RUNNER BLOCKED
 
@@ -413,24 +426,13 @@ Some cinema/date combinations return no parseable rows, especially edge dates wh
 
 This adapter is fallback only. Official sources should replace its records when reliable official automation becomes available.
 
-## 9. Vie Show / 威秀 + MUVIE
+## 9. Vie Show / 威秀 + MUVIE — MANUAL SNAPSHOT
 
-Current state: selected Taipei branches are served through the AtMovies fallback above.
+Current state: 2,774 sessions across 20 official branch pages were reviewed and saved on 2026-10-27. The source URLs, per-branch counts, and observed fields are in `SOURCE-RESEARCH-NOTES.md` and `data/research/observed-sources.json`. Use `cinema/scripts/import-vieshow-browser-snapshot.mjs` after a future one-by-one browser review. Do not copy or run code from third-party repositories; the external source comparison is documented separately in `SOURCE-RESEARCH-LIST.md`.
 
-Official-source check, 2026-10-24: Vie Show publishes its own [Show Times page](https://www.vscinemas.com.tw/ShowTimes/) and says its schedule is a rolling window: Friday releases generally open from Wednesday for Friday through the following Thursday; some Wednesday/Thursday releases open separately earlier in the week. Treat that horizon as the expected official coverage instead of expecting months of dates from this source. The official site directory also exposes a `vsweb/api/GetLstDicCinema/` endpoint path, consistent with the venue-list API used by the existing reference scraper. This is a lead to verify in a browser session, not yet a confirmed endpoint contract or reliable server-side collector.
+The official branch pages state a rolling schedule window, usually Friday through the following Thursday after Wednesday release. The directory also exposes official cinema-list APIs, but the saved schedule here was transcribed from the branch pages, not inferred from an unverified endpoint.
 
-A useful reference implementation was found in the public `RabbitKM/cinema-showtime-pipeline` project. Its Vie Show scraper uses Playwright, opens the official site, then calls official endpoints inside the browser session such as:
-
-```text
-/api/GetLstDicCinema
-ShowTimes/GetShowTimes
-```
-
-The reason it uses a browser session is the official site/Akamai protection.
-
-Next step: inspect the official page's actual XHR request and response in a browser session, then test the endpoint from GitHub Actions without browser automation. Keep this adapter marked unavailable until direct access is proven; adding Playwright/Chrome solely for this source has a runtime and memory cost. Do not infer that the public directory listing means the schedule API is directly accessible.
-
-Do not assume the direct endpoint will work server-side without the browser cookies/session.
+The schedule is a manual snapshot. It is retained as last-known-good through scheduled API refreshes and must be reviewed manually to stay current. AtMovies remains a fallback only where an official source does not supply usable rows.
 
 ## 10. Wonderful Theatre / 真善美
 

@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { buildMovieIndex, compactShowtime, expandShowtime, knownAgeRating, screeningKey } from './movie-schema.mjs';
+import { buildMovieIndex, compactShowtime, expandShowtime, knownAgeRating, screeningIdentityKey, screeningKey } from './movie-schema.mjs';
 
 const CURRENT_DIR = path.resolve('cinema/data/showtimes');
 const PREVIOUS_DIR = path.resolve(process.env.CINEMA_PREVIOUS_SHOWTIMES_DIR || '/tmp/cinema-showtimes-prev');
@@ -150,8 +150,12 @@ const failedSources = new Set(
     .filter(([source, status]) => forcedFailures.has(source) || status?.ok === false)
     .map(([source]) => source)
 );
+const manualSnapshotSources = new Set(
+  Object.entries(currentStatus).filter(([, status]) => status?.manual_snapshot === true).map(([source]) => source)
+);
+const preservedSources = new Set([...failedSources, ...manualSnapshotSources]);
 
-const fallbackCounts = Object.fromEntries([...failedSources].map(source => [source, 0]));
+const fallbackCounts = Object.fromEntries([...preservedSources].map(source => [source, 0]));
 
 for (const [city, current] of currentByCity) {
   current.showtimes = current.showtimes.map(row => expandShowtime(row, currentMovieById));
@@ -160,7 +164,15 @@ for (const [city, current] of currentByCity) {
 
   const seen = new Set(current.showtimes.map(rowKey));
   for (const row of previous.showtimes) {
-    if (!failedSources.has(row?.source) || !fallbackEligible(row)) continue;
+    if (!preservedSources.has(row?.source) || !fallbackEligible(row)) continue;
+    if (manualSnapshotSources.has(row.source)) {
+      const identity = screeningIdentityKey(row);
+      const alreadyFresh = current.showtimes.some(candidate =>
+        candidate.source !== row.source && screeningIdentityKey(candidate) === identity &&
+        candidate.audio_language === row.audio_language
+      );
+      if (alreadyFresh) continue;
+    }
     const key = rowKey(row);
     if (seen.has(key)) continue;
     seen.add(key);
@@ -180,7 +192,23 @@ for (const [city, current] of currentByCity) {
 const normalizedStatus = {};
 for (const [source, status] of Object.entries(currentStatus)) {
   const old = previousStatus[source] || {};
-  if (failedSources.has(source)) {
+  if (manualSnapshotSources.has(source)) {
+    const fallbackCount = fallbackCounts[source] || 0;
+    normalizedStatus[source] = {
+      ...status,
+      ok: true,
+      health: 'healthy',
+      circuit_state: 'closed',
+      failure_count: 0,
+      fresh_showtimes: 0,
+      fallback_showtimes: fallbackCount,
+      showtimes: fallbackCount,
+      fallback: fallbackCount > 0 ? 'manual-browser-snapshot' : 'awaiting-manual-browser-snapshot',
+      last_success_at: old.last_success_at || status.last_success_at || null,
+      last_failure_at: null,
+      next_probe_at: null
+    };
+  } else if (failedSources.has(source)) {
     const freshCount = Number.isInteger(status?.showtimes) ? status.showtimes : 0;
     const fallbackCount = fallbackCounts[source] || 0;
     normalizedStatus[source] = {
@@ -218,7 +246,7 @@ for (const [city, payload] of currentByCity) {
   payload.sources = normalizedStatus;
   payload.resilience = {
     policy: 'failed collectors preserve eligible future last-known-good rows while independent collectors continue',
-    restored_sources: [...failedSources],
+    restored_sources: [...preservedSources],
     restored_at: nowIso
   };
 }
@@ -303,7 +331,7 @@ manifest.resilience_policy = {
   stale_status_policy: 'fallback rows are restored after cinema operational status is computed, so stale fallback does not mark a cinema active'
 };
 for (const [city, payload] of currentByCity) {
-  if (manifest.cities?.[city]) manifest.cities[city].showtimes = payload.showtimes.length;
+  if (manifest.cities?.[city]) manifest.cities[city].showtimes = payload.showtime_count;
 }
 await writeJson(MANIFEST, manifest);
 

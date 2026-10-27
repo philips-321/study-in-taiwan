@@ -279,3 +279,54 @@ The ten records without any schedule rows currently are:
 | 龍子電影事業股份有限公司（首都戲院） | unknown / possible same-building legacy entry | MOC records 首都戲院 at 長安東路二段219號2樓; current sources publish schedules for 總督影城 at the same building, on different floors. No independently attributable 2026-10-25 schedule for this legal-entity row found. Keep separate until a source confirms it is the same operating venue. [MOC venue record](https://file.moc.gov.tw/Download.ashx?n=5ZyL54mH6Zmi57ea5pig5ryU5aC05omA5Y%2BK5q%2BP5pel5pig5ryU542O5Yu15LiK6ZmQ6YeR6aGN6KGoKDExMC4xMS4zMOeJiCkucGRm&u=LzAwMS9VcGxvYWRfT2xkRmlsZXMvQWRtaW5VcGxvYWRzL2ZpbGVzLzIwMjIwMi82ZDhhOTNmZS1mMWZlLTQ1MjItYTJjMi1lMDUxZjIzMTU5MzgucGRm) · [Governor Cinema schedule source](https://www.atmovies.com.tw/showtime/t02a05/a02/20261024/) |
 
 No extra schedule rows were added from these checks: the only dated schedule found for 麻豆戲院 is for 10/24, and the other results were either a duplicate venue program, an occasional-event cultural venue, closures, or schedules for a different hall/site entry. This section supersedes older 68/39 counts above.
+
+## Live nationwide coverage audit and browser collection — 2026-10-27
+
+There is no single public schedule API or database covering every Taiwan cinema brand. The official ShowTimes bootstrap endpoint is active from the manual research environment but represents 秀泰 only. It returned 2,152 active events, across 15 branches in 10 cities, dated 2026-10-27 through 2026-12-22. The GitHub Actions runner still receives HTTP 403 for this endpoint, so this is a manual snapshot and not a per-visitor API request.
+
+I opened all 15 ShowTimes branch schedule pages sequentially in the browser. Thirteen rendered schedules on the first wait; 台北欣欣秀泰影城 and 大巨蛋秀泰影城 required a longer wait. The official bootstrap data was matched to each BAMID cinema by branch name and address; all 15 matches were unique. The feed supplies film title, international title, format, audio, room, runtime, age rating, genre, and poster where available. It does not publish subtitle languages; those remain unknown.
+
+| ShowTimes branch | City | Sessions | Official branch page |
+|---|---|---:|---|
+| 大巨蛋秀泰影城 | Taipei | 176 | [page](https://www.showtimes.com.tw/cinemas/91/) |
+| 台北欣欣秀泰影城 | Taipei | 194 | [page](https://www.showtimes.com.tw/cinemas/2/) |
+| 土城秀泰影城 | New Taipei | 136 | [page](https://www.showtimes.com.tw/cinemas/55/) |
+| 樹林秀泰影城 | New Taipei | 160 | [page](https://www.showtimes.com.tw/cinemas/54/) |
+| 台中站前秀泰影城 | Taichung | 245 | [page](https://www.showtimes.com.tw/cinemas/53/) |
+| 台中文心秀泰影城 | Taichung | 229 | [page](https://www.showtimes.com.tw/cinemas/56/) |
+| 台中麗寶秀泰影城 | Taichung | 112 | [page](https://www.showtimes.com.tw/cinemas/59/) |
+| 嘉義秀泰影城 | Chiayi City | 143 | [page](https://www.showtimes.com.tw/cinemas/9/) |
+| 基隆秀泰影城 | Keelung | 97 | [page](https://www.showtimes.com.tw/cinemas/5/) |
+| 花蓮秀泰影城 | Hualien | 151 | [page](https://www.showtimes.com.tw/cinemas/3/) |
+| 台東秀泰影城 | Taitung | 82 | [page](https://www.showtimes.com.tw/cinemas/7/) |
+| 北港秀泰影城 | Yunlin | 46 | [page](https://www.showtimes.com.tw/cinemas/58/) |
+| 台南仁德秀泰影城 | Tainan | 50 | [page](https://www.showtimes.com.tw/cinemas/60/) |
+| 高雄岡山秀泰影城 | Kaohsiung | 162 | [page](https://www.showtimes.com.tw/cinemas/84/) |
+| 高雄夢時代秀泰影城 | Kaohsiung | 169 | [page](https://www.showtimes.com.tw/cinemas/87/) |
+
+VieShow's official theater directory listed 20 branch pages with schedules. I opened each branch page one at a time in the browser and read its date tabs and schedule blocks. The pages supplied 2,774 sessions dated 2026-10-27 through 2026-12-16. They expose Chinese and international titles, time, format, explicit audio label, and a booking-session ID on most rows; hall numbers and subtitle languages are not shown. 67 otherwise complete schedule rows did not include a booking-session ID, so they received a stable local row ID based on cinema, date, title, time, and format. The importer preserves distinct VieShow session IDs when a cinema publishes the same title/time/format more than once; that can happen when the public page omits hall numbers.
+
+| VieShow branch | City | Sessions | Official branch page |
+|---|---|---:|---|
+| 台北信義威秀影城 | Taipei | 223 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=1) |
+| 台北南港LaLaport威秀影城 | Taipei | 233 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=34) |
+| 台北京站威秀影城 | Taipei | 135 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=2) |
+| 台北西門威秀影城 | Taipei | 144 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=31) |
+| 新店裕隆城威秀影城 | New Taipei | 182 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=28) |
+| 板橋大遠百威秀影城 | New Taipei | 123 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=4) |
+| 中和環球威秀影城 | New Taipei | 129 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=25) |
+| 林口MITSUI OUTLET PARK威秀影城 | New Taipei | 133 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=5) |
+| 桃園統領威秀影城 | Taoyuan | 254 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=20) |
+| 桃園桃知道威秀影城 | Taoyuan | 45 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=29) |
+| 新竹大遠百威秀影城 | Hsinchu City | 145 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=7) |
+| 新竹巨城威秀影城 | Hsinchu City | 38 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=9) |
+| 頭份尚順威秀影城 | Miaoli | 99 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=10) |
+| 台中大遠百威秀影城 | Taichung | 40 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=11) |
+| 台中iFG 遠雄廣場威秀影城 | Taichung | 121 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=26) |
+| 台南大遠百威秀影城 | Tainan | 132 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=15) |
+| 台南FOCUS 威秀影城 | Tainan | 106 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=22) |
+| 台南南紡威秀影城 | Tainan | 190 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=16) |
+| 高雄大遠百威秀影城 | Kaohsiung | 242 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=18) |
+| 花蓮新天堂樂園威秀影城 | Hualien | 60 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=21) |
+
+The two manual imports are normalized into small date/city JSON chunks and one deduplicated movie catalog. The site visitor does not fetch either upstream source. Current future schedules are present in 15 of Taiwan's 22 city/county areas; Hsinchu County, Nantou, Chiayi County, Yilan, Penghu, Kinmen, and Lienchiang currently have no future indexed rows. That gap means no verified data is saved from the connected feeds; it does not mean those cities or cinemas are closed. Fifty of the 107 BAMID records currently have future schedule rows; unmatched external venue IDs remain separately identified rather than guessed into the master.

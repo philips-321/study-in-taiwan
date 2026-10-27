@@ -13,8 +13,8 @@
       "audio_language": "ko",
       "source_event_id": "4809876",
       "source_url": "https://www.showtimes.com.tw/cinemas/53/",
-      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24;last-known-good",
-      "freshness": "last-known-good",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
+      "freshness": "fresh",
       "source": "showtimes-official-api",
       "movie_id": "m_770b0c08b425"
     },
@@ -27,10 +27,23 @@
       "audio_language": "ko",
       "source_event_id": "4809881",
       "source_url": "https://www.showtimes.com.tw/cinemas/56/",
-      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24;last-known-good",
-      "freshness": "last-known-good",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
+      "freshness": "fresh",
       "source": "showtimes-official-api",
       "movie_id": "m_770b0c08b425"
+    },
+    {
+      "id": "e62fb840decda803",
+      "cinema_id": "3071c450f8e42deb",
+      "start_time": "2026-11-07T15:45:00+08:00",
+      "format": "LIVE(韓)",
+      "audio_language": "ko",
+      "source_event_id": "188236",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=26",
+      "source_role": "official VieShow branch schedule reviewed 2026-10-27",
+      "freshness": "fresh",
+      "source": "vieshow-official-browser",
+      "movie_id": "m_783f22aea920"
     },
     {
       "id": "dc284a648c7fd679",
@@ -41,8 +54,8 @@
       "audio_language": "ja",
       "source_event_id": "4800460",
       "source_url": "https://www.showtimes.com.tw/cinemas/56/",
-      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24;last-known-good",
-      "freshness": "last-known-good",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
+      "freshness": "fresh",
       "source": "showtimes-official-api",
       "movie_id": "m_4c86ad639cce"
     },
@@ -55,8 +68,8 @@
       "audio_language": "ko",
       "source_event_id": "4809877",
       "source_url": "https://www.showtimes.com.tw/cinemas/53/",
-      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24;last-known-good",
-      "freshness": "last-known-good",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
+      "freshness": "fresh",
       "source": "showtimes-official-api",
       "movie_id": "m_898f1342247e"
     },
@@ -69,10 +82,23 @@
       "audio_language": "ko",
       "source_event_id": "4809882",
       "source_url": "https://www.showtimes.com.tw/cinemas/56/",
-      "source_role": "user-provided official bootstrap snapshot retrieved 2026-10-24;last-known-good",
-      "freshness": "last-known-good",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
+      "freshness": "fresh",
       "source": "showtimes-official-api",
       "movie_id": "m_898f1342247e"
+    },
+    {
+      "id": "557def331701c7fb",
+      "cinema_id": "3071c450f8e42deb",
+      "start_time": "2026-11-07T20:00:00+08:00",
+      "format": "LIVE(韓)",
+      "audio_language": "ko",
+      "source_event_id": "188237",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=26",
+      "source_role": "official VieShow branch schedule reviewed 2026-10-27",
+      "freshness": "fresh",
+      "source": "vieshow-official-browser",
+      "movie_id": "m_3d6900e4709d"
     }
   ]
 }
