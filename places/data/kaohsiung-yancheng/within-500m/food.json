@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "hotel_id": "legend-pier-2",
+  "radius_band": "0-500m",
+  "category": "food",
+  "places": [
+    {
+      "id": "gang-yuan-beef-noodle-yancheng",
+      "name": {
+        "local": "港園牛肉麵",
+        "id": "Gang Yuan Beef Noodle",
+        "en": "Gang Yuan Beef Noodle Restaurant",
+        "zh-Hant": "港園牛肉麵（鹽埕總店）",
+        "aliases": ["港園牛肉麵-鹽埕總店", "Gang Yuan Beef Noodle Restaurant (Yancheng Main Store)"]
+      },
+      "category": "food",
+      "address": {
+        "local": "803 高雄市鹽埕區大成街55號",
+        "en": "No. 55, Dacheng Street, Yancheng District, Kaohsiung 803"
+      },
+      "coordinates": {
+        "lat": 22.6210904,
+        "lng": 120.2877845,
+        "verified_by": "Google Maps listing linked from Taiwan Foodie and a separate local blog; exact local name, Yancheng main-store identity, and address match.",
+        "verified_at": "2026-10-28T00:00:00+08:00"
+      },
+      "google_maps": {
+        "url": "https://www.google.com/maps/place/%E6%B8%AF%E5%9C%92%E7%89%9B%E8%82%89%E9%BA%B5/@22.6210904,120.2852096,17z/data=!3m1!4b1!4m6!3m5!1s0x346e04784e98cf59:0xe425be744c375647!8m2!3d22.6210904!4d120.2877845!16s%2Fg%2F1tj71bg_",
+        "place_id": "0x346e04784e98cf59:0xe425be744c375647",
+        "match_checked_at": "2026-10-28T00:00:00+08:00"
+      },
+      "hotel_distances": [
+        {
+          "hotel_id": "legend-pier-2",
+          "distance_m": 350,
+          "method": "great_circle",
+          "route_distance_m": null,
+          "route_minutes": null,
+          "route_source": null,
+          "route_checked_at": null
+        }
+      ],
+      "status": "verified_active",
+      "status_note": "A local on-site food review dated 2026-09-14 describes the restaurant interior and service and lists daily hours of 10:30–20:00. Hours may change; confirm before visiting on a holiday.",
+      "summary": {
+        "id": "Toko mi sapi lokal di Yancheng; sumber kunjungan terbaru membahas mi sapi kuah dan mi aduk, serta suasana kedai yang kecil.",
+        "en": "A local Yancheng beef-noodle shop. A recent visit discusses soup and tossed noodles and describes a small dining room.",
+        "zh-Hant": "鹽埕在地牛肉麵店。近期實訪介紹湯麵與拌麵，並提到店內座位不多。"
+      },
+      "opening_hours": {
+        "source_exact": "Every day 10:30–20:00",
+        "source_url": "https://girlsplan.com/gaunnm/",
+        "note": "Reported in the 2026-09-14 visit article; check with the restaurant for holiday exceptions."
+      },
+      "group_notes": "Do not assume a party of 9–11 can sit together. The 2026-09-14 visit describes limited indoor tables; no verified group capacity or reservation policy was found in this run.",
+      "sources": [
+        {
+          "url": "https://girlsplan.com/gaunnm/",
+          "title": "港園牛肉麵 — 女子的休假計劃",
+          "kind": "recent_review",
+          "language": "zh-Hant",
+          "published_at": "2026-09-14",
+          "checked_at": "2026-10-28T00:00:00+08:00",
+          "supports": ["identity", "open_status", "hours", "menu", "recommendation"],
+          "note": "Recent on-site visit with address, daily hours, dishes, and a note that indoor seating is limited. It does not establish capacity for a group of 9–11."
+        },
+        {
+          "url": "https://khh.travel/zh-tw/shop/gourmet/810/",
+          "title": "港園牛肉麵 — Kaohsiung Travel",
+          "kind": "tourism_board",
+          "language": "zh-Hant",
+          "published_at": "2022-12-08",
+          "checked_at": "2026-10-28T00:00:00+08:00",
+          "supports": ["identity", "coordinates", "hours"],
+          "note": "Official tourism listing corroborates the local name, address, phone, and historical daily hours; its update date is old, so it is not the current-status evidence."
+        },
+        {
+          "url": "https://www.taiwanfoodie.org/en/restaurants/gang_yuan_beef_noodle_restaurant/",
+          "title": "Gang Yuan Beef Noodle Restaurant — Taiwan Foodie",
+          "kind": "map_listing",
+          "language": "en",
+          "published_at": null,
+          "checked_at": "2026-10-28T00:00:00+08:00",
+          "supports": ["identity", "coordinates", "recommendation"],
+          "note": "Links to a Google Maps listing with the matching Yancheng address and the same place ID as the separate Google Maps short link below."
+        },
+        {
+          "url": "https://maps.app.goo.gl/dYkuFfyUnWMWheBaA",
+          "title": "Google Maps — 港園牛肉麵",
+          "kind": "map_listing",
+          "language": "zh-Hant",
+          "published_at": null,
+          "checked_at": "2026-10-28T00:00:00+08:00",
+          "supports": ["identity", "coordinates"],
+          "note": "Google Maps resolves to the Yancheng restaurant at 22.6210904, 120.2877845; CID 0x346e04784e98cf59:0xe425be744c375647, feature g/1tj71bg_."
+        }
+      ],
+      "last_verified_at": "2026-10-28T00:00:00+08:00",
+      "next_review_at": "2026-10-28T01:00:00+08:00"
+    }
+  ]
+}

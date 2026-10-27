@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://study-in-taiwan.com/places/data/schema/place.schema.json",
+  "title": "Study in Taiwan nearby place record",
+  "type": "object",
+  "required": ["id", "name", "category", "coordinates", "hotel_distances", "status", "sources", "last_verified_at"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "name": {
+      "type": "object",
+      "required": ["local"],
+      "properties": {
+        "local": {"type": "string", "minLength": 1},
+        "id": {"type": "string"},
+        "en": {"type": "string"},
+        "zh-Hant": {"type": "string"},
+        "aliases": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "category": {"enum": ["food", "sightseeing", "photo_spot", "shopping", "culture", "practical"]},
+    "address": {"type": "object", "properties": {"local": {"type": "string"}, "en": {"type": "string"}}, "additionalProperties": false},
+    "coordinates": {
+      "type": "object",
+      "required": ["lat", "lng", "verified_by"],
+      "properties": {
+        "lat": {"type": "number", "minimum": -90, "maximum": 90},
+        "lng": {"type": "number", "minimum": -180, "maximum": 180},
+        "verified_by": {"type": "string"},
+        "verified_at": {"type": "string", "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "google_maps": {
+      "type": "object",
+      "required": ["url", "match_checked_at"],
+      "properties": {
+        "url": {"type": "string", "format": "uri"},
+        "place_id": {"type": ["string", "null"]},
+        "match_checked_at": {"type": "string", "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "hotel_distances": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["hotel_id", "distance_m", "method"],
+        "properties": {
+          "hotel_id": {"type": "string"},
+          "distance_m": {"type": "integer", "minimum": 0},
+          "method": {"const": "great_circle"},
+          "route_distance_m": {"type": ["integer", "null"], "minimum": 0},
+          "route_minutes": {"type": ["integer", "null"], "minimum": 0},
+          "route_source": {"type": ["string", "null"], "format": "uri"},
+          "route_checked_at": {"type": ["string", "null"], "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "status": {"enum": ["verified_active", "needs_review", "status_unknown", "possibly_closed", "closed"]},
+    "status_note": {"type": "string"},
+    "summary": {"type": "object", "properties": {"id": {"type": "string"}, "en": {"type": "string"}, "zh-Hant": {"type": "string"}}, "additionalProperties": false},
+    "opening_hours": {"description": "Use source-exact local hours; do not infer holiday or seasonal hours."},
+    "group_notes": {"type": "string"},
+    "photo": {
+      "type": "object",
+      "properties": {
+        "url": {"type": "string", "format": "uri"},
+        "source_url": {"type": "string", "format": "uri"},
+        "credit": {"type": "string"},
+        "reuse_basis": {"type": "string"},
+        "alt": {"type": "object", "properties": {"id": {"type": "string"}, "en": {"type": "string"}, "zh-Hant": {"type": "string"}}, "additionalProperties": false}
+      },
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["url", "kind", "checked_at"],
+        "properties": {
+          "url": {"type": "string", "format": "uri"},
+          "title": {"type": "string"},
+          "kind": {"enum": ["official", "map_listing", "recent_review", "recent_post", "news", "blog", "tourism_board", "photo", "other"]},
+          "language": {"type": "string"},
+          "published_at": {"type": ["string", "null"], "format": "date"},
+          "checked_at": {"type": "string", "format": "date-time"},
+          "supports": {"type": "array", "items": {"enum": ["identity", "coordinates", "open_status", "hours", "menu", "recommendation", "photo_rights", "transport", "group_capacity"]}},
+          "note": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "last_verified_at": {"type": "string", "format": "date-time"},
+    "next_review_at": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}

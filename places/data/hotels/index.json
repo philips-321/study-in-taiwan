@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0.0",
+  "hotels": [
+    {
+      "id": "e-house-155",
+      "name": {
+        "local": "東驛 E-HOUSE",
+        "id": "E-house 155 (Ximen)",
+        "en": "E-House 155 (Ximen)",
+        "zh-Hant": "東驛商旅西寧館"
+      },
+      "city": "Taipei",
+      "district": "Wanhua",
+      "address": {
+        "local": "108 臺北市萬華區西寧南路155號3樓",
+        "id": "Lantai 3, No.155, Xining South Road, Distrik Wanhua, Taipei 108",
+        "en": "3F, No. 155, Xining South Road, Wanhua District, Taipei 108",
+        "zh-Hant": "108 臺北市萬華區西寧南路155號3樓"
+      },
+      "coordinates": {
+        "lat": 25.045715,
+        "lng": 121.5032553,
+        "verified_by": "Taiwan Tourism Administration, tourism open-data JSON; registry snapshot last updated 2025-07-23",
+        "verified_at": "2026-10-27T23:50:00+08:00"
+      },
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.045715%2C121.5032553",
+      "verification_flags": [
+        "The user-reported elevator conflicts with the Tourism Administration registry value of 0 lifting equipment; reconfirm access with the hotel before presenting elevator availability as verified."
+      ],
+      "sources": [
+        {
+          "url": "https://media.taiwan.net.tw/en-us/portal/travel/details/hotel_a15010000h_016740",
+          "title": "東驛 E-HOUSE — Taiwan Tourism Administration",
+          "kind": "official_hotel_registry",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "name",
+            "address",
+            "coordinates",
+            "licensed_hotel_identity"
+          ]
+        },
+        {
+          "url": "https://media.taiwan.net.tw/en-us/portal/travel/json/hotel_a15010000h_016740",
+          "title": "Tourism open-data JSON",
+          "kind": "official_hotel_coordinates",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "coordinates"
+          ]
+        }
+      ],
+      "place_data_status": "research_pending"
+    },
+    {
+      "id": "legend-pier-2",
+      "name": {
+        "local": "秝芯旅店駁二館",
+        "id": "Legend Hotel Pier 2",
+        "en": "Legend Hotel Pier 2",
+        "zh-Hant": "秝芯旅店駁二館"
+      },
+      "city": "Kaohsiung",
+      "district": "Yancheng",
+      "address": {
+        "local": "803 高雄市鹽埕區五福四路67號",
+        "id": "No.67, Jalan Wufu Ke-4, Distrik Yancheng, Kaohsiung 803",
+        "en": "No. 67, Wufu 4th Road, Yancheng District, Kaohsiung 803",
+        "zh-Hant": "803 高雄市鹽埕區五福四路67號"
+      },
+      "coordinates": {
+        "lat": 22.6220726,
+        "lng": 120.2845067,
+        "verified_by": "Taiwan Tourism Administration, tourism open-data JSON; registry snapshot last updated 2026-06-08",
+        "verified_at": "2026-10-27T23:50:00+08:00"
+      },
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=22.6220726%2C120.2845067",
+      "sources": [
+        {
+          "url": "https://p2.legendhotel.com.tw/traffic.aspx",
+          "title": "Legend Hotel Pier 2 — official directions",
+          "kind": "official_hotel",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "name",
+            "address"
+          ]
+        },
+        {
+          "url": "https://media.taiwan.net.tw/en-us/portal/travel/details/hotel_a15010000h_019161",
+          "title": "秝芯旅店駁二館 — Taiwan Tourism Administration",
+          "kind": "official_hotel_registry",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "name",
+            "address",
+            "licensed_hotel_identity"
+          ]
+        },
+        {
+          "url": "https://media.taiwan.net.tw/en-us/portal/travel/json/hotel_a15010000h_019161",
+          "title": "Tourism open-data JSON",
+          "kind": "official_hotel_coordinates",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "coordinates"
+          ]
+        }
+      ],
+      "place_data_status": "research_pending"
+    },
+    {
+      "id": "in-joy-hotel",
+      "name": {
+        "local": "享得道行旅",
+        "id": "In Joy Hotel",
+        "en": "In Joy Hotel",
+        "zh-Hant": "享得道行旅"
+      },
+      "city": "Taichung",
+      "district": "Xitun",
+      "address": {
+        "local": "407 臺中市西屯區河南路二段211號",
+        "id": "No.211, Seksyen 2, Jalan Henan, Distrik Xitun, Taichung 407",
+        "en": "No. 211, Section 2, Henan Road, Xitun District, Taichung 407",
+        "zh-Hant": "407 臺中市西屯區河南路二段211號"
+      },
+      "coordinates": {
+        "lat": 24.1755637,
+        "lng": 120.6504048,
+        "verified_by": "Taiwan Tourism Administration, tourism open-data JSON; registry snapshot last updated 2026-09-16",
+        "verified_at": "2026-10-27T23:50:00+08:00"
+      },
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=24.1755637%2C120.6504048",
+      "sources": [
+        {
+          "url": "https://www.injoyhotel.com.tw/",
+          "title": "In Joy Hotel — official website",
+          "kind": "official_hotel",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "name",
+            "address"
+          ]
+        },
+        {
+          "url": "https://media.taiwan.net.tw/zh-tw/portal/travel/details/hotel_a15010000h_032923",
+          "title": "享得道行旅 — Taiwan Tourism Administration",
+          "kind": "official_hotel_registry",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "name",
+            "address",
+            "licensed_hotel_identity"
+          ]
+        },
+        {
+          "url": "https://media.taiwan.net.tw/en-us/portal/travel/json/hotel_a15010000h_032923",
+          "title": "Tourism open-data JSON",
+          "kind": "official_hotel_coordinates",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "coordinates"
+          ]
+        }
+      ],
+      "place_data_status": "research_pending",
+      "transport_note": "Taichung research must verify bus routes and alternatives for each destination; do not assume MRT is available or dependable."
+    },
+    {
+      "id": "guide-taipei-bade",
+      "name": {
+        "local": "承攜行旅台北八德館",
+        "id": "Guide Hotel Taipei Bade",
+        "en": "Guide Hotel Taipei Bade",
+        "zh-Hant": "承攜行旅台北八德館"
+      },
+      "city": "Taipei",
+      "district": "Songshan",
+      "address": {
+        "local": "105 臺北市松山區八德路四段213號",
+        "id": "No.213, Seksyen 4, Jalan Bade, Distrik Songshan, Taipei 105",
+        "en": "No. 213, Section 4, Bade Road, Songshan District, Taipei 105",
+        "zh-Hant": "105 臺北市松山區八德路四段213號"
+      },
+      "coordinates": {
+        "lat": 25.049007,
+        "lng": 121.564132,
+        "verified_by": "Taiwan Tourism Administration, tourism open-data JSON; registry snapshot last updated 2025-07-23",
+        "verified_at": "2026-10-27T23:50:00+08:00"
+      },
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.049007%2C121.564132",
+      "sources": [
+        {
+          "url": "https://bade.hexa.tw/",
+          "title": "Guide Hotel Taipei Bade — official website",
+          "kind": "official_hotel",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "name",
+            "address"
+          ]
+        },
+        {
+          "url": "https://media.taiwan.net.tw/en-us/portal/travel/details/hotel_a15010000h_020850",
+          "title": "承攜行旅台北八德館 — Taiwan Tourism Administration",
+          "kind": "official_hotel_registry",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "name",
+            "address",
+            "licensed_hotel_identity"
+          ]
+        },
+        {
+          "url": "https://media.taiwan.net.tw/en-us/portal/travel/json/hotel_a15010000h_020850",
+          "title": "Tourism open-data JSON",
+          "kind": "official_hotel_coordinates",
+          "checked_at": "2026-10-27",
+          "supports": [
+            "coordinates"
+          ]
+        }
+      ],
+      "place_data_status": "research_pending"
+    }
+  ]
+}

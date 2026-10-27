@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Study in Taiwan Places",
+  "updated_at": "2026-10-28T00:00:00+08:00",
+  "languages": ["id", "en", "zh-Hant"],
+  "cities": [
+    {"id": "taipei-ximen", "city": "Taipei", "district": "Wanhua", "hotel_ids": ["e-house-155"]},
+    {"id": "kaohsiung-yancheng", "city": "Kaohsiung", "district": "Yancheng", "hotel_ids": ["legend-pier-2"]},
+    {"id": "taichung-fengjia", "city": "Taichung", "district": "Xitun", "hotel_ids": ["in-joy-hotel"]},
+    {"id": "taipei-songshan", "city": "Taipei", "district": "Songshan", "hotel_ids": ["guide-taipei-bade"]}
+  ],
+  "hotels_file": "hotels/index.json",
+  "categories": ["food", "sightseeing", "photo_spot", "shopping", "culture", "practical"],
+  "files": ["kaohsiung-yancheng/within-500m/food.json"],
+  "coverage": {
+    "hotel_count": 4,
+    "place_count": 1,
+    "verified_active_count": 1,
+    "needs_review_count": 0
+  },
+  "notice": {
+    "id": "Empat hotel sudah terdaftar. Satu tempat makan dekat Legend Hotel Pier 2 sudah diverifikasi; riset area hotel lain berlanjut.",
+    "en": "Four hotels are listed. One food place near Legend Hotel Pier 2 is verified; research for the other hotel areas continues.",
+    "zh-Hant": "已登錄四間飯店。秝芯旅店駁二館附近已有一處美食完成查證，其他飯店周邊仍在研究。"
+  }
+}
