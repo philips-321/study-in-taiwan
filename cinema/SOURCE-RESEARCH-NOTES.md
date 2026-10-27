@@ -330,3 +330,10 @@ VieShow's official theater directory listed 20 branch pages with schedules. I op
 | 花蓮新天堂樂園威秀影城 | Hualien | 60 | [page](https://www.vscinemas.com.tw/theater/detail.aspx?id=21) |
 
 The two manual imports are normalized into small date/city JSON chunks and one deduplicated movie catalog. The site visitor does not fetch either upstream source. Current future schedules are present in 15 of Taiwan's 22 city/county areas; Hsinchu County, Nantou, Chiayi County, Yilan, Penghu, Kinmen, and Lienchiang currently have no future indexed rows. That gap means no verified data is saved from the connected feeds; it does not mean those cities or cinemas are closed. Fifty of the 107 BAMID records currently have future schedule rows; unmatched external venue IDs remain separately identified rather than guessed into the master.
+
+
+## Movie poster coverage — 2026-10-27
+
+I checked the newly added movie catalog records against the previous catalog revision. Twenty-one new records had no poster URL. I opened the matching official VieShow film or event page for each record and took the poster image URL linked on that page. The URLs point to VieShow's Unicorn Popcorn image host; no image bytes were copied into the repository. Each `movie_id`, poster URL, source page, and review date is recorded in `data/research/movie-posters.json`, and the URL is stored once on its movie record in `data/movies/index.json`.
+
+All 21 missing poster links are now filled. The catalog has 88 records with posters and 80 distinct poster URLs; repeated poster links remain shared.

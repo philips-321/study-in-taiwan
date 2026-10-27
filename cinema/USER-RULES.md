@@ -22,7 +22,7 @@ Read this before researching sources, editing cinema data, changing the cinema U
 - Never truncate a movie title because it is long. If a source value ends mid-word or appears length-limited, check an authoritative source and store the full title. Do not use display ellipses as stored movie data.
 - Movie titles are source titles. Changing the interface language must not translate or rewrite film titles. Store a verified international title in the movie catalog and make it searchable.
 - Provide an English name for every cinema where one is published by the cinema or its company. If no official English name is available, label the chosen transliteration/name as unverified rather than calling it official.
-- Reuse film posters and metadata in the single movie catalog record. Keep poster URLs deduplicated; do not download poster bytes into JSON.
+- Reuse film posters and metadata in the single movie catalog record. Keep poster URLs deduplicated; do not download poster bytes into JSON. Record each manually researched poster URL, source page, and review date in `data/research/movie-posters.json`.
 - Store genres, runtime, and age rating only when a source supports them. Unknown values stay absent or `null`; never make up a genre or rating.
 - Keep audio and subtitles as separate facts. Record subtitle languages only when the source explicitly lists them. Do not infer subtitles from audio language; unknown stays `null`.
 - Ticket prices belong to a specific branch and format and must include their source and capture date. Do not copy one branch's price to a whole cinema brand or present a dated price as a live checkout quote.
