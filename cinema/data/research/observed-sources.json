@@ -5,32 +5,33 @@
   "entries": [
     {
       "cinema_id": "5130fcc97b11b16d",
-      "cinema_name": "員林大戲院",
+      "cinema_name": "員林電影城",
       "city": "changhua",
       "source_url": "https://showtimes.magichour.tw/cinema/c60a4447b7b",
-      "source_type": "aggregator; official source not confirmed",
-      "browser_status": "dated-schedule-visible",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
         "date",
-        "movie_title_zh",
+        "movie title",
         "showtime"
       ],
-      "notes": "Direct branch page explicitly labels 10/25 (Sun) and lists six film titles with 25 times. No halls, formats, audio, or subtitle labels.",
-      "reviewed_on": "2026-10-25"
+      "notes": "Magic Hour third-party schedule, opened 2026-10-27; exact 10/27 date block lists six titles and 24 starts. County and theater name match the mapped Yuanlin venue; no hall, format, audio, or subtitle details.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "e20ff150d90cfea0",
-      "cinema_name": "嘉年華戲院",
+      "cinema_name": "嘉年華影城",
       "city": "chiayi-city",
       "source_url": "https://showtimes.magichour.tw/cinema/cf79b446e05",
-      "source_type": "aggregator; official source not confirmed",
-      "browser_status": "dated-schedule-visible",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
         "date",
-        "movie_title_zh",
+        "movie title",
         "showtime"
       ],
-      "notes": "Directly opened branch page explicitly labels 10/25 (Sun), 2026, and lists 17 film titles with 72 session times. No halls, formats, audio, or subtitle labels are shown. The official cinema site schedule selector did not render in browser extraction; this aggregator page was used as a dated fallback."
+      "notes": "Magic Hour third-party schedule, opened 2026-10-27; exact 10/27 date block lists 17 titles and 73 starts. City/name match the mapped Chiayi venue; no hall, format, audio, or subtitle details.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "3420199bc644cf09",
@@ -113,22 +114,20 @@
     },
     {
       "cinema_id": "df48f3de96b1afc2",
-      "cinema_name": "竹北百老匯影城",
+      "cinema_name": "百老匯竹北店",
       "city": "hsinchu-county",
-      "source_url": "https://www.atmovies.com.tw/showtime/t03510/a35/",
-      "source_type": "aggregator; official source not confirmed",
-      "browser_status": "dated-schedule-visible",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/theater/%E7%99%BE%E8%80%81%E5%8C%AF%E7%AB%B9%E5%8C%97%E5%BA%97",
+      "source_type": "third-party aggregator (Daily Showtimes)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
-        "address",
-        "phone",
         "date",
-        "movie_title_zh",
-        "runtime",
+        "movie title",
         "showtime",
-        "version_language"
+        "format",
+        "audio language"
       ],
-      "notes": "Directly opened branch page explicitly shows 2026-10-25 and was updated 18:00; imported 67 title/time entries. Official booking page renders template placeholders. Hall and subtitles not shown.",
-      "reviewed_on": "2026-10-25"
+      "notes": "Directly opened Daily Showtimes theater page on 2026-10-27. The Oct 27 listing shows 19 titles and 61 exact starts, with digital and audio labels where shown. Address matches the mapped Zhubei Broadway branch. No halls or subtitles are listed.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "758a39fe5ae9a51d",
@@ -373,17 +372,15 @@
       "cinema_name": "金獅影城",
       "city": "kinmen",
       "source_url": "https://showtimes.magichour.tw/cinema/c07dc93d40f",
-      "source_type": "aggregator",
-      "browser_status": "opened-date-specific-page",
-      "reviewed_on": "2026-10-25",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
         "date",
-        "movie_title_zh",
+        "movie title",
         "showtime"
       ],
-      "transcribed_date": "2026-10-25",
-      "transcribed_rows": 32,
-      "notes": "Directly opened Magic Hour cinema page explicitly labels 10/25 and lists 14 films/32 times. No language, hall, or format labels were present, so they remain unknown. The cinema is still active on the reviewed date; the operator announcement reported final operating date 2026-10-31. @movies branch page opened but still showed its older 10/16 schedule."
+      "notes": "Opened directly on 2026-10-27. The page groups 12 movie titles and 25 showtime starts under the explicit 10/27 heading. It does not show hall, format, audio, or subtitles. The location operator has announced closure after 2026-10-31; these rows are only for the date shown.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "65d825b5140e9fa9",
@@ -485,18 +482,19 @@
       "cinema_id": "cf2a2d27ba5ba2a8",
       "cinema_name": "喜樂時代影城永和店",
       "city": "new-taipei",
-      "source_url": "https://www.moovietime.com/cinemas/centuryasia-Beyond",
-      "source_type": "aggregator; dated branch schedule",
-      "browser_status": "dated-branch-listing-visible",
+      "source_url": "https://www.moovietime.com/cinemas/centuryasia-Beyond?date=2026-10-27",
+      "source_type": "aggregator; date selector with stale refresh timestamp",
+      "browser_status": "date URL displays list but page refreshed 2026-10-25",
       "observed_fields": [
         "cinema_name",
-        "date",
-        "movie_title_zh",
-        "showtime",
-        "refresh_time"
+        "date selector",
+        "movie titles",
+        "showtimes",
+        "refresh_time",
+        "operator links"
       ],
-      "notes": "Directly opened 2026-10-25 branch schedule, refreshed 06:09. Transcribed 72 dated sessions across 28 movie titles. Aggregator states its listing data comes from cinema websites; does not expose hall/audio/subtitle/format details.",
-      "reviewed_on": "2026-10-25"
+      "notes": "Opened the 10/27 selector directly on 2026-10-27. The page still says data updated 10/25 06:09 and displays the same list as the 10/25 page. Treat the displayed schedule as stale; no 10/27 rows imported. Time links point to the operator site, but the linked official browser page did not render a readable timetable.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "6763778191e9e511",
@@ -555,23 +553,6 @@
       ],
       "notes": "Sequential browser review on 2026-10-27; captured 182 active dated sessions. The page does not show hall numbers or verified subtitle languages; those remain unknown.",
       "reviewed_on": "2026-10-27"
-    },
-    {
-      "cinema_id": "a15851ac9eeccb48",
-      "cinema_name": "新莊鴻金寶麻吉影城",
-      "city": "new-taipei",
-      "source_url": "https://www.moovietime.com/cinemas/independent-machi",
-      "source_type": "aggregator; dated branch schedule",
-      "browser_status": "dated-branch-listing-visible",
-      "observed_fields": [
-        "cinema_name",
-        "date",
-        "movie_title_zh",
-        "showtime",
-        "refresh_time"
-      ],
-      "notes": "Directly opened 2026-10-25 branch schedule, refreshed 06:15. Transcribed 37 sessions across 9 movie titles, including one 00:00 Whalefall and one 00:00 Other Mommy session filed to 2026-10-26. Aggregator states its listing data comes from cinema websites; does not expose hall/audio/subtitle/format details. Direct operator booking page https://fmmfilmmate.tixi.com.tw/ was also opened and displays some halls/times, but no selected date in readable output; those were not imported.",
-      "reviewed_on": "2026-10-25"
     },
     {
       "cinema_id": "01ff4bc24e3038a2",
@@ -648,6 +629,23 @@
         "booking_site_branch_listing"
       ],
       "notes": "The opened report states that Miranew announced this branch stopped operation on 2025-12-22. Current Miranew booking page no longer lists the Honghui branch in its visible cinema list. No current showtimes imported; keep map pin linked but show closed status."
+    },
+    {
+      "cinema_id": "a15851ac9eeccb48",
+      "cinema_name": "鴻金寶麻吉影城",
+      "city": "new-taipei",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/theater/%E9%B4%BB%E9%87%91%E5%AF%B6%E9%BA%BB%E5%90%89%E5%BD%B1%E5%9F%8E",
+      "source_type": "third-party aggregator (Daily Showtimes)",
+      "browser_status": "schedule-visible",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "format",
+        "audio language"
+      ],
+      "notes": "Directly opened Daily Showtimes theater page on 2026-10-27. It shows the matching Xinzhuang address and 9 film titles with 35 Oct 27 starts; the page explicitly labels 2D and the Sumikko Chinese audio version. Hall and subtitles are not listed.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "454a06074601ed9c",
@@ -965,15 +963,15 @@
       "cinema_name": "今日戲院",
       "city": "tainan",
       "source_url": "https://www.cm-movie.com.tw/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91/",
-      "source_type": "operator history page; not a schedule",
+      "source_type": "operator history page; no current schedule",
       "browser_status": "multipurpose-venue-confirmed; no dated schedule",
       "observed_fields": [
         "2025 operating model",
         "venue history",
         "address context"
       ],
-      "notes": "The operator says the venue transitioned in March 2025 to a multipurpose cultural space, retaining selected film-festival screenings. No date-specific 2026-10-25 program is published. Cinema showtime status remains unknown; no screenings are imported.",
-      "reviewed_on": "2026-10-25"
+      "notes": "Reopened the operator site on 2026-10-27. It says the venue changed in March 2025 to a multipurpose cultural venue, with selected film-festival functions. No date-specific 2026-10-27 screening program appears on the page; no screenings imported.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "b2156062da72f956",
@@ -1273,33 +1271,34 @@
       "cinema_id": "ffc2e1b99a630f3d",
       "cinema_name": "喜樂時代影城南港店",
       "city": "taipei",
-      "source_url": "https://www.centuryasia.com.tw/book.html?sid=Nangang",
-      "source_type": "official",
-      "browser_status": "javascript-placeholders",
-      "reviewed_on": "2026-10-25",
-      "observed_fields": [
-        "venue_selector",
-        "film_detail_template",
-        "hall_template",
-        "showtime_template"
-      ],
-      "notes": "Official ticket page rendered template placeholders for cinema/date/movie/session and did not expose actual rows. @movies latest source page found was not retrievable (timeout); the opened Magic Hour page showed only 10/23 and 10/24 despite search snippets mentioning 10/25, so no 10/25 rows were imported."
-    },
-    {
-      "cinema_id": "ffc2e1b99a630f3d",
-      "cinema_name": "喜樂時代影城南港店",
-      "city": "taipei",
       "source_url": "https://showtimes.magichour.tw/cinema/cbe29efc0b6",
-      "source_type": "aggregator; official source not confirmed",
-      "browser_status": "dated-schedule-visible",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
         "date",
-        "movie_title_zh",
+        "movie title",
         "showtime",
-        "audio_language"
+        "audio language"
       ],
-      "notes": "Fresh browser read exposes the complete 10/25 block (supersedes the earlier cached-page note that only showed 10/24): 51 titles, 142 sessions. Source-listed audio languages were preserved; halls and subtitles were not listed.",
-      "reviewed_on": "2026-10-25"
+      "notes": "Directly reviewed on 2026-10-27. Explicit 10/27 block: 39 linked titles and 130 title/time entries. Audio language retained only where the page labels it. No hall or subtitle details listed.",
+      "reviewed_on": "2026-10-27"
+    },
+    {
+      "cinema_id": "d9a17e260f26a5ec",
+      "cinema_name": "國賓影城@微風廣場",
+      "city": "taipei",
+      "source_url": "https://origin.atmovies.com.tw/showtime/t02a03/a02/20261027/",
+      "source_type": "AtMovies aggregator; operator booking page also reviewed",
+      "browser_status": "dated aggregator page; schedule image placeholder, operator page has no selected-date text",
+      "reviewed_on": "2026-10-27",
+      "observed_fields": [
+        "date",
+        "address",
+        "phone",
+        "operator website link",
+        "operator current title/time list"
+      ],
+      "notes": "Opened AtMovies 10/27 page: matching address 台北市松山區復興南路一段39號 and phone (02)6600-1666 identify the same physical mapped pin; the schedule body is a generic image placeholder. Opened the linked official TIXI booking page, which shows titles, halls, audio labels and times but exposes no selected date in readable text. Without a date that can be verified in the rendered official schedule, no rows imported. Source brands the current venue as 微風影城; map pin still says 國賓影城@微風廣場, so operator/name refresh remains needed."
     },
     {
       "cinema_id": "680545a43a5093a6",
@@ -1323,24 +1322,6 @@
       ],
       "notes": "Sequential browser review on 2026-10-27; captured 176 active dated sessions. The official bootstrap also supplied hall, audio, poster, genre, rating, and runtime metadata; subtitle language is not supplied.",
       "reviewed_on": "2026-10-27"
-    },
-    {
-      "cinema_id": "d9a17e260f26a5ec",
-      "cinema_name": "微風影城",
-      "city": "taipei",
-      "source_url": "https://www.atmovies.com.tw/showtime/t02a03/a02/20261025/",
-      "source_type": "aggregator",
-      "browser_status": "schedule-visible",
-      "reviewed_on": "2026-10-25",
-      "observed_fields": [
-        "date",
-        "movie_title_zh",
-        "showtime",
-        "address",
-        "phone",
-        "refresh_time"
-      ],
-      "notes": "@movies rendered the 2026-10-25 showtime list in browser text and reported update time 2026-10-24 18:25. It exposed titles and times, but no branch session formats, halls, audio, or subtitles. Schedule rows are labeled aggregator."
     },
     {
       "cinema_id": "10c63f8de8649fcc",
@@ -1392,13 +1373,14 @@
       "city": "taipei",
       "source_url": "https://origin.atmovies.com.tw/showtime/t02f05/a02/20261027/",
       "source_type": "AtMovies aggregator",
-      "browser_status": "dated page; schedule is a generic image placeholder",
+      "browser_status": "dated page; schedule is generic image placeholder",
       "observed_fields": [
         "date",
         "address",
-        "phone"
+        "phone",
+        "update time"
       ],
-      "notes": "Opened the current 2026-10-27 page in browser; the body contains only the date/update time and a generic quickSelect02.png image, with no readable title/time list. Do not import screening rows from this page.",
+      "notes": "Reopened the 2026-10-27 page. The schedule body is a generic quickSelect02.png image, not readable title/time rows; no screenings imported.",
       "reviewed_on": "2026-10-27"
     },
     {
@@ -1419,35 +1401,37 @@
       "reviewed_on": "2026-10-25"
     },
     {
-      "cinema_id": "b11ec81197b97388",
-      "cinema_name": "總督大戲院",
+      "cinema_id": "8e09faf24bf0485d",
+      "cinema_name": "百老匯公館店",
       "city": "taipei",
-      "source_url": "https://www.governor.com.tw/aboutus.php",
-      "source_type": "official",
-      "browser_status": "venue-details-visible-schedule-not-readable",
-      "reviewed_on": "2026-10-25",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/theater/%E7%99%BE%E8%80%81%E5%8C%AF%E5%85%AC%E9%A4%A8%E5%BA%97",
+      "source_type": "third-party aggregator (Daily Showtimes)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
-        "venue_name",
-        "address",
-        "phone",
-        "screen_count"
+        "date",
+        "movie title",
+        "showtime",
+        "format",
+        "audio language"
       ],
-      "notes": "Official venue page confirms address 長安東路二段219號 and states two auditoriums. The official homepage exposes 今日熱映 as image-based content; browser text extraction does not reveal showtimes. No schedule imported."
+      "notes": "Directly opened Daily Showtimes theater page on 2026-10-27. The Oct 27 movie list gives 19 titles and 63 exact start times with digital/audio labels where shown. Imported date-bound rows using existing movie records. No halls or subtitles are listed.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "b11ec81197b97388",
-      "cinema_name": "總督大戲院",
+      "cinema_name": "總督影城",
       "city": "taipei",
       "source_url": "https://showtimes.magichour.tw/cinema/cf91204ef87",
-      "source_type": "aggregator; official source not confirmed",
-      "browser_status": "dated-schedule-visible",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
+        "venue address",
         "date",
-        "movie_title_zh",
+        "movie title",
         "showtime"
       ],
-      "notes": "The directly opened page labels 10/25 and lists four films / ten sessions. Hall, format, audio, and subtitles are not listed.",
-      "reviewed_on": "2026-10-25"
+      "notes": "Fresh direct browser review on 2026-10-27. The venue page gives the matching Taipei address and a dated 10/27 block with 3 titles and 6 times. It exposes no hall, format, audio, or subtitle details.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "58aceabee919fb31",
@@ -1465,21 +1449,6 @@
       ],
       "notes": "Magic Hour is an aggregator, not the cinema operator. The dated branch page reviewed 2026-10-27 visibly lists 11 movie titles, hall, and exact times for Oct 27 and Oct 28; only the Chimney Town Japanese version labels audio. No subtitle details are listed.",
       "reviewed_on": "2026-10-27"
-    },
-    {
-      "cinema_id": "8e09faf24bf0485d",
-      "cinema_name": "龍祥百老匯影城",
-      "city": "taipei",
-      "source_url": "https://showtimes.magichour.tw/cinema/c1099617e7e",
-      "source_type": "aggregator; official source not confirmed",
-      "browser_status": "dated-schedule-visible",
-      "observed_fields": [
-        "date",
-        "movie_title_zh",
-        "showtime"
-      ],
-      "notes": "Direct branch page explicitly labels 10/25 (Sun) and lists 19 film titles with 63 showtimes. No hall, format, audio, or subtitle labels.",
-      "reviewed_on": "2026-10-25"
     },
     {
       "cinema_id": "63bd8f4351bab496",
@@ -1523,32 +1492,16 @@
       "cinema_id": "a07e94ac5664ad37",
       "cinema_name": "威尼斯影城",
       "city": "taoyuan",
-      "source_url": "https://origin.atmovies.com.tw/showtime/t03303/a03/20261025/",
-      "source_type": "official site checked; @movies aggregator reviewed",
-      "browser_status": "official-forbidden; aggregator-image-unreadable; ticket-engine-too-large",
-      "observed_fields": [
-        "cinema_identity",
-        "address",
-        "phone",
-        "date",
-        "schedule_rendering_or_limitations"
-      ],
-      "notes": "Official showtime page returned HTTP 403. The direct @movies page showed 2026-10-25 and 18:46 refresh time but the actual schedule as an unreadable image. Official ticket engine exceeded browser extraction size (7MB); no schedule rows could be inspected."
-    },
-    {
-      "cinema_id": "a07e94ac5664ad37",
-      "cinema_name": "威尼斯影城",
-      "city": "taoyuan",
       "source_url": "https://showtimes.magichour.tw/cinema/cecda84e2cb",
-      "source_type": "aggregator; official source not confirmed",
-      "browser_status": "dated-schedule-visible",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
         "date",
-        "movie_title_zh",
+        "movie title",
         "showtime"
       ],
-      "notes": "The directly opened page labels 10/25 and lists 18 films / 106 sessions. Sessions marked after midnight were stored in the 10/26 date chunk. Hall, format, audio, and subtitles are not listed.",
-      "reviewed_on": "2026-10-25"
+      "notes": "Magic Hour third-party schedule, opened 2026-10-27; exact 10/27 date block; 18 titles and 106 starts. 00:xx entries explicitly marked 隔日 were assigned to Taiwan date 10/28. No hall, format, audio, or subtitle details were listed.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "8a2c78238c246672",
@@ -1693,21 +1646,18 @@
       "cinema_id": "8f25580bc6455651",
       "cinema_name": "新月豪華影城",
       "city": "yilan",
-      "source_url": "https://www.atmovies.com.tw/showtime/t03905/a39/",
-      "source_type": "aggregator; official schedule source not confirmed",
-      "browser_status": "dated-schedule-visible",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/theater/%E6%96%B0%E6%9C%88%E8%B1%AA%E8%8F%AF%E5%BD%B1%E5%9F%8E",
+      "source_type": "third-party aggregator (Daily Showtimes)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
-        "address",
-        "phone",
         "date",
-        "movie_title_zh",
-        "runtime",
+        "movie title",
         "showtime",
-        "version_language",
-        "refresh_time"
+        "format",
+        "audio language"
       ],
-      "notes": "Directly opened branch page explicitly shows 2026-10-25, refreshed at 00:34, with 16 films and 73 listed times. No formats, halls, audio, or subtitles shown; only Chinese version labels are retained.",
-      "reviewed_on": "2026-10-25"
+      "notes": "Directly opened Daily Showtimes theater page on 2026-10-27. Its 10/27 date blocks list 16 titles and their visible times; language is recorded only for the Chinese-dubbed films explicitly labeled on the page. No hall, projection format, or subtitle fields are listed.",
+      "reviewed_on": "2026-10-27"
     },
     {
       "cinema_id": "1059473f086628f7",
@@ -1752,15 +1702,15 @@
       "cinema_name": "環球中華影城",
       "city": "yunlin",
       "source_url": "https://showtimes.magichour.tw/cinema/c24719a2201",
-      "source_type": "aggregator; official source not confirmed",
-      "browser_status": "dated-schedule-visible",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "schedule-visible",
       "observed_fields": [
         "date",
-        "movie_title_zh",
+        "movie title",
         "showtime"
       ],
-      "notes": "The directly opened page labels 10/25 and lists 13 films / 56 sessions. The page gives no hall, format, audio, or subtitle labels.",
-      "reviewed_on": "2026-10-25"
+      "notes": "Magic Hour third-party schedule, opened 2026-10-27; exact 10/27 date block lists 13 titles and 56 starts. No hall, format, audio, or subtitle labels.",
+      "reviewed_on": "2026-10-27"
     }
   ],
   "title_audit": {
