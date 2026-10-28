@@ -107,6 +107,6 @@ Aturan ini berlaku untuk setiap agen. Pertahankan aturan khusus proyek di atas. 
 - Commit hasil dan snapshot penting segera; jangan menahan satu-satunya salinan di artifact yang akan kedaluwarsa. Bedakan cache ringkas dari raw evidence; jangan mengaku bisa membangun ulang raw detail yang sebelumnya tidak pernah disimpan.
 <!-- END SOURCE SNAPSHOT REUSE POLICY v1 -->
 
-## Owner pause: scheduled GitHub workflows (2026-10-28)
+## Owner instruction: public repository workflows (2026-10-29)
 
-All previously listed scheduled maintenance/data-refresh jobs in this repository are paused by explicit owner instruction. Keep their YAML manual-only. Do not restore cron, push-based substitutes, chained workflow_run triggers, or automatically resume at a billing reset. Manual execution/resumption requires a new explicit owner instruction. Existing JSON/data remains readable without running Actions.
+The owner authorized normal operation of public repository workflows and their Cloudflare integrations before November 1; do not block them solely because private GitHub Actions minutes are low. The cinema workflow's prior daily schedule and path-scoped push trigger are restored under that instruction. Standard GitHub-hosted runner minutes in public repositories do not consume the private included minutes; Cloudflare builds, source requests, other resources, downstream private workflows, and non-standard runners have separate limits or costs. Before agent-initiated runs or changes that start Actions, give the owner the existing execution notice with estimated effects. Preserve separately cancelled work such as Vinone and Cloudflare onboarding; do not enable paid overage. Existing JSON/data remains readable without running Actions.
