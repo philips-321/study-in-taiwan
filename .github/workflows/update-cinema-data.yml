@@ -1,16 +1,8 @@
 name: Update Taiwan cinema JSON
 
+# Paused by owner on 2026-10-28. Do not restore automatic triggers without explicit instruction.
 on:
   workflow_dispatch:
-  schedule:
-    # 17:27 Taiwan time (UTC+8), after common midweek schedule-release windows.
-    - cron: '27 9 * * *'
-  push:
-    branches:
-      - main
-    paths:
-      - 'cinema/scripts/**'
-      - '.github/workflows/update-cinema-data.yml'
 
 concurrency:
   group: update-cinema-data

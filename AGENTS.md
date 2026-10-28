@@ -106,3 +106,7 @@ Aturan ini berlaku untuk setiap agen. Pertahankan aturan khusus proyek di atas. 
 - Satu sumber/window/domain diambil sekali dan dibagikan ke semua laporan yang membutuhkannya. Simpan raw JSON yang diperlukan beserta generated_at, rentang, cap/sampling, dan identitas sumber; shard/kompres jika besar. Jangan membuat duplikat dataset di setiap repo tanpa kebutuhan.
 - Commit hasil dan snapshot penting segera; jangan menahan satu-satunya salinan di artifact yang akan kedaluwarsa. Bedakan cache ringkas dari raw evidence; jangan mengaku bisa membangun ulang raw detail yang sebelumnya tidak pernah disimpan.
 <!-- END SOURCE SNAPSHOT REUSE POLICY v1 -->
+
+## Owner pause: scheduled GitHub workflows (2026-10-28)
+
+All previously listed scheduled maintenance/data-refresh jobs in this repository are paused by explicit owner instruction. Keep their YAML manual-only. Do not restore cron, push-based substitutes, chained workflow_run triggers, or automatically resume at a billing reset. Manual execution/resumption requires a new explicit owner instruction. Existing JSON/data remains readable without running Actions.
