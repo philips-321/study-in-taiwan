@@ -20,9 +20,9 @@ for (const row of selected) {
   // Keep the legacy renderer contract at the materialized-view boundary.
   groups.get(key).push({
     id: row.screening_id, cinema_id: row.cinema_id, movie_id: row.movie_id,
-    start_time: row.start_time, hall: row.hall, format: row.format, audio: row.audio,
-    source_event_id: row.source_row_key, source_url: row.source_url,
-    source: row.source_id, source_role: row.source_id, freshness: 'fresh',
+    start_time: row.start_time, hall: row.hall, format: row.format, audio_language: row.audio,
+    subtitles: row.subtitles, source_event_id: row.source_row_key, source_url: row.source_url,
+    source: row.source_id, source_role: row.source_role || row.source_id, freshness: 'fresh',
     retrieved_at: row.observed_at
   });
 }
