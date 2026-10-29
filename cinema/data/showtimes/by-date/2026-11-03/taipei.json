@@ -5,32 +5,478 @@
   "date": "2026-11-03",
   "showtimes": [
     {
-      "id": "11e43568661cfc6e",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_9402f33dea2b",
-      "start_time": "2026-11-03T11:15:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169335",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "id": "3000a312cb6b8636",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T10:00:00+08:00",
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_a04bfef26d69"
     },
     {
-      "id": "35f2358fd81922d2",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_a04bfef26d69",
-      "start_time": "2026-11-03T11:20:00+08:00",
-      "format": "數位(國)",
+      "id": "7cff5f917a5aaeee",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "0beefb57266c5c69",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:00:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_4444eb1424a7"
+    },
+    {
+      "id": "866851571f630afc",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "0cdba9e0a176a22f",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:05:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_374f6fcaf14c"
+    },
+    {
+      "id": "234c4c22c494a9e9",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T10:10:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_7f82a61deb49"
+    },
+    {
+      "id": "117168e506a73e40",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "72e809130ee09c90",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_4e4abaa627ff"
+    },
+    {
+      "id": "79cbfd3a22f14920",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T10:15:00+08:00",
+      "hall": "日文(JPN)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_651bcd48b0d1"
+    },
+    {
+      "id": "97916f6289f5d819",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T10:15:00+08:00",
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_58947d9ada0b"
+    },
+    {
+      "id": "d85dacd6f88cd197",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T10:20:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "340b9f28c42fe85a",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T10:20:00+08:00",
+      "hall": "2廳 97席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "7268d829338866d9",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T10:30:00+08:00",
+      "hall": "IMAX",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "1f259fa01e77efe8",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T10:30:00+08:00",
+      "hall": "3廳 102席",
+      "format": "數位‧中文版",
       "audio_language": "zh",
-      "source_event_id": "169341",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "4dbc28c5-3501-4560-8861-55376b1ea372",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_d4d379e9993e"
+    },
+    {
+      "id": "f5ab2533539af496",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T10:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_e69643a78c25"
+    },
+    {
+      "id": "dd44c1824c2b38cc",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T10:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_de6f2b34781a"
+    },
+    {
+      "id": "c9e3898932a3ba7e",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:35:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "a056f6a8394f5b3c",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T10:40:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "d20e352a16692e3d",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T10:40:00+08:00",
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_a982b1f65624"
+    },
+    {
+      "id": "01dbe2910a03f5f5",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:40:00+08:00",
+      "format": "4DX版",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "fca91e3fbe39dbc9",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_13161710af4d"
+    },
+    {
+      "id": "fb5761f02c497bfe",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T10:50:00+08:00",
+      "hall": "2廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "94f3f456-3e5b-4524-8ec6-f45c924af50d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "b0eb3f9100bc7e1e",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T10:50:00+08:00",
+      "hall": "13廳 36席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "a2027ead-c323-4e05-abf7-0da1fe46d075",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_967abb40d306"
+    },
+    {
+      "id": "884c1b52a2b331c1",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T10:50:00+08:00",
+      "hall": "5廳 49席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "a91d5e4c-cb12-4ba8-841a-9df52128dbc0",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_e1e5c854b656"
+    },
+    {
+      "id": "75192f966e52c710",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T10:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "09eaa9f8d009019f",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T11:00:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "9c9d43282bf9c844",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:00:00+08:00",
+      "hall": "12廳 35席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "b137103b-b16d-45c2-be2c-41d2cb26477d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_651bcd48b0d1"
+    },
+    {
+      "id": "842dabc2f3aa3e04",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:00:00+08:00",
+      "hall": "4廳 110席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "4dbc28c5-3501-4560-8861-55376b1ea372",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_d4d379e9993e"
+    },
+    {
+      "id": "ac6f673f14b3ec53",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:00:00+08:00",
+      "hall": "1廳 110席",
+      "format": "數位‧韓語版",
+      "audio_language": "ko",
+      "source_event_id": "21dc7722-445a-422f-ba7d-ca63874ee2a6",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_05344fb65072"
+    },
+    {
+      "id": "b3febada679a9b4a",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T11:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "0e69c6f9959d065d",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T11:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_de6f2b34781a"
+    },
+    {
+      "id": "f92b20e192b60cc2",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T11:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_568e845d1829"
+    },
+    {
+      "id": "0986e90a94e97e59",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T11:00:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_374f6fcaf14c"
+    },
+    {
+      "id": "4f99dc8e53fd76a7",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T11:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_d9cf4e6c57cc"
+    },
+    {
+      "id": "df4158d25090cf7e",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T11:10:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "ca9eb8439d84678d",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:10:00+08:00",
+      "hall": "6廳 36席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "44acf23b-8a50-433f-bf4f-a8ee363de2dc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "41afb02bcdd89385",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:10:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "e4cd64f0-04d6-45b7-80a1-ed34c8b986c2",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_de6f2b34781a"
+    },
+    {
+      "id": "28c25b9b4c9c78d9",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T11:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_88c06991a963"
+    },
+    {
+      "id": "343d32c193b1a498",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T11:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_de6f2b34781a"
+    },
+    {
+      "id": "16c754b74568aec8",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T11:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "9f293dd557987247",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T11:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "fe7d34d46ff27c13",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:20:00+08:00",
+      "hall": "9廳 98席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "f16eba994fb43b6f",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:20:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "e4cd64f0-04d6-45b7-80a1-ed34c8b986c2",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_de6f2b34781a"
+    },
+    {
+      "id": "73dd107f075b1c36",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:20:00+08:00",
+      "hall": "B廳 114席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "c59a2e98-eafa-4c55-851e-d3e7ed9eddbc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_865532b39cd8"
+    },
+    {
+      "id": "1ffcf7c17da58fbe",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T11:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "a4aa9ccc098418c1",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T11:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "f4396dbb52f80e16",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T11:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_06f5422d36b4"
     },
     {
       "id": "36e21e582701f356",
@@ -41,24 +487,91 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "f99dac4012a1f38b",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_6c190c8b78e4",
+      "id": "7d5e25db4c709eee",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T11:30:00+08:00",
-      "format": "TITAN(英)",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_a965317eb051"
+    },
+    {
+      "id": "20e50b4d00190b19",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:30:00+08:00",
+      "hall": "3廳 41席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "61a2dcd6-3630-4ac0-a8c2-68978a36d6ff",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "4e5d174ce3510ca5",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:30:00+08:00",
+      "hall": "11廳 33席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169330",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "153d0557-9574-4a20-89cc-61b32bc5b487",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_13161710af4d"
+    },
+    {
+      "id": "4ea2daadf6e8e03c",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:30:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "c59a2e98-eafa-4c55-851e-d3e7ed9eddbc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_865532b39cd8"
+    },
+    {
+      "id": "b46c33ee49f2ea2b",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T11:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "b1600f6640a58c8e",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T11:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_d9cf4e6c57cc"
+    },
+    {
+      "id": "8ae6bb4d12d2a6f2",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T11:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_d8a382d323ea"
+    },
+    {
+      "id": "2d352df221299371",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T11:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_de6f2b34781a"
     },
     {
       "id": "2aaf3fbda322217e",
@@ -70,10 +583,58 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
+    },
+    {
+      "id": "e1a72d1ca2a39962",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T11:35:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_651bcd48b0d1"
+    },
+    {
+      "id": "ef8102cf5467bb59",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T11:40:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "e647317f0c7b9ca9",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T11:40:00+08:00",
+      "hall": "7廳 44席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "21718305-fca3-4887-9ccf-f1e6d7103daf",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_d9cf4e6c57cc"
+    },
+    {
+      "id": "d707d3c396a04969",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T11:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "ae033a364bdbf8ce",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T11:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
     },
     {
       "id": "f5399a65ead66e45",
@@ -84,94 +645,464 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "fac08ddf290c5053",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_a965317eb051",
+      "id": "a2c5a333db0dcb2e",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T11:55:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_4444eb1424a7"
+    },
+    {
+      "id": "3d938b5b9466306d",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T12:00:00+08:00",
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "cba4a96884a1f9ff",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T12:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "884fcc396eaa6e96",
+      "cinema_id": "a8ee8dc17714ae2d",
       "start_time": "2026-11-03T12:05:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169320",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_c1ee25eda6b2"
     },
     {
-      "id": "23026362b862f5e9",
+      "id": "0e08ab4cba805f8c",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T12:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "53f80d4a8d3887f7",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T12:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "0d16b850e7abd410",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_10e01e722dee",
       "start_time": "2026-11-03T12:10:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169315",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
     },
     {
-      "id": "7539a07a32d5c67e",
+      "id": "1cbd61d2fafdf034",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T12:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "7a91cda9ec3e6838",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T12:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "52b866c541fe51da",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T12:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "0bfb6f17f01e9e9d",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T12:20:00+08:00",
+      "hall": "INFINITY VISION",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_534a597dde82"
+    },
+    {
+      "id": "d8d445aa4e27c87d",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T12:20:00+08:00",
+      "hall": "2廳 97席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "3e3635ebf3df9eb6",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T12:20:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "110ee2ef8b6179a9",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T12:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_d9cf4e6c57cc"
+    },
+    {
+      "id": "201df7435f4a10fe",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T12:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "bbc70dab61e8bf4d",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T12:30:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "da49ad07c623c89c",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_35ed006505c1",
+      "start_time": "2026-11-03T12:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a965317eb051"
+    },
+    {
+      "id": "859bb9083eafc389",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T12:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "9bb703941b82489b",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T12:30:00+08:00",
+      "format": "日語版",
+      "audio_language": "日語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_3c75afd6ba43"
+    },
+    {
+      "id": "5322519935fa0643",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T12:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_58947d9ada0b"
+    },
+    {
+      "id": "b7dbc83602a9f49b",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T12:40:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169325",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_f0dd68e51f3b"
     },
     {
-      "id": "104cae461f036f85",
+      "id": "52d53c81f4b0ce8e",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T12:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a982b1f65624"
+    },
+    {
+      "id": "c78cd982e8943d49",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_1141c45f9f42",
+      "start_time": "2026-11-03T12:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "96c5f34b66887efa",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T12:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "a3d5780cc44c6beb",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T12:45:00+08:00",
+      "hall": "2廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "94f3f456-3e5b-4524-8ec6-f45c924af50d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "a1007ab861128be7",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T12:45:00+08:00",
+      "hall": "13廳 36席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "bf7bf1d3-c643-4c1c-a152-bfa1e37dd0c6",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "f14bf564efc4d5a0",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T12:45:00+08:00",
+      "hall": "5廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "caca7608-f61b-42e6-a235-edf1eafcc47a",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "49a039af33680ba7",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T12:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_50cfc1b09c8a"
+    },
+    {
+      "id": "10a4f12d2c03dd89",
+      "cinema_id": "a8ee8dc17714ae2d",
       "start_time": "2026-11-03T12:50:00+08:00",
-      "format": "MUCROWN(英)",
-      "audio_language": "en",
-      "source_event_id": "168936",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_7da9db910487"
     },
     {
-      "id": "88958b2856fffe9f",
+      "id": "d18b639a6ef8a169",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_5ec239224265",
+      "start_time": "2026-11-03T12:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "174f9d73bcb859db",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T12:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "5588ffe1c42205fa",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T13:00:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169347",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_66546ef7a6fc"
     },
     {
-      "id": "d4039a1b13b3e609",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_13161710af4d",
-      "start_time": "2026-11-03T13:10:00+08:00",
-      "format": "數位(英)",
+      "id": "98bc05df3d907f70",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T13:00:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_6c190c8b78e4"
+    },
+    {
+      "id": "7dfae7fea369f9b7",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T13:00:00+08:00",
+      "hall": "3廳 102席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169342",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "9b46b192-692e-49bd-bc61-ecf3012c1e0b",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "5b97ba5c845dd022",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T13:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_967abb40d306"
+    },
+    {
+      "id": "f4e0eef11ca72f8a",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T13:00:00+08:00",
+      "format": "4DX版",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "29c5efe2cd82145d",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T13:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "7c4a7dc36a6e20ff",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T13:05:00+08:00",
+      "format": "日語版",
+      "audio_language": "日語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_4444eb1424a7"
+    },
+    {
+      "id": "d4bc1dd26f229b16",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T13:10:00+08:00",
+      "hall": "IMAX",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_c9a4634b7515"
+    },
+    {
+      "id": "d24d0f2c2aa5d403",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:10:00+08:00",
+      "hall": "12廳 35席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "f8c4541a-705e-4d2b-a94d-963e6c6f54f9",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_970da19b0c70"
+    },
+    {
+      "id": "5c8ae54359e44350",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:10:00+08:00",
+      "hall": "1廳 110席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "41e215a9-6091-437b-bb5a-35cb0324efc2",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_7da9db910487"
+    },
+    {
+      "id": "98e8204dce9c4242",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:10:00+08:00",
+      "hall": "3廳 41席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "f03cbaa5-6d58-43f7-ab06-d902b0897bec",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "df76d85b7412191e",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T13:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "965938617a9b01e8",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T13:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_13161710af4d"
+    },
+    {
+      "id": "f215182312a9ed0b",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:15:00+08:00",
+      "hall": "7廳 44席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "2cdd69b0-8f74-4517-9f41-b995e0532787",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "68989906a980b061",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T13:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
     },
     {
       "id": "d190423194c1ba72",
@@ -182,23 +1113,141 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "4ffd9ac294b0fd51",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_37c4602113f4",
+      "id": "2f5466a98e71b5a9",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T13:20:00+08:00",
-      "format": "數位(多元語)",
-      "source_event_id": "169336",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_0851c1e122d7"
+    },
+    {
+      "id": "073ed107082ea854",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T13:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "1108545a01cbb207",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T13:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "5e2e28a5948aeb48",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:25:00+08:00",
+      "hall": "9廳 98席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "ef157a68549287a5",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:25:00+08:00",
+      "hall": "6廳 36席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "9b46b192-692e-49bd-bc61-ecf3012c1e0b",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "cfa2e73431b16fd2",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T13:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "8d103a8a5ec2e2e8",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T13:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_568e845d1829"
+    },
+    {
+      "id": "b45a2decf092cb4b",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T13:30:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "97e4e2ab792d4565",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:30:00+08:00",
+      "hall": "4廳 110席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "a4da3631-0d2a-47bd-9a66-2740eebe0f32",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6c190c8b78e4"
+    },
+    {
+      "id": "0fbea272b34ec34c",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T13:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "fbcffbc2bc44822f",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T13:35:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_57a93adafa60"
+    },
+    {
+      "id": "3e56c52ec6171e61",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:40:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧波蘭語版",
+      "source_event_id": "2cd9de94-0c0f-4de6-be1a-609557753adc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a982b1f65624"
+    },
+    {
+      "id": "62f7e0023b03af9e",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:40:00+08:00",
+      "hall": "11廳 33席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "eebb79e5-e525-4584-97f4-862acb7e6626",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_06f5422d36b4"
     },
     {
       "id": "05e7a52f13f99f1b",
@@ -209,51 +1258,323 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "90764c019016deea",
+      "id": "69091e98f454236c",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_6d71a791c9b4",
       "start_time": "2026-11-03T13:45:00+08:00",
-      "format": "TITAN(英)",
-      "audio_language": "en",
-      "source_event_id": "169331",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6d71a791c9b4"
     },
     {
-      "id": "e139eed78ef79cc4",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_05c755e897ee",
+      "id": "d3812784f0daf58c",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T13:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "57f338441236d720",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T13:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7f82a61deb49"
+    },
+    {
+      "id": "c2df5f440a8e7619",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T13:50:00+08:00",
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "fe4718811ee0bd76",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T13:50:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "59dcf48d-44ec-40b6-9b1b-fbeb0885e501",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "ffc3353db041d8ad",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T13:55:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "8d490aa7c0e52b13",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T14:00:00+08:00",
-      "format": "數位",
-      "source_event_id": "169316",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_1141c45f9f42"
     },
     {
-      "id": "3a5e5a8e61ac2f3d",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_1141c45f9f42",
-      "start_time": "2026-11-03T14:05:00+08:00",
-      "format": "數位(英)",
+      "id": "71cd81486dc5644f",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T14:00:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧波蘭語版",
+      "source_event_id": "2cd9de94-0c0f-4de6-be1a-609557753adc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a982b1f65624"
+    },
+    {
+      "id": "56ab76508b216306",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T14:00:00+08:00",
+      "hall": "11廳 33席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169321",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "153d0557-9574-4a20-89cc-61b32bc5b487",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_13161710af4d"
+    },
+    {
+      "id": "0871898423908dbd",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T14:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "a13298e84eb1dcbc",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T14:05:00+08:00",
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_f60a3e26a08a"
+    },
+    {
+      "id": "5a124f7b1b121dbd",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T14:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "afbab87c7a4e9fb3",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "36517fd8708f6fee",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "hall": "B廳 114席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "94f3f456-3e5b-4524-8ec6-f45c924af50d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "9ca6efcebc55b38a",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "59dcf48d-44ec-40b6-9b1b-fbeb0885e501",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "a6a30be42decd2ee",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "88ecf00a2a24bb3c",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "7833a44f29ef3c19",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "7b2d6b21b49a8217",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "54e0c5798cd16997",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_205b35a57a78"
+    },
+    {
+      "id": "687bfbbaf63c9ac4",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_2b8962506f84"
+    },
+    {
+      "id": "bdd7157ca82c3d8e",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T14:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_ea68cd0a50c5"
+    },
+    {
+      "id": "073946d9d924fb3b",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T14:20:00+08:00",
+      "hall": "2廳 97席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "cb6d3012-c0ed-4653-b457-736feb84ec6f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "eaf21179bfff4d8a",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T14:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "d28e522156bf825d",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T14:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "b268d154aa13f081",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T14:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "4d1e78f000ce3bd6",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T14:30:00+08:00",
+      "hall": "13廳 36席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "bf7bf1d3-c643-4c1c-a152-bfa1e37dd0c6",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "4fd6afc2411f8ca4",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T14:30:00+08:00",
+      "format": "4K修復版",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_ea68cd0a50c5"
+    },
+    {
+      "id": "7acd69ff235accee",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T14:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "78efc2777ee39252",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T14:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "e6ddc3967b1ef1c8",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T14:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_568e845d1829"
+    },
+    {
+      "id": "08043b53c265f41f",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T14:35:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_ce5f6b42a8e9"
     },
     {
       "id": "127d178fd6987679",
@@ -264,24 +1585,100 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "a0f7a625ddec4b27",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_35ed006505c1",
-      "start_time": "2026-11-03T14:50:00+08:00",
-      "format": "數位(英)",
+      "id": "62f30ee94743c7e5",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T14:40:00+08:00",
+      "hall": "日文(JPN)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_651bcd48b0d1"
+    },
+    {
+      "id": "b578094126534db0",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T14:40:00+08:00",
+      "hall": "2廳 49席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169326",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "94f3f456-3e5b-4524-8ec6-f45c924af50d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "374a6193f2b82749",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T14:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "aa75c57f496aae82",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T14:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "300f1c2f4005c465",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T14:50:00+08:00",
+      "hall": "鉅院廳 745席",
+      "format": "ATMOS‧數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "82c9d2e4de60064b",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T14:50:00+08:00",
+      "hall": "5廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "cb6d3012-c0ed-4653-b457-736feb84ec6f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "bffe42b8b9dea46d",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T14:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_c9a4634b7515"
+    },
+    {
+      "id": "e089fa434ca6a42c",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T14:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "5ba3613280855722",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T14:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a982b1f65624"
     },
     {
       "id": "8869ea2fc6df0261",
@@ -292,37 +1689,191 @@
       "audio_language": "ko",
       "source_event_id": "4809220",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
-      "freshness": "fresh",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27;last-known-good",
+      "freshness": "last-known-good",
       "source": "showtimes-official-api",
       "movie_id": "m_86af9fdc3eb1"
     },
     {
-      "id": "a008592c615f0360",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_a04bfef26d69",
-      "start_time": "2026-11-03T15:10:00+08:00",
-      "format": "數位(國)",
-      "audio_language": "zh",
-      "source_event_id": "169348",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "id": "3ccb5b8d58d593e9",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T15:00:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_66546ef7a6fc"
     },
     {
-      "id": "6ab9da898ee72808",
+      "id": "ae1f25df701b6a07",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T15:00:00+08:00",
+      "hall": "3廳 102席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "44acf23b-8a50-433f-bf4f-a8ee363de2dc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "e9712114f84ece88",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T15:00:00+08:00",
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "ae50b6d92daca5fb",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T15:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_651bcd48b0d1"
+    },
+    {
+      "id": "592571e1f131ffa7",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T15:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_970da19b0c70"
+    },
+    {
+      "id": "99504e9f8d99f1bc",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T15:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a965317eb051"
+    },
+    {
+      "id": "09f6df3a8c1f8ecc",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T15:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9da154c396eb"
+    },
+    {
+      "id": "641de05896ba5064",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T15:05:00+08:00",
+      "format": "4DX版",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "4adbda2219500672",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T15:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "41717b4422ef3e42",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T15:10:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "a28c018d969259de",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T15:10:00+08:00",
+      "hall": "12廳 35席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "b137103b-b16d-45c2-be2c-41d2cb26477d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_651bcd48b0d1"
+    },
+    {
+      "id": "b8ce915b4fa498f9",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_37c4602113f4",
+      "start_time": "2026-11-03T15:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "ae67fcd155f30f10",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T15:15:00+08:00",
+      "hall": "1廳 110席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "41e215a9-6091-437b-bb5a-35cb0324efc2",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_7da9db910487"
+    },
+    {
+      "id": "e0426b34357109e1",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T15:15:00+08:00",
+      "hall": "7廳 44席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "2cdd69b0-8f74-4517-9f41-b995e0532787",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "3bc3c5d3a83b8c85",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T15:20:00+08:00",
+      "hall": "日文(JPN)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_d9cf4e6c57cc"
+    },
+    {
+      "id": "d7eeab6ecdb328c5",
+      "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-03T15:25:00+08:00",
-      "format": "數位(多元語)",
-      "source_event_id": "169337",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "6廳 36席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "44acf23b-8a50-433f-bf4f-a8ee363de2dc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "f0420c3934df6252",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T15:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_d9cf4e6c57cc"
+    },
+    {
+      "id": "64ed3a7d768a1a07",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T15:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
     },
     {
       "id": "c29c2ee6fbfeaa5f",
@@ -334,38 +1885,170 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "1762bfe817a8ec60",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_66546ef7a6fc",
+      "id": "0f5a00f7f3c540fa",
+      "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-03T15:30:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169343",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "4廳 110席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "4dbc28c5-3501-4560-8861-55376b1ea372",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_d4d379e9993e"
     },
     {
-      "id": "2f46ed2ce950263c",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_6d71a791c9b4",
-      "start_time": "2026-11-03T15:50:00+08:00",
-      "format": "MUCROWN(英)",
+      "id": "eeb1b739982f02da",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T15:30:00+08:00",
+      "hall": "9廳 98席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "168937",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "7718c16c02ab706b",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T15:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "24f22a9660e960b1",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T15:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "6aecd3b6eb31a8f9",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T15:35:00+08:00",
+      "hall": "3廳 41席",
+      "format": "數位‧法語版",
+      "audio_language": "fr",
+      "source_event_id": "61a2dcd6-3630-4ac0-a8c2-68978a36d6ff",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "87c5d7c0c5418aeb",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T15:35:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "6511c9422866be2d",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T15:35:00+08:00",
+      "format": "日語版",
+      "audio_language": "日語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_3c75afd6ba43"
+    },
+    {
+      "id": "a4165a810eda7216",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T15:40:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_a965317eb051"
+    },
+    {
+      "id": "c6fdf955f6a09650",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T15:40:00+08:00",
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "3c2849142a597c80",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T15:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_651bcd48b0d1"
+    },
+    {
+      "id": "6a7557acffa9bb8c",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T15:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_de6f2b34781a"
+    },
+    {
+      "id": "de538dccaa5904eb",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T15:50:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "a20240a1b5c5829f",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T15:50:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧泰語版",
+      "source_event_id": "119933f5-9f06-4c79-beed-ff69b480fe89",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "3f2cf0faf47346b8",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T15:50:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "bf7bf1d3-c643-4c1c-a152-bfa1e37dd0c6",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "fd644546a57fa82e",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T15:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "5a32849894bd7e92",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T15:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_e69643a78c25"
     },
     {
       "id": "691cb4da53aaac51",
@@ -376,80 +2059,401 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "782c33695b95a22b",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_06f5422d36b4",
-      "start_time": "2026-11-03T16:25:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169367",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "id": "ee3c1a82cc8f42df",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T15:55:00+08:00",
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_6c190c8b78e4"
     },
     {
-      "id": "d198bd6a98403871",
+      "id": "4d87e206ae007029",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T16:00:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "5c559bb18676e5e8",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T16:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_70406a6e00a2"
+    },
+    {
+      "id": "ecd96bcd6fd60624",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T16:00:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "73845041dbea0ac0",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T16:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_970da19b0c70"
+    },
+    {
+      "id": "9ca90e94e7be4624",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T16:10:00+08:00",
+      "hall": "2廳 97席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "c7d3387cffa86cda",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T16:10:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧泰語版",
+      "source_event_id": "119933f5-9f06-4c79-beed-ff69b480fe89",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "b4f7451e2575edb4",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T16:10:00+08:00",
+      "hall": "B廳 114席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "94f3f456-3e5b-4524-8ec6-f45c924af50d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "f9fdf33cdfbe5fd2",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T16:10:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "bf7bf1d3-c643-4c1c-a152-bfa1e37dd0c6",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "9f6f2ec2caa6c558",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T16:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "579568455dca5b72",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T16:15:00+08:00",
+      "hall": "13廳 36席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "a2027ead-c323-4e05-abf7-0da1fe46d075",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_967abb40d306"
+    },
+    {
+      "id": "92b78dc23bbc431c",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T16:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "98bb00c05f92899b",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T16:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "f8e00a351687dcee",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_6d71a791c9b4",
+      "start_time": "2026-11-03T16:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_06f5422d36b4"
+    },
+    {
+      "id": "44d5bb59ee2b873d",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T16:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "f723998b0b2a916b",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T16:20:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "c0c853d009904d6f",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T16:20:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "10a62870ccb538a0",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T16:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "a1edd702f43cd6e0",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T16:30:00+08:00",
-      "format": "TITAN(英)",
-      "audio_language": "en",
-      "source_event_id": "169368",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "IMAX",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_1141c45f9f42"
     },
     {
-      "id": "92a49093caa4692c",
+      "id": "d926987d276fd227",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T16:30:00+08:00",
+      "hall": "11廳 33席",
+      "format": "數位‧印度語版",
+      "source_event_id": "371cdfcd-88d7-49d0-9cf7-ccc284f67c06",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_88c06991a963"
+    },
+    {
+      "id": "1e414c329ac9afa7",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T16:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9da154c396eb"
+    },
+    {
+      "id": "54f40a66ceec45d0",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T16:35:00+08:00",
+      "hall": "2廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "94f3f456-3e5b-4524-8ec6-f45c924af50d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "d019d364981fb81d",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T16:40:00+08:00",
+      "hall": "5廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "caca7608-f61b-42e6-a235-edf1eafcc47a",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "72632474cff583d3",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T16:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_82a1d81c3cdf"
+    },
+    {
+      "id": "1c9d3307ce56fdcf",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T16:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "cf4f00d08b1ef5ca",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T16:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "f8a0f84dbb87406a",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T16:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "586cd6af063f4ea8",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_ce5f6b42a8e9",
       "start_time": "2026-11-03T16:45:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169317",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_ce5f6b42a8e9"
     },
     {
-      "id": "c9fd98ace2ee5974",
+      "id": "40465e7b82d9c91e",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T16:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "6f71c510e3c57684",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_9402f33dea2b",
+      "start_time": "2026-11-03T16:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "e1a0fb235b97f742",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T16:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "850ea06c5c3baf22",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T16:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "72ab95ff74a53398",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T16:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "528c648250ec5ee8",
+      "cinema_id": "1b9c4a9b7ed385ea",
       "start_time": "2026-11-03T16:55:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169349",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
     },
     {
-      "id": "e0cb94fb479ef288",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_35ed006505c1",
+      "id": "ca258c03fe9490dc",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T17:00:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169327",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "f0b64bd418370e57",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T17:00:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "34e2912819c82137",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T17:00:00+08:00",
+      "hall": "鉅院廳 745席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "4dbc28c5-3501-4560-8861-55376b1ea372",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_d4d379e9993e"
+    },
+    {
+      "id": "8e8fcb7bcf63cd43",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T17:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_13161710af4d"
+    },
+    {
+      "id": "f104fd0fcea46e95",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T17:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "4d2ad3508ca1a7f0",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T17:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_d9cf4e6c57cc"
     },
     {
       "id": "8297e7caa8e406b5",
@@ -460,24 +2464,164 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "f785f282bb34415e",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_6c190c8b78e4",
-      "start_time": "2026-11-03T17:20:00+08:00",
-      "format": "數位(英)",
+      "id": "dea1de20e6bbdfbc",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T17:05:00+08:00",
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_82a1d81c3cdf"
+    },
+    {
+      "id": "eba04952e08af975",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T17:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_f2980a9c9791"
+    },
+    {
+      "id": "af91ecaa19ab2269",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T17:05:00+08:00",
+      "format": "真人版",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_e2e7c88f5614"
+    },
+    {
+      "id": "9a8881d6fcbef68d",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T17:10:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_13161710af4d"
+    },
+    {
+      "id": "a18a50711de92fc6",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T17:10:00+08:00",
+      "format": "4DX版",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "dea04903300077c4",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T17:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_568e845d1829"
+    },
+    {
+      "id": "3f8748c0e0cb30ac",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T17:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_de6f2b34781a"
+    },
+    {
+      "id": "eaf0bb41632b36b6",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T17:15:00+08:00",
+      "hall": "7廳 44席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "2cdd69b0-8f74-4517-9f41-b995e0532787",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "10aa649e44e12231",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T17:15:00+08:00",
+      "hall": "3廳 41席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169344",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "3a923e0e-edb3-4021-873e-13198d4a1c7a",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_58947d9ada0b"
+    },
+    {
+      "id": "c9148c171f09a918",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T17:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "db4f43b31bcafb77",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T17:20:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_6c190c8b78e4"
+    },
+    {
+      "id": "de90e7388890fd68",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T17:20:00+08:00",
+      "hall": "3廳 102席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "9b46b192-692e-49bd-bc61-ecf3012c1e0b",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "b3619606697256bc",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T17:20:00+08:00",
+      "hall": "12廳 35席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "141ce8c3-1428-4bcf-9250-31f8571bb59e",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_c9079f271cfb"
+    },
+    {
+      "id": "8e008c6afa3034da",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T17:20:00+08:00",
+      "hall": "1廳 110席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "59dcf48d-44ec-40b6-9b1b-fbeb0885e501",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "2dbb15d2b88026a2",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T17:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_d8a382d323ea"
     },
     {
       "id": "ca094e2391d745c2",
@@ -488,23 +2632,100 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "50b6d74e1c07f839",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_37c4602113f4",
+      "id": "3c73cd0efe303cfa",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T17:30:00+08:00",
-      "format": "數位(多元語)",
-      "source_event_id": "169338",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "90c1ad89dbd94f31",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T17:30:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "eebb79e5-e525-4584-97f4-862acb7e6626",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_06f5422d36b4"
+    },
+    {
+      "id": "e3298f2343ec7807",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T17:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "ebffe7d2dcb2fa08",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T17:35:00+08:00",
+      "hall": "9廳 98席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "0419005d0be4fbd3",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T17:35:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_568e845d1829"
+    },
+    {
+      "id": "4b7a6de126a3fe42",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T17:35:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "939973d8cdb319d3",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T17:40:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "b8b8d2356d5811dc",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T17:40:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "021480b5cc51afd7",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T17:40:00+08:00",
+      "hall": "6廳 36席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "9b46b192-692e-49bd-bc61-ecf3012c1e0b",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_5ec239224265"
     },
     {
       "id": "7c340f2bf9c621af",
@@ -515,10 +2736,39 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
+    },
+    {
+      "id": "ec44297cf904ab2c",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T17:45:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_374f6fcaf14c"
+    },
+    {
+      "id": "165a86bdbe125f11",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T17:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_f2980a9c9791"
+    },
+    {
+      "id": "a85c6a86227fb9d3",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T17:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_4fd20f1b6c01"
     },
     {
       "id": "412fb0125a8827e6",
@@ -529,10 +2779,178 @@
       "audio_language": "ko",
       "source_event_id": "4809128",
       "source_url": "https://www.showtimes.com.tw/cinemas/2/",
-      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
-      "freshness": "fresh",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27;last-known-good",
+      "freshness": "last-known-good",
       "source": "showtimes-official-api",
       "movie_id": "m_86af9fdc3eb1"
+    },
+    {
+      "id": "29f05b6ebd9009b8",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T18:00:00+08:00",
+      "hall": "4廳 110席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "ff456eb3-6cc1-4a55-93ca-f740ed4289a7",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a965317eb051"
+    },
+    {
+      "id": "ca2c0317c786c6a1",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T18:00:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "da9dc7e3-6e7b-41b3-ae43-e95958992ce3",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_319fe9a28ce9"
+    },
+    {
+      "id": "4e0a67ed6375d81c",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T18:00:00+08:00",
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "5b110bd696f43d0f",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T18:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "63197540bbb58379",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T18:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "129d8fcdb42899fe",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T18:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a982b1f65624"
+    },
+    {
+      "id": "37752d3cd97fc45b",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T18:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7f82a61deb49"
+    },
+    {
+      "id": "a838b267a23b4c67",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T18:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "8e08651f262ef813",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T18:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "9aa31d343dd8dfb5",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T18:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "ad92c46011ba37d7",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T18:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_651bcd48b0d1"
+    },
+    {
+      "id": "4d87691d196686c2",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T18:10:00+08:00",
+      "hall": "13廳 36席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "bf7bf1d3-c643-4c1c-a152-bfa1e37dd0c6",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "ebdb7cf3b1e2cbd9",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T18:10:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧韓語版",
+      "audio_language": "ko",
+      "source_event_id": "21dc7722-445a-422f-ba7d-ca63874ee2a6",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_05344fb65072"
+    },
+    {
+      "id": "7223562f068db27f",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T18:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "9df6550d4b05f373",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T18:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_57a93adafa60"
+    },
+    {
+      "id": "8ea26ab9cf723888",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T18:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "bccf76846f3d4baf",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T18:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_568e845d1829"
     },
     {
       "id": "6339e09fdc465d0c",
@@ -543,10 +2961,212 @@
       "audio_language": "ko",
       "source_event_id": "4809186",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
-      "freshness": "fresh",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27;last-known-good",
+      "freshness": "last-known-good",
       "source": "showtimes-official-api",
       "movie_id": "m_86af9fdc3eb1"
+    },
+    {
+      "id": "1f477fb104051129",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T18:30:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "3677a380ed6f4a7c",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T18:30:00+08:00",
+      "hall": "2廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "94f3f456-3e5b-4524-8ec6-f45c924af50d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "3526c4522c438ea2",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T18:30:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧韓語版",
+      "audio_language": "ko",
+      "source_event_id": "21dc7722-445a-422f-ba7d-ca63874ee2a6",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_05344fb65072"
+    },
+    {
+      "id": "d19f1f53c56a363a",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T18:30:00+08:00",
+      "hall": "11廳 33席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "a91d5e4c-cb12-4ba8-841a-9df52128dbc0",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_e1e5c854b656"
+    },
+    {
+      "id": "61a405462de5e796",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T18:35:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "ac96231c6434d401",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T18:40:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "3bd4f1d26c6ec65a",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T18:45:00+08:00",
+      "hall": "5廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "cb6d3012-c0ed-4653-b457-736feb84ec6f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "9c5193d4058750cc",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T18:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_4e4abaa627ff"
+    },
+    {
+      "id": "75cb7b3856bc05b5",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T18:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a982b1f65624"
+    },
+    {
+      "id": "5584f6fabbf8aa64",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "hall": "IMAX",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_c9a4634b7515"
+    },
+    {
+      "id": "5efabae32d3bc71a",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "db62e94c72613d60",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "760abc3ea9c93cce",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "format": "PRE",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_198c0a91767d"
+    },
+    {
+      "id": "06a5d023b165f1e7",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "b37ac56b6d82ae33",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "8a3f2649a5badaeb",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "5e1f6cb93ff0f812",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "673bba2d6f6bdfcd",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "faa41c898efa08b1",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "3af6f0371337c6f6",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "c39a6e0d6b3bd18e",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T19:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6d71a791c9b4"
     },
     {
       "id": "ecf69c1b5bc9822f",
@@ -556,80 +3176,134 @@
       "audio_language": "en",
       "source_event_id": "1875193",
       "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=1",
-      "source_role": "official VieShow branch schedule reviewed 2026-10-27",
-      "freshness": "fresh",
+      "source_role": "official VieShow branch schedule reviewed 2026-10-27;last-known-good",
+      "freshness": "last-known-good",
       "source": "vieshow-official-browser",
       "movie_id": "m_198c0a91767d"
     },
     {
-      "id": "767615d7dedd607c",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_66546ef7a6fc",
-      "start_time": "2026-11-03T19:00:00+08:00",
-      "format": "MUCROWN(英)",
-      "audio_language": "en",
-      "source_event_id": "168938",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
-    },
-    {
-      "id": "4f60bd10b0ebef3b",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_a04bfef26d69",
-      "start_time": "2026-11-03T19:00:00+08:00",
-      "format": "數位(國)",
-      "audio_language": "zh",
-      "source_event_id": "169350",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
-    },
-    {
-      "id": "c30b44720541c8c8",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_66546ef7a6fc",
+      "id": "3af34de25394b726",
+      "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-03T19:05:00+08:00",
-      "format": "數位(英)",
+      "hall": "3廳 41席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169318",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "f03cbaa5-6d58-43f7-ab06-d902b0897bec",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6d71a791c9b4"
     },
     {
-      "id": "97182e59e6de1b9c",
+      "id": "9651822ebb99b6ea",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T19:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "57701b69b6c76885",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T19:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "5f7ccc50d58a794a",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_35ed006505c1",
+      "start_time": "2026-11-03T19:05:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "f0c0520df702fd8f",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T19:10:00+08:00",
-      "format": "TITAN(英)",
-      "audio_language": "en",
-      "source_event_id": "169333",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_5ec239224265"
     },
     {
-      "id": "2240e2d516f794c8",
+      "id": "bdd7c440440ebe21",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T19:10:00+08:00",
+      "hall": "日文(JPN)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_651bcd48b0d1"
+    },
+    {
+      "id": "eea5a9ba273bb591",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_5ec239224265",
+      "start_time": "2026-11-03T19:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "ab2d862225617733",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T19:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_970da19b0c70"
+    },
+    {
+      "id": "0880c09e1102a874",
+      "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-03T19:15:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169328",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "7廳 44席",
+      "format": "數位‧韓語版",
+      "audio_language": "ko",
+      "source_event_id": "4cbdc0c6-e464-4ef1-8ea4-e3626bcbbb84",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_714c13145d82"
+    },
+    {
+      "id": "48ef47e9859b62b6",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T19:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9da154c396eb"
+    },
+    {
+      "id": "ca8ae7ea3181a815",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T19:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a965317eb051"
+    },
+    {
+      "id": "d8e3ca12490626f3",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T19:15:00+08:00",
+      "format": "4DX版",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "ba1c30f1566e500f",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T19:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
     },
     {
       "id": "0538647b25e96053",
@@ -640,24 +3314,76 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "2fc63112170986c9",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_6d71a791c9b4",
+      "id": "32229f62341e09d1",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T19:20:00+08:00",
-      "format": "數位(英)",
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "42b5712729c47724",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T19:20:00+08:00",
+      "hall": "3廳 102席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169323",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "44acf23b-8a50-433f-bf4f-a8ee363de2dc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "77229dc229346a5f",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T19:20:00+08:00",
+      "hall": "1廳 110席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "41e215a9-6091-437b-bb5a-35cb0324efc2",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_7da9db910487"
+    },
+    {
+      "id": "1ff6f10d89cf52fa",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T19:20:00+08:00",
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_a982b1f65624"
+    },
+    {
+      "id": "b28dd4b49fd4295f",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T19:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "39bd8ef43ede2f5b",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T19:25:00+08:00",
+      "hall": "12廳 35席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "b137103b-b16d-45c2-be2c-41d2cb26477d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_651bcd48b0d1"
     },
     {
       "id": "d4b57d92fcb3322b",
@@ -668,24 +3394,150 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "1b114202989b60dd",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_4e4abaa627ff",
+      "id": "75159305befb0241",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T19:30:00+08:00",
-      "format": "數位DIGP(日)",
-      "audio_language": "ja",
-      "source_event_id": "169345",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "42656cfda3670af5",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T19:30:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "8a0ba19e9a0ffc0f",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T19:30:00+08:00",
+      "hall": "鉅院廳 745席",
+      "format": "ATMOS‧數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "2c4c255c33174053",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T19:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_4e4abaa627ff"
+    },
+    {
+      "id": "005db3cd427846fe",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T19:40:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "f6a8afc77bb2c426",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T19:40:00+08:00",
+      "hall": "9廳 98席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "2576a5b0be9d1962",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T19:40:00+08:00",
+      "hall": "6廳 36席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "44acf23b-8a50-433f-bf4f-a8ee363de2dc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "9621424a505af8b5",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T19:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "605bc574590b5161",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T19:45:00+08:00",
+      "hall": "11廳 33席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "a91d5e4c-cb12-4ba8-841a-9df52128dbc0",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_e1e5c854b656"
+    },
+    {
+      "id": "832609172982bd1d",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T19:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "32208a9e455ef6bd",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T19:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "75c58dbe11667a05",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T19:50:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_a965317eb051"
+    },
+    {
+      "id": "8c65df8479b157f4",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T19:50:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "d2d1b6379c2d0195",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T19:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_205b35a57a78"
     },
     {
       "id": "90757165d8563b0a",
@@ -696,8 +3548,8 @@
       "audio_language": "ko",
       "source_event_id": "4809187",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
-      "freshness": "fresh",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27;last-known-good",
+      "freshness": "last-known-good",
       "source": "showtimes-official-api",
       "movie_id": "m_86af9fdc3eb1"
     },
@@ -710,80 +3562,524 @@
       "audio_language": "ko",
       "source_event_id": "4809129",
       "source_url": "https://www.showtimes.com.tw/cinemas/2/",
-      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27",
-      "freshness": "fresh",
+      "source_role": "official ShowTimes bootstrap API retrieved 2026-10-27;last-known-good",
+      "freshness": "last-known-good",
       "source": "showtimes-official-api",
       "movie_id": "m_86af9fdc3eb1"
     },
     {
-      "id": "ee4caff0894243fd",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_9402f33dea2b",
+      "id": "0e94344b011e8838",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T20:00:00+08:00",
+      "hall": "13廳 36席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "a2db55b3-3163-4592-aa76-7ce39af86f95",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_82a1d81c3cdf"
+    },
+    {
+      "id": "b4437111d00645d8",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T20:00:00+08:00",
+      "hall": "4廳 110席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "4dbc28c5-3501-4560-8861-55376b1ea372",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_d4d379e9993e"
+    },
+    {
+      "id": "359f4e180e3e32e1",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T20:05:00+08:00",
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_c1ee25eda6b2"
+    },
+    {
+      "id": "f3f07e20becefaef",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T20:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "8a267e74f77d9805",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T20:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_967abb40d306"
+    },
+    {
+      "id": "77bf751e9c588771",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T20:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_c9a4634b7515"
+    },
+    {
+      "id": "4eecaadd595a84f5",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T20:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "9b77d4a0866b8616",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T20:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "a2d6cbdd1c148cde",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T20:20:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧泰語版",
+      "source_event_id": "119933f5-9f06-4c79-beed-ff69b480fe89",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "78e03b2027dc0f79",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T20:20:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "da9dc7e3-6e7b-41b3-ae43-e95958992ce3",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_319fe9a28ce9"
+    },
+    {
+      "id": "68d548d3d15fc5e0",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T20:25:00+08:00",
+      "hall": "2廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "94f3f456-3e5b-4524-8ec6-f45c924af50d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "74fc3306ae3814a0",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T20:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7e94558337d5"
+    },
+    {
+      "id": "713ca165ce3f99bb",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T20:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "898cbe268332e5d8",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T20:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "9f211e85f2a082cc",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T20:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "a3cffbaf147d7acf",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T20:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a965317eb051"
+    },
+    {
+      "id": "a79dc1df42e4fa44",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T20:30:00+08:00",
+      "hall": "11廳 33席",
+      "format": "數位‧印度語版",
+      "source_event_id": "371cdfcd-88d7-49d0-9cf7-ccc284f67c06",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_88c06991a963"
+    },
+    {
+      "id": "4a5b80363a34879f",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T20:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_de6f2b34781a"
+    },
+    {
+      "id": "3993517ceb90652b",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T20:30:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "842636eb2ffe8967",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T20:35:00+08:00",
+      "hall": "5廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "caca7608-f61b-42e6-a235-edf1eafcc47a",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "65b65ba9e7254d19",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T20:35:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "0bf390c978652f3d",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T20:40:00+08:00",
+      "hall": "日文(JPN)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_d9cf4e6c57cc"
+    },
+    {
+      "id": "593b94b388e0ad27",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T20:40:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧泰語版",
+      "source_event_id": "119933f5-9f06-4c79-beed-ff69b480fe89",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "31e471dba1094b88",
+      "cinema_id": "0a13c96a4123d0b5",
       "start_time": "2026-11-03T20:45:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169351",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_651bcd48b0d1"
     },
     {
-      "id": "dfedf1d68fca0822",
+      "id": "f00553db05fbcade",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_a965317eb051",
+      "start_time": "2026-11-03T20:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "c7dd253461ae69d2",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T20:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "5feca3e9c11bd673",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T20:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_d8a382d323ea"
+    },
+    {
+      "id": "9212ac3257500641",
+      "cinema_id": "0a13c96a4123d0b5",
       "start_time": "2026-11-03T20:55:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169319",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_970da19b0c70"
     },
     {
-      "id": "5a49838ae2e3467b",
+      "id": "cb0aa3f10a88a9d4",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T20:55:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "a634624315e75230",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_13161710af4d",
+      "start_time": "2026-11-03T20:55:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a965317eb051"
+    },
+    {
+      "id": "6e4aec59fa221f20",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T21:00:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "62008d3d0cd24197",
+      "cinema_id": "9dfa1238328c40c7",
+      "start_time": "2026-11-03T21:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261103/",
+      "source_role": "wonderful-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "f132df400b8acd18",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T21:10:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "f96545e7e2504c18",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T21:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_e69643a78c25"
+    },
+    {
+      "id": "6cd2f36b5e6a52c3",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T21:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "90325c3d6f9dd9e4",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T21:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9da154c396eb"
+    },
+    {
+      "id": "17ece9219f87717b",
+      "cinema_id": "0a13c96a4123d0b5",
       "start_time": "2026-11-03T21:15:00+08:00",
-      "format": "數位(英)",
-      "audio_language": "en",
-      "source_event_id": "169346",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_a965317eb051"
     },
     {
-      "id": "8b39ca7265da0a79",
+      "id": "ff45af592e9c9ba3",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_35ed006505c1",
+      "start_time": "2026-11-03T21:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_13161710af4d"
+    },
+    {
+      "id": "2c60abac25a64ac3",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-03T21:20:00+08:00",
-      "format": "TITAN(英)",
-      "audio_language": "en",
-      "source_event_id": "169370",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_0851c1e122d7"
     },
     {
-      "id": "a15eba3eeae343be",
+      "id": "7ca1d0e927157cce",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T21:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "98f83618ed29e692",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T21:20:00+08:00",
+      "format": "4DX版",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "ee74268976c49ab9",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_66546ef7a6fc",
-      "start_time": "2026-11-03T21:30:00+08:00",
-      "format": "數位(英)",
+      "start_time": "2026-11-03T21:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "254a0966faed20b3",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T21:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "53d768871b4c47a6",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T21:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_5ec239224265"
+    },
+    {
+      "id": "7dc60fe226b38b7b",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T21:25:00+08:00",
+      "hall": "1廳 110席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169369",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "41e215a9-6091-437b-bb5a-35cb0324efc2",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_7da9db910487"
+    },
+    {
+      "id": "688fe989f6a88606",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T21:30:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "65ba43581cc54f43",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T21:30:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_06f5422d36b4"
+    },
+    {
+      "id": "b38acf4c751b6b34",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T21:30:00+08:00",
+      "hall": "2廳 97席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "e071a9da4b6bb521",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T21:30:00+08:00",
+      "hall": "3廳 41席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "2820be87-8b70-4f71-983f-7814ad7b67cd",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "9809423d95405a9a",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T21:30:00+08:00",
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_7da9db910487"
+    },
+    {
+      "id": "02ccd0758ce23280",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T21:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "2a1df433036063e3",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T21:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "37d1194de773de53",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T21:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
     },
     {
       "id": "7f1cf1b3410610c6",
@@ -795,24 +4091,96 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "015e95ef5f4f1df6",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_1141c45f9f42",
-      "start_time": "2026-11-03T21:45:00+08:00",
-      "format": "數位(英)",
+      "id": "fd0a74950862840e",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T21:35:00+08:00",
+      "hall": "12廳 35席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "f8c4541a-705e-4d2b-a94d-963e6c6f54f9",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_970da19b0c70"
+    },
+    {
+      "id": "9800e4a1aaad1ca1",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T21:40:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_6c190c8b78e4"
+    },
+    {
+      "id": "d574a920c05be6e1",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-03T21:40:00+08:00",
+      "hall": "3廳 102席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169324",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "44acf23b-8a50-433f-bf4f-a8ee363de2dc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "cfef3f168eefb548",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T21:40:00+08:00",
+      "hall": "7廳 44席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "2cdd69b0-8f74-4517-9f41-b995e0532787",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "fe826ad68d036b9b",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T21:40:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "2c3889361894b49f",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T21:45:00+08:00",
+      "hall": "9廳 98席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "cf4ead3c9729ac15",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T21:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6d71a791c9b4"
+    },
+    {
+      "id": "4998beb275875f16",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T21:45:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
     },
     {
       "id": "a382ff9f698273ec",
@@ -824,8 +4192,8 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
@@ -839,38 +4207,391 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "freshness": "fresh",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "freshness": "last-known-good",
       "retrieved_at": "2026-10-29T11:51:43.732Z",
       "source": "eslite-official-schedule"
     },
     {
-      "id": "e6f88a3dce2ca3d8",
-      "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_35ed006505c1",
+      "id": "68c8cec08eaa70ac",
+      "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-03T21:50:00+08:00",
-      "format": "MUCROWN(英)",
-      "audio_language": "en",
-      "source_event_id": "168939",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "hall": "11廳 33席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "e4cd64f0-04d6-45b7-80a1-ed34c8b986c2",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_de6f2b34781a"
     },
     {
-      "id": "76513245d97bab47",
+      "id": "083628774ac686e3",
       "cinema_id": "1b9c4a9b7ed385ea",
-      "movie_id": "m_ce5f6b42a8e9",
       "start_time": "2026-11-03T21:50:00+08:00",
-      "format": "數位(英)",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "d401032ac7a9d299",
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "start_time": "2026-11-03T21:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a11/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "b33601070bbb037b",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T22:00:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "c1aacd04d0adda0d",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T22:00:00+08:00",
+      "hall": "6廳 36席",
+      "format": "數位‧泰語版",
+      "source_event_id": "c9e67e2f-d3e4-440e-b901-82ac12e9197e",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_791d3a06a20f"
+    },
+    {
+      "id": "ead8fdc43ba0b0c9",
+      "cinema_id": "a8ee8dc17714ae2d",
+      "start_time": "2026-11-03T22:05:00+08:00",
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source": "spot-huashan-official-schedule",
+      "movie_id": "m_f60a3e26a08a"
+    },
+    {
+      "id": "e53cad4f5bc85fcd",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T22:10:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "49e67c11c3d853fe",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T22:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_05344fb65072"
+    },
+    {
+      "id": "af98080eaad0b2c7",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T22:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "b459f80787cda9da",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T22:15:00+08:00",
+      "hall": "13廳 36席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "bf7bf1d3-c643-4c1c-a152-bfa1e37dd0c6",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a04bfef26d69"
+    },
+    {
+      "id": "996bfae1c5ac2032",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T22:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "8e85b3c36b47e282",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T22:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_19b671d81e83"
+    },
+    {
+      "id": "953582eb94c85a23",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T22:15:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "0a318a1e1b1741fb",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T22:15:00+08:00",
+      "format": "日語版",
+      "audio_language": "日語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_3c75afd6ba43"
+    },
+    {
+      "id": "be98800f923767a8",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T22:20:00+08:00",
+      "hall": "IMAX",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_1141c45f9f42"
+    },
+    {
+      "id": "d404bf19808fc899",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T22:20:00+08:00",
+      "hall": "2廳 49席",
+      "format": "數位‧英文版",
       "audio_language": "en",
-      "source_event_id": "169340",
-      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
-      "source_role": "official direct source snapshot",
-      "freshness": "fresh",
-      "retrieved_at": "2026-10-29T11:51:42.412Z",
-      "source": "vieshow-muvie-songren-official"
+      "source_event_id": "94f3f456-3e5b-4524-8ec6-f45c924af50d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "bcf369940dc89c30",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T22:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "aa2863c0460164c9",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T22:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "0be01fb59c495e19",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T22:25:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "e4cd64f0-04d6-45b7-80a1-ed34c8b986c2",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_de6f2b34781a"
+    },
+    {
+      "id": "b3ca3d08beab8831",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T22:25:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "db96b1d9a8586e03",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-03T22:30:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "4e5786407742f9da",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T22:30:00+08:00",
+      "hall": "4廳 110席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "4dbc28c5-3501-4560-8861-55376b1ea372",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_d4d379e9993e"
+    },
+    {
+      "id": "745461fb12968318",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T22:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "cef430c36bed4a93",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T22:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_7da9db910487"
+    },
+    {
+      "id": "25e61fd7ae11c266",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T22:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "8234d487052f9562",
+      "cinema_id": "97564919bff574aa",
+      "start_time": "2026-11-03T22:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b14/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_ce5f6b42a8e9"
+    },
+    {
+      "id": "c142bb9f71c28a05",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T22:40:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧泰語版",
+      "source_event_id": "119933f5-9f06-4c79-beed-ff69b480fe89",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "b4b83b881f31e774",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T22:40:00+08:00",
+      "hall": "5廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "cb6d3012-c0ed-4653-b457-736feb84ec6f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "d053ee29f84414f7",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-03T23:00:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧泰語版",
+      "source_event_id": "119933f5-9f06-4c79-beed-ff69b480fe89",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F03",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "0493d67965268882",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T23:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_9402f33dea2b"
+    },
+    {
+      "id": "b882b43a917bc20b",
+      "cinema_id": "0a13c96a4123d0b5",
+      "start_time": "2026-11-03T23:00:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02a01/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "6e1ee49261435bc3",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T23:10:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_6c22ba39b12f"
+    },
+    {
+      "id": "d9a40075f451fd00",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T23:20:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_37c4602113f4"
+    },
+    {
+      "id": "b0db8d5aab0722b2",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T23:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_970da19b0c70"
+    },
+    {
+      "id": "54a6a0a7b3722435",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T23:30:00+08:00",
+      "format": "國語版",
+      "audio_language": "國語",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_0a7fbb9a2403"
+    },
+    {
+      "id": "03c0c9b81e3088fc",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T23:30:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_10e01e722dee"
+    },
+    {
+      "id": "8570e039589589e3",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T23:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "6005feb275f34978",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T23:40:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_f2980a9c9791"
+    },
+    {
+      "id": "c85646124b7b3c3f",
+      "cinema_id": "29fa20640d772416",
+      "start_time": "2026-11-03T23:50:00+08:00",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b08/a02/20261103/",
+      "source_role": "vieshow-waf-fallback",
+      "source": "atmovies-taipei-fallback",
+      "movie_id": "m_66546ef7a6fc"
     }
   ]
 }
