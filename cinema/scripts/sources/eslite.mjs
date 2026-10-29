@@ -48,17 +48,24 @@ function normalizeSubtitles(value) {
   return null;
 }
 
-function splitTitle(value) {
-  const text = String(value || '').trim();
-  const latinIndex = text.search(/[A-Za-z]/);
-  if (latinIndex <= 0) return { zh: text, en: null };
-  return {
-    zh: text.slice(0, latinIndex).trim(),
-    en: text.slice(latinIndex).trim() || null
-  };
+export function splitEsliteTitle(value) {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (!text || !/[\u3400-\u9fff]/u.test(text)) return { zh: text, en: null };
+
+  // The official heading is usually "Chinese title English title", but the Chinese
+  // title itself may contain Latin text such as 4K or a proper name. Splitting on the
+  // first ASCII letter corrupts titles like "進擊的鼓手 4K重映 Whiplash". Instead,
+  // recognize only the final whitespace-separated Latin title run.
+  const trailingLatin = text.match(/\s+([A-Za-z][A-Za-z0-9À-ž'’:.&+!?,()\/\-–—]*(?:\s+[A-Za-z0-9][A-Za-z0-9À-ž'’:.&+!?,()\/\-–—]*)*)$/u);
+  if (!trailingLatin) return { zh: text, en: null };
+
+  const en = trailingLatin[1].trim();
+  const zh = text.slice(0, trailingLatin.index).trim();
+  if (!zh || !/[\u3400-\u9fff]/u.test(zh)) return { zh: text, en: null };
+  return { zh, en };
 }
 
-function parseSchedule(html) {
+export function parseEsliteSchedule(html) {
   const lines = htmlToLines(html);
   const rows = [];
   let movie = null;
@@ -70,7 +77,7 @@ function parseSchedule(html) {
     // Movie heading: metadata appears immediately after it on the official schedule page.
     const lookAhead = lines.slice(i + 1, i + 9).join(' | ');
     if (!/^電影介紹$/.test(line) && /級別[：:]/.test(lookAhead) && /片長[：:]/.test(lookAhead) && /字幕[：:]/.test(lookAhead)) {
-      const title = splitTitle(line);
+      const title = splitEsliteTitle(line);
       movie = {
         title_zh: title.zh,
         title_en: title.en,
@@ -113,7 +120,7 @@ function parseSchedule(html) {
       rows.push({
         cinema_name: '誠品電影院',
         city: 'taipei',
-        address: '台北市信義區菸廠路80號B1',
+        address: '台北市信義區菸廠路80號B2',
         movie_title: movie.title_zh,
         movie_title_en: movie.title_en,
         rating: movie.rating,
@@ -142,7 +149,7 @@ export async function fetchEsliteShowtimes() {
     }
   });
   if (!response.ok) throw new Error(`Eslite ${response.status} ${response.statusText}`);
-  const rows = parseSchedule(await response.text());
+  const rows = parseEsliteSchedule(await response.text());
   if (!rows.length) throw new Error('Eslite returned no parseable showtimes');
   return rows;
 }
