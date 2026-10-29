@@ -78,12 +78,13 @@ export function parseMuvieSongrenHtml(html) {
         const blockStart = formatMatch.index + formatMatch[0].length;
         const blockEnd = formatIndex + 1 < formats.length ? formats[formatIndex + 1].index : segment.length;
         const block = segment.slice(blockStart, blockEnd);
-        for (const session of block.matchAll(/txtSessionId=(\d+)[^>]*>(\d{1,2}:\d{2})<\/a>/gi)) {
+        for (const session of block.matchAll(/<li[^>]*>\s*<a([^>]*)>(\d{1,2}:\d{2})<\/a>\s*<\/li>/gi)) {
+          const sourceEventId = session[1].match(/txtSessionId=(\d+)/i)?.[1] || null;
           rows.push({
             cinema_id: BRANCH.cinema_id, cinema_name: BRANCH.cinema_name, city: BRANCH.city, address: BRANCH.address,
             movie_title: movieTitle, movie_title_en: movieTitleEn, date, time: session[2].padStart(5, '0'), hall: null,
             format: format || null, audio_language: mapAudio(format), subtitles: null, duration_minutes: null,
-            source_event_id: session[1], source_url: URL,
+            source_event_id: sourceEventId, source_url: URL,
             source_role: 'official MUVIE CINEMAS / VieShow Songren branch schedule', source: 'vieshow-muvie-songren-official'
           });
         }
