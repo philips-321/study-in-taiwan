@@ -1,4 +1,6 @@
 const URL = 'https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1';
+const CINEMA_ID = '43ef84bf160e6886';
+const BROWSER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36';
 
 function decodeHtml(value) {
   return String(value || '')
@@ -11,18 +13,10 @@ function decodeHtml(value) {
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)));
 }
 
-function htmlToLines(html) {
-  return decodeHtml(
-    String(html || '')
-      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '\n')
-      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '\n')
-      .replace(/<br\s*\/?>/gi, '\n')
-      .replace(/<\/\s*(?:p|div|li|h[1-6]|tr|td|th|section|article|ul|ol)\s*>/gi, '\n')
-      .replace(/<[^>]+>/g, ' ')
-  )
-    .split(/\n+/)
-    .map(line => line.replace(/\s+/g, ' ').trim())
-    .filter(Boolean);
+function stripHtml(value) {
+  return decodeHtml(String(value || '').replace(/<[^>]+>/g, ' '))
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function taipeiYearFor(month) {
@@ -41,7 +35,7 @@ function isoDate(month, day) {
 }
 
 function normalizeSubtitles(value) {
-  const text = String(value || '').replace(/\s+/g, '');
+  const text = stripHtml(value).replace(/\s+/g, '');
   if (/中[\/／]?英|中文.*英文|英文.*中文/.test(text)) return ['zh', 'en'];
   if (/英文/.test(text)) return ['en'];
   if (/中文/.test(text)) return ['zh'];
@@ -49,14 +43,10 @@ function normalizeSubtitles(value) {
 }
 
 export function splitEsliteTitle(value) {
-  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  const text = stripHtml(value);
   if (!text || !/[\u3400-\u9fff]/u.test(text)) return { zh: text, en: null };
-
-  // The Chinese title can itself contain Latin fragments such as 4K, 2+2=5 or a
-  // proper name. Only split a final Latin/ASCII title run that follows whitespace.
   const trailingLatin = text.match(/\s+([A-Za-z][\x20-\x7EÀ-ž–—’]*)$/u);
   if (!trailingLatin) return { zh: text, en: null };
-
   const en = trailingLatin[1].trim();
   const zh = text.slice(0, trailingLatin.index).trim();
   if (!zh || !/[\u3400-\u9fff]/u.test(zh)) return { zh: text, en: null };
@@ -64,57 +54,48 @@ export function splitEsliteTitle(value) {
 }
 
 export function parseEsliteSchedule(html) {
-  const lines = htmlToLines(html);
+  const source = String(html || '');
+  const starts = [...source.matchAll(/<div class="box" style="width:100%;">/g)].map(match => match.index);
   const rows = [];
-  let movie = null;
-  let currentDate = null;
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const lookAhead = lines.slice(i + 1, i + 9).join(' | ');
-    if (!/^電影介紹$/.test(line) && /級別[：:]/.test(lookAhead) && /片長[：:]/.test(lookAhead) && /字幕[：:]/.test(lookAhead)) {
-      const title = splitEsliteTitle(line);
-      movie = {
-        title_zh: title.zh,
-        title_en: title.en,
-        rating: null,
-        duration: null,
-        subtitles: null
-      };
-      currentDate = null;
-      continue;
-    }
+  for (let i = 0; i < starts.length; i++) {
+    const block = source.slice(starts[i], i + 1 < starts.length ? starts[i + 1] : source.length);
+    const titleRaw = block.match(/<div class="left"[^>]*>[\s\S]*?<p>([\s\S]*?)<\/p>/i)?.[1];
+    if (!titleRaw) continue;
 
-    if (!movie) continue;
-    const rating = line.match(/^級別[：:]\s*(.+)$/);
-    if (rating) { movie.rating = rating[1].trim(); continue; }
-    const duration = line.match(/^片長[：:]\s*(\d+)\s*分鐘?/);
-    if (duration) { movie.duration = Number(duration[1]); continue; }
-    const subtitle = line.match(/^字幕[：:]\s*(.+)$/);
-    if (subtitle) { movie.subtitles = normalizeSubtitles(subtitle[1]); continue; }
-    const date = line.match(/^(\d{1,2})\/(\d{1,2})\s*\([^)]*\)$/);
-    if (date) { currentDate = isoDate(Number(date[1]), Number(date[2])); continue; }
-    const time = line.match(/^(\d{1,2}:\d{2})$/);
-    if (time && currentDate) {
-      rows.push({
-        cinema_name: '誠品電影院',
-        city: 'taipei',
-        address: '台北市信義區菸廠路80號B2',
-        movie_title: movie.title_zh,
-        movie_title_en: movie.title_en,
-        rating: movie.rating,
-        date: currentDate,
-        time: time[1].padStart(5, '0'),
-        hall: null,
-        format: null,
-        audio_language: null,
-        subtitles: movie.subtitles,
-        duration_minutes: movie.duration,
-        source_url: URL,
-        source: 'eslite-official-schedule'
-      });
+    const title = splitEsliteTitle(titleRaw);
+    const rating = stripHtml(block.match(/<li>級別[：:]([\s\S]*?)<\/li>/i)?.[1] || '') || null;
+    const durationMatch = block.match(/<li>片長[：:]\s*(\d+)\s*分鐘?\s*<\/li>/i);
+    const duration = durationMatch ? Number(durationMatch[1]) : null;
+    const subtitleRaw = block.match(/<li>字幕[：:]([\s\S]*?)<\/li>/i)?.[1];
+    const subtitles = subtitleRaw ? normalizeSubtitles(subtitleRaw) : null;
+
+    for (const dateMatch of block.matchAll(/<div class="swiper-slide"[^>]*>[\s\S]*?<p>(\d{1,2})\/(\d{1,2})\s*\([^)]+\)<\/p>[\s\S]*?<ul>([\s\S]*?)<\/ul>/gi)) {
+      const date = isoDate(Number(dateMatch[1]), Number(dateMatch[2]));
+      for (const timeMatch of dateMatch[3].matchAll(/<li>(\d{1,2}:\d{2})<\/li>/g)) {
+        rows.push({
+          cinema_id: CINEMA_ID,
+          cinema_name: '誠品電影院',
+          city: 'taipei',
+          address: '台北市信義區菸廠路80號B2',
+          movie_title: title.zh,
+          movie_title_en: title.en,
+          rating,
+          date,
+          time: timeMatch[1].padStart(5, '0'),
+          hall: null,
+          format: null,
+          audio_language: null,
+          subtitles,
+          duration_minutes: duration,
+          source_url: URL,
+          source_role: 'official Eslite Art House schedule',
+          source: 'eslite-official-schedule'
+        });
+      }
     }
   }
+
   return rows;
 }
 
@@ -123,7 +104,7 @@ export async function fetchEsliteShowtimes() {
     headers: {
       accept: 'text/html,application/xhtml+xml',
       'accept-language': 'zh-TW,zh;q=0.9,en;q=0.7',
-      'user-agent': 'study-in-taiwan-cinema-data/1.0'
+      'user-agent': BROWSER_UA
     }
   });
   if (!response.ok) throw new Error(`Eslite ${response.status} ${response.statusText}`);
@@ -131,3 +112,5 @@ export async function fetchEsliteShowtimes() {
   if (!rows.length) throw new Error('Eslite returned no parseable showtimes');
   return rows;
 }
+
+export { URL as ESLITE_URL, CINEMA_ID as ESLITE_CINEMA_ID };
