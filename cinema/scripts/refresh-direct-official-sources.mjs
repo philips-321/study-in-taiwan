@@ -10,6 +10,7 @@ import {
 } from './movie-schema.mjs';
 import { fetchMuvieSongrenShowtimes } from './sources/vieshow-muvie-songren.mjs';
 import { fetchEsliteShowtimes } from './sources/eslite.mjs';
+import { fetchSpotTaipeiShowtimes } from './sources/spot-taipei.mjs';
 
 const ROOT = path.resolve('cinema/data');
 const DATE_ROOT = path.join(ROOT, 'showtimes', 'by-date');
@@ -31,6 +32,12 @@ const SOURCES = {
     label: 'Eslite Art House',
     fields: ['date', 'movie title', 'international title', 'showtime', 'rating', 'runtime', 'explicit subtitles'],
     subtitles: 'explicit values preserved from official schedule'
+  },
+  'spot-taipei-official-schedule': {
+    loader: fetchSpotTaipeiShowtimes,
+    label: 'SPOT Taipei / 光點台北',
+    fields: ['date', 'movie title', 'international title', 'showtime', 'rating', 'runtime', 'explicit subtitles'],
+    subtitles: 'explicit values preserved from official per-film detail pages'
   }
 };
 
@@ -49,7 +56,7 @@ const stableId = (...parts) => crypto.createHash('sha1').update(parts.join('|'))
 const isoStart = row => `${row.date}T${String(row.time).padStart(5, '0')}:00+08:00`;
 
 function sourcePriority(source) {
-  if (source === 'vieshow-muvie-songren-official' || source === 'eslite-official-schedule') return 5;
+  if (source === 'vieshow-muvie-songren-official' || source === 'eslite-official-schedule' || source === 'spot-taipei-official-schedule') return 5;
   if (/-official-(?:api|site|schedule)|official-api|official-site|official-schedule/.test(source || '')) return 4;
   if (source === 'vieshow-official-browser') return 3;
   if (/atmovies|aggregator|fallback/.test(source || '')) return 0;
