@@ -52,11 +52,9 @@ export function splitEsliteTitle(value) {
   const text = String(value || '').replace(/\s+/g, ' ').trim();
   if (!text || !/[\u3400-\u9fff]/u.test(text)) return { zh: text, en: null };
 
-  // The official heading is usually "Chinese title English title", but the Chinese
-  // title itself may contain Latin text such as 4K or a proper name. Splitting on the
-  // first ASCII letter corrupts titles like "進擊的鼓手 4K重映 Whiplash". Instead,
-  // recognize only the final whitespace-separated Latin title run.
-  const trailingLatin = text.match(/\s+([A-Za-z][A-Za-z0-9À-ž'’:.&+!?,()\/\-–—]*(?:\s+[A-Za-z0-9][A-Za-z0-9À-ž'’:.&+!?,()\/\-–—]*)*)$/u);
+  // The Chinese title can itself contain Latin fragments such as 4K, 2+2=5 or a
+  // proper name. Only split a final Latin/ASCII title run that follows whitespace.
+  const trailingLatin = text.match(/\s+([A-Za-z][\x20-\x7EÀ-ž–—’]*)$/u);
   if (!trailingLatin) return { zh: text, en: null };
 
   const en = trailingLatin[1].trim();
@@ -73,8 +71,6 @@ export function parseEsliteSchedule(html) {
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-
-    // Movie heading: metadata appears immediately after it on the official schedule page.
     const lookAhead = lines.slice(i + 1, i + 9).join(' | ');
     if (!/^電影介紹$/.test(line) && /級別[：:]/.test(lookAhead) && /片長[：:]/.test(lookAhead) && /字幕[：:]/.test(lookAhead)) {
       const title = splitEsliteTitle(line);
@@ -90,31 +86,14 @@ export function parseEsliteSchedule(html) {
     }
 
     if (!movie) continue;
-
     const rating = line.match(/^級別[：:]\s*(.+)$/);
-    if (rating) {
-      movie.rating = rating[1].trim();
-      continue;
-    }
-
+    if (rating) { movie.rating = rating[1].trim(); continue; }
     const duration = line.match(/^片長[：:]\s*(\d+)\s*分鐘?/);
-    if (duration) {
-      movie.duration = Number(duration[1]);
-      continue;
-    }
-
+    if (duration) { movie.duration = Number(duration[1]); continue; }
     const subtitle = line.match(/^字幕[：:]\s*(.+)$/);
-    if (subtitle) {
-      movie.subtitles = normalizeSubtitles(subtitle[1]);
-      continue;
-    }
-
+    if (subtitle) { movie.subtitles = normalizeSubtitles(subtitle[1]); continue; }
     const date = line.match(/^(\d{1,2})\/(\d{1,2})\s*\([^)]*\)$/);
-    if (date) {
-      currentDate = isoDate(Number(date[1]), Number(date[2]));
-      continue;
-    }
-
+    if (date) { currentDate = isoDate(Number(date[1]), Number(date[2])); continue; }
     const time = line.match(/^(\d{1,2}:\d{2})$/);
     if (time && currentDate) {
       rows.push({
@@ -136,7 +115,6 @@ export function parseEsliteSchedule(html) {
       });
     }
   }
-
   return rows;
 }
 
