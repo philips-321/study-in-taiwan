@@ -1,0 +1,53 @@
+{
+  "schema": "canonical-screening-public-view",
+  "version": 1,
+  "date": "2026-11-08",
+  "city": "taichung",
+  "showtimes": [
+    {
+      "id": "scr_8aa4772bba356a8fd4d8f351",
+      "cinema_id": "3071c450f8e42deb",
+      "movie_id": "m_591041ec1b33",
+      "start_time": "2026-11-08T15:45:00+08:00",
+      "hall": null,
+      "format": "LIVE(韓)",
+      "audio": null,
+      "source_event_id": "11d227c6853ee371",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=26",
+      "source": "vieshow-official-browser",
+      "source_role": "vieshow-official-browser",
+      "freshness": "fresh",
+      "retrieved_at": null
+    },
+    {
+      "id": "scr_dcfb8b1d934c4592c6af4490",
+      "cinema_id": "d0408434529e9e36",
+      "movie_id": "m_f1e434b97271",
+      "start_time": "2026-11-08T16:00:00.000+08:00",
+      "hall": "1館9廳",
+      "format": "數位 韓語",
+      "audio": null,
+      "source_event_id": "fd67380fd0621981",
+      "source_url": "https://www.showtimes.com.tw/cinemas/53/",
+      "source": "showtimes-official-api",
+      "source_role": "showtimes-official-api",
+      "freshness": "fresh",
+      "retrieved_at": null
+    },
+    {
+      "id": "scr_287397d4df5612d6c05da301",
+      "cinema_id": "fc41f9ba7672f9c4",
+      "movie_id": "m_4c86ad639cce",
+      "start_time": "2026-11-08T16:00:00.000+08:00",
+      "hall": "13廳",
+      "format": "數位 日語",
+      "audio": null,
+      "source_event_id": "a4500a0bd459b1fd",
+      "source_url": "https://www.showtimes.com.tw/cinemas/56/",
+      "source": "showtimes-official-api",
+      "source_role": "showtimes-official-api",
+      "freshness": "fresh",
+      "retrieved_at": null
+    }
+  ]
+}

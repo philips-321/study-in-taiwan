@@ -2,6 +2,58 @@
 
 Manual browser review started 2026-10-25. These notes record what was actually visible on the opened pages. A company page that renders placeholders is not treated as a verified machine-readable schedule. Aggregators are noted as fallbacks, not mislabeled as official sources.
 
+## Schedule retention and date-handling policy
+
+This pipeline must preserve observed source data before attempting to decide whether it is current. A legacy filename, an old movie title, an unexpected year, or a weekday mismatch is a review signal only; none of these is sufficient reason to delete a row. Every imported row must retain its source URL, capture time, source-published date (when present), parser version, and a stable source-row key. Raw captures and normalized staging rows are append-only evidence.
+
+### Date layers
+
+The canonical dataset is split by the **screening business date**: `showtimes/by-date/<YYYY-MM-DD>/<city>.json`. A refresh selects the date range actually published by the source, from the current business date through the furthest future date present in that source. It must not assume a fixed seven-day window or discard dates merely because they are farther out. After-midnight sessions follow the source's stated business-day policy; if that policy is unknown, the row remains unresolved instead of being guessed away.
+
+The public operational dataset uses a **rolling 30-day window**: today plus the next 30 calendar days (or the source's published range when it is shorter). A source may publish December while today is October 30, but the importer must not materialize those far-future rows into public JSON. Dates before today are removed from the operational date chunks during the next controlled rebuild; they are not shown merely because their filename still exists. This keeps the website and Git repository bounded.
+
+This rolling deletion applies only to the public operational view. Source captures, parser evidence, and a compact reconciliation ledger may be retained separately when available, so a cleanup does not erase what was actually observed. If no archive is configured, the cleanup report must record the removed date range and row counts before deletion. A future archive or database migration can later preserve those records without changing the 30-day public contract.
+
+### Safe refresh algorithm
+
+1. Save the source response/capture and parse all rows into staging, including rows whose date or title looks unusual.
+2. Validate schema, date syntax, source provenance, and duplicate keys. Emit warnings for stale-looking or inconsistent rows.
+3. Reconcile staging with the existing date chunk by stable source identity. Preserve existing rows unless an explicit source update says they were removed or changed.
+4. Apply official-source precedence only to the same cinema/movie/business-date/time/session identity. A lower-priority row with a different hall, format, or unresolved identity must not be deleted as a duplicate.
+5. Write a machine-readable reconciliation report containing `added`, `updated`, `unchanged`, `quarantined`, and `removed` counts, with a reason and source evidence for every quarantine/removal.
+6. Fail the rebuild if rows disappear without an approved reconciliation reason, if a source capture was not retained, or if canonical references become invalid.
+
+Rows that cannot yet be assigned confidently to a date or movie go to an `unresolved` collection with their complete evidence. They are reviewed later and promoted into the relevant date chunk; they are never silently dropped. The public renderer can show only today and future dates while still retaining all past and unresolved records for recovery and audit.
+
+## Repository-wide Oracle-style database plan
+
+This plan applies to Cinema first and is the proposed pattern for other large structured datasets in the repository. JSON files are delivery partitions and materialized views, not the source of truth. The source of truth is an append-preserving canonical record with stable IDs, business dates, provenance, observed timestamps, and reconciliation status.
+
+### Logical model
+
+Use separate master entities (`cinemas`, `movies`, locations, and source registry) and fact records (`screenings` or other dated observations). Every fact carries a stable entity ID, a business/effective date, source URL or source ID, source-row identity, capture time, parser version, and status. Source observations, canonical records, and public views must not be conflated.
+
+### Partition model
+
+Partition dated facts by **range of business date**, normally month, with an optional second partition by stable region or cinema ID only when a partition becomes too large. This is the JSON equivalent of Oracle range partitioning with subpartitioning. Do not create empty partitions/files for cities or dates. Keep the date in every row even when the physical file is monthly or regional. The public materialized view must enforce the rolling 30-day bound at rebuild time.
+
+Active and future partitions inside the 30-day window are mutable. Partitions that fall entirely before today are eligible for controlled removal from the public repository. Before removal, write a reconciliation record containing the date range, row count, source counts, and commit that performed the cleanup. Do not delete a row during parsing merely because it looks stale; cleanup is a separate, explicit retention step.
+
+### Views and repository boundaries
+
+The website consumes sparse generated views such as `by-date/<date>/<city>.json` or monthly regional JSONL shards. The view may filter to today and future without deleting history. Raw captures, staging records, unresolved records, and reconciliation reports are kept outside the public delivery view. They must not be committed repeatedly into the application repository as one file per crawl.
+
+### Oracle-style safeguards
+
+- Use stable keys and unique constraints for entity and screening identity; never use filenames as identity.
+- Reconcile by insert/update/unchanged/quarantine/remove counts, with evidence for every removal.
+- Treat source refreshes as append-preserving observations; a missing row means “not observed this time” until the source explicitly proves cancellation.
+- Keep indexes for date, region, cinema, movie, and source rather than duplicating whole datasets in every view.
+- Reject a build when row counts fall unexpectedly, references break, raw evidence is missing, or a parser would overwrite an existing observation without provenance.
+- Test partition rollover, late-published future dates, after-midnight business dates, venue closure, source replacement, duplicate precedence, and recovery from a prior partition.
+
+Implementation is intentionally deferred until the user's usage limit has recovered. The first implementation task is a schema and migration design against the existing Cinema data, followed by an offline rehearsal of the 30-day filter, cleanup counts, duplicate checks, and size/history audit; no collector should resume before those checks pass. The same bounded-window policy may be adopted by other repository datasets only after their own retention needs are reviewed.
+
 ## Reviewed cinema pages
 
 | Cinema | Opened source | What the page exposed | Collection status |

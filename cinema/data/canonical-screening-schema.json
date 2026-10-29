@@ -1,0 +1,21 @@
+{
+  "schema": "canonical-screening",
+  "version": 1,
+  "required": [
+    "screening_id",
+    "cinema_id",
+    "movie_id",
+    "business_date",
+    "start_time",
+    "source_id",
+    "source_row_key",
+    "source_url",
+    "observed_at",
+    "parser_version",
+    "status"
+  ],
+  "statuses": ["canonical", "unresolved", "superseded"],
+  "public_window_days": 30,
+  "partition": {"primary": "business_date_month", "optional_secondary": "region_or_cinema_id"},
+  "retention": {"public_view": "rolling_window", "history": "immutable_when_archived"}
+}

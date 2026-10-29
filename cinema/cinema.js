@@ -421,7 +421,7 @@
     const sequence=++dateLoadSequence;
     const cities=Object.keys(showtimesDateIndex[date]?.cities||{});
     const loaded=await Promise.all(cities.map(async slug=>{
-      try{return [slug,await loadJson(`data/showtimes/by-date/${date}/${slug}.json`)];}
+      try{return [slug,await loadJson(`data/showtimes-public/by-date/${date}/${slug}.json`)];}
       catch(error){console.warn(`Showtimes unavailable for ${slug} on ${date}`,error);return [slug,{showtimes:[]}];}
     }));
     if(sequence!==dateLoadSequence||date!==dateSelect.value)return;
@@ -603,7 +603,7 @@
     let savedLanguage='en',savedTheme='dark';try{savedLanguage=localStorage.getItem('cinema-language')||'en';savedTheme=localStorage.getItem('cinema-theme')||'dark';}catch{}
     language=localeInfo[savedLanguage]?savedLanguage:'en';languageSelect.value=language;setTheme(savedTheme==='light'?'light':'dark');
     try {
-      const [cityData,manifest,locationData,nameData,ticketIndex,movieIndex]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/manifest.json').catch(()=>null),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}})),loadJson('data/ticket-prices/index.json').catch(()=>({cinemas:{}})),loadJson('data/movies/index.json').catch(()=>({movies:[]}))]);
+      const [cityData,manifest,locationData,nameData,ticketIndex,movieIndex]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/showtimes-public/manifest.json').catch(()=>loadJson('data/manifest.json').catch(()=>null)),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}})),loadJson('data/ticket-prices/index.json').catch(()=>({cinemas:{}})),loadJson('data/movies/index.json').catch(()=>({movies:[]}))]);
       cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};logoImages=nameData.logo_images||{};logoBackgrounds=nameData.logo_backgrounds||{};
       ticketPriceIndex=ticketIndex;
       movieById=new Map((movieIndex.movies||[]).map(movie=>[movie.movie_id,movie]));

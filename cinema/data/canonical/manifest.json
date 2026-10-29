@@ -1,0 +1,22 @@
+{
+  "schema": "canonical-screening-manifest",
+  "version": 1,
+  "source": "data/showtimes/by-date",
+  "parser_version": "canonical-converter-v1",
+  "screening_rows": 11929,
+  "unresolved_rows": 0,
+  "partitions": {
+    "2026-01": 2,
+    "2026-10": 9162,
+    "2026-11": 2677,
+    "2026-12": 88
+  },
+  "migration_status": "staged",
+  "public_view": {
+    "window_days": 30,
+    "generated_as_of": "2026-10-30",
+    "rows": 3835,
+    "excluded_by_window": 8094,
+    "sha256": "5b056ec8aa2b35424b0669f62e5473370b8afd7f10db3cc904630f90d3ba6e60"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "canonical-screening-public-view",
+  "version": 1,
+  "date": "2026-11-05",
+  "city": "hualien",
+  "showtimes": [
+    {
+      "id": "scr_ff742a430c056d51a32e6d9e",
+      "cinema_id": "758a39fe5ae9a51d",
+      "movie_id": "m_730baf7f4574",
+      "start_time": "2026-11-05T19:00:00+08:00",
+      "hall": null,
+      "format": "IMAX 首映場(日)",
+      "audio": null,
+      "source_event_id": "a02bde3ec186a41b",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21",
+      "source": "vieshow-official-browser",
+      "source_role": "vieshow-official-browser",
+      "freshness": "fresh",
+      "retrieved_at": null
+    },
+    {
+      "id": "scr_dbaac91f6cae9d929df80c80",
+      "cinema_id": "0bc190790a97a92b",
+      "movie_id": "m_86af9fdc3eb1",
+      "start_time": "2026-11-05T20:30:00.000+08:00",
+      "hall": "4廳",
+      "format": "數位 韓語",
+      "audio": null,
+      "source_event_id": "42af30fc98b2bc1f",
+      "source_url": "https://www.showtimes.com.tw/cinemas/3/",
+      "source": "showtimes-official-api",
+      "source_role": "showtimes-official-api",
+      "freshness": "fresh",
+      "retrieved_at": null
+    }
+  ]
+}
