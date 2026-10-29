@@ -1,8 +1,8 @@
 {
   "version": 4,
   "city": "taipei",
-  "generated_at": "2026-10-24T00:00:00.000Z",
-  "showtime_count": 2039,
+  "generated_at": "2026-10-29T11:56:17.913Z",
+  "showtime_count": 2899,
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
@@ -67,18 +67,32 @@
       "next_probe_at": null
     },
     "eslite-official-schedule": {
-      "ok": false,
-      "showtimes": 0,
-      "error": "Eslite 403 Forbidden",
-      "health": "degraded",
-      "circuit_state": "open",
-      "failure_count": 7,
-      "fresh_showtimes": 0,
+      "ok": true,
+      "showtimes": 107,
+      "fresh_showtimes": 107,
       "fallback_showtimes": 0,
-      "fallback": "unavailable",
-      "last_success_at": null,
-      "last_failure_at": "2026-10-26T16:42:31.661Z",
-      "next_probe_at": "2026-10-26T17:12:31.661Z"
+      "fallback": null,
+      "health": "healthy",
+      "circuit_state": "closed",
+      "failure_count": 0,
+      "last_success_at": "2026-10-29T11:51:43.732Z",
+      "retrieved_at": "2026-10-29T11:51:43.732Z",
+      "error": null,
+      "last_error": null,
+      "next_probe_at": null,
+      "access_path": "saved direct official source snapshot",
+      "direct_refresh": true,
+      "github_actions_used": false,
+      "fields": [
+        "date",
+        "movie title",
+        "international title",
+        "showtime",
+        "rating",
+        "runtime",
+        "explicit subtitles"
+      ],
+      "subtitles": "explicit values preserved from official schedule"
     },
     "atmovies-taipei-fallback": {
       "ok": true,
@@ -119,6 +133,33 @@
       "retrieved_at": "2026-10-27",
       "last_success_at": "2026-10-27T02:19:11.397Z",
       "reviewed_branches": 4
+    },
+    "vieshow-muvie-songren-official": {
+      "ok": true,
+      "showtimes": 347,
+      "fresh_showtimes": 347,
+      "fallback_showtimes": 0,
+      "fallback": null,
+      "health": "healthy",
+      "circuit_state": "closed",
+      "failure_count": 0,
+      "last_success_at": "2026-10-29T11:51:42.412Z",
+      "retrieved_at": "2026-10-29T11:51:42.412Z",
+      "error": null,
+      "last_error": null,
+      "next_probe_at": null,
+      "access_path": "saved direct official source snapshot",
+      "direct_refresh": true,
+      "github_actions_used": false,
+      "fields": [
+        "date",
+        "movie title",
+        "international title",
+        "showtime",
+        "format",
+        "explicit audio language"
+      ],
+      "subtitles": "not supplied; stored as unknown"
     }
   },
   "showtimes": [],

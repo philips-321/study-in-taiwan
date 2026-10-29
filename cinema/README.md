@@ -620,3 +620,17 @@ projects/taiwan-cinema-showtimes/
 ```
 
 Do not create a new numeric parent task for every cinema adapter or patch. Use this parent or lettered subtasks when needed.
+
+## Saved MUVIE / Eslite direct snapshot — 2026-10-29
+
+The canonical dataset now includes 347 MUVIE Songren sessions across 16 dates and all 107 Eslite sessions across 11 dates. The detailed source evidence and limitations are in `SOURCE-RESEARCH-NOTES.md`. This supersedes the older Eslite-zero/403 description for the saved direct snapshot; it does not prove that GitHub runners can now access that source.
+
+Rebuild from the saved parsed source snapshots without HTTP or credentials:
+
+```sh
+node cinema/scripts/refresh-direct-official-sources.mjs --source=vieshow-muvie-songren-official,eslite-official-schedule --snapshot-dir=cinema/data/showtimes/direct-official/source
+node cinema/scripts/validate-canonical-data.mjs
+node cinema/scripts/test-direct-source-dedup.mjs
+```
+
+`--snapshot-dir` never falls back to HTTP. Source retrieval timestamps remain distinct from rebuild timestamps. Direct official evidence takes precedence over duplicate fallback/manual evidence. The movie catalog, date/city index, coverage and city summary counts are rebuilt from canonical chunks. Screening metadata remains in one shared movie catalog.

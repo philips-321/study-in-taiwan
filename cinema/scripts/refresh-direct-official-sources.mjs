@@ -5,9 +5,10 @@ import {
   buildMovieIndex,
   compactShowtime,
   knownAgeRating,
-  movieIdForTitle,
-  screeningIdentityKey
+  normalizeMovieTitle,
+  movieIdForTitle
 } from './movie-schema.mjs';
+import { dedupeRows } from './direct-source-dedup.mjs';
 import { fetchMuvieSongrenShowtimes } from './sources/vieshow-muvie-songren.mjs';
 import { fetchEsliteShowtimes } from './sources/eslite.mjs';
 import { fetchSpotTaipeiShowtimes } from './sources/spot-taipei.mjs';
@@ -43,6 +44,7 @@ const SOURCES = {
 
 const args = process.argv.slice(2);
 const dryRun = args.includes('--dry-run');
+const snapshotDir = args.find(arg => arg.startsWith('--snapshot-dir='))?.slice('--snapshot-dir='.length);
 const sourceArg = args.find(arg => arg.startsWith('--source='))?.slice('--source='.length) || 'all';
 const selectedSources = sourceArg === 'all' ? Object.keys(SOURCES) : sourceArg.split(',').map(v => v.trim()).filter(Boolean);
 for (const source of selectedSources) if (!SOURCES[source]) throw new Error(`Unknown source: ${source}`);
@@ -55,20 +57,34 @@ const writeJson = async (file, value) => {
 const stableId = (...parts) => crypto.createHash('sha1').update(parts.join('|')).digest('hex').slice(0, 16);
 const isoStart = row => `${row.date}T${String(row.time).padStart(5, '0')}:00+08:00`;
 
-function sourcePriority(source) {
-  if (source === 'vieshow-muvie-songren-official' || source === 'eslite-official-schedule' || source === 'spot-taipei-official-schedule') return 5;
-  if (/-official-(?:api|site|schedule)|official-api|official-site|official-schedule/.test(source || '')) return 4;
-  if (source === 'vieshow-official-browser') return 3;
-  if (/atmovies|aggregator|fallback/.test(source || '')) return 0;
-  return 2;
-}
-
-function baseScreeningKey(row) {
-  return [row.cinema_id || '', row.movie_id || '', row.start_time || ''].join('|');
+async function loadSnapshot(source) {
+  const slug = source === 'vieshow-muvie-songren-official' ? 'muvie' : source === 'eslite-official-schedule' ? 'eslite' : 'spot-taipei';
+  const directory = path.resolve(snapshotDir, slug);
+  const rows = [];
+  for (const name of (await fs.readdir(directory)).filter(name => name.endsWith('.json')).sort()) {
+    const snapshot = await readJson(path.join(directory, name));
+    if (snapshot.source !== source || !snapshot.retrieved_at) throw new Error(`Invalid snapshot: ${name}`);
+    for (const value of snapshot.rows) {
+      const row = Array.isArray(value) ? {
+        cinema_id: snapshot.cinema_id, cinema_name: 'MUVIE CINEMAS威秀影城', city: snapshot.city,
+        date: snapshot.date, time: value[0], movie_title: value[1], movie_title_en: value[2],
+        format: value[3], audio_language: value[4], source_event_id: value[5],
+        source_url: snapshot.source_url
+      } : value;
+      const earlierSavedAt = snapshot.earlier_saved_events?.[row.source_event_id];
+      rows.push({ ...row, retrieved_at: earlierSavedAt ? null : (row.retrieved_at || snapshot.retrieved_at),
+        ...(earlierSavedAt ? { source_saved_at: earlierSavedAt } : {}) });
+    }
+  }
+  return rows;
 }
 
 function fullRowFromSource(row, source) {
-  const movieId = movieIdForTitle(row.movie_title, row.movie_title_en);
+  // Source version/event prefixes describe the screening, not a different film.
+  const primary = normalizeMovieTitle(row.movie_title).replace(/^\((?:特別場|中文特別場\s*|法)\)\s*/, '');
+  const candidates = previousMovies.movies.filter(movie => normalizeMovieTitle(movie.movie_title) === primary);
+  const match = candidates.length === 1 ? candidates[0] : null;
+  const movieId = match?.movie_id || movieIdForTitle(row.movie_title, row.movie_title_en);
   const startTime = isoStart(row);
   return {
     id: stableId(source, row.cinema_id || row.cinema_name, row.source_event_id || '', row.date, row.time, row.movie_title, row.format || ''),
@@ -77,6 +93,7 @@ function fullRowFromSource(row, source) {
     movie_id: movieId,
     movie_title: row.movie_title,
     movie_title_en: row.movie_title_en || null,
+    ...(match && normalizeMovieTitle(row.movie_title) !== primary ? { source_movie_title: row.movie_title } : {}),
     rating: row.rating || null,
     start_time: startTime,
     end_time: null,
@@ -89,36 +106,12 @@ function fullRowFromSource(row, source) {
     on_sales: null,
     source_event_id: row.source_event_id || null,
     source_url: row.source_url || null,
-    source_role: row.source_role || `official direct source refreshed ${NOW}`,
+    source_role: row.source_role || 'official direct source snapshot',
     freshness: 'fresh',
+    retrieved_at: snapshotDir ? row.retrieved_at : NOW,
+    ...(row.source_saved_at ? { source_saved_at: row.source_saved_at } : {}),
     source
   };
-}
-
-function dedupeRows(rows) {
-  // If a direct official source proves a cinema/movie/time, discard less-authoritative
-  // representations for that same base screening. Keep multiple direct official rows at
-  // the same time when they represent distinct official formats (Digital/MUCROWN/TITAN).
-  const directOfficialBases = new Set(
-    rows.filter(row => sourcePriority(row.source) >= 5).map(baseScreeningKey)
-  );
-  const eligible = rows.filter(row => {
-    const base = baseScreeningKey(row);
-    return !directOfficialBases.has(base) || sourcePriority(row.source) >= 5;
-  });
-
-  const result = new Map();
-  for (const row of eligible) {
-    const key = screeningIdentityKey(row);
-    const prior = result.get(key);
-    if (!prior || sourcePriority(row.source) > sourcePriority(prior.source)) result.set(key, row);
-  }
-  return [...result.values()].sort((a, b) =>
-    String(a.start_time).localeCompare(String(b.start_time)) ||
-    String(a.cinema_id).localeCompare(String(b.cinema_id)) ||
-    String(a.movie_id || '').localeCompare(String(b.movie_id || '')) ||
-    String(a.format || '').localeCompare(String(b.format || ''))
-  );
 }
 
 async function loadTaipeiDateRows() {
@@ -146,6 +139,8 @@ async function rebuildManifestIndexAndCoverage(manifest, movieCatalog) {
     rating_rows: 0
   };
   const uniqueMovies = new Map();
+  const cityCounts = {};
+  const publishedBySource = {};
   const distinctPosters = new Set();
   const distinctGenres = new Set();
 
@@ -157,11 +152,16 @@ async function rebuildManifestIndexAndCoverage(manifest, movieCatalog) {
       const city = name.slice(0, -5);
       const payload = await readJson(path.join(dateDir, name));
       const rows = payload.showtimes || [];
+      if (payload.version !== 2 && rows.every(row => row.movie_id)) {
+        await writeJson(path.join(dateDir, name), { ...payload, version: 2, schema: 'normalized-movie-references' });
+      }
+      cityCounts[city] = (cityCounts[city] || 0) + rows.length;
       if (!rows.length) continue;
       const dateIndex = index[date] ||= { total: 0, cities: {} };
       dateIndex.total += rows.length;
       dateIndex.cities[city] = rows.length;
       for (const row of rows) {
+        publishedBySource[row.source] = (publishedBySource[row.source] || 0) + 1;
         coverage.showtime_rows++;
         if (Array.isArray(row.subtitles) && row.subtitles.length) coverage.explicit_subtitle_rows++;
         const movie = movieById.get(row.movie_id);
@@ -188,6 +188,19 @@ async function rebuildManifestIndexAndCoverage(manifest, movieCatalog) {
   };
   manifest.showtimes_index = Object.fromEntries(Object.entries(index).sort(([a], [b]) => a.localeCompare(b)));
   manifest.coverage = coverage;
+  for (const [city, count] of Object.entries(cityCounts)) {
+    if (manifest.cities[city]) manifest.cities[city].showtimes = count;
+    const file = path.join(ROOT, 'showtimes', `${city}.json`);
+    const summary = await readJson(file);
+    if (summary.showtime_count !== count) {
+      summary.showtime_count = count;
+      summary.count_reconciled_at = NOW;
+      await writeJson(file, summary);
+    }
+  }
+  for (const [source, details] of Object.entries(manifest.sources.showtimes)) {
+    details.published_showtimes = publishedBySource[source] || 0;
+  }
 }
 
 const cinemas = await readJson(CINEMA_FILE);
@@ -203,7 +216,7 @@ const touchedDates = new Set();
 for (const source of selectedSources) {
   const config = SOURCES[source];
   try {
-    const rows = await config.loader();
+    const rows = snapshotDir ? await loadSnapshot(source) : await config.loader();
     if (!rows.length) throw new Error(`${config.label} returned zero rows`);
     for (const row of rows) {
       if (row.city !== 'taipei') throw new Error(`${config.label} unexpectedly returned non-Taipei row`);
@@ -237,8 +250,6 @@ for (const source of selectedSources) {
 const movieCatalog = buildMovieIndex(fullNewRows, [], previousMovies.movies || []);
 movieCatalog.generated_at = NOW;
 movieCatalog.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
-const movieById = new Map((movieCatalog.movies || []).map(movie => [movie.movie_id, movie]));
-
 for (const full of fullNewRows) {
   const compact = compactShowtime(full, mappedCinemaIds);
   const date = String(full.start_time).slice(0, 10);
@@ -248,6 +259,17 @@ for (const full of fullNewRows) {
 }
 
 for (const date of touchedDates) rowsByDate.set(date, dedupeRows(rowsByDate.get(date) || []));
+
+// Keep metadata once, and only for films still referenced anywhere in the dataset.
+const referencedMovies = new Set([...rowsByDate.values()].flat().map(row => row.movie_id));
+for (const date of await fs.readdir(DATE_ROOT)) {
+  const directory = path.join(DATE_ROOT, date);
+  if (!(await fs.stat(directory)).isDirectory()) continue;
+  for (const name of (await fs.readdir(directory)).filter(name => name.endsWith('.json') && name !== 'taipei.json')) {
+    for (const row of (await readJson(path.join(directory, name))).showtimes || []) referencedMovies.add(row.movie_id);
+  }
+}
+movieCatalog.movies = movieCatalog.movies.filter(movie => referencedMovies.has(movie.movie_id));
 
 for (const [source, result] of Object.entries(sourceResults)) {
   status.sources ||= {};
@@ -265,8 +287,12 @@ for (const [source, result] of Object.entries(sourceResults)) {
       health: 'healthy',
       circuit_state: 'closed',
       failure_count: 0,
-      last_success_at: NOW,
-      retrieved_at: NOW,
+      last_success_at: result.rows.map(row => row.retrieved_at).filter(Boolean).sort().at(-1) || NOW,
+      retrieved_at: result.rows.map(row => row.retrieved_at).filter(Boolean).sort().at(-1) || NOW,
+      error: null,
+      last_error: null,
+      next_probe_at: null,
+      access_path: snapshotDir ? 'saved direct official source snapshot' : 'direct official source',
       direct_refresh: true,
       github_actions_used: false,
       fields: result.config.fields,
@@ -304,6 +330,10 @@ status.showtimes = [];
 status.generated_at = NOW;
 manifest.generated_at = NOW;
 if (manifest.cities?.taipei) manifest.cities.taipei.showtimes = status.showtime_count;
+if (manifest.cities?.taipei) {
+  manifest.cities.taipei.active_cinemas = cinemas.cinemas.filter(cinema => cinema.operational_status === 'active').length;
+  manifest.cities.taipei.unknown_cinemas = cinemas.cinemas.filter(cinema => cinema.operational_status === 'unknown').length;
+}
 
 if (!dryRun) {
   for (const date of touchedDates) {
@@ -336,6 +366,6 @@ console.log(JSON.stringify({
     cinemas: [...new Set(result.rows.map(row => row.cinema_name))]
   } : { ok: false, error: result.error }])),
   taipei_showtime_rows_after_merge: status.showtime_count,
-  movie_catalog_rows_after_merge: movieById.size,
+  movie_catalog_rows_after_merge: movieCatalog.movies.length,
   github_actions_used: false
 }, null, 2));

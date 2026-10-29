@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewed_on": "2026-10-27",
+  "reviewed_on": "2026-10-29",
   "method": "manual browser review, cinema by cinema; branch pages opened sequentially",
   "entries": [
     {
@@ -1711,6 +1711,42 @@
       ],
       "notes": "Magic Hour third-party schedule, opened 2026-10-27; exact 10/27 date block lists 13 titles and 56 starts. No hall, format, audio, or subtitle labels.",
       "reviewed_on": "2026-10-27"
+    },
+    {
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "city": "taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
+      "source_type": "official MUVIE Songren server-rendered schedule",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "international title",
+        "showtime",
+        "format",
+        "explicit audio language",
+        "booking session ID when supplied"
+      ],
+      "reviewed_on": "2026-10-29",
+      "browser_status": "schedule-visible",
+      "notes": "347 canonical direct-official sessions across 16 dates; 342 on the latest page plus 5 preserved from the earlier committed same-day snapshot. Subtitles unknown. Earlier browser research is recorded in DIRECT-OFFICIAL-SOURCE-RESEARCH-2026-10-29.md; this continuation reused those parsers with sequential direct HTTP capture."
+    },
+    {
+      "cinema_id": "43ef84bf160e6886",
+      "city": "taipei",
+      "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
+      "source_type": "official Eslite Art House schedule",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "international title",
+        "showtime",
+        "rating",
+        "runtime",
+        "explicit subtitles"
+      ],
+      "reviewed_on": "2026-10-29",
+      "browser_status": "schedule-visible",
+      "notes": "107 canonical direct-official sessions across 11 dates. Historical GitHub runner 403 is path-specific; direct source access succeeded. Full Les Uns et les Autres title verified at https://meet.eslite.com/tw/tc/artshow/202610280009. Earlier browser research is recorded in DIRECT-OFFICIAL-SOURCE-RESEARCH-2026-10-29.md; this continuation reused those parsers with sequential direct HTTP capture."
     }
   ],
   "title_audit": {
