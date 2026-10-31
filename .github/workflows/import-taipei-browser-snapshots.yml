@@ -40,6 +40,29 @@ jobs:
           set -euo pipefail
           test -f cinema/data/showtimes/by-date/2026-12-16/taipei.json
           grep -q "maxDisplayDate='2026-12-07'" cinema/cinema.js
+      - name: Report Taipei coverage through Dec 7
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          const cinemas=JSON.parse(fs.readFileSync('cinema/data/cinemas/taipei.json','utf8')).cinemas;
+          const counts=new Map(cinemas.map(c=>[c.id,0]));
+          const latest=new Map();
+          const start='2026-11-01', end='2026-12-07';
+          const root='cinema/data/showtimes/by-date';
+          for(const date of fs.readdirSync(root).filter(d=>d>=start&&d<=end).sort()){
+            const f=path.join(root,date,'taipei.json'); if(!fs.existsSync(f)) continue;
+            for(const r of JSON.parse(fs.readFileSync(f,'utf8')).showtimes||[]){
+              if(!counts.has(r.cinema_id)) continue;
+              counts.set(r.cinema_id,counts.get(r.cinema_id)+1); latest.set(r.cinema_id,date);
+            }
+          }
+          console.log('=== TAIPEI_COVERAGE_FINAL ===');
+          for(const c of cinemas) console.log([c.id,c.name_zh,c.operational_status||'unknown',counts.get(c.id)||0,latest.get(c.id)||'-'].join('\t'));
+          console.log('=== ZERO_ROWS ===');
+          for(const c of cinemas.filter(c=>(counts.get(c.id)||0)===0)) console.log([c.id,c.name_zh,c.operational_status||'unknown',c.address].join('\t'));
+          NODE
       - name: Commit reviewed snapshots
         shell: bash
         run: |
