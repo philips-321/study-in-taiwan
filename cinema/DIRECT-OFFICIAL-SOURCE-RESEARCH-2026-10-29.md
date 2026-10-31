@@ -88,6 +88,91 @@ Verified on 2026-10-29:
 
 Result: venue identity and current operation are verified, but there is not yet enough deterministic schedule evidence for an automated adapter. Keep fallback coverage until the official selector/API request is identified and tested. Do not infer showtimes from the current-film list.
 
+## Ximen raw snapshot and access-path clarification — 2026-11-01
+
+A one-shot raw-only collection was run for active Ximen-area cinemas before any parsing, matching, or normalization work.
+
+Run record:
+
+- repository: `philips-321/study-in-taiwan` (public)
+- branch: `ops/ximen-raw-snapshot-20261101`
+- workflow: `.github/workflows/ximen-raw-snapshot.yml`
+- workflow run: `41227958600`
+- artifact: `ximen-cinema-raw-41227958600`, artifact ID `13052680856`
+- result: 32 source requests, 30 final-success, 2 final-non-success
+- artifact contains raw source bodies plus request/status metadata only
+- no parsing or normalization was performed in the workflow
+- `cinema/data` was not modified
+- existing movie/showtime lists were not deleted, replaced, or pruned
+- matching new raw data against existing saved data is explicitly deferred to a separate review step
+
+The active Ximen-area collection targets were:
+
+- 台北西門威秀影城
+- 台北獅子林新光影城
+- 真善美劇院
+- 國賓大戲院
+- 喜樂時代影城今日店
+- 樂聲影城
+
+The former Ximending in89 venue remains excluded from live collection because existing project evidence records closure on 2026-05-31.
+
+### Access-path rule: runner failure does not mean source failure
+
+Two official sources demonstrated a material difference between GitHub-hosted runner access and normal browser access.
+
+#### VieShow Ximen
+
+URL:
+
+`https://www.vscinemas.com.tw/theater/detail.aspx?id=31`
+
+GitHub-hosted runner check:
+
+- method: `GET`
+- request used a normal desktop-browser User-Agent and an HTML/XML/JSON-capable `Accept` header
+- first attempt returned HTTP `403`
+- because `403` must not be treated as proof of blocking, the request was repeated with a second normal desktop-browser User-Agent
+- second attempt also returned HTTP `403`; changing the browser User-Agent did not change the result
+- the runner result therefore describes the GitHub-hosted runner path only
+
+Normal browser evidence on 2026-11-01 shows the official VieShow Ximen page is accessible and exposes the cinema profile, schedule dates, Chinese and English film titles, format/audio labels, and showtimes. Therefore the official source must not be marked unavailable merely because the GitHub-hosted runner receives `403`.
+
+Operational interpretation: likely causes may include datacenter IP/ASN reputation, network-path filtering, TLS/browser fingerprinting, session/cookie behavior, or another anti-automation control. These remain hypotheses until separately proven.
+
+#### LUX Cinema / 樂聲影城
+
+URL:
+
+`https://www.luxcinema.com.tw/web/2020.php?type=ShowTimes`
+
+GitHub-hosted runner check:
+
+- method: `GET`
+- request used a normal desktop-browser User-Agent and an HTML/XML/JSON-capable `Accept` header
+- runner returned HTTP `451`
+- this is a runner/environment result and must not be generalized to visitor browsers
+
+Normal browser evidence on 2026-11-01 shows the LUX schedule page is accessible and exposes current films, schedule dates, and showtimes. Therefore the official source remains live even when the GitHub-hosted runner cannot retrieve it.
+
+### Required source-health behavior
+
+For cinema source monitoring and future collectors:
+
+1. distinguish `source unavailable` from `this execution environment cannot access source`;
+2. never infer that a public cinema site is down solely from a GitHub-hosted runner `403`, `451`, DNS failure, timeout, or similar environment-specific failure;
+3. after HTTP `403`, retry with a normal browser User-Agent and appropriate `Accept` header and record whether the result changes;
+4. when browser-capable/direct retrieval succeeds while a runner fails, mark the runner path degraded/blocked rather than the source itself;
+5. preserve last-known-good rows until fresh data is reviewed and matched;
+6. never delete old movie/showtime records merely because a fresh fetch returned fewer rows or failed;
+7. retain raw snapshots separately so later matching can compare old data against newly captured source data before any mutation.
+
+### GitHub Actions billing note
+
+`philips-321/study-in-taiwan` is a public repository. Standard GitHub-hosted runner usage for public repositories is free under GitHub's current Actions policy and does not draw down the account's private-repository included compute allowance. This makes bounded one-shot source snapshots in this public repo suitable when GitHub-hosted networking can reach the source. Larger runners and other separately billed resources are not covered by this note.
+
+Do not choose GitHub Actions merely because the repository is public when the target site demonstrably rejects GitHub-hosted runner traffic; use the access path that can actually retrieve the source and keep provenance explicit.
+
 ## Remaining source priorities
 
 - consolidate this evidence into the main source tracker when that tracker is next edited;
