@@ -1,0 +1,210 @@
+name: Ximen cinema raw snapshot
+
+on:
+  push:
+    branches:
+      - ops/ximen-raw-snapshot-20261101
+    paths:
+      - '.github/workflows/ximen-raw-snapshot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Fetch raw Ximen cinema source responses
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p raw
+          python - <<'PY'
+          import concurrent.futures
+          import datetime as dt
+          import hashlib
+          import json
+          import pathlib
+          import re
+          import urllib.error
+          import urllib.request
+          from zoneinfo import ZoneInfo
+
+          out = pathlib.Path('raw')
+          tz = ZoneInfo('Asia/Taipei')
+          captured_at = dt.datetime.now(tz)
+          dates = [(captured_at.date() + dt.timedelta(days=i)) for i in range(7)]
+
+          targets = []
+          def add(cinema_id, cinema_name, source_name, url, source_role):
+              targets.append({
+                  'cinema_id': cinema_id,
+                  'cinema_name': cinema_name,
+                  'source_name': source_name,
+                  'source_role': source_role,
+                  'url': url,
+              })
+
+          # 1) Taipei Ximen Vieshow: official branch + dated fallback snapshots.
+          add('29fa20640d772416', '台北西門威秀影城', 'vieshow-official',
+              'https://www.vscinemas.com.tw/theater/detail.aspx?id=31', 'official')
+          for d in dates:
+              add('29fa20640d772416', '台北西門威秀影城', 'atmovies-vieshow-fallback',
+                  f'https://www.atmovies.com.tw/showtime/t02b08/a02/{d:%Y%m%d}/', 'fallback')
+
+          # 2) Taipei Lion Plaza Shin Kong: current dated fallback; prior research found the official page unstable from this path.
+          for d in dates:
+              add('4fa2390a26e73a65', '台北獅子林新光影城', 'atmovies-shinkong-fallback',
+                  f'https://www.atmovies.com.tw/showtime/t02b05/a02/{d:%Y%m%d}/', 'fallback')
+
+          # 3) Wonderful Theatre: official landing page + dated fallback snapshots.
+          add('9dfa1238328c40c7', '真善美劇院', 'wonderful-official',
+              'https://wonderful.movie.com.tw/', 'official')
+          for d in dates:
+              add('9dfa1238328c40c7', '真善美劇院', 'atmovies-wonderful-fallback',
+                  f'https://www.atmovies.com.tw/showtime/t02b07/a02/{d:%Y%m%d}/', 'fallback')
+
+          # 4) Taipei Ambassador: official dated showtime pages.
+          ambassador_id = '84b87b82-b936-4a39-b91f-e88328d33b4e'
+          for d in dates:
+              add('066bac028bf2da57', '國賓大戲院', 'ambassador-official',
+                  f'https://www.ambassador.com.tw/home/Showtime?ID={ambassador_id}&DT={d:%Y/%m/%d}', 'official')
+
+          # 5) Century Asia Ximen / Today branch.
+          add('7b209adf3838f023', '喜樂時代影城今日店', 'centuryasia-official',
+              'https://ximen.centuryasia.com.tw/ticket_online.aspx', 'official')
+
+          # 6) Lux Cinema.
+          add('c36f64f601a18c19', '樂聲影城', 'lux-official',
+              'https://www.luxcinema.com.tw/web/2020.php?type=ShowTimes', 'official')
+
+          # in89 Ximending is intentionally excluded from live-film collection: existing project evidence records closure on 2026-05-31.
+
+          ua1 = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
+                 'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36')
+          ua2 = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+                 'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36')
+          accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.8,*/*;q=0.7'
+
+          def safe_name(value):
+              value = re.sub(r'[^A-Za-z0-9._-]+', '-', value).strip('-')
+              return value[:80] or 'source'
+
+          def request_once(url, user_agent):
+              req = urllib.request.Request(url, headers={
+                  'User-Agent': user_agent,
+                  'Accept': accept,
+                  'Accept-Language': 'zh-TW,zh;q=0.9,en;q=0.7',
+                  'Cache-Control': 'no-cache',
+              })
+              try:
+                  with urllib.request.urlopen(req, timeout=15) as r:
+                      return {
+                          'status': int(getattr(r, 'status', 200)),
+                          'final_url': r.geturl(),
+                          'headers': dict(r.headers.items()),
+                          'body': r.read(),
+                          'error': None,
+                      }
+              except urllib.error.HTTPError as e:
+                  body = e.read()
+                  return {
+                      'status': int(e.code),
+                      'final_url': e.geturl(),
+                      'headers': dict(e.headers.items()) if e.headers else {},
+                      'body': body,
+                      'error': f'HTTPError: {e}',
+                  }
+              except Exception as e:
+                  return {
+                      'status': None,
+                      'final_url': url,
+                      'headers': {},
+                      'body': b'',
+                      'error': f'{type(e).__name__}: {e}',
+                  }
+
+          def fetch_target(index_target):
+              index, target = index_target
+              attempts = []
+              first = request_once(target['url'], ua1)
+              attempts.append(first)
+              # A 403 is not treated as proof of blocking. Retry with a second normal browser UA and compare.
+              if first['status'] == 403:
+                  second = request_once(target['url'], ua2)
+                  attempts.append(second)
+
+              source_slug = safe_name(target['source_name'])
+              body_files = []
+              attempt_meta = []
+              for attempt_no, result in enumerate(attempts, start=1):
+                  ext = '.html'
+                  ctype = (result['headers'].get('Content-Type') or '').lower()
+                  if 'json' in ctype:
+                      ext = '.json'
+                  elif not result['body']:
+                      ext = '.bin'
+                  filename = f'{index:02d}__{source_slug}__attempt{attempt_no}{ext}'
+                  (out / filename).write_bytes(result['body'])
+                  body_files.append(filename)
+                  attempt_meta.append({
+                      'attempt': attempt_no,
+                      'status': result['status'],
+                      'final_url': result['final_url'],
+                      'content_type': result['headers'].get('Content-Type'),
+                      'content_length': len(result['body']),
+                      'sha256': hashlib.sha256(result['body']).hexdigest(),
+                      'error': result['error'],
+                      'body_file': filename,
+                      'browser_header_profile': attempt_no,
+                  })
+
+              return {
+                  **target,
+                  'captured_at': captured_at.isoformat(),
+                  'attempts': attempt_meta,
+                  'retried_after_403': len(attempts) > 1,
+              }
+
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+              results = list(pool.map(fetch_target, enumerate(targets, start=1)))
+
+          manifest = {
+              'schema': 'ximen-cinema-raw-source-snapshot-v1',
+              'captured_at': captured_at.isoformat(),
+              'taipei_dates_requested': [d.isoformat() for d in dates],
+              'policy': {
+                  'raw_only': True,
+                  'parsed_or_normalized': False,
+                  'existing_cinema_data_modified': False,
+                  'existing_movie_list_deleted': False,
+                  'http_403_policy': 'retry with alternate normal browser User-Agent and compare attempts; do not infer blocking from first 403',
+              },
+              'excluded_live_venues': [
+                  {
+                      'cinema_name': 'in89豪華數位影城 / 映捌玖數位影城有限公司',
+                      'reason': 'Existing project evidence records Ximending venue closure on 2026-05-31; no fabricated live schedule fetch.'
+                  }
+              ],
+              'targets': results,
+          }
+          (out / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          ok = sum(1 for r in results if r['attempts'] and r['attempts'][-1]['status'] and 200 <= r['attempts'][-1]['status'] < 400)
+          failed = len(results) - ok
+          print(f'Captured {len(results)} raw source requests: {ok} final-success, {failed} final-non-success.')
+          for r in results:
+              a = r['attempts'][-1]
+              retry = ' retry-after-403' if r['retried_after_403'] else ''
+              print(f"{r['cinema_name']} | {r['source_name']} | status={a['status']} | bytes={a['content_length']}{retry} | {r['url']}")
+          PY
+
+      - name: Upload raw snapshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ximen-cinema-raw-${{ github.run_id }}
+          path: raw/
+          if-no-files-found: error
+          retention-days: 14
