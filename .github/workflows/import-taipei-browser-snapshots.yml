@@ -3,7 +3,9 @@ name: Import Taipei browser snapshots
 on:
   push:
     branches: [ops/taipei-cinema-through-20261207]
-    paths: ['.github/workflows/import-taipei-browser-snapshots.yml']
+    paths:
+      - '.github/workflows/import-taipei-browser-snapshots.yml'
+      - 'cinema/data/research/snapshots/**/*.tsv'
   workflow_dispatch:
 
 permissions:
@@ -22,7 +24,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for snapshot in cinema/data/research/snapshots/2026-11-01/*.tsv; do
+          find cinema/data/research/snapshots -type f -name '*.tsv' -print0 | sort -z |
+          while IFS= read -r -d '' snapshot; do
             echo "Importing $snapshot"
             node cinema/scripts/import-taipei-browser-tsv.mjs "$snapshot"
           done
