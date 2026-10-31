@@ -1,15 +1,16 @@
-name: Import Taipei browser snapshots
+name: Import reviewed Taipei cinema snapshots
 
 on:
   push:
-    branches: [ops/taipei-cinema-through-20261207]
+    branches:
+      - main
+      - ops/taipei-cinema-through-20261207
     paths:
-      - '.github/workflows/import-taipei-browser-snapshots.yml'
       - 'cinema/data/research/snapshots/**/*.tsv'
   workflow_dispatch:
 
 concurrency:
-  group: taipei-cinema-browser-snapshot-import
+  group: taipei-cinema-reviewed-snapshot-import-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -22,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: ops/taipei-cinema-through-20261207
+          ref: ${{ github.ref_name }}
           fetch-depth: 5
       - name: Import every reviewed Taipei snapshot
         shell: bash
@@ -36,33 +37,11 @@ jobs:
       - name: Validate canonical data
         run: node cinema/scripts/validate-canonical-data.mjs
       - name: Verify history and display cutoff
+        shell: bash
         run: |
           set -euo pipefail
           test -f cinema/data/showtimes/by-date/2026-12-16/taipei.json
           grep -q "maxDisplayDate='2026-12-07'" cinema/cinema.js
-      - name: Report Taipei coverage through Dec 7
-        shell: bash
-        run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          import path from 'node:path';
-          const cinemas=JSON.parse(fs.readFileSync('cinema/data/cinemas/taipei.json','utf8')).cinemas;
-          const counts=new Map(cinemas.map(c=>[c.id,0]));
-          const latest=new Map();
-          const start='2026-11-01', end='2026-12-07';
-          const root='cinema/data/showtimes/by-date';
-          for(const date of fs.readdirSync(root).filter(d=>d>=start&&d<=end).sort()){
-            const f=path.join(root,date,'taipei.json'); if(!fs.existsSync(f)) continue;
-            for(const r of JSON.parse(fs.readFileSync(f,'utf8')).showtimes||[]){
-              if(!counts.has(r.cinema_id)) continue;
-              counts.set(r.cinema_id,counts.get(r.cinema_id)+1); latest.set(r.cinema_id,date);
-            }
-          }
-          console.log('=== TAIPEI_COVERAGE_FINAL ===');
-          for(const c of cinemas) console.log([c.id,c.name_zh,c.operational_status||'unknown',counts.get(c.id)||0,latest.get(c.id)||'-'].join('\t'));
-          console.log('=== ZERO_ROWS ===');
-          for(const c of cinemas.filter(c=>(counts.get(c.id)||0)===0)) console.log([c.id,c.name_zh,c.operational_status||'unknown',c.address].join('\t'));
-          NODE
       - name: Commit reviewed snapshots
         shell: bash
         run: |
@@ -74,5 +53,5 @@ jobs:
             echo 'No data changes.'
             exit 0
           fi
-          git commit -m 'Import reviewed Taipei cinema browser snapshots [skip ci]'
-          git push origin HEAD:ops/taipei-cinema-through-20261207
+          git commit -m 'Import reviewed Taipei cinema snapshots [skip ci]'
+          git push origin HEAD:"$GITHUB_REF_NAME"
