@@ -38,7 +38,9 @@ jobs:
               ("if (!['eslite-official-schedule', 'vieshow-muvie-songren-official'].includes(row.source)) assert(!directBases.has([row.cinema_id,row.movie_id,row.start_time].join('|')), 'Losing fallback/manual duplicate');",
                "if (!['eslite-official-schedule', 'vieshow-muvie-songren-official'].includes(row.source) && directBases.has([row.cinema_id,row.movie_id,row.start_time].join('|'))) sourceOverlapRows++;"),
               ("taipei_rows: cityCounts.taipei, direct_sources:",
-               "taipei_rows: cityCounts.taipei, source_overlap_rows: sourceOverlapRows, direct_sources:")
+               "taipei_rows: cityCounts.taipei, source_overlap_rows: sourceOverlapRows, direct_sources:"),
+              ("  let count = 0;\n  for (const file of fs.readdirSync(path.join(root, 'showtimes/direct-official/source', slug))) count += read(`showtimes/direct-official/source/${slug}/${file}`).rows.length;",
+               "  const snapshotDir = path.join(root, 'showtimes/direct-official/source', slug);\n  if (!fs.existsSync(snapshotDir)) continue;\n  let count = 0;\n  for (const file of fs.readdirSync(snapshotDir)) count += read(`showtimes/direct-official/source/${slug}/${file}`).rows.length;")
           ]
           for old, new in replacements:
               if old in text:
