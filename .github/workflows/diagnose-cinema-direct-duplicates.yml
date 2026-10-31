@@ -1,0 +1,46 @@
+name: Diagnose cinema direct duplicates
+
+on:
+  push:
+    branches: [ops/taipei-cinema-through-20261207]
+    paths: ['.github/workflows/diagnose-cinema-direct-duplicates.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - name: Check current main for direct/fallback duplicate bases
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          const root='cinema/data';
+          const direct=new Set(['eslite-official-schedule','vieshow-muvie-songren-official']);
+          let found=0;
+          for(const date of fs.readdirSync(path.join(root,'showtimes/by-date')).sort()){
+            const file=path.join(root,'showtimes/by-date',date,'taipei.json');
+            if(!fs.existsSync(file)) continue;
+            const rows=JSON.parse(fs.readFileSync(file,'utf8')).showtimes||[];
+            const bases=new Map();
+            for(const r of rows.filter(r=>direct.has(r.source))){
+              const base=[r.cinema_id,r.movie_id,r.start_time].join('|');
+              (bases.get(base)||bases.set(base,[]).get(base)).push(r);
+            }
+            for(const r of rows.filter(r=>!direct.has(r.source))){
+              const base=[r.cinema_id,r.movie_id,r.start_time].join('|');
+              if(bases.has(base)){
+                found++;
+                console.log(JSON.stringify({date,base,direct:bases.get(base),other:r}));
+              }
+            }
+          }
+          console.log(`duplicate_bases=${found}`);
+          process.exit(found ? 2 : 0);
+          NODE
