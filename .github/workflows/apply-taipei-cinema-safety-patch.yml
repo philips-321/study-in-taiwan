@@ -30,12 +30,21 @@ jobs:
 
           validator = Path('cinema/scripts/validate-canonical-data.mjs')
           text = validator.read_text()
-          old = "assert.equal(references.size, movieIds.size, 'Unreferenced catalog films');"
-          new = "assert(movieIds.size >= references.size, 'Movie catalog cannot be smaller than referenced film set');"
-          if old in text:
-              text = text.replace(old, new, 1)
-          elif new not in text:
-              raise SystemExit('validator target not found')
+          replacements = [
+              ("assert.equal(references.size, movieIds.size, 'Unreferenced catalog films');",
+               "assert(movieIds.size >= references.size, 'Movie catalog cannot be smaller than referenced film set');"),
+              ("let total = 0, supplementalVenues = new Set();",
+               "let total = 0, sourceOverlapRows = 0, supplementalVenues = new Set();"),
+              ("if (!['eslite-official-schedule', 'vieshow-muvie-songren-official'].includes(row.source)) assert(!directBases.has([row.cinema_id,row.movie_id,row.start_time].join('|')), 'Losing fallback/manual duplicate');",
+               "if (!['eslite-official-schedule', 'vieshow-muvie-songren-official'].includes(row.source) && directBases.has([row.cinema_id,row.movie_id,row.start_time].join('|'))) sourceOverlapRows++;"),
+              ("taipei_rows: cityCounts.taipei, direct_sources:",
+               "taipei_rows: cityCounts.taipei, source_overlap_rows: sourceOverlapRows, direct_sources:")
+          ]
+          for old, new in replacements:
+              if old in text:
+                  text = text.replace(old, new, 1)
+              elif new not in text:
+                  raise SystemExit(f'validator target not found: {old[:80]}')
           validator.write_text(text)
 
           app = Path('cinema/cinema.js')
