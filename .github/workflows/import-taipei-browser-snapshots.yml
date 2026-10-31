@@ -1,0 +1,48 @@
+name: Import Taipei browser snapshots
+
+on:
+  push:
+    branches: [ops/taipei-cinema-through-20261207]
+    paths: ['.github/workflows/import-taipei-browser-snapshots.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ops/taipei-cinema-through-20261207
+          fetch-depth: 5
+      - name: Import every reviewed Taipei snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          for snapshot in cinema/data/research/snapshots/2026-11-01/*.tsv; do
+            echo "Importing $snapshot"
+            node cinema/scripts/import-taipei-browser-tsv.mjs "$snapshot"
+          done
+      - name: Validate canonical data
+        run: node cinema/scripts/validate-canonical-data.mjs
+      - name: Verify history and display cutoff
+        run: |
+          set -euo pipefail
+          test -f cinema/data/showtimes/by-date/2026-12-16/taipei.json
+          grep -q "maxDisplayDate='2026-12-07'" cinema/cinema.js
+      - name: Commit reviewed snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'cinema-data-bot'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add cinema/data
+          if git diff --cached --quiet; then
+            echo 'No data changes.'
+            exit 0
+          fi
+          git commit -m 'Import reviewed Taipei cinema browser snapshots [skip ci]'
+          git push origin HEAD:ops/taipei-cinema-through-20261207
