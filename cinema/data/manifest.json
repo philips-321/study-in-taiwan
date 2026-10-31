@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "generated_at": "2026-10-30T16:02:00.653Z",
+  "generated_at": "2026-10-31T18:58:52.848Z",
   "timezone": "Asia/Taipei",
   "model": "normalized movie catalog plus per-date/per-city screening references; collectors keep source rows in memory and date chunks are the only persisted showtime records",
   "showtimes_index": {
@@ -53,7 +53,7 @@
       }
     },
     "2026-11-01": {
-      "total": 736,
+      "total": 785,
       "cities": {
         "chiayi-city": 2,
         "hsinchu-city": 1,
@@ -64,14 +64,14 @@
         "pingtung": 35,
         "taichung": 9,
         "tainan": 6,
-        "taipei": 373,
+        "taipei": 422,
         "taitung": 1,
         "taoyuan": 47,
         "yunlin": 1
       }
     },
     "2026-11-02": {
-      "total": 739,
+      "total": 790,
       "cities": {
         "chiayi-city": 2,
         "hualien": 1,
@@ -81,14 +81,14 @@
         "pingtung": 9,
         "taichung": 6,
         "tainan": 1,
-        "taipei": 452,
+        "taipei": 503,
         "taitung": 1,
         "taoyuan": 43,
         "yunlin": 1
       }
     },
     "2026-11-03": {
-      "total": 681,
+      "total": 732,
       "cities": {
         "chiayi-city": 2,
         "hualien": 1,
@@ -98,14 +98,14 @@
         "pingtung": 35,
         "taichung": 6,
         "tainan": 1,
-        "taipei": 355,
+        "taipei": 406,
         "taitung": 1,
         "taoyuan": 55,
         "yunlin": 1
       }
     },
     "2026-11-04": {
-      "total": 755,
+      "total": 806,
       "cities": {
         "chiayi-city": 2,
         "hualien": 1,
@@ -115,14 +115,14 @@
         "pingtung": 35,
         "taichung": 6,
         "tainan": 1,
-        "taipei": 442,
+        "taipei": 493,
         "taitung": 1,
         "taoyuan": 43,
         "yunlin": 1
       }
     },
     "2026-11-05": {
-      "total": 932,
+      "total": 983,
       "cities": {
         "chiayi-city": 2,
         "hsinchu-city": 2,
@@ -134,7 +134,7 @@
         "pingtung": 35,
         "taichung": 7,
         "tainan": 4,
-        "taipei": 561,
+        "taipei": 612,
         "taitung": 1,
         "taoyuan": 45,
         "yunlin": 1
@@ -477,20 +477,21 @@
     }
   },
   "coverage": {
-    "showtime_rows": 5264,
+    "showtime_rows": 5517,
     "explicit_subtitle_rows": 122,
-    "international_title_rows": 4721,
-    "poster_rows": 4332,
-    "genre_rows": 4217,
-    "rating_rows": 3718,
+    "international_title_rows": 4935,
+    "poster_rows": 4546,
+    "genre_rows": 4431,
+    "rating_rows": 3902,
     "unique_title_pairs": {
-      "title_pairs": 214,
+      "title_pairs": 216,
       "with_international_title": 102,
       "with_poster": 63,
       "distinct_posters": 59,
       "with_genres": 52,
       "distinct_genre_codes": 17,
-      "with_known_age_rating": 65
+      "with_known_age_rating": 65,
+      "catalog_movies_retained": 216
     }
   },
   "movie_catalog": "movies/index.json; movie title, poster, genres, rating, and runtime are stored once and referenced by movie_id",
@@ -631,6 +632,18 @@
         "last_success_at": "2026-10-27T02:19:11.397Z",
         "last_failure_at": null,
         "next_probe_at": null
+      },
+      "hala-official-browser": {
+        "ok": true,
+        "browser_snapshot": true,
+        "health": "healthy",
+        "circuit_state": "closed",
+        "showtimes": 253,
+        "fresh_showtimes": 253,
+        "fallback_showtimes": 0,
+        "source_url": "https://halarcity.com.tw/Browsing/Cinemas/Details/0000000001",
+        "reviewed_at": "2026-11-01",
+        "last_success_at": "2026-10-31T18:58:52.848Z"
       }
     },
     "movie_metadata": {
@@ -645,7 +658,7 @@
       "cinemas": 30,
       "active_cinemas": 12,
       "unknown_cinemas": 18,
-      "showtimes": 2808
+      "showtimes": 3061
     },
     "new-taipei": {
       "cinemas": 13,
@@ -789,5 +802,9 @@
   "refresh_policy": {
     "cadence": "at most once per Taiwan calendar day",
     "last_completed_taiwan_date": "2026-10-31"
+  },
+  "display_policy": {
+    "max_date": "2026-12-07",
+    "reason": "Airbnb guest planning horizon through 2026-12-07; data after this date may remain stored but is not shown."
   }
 }
