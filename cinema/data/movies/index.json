@@ -919,6 +919,7 @@
         "ambassador-official-site",
         "atmovies-taipei-fallback",
         "hala-official-browser",
+        "lux-official-browser",
         "previous-catalog",
         "showtimes-official-program",
         "vieshow-muvie-songren-official"
@@ -1144,6 +1145,7 @@
         "ambassador-official-site",
         "atmovies-taipei-fallback",
         "century-asia-official-browser",
+        "lux-official-browser",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-program",
@@ -1213,6 +1215,7 @@
         "atmovies-taipei-fallback",
         "century-asia-official-browser",
         "hala-official-browser",
+        "lux-official-browser",
         "miramar-official-api",
         "previous-catalog",
         "showtimes-official-api",
@@ -1302,6 +1305,7 @@
       "duration_minutes": 100,
       "metadata_sources": [
         "atmovies-taipei-fallback",
+        "lux-official-browser",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-program",
@@ -1417,6 +1421,7 @@
         "ambassador-official-site",
         "atmovies-taipei-fallback",
         "century-asia-official-browser",
+        "lux-official-browser",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-program",
@@ -1572,6 +1577,7 @@
         "atmovies-taipei-fallback",
         "century-asia-official-browser",
         "hala-official-browser",
+        "lux-official-browser",
         "miramar-official-api",
         "previous-catalog",
         "showtimes-official-api",
@@ -1630,6 +1636,14 @@
       "metadata_sources": [
         "previous-catalog",
         "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_5a1f390f872e",
+      "movie_title": "鬼入室",
+      "movie_title_en": null,
+      "metadata_sources": [
+        "lux-official-browser"
       ]
     },
     {
@@ -1965,7 +1979,9 @@
       "movie_title": "煙囪小鎮的普佩2：約定的鐘樓",
       "movie_title_en": null,
       "metadata_sources": [
-        "hala-official-browser"
+        "hala-official-browser",
+        "lux-official-browser",
+        "previous-catalog"
       ]
     },
     {
@@ -2370,6 +2386,7 @@
       "metadata_sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "lux-official-browser",
         "previous-catalog",
         "showtimes-official-program"
       ]
@@ -2437,6 +2454,7 @@
       "duration_minutes": 100,
       "metadata_sources": [
         "atmovies-taipei-fallback",
+        "lux-official-browser",
         "previous-catalog"
       ]
     },
@@ -2675,7 +2693,8 @@
       "movie_title": "Jim Queen : 肌情四射",
       "movie_title_en": null,
       "metadata_sources": [
-        "hala-official-browser"
+        "hala-official-browser",
+        "previous-catalog"
       ]
     },
     {
@@ -2778,6 +2797,6 @@
       ]
     }
   ],
-  "generated_at": "2026-10-31T18:58:52.633Z",
+  "generated_at": "2026-10-31T19:00:30.495Z",
   "identity_policy": "persistent normalized movie catalog; historical/unreferenced movie records are retained for future matching"
 }
