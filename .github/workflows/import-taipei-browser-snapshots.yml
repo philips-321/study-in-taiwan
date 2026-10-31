@@ -8,6 +8,10 @@ on:
       - 'cinema/data/research/snapshots/**/*.tsv'
   workflow_dispatch:
 
+concurrency:
+  group: taipei-cinema-browser-snapshot-import
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
