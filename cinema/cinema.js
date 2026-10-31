@@ -353,7 +353,7 @@
   }
   function setupDateOptions() {
     const today=todayTaiwan();
-    availableDates=Object.keys(showtimesDateIndex).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today).sort();
+    const maxDisplayDate='2026-12-07'; availableDates=Object.keys(showtimesDateIndex).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today&&x<=maxDisplayDate).sort();
     if(!availableDates.length)availableDates=[today];
     let initial=availableDates.includes(today)?today:(availableDates[0]||today);
     dateSelect.innerHTML=availableDates.map(d=>`<option value="${d}">${d===today?`${esc(ui('today'))} · `:''}${esc(formatDate(d))} · ${countDate(d)}</option>`).join('');
