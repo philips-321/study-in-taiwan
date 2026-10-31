@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "generated_at": "2026-10-31T19:05:21.870Z",
+  "generated_at": "2026-10-31T19:05:42.853Z",
   "timezone": "Asia/Taipei",
   "model": "normalized movie catalog plus per-date/per-city screening references; collectors keep source rows in memory and date chunks are the only persisted showtime records",
   "showtimes_index": {
@@ -53,7 +53,7 @@
       }
     },
     "2026-11-01": {
-      "total": 828,
+      "total": 830,
       "cities": {
         "chiayi-city": 2,
         "hsinchu-city": 1,
@@ -64,14 +64,14 @@
         "pingtung": 35,
         "taichung": 9,
         "tainan": 6,
-        "taipei": 465,
+        "taipei": 467,
         "taitung": 1,
         "taoyuan": 47,
         "yunlin": 1
       }
     },
     "2026-11-02": {
-      "total": 835,
+      "total": 836,
       "cities": {
         "chiayi-city": 2,
         "hualien": 1,
@@ -81,7 +81,7 @@
         "pingtung": 9,
         "taichung": 6,
         "tainan": 1,
-        "taipei": 548,
+        "taipei": 549,
         "taitung": 1,
         "taoyuan": 43,
         "yunlin": 1
@@ -105,7 +105,7 @@
       }
     },
     "2026-11-04": {
-      "total": 806,
+      "total": 809,
       "cities": {
         "chiayi-city": 2,
         "hualien": 1,
@@ -115,7 +115,7 @@
         "pingtung": 35,
         "taichung": 6,
         "tainan": 1,
-        "taipei": 493,
+        "taipei": 496,
         "taitung": 1,
         "taoyuan": 43,
         "yunlin": 1
@@ -477,21 +477,21 @@
     }
   },
   "coverage": {
-    "showtime_rows": 5650,
+    "showtime_rows": 5656,
     "explicit_subtitle_rows": 122,
-    "international_title_rows": 5047,
-    "poster_rows": 4658,
-    "genre_rows": 4543,
-    "rating_rows": 3966,
+    "international_title_rows": 5049,
+    "poster_rows": 4660,
+    "genre_rows": 4545,
+    "rating_rows": 3968,
     "unique_title_pairs": {
-      "title_pairs": 217,
+      "title_pairs": 221,
       "with_international_title": 102,
       "with_poster": 63,
       "distinct_posters": 59,
       "with_genres": 52,
       "distinct_genre_codes": 17,
       "with_known_age_rating": 65,
-      "catalog_movies_retained": 217
+      "catalog_movies_retained": 221
     }
   },
   "movie_catalog": "movies/index.json; movie title, poster, genres, rating, and runtime are stored once and referenced by movie_id",
@@ -643,7 +643,7 @@
         "fallback_showtimes": 0,
         "source_url": "https://halarcity.com.tw/Browsing/Cinemas/Details/0000000001",
         "reviewed_at": "2026-11-01",
-        "last_success_at": "2026-10-31T19:05:21.758Z"
+        "last_success_at": "2026-10-31T19:05:42.713Z"
       },
       "lux-official-browser": {
         "ok": true,
@@ -655,7 +655,19 @@
         "fallback_showtimes": 0,
         "source_url": "https://www.luxcinema.com.tw/web/2020.php?type=ShowTimes",
         "reviewed_at": "2026-11-01",
-        "last_success_at": "2026-10-31T19:05:21.870Z"
+        "last_success_at": "2026-10-31T19:05:42.853Z"
+      },
+      "centuryasia-ximen-official-browser-p2": {
+        "ok": true,
+        "browser_snapshot": true,
+        "health": "healthy",
+        "circuit_state": "closed",
+        "showtimes": 6,
+        "fresh_showtimes": 6,
+        "fallback_showtimes": 0,
+        "source_url": "https://ximen.centuryasia.com.tw/ticket_online.aspx?page=2",
+        "reviewed_at": "2026-11-01",
+        "last_success_at": "2026-10-31T19:05:42.508Z"
       }
     },
     "movie_metadata": {
@@ -670,7 +682,7 @@
       "cinemas": 30,
       "active_cinemas": 12,
       "unknown_cinemas": 18,
-      "showtimes": 3194
+      "showtimes": 3200
     },
     "new-taipei": {
       "cinemas": 13,
