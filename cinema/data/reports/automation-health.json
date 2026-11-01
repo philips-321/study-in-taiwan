@@ -1,19 +1,19 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-01T20:45:56.840Z",
+  "generated_at": "2026-11-01T21:30:46.663Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
-    "rows": 4523,
-    "expected_rows": 4523
+    "rows": 4528,
+    "expected_rows": 4528
   },
   "schedule_freshness": {
-    "checked_at": "2026-11-01T20:45:51.772Z",
+    "checked_at": "2026-11-01T21:30:42.555Z",
     "as_of": "2026-11-02",
     "stale_screenings_in_window": 0,
     "stale_marked_this_run": 0,
-    "pending_candidates": 593,
-    "fresh_snapshot_rows": 3239,
+    "pending_candidates": 579,
+    "fresh_snapshot_rows": 3249,
     "last_known_good_rows": 291,
     "public_excluded_stale_status_rows": 0,
     "public_excluded_stale_fallback_rows": 136,
@@ -34,10 +34,15 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:45:51.115Z",
+        "last_success_at": "2026-11-01T21:30:41.800Z",
         "next_probe_at": null,
         "retry_suppressed": false,
-        "retry_after": null
+        "retry_after": null,
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "browser_error": null,
+        "warnings": []
       },
       "miramar-official-api": {
         "health": "healthy",
@@ -47,23 +52,33 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:45:51.115Z",
+        "last_success_at": "2026-11-01T21:30:41.800Z",
         "next_probe_at": null,
         "retry_suppressed": false,
-        "retry_after": null
+        "retry_after": null,
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "browser_error": null,
+        "warnings": []
       },
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 1838,
-        "fresh_showtimes": 1838,
+        "showtimes": 1811,
+        "fresh_showtimes": 1811,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:45:51.115Z",
+        "last_success_at": "2026-11-01T21:30:41.800Z",
         "next_probe_at": null,
         "retry_suppressed": false,
-        "retry_after": null
+        "retry_after": null,
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "browser_error": null,
+        "warnings": []
       },
       "showtimes-official-api": {
         "health": "degraded",
@@ -76,7 +91,12 @@
         "last_success_at": "2026-10-24T00:00:00.000Z",
         "next_probe_at": "2026-11-08T17:42:56.311Z",
         "retry_suppressed": true,
-        "retry_after": "2026-11-08T17:42:56.311Z"
+        "retry_after": "2026-11-08T17:42:56.311Z",
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "browser_error": "ShowTimes cinema directory browser HTTP 403",
+        "warnings": []
       },
       "spot-huashan-official-schedule": {
         "health": "healthy",
@@ -86,10 +106,15 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:45:51.115Z",
+        "last_success_at": "2026-11-01T21:30:41.800Z",
         "next_probe_at": null,
         "retry_suppressed": false,
-        "retry_after": null
+        "retry_after": null,
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "browser_error": null,
+        "warnings": []
       },
       "eslite-official-schedule": {
         "health": "degraded",
@@ -102,7 +127,12 @@
         "last_success_at": null,
         "next_probe_at": "2026-11-08T17:42:56.311Z",
         "retry_suppressed": true,
-        "retry_after": "2026-11-08T17:42:56.311Z"
+        "retry_after": "2026-11-08T17:42:56.311Z",
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "browser_error": "Eslite browser HTTP 403",
+        "warnings": []
       },
       "atmovies-taipei-fallback": {
         "health": "healthy",
@@ -112,10 +142,26 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:45:51.115Z",
+        "last_success_at": "2026-11-01T21:30:41.800Z",
         "next_probe_at": null,
         "retry_suppressed": false,
-        "retry_after": null
+        "retry_after": null,
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "browser_error": null,
+        "warnings": [
+          "t02a01/2026-11-02: No showtimes parsed",
+          "t02a01/2026-11-06: No showtimes parsed",
+          "t02a01/2026-11-07: No showtimes parsed",
+          "t02a11/2026-11-02: No showtimes parsed",
+          "t02a11/2026-11-06: No showtimes parsed",
+          "t02a11/2026-11-07: No showtimes parsed",
+          "t02a12/2026-11-02: No showtimes parsed",
+          "t02a12/2026-11-06: No showtimes parsed",
+          "t02b14/2026-11-02: No showtimes parsed",
+          "t02a12/2026-11-07: No showtimes parsed"
+        ]
       },
       "vieshow-official-browser": {
         "health": "healthy",
@@ -128,13 +174,19 @@
         "last_success_at": "2026-10-27T02:19:11.397Z",
         "next_probe_at": null,
         "retry_suppressed": false,
-        "retry_after": null
+        "retry_after": null,
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "browser_error": null,
+        "warnings": []
       }
     },
     "failed_or_degraded": [
       {
         "source": "showtimes-official-api",
         "error": "ShowTimes public API 403 Forbidden",
+        "browser_error": "ShowTimes cinema directory browser HTTP 403",
         "health": "degraded",
         "showtimes": 171,
         "retry_suppressed": true,
@@ -157,6 +209,7 @@
       {
         "source": "eslite-official-schedule",
         "error": "Eslite 403 Forbidden",
+        "browser_error": "Eslite browser HTTP 403",
         "health": "degraded",
         "showtimes": 15,
         "retry_suppressed": true,
