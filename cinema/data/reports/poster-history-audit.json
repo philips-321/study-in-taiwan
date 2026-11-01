@@ -1,0 +1,680 @@
+{
+  "schema": "cinema-poster-history-audit",
+  "version": 1,
+  "generated_at": "2026-11-01T18:32:20Z",
+  "source_commit_head": "111ce548149b34712e418b22ad796cf1ab799f79",
+  "scope": {
+    "catalog_file": "data/movies/index.json",
+    "poster_index_file": "data/movie-metadata/poster-index.json",
+    "registry_file": "data/canonical/movie-registry.jsonl",
+    "catalog_revisions_scanned": 21,
+    "first_catalog_commit": "2157b3b742",
+    "last_local_catalog_commit": "6726941a8a"
+  },
+  "summary": {
+    "unique_historical_movie_id_poster_pairs": 119,
+    "unique_historical_poster_urls": 99,
+    "current_append_only_poster_index_records": 122,
+    "current_poster_index_unique_urls": 104,
+    "poster_urls_seen_in_catalog_history_but_absent_from_poster_index": 5,
+    "current_registry_missing_poster_groups_with_multiple_saved_poster_candidates": 5,
+    "historical_catalog_revisions_with_removed_poster_rows": 4
+  },
+  "catalog_snapshots": [
+    {
+      "commit": "2157b3b742",
+      "catalog_movies": 304,
+      "poster_rows": 82,
+      "added_poster_rows": 82,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "08c4e99a9d",
+      "catalog_movies": 293,
+      "poster_rows": 71,
+      "added_poster_rows": 0,
+      "removed_poster_rows": [
+        {
+          "movie_id": "m_2909b1629505",
+          "title": "歡迎光臨魔法秘境",
+          "poster_url": "https://assets.showtimes.com.tw/images/c944d5c226866154abc551dc7c33658f.jpg"
+        },
+        {
+          "movie_id": "m_292a5dad770d",
+          "title": "三個傻瓜",
+          "poster_url": "https://assets.showtimes.com.tw/images/1e2a3954809b0be0ef53bd191129dbce.jpg"
+        },
+        {
+          "movie_id": "m_4870b5080628",
+          "title": "戴帽子的貓",
+          "poster_url": "https://assets.showtimes.com.tw/images/4029fec2ed274e1ab035ce36de1c1e2a.jpg"
+        },
+        {
+          "movie_id": "m_490b5d916534",
+          "title": "聖誕驚奇夜",
+          "poster_url": "https://assets.showtimes.com.tw/images/61269f667b7673167db464847b88cd4e.jpg"
+        },
+        {
+          "movie_id": "m_6b1eeff1a4c1",
+          "title": "門當父不對之親家駕到",
+          "poster_url": "https://assets.showtimes.com.tw/images/66d25204c6cb09ace8bdcb36b6473d2e.jpg"
+        },
+        {
+          "movie_id": "m_730baf7f4574",
+          "title": "哥吉拉-0.0",
+          "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg"
+        },
+        {
+          "movie_id": "m_7e94558337d5",
+          "title": "世紀初戀 楊麗花",
+          "poster_url": "https://assets.showtimes.com.tw/images/15eab632a80199b85f3d60c48b480cff.jpg"
+        },
+        {
+          "movie_id": "m_9da154c396eb",
+          "title": "讓子彈飛",
+          "poster_url": "https://assets.showtimes.com.tw/images/1046ac5c4be6c2bc4046ae4a6950b01e.jpg"
+        },
+        {
+          "movie_id": "m_a04bfef26d69",
+          "title": "歡迎來到朵莉之家",
+          "poster_url": "https://assets.showtimes.com.tw/images/71b030dbeea2f78fc6e4ae610756752c.jpg"
+        },
+        {
+          "movie_id": "m_bb2bf4b4466c",
+          "title": "搶銀行先修班",
+          "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
+        },
+        {
+          "movie_id": "m_fb773d05c03d",
+          "title": "憤怒鳥玩電影3：全家總動員",
+          "poster_url": "https://assets.showtimes.com.tw/images/e24b73e1e2451e8abc352c11c63df468.jpg"
+        }
+      ]
+    },
+    {
+      "commit": "edc9fcf81b",
+      "catalog_movies": 293,
+      "poster_rows": 71,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "fbc60cd1df",
+      "catalog_movies": 320,
+      "poster_rows": 71,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "b371a7fccb",
+      "catalog_movies": 203,
+      "poster_rows": 63,
+      "added_poster_rows": 0,
+      "removed_poster_rows": [
+        {
+          "movie_id": "m_06337e1cbe02",
+          "title": "2026 NBA賽事直播 金州勇士vs鳳凰城太陽",
+          "poster_url": "https://assets.showtimes.com.tw/images/43152815e531f10ca306f8ca064f005e.jpg"
+        },
+        {
+          "movie_id": "m_0ee442324c60",
+          "title": "快打旋風 波動拳特別場",
+          "poster_url": "https://assets.showtimes.com.tw/images/9734523a558371bfcf3b4c81f9d1736d.jpg"
+        },
+        {
+          "movie_id": "m_1d0573a0dadb",
+          "title": "(安可重播) BTS WORLD TOUR 'ARIRANG' IN BUENOS AIRES: LIVE VIEWING",
+          "poster_url": "https://assets.showtimes.com.tw/images/fb8e5a822ab4f15165af7445072bef02.jpg"
+        },
+        {
+          "movie_id": "m_726beb240d60",
+          "title": "進擊的鼓手 奮力一搏場",
+          "poster_url": "https://assets.showtimes.com.tw/images/60eceeb5479281bbd7517327e7b78a88.jpg"
+        },
+        {
+          "movie_id": "m_95e406ef9ded",
+          "title": "(現場直播) BTS WORLD TOUR 'ARIRANG' IN BUENOS AIRES: LIVE VIEWING",
+          "poster_url": "https://assets.showtimes.com.tw/images/fb8e5a822ab4f15165af7445072bef02.jpg"
+        },
+        {
+          "movie_id": "m_9b91f70505b5",
+          "title": "《大學城經典演唱會》～青春不散場・歌聲再飛揚",
+          "poster_url": "https://assets.showtimes.com.tw/images/33a48623fae4d1daa0786bb7f324613e.jpg"
+        },
+        {
+          "movie_id": "m_c09d59da8087",
+          "title": "蜘蛛人：重生日 曼哈頓日常場",
+          "poster_url": "https://assets.showtimes.com.tw/images/984adb5fd7ffcf665c4018d0a21cd1b3.jpg"
+        },
+        {
+          "movie_id": "m_e1a560224a2c",
+          "title": "不存在的罪人 特別場",
+          "poster_url": "https://assets.showtimes.com.tw/images/b64e18399e38747af090149740486d8a.jpg"
+        }
+      ]
+    },
+    {
+      "commit": "9166b9da7f",
+      "catalog_movies": 226,
+      "poster_rows": 67,
+      "added_poster_rows": 4,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "878b09be52",
+      "catalog_movies": 226,
+      "poster_rows": 88,
+      "added_poster_rows": 21,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "4da883c36a",
+      "catalog_movies": 236,
+      "poster_rows": 88,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "7020d6c83f",
+      "catalog_movies": 215,
+      "poster_rows": 65,
+      "added_poster_rows": 6,
+      "removed_poster_rows": [
+        {
+          "movie_id": "m_07e5f536be76",
+          "title": "劇場版 魔法少女小圓 〈瓦爾普吉斯的迴天〉",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260820031.jpg"
+        },
+        {
+          "movie_id": "m_11dd64a515b6",
+          "title": "復仇者聯盟：終局之戰 加碼重映",
+          "poster_url": "https://assets.showtimes.com.tw/images/678bbe5d0b258d566e66580ef6bc5662.jpg"
+        },
+        {
+          "movie_id": "m_123df1c74a22",
+          "title": "人狼 4K數位修復版",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261007014.jpg"
+        },
+        {
+          "movie_id": "m_232ba78c9c39",
+          "title": "SB19 Wakas at Simula: The Trilogy Concert Finale In Cinemas",
+          "poster_url": "https://assets.showtimes.com.tw/images/428cf93e3d21bcd31db37d8a854382df.jpg"
+        },
+        {
+          "movie_id": "m_2e614ae30694",
+          "title": "蜘蛛人：重生日 曼哈頓頭條場",
+          "poster_url": "https://assets.showtimes.com.tw/images/f3881041db299c5b200b6bb29114a6aa.jpg"
+        },
+        {
+          "movie_id": "m_38062780e555",
+          "title": "驀然回首 (真人版)",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260707001.jpg"
+        },
+        {
+          "movie_id": "m_4d3145546f3f",
+          "title": "電影哆啦A夢：新．大雄的海底鬼岩城",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260615003.jfif"
+        },
+        {
+          "movie_id": "m_5e4f80d2a0ab",
+          "title": "煙囪小鎮的普佩2：約定的鐘樓",
+          "poster_url": "https://assets.showtimes.com.tw/images/605d1538d71be10a6d80262ff7772cab.jpg"
+        },
+        {
+          "movie_id": "m_67850b39a446",
+          "title": "鼠一般的你",
+          "poster_url": "https://assets.showtimes.com.tw/images/834d5f73f3eacdd64ea07c7d556890f3.jpg"
+        },
+        {
+          "movie_id": "m_688414b44092",
+          "title": "泥面人 特別場",
+          "poster_url": "https://assets.showtimes.com.tw/images/81905fba8ca38081defb8699f991c7cd.jpg"
+        },
+        {
+          "movie_id": "m_71107c43f13c",
+          "title": "Sakura Miko 2nd Live",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261014016.jpg"
+        },
+        {
+          "movie_id": "m_878471b9bdcc",
+          "title": "驚天劫機",
+          "poster_url": "https://assets.showtimes.com.tw/images/a1c329344dbfb04fd442b6544f4c6ed3.jpg"
+        },
+        {
+          "movie_id": "m_8abc5f754368",
+          "title": "怎麼可能我家的祖先是你家的鬼",
+          "poster_url": "https://assets.showtimes.com.tw/images/7dfd7e044315c853539fe270a6aa929b.jpg"
+        },
+        {
+          "movie_id": "m_8d0b60e78e9a",
+          "title": "電影蠟筆小新：奇奇怪怪！我的妖怪假期",
+          "poster_url": "https://assets.showtimes.com.tw/images/c7082ed644450a436320ab81dd00650e.jpg"
+        },
+        {
+          "movie_id": "m_8d5d979398a8",
+          "title": "IU CONCERT：THE GOLDEN HOUR",
+          "poster_url": "https://assets.showtimes.com.tw/images/bf619b20755975e231d775c9adf245c7.jpg"
+        },
+        {
+          "movie_id": "m_8dbb4c7dc3c8",
+          "title": "蜘蛛人：重生日 友誼牽絆場",
+          "poster_url": "https://assets.showtimes.com.tw/images/0642471261c476efaab24988e1794180.jpg"
+        },
+        {
+          "movie_id": "m_922740c268b3",
+          "title": "哥吉拉-1.0",
+          "poster_url": "https://assets.showtimes.com.tw/images/8c87c6f3f4d763105ac5cc3fba75071b.jpg"
+        },
+        {
+          "movie_id": "m_ab69403493e5",
+          "title": "夢想出擊",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260902001.jpg"
+        },
+        {
+          "movie_id": "m_b209db12c52f",
+          "title": "誤闖遺忘島",
+          "poster_url": "https://assets.showtimes.com.tw/images/ecc512d023929567b7a740bded5656c2.jpg"
+        },
+        {
+          "movie_id": "m_b75518dd4086",
+          "title": "劇場版 吉伊卡哇 人魚島的秘密 (國語版)",
+          "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
+        },
+        {
+          "movie_id": "m_b86f40ef499f",
+          "title": "劇場版 「BANG DREAM! AVE MUJICA PRIMA AURORA」",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261007008.jpg"
+        },
+        {
+          "movie_id": "m_c50f183f4d13",
+          "title": "粽邪 4：坤蒂拉娜",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260803002.jpg"
+        },
+        {
+          "movie_id": "m_cac0a456ea95",
+          "title": "同級生：十週年重映",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261015005.jpg"
+        },
+        {
+          "movie_id": "m_cdf9505be00f",
+          "title": "駭速劫案",
+          "poster_url": "https://assets.showtimes.com.tw/images/59dad952f2df446e92224276e3009391.jpg"
+        },
+        {
+          "movie_id": "m_d7111eec6fbe",
+          "title": "JIM QUEEN : 肌情四射",
+          "poster_url": "https://assets.showtimes.com.tw/images/ff54a0cbf59a020440a58b1c6eda0643.jpg"
+        },
+        {
+          "movie_id": "m_e17d25f32c03",
+          "title": "劇場版 鋼之鍊金術師 嘆息之丘的聖星",
+          "poster_url": "https://assets.showtimes.com.tw/images/9c3e9445e00305c787781fbbe21ca3aa.jpg"
+        },
+        {
+          "movie_id": "m_e2c37fce61af",
+          "title": "浪花男女",
+          "poster_url": "https://assets.showtimes.com.tw/images/0039646f7fa59febf4c0529c0fd4df2a.jpg"
+        },
+        {
+          "movie_id": "m_e9cd97c8b6c0",
+          "title": "另一個媽咪 特別場",
+          "poster_url": "https://assets.showtimes.com.tw/images/ae25f5e845d831dfa361ee923f407c8b.jpg"
+        },
+        {
+          "movie_id": "m_fae4ab902432",
+          "title": "LINKIN PARK : UNSHATTER",
+          "poster_url": "https://assets.showtimes.com.tw/images/77e915b408b6510a67770d8fb9874bd2.jpg"
+        }
+      ]
+    },
+    {
+      "commit": "27887eae8e",
+      "catalog_movies": 214,
+      "poster_rows": 63,
+      "added_poster_rows": 0,
+      "removed_poster_rows": [
+        {
+          "movie_id": "m_5519bd87e61a",
+          "title": "逃出鯨吞 4DX特別場",
+          "poster_url": "https://assets.showtimes.com.tw/images/4816d898fa8b4f37533891cc68d457f1.jpg"
+        },
+        {
+          "movie_id": "m_a99ed11fd617",
+          "title": "TOMORROW X TOGETHER WORLD TOUR ACT TOMORROW",
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260924005.jpg"
+        }
+      ]
+    },
+    {
+      "commit": "d2ba64782b",
+      "catalog_movies": 244,
+      "poster_rows": 63,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "0edfcc5085",
+      "catalog_movies": 244,
+      "poster_rows": 63,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "192dd36000",
+      "catalog_movies": 270,
+      "poster_rows": 73,
+      "added_poster_rows": 10,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "1d633cb634",
+      "catalog_movies": 249,
+      "poster_rows": 73,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "25e0ec3728",
+      "catalog_movies": 249,
+      "poster_rows": 78,
+      "added_poster_rows": 5,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "6e369f9859",
+      "catalog_movies": 249,
+      "poster_rows": 78,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "be9dbac14c",
+      "catalog_movies": 249,
+      "poster_rows": 78,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "faad0b2544",
+      "catalog_movies": 249,
+      "poster_rows": 78,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "c6fe5224eb",
+      "catalog_movies": 249,
+      "poster_rows": 98,
+      "added_poster_rows": 20,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "7e768771c6",
+      "catalog_movies": 249,
+      "poster_rows": 98,
+      "added_poster_rows": 0,
+      "removed_poster_rows": []
+    },
+    {
+      "commit": "6726941a8a",
+      "catalog_movies": 249,
+      "poster_rows": 99,
+      "added_poster_rows": 1,
+      "removed_poster_rows": []
+    }
+  ],
+  "historical_poster_urls_not_in_index": [
+    {
+      "movie_id": "m_06337e1cbe02",
+      "title": "2026 NBA賽事直播 金州勇士vs鳳凰城太陽",
+      "poster_url": "https://assets.showtimes.com.tw/images/43152815e531f10ca306f8ca064f005e.jpg",
+      "last_catalog_commit": "b371a7fccb"
+    },
+    {
+      "movie_id": "m_726beb240d60",
+      "title": "進擊的鼓手 奮力一搏場",
+      "poster_url": "https://assets.showtimes.com.tw/images/60eceeb5479281bbd7517327e7b78a88.jpg",
+      "last_catalog_commit": "b371a7fccb"
+    },
+    {
+      "movie_id": "m_0ee442324c60",
+      "title": "快打旋風 波動拳特別場",
+      "poster_url": "https://assets.showtimes.com.tw/images/9734523a558371bfcf3b4c81f9d1736d.jpg",
+      "last_catalog_commit": "b371a7fccb"
+    },
+    {
+      "movie_id": "m_c09d59da8087",
+      "title": "蜘蛛人：重生日 曼哈頓日常場",
+      "poster_url": "https://assets.showtimes.com.tw/images/984adb5fd7ffcf665c4018d0a21cd1b3.jpg",
+      "last_catalog_commit": "b371a7fccb"
+    },
+    {
+      "movie_id": "m_e1a560224a2c",
+      "title": "不存在的罪人 特別場",
+      "poster_url": "https://assets.showtimes.com.tw/images/b64e18399e38747af090149740486d8a.jpg",
+      "last_catalog_commit": "b371a7fccb"
+    }
+  ],
+  "current_missing_groups_with_saved_ambiguous_candidates": [
+    {
+      "title": "劇場版 魔法少女小圓 〈瓦爾普吉斯的迴天〉",
+      "title_aliases": [
+        "劇場版 魔法少女小圓 〈瓦爾普吉斯的迴天〉",
+        "劇場版 魔法少女小圓〈瓦爾普吉斯的迴天〉",
+        "PUELLA MAGI MADOKA MAGICA THE MOVIE -WALPURGISNACHT RISING-",
+        "Puella Magi Madoka Magica the Movie -Walpurgisnacht: Rising-"
+      ],
+      "canonical_movie_id": "film_29443b2ab37bbd09",
+      "poster_candidates": [
+        {
+          "poster_url": "https://assets.showtimes.com.tw/images/fe4ccfb06098892261f2936b8d6ea2e9.jpg",
+          "movie_title": "劇場版 魔法少女小圓 〈瓦爾普吉斯的迴天〉",
+          "sources": [
+            "current-movie-catalog",
+            "previous-catalog",
+            "punctuation-insensitive-title-poster-match",
+            "vieshow-official-browser"
+          ]
+        },
+        {
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260820031.jpg",
+          "movie_title": "劇場版 魔法少女小圓 〈瓦爾普吉斯的迴天〉",
+          "sources": [
+            "archived-movie-catalog",
+            "previous-catalog",
+            "vieshow-official-browser"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "粽邪 4：坤蒂拉娜",
+      "title_aliases": [
+        "粽邪 4：坤蒂拉娜",
+        "粽邪4:坤蒂拉娜",
+        "The Rope Curse 4: Kuntilanak"
+      ],
+      "canonical_movie_id": "film_3f980a890b450a6a",
+      "poster_candidates": [
+        {
+          "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260803002.jpg",
+          "movie_title": "粽邪 4：坤蒂拉娜",
+          "sources": [
+            "archived-movie-catalog",
+            "previous-catalog",
+            "vieshow-official-browser"
+          ]
+        },
+        {
+          "poster_url": "https://assets.showtimes.com.tw/images/ce5dacaecc309d261254317bafe2e9f7.jpg",
+          "movie_title": "粽邪 4：坤蒂拉娜",
+          "sources": [
+            "current-movie-catalog",
+            "magichour-centuryasia-nangang-web-fallback",
+            "previous-catalog",
+            "punctuation-insensitive-title-poster-match"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "蜘蛛人：重生日",
+      "title_aliases": [
+        "蜘蛛人：重生日",
+        "蜘蛛人：重生日 曼哈頓頭條場",
+        "SPIDER-MAN BRAND NEW DAY",
+        "SPIDER-MAN: BRAND NEW DAY"
+      ],
+      "canonical_movie_id": "film_9d462e4995ad1442",
+      "poster_candidates": [
+        {
+          "poster_url": "https://assets.showtimes.com.tw/images/9f00d1044341ccd5a1ee1e99d3c8a995.jpg",
+          "movie_title": "蜘蛛人：重生日",
+          "sources": [
+            "ambassador-official-site",
+            "archived-movie-catalog",
+            "atmovies-broadway-gongguan-web-fallback",
+            "atmovies-taipei-fallback",
+            "atmovies-tianmu-shinkong-web-fallback",
+            "century-asia-official-browser",
+            "current-movie-catalog",
+            "hala-official-browser",
+            "magichour-centuryasia-nangang-web-fallback",
+            "miramar-official-api",
+            "previous-catalog",
+            "showtimes-official-api",
+            "showtimes-official-metadata",
+            "showtimes-official-program",
+            "vieshow-muvie-songren-official",
+            "vieshow-official-browser"
+          ]
+        },
+        {
+          "poster_url": "https://assets.showtimes.com.tw/images/0642471261c476efaab24988e1794180.jpg",
+          "movie_title": "蜘蛛人：重生日 友誼牽絆場",
+          "sources": [
+            "archived-movie-catalog",
+            "previous-catalog",
+            "showtimes-official-api",
+            "showtimes-official-metadata",
+            "showtimes-official-program"
+          ]
+        },
+        {
+          "poster_url": "https://assets.showtimes.com.tw/images/f3881041db299c5b200b6bb29114a6aa.jpg",
+          "movie_title": "蜘蛛人：重生日 曼哈頓頭條場",
+          "sources": [
+            "archived-movie-catalog",
+            "current-movie-catalog",
+            "previous-catalog",
+            "showtimes-official-api",
+            "showtimes-official-metadata",
+            "showtimes-official-program"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "另一個媽咪",
+      "title_aliases": [
+        "另一個媽咪",
+        "Other Mommy",
+        "OTHER MOMMY"
+      ],
+      "canonical_movie_id": "film_c7c6c10513cbfa3a",
+      "poster_candidates": [
+        {
+          "poster_url": "https://assets.showtimes.com.tw/images/f2a55c32fb6d4303771ede47236aa859.jpg",
+          "movie_title": "另一個媽咪",
+          "sources": [
+            "ambassador-official-site",
+            "archived-movie-catalog",
+            "atmovies-breeze-web-fallback",
+            "atmovies-miranew-dazhi-web-fallback",
+            "atmovies-taipei-fallback",
+            "atmovies-tianmu-shinkong-web-fallback",
+            "centuryasia-ximen-official-browser-p1",
+            "current-movie-catalog",
+            "magichour-centuryasia-nangang-web-fallback",
+            "miramar-official-api",
+            "previous-catalog",
+            "showtimes-official-api",
+            "showtimes-official-metadata",
+            "showtimes-official-program",
+            "vieshow-muvie-songren-official",
+            "vieshow-official-browser"
+          ]
+        },
+        {
+          "poster_url": "https://assets.showtimes.com.tw/images/ae25f5e845d831dfa361ee923f407c8b.jpg",
+          "movie_title": "另一個媽咪 特別場",
+          "sources": [
+            "archived-movie-catalog",
+            "previous-catalog",
+            "showtimes-official-api",
+            "showtimes-official-metadata",
+            "showtimes-official-program"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "逃出鯨吞 4DX特別場",
+      "title_aliases": [
+        "逃出鯨吞",
+        "逃出鯨吞 4DX特別場",
+        "Whalefall",
+        "WHALEFALL"
+      ],
+      "canonical_movie_id": "film_d9d7a5a679702699",
+      "poster_candidates": [
+        {
+          "poster_url": "https://assets.showtimes.com.tw/images/c84aecacc8077f69e60b6a801459696d.jpg",
+          "movie_title": "逃出鯨吞",
+          "sources": [
+            "ambassador-official-site",
+            "archived-movie-catalog",
+            "atmovies-broadway-gongguan-web-fallback",
+            "atmovies-governor-web-fallback",
+            "atmovies-miranew-dazhi-web-fallback",
+            "atmovies-taipei-fallback",
+            "atmovies-tianmu-shinkong-web-fallback",
+            "century-asia-official-browser",
+            "centuryasia-ximen-official-browser-p0",
+            "current-movie-catalog",
+            "hala-official-browser",
+            "lux-official-browser",
+            "magichour-centuryasia-nangang-web-fallback",
+            "miramar-official-api",
+            "previous-catalog",
+            "reelax-lion-plaza-shinkong-web-fallback",
+            "showtimes-official-api",
+            "showtimes-official-metadata",
+            "showtimes-official-program",
+            "vieshow-muvie-songren-official",
+            "vieshow-official-browser"
+          ]
+        },
+        {
+          "poster_url": "https://assets.showtimes.com.tw/images/4816d898fa8b4f37533891cc68d457f1.jpg",
+          "movie_title": "逃出鯨吞 4DX特別場",
+          "sources": [
+            "archived-movie-catalog",
+            "current-movie-catalog",
+            "previous-catalog",
+            "showtimes-official-api",
+            "showtimes-official-metadata",
+            "showtimes-official-program"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "The Oct 27 bot snapshot filtered previous movie metadata to exact movie_id values active in that day schedule. This removed old title variants from movies/index.json.",
+    "The append-only poster index was introduced later and did not contain five unique image URLs that had already fallen out of the movie catalog. Their URLs remain recoverable from Git history listed here.",
+    "Five current missing groups still have multiple saved poster URLs in the poster index; the sync code conservatively leaves their catalog poster_url blank and marks them ambiguous.",
+    "A missing catalog poster is not proof that TMDB has no poster. The current TMDB workflow searches one title per film group.",
+    "Live main was checked at commit 111ce548149b34712e418b22ad796cf1ab799f79 after a successful TMDB run; its poster index has one additional new record versus the last locally available Git catalog revision."
+  ]
+}
