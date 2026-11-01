@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T18:53:22.606Z",
+  "generated_at": "2026-11-01T18:54:20.225Z",
   "policy": "Append-only known poster records. Never remove stored posters because a film is temporarily absent from schedules; only consider removal after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched. A preferred record is a human-selected poster for its canonical title and must be reused.",
   "movies": [
     {
@@ -114,6 +114,18 @@
       ],
       "sources": [
         "myvideo-taiwan-image-search"
+      ]
+    },
+    {
+      "movie_id": "m_d7ec5dcee8a5",
+      "movie_title": "【府中15】紀錄片放映院《戰火浮生錄 數位修復版》",
+      "poster_url": "https://fr.web.img5.acsta.net/pictures/22/08/25/09/28/0840014.jpg",
+      "aliases": [
+        "【府中15】紀錄片放映院《戰火浮生錄 數位修復版》",
+        "Les Uns et les Autres"
+      ],
+      "sources": [
+        "allocine-image-search"
       ]
     },
     {
