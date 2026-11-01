@@ -1,7 +1,7 @@
 {
   "version": 4,
   "city": "penghu",
-  "generated_at": "2026-11-01T17:42:18.077Z",
+  "generated_at": "2026-11-01T17:48:09.426Z",
   "showtime_count": 0,
   "sources": {
     "moc-culture-movie-api": {
@@ -13,7 +13,7 @@
       "fresh_showtimes": 172,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T17:42:55.318Z",
+      "last_success_at": "2026-11-01T17:48:49.933Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T17:42:55.318Z",
+      "last_success_at": "2026-11-01T17:48:49.933Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1753,
+      "showtimes": 1850,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1753,
+      "fresh_showtimes": 1850,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T17:42:55.318Z",
+      "last_success_at": "2026-11-01T17:48:49.933Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -47,6 +47,8 @@
       "ok": false,
       "showtimes": 171,
       "error": "ShowTimes public API 403 Forbidden",
+      "retry_suppressed": true,
+      "retry_after": "2026-11-08T17:42:56.311Z",
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 6,
@@ -55,7 +57,7 @@
       "fallback": "last-known-good",
       "last_success_at": "2026-10-24T00:00:00.000Z",
       "last_failure_at": "2026-11-01T17:42:55.318Z",
-      "next_probe_at": "2026-11-01T18:12:55.318Z"
+      "next_probe_at": "2026-11-08T17:42:56.311Z"
     },
     "spot-huashan-official-schedule": {
       "ok": true,
@@ -66,7 +68,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T17:42:55.318Z",
+      "last_success_at": "2026-11-01T17:48:49.933Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -74,6 +76,8 @@
       "ok": false,
       "showtimes": 15,
       "error": "Eslite 403 Forbidden",
+      "retry_suppressed": true,
+      "retry_after": "2026-11-08T17:42:56.311Z",
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 13,
@@ -82,7 +86,7 @@
       "fallback": "last-known-good",
       "last_success_at": null,
       "last_failure_at": "2026-11-01T17:42:55.318Z",
-      "next_probe_at": "2026-11-01T18:12:55.318Z"
+      "next_probe_at": "2026-11-08T17:42:56.311Z"
     },
     "atmovies-taipei-fallback": {
       "ok": true,
@@ -90,15 +94,15 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-11-02: No showtimes parsed",
-        "t02a01/2026-11-07: No showtimes parsed",
         "t02a01/2026-11-06: No showtimes parsed",
+        "t02a01/2026-11-07: No showtimes parsed",
         "t02a11/2026-11-02: No showtimes parsed",
+        "t02a11/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-07: No showtimes parsed",
         "t02a12/2026-11-02: No showtimes parsed",
-        "t02a11/2026-11-06: 502 Bad Gateway",
         "t02a12/2026-11-06: No showtimes parsed",
-        "t02b14/2026-11-02: No showtimes parsed",
-        "t02a12/2026-11-07: No showtimes parsed"
+        "t02a12/2026-11-07: No showtimes parsed",
+        "t02b14/2026-11-02: No showtimes parsed"
       ],
       "health": "healthy",
       "circuit_state": "closed",
@@ -106,7 +110,7 @@
       "fresh_showtimes": 1140,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T17:42:55.318Z",
+      "last_success_at": "2026-11-01T17:48:49.933Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -134,6 +138,6 @@
       "eslite-official-schedule",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T17:42:55.318Z"
+    "restored_at": "2026-11-01T17:48:49.933Z"
   }
 }
