@@ -22,12 +22,6 @@ const titleVariants = value => {
   const title = String(value || '').trim();
   if (!title) return [];
   const variants = [title];
-  const catalogPrefix = title.match(/^[A-Z]\d?[-:]\s*(.+)$/i)?.[1];
-  if (catalogPrefix) variants.push(catalogPrefix);
-  const encoreReplay = title.replace(/安可直播/g, '安可重播');
-  if (encoreReplay !== title) variants.push(encoreReplay);
-  const specialEdition = title.replace(/(?:[_\s]*(?:特別場|特別放映)\s*\d*)$/i, '');
-  if (specialEdition !== title) variants.push(specialEdition);
   const suffix = title.match(/[｜|]\s*([^｜|]+)$/)?.[1];
   if (suffix) variants.push(suffix);
   const quoted = (title.match(/《/g) || []).length === 1 ? title.match(/《([^《》]+)》/)?.[1] : null;
@@ -38,6 +32,18 @@ const titleVariants = value => {
   if (unwrapped !== title) variants.push(unwrapped);
   const special = title.replace(/^(?:（[^）]+）|\([^)]*\))\s*/, '');
   if (special !== title) variants.push(special);
+  return [...new Set(variants.filter(Boolean))];
+};
+const posterLookupVariants = value => {
+  const title = String(value || '').trim();
+  if (!title) return [];
+  const variants = [...titleVariants(title)];
+  const catalogPrefix = title.match(/^[A-Z]\d?[-:]\s*(.+)$/i)?.[1];
+  if (catalogPrefix) variants.push(catalogPrefix);
+  const encoreReplay = title.replace(/安可直播/g, '安可重播');
+  if (encoreReplay !== title) variants.push(encoreReplay);
+  const specialEdition = title.replace(/(?:[_\s]*(?:特別場|特別放映)\s*\d*)$/i, '');
+  if (specialEdition !== title) variants.push(specialEdition);
   return [...new Set(variants.filter(Boolean))];
 };
 const titleValues = movie => [...new Set([
@@ -102,7 +108,7 @@ const posterByAlias = new Map();
 for (const record of posterIndex.movies) {
   if (!record.poster_url) continue;
   const aliases = [...new Set([record.movie_title, ...(record.aliases || [])].filter(Boolean))];
-  for (const alias of aliases.flatMap(titleVariants)) {
+  for (const alias of aliases.flatMap(posterLookupVariants)) {
     const key = posterMatchKey(alias);
     if (!usefulKey(key)) continue;
     const urls = posterByAlias.get(key) || new Map();
@@ -295,8 +301,8 @@ for (const group of groupItems) {
   const oldByPoster = new Map(old.filter(record => record.poster_url).map(record => [record.poster_url, record]));
   const currentByPoster = new Map(group.movies.filter(movie => movie.poster_url).map(movie => [movie.poster_url, movie]));
   const indexedRanks = new Map();
-  const rawTitleKeys = new Set(group.movies.flatMap(movie => [movie.movie_title, movie.movie_title_en].filter(Boolean).map(posterMatchKey)));
-  const expandedLookupKeys = new Set(lookupKeys.flatMap(key => titleVariants(key).map(posterMatchKey).filter(usefulKey)));
+  const rawTitleKeys = new Set(group.movies.map(movie => movie.movie_title).filter(Boolean).map(posterMatchKey));
+  const expandedLookupKeys = new Set(lookupKeys.flatMap(key => posterLookupVariants(key).map(posterMatchKey).filter(usefulKey)));
   const rememberIndexed = (url, record, rank) => {
     const existing = indexedRanks.get(url);
     if (!existing || rank > existing.rank) indexedRanks.set(url, { record, rank });
