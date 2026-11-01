@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T19:36:57.089Z",
+  "generated_at": "2026-11-01T19:38:11.559Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -622,6 +622,20 @@
         "11月高雄市電影館｜告別的年代",
         "告別的年代",
         "The Age of Goodbyes"
+      ],
+      "sources": [
+        "kaohsiung-film-archive-official"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_96a731048ae1",
+      "movie_title": "11月高雄市電影館｜坂本龍一・永恆的迴響",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20260217150245424.jpg",
+      "aliases": [
+        "11月高雄市電影館｜坂本龍一・永恆的迴響",
+        "坂本龍一・永恆的迴響",
+        "Ryuichi Sakamoto Playing the Orchestra 2014"
       ],
       "sources": [
         "kaohsiung-film-archive-official"
