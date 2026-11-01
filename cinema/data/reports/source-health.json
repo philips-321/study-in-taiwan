@@ -1,0 +1,109 @@
+{
+  "schema": "cinema-source-health",
+  "generated_at": "2026-11-01T17:33:21.850Z",
+  "checked": 8,
+  "statuses": {
+    "moc-culture-movie-api": {
+      "health": "healthy",
+      "ok": true,
+      "showtimes": 172,
+      "fresh_showtimes": 172,
+      "fallback_showtimes": 0,
+      "error": null,
+      "retrieved_at": null,
+      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "next_probe_at": null
+    },
+    "miramar-official-api": {
+      "health": "healthy",
+      "ok": true,
+      "showtimes": 312,
+      "fresh_showtimes": 312,
+      "fallback_showtimes": 0,
+      "error": null,
+      "retrieved_at": null,
+      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "next_probe_at": null
+    },
+    "ambassador-official-site": {
+      "health": "healthy",
+      "ok": true,
+      "showtimes": 2018,
+      "fresh_showtimes": 2018,
+      "fallback_showtimes": 0,
+      "error": null,
+      "retrieved_at": null,
+      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "next_probe_at": null
+    },
+    "showtimes-official-api": {
+      "health": "degraded",
+      "ok": false,
+      "showtimes": 171,
+      "fresh_showtimes": 0,
+      "fallback_showtimes": 171,
+      "error": "ShowTimes public API 403 Forbidden",
+      "retrieved_at": null,
+      "last_success_at": "2026-10-24T00:00:00.000Z",
+      "next_probe_at": "2026-11-01T18:03:21.176Z"
+    },
+    "spot-huashan-official-schedule": {
+      "health": "healthy",
+      "ok": true,
+      "showtimes": 101,
+      "fresh_showtimes": 101,
+      "fallback_showtimes": 0,
+      "error": null,
+      "retrieved_at": null,
+      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "next_probe_at": null
+    },
+    "eslite-official-schedule": {
+      "health": "degraded",
+      "ok": false,
+      "showtimes": 15,
+      "fresh_showtimes": 0,
+      "fallback_showtimes": 15,
+      "error": "Eslite 403 Forbidden",
+      "retrieved_at": null,
+      "last_success_at": null,
+      "next_probe_at": "2026-11-01T18:03:21.176Z"
+    },
+    "atmovies-taipei-fallback": {
+      "health": "healthy",
+      "ok": true,
+      "showtimes": 1140,
+      "fresh_showtimes": 1140,
+      "fallback_showtimes": 0,
+      "error": null,
+      "retrieved_at": null,
+      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "next_probe_at": null
+    },
+    "vieshow-official-browser": {
+      "health": "healthy",
+      "ok": true,
+      "showtimes": 105,
+      "fresh_showtimes": 0,
+      "fallback_showtimes": 105,
+      "error": null,
+      "retrieved_at": null,
+      "last_success_at": "2026-10-27T02:19:11.397Z",
+      "next_probe_at": null
+    }
+  },
+  "failed_or_degraded": [
+    {
+      "source": "showtimes-official-api",
+      "error": "ShowTimes public API 403 Forbidden",
+      "health": "degraded",
+      "showtimes": 171
+    },
+    {
+      "source": "eslite-official-schedule",
+      "error": "Eslite 403 Forbidden",
+      "health": "degraded",
+      "showtimes": 15
+    }
+  ]
+}

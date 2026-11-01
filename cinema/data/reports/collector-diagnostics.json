@@ -1,0 +1,122 @@
+{
+  "generated_at": "2026-11-01T17:32:41.617Z",
+  "counts": {
+    "ambiguous_movie_metadata": 4,
+    "ambiguous_cinema_matches": 0,
+    "unmatched_cinema_matches": 6
+  },
+  "ambiguous_movie_metadata": [
+    {
+      "source": "miramar-official-api",
+      "city": "taipei",
+      "title": "泥面人",
+      "alternate_title": "CLAYFACE",
+      "metadata_candidates": [
+        {
+          "title": "泥面人",
+          "title_en": "Clayface",
+          "poster_url": "https://assets.showtimes.com.tw/images/81905fba8ca38081defb8699f991c7cd.jpg"
+        },
+        {
+          "title": "泥面人 特別場",
+          "title_en": "CLAYFACE",
+          "poster_url": "https://assets.showtimes.com.tw/images/81905fba8ca38081defb8699f991c7cd.jpg"
+        }
+      ]
+    },
+    {
+      "source": "miramar-official-api",
+      "city": "taipei",
+      "title": "逃出鯨吞",
+      "alternate_title": "WHALEFALL",
+      "metadata_candidates": [
+        {
+          "title": "逃出鯨吞 4DX特別場",
+          "title_en": "Whalefall",
+          "poster_url": "https://assets.showtimes.com.tw/images/4816d898fa8b4f37533891cc68d457f1.jpg"
+        },
+        {
+          "title": "逃出鯨吞",
+          "title_en": "Whalefall",
+          "poster_url": "https://assets.showtimes.com.tw/images/c84aecacc8077f69e60b6a801459696d.jpg"
+        }
+      ]
+    },
+    {
+      "source": "miramar-official-api",
+      "city": "taipei",
+      "title": "另一個媽咪",
+      "alternate_title": "OTHER MOMMY",
+      "metadata_candidates": [
+        {
+          "title": "另一個媽咪 特別場",
+          "title_en": "Other Mommy",
+          "poster_url": "https://assets.showtimes.com.tw/images/ae25f5e845d831dfa361ee923f407c8b.jpg"
+        },
+        {
+          "title": "另一個媽咪",
+          "title_en": "Other Mommy",
+          "poster_url": "https://assets.showtimes.com.tw/images/f2a55c32fb6d4303771ede47236aa859.jpg"
+        }
+      ]
+    },
+    {
+      "source": "miramar-official-api",
+      "city": "taipei",
+      "title": "蜘蛛人：重生日",
+      "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
+      "metadata_candidates": [
+        {
+          "title": "蜘蛛人：重生日 曼哈頓頭條場",
+          "title_en": "SPIDER-MAN: BRAND NEW DAY",
+          "poster_url": "https://assets.showtimes.com.tw/images/f3881041db299c5b200b6bb29114a6aa.jpg"
+        },
+        {
+          "title": "蜘蛛人：重生日 友誼牽絆場",
+          "title_en": "SPIDER-MAN: BRAND NEW DAY",
+          "poster_url": "https://assets.showtimes.com.tw/images/0642471261c476efaab24988e1794180.jpg"
+        }
+      ]
+    }
+  ],
+  "ambiguous_cinema_matches": [],
+  "unmatched_cinema_matches": [
+    {
+      "source": "moc-culture-movie-api",
+      "city": "tainan",
+      "venue": "臺南市奇美博物館",
+      "address": "臺南市仁德區文華路二段66號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "nantou",
+      "venue": "車籠埔斷層保存園區",
+      "address": "南投縣竹山鎮集山路二段345號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "changhua",
+      "venue": "彰化縣和美鎮立圖書館",
+      "address": "彰化縣和美鎮道周路346號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "kaohsiung",
+      "venue": "內惟藝術中心 Reel one 1廳",
+      "address": "高雄市鼓山區馬卡道路329號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "kaohsiung",
+      "venue": "內惟藝術中心 Reel two 2廳",
+      "address": "高雄市鼓山區馬卡道路329號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "kaohsiung",
+      "venue": "高雄市電影館3樓",
+      "address": "高雄市鹽埕區河西路10號"
+    }
+  ],
+  "samples_capped": 200
+}
