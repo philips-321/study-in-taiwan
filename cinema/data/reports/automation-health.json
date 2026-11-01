@@ -1,27 +1,27 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-01T20:44:11.745Z",
+  "generated_at": "2026-11-01T20:45:56.840Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
-    "rows": 4519,
-    "expected_rows": 4519
+    "rows": 4523,
+    "expected_rows": 4523
   },
   "schedule_freshness": {
-    "checked_at": null,
-    "as_of": null,
+    "checked_at": "2026-11-01T20:45:51.772Z",
+    "as_of": "2026-11-02",
     "stale_screenings_in_window": 0,
     "stale_marked_this_run": 0,
-    "pending_candidates": 0,
-    "fresh_snapshot_rows": 0,
-    "last_known_good_rows": 0,
+    "pending_candidates": 593,
+    "fresh_snapshot_rows": 3239,
+    "last_known_good_rows": 291,
     "public_excluded_stale_status_rows": 0,
     "public_excluded_stale_fallback_rows": 136,
     "public_excluded_stale_fallback_by_source": {
       "showtimes-official-api": 136
     },
     "fallback_max_age_hours": 168,
-    "policy": null
+    "policy": "A screening is marked stale only after it is absent from two consecutive Taiwan-day snapshots in which the same source, cinema, and date scope still returns fresh rows. Stale rows remain archived and are excluded from the public view."
   },
   "sources": {
     "checked": 8,
@@ -34,7 +34,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -47,7 +47,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -55,12 +55,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 1684,
-        "fresh_showtimes": 1684,
+        "showtimes": 1838,
+        "fresh_showtimes": 1838,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -86,7 +86,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -112,7 +112,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null

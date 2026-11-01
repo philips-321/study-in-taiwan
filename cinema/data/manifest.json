@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "generated_at": "2026-11-01T20:43:30.445Z",
+  "generated_at": "2026-11-01T20:45:16.556Z",
   "timezone": "Asia/Taipei",
   "model": "normalized movie catalog plus per-date/per-city screening references; collectors keep source rows in memory and date chunks are the only persisted showtime records",
   "showtimes_index": {
@@ -35,11 +35,11 @@
       }
     },
     "2026-11-02": {
-      "total": 487,
+      "total": 488,
       "cities": {
         "chiayi-city": 2,
         "hualien": 1,
-        "kaohsiung": 81,
+        "kaohsiung": 82,
         "keelung": 1,
         "new-taipei": 140,
         "pingtung": 35,
@@ -52,30 +52,30 @@
       }
     },
     "2026-11-03": {
-      "total": 867,
+      "total": 878,
       "cities": {
         "chiayi-city": 2,
         "hualien": 1,
-        "kaohsiung": 82,
+        "kaohsiung": 83,
         "keelung": 1,
-        "new-taipei": 139,
+        "new-taipei": 140,
         "pingtung": 35,
         "taichung": 6,
         "tainan": 1,
-        "taipei": 555,
+        "taipei": 564,
         "taitung": 1,
         "taoyuan": 43,
         "yunlin": 1
       }
     },
     "2026-11-04": {
-      "total": 863,
+      "total": 864,
       "cities": {
         "chiayi-city": 2,
         "hualien": 1,
         "kaohsiung": 81,
         "keelung": 1,
-        "new-taipei": 139,
+        "new-taipei": 140,
         "pingtung": 35,
         "taichung": 6,
         "tainan": 1,
@@ -86,7 +86,7 @@
       }
     },
     "2026-11-05": {
-      "total": 890,
+      "total": 879,
       "cities": {
         "chiayi-city": 2,
         "hsinchu-city": 2,
@@ -94,11 +94,11 @@
         "kaohsiung": 88,
         "keelung": 1,
         "miaoli": 1,
-        "new-taipei": 144,
+        "new-taipei": 143,
         "pingtung": 35,
         "taichung": 7,
         "tainan": 4,
-        "taipei": 557,
+        "taipei": 547,
         "taitung": 1,
         "taoyuan": 45,
         "yunlin": 1
@@ -250,12 +250,12 @@
     }
   },
   "coverage": {
-    "showtime_rows": 3528,
+    "showtime_rows": 3530,
     "explicit_subtitle_rows": 116,
-    "international_title_rows": 3345,
-    "poster_rows": 3521,
-    "genre_rows": 2999,
-    "rating_rows": 2529,
+    "international_title_rows": 3348,
+    "poster_rows": 3523,
+    "genre_rows": 3002,
+    "rating_rows": 2531,
     "unique_title_pairs": {
       "title_pairs": 99,
       "with_international_title": 87,
@@ -296,7 +296,7 @@
         "fresh_showtimes": 0,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "last_failure_at": "2026-10-24T18:59:27.328Z",
         "next_probe_at": null
       },
@@ -309,20 +309,20 @@
         "fresh_showtimes": 312,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
       "ambassador-official-site": {
         "ok": true,
-        "showtimes": 1684,
+        "showtimes": 1838,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "fresh_showtimes": 1684,
+        "fresh_showtimes": 1838,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
@@ -351,7 +351,7 @@
         "fresh_showtimes": 101,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
@@ -384,8 +384,8 @@
           "t02a11/2026-11-07: No showtimes parsed",
           "t02a12/2026-11-02: No showtimes parsed",
           "t02a12/2026-11-06: No showtimes parsed",
-          "t02b14/2026-11-02: No showtimes parsed",
-          "t02a12/2026-11-07: No showtimes parsed"
+          "t02a12/2026-11-07: No showtimes parsed",
+          "t02b14/2026-11-02: No showtimes parsed"
         ],
         "health": "healthy",
         "circuit_state": "closed",
@@ -393,7 +393,7 @@
         "fresh_showtimes": 1140,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-01T20:44:06.726Z",
+        "last_success_at": "2026-11-01T20:45:51.115Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
@@ -417,7 +417,7 @@
       "source": "ShowTimes official bootstrap program records",
       "retrieved_at": "2026-10-27",
       "programs": 87,
-      "cross_source_exact_title_enriched_rows": 2748
+      "cross_source_exact_title_enriched_rows": 2880
     }
   },
   "cities": {
@@ -425,13 +425,13 @@
       "cinemas": 30,
       "active_cinemas": 12,
       "unknown_cinemas": 18,
-      "showtimes": 2029
+      "showtimes": 2028
     },
     "new-taipei": {
       "cinemas": 13,
       "active_cinemas": 3,
       "unknown_cinemas": 10,
-      "showtimes": 631
+      "showtimes": 632
     },
     "keelung": {
       "cinemas": 1,
@@ -509,7 +509,7 @@
       "cinemas": 10,
       "active_cinemas": 2,
       "unknown_cinemas": 8,
-      "showtimes": 382
+      "showtimes": 384
     },
     "pingtung": {
       "cinemas": 2,

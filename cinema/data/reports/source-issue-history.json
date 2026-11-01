@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-01T20:44:11.745Z",
+  "generated_at": "2026-11-01T20:45:56.840Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -86,8 +86,8 @@
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 171,
       "retry_after": "2026-11-08T17:42:56.311Z",
-      "retry_suppressed_run_count": 8,
-      "last_retry_suppressed_at": "2026-11-01T20:44:11.745Z"
+      "retry_suppressed_run_count": 9,
+      "last_retry_suppressed_at": "2026-11-01T20:45:56.840Z"
     },
     {
       "issue_id": "eslite-official-schedule:http_403:meet.eslite.com",
@@ -211,8 +211,8 @@
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 15,
       "retry_after": "2026-11-08T17:42:56.311Z",
-      "retry_suppressed_run_count": 8,
-      "last_retry_suppressed_at": "2026-11-01T20:44:11.745Z"
+      "retry_suppressed_run_count": 9,
+      "last_retry_suppressed_at": "2026-11-01T20:45:56.840Z"
     }
   ],
   "retry_policy": "After an unresolved HTTP 403, suppress automatic source requests for 7 days; keep last-known-good schedules and make one retry after the cooldown."
