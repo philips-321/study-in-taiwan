@@ -1,11 +1,11 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-01T17:58:00.191Z",
+  "generated_at": "2026-11-01T18:02:59.086Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
-    "rows": 4421,
-    "expected_rows": 4421
+    "rows": 4461,
+    "expected_rows": 4461
   },
   "sources": {
     "checked": 8,
@@ -18,7 +18,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T17:48:49.933Z",
+        "last_success_at": "2026-11-01T18:02:58.144Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -31,7 +31,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T17:48:49.933Z",
+        "last_success_at": "2026-11-01T18:02:58.144Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -39,12 +39,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 1850,
-        "fresh_showtimes": 1850,
+        "showtimes": 1937,
+        "fresh_showtimes": 1937,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T17:48:49.933Z",
+        "last_success_at": "2026-11-01T18:02:58.144Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -70,7 +70,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T17:48:49.933Z",
+        "last_success_at": "2026-11-01T18:02:58.144Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -96,7 +96,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T17:48:49.933Z",
+        "last_success_at": "2026-11-01T18:02:58.144Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -163,7 +163,7 @@
     ],
     "issue_history": {
       "file": "cinema/data/reports/source-issue-history.json",
-      "recorded_this_run": false,
+      "recorded_this_run": true,
       "issues": [
         {
           "issue_id": "showtimes-official-api:http_403:capi.showtimes.com.tw",
