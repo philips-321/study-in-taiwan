@@ -1,6 +1,6 @@
 {
   "schema": "cinema-source-health",
-  "generated_at": "2026-11-01T17:42:56.311Z",
+  "generated_at": "2026-11-01T17:47:39.557Z",
   "checked": 8,
   "statuses": {
     "moc-culture-movie-api": {
@@ -12,7 +12,9 @@
       "error": null,
       "retrieved_at": null,
       "last_success_at": "2026-11-01T17:42:55.318Z",
-      "next_probe_at": null
+      "next_probe_at": null,
+      "retry_suppressed": false,
+      "retry_after": null
     },
     "miramar-official-api": {
       "health": "healthy",
@@ -23,7 +25,9 @@
       "error": null,
       "retrieved_at": null,
       "last_success_at": "2026-11-01T17:42:55.318Z",
-      "next_probe_at": null
+      "next_probe_at": null,
+      "retry_suppressed": false,
+      "retry_after": null
     },
     "ambassador-official-site": {
       "health": "healthy",
@@ -34,7 +38,9 @@
       "error": null,
       "retrieved_at": null,
       "last_success_at": "2026-11-01T17:42:55.318Z",
-      "next_probe_at": null
+      "next_probe_at": null,
+      "retry_suppressed": false,
+      "retry_after": null
     },
     "showtimes-official-api": {
       "health": "degraded",
@@ -45,7 +51,9 @@
       "error": "ShowTimes public API 403 Forbidden",
       "retrieved_at": null,
       "last_success_at": "2026-10-24T00:00:00.000Z",
-      "next_probe_at": "2026-11-01T18:12:55.318Z"
+      "next_probe_at": "2026-11-01T18:12:55.318Z",
+      "retry_suppressed": false,
+      "retry_after": null
     },
     "spot-huashan-official-schedule": {
       "health": "healthy",
@@ -56,7 +64,9 @@
       "error": null,
       "retrieved_at": null,
       "last_success_at": "2026-11-01T17:42:55.318Z",
-      "next_probe_at": null
+      "next_probe_at": null,
+      "retry_suppressed": false,
+      "retry_after": null
     },
     "eslite-official-schedule": {
       "health": "degraded",
@@ -67,7 +77,9 @@
       "error": "Eslite 403 Forbidden",
       "retrieved_at": null,
       "last_success_at": null,
-      "next_probe_at": "2026-11-01T18:12:55.318Z"
+      "next_probe_at": "2026-11-01T18:12:55.318Z",
+      "retry_suppressed": false,
+      "retry_after": null
     },
     "atmovies-taipei-fallback": {
       "health": "healthy",
@@ -78,7 +90,9 @@
       "error": null,
       "retrieved_at": null,
       "last_success_at": "2026-11-01T17:42:55.318Z",
-      "next_probe_at": null
+      "next_probe_at": null,
+      "retry_suppressed": false,
+      "retry_after": null
     },
     "vieshow-official-browser": {
       "health": "healthy",
@@ -89,7 +103,9 @@
       "error": null,
       "retrieved_at": null,
       "last_success_at": "2026-10-27T02:19:11.397Z",
-      "next_probe_at": null
+      "next_probe_at": null,
+      "retry_suppressed": false,
+      "retry_after": null
     }
   },
   "failed_or_degraded": [
@@ -98,6 +114,8 @@
       "error": "ShowTimes public API 403 Forbidden",
       "health": "degraded",
       "showtimes": 171,
+      "retry_suppressed": false,
+      "retry_after": null,
       "recurring_issue": {
         "issue_id": "showtimes-official-api:http_403:capi.showtimes.com.tw",
         "state": "open",
@@ -118,6 +136,8 @@
       "error": "Eslite 403 Forbidden",
       "health": "degraded",
       "showtimes": 15,
+      "retry_suppressed": false,
+      "retry_after": null,
       "recurring_issue": {
         "issue_id": "eslite-official-schedule:http_403:meet.eslite.com",
         "state": "open",
@@ -136,7 +156,7 @@
   ],
   "issue_history": {
     "file": "cinema/data/reports/source-issue-history.json",
-    "recorded_this_run": true,
+    "recorded_this_run": false,
     "issues": [
       {
         "issue_id": "showtimes-official-api:http_403:capi.showtimes.com.tw",

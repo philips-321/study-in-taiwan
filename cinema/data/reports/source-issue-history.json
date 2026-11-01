@@ -84,7 +84,8 @@
       "observation_basis": "Unique generated_at timestamps in the 50 most recent first-parent commits that changed cinema/data/manifest.json; this is repository evidence, not a count of Actions billing runs.",
       "last_error": "ShowTimes public API 403 Forbidden",
       "last_fresh_showtimes": 0,
-      "last_fallback_showtimes": 171
+      "last_fallback_showtimes": 171,
+      "retry_after": "2026-11-08T17:42:56.311Z"
     },
     {
       "issue_id": "eslite-official-schedule:http_403:meet.eslite.com",
@@ -206,7 +207,9 @@
       "observation_basis": "Unique generated_at timestamps in the 50 most recent first-parent commits that changed cinema/data/manifest.json; this is repository evidence, not a count of Actions billing runs.",
       "last_error": "Eslite 403 Forbidden",
       "last_fresh_showtimes": 0,
-      "last_fallback_showtimes": 15
+      "last_fallback_showtimes": 15,
+      "retry_after": "2026-11-08T17:42:56.311Z"
     }
-  ]
+  ],
+  "retry_policy": "After an unresolved HTTP 403, suppress automatic source requests for 7 days; keep last-known-good schedules and make one retry after the cooldown."
 }
