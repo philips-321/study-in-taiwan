@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T18:49:07.658Z",
-  "policy": "Append-only known poster records. Never remove stored posters because a film is temporarily absent from schedules; only consider removal after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched.",
+  "generated_at": "2026-11-01T18:51:17.576Z",
+  "policy": "Append-only known poster records. Never remove stored posters because a film is temporarily absent from schedules; only consider removal after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched. A preferred record is a human-selected poster for its canonical title and must be reused.",
   "movies": [
     {
       "movie_id": "m_01eb02db1bf5",
@@ -179,6 +179,18 @@
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
         "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_48e3c6ec6ef0",
+      "movie_title": "今天不回家（數位修復版）",
+      "poster_url": "https://collections.culture.tw/files/11/JPG640/20040282442_I001.jpg",
+      "aliases": [
+        "今天不回家",
+        "今天不回家（數位修復版）"
+      ],
+      "sources": [
+        "national-taiwan-history-museum-collection"
       ]
     },
     {
@@ -556,6 +568,32 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_e69643a78c25",
+      "movie_title": "幸福路上",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZWIyZDA3MzgtZTJmNy00M2ZlLThlZjMtNmFhY2NjOTBlYzcwXkEyXkFqcGc%40._V1_.jpg",
+      "aliases": [
+        "On Happiness Road",
+        "幸福路上",
+        "幸福路上.."
+      ],
+      "sources": [
+        "imdb-image-search"
+      ]
+    },
+    {
+      "movie_id": "m_c9079f271cfb",
+      "movie_title": "幸福路上..",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZWIyZDA3MzgtZTJmNy00M2ZlLThlZjMtNmFhY2NjOTBlYzcwXkEyXkFqcGc%40._V1_.jpg",
+      "aliases": [
+        "On Happiness Road",
+        "幸福路上",
+        "幸福路上.."
+      ],
+      "sources": [
+        "imdb-image-search"
       ]
     },
     {
@@ -970,6 +1008,19 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official"
+      ]
+    },
+    {
+      "movie_id": "m_fe8402d66303",
+      "movie_title": "紐約攝影師的日與夜",
+      "poster_url": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2025/11/16162553/peter-hujars-day-2025-poster-scaled.jpg",
+      "aliases": [
+        "Peter Hujar&rsquo;s Day",
+        "Peter Hujar’s Day",
+        "紐約攝影師的日與夜"
+      ],
+      "sources": [
+        "gateway-film-center-image-search"
       ]
     },
     {
@@ -1767,8 +1818,10 @@
         "current-movie-catalog",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
+        "selected-existing-current-catalog-poster",
         "vieshow-official-browser"
-      ]
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_07e5f536be76",
@@ -1797,10 +1850,12 @@
         "atmovies-taipei-fallback",
         "current-movie-catalog",
         "previous-catalog",
+        "selected-existing-current-catalog-poster",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program"
-      ]
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_568e845d1829",
