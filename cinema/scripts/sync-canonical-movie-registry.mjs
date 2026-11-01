@@ -325,9 +325,10 @@ for (const group of groupItems) {
   const protectedPosters = new Map([...manualPosters, ...preferredPosters]);
   const bestIndexedPosters = new Map([...indexedRanks].filter(([, candidate]) => candidate.rank === bestIndexRank));
   let posterUrl = manualPosters.size === 1 ? [...manualPosters.keys()][0]
-    : bestIndexedPosters.size === 1 ? [...bestIndexedPosters.keys()][0]
-      : preferredPosters.size === 1 ? [...preferredPosters.keys()][0]
-        : protectedPosters.size === 0 && knownPosters.size === 1 ? [...knownPosters.keys()][0] : null;
+    : currentByPoster.size === 1 ? [...currentByPoster.keys()][0]
+      : bestIndexedPosters.size === 1 ? [...bestIndexedPosters.keys()][0]
+        : preferredPosters.size === 1 ? [...preferredPosters.keys()][0]
+          : protectedPosters.size === 0 && knownPosters.size === 1 ? [...knownPosters.keys()][0] : null;
   let posterSource = posterUrl ? (manualPosters.get(posterUrl)?.poster_source || currentByPoster.get(posterUrl)?.metadata_sources?.[0] || indexedByPoster.get(posterUrl)?.sources?.[0] || oldByPoster.get(posterUrl)?.poster_source || 'poster-index') : null;
   let fetchState = posterUrl ? (manualPosters.has(posterUrl) ? 'found_manual'
     : preferredPosters.has(posterUrl) ? (indexedByPoster.get(posterUrl)?.sources?.some(source => ['kaohsiung-film-archive-official', 'fuzhong15-official-movie-page'].includes(source)) ? 'found_official' : 'found_manual') : 'reused')
