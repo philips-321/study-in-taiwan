@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T19:05:15.367Z",
+  "generated_at": "2026-11-02T00:00:00.000Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -391,7 +391,8 @@
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
         "vieshow-official-browser"
-      ]
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_e9cd97c8b6c0",
@@ -503,6 +504,36 @@
       ]
     },
     {
+      "movie_id": "m_4492e93481fc",
+      "movie_title": "吳爾芙的夜與日(海報場)",
+      "poster_url": "https://cineamo-tmdb.b-cdn.net/t/p/w780/6psNzdIymhnN8KQggL4tiZRNIXg.jpg?width=1200",
+      "aliases": [
+        "吳爾芙的夜與日",
+        "吳爾芙的夜與日(海報場)",
+        "Virginia Woolf's NIGHT & DAY",
+        "VIRGINIA WOOLFS NIGHT AND DAY"
+      ],
+      "sources": [
+        "luchs-kino-image-search"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_58947d9ada0b",
+      "movie_title": "吳爾芙的夜與日(海報場)",
+      "poster_url": "https://cineamo-tmdb.b-cdn.net/t/p/w780/6psNzdIymhnN8KQggL4tiZRNIXg.jpg?width=1200",
+      "aliases": [
+        "吳爾芙的夜與日",
+        "吳爾芙的夜與日(海報場)",
+        "Virginia Woolf's NIGHT & DAY",
+        "VIRGINIA WOOLFS NIGHT AND DAY"
+      ],
+      "sources": [
+        "luchs-kino-image-search"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_50f301cf7baf",
       "movie_title": "告別的年代",
       "poster_url": "https://assets.showtimes.com.tw/images/bdde084ee4a87067ac4ad94743d11174.jpg",
@@ -513,6 +544,19 @@
       "sources": [
         "showtimes-official-metadata"
       ]
+    },
+    {
+      "movie_id": "m_2a405411022a",
+      "movie_title": "坂本龍一・永恆的迴響(海報場)",
+      "poster_url": "https://media.vogue.com.tw/photos/69a00900db3f1ce1df16e312/2%3A3/w_2008%2Ch_3012%2Cc_limit/%E3%80%90Ryuichi%20Sakamoto%20%20Playing%20the%20Orchestra%202014%20~%20%E5%9D%82%E6%9C%AC%E9%BE%8D%E4%B8%80%E3%83%BB%E6%B0%B8%E6%81%86%E7%9A%84%E8%BF%B4%E9%9F%BF%E3%80%91%E4%B8%AD%E6%96%87%E6%B5%B7%E5%A0%B1A.jpg",
+      "aliases": [
+        "坂本龍一・永恆的迴響(海報場)",
+        "Ryuichi Sakamoto | Playing the Orchestra 2014~"
+      ],
+      "sources": [
+        "vogue-taiwan-image-search"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_1141c45f9f42",
@@ -740,6 +784,19 @@
       ]
     },
     {
+      "movie_id": "m_89aefd63031b",
+      "movie_title": "東尼瀧谷:4K數位修復版－早安！周日經典電影院",
+      "poster_url": "https://cdn.tatlerasia.com/tatlerasia/i/2023/12/08152032-01020001655021_cover_1120x1600.gif",
+      "aliases": [
+        "東尼瀧谷:4K數位修復版－早安！周日經典電影院",
+        "Tony Takitani"
+      ],
+      "sources": [
+        "tatler-taiwan-image-search"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_dfaa0e43efb7",
       "movie_title": "東京教父：4K數位修復版－早安！周日經典電影院",
       "poster_url": "https://media.gq.com.tw/photos/6965de923f9f9f32f677f633/master/w_1600%2Cc_limit/1224%25E3%2580%258A%25E6%259D%25B1%25E4%25BA%25AC%25E6%2595%2599%25E7%2588%25B64K%25E6%2595%25B8%25E4%25BD%258D%25E4%25BF%25AE%25E5%25BE%25A9%25E7%2589%2588%25E3%2580%258B%25E6%25AD%25A3%25E5%25BC%258F%25E6%25B5%25B7%25E5%25A0%25B1.jpg",
@@ -938,6 +995,19 @@
         "previous-catalog",
         "vieshow-official-browser"
       ]
+    },
+    {
+      "movie_id": "m_7da9db910487",
+      "movie_title": "屍控片場性愛死",
+      "poster_url": "https://www.cineart.nl/images/resized/16360-600x0.jpg",
+      "aliases": [
+        "屍控片場性愛死",
+        "Teenage Sex and Death at Camp Miasma"
+      ],
+      "sources": [
+        "cineart-image-search"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_8abc5f754368",
@@ -1228,6 +1298,36 @@
         "showtimes-official-metadata",
         "showtimes-official-program"
       ]
+    },
+    {
+      "movie_id": "m_5519bd87e61a",
+      "movie_title": "逃出鯨吞 4DX特別場",
+      "poster_url": "https://static.filmvandaag.nl/covers/original/145000/145894.jpg?v=3&width=800",
+      "aliases": [
+        "逃出鯨吞",
+        "逃出鯨吞 4DX特別場",
+        "Whalefall",
+        "WHALEFALL"
+      ],
+      "sources": [
+        "filmvandaag-image-search"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_5ec239224265",
+      "movie_title": "逃出鯨吞 4DX特別場",
+      "poster_url": "https://static.filmvandaag.nl/covers/original/145000/145894.jpg?v=3&width=800",
+      "aliases": [
+        "逃出鯨吞",
+        "逃出鯨吞 4DX特別場",
+        "Whalefall",
+        "WHALEFALL"
+      ],
+      "sources": [
+        "filmvandaag-image-search"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_119c6097e1ac",
@@ -1877,6 +1977,20 @@
       ]
     },
     {
+      "movie_id": "m_f60a3e26a08a",
+      "movie_title": "蒙克聲音拼貼",
+      "poster_url": "https://static1.squarespace.com/static/6744bf67fcfa54716000a71d/t/67bc7f30f2aa2334efb2eebd/1740406584625/IDA%2BHero%2Bimage_v3.jpg?format=1500w",
+      "aliases": [
+        "蒙克聲音拼貼",
+        "Monk in Pieces",
+        "MONK IN PIECES"
+      ],
+      "sources": [
+        "monk-in-pieces-official-image-search"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_06f5422d36b4",
       "movie_title": "蜘蛛人：重生日",
       "poster_url": "https://assets.showtimes.com.tw/images/9f00d1044341ccd5a1ee1e99d3c8a995.jpg",
@@ -2252,6 +2366,20 @@
       "sources": [
         "imdb-image-search"
       ]
+    },
+    {
+      "movie_id": "m_a982b1f65624",
+      "movie_title": "蕭邦！蕭邦！",
+      "poster_url": "https://swiatowid.elblag.pl/storage/informations/13321.jpg",
+      "aliases": [
+        "蕭邦！蕭邦！",
+        "Chopin, Chopin!",
+        "CHOPIN, CHOPIN!"
+      ],
+      "sources": [
+        "polish-film-institution-image-search"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_cdf9505be00f",
