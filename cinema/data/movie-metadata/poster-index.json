@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T19:32:28.622Z",
+  "generated_at": "2026-11-01T19:35:01.865Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -34,6 +34,19 @@
         "showtimes-official-metadata",
         "showtimes-official-program"
       ]
+    },
+    {
+      "movie_id": "m_30f778c43a53",
+      "movie_title": "（特別場）黑球",
+      "poster_url": "https://assets.showtimes.com.tw/images/43c0cf9508b4f544d4da7270d5572fea.jpg",
+      "aliases": [
+        "（特別場）黑球",
+        "黑球"
+      ],
+      "sources": [
+        "showtimes-official-metadata"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_dd5166c70c56",
@@ -495,6 +508,19 @@
       ]
     },
     {
+      "movie_id": "m_4f4081cdb864",
+      "movie_title": "【府中15】紀錄片放映院《蹦蹦奇遇森友會》",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/1792065670288mfdrKgq2rP.jpeg",
+      "aliases": [
+        "【府中15】紀錄片放映院《蹦蹦奇遇森友會》",
+        "蹦蹦奇遇森友會"
+      ],
+      "sources": [
+        "opentix-official-event-image"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_7ec57ba64f4c",
       "movie_title": "【府中15】紀錄片放映院《蘿拉的魔法鋼琴》",
       "poster_url": "https://www.fuzhong15.ntpc.gov.tw/files/file_pool/1/0q292545632675626779/%E8%98%BF%E6%8B%89%E7%9A%84%E9%AD%94%E6%B3%95%E9%8B%BC%E7%90%B4.jpg",
@@ -576,6 +602,19 @@
       ]
     },
     {
+      "movie_id": "m_524c0eeef4ba",
+      "movie_title": "11月高雄市電影館｜沙央",
+      "poster_url": "https://assets.showtimes.com.tw/images/218512054c5ff2ce26ed01fa1a8925da.jpg",
+      "aliases": [
+        "11月高雄市電影館｜沙央",
+        "沙央"
+      ],
+      "sources": [
+        "showtimes-official-metadata"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_12ece06a17e5",
       "movie_title": "11月高雄市電影館｜放送禁止：一夫三妻",
       "poster_url": "https://m.media-amazon.com/images/M/MV5BYzQzZmQ0OGUtOTZiOS00YjgxLWJlOTctZWNjZjNiZGYzM2FkXkEyXkFqcGc%40._V1_.jpg",
@@ -598,6 +637,19 @@
       ],
       "sources": [
         "opentix-official-event-image"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_3406f05561fa",
+      "movie_title": "11月高雄市電影館｜屍控片場性愛死",
+      "poster_url": "https://www.cineart.nl/images/resized/16360-600x0.jpg",
+      "aliases": [
+        "11月高雄市電影館｜屍控片場性愛死",
+        "屍控片場性愛死"
+      ],
+      "sources": [
+        "cineart-image-search"
       ],
       "preferred": true
     },
