@@ -112,20 +112,3 @@ export async function fetchEsliteShowtimes() {
   if (!rows.length) throw new Error('Eslite returned no parseable showtimes');
   return rows;
 }
-
-export async function fetchEsliteShowtimesViaBrowser(fetchRenderedHtml) {
-  const html = await fetchRenderedHtml(URL);
-  const rows = parseEsliteSchedule(html).filter(row => row.date >= taipeiToday());
-  if (!rows.length) throw new Error('Eslite page rendered but no future sessions were parsed');
-  rows.acquisition_method = 'cloudflare-browser-rendering-official-page';
-  return rows;
-}
-
-function taipeiToday() {
-  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
-    timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
-  }).formatToParts(new Date()).map(part => [part.type, part.value]));
-  return `${parts.year}-${parts.month}-${parts.day}`;
-}
-
-export { URL as ESLITE_URL, CINEMA_ID as ESLITE_CINEMA_ID };

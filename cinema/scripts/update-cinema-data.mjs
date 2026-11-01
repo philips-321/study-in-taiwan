@@ -5,11 +5,10 @@ import { buildMovieIndex, compactShowtime, knownAgeRating, movieIdForRow, screen
 import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
-import { fetchShowTimesShowtimes, fetchShowTimesShowtimesViaBrowser } from './sources/showtimes.mjs';
+import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
 import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
-import { fetchEsliteShowtimes, fetchEsliteShowtimesViaBrowser } from './sources/eslite.mjs';
-import { fetchAtMoviesTaipeiShowtimes } from './sources/atmovies-taipei.mjs';
-import { fetchRenderedCinemaHtml } from './sources/cloudflare-browser-run.mjs';
+import { fetchEsliteShowtimes } from './sources/eslite.mjs';
+import { fetchAtMoviesTaipeiShowtimes, fetchAtMoviesShowtimesFallback } from './sources/atmovies-taipei.mjs';
 
 const ROOT = path.resolve('cinema/data');
 const CINEMAS_DIR = path.join(ROOT, 'cinemas');
@@ -244,6 +243,7 @@ const sourceStatus = {
   'spot-huashan-official-schedule': { ok: false, showtimes: 0 },
   'eslite-official-schedule': { ok: false, showtimes: 0 },
   'atmovies-taipei-fallback': { ok: false, showtimes: 0, role: 'fallback only for sources blocked/incomplete from GitHub Actions' },
+  'atmovies-showtimes-fallback': { ok: true, showtimes: 0, skipped: true, role: 'accessible Taiwan cinema listing fallback for blocked ShowTimes API' },
   'vieshow-official-browser': {
     ok: true,
     showtimes: 0,
@@ -287,6 +287,8 @@ function mergeExternalRows(rows, sourceName) {
     ...(rows.acquisition_method ? { acquisition_method: rows.acquisition_method } : {}),
     ...(Number.isInteger(rows.branch_pages) ? { branch_pages: rows.branch_pages } : {}),
     ...(Number.isInteger(rows.branch_pages_failed) ? { branch_pages_failed: rows.branch_pages_failed } : {}),
+    ...(Number.isInteger(rows.cinema_pages) ? { cinema_pages: rows.cinema_pages } : {}),
+    ...(Number.isInteger(rows.cinema_pages_failed) ? { cinema_pages_failed: rows.cinema_pages_failed } : {}),
     ...(sourceStatus[sourceName]?.role ? { role: sourceStatus[sourceName].role } : {}),
     ...(Array.isArray(rows.source_errors) && rows.source_errors.length ? { warnings: rows.source_errors.slice(0, 10) } : {})
   };
@@ -328,26 +330,60 @@ await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuash
 await runSource('eslite-official-schedule', 'Eslite', fetchEsliteShowtimes);
 await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);
 
-const needsBrowserFallback = source => {
+const needsAlternativeFallback = source => {
   const status = sourceStatus[source];
   return status?.ok === false && (status.retry_suppressed === true || /\b403\b/.test(String(status.error || '')));
 };
-const browserFallbackSources = ['showtimes-official-api', 'eslite-official-schedule'].filter(needsBrowserFallback);
-if (browserFallbackSources.length) {
-  const fallback = async (source, label, loader) => {
-    if (!browserFallbackSources.includes(source)) return;
-    try {
-      const rows = await loader();
-      mergeExternalRows(rows, source);
-      console.info(`${label} recovered via Cloudflare Browser Run: ${rows.length} sessions${rows.branch_pages ? ` across ${rows.branch_pages} branch pages` : ''}.`);
-    } catch (error) {
-      const message = String(error?.message || error).slice(0, 300);
-      sourceStatus[source] = { ...sourceStatus[source], browser_error: message };
-      console.error(`${label} Browser Run fallback failed: ${message}`);
+if (needsAlternativeFallback('showtimes-official-api')) {
+  try {
+    const todayTaipei = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
+    }).format(new Date());
+    const sourceCinemaIds = new Set();
+    const canonicalDir = path.join(ROOT, 'canonical');
+    for (const name of (await fs.readdir(canonicalDir)).filter(name => /^20\d{2}-\d{2}\.jsonl$/.test(name))) {
+      const text = await fs.readFile(path.join(canonicalDir, name), 'utf8');
+      for (const line of text.split('\n')) {
+        if (!line) continue;
+        const row = JSON.parse(line);
+        if (row.source_id === 'showtimes-official-api' && row.status !== 'stale' && row.business_date >= todayTaipei && row.cinema_id) sourceCinemaIds.add(row.cinema_id);
+      }
     }
-  };
-  await fallback('showtimes-official-api', 'ShowTimes', () => fetchShowTimesShowtimesViaBrowser(fetchRenderedCinemaHtml));
-  await fallback('eslite-official-schedule', 'Eslite', () => fetchEsliteShowtimesViaBrowser(fetchRenderedCinemaHtml));
+    const targetCinemas = [...cinemasByCity.values()].flatMap(map => [...map.values()])
+      .filter(cinema => sourceCinemaIds.has(cinema.id));
+    const rows = await fetchAtMoviesShowtimesFallback(targetCinemas);
+    mergeExternalRows(rows, 'atmovies-showtimes-fallback');
+    sourceStatus['showtimes-official-api'] = {
+      ...sourceStatus['showtimes-official-api'],
+      substitute_source: 'atmovies-showtimes-fallback',
+      substitute_showtimes: rows.length
+    };
+    sourceStatus['atmovies-showtimes-fallback'] = {
+      ...sourceStatus['atmovies-showtimes-fallback'],
+      target_cinemas: rows.target_cinemas,
+      matched_cinemas: rows.matched_cinemas,
+      unmatched_cinemas: rows.unmatched_cinemas
+    };
+    console.info(`ShowTimes 403 fallback recovered ${rows.length} AtMovies sessions for ${rows.matched_cinemas}/${rows.target_cinemas} known cinemas.`);
+  } catch (error) {
+    sourceStatus['atmovies-showtimes-fallback'] = {
+      ...sourceStatus['atmovies-showtimes-fallback'],
+      ok: false,
+      error: String(error?.message || error).slice(0, 300)
+    };
+    console.error('AtMovies ShowTimes fallback failed:', error);
+  }
+}
+
+if (needsAlternativeFallback('eslite-official-schedule')) {
+  const esliteRows = showtimesByCity.get('taipei').filter(row => row.source === 'atmovies-taipei-fallback' && /誠品電影院/.test(row.cinema_name || ''));
+  if (esliteRows.length) {
+    sourceStatus['eslite-official-schedule'] = {
+      ...sourceStatus['eslite-official-schedule'],
+      substitute_source: 'atmovies-taipei-fallback',
+      substitute_showtimes: esliteRows.length
+    };
+  }
 }
 
 let metadataEnrichedRows = 0;

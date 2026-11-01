@@ -134,7 +134,7 @@ function parsePage(html, cinema, requestedDate, url) {
     if (time) {
       rows.push({
         cinema_name: cinema.cinema_name,
-        city: 'taipei',
+        city: cinema.city || 'taipei',
         address: cinema.address,
         movie_title: movie,
         movie_title_en: null,
@@ -149,7 +149,7 @@ function parsePage(html, cinema, requestedDate, url) {
         duration_minutes: duration,
         source_url: url,
         source_role: cinema.source_role,
-        source: 'atmovies-taipei-fallback'
+        source: cinema.source || 'atmovies-taipei-fallback'
       });
       continue;
     }
@@ -164,6 +164,134 @@ function parsePage(html, cinema, requestedDate, url) {
     }
   }
 
+  return rows;
+}
+
+const REGION_ALIASES = [
+  ['taipei', ['台北', '臺北']], ['new-taipei', ['新北']], ['keelung', ['基隆']],
+  ['taoyuan', ['桃園']], ['hsinchu-city', ['新竹']], ['miaoli', ['苗栗']],
+  ['taichung', ['台中', '臺中']], ['changhua', ['彰化']], ['yunlin', ['雲林']],
+  ['nantou', ['南投']], ['chiayi-city', ['嘉義']], ['tainan', ['台南', '臺南']],
+  ['kaohsiung', ['高雄']], ['yilan', ['宜蘭']], ['hualien', ['花蓮']],
+  ['taitung', ['台東', '臺東']], ['pingtung', ['屏東']], ['penghu', ['澎湖']],
+  ['kinmen', ['金門']], ['lienchiang', ['連江']]
+];
+
+function regionSlug(label) {
+  const text = String(label || '').replace(/[\s　]/g, '');
+  return REGION_ALIASES.find(([, aliases]) => aliases.some(alias => text.includes(alias)))?.[0] || null;
+}
+
+function regionKey(city) {
+  if (city === 'new-taipei') return 'taipei';
+  if (city === 'hsinchu-county') return 'hsinchu-city';
+  if (city === 'chiayi-county') return 'chiayi-city';
+  return city;
+}
+
+function normalizeCinemaName(value) {
+  return String(value || '').normalize('NFKC').replace(/臺/g, '台').toLocaleLowerCase()
+    .replace(/(?:電影城|電影院|電影館|影城|戲院|劇院)/g, '')
+    .replace(/[\s　・·()（）\-_/]/g, '');
+}
+
+function anchorsFromHtml(html) {
+  const output = [];
+  for (const match of String(html || '').matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a\s*>/gi)) {
+    const href = match[1].match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2];
+    if (!href) continue;
+    const label = decodeHtml(match[2].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+    if (label) output.push({ href: new URL(decodeHtml(href), `${BASE}/`).href, label });
+  }
+  return output;
+}
+
+async function fetchHtml(url) {
+  const response = await fetch(url, {
+    headers: {
+      accept: 'text/html,application/xhtml+xml',
+      'accept-language': 'zh-TW,zh;q=0.9,en;q=0.7',
+      'user-agent': 'study-in-taiwan-cinema-data/1.0'
+    }
+  });
+  if (!response.ok) throw new Error(`${response.status} ${response.statusText}: ${url}`);
+  return response.text();
+}
+
+/**
+ * AtMovies publishes static, machine-readable schedules for the ShowTimes
+ * chain's cinemas. Use this only when the ShowTimes source is unavailable;
+ * each cinema page contains several upcoming dates, so this avoids a browser
+ * service and avoids requesting every cinema/date pair separately.
+ */
+export async function fetchAtMoviesShowtimesFallback(targetCinemas) {
+  const targets = [...new Map((targetCinemas || []).filter(cinema => cinema?.id && cinema?.name_zh)
+    .map(cinema => [cinema.id, cinema])).values()];
+  if (!targets.length) throw new Error('No known ShowTimes cinemas are available for AtMovies fallback matching');
+
+  const home = await fetchHtml(`${BASE}/`);
+  const regionUrls = new Map();
+  for (const link of anchorsFromHtml(home)) {
+    const match = new URL(link.href).pathname.match(/^\/showtime\/(a\d+)\/?$/i);
+    const slug = regionSlug(link.label);
+    if (match && slug && targets.some(cinema => regionKey(cinema.city) === slug)) regionUrls.set(slug, link.href);
+  }
+
+  const listingErrors = [];
+  const branchByCinema = new Map();
+  for (const [slug, url] of regionUrls) {
+    try {
+      const html = await fetchHtml(url);
+      for (const link of anchorsFromHtml(html)) {
+        const match = new URL(link.href).pathname.match(/^\/showtime\/(t[a-z0-9]+)\/a\d+\/?$/i);
+        if (!match) continue;
+        const label = normalizeCinemaName(link.label);
+        const candidates = targets.filter(cinema => regionKey(cinema.city) === slug &&
+          (label === normalizeCinemaName(cinema.name_zh) ||
+            (label.length >= 5 && normalizeCinemaName(cinema.name_zh).length >= 5 &&
+              (label.includes(normalizeCinemaName(cinema.name_zh)) || normalizeCinemaName(cinema.name_zh).includes(label)))));
+        if (candidates.length === 1) branchByCinema.set(candidates[0].id, { cinema: candidates[0], url: link.href });
+        else if (candidates.length > 1) listingErrors.push(`${slug}: ambiguous AtMovies match for ${link.label}`);
+      }
+    } catch (error) {
+      listingErrors.push(`${slug}: ${String(error?.message || error).slice(0, 180)}`);
+    }
+  }
+
+  const rows = [], pageErrors = [];
+  const tasks = [...branchByCinema.values()];
+  let cursor = 0;
+  const worker = async () => {
+    while (cursor < tasks.length) {
+      const { cinema, url } = tasks[cursor++];
+      try {
+        const html = await fetchHtml(url);
+        const parsed = parsePage(html, {
+          code: new URL(url).pathname.split('/')[2],
+          cinema_name: cinema.name_zh,
+          address: cinema.address,
+          city: cinema.city,
+          source_role: 'AtMovies HTML fallback for ShowTimes cinema'
+        }, taipeiDate(), url);
+        if (!parsed.length) throw new Error('No future sessions parsed from the cinema page');
+        for (const row of parsed) row.source = 'atmovies-showtimes-fallback';
+        rows.push(...parsed);
+      } catch (error) {
+        pageErrors.push(`${cinema.name_zh}: ${String(error?.message || error).slice(0, 180)}`);
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(3, tasks.length) }, worker));
+  if (!rows.length) {
+    throw new Error(`AtMovies fallback found no ShowTimes cinema sessions; matched ${tasks.length}/${targets.length} cinemas`);
+  }
+  rows.source_errors = [...listingErrors, ...pageErrors];
+  rows.acquisition_method = 'atmovies-official-schedule-html';
+  rows.cinema_pages = tasks.length;
+  rows.cinema_pages_failed = pageErrors.length;
+  rows.target_cinemas = targets.length;
+  rows.matched_cinemas = tasks.length;
+  rows.unmatched_cinemas = targets.filter(cinema => !branchByCinema.has(cinema.id)).map(cinema => cinema.name_zh);
   return rows;
 }
 

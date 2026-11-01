@@ -42,12 +42,19 @@ const sourceSummaries = Object.fromEntries(Object.entries(sourceStatuses).map(([
   acquisition_method: status.acquisition_method || null,
   branch_pages: status.branch_pages ?? null,
   branch_pages_failed: status.branch_pages_failed ?? null,
-  browser_error: status.browser_error || null,
+  substitute_source: status.substitute_source || null,
+  substitute_showtimes: status.substitute_showtimes || 0,
+  skipped: status.skipped === true,
+  target_cinemas: status.target_cinemas ?? null,
+  matched_cinemas: status.matched_cinemas ?? null,
+  unmatched_cinemas: status.unmatched_cinemas || [],
+  cinema_pages: status.cinema_pages ?? null,
+  cinema_pages_failed: status.cinema_pages_failed ?? null,
   warnings: status.warnings || []
 }]));
 const failedSources = Object.entries(sourceStatuses)
   .filter(([, status]) => status?.ok === false || status?.health === 'degraded')
-  .map(([source, status]) => ({ source, error: status.error || null, browser_error: status.browser_error || null, health: status.health || null, showtimes: status.showtimes || 0, retry_suppressed: status.retry_suppressed === true, retry_after: status.retry_after || null }));
+  .map(([source, status]) => ({ source, error: status.error || null, health: status.health || null, showtimes: status.showtimes || 0, substitute_source: status.substitute_source || null, substitute_showtimes: status.substitute_showtimes || 0, fallback_showtimes: status.fallback_showtimes || 0, retry_suppressed: status.retry_suppressed === true, retry_after: status.retry_after || null }));
 
 const endpointHints = {
   'showtimes-official-api': 'https://capi.showtimes.com.tw/4/app/bootstrap',
@@ -55,12 +62,12 @@ const endpointHints = {
 };
 const guidance = {
   'showtimes-official-api': {
-    known_cause: 'GitHub Actions runner has repeatedly received HTTP 403 from the public bootstrap endpoint. Repository notes say the endpoint was reachable in the manual browser environment; investigate runner access/WAF before changing the parser.',
-    next_steps: ['Check endpoint reachability from GitHub Actions before changing parsing code.', 'If the runner still receives 403, use the reviewed browser/API bootstrap snapshot or another approved access path.', 'Preserve last-known-good ShowTimes rows in canonical storage.']
+    known_cause: 'GitHub Actions repeatedly receives HTTP 403 from the ShowTimes bootstrap API. When this happens, the collector reuses accessible AtMovies cinema schedule pages for known ShowTimes cinemas.',
+    next_steps: ['Review AtMovies fallback cinema coverage and unmatched cinema warnings.', 'Treat the fallback as short-range schedule coverage; retain canonical future rows until fresh source data replaces them.', 'Preserve last-known-good ShowTimes rows in canonical storage.']
   },
   'eslite-official-schedule': {
-    known_cause: 'GitHub Actions runner has repeatedly received HTTP 403 from the official schedule page, so the parser cannot inspect its schedule response.',
-    next_steps: ['Check endpoint reachability from GitHub Actions before changing parsing code.', 'If the runner still receives 403, use a verified manual snapshot or another approved access path.', 'Preserve last-known-good Eslite rows in canonical storage.']
+    known_cause: 'GitHub Actions repeatedly receives HTTP 403 from the official Eslite schedule page. The existing AtMovies Taipei fallback also covers Eslite sessions when AtMovies publishes them.',
+    next_steps: ['Check AtMovies Taipei fallback coverage for Eslite sessions.', 'Preserve last-known-good Eslite rows in canonical storage.', 'Keep the official Eslite source marked degraded until its endpoint becomes accessible again.']
   }
 };
 const recordSourceHistory = process.argv.includes('--record-source-history');
@@ -320,7 +327,7 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     for (const source of failedSources) {
       const issue = source.recurring_issue;
       lines.push(`- ${source.source}: ${source.error || source.health}${issue ? `; ${issue.consecutive_failures} consecutive failures, ${issue.total_occurrence_count} total observations` : ''}`);
-      if (source.browser_error) lines.push(`  - Browser fallback: ${source.browser_error}`);
+      if (source.substitute_source) lines.push(`  - Replacement source: ${source.substitute_source} (${source.substitute_showtimes || 0} sessions)`);
       if (issue?.next_steps?.length) lines.push(`  - Next: ${issue.next_steps[0]}`);
     }
   }
