@@ -9,7 +9,31 @@
     "registry_file": "data/canonical/movie-registry.jsonl",
     "catalog_revisions_scanned": 21,
     "first_catalog_commit": "2157b3b742",
-    "last_local_catalog_commit": "6726941a8a"
+    "last_local_catalog_commit": "6726941a8a",
+    "poster_url_scan_includes": [
+      "data/movies/index.json",
+      "data/movie-metadata/*.json",
+      "data/showtimes/**/*.json",
+      "data/showtimes-public/**/*.json",
+      "bootstrap cinema data files with poster_url"
+    ],
+    "all_data_commits_with_poster_url_changes": [
+      "6726941a8a",
+      "c6fe5224eb",
+      "a914a22dbe",
+      "be9dbac14c",
+      "25e0ec3728",
+      "192dd36000",
+      "27887eae8e",
+      "7020d6c83f",
+      "878b09be52",
+      "9166b9da7f",
+      "b371a7fccb",
+      "08c4e99a9d",
+      "2157b3b742",
+      "cb6b3e213e",
+      "2639819456"
+    ]
   },
   "summary": {
     "unique_historical_movie_id_poster_pairs": 119,
@@ -18,7 +42,10 @@
     "current_poster_index_unique_urls": 104,
     "poster_urls_seen_in_catalog_history_but_absent_from_poster_index": 5,
     "current_registry_missing_poster_groups_with_multiple_saved_poster_candidates": 5,
-    "historical_catalog_revisions_with_removed_poster_rows": 4
+    "historical_catalog_revisions_with_removed_poster_rows": 4,
+    "movie_catalog_unique_historical_poster_urls": 99,
+    "poster_urls_across_all_cinema_data_history": 108,
+    "all_data_commits_scanned_for_poster_urls": 15
   },
   "catalog_snapshots": [
     {
@@ -672,9 +699,52 @@
   ],
   "notes": [
     "The Oct 27 bot snapshot filtered previous movie metadata to exact movie_id values active in that day schedule. This removed old title variants from movies/index.json.",
-    "The append-only poster index was introduced later and did not contain five unique image URLs that had already fallen out of the movie catalog. Their URLs remain recoverable from Git history listed here.",
     "Five current missing groups still have multiple saved poster URLs in the poster index; the sync code conservatively leaves their catalog poster_url blank and marks them ambiguous.",
     "A missing catalog poster is not proof that TMDB has no poster. The current TMDB workflow searches one title per film group.",
-    "Live main was checked at commit 111ce548149b34712e418b22ad796cf1ab799f79 after a successful TMDB run; its poster index has one additional new record versus the last locally available Git catalog revision."
-  ]
+    "Live main was checked at commit 111ce548149b34712e418b22ad796cf1ab799f79 after a successful TMDB run; its poster index has one additional new record versus the last locally available Git catalog revision.",
+    "The append-only poster index started at commit a914a22 on Nov 1, after the Oct 27 b371a7f snapshot had already removed five unique poster URLs. Those five URLs remain visible in Git history but were never copied into the index.",
+    "The all-data scan covers the 15 commits that changed poster_url fields across cinema data, including schedule/bootstrap JSON, not only movie catalog revisions."
+  ],
+  "full_data_poster_url_scan": {
+    "unique_poster_urls_across_history": 108,
+    "current_main_poster_index_records": 122,
+    "current_main_poster_index_unique_urls": 104,
+    "historical_urls_absent_from_current_poster_index": [
+      {
+        "title": "2026 NBA賽事直播 金州勇士vs鳳凰城太陽",
+        "alternate_title": "2026 NBA live broadcast GSW vs PHX",
+        "poster_url": "https://assets.showtimes.com.tw/images/43152815e531f10ca306f8ca064f005e.jpg",
+        "history_occurrences": 12,
+        "last_catalog_removal_commit": "b371a7fccb"
+      },
+      {
+        "title": "不存在的罪人 特別場",
+        "alternate_title": "VERITY",
+        "poster_url": "https://assets.showtimes.com.tw/images/b64e18399e38747af090149740486d8a.jpg",
+        "history_occurrences": 8,
+        "last_catalog_removal_commit": "b371a7fccb"
+      },
+      {
+        "title": "快打旋風 波動拳特別場",
+        "alternate_title": "STREET FIGHTER",
+        "poster_url": "https://assets.showtimes.com.tw/images/9734523a558371bfcf3b4c81f9d1736d.jpg",
+        "history_occurrences": 8,
+        "last_catalog_removal_commit": "b371a7fccb"
+      },
+      {
+        "title": "進擊的鼓手 奮力一搏場",
+        "alternate_title": "WHIPLASH",
+        "poster_url": "https://assets.showtimes.com.tw/images/60eceeb5479281bbd7517327e7b78a88.jpg",
+        "history_occurrences": 14,
+        "last_catalog_removal_commit": "b371a7fccb"
+      },
+      {
+        "title": "蜘蛛人：重生日 曼哈頓日常場",
+        "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
+        "poster_url": "https://assets.showtimes.com.tw/images/984adb5fd7ffcf665c4018d0a21cd1b3.jpg",
+        "history_occurrences": 18,
+        "last_catalog_removal_commit": "b371a7fccb"
+      }
+    ]
+  }
 }
