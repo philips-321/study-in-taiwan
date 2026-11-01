@@ -1,8 +1,21 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T19:38:11.559Z",
+  "generated_at": "2026-11-01T19:40:13.870Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
+    {
+      "movie_id": "m_0b9d00ae89ee",
+      "movie_title": "（全台聯合首映）哥吉拉-0.0",
+      "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
+      "aliases": [
+        "（全台聯合首映）哥吉拉-0.0",
+        "哥吉拉-0.0"
+      ],
+      "sources": [
+        "showtimes-official-metadata"
+      ],
+      "preferred": true
+    },
     {
       "movie_id": "m_01eb02db1bf5",
       "movie_title": "(安可重播) BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: LIVE VIEWING",
@@ -92,6 +105,19 @@
         "showtimes-official-metadata",
         "showtimes-official-program"
       ]
+    },
+    {
+      "movie_id": "m_3bad90e676f7",
+      "movie_title": "（Q&A場）歡迎來到朵莉之家",
+      "poster_url": "https://assets.showtimes.com.tw/images/71b030dbeea2f78fc6e4ae610756752c.jpg",
+      "aliases": [
+        "（Q&A場）歡迎來到朵莉之家",
+        "歡迎來到朵莉之家"
+      ],
+      "sources": [
+        "showtimes-official-metadata"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_9b91f70505b5",
@@ -755,6 +781,19 @@
       ],
       "sources": [
         "kaohsiung-film-archive-official"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_a4d1442e37ec",
+      "movie_title": "11月高雄市電影館｜黑球",
+      "poster_url": "https://assets.showtimes.com.tw/images/43c0cf9508b4f544d4da7270d5572fea.jpg",
+      "aliases": [
+        "11月高雄市電影館｜黑球",
+        "黑球"
+      ],
+      "sources": [
+        "showtimes-official-metadata"
       ],
       "preferred": true
     },
@@ -1795,6 +1834,19 @@
         "vieshow-muvie-songren-official",
         "vieshow-official-browser"
       ]
+    },
+    {
+      "movie_id": "m_5f5f4403e711",
+      "movie_title": "哥吉拉-0.0 全台聯合首映",
+      "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
+      "aliases": [
+        "哥吉拉-0.0 全台聯合首映",
+        "哥吉拉-0.0"
+      ],
+      "sources": [
+        "showtimes-official-metadata"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_254ba26ad181",
