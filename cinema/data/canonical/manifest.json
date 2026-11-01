@@ -3,38 +3,37 @@
   "version": 1,
   "source": "daily collector snapshots merged by screening_id",
   "parser_version": "canonical-converter-v1",
-  "screening_rows": 13880,
+  "screening_rows": 13948,
   "unresolved_rows": 0,
   "partitions": {
     "2026-01": 2,
     "2026-10": 8347,
-    "2026-11": 5445,
+    "2026-11": 5513,
     "2026-12": 86
   },
   "migration_status": "active",
   "public_view": {
     "window_days": 30,
     "generated_as_of": "2026-11-02",
-    "rows": 4498,
+    "rows": 4566,
     "excluded_by_window": 9382,
-    "sha256": "8296a2960522f6632f186c78564924714f1957565b87dbd3cad60cdda65b595d"
+    "sha256": "db3644560907feb6b4446ce0abe211fd4ae319ef4f0c46bcca205cf720176b56"
   },
-  "updated_at": "2026-11-01T18:16:21.988Z",
+  "updated_at": "2026-11-01T19:58:39.461Z",
   "movie_registry": {
     "file": "movie-registry.jsonl",
-    "unique_films": 225,
-    "poster_yes": 176,
-    "poster_no": 49,
-    "poster_lookups_attempted_this_run": 60,
-    "poster_fetches_this_run": 1,
-    "poster_lookups_deferred": 83,
+    "unique_films": 217,
+    "poster_yes": 189,
+    "poster_no": 28,
+    "poster_lookups_attempted_this_run": 53,
+    "poster_fetches_this_run": 22,
+    "official_poster_calendar_requests_this_run": 1,
+    "official_poster_schedule_requests_this_run": 1,
+    "official_poster_page_requests_this_run": 0,
+    "official_poster_matches_this_run": 0,
+    "poster_lookups_deferred": 0,
     "ambiguous_poster_matches": 5,
-    "last_poster_sync_at": "2026-11-01T18:16:21.988Z",
-    "manual_poster_matches_added": 35,
-    "last_manual_poster_update_at": "2026-11-01T19:41:30.407Z",
-    "updated_at": "2026-11-01T19:24:56.956Z",
-    "last_official_poster_update_at": "2026-11-01T19:28:03.815Z",
-    "official_poster_manual_replacements": 4
+    "last_poster_sync_at": "2026-11-01T19:58:39.461Z"
   },
   "generated_at": "2026-11-01T19:41:30.407Z"
 }

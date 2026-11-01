@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T19:41:30.407Z",
+  "generated_at": "2026-11-01T19:58:45.819Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -8,10 +8,12 @@
       "movie_title": "（全台聯合首映）哥吉拉-0.0",
       "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
       "aliases": [
-        "（全台聯合首映）哥吉拉-0.0",
-        "哥吉拉-0.0"
+        "哥吉拉-0.0",
+        "（全台聯合首映）哥吉拉-0.0"
       ],
       "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
         "showtimes-official-metadata"
       ],
       "preferred": true
@@ -53,10 +55,12 @@
       "movie_title": "（特別場）黑球",
       "poster_url": "https://assets.showtimes.com.tw/images/43c0cf9508b4f544d4da7270d5572fea.jpg",
       "aliases": [
-        "（特別場）黑球",
-        "黑球"
+        "黑球",
+        "（特別場）黑球"
       ],
       "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
         "showtimes-official-metadata"
       ],
       "preferred": true
@@ -111,10 +115,12 @@
       "movie_title": "（Q&A場）歡迎來到朵莉之家",
       "poster_url": "https://assets.showtimes.com.tw/images/71b030dbeea2f78fc6e4ae610756752c.jpg",
       "aliases": [
-        "（Q&A場）歡迎來到朵莉之家",
-        "歡迎來到朵莉之家"
+        "歡迎來到朵莉之家",
+        "（Q&A場）歡迎來到朵莉之家"
       ],
       "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
         "showtimes-official-metadata"
       ],
       "preferred": true
@@ -148,24 +154,25 @@
       "movie_title": "【府中15】紀錄片放映院《96分鐘》",
       "poster_url": "https://s3.resource.opentix.life/upload/program/17919686033272qUzrQjc70.jpeg",
       "aliases": [
-        "【府中15】紀錄片放映院《96分鐘》",
-        "96分鐘"
+        "96分鐘",
+        "【府中15】紀錄片放映院《96分鐘》"
       ],
       "sources": [
         "opentix-official-event-image"
-      ],
-      "preferred": false
+      ]
     },
     {
       "movie_id": "m_7e1452b45c8b",
       "movie_title": "【府中15】紀錄片放映院《96分鐘》",
       "poster_url": "https://www.fuzhong15.ntpc.gov.tw/files/file_pool/1/0q289851866651901195/96%E5%88%86%E9%90%98%20%283%29.jpg",
       "aliases": [
-        "【府中15】紀錄片放映院《96分鐘》",
-        "96分鐘"
+        "96分鐘",
+        "【府中15】紀錄片放映院《96分鐘》"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -179,8 +186,7 @@
       ],
       "sources": [
         "opentix-official-event-image"
-      ],
-      "preferred": false
+      ]
     },
     {
       "movie_id": "m_d92ea8713d4b",
@@ -191,7 +197,9 @@
         "一一：25周年4K經典修復版"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -204,7 +212,9 @@
         "一生二命"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -217,7 +227,9 @@
         "人生海海"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -230,7 +242,9 @@
         "夕陽西下"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -243,7 +257,9 @@
         "五輪物語"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -256,7 +272,9 @@
         "牛奶小姐幫幫忙"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -269,7 +287,9 @@
         "世外"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -282,7 +302,9 @@
         "【府中15】紀錄片放映院《只是一場意外》"
       ],
       "sources": [
-        "atmovies-taiwan-image-search"
+        "atmovies-taiwan-image-search",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ]
     },
     {
@@ -294,7 +316,9 @@
         "只要我長大"
       ],
       "sources": [
-        "myvideo-taiwan-image-search"
+        "moc-culture-movie-api",
+        "myvideo-taiwan-image-search",
+        "previous-catalog"
       ]
     },
     {
@@ -306,7 +330,9 @@
         "甘露水"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -319,7 +345,9 @@
         "好奇寶貝方城市"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -328,12 +356,14 @@
       "movie_title": "【府中15】紀錄片放映院《我家有棵芒果樹》",
       "poster_url": "https://s3.resource.opentix.life/upload/program/1792375219706MAbjUUgtm2.jpeg",
       "aliases": [
+        "Between the Shores",
         "【府中15】紀錄片放映院《我家有棵芒果樹》",
-        "我家有棵芒果樹",
-        "Between the Shores"
+        "我家有棵芒果樹"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -346,7 +376,9 @@
         "決戰投手丘"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -359,7 +391,9 @@
         "兩相好"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -368,12 +402,14 @@
       "movie_title": "【府中15】紀錄片放映院《冠軍之路》",
       "poster_url": "https://s3.resource.opentix.life/upload/program/1791968366075JOJhpiowGh.jpeg",
       "aliases": [
+        "Champion's Road",
         "【府中15】紀錄片放映院《冠軍之路》",
-        "冠軍之路",
-        "Champion's Road"
+        "冠軍之路"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -386,7 +422,9 @@
         "恨女的逆襲"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -395,12 +433,14 @@
       "movie_title": "【府中15】紀錄片放映院《看見台灣》",
       "poster_url": "https://s3.resource.opentix.life/upload/program/17923751363865QiBUf1g3L.jpeg",
       "aliases": [
+        "Beyond Beauty - TAIWAN FROM ABOVE",
         "【府中15】紀錄片放映院《看見台灣》",
-        "看見台灣",
-        "Beyond Beauty - TAIWAN FROM ABOVE"
+        "看見台灣"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -413,7 +453,9 @@
         "時間暫停的季節"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -426,7 +468,9 @@
         "泰山寶藏"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -439,7 +483,9 @@
         "張帝找阿珠"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -452,7 +498,9 @@
         "殺出個黃昏"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -465,7 +513,9 @@
         "單身動物園"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -479,8 +529,7 @@
       ],
       "sources": [
         "opentix-official-event-image"
-      ],
-      "preferred": false
+      ]
     },
     {
       "movie_id": "m_01f44b36da40",
@@ -491,7 +540,9 @@
         "寒戰1994"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -505,8 +556,7 @@
       ],
       "sources": [
         "opentix-official-event-image"
-      ],
-      "preferred": false
+      ]
     },
     {
       "movie_id": "m_0360d88b3508",
@@ -517,7 +567,9 @@
         "尋秦記"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -530,7 +582,9 @@
         "畫外謎踪"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -543,7 +597,9 @@
         "超人力霸王．起源"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -556,7 +612,9 @@
         "新浪潮"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -569,7 +627,9 @@
         "嘰嘰王子：宇宙無敵"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -582,7 +642,9 @@
         "熱戀年代"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -591,11 +653,13 @@
       "movie_title": "【府中15】紀錄片放映院《戰火浮生錄 數位修復版》",
       "poster_url": "https://fr.web.img5.acsta.net/pictures/22/08/25/09/28/0840014.jpg",
       "aliases": [
-        "【府中15】紀錄片放映院《戰火浮生錄 數位修復版》",
-        "Les Uns et les Autres"
+        "Les Uns et les Autres",
+        "【府中15】紀錄片放映院《戰火浮生錄 數位修復版》"
       ],
       "sources": [
-        "allocine-image-search"
+        "allocine-image-search",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ]
     },
     {
@@ -607,7 +671,9 @@
         "蹦蹦奇遇森友會"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -620,7 +686,9 @@
         "蘿拉的魔法鋼琴"
       ],
       "sources": [
-        "fuzhong15-official-movie-page"
+        "fuzhong15-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -630,11 +698,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027150107881.jpg",
       "aliases": [
         "11月高雄市電影館｜世紀初戀 楊麗花",
-        "世紀初戀 楊麗花",
-        "Emperor on Stage"
+        "Emperor on Stage",
+        "世紀初戀 楊麗花"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -644,13 +714,28 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027144541878.jpg",
       "aliases": [
         "11月高雄市電影館｜白色情迷",
-        "白色情迷",
-        "Three Colors: White"
+        "Three Colors: White",
+        "白色情迷"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_a479bb005289",
+      "movie_title": "11月高雄市電影館｜有用的人",
+      "poster_url": "https://image.tmdb.org/t/p/w500/f2AHd0mWJrLLwc6elLcSNVbsy8f.jpg",
+      "aliases": [
+        "11月高雄市電影館｜有用的人"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_5e9424541758",
@@ -658,11 +743,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027171135387.jpeg",
       "aliases": [
         "11月高雄市電影館｜你和我的房間這種感覺",
-        "你和我的房間這種感覺",
-        "Our floor like this"
+        "Our floor like this",
+        "你和我的房間這種感覺"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -672,11 +759,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027165403124.jpg",
       "aliases": [
         "11月高雄市電影館｜告別的年代",
-        "告別的年代",
-        "The Age of Goodbyes"
+        "The Age of Goodbyes",
+        "告別的年代"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -686,11 +775,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20260217150245424.jpg",
       "aliases": [
         "11月高雄市電影館｜坂本龍一・永恆的迴響",
-        "坂本龍一・永恆的迴響",
-        "Ryuichi Sakamoto Playing the Orchestra 2014"
+        "Ryuichi Sakamoto Playing the Orchestra 2014",
+        "坂本龍一・永恆的迴響"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -703,7 +794,9 @@
         "Nous, l’Orchestre"
       ],
       "sources": [
-        "les-films-pelleas-official"
+        "les-films-pelleas-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ]
     },
     {
@@ -715,6 +808,8 @@
         "沙央"
       ],
       "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
         "showtimes-official-metadata"
       ],
       "preferred": true
@@ -728,7 +823,9 @@
         "Banned from Broadcast: My Three Wives"
       ],
       "sources": [
-        "imdb-image-search"
+        "imdb-image-search",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ]
     },
     {
@@ -737,11 +834,13 @@
       "poster_url": "https://s3.resource.opentix.life/upload/program/1792065670288mfdrKgq2rP.jpeg",
       "aliases": [
         "11月高雄市電影館｜長短腳電影院－蹦蹦奇遇森友會",
-        "蹦蹦奇遇森友會",
-        "Bouncing Forest Adventure"
+        "Bouncing Forest Adventure",
+        "蹦蹦奇遇森友會"
       ],
       "sources": [
-        "opentix-official-event-image"
+        "moc-culture-movie-api",
+        "opentix-official-event-image",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -754,7 +853,9 @@
         "屍控片場性愛死"
       ],
       "sources": [
-        "cineart-image-search"
+        "cineart-image-search",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -767,6 +868,8 @@
         "Trois couleurs: Rouge"
       ],
       "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
         "tmdb-zh-tw-image-search"
       ]
     },
@@ -779,7 +882,9 @@
         "Back on North Face"
       ],
       "sources": [
-        "giloo-taiwan-image-search"
+        "giloo-taiwan-image-search",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ]
     },
     {
@@ -788,13 +893,28 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027171511342.jpeg",
       "aliases": [
         "11月高雄市電影館｜第四幕",
-        "第四幕",
-        "Afterpiece"
+        "Afterpiece",
+        "第四幕"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_1cf57a1d82ed",
+      "movie_title": "11月高雄市電影館｜善男信女",
+      "poster_url": "https://image.tmdb.org/t/p/w500/r8m78up2sJnH9iQvlhiAMJCWlh3.jpg",
+      "aliases": [
+        "11月高雄市電影館｜善男信女"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_e8417e1af968",
@@ -802,11 +922,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027171904864.jpg",
       "aliases": [
         "11月高雄市電影館｜窗外有藍天 4K經典數位修復",
-        "窗外有藍天",
-        "A Room With A View"
+        "A Room With A View",
+        "窗外有藍天"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -819,6 +941,8 @@
         "黑球"
       ],
       "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
         "showtimes-official-metadata"
       ],
       "preferred": true
@@ -829,11 +953,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027165731654.jpeg",
       "aliases": [
         "11月高雄市電影館｜黑潮",
-        "黑潮",
-        "Dead Tide"
+        "Dead Tide",
+        "黑潮"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -843,11 +969,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027151558439.jpg",
       "aliases": [
         "11月高雄市電影館｜與畢諾許共舞",
-        "與畢諾許共舞",
-        "In-I in Motion"
+        "In-I in Motion",
+        "與畢諾許共舞"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -857,11 +985,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027152349433.jpg",
       "aliases": [
         "11月高雄市電影館｜與達賴喇嘛談心：尋找幸福的智慧",
-        "與達賴喇嘛談心",
-        "Wisdom of Happiness"
+        "Wisdom of Happiness",
+        "與達賴喇嘛談心"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -871,13 +1001,28 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027151238638.jpeg",
       "aliases": [
         "11月高雄市電影館｜廚師發辦",
-        "廚師發辦",
-        "The Dating Menu"
+        "The Dating Menu",
+        "廚師發辦"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_fca2946fc668",
+      "movie_title": "11月高雄市電影館｜盧丹的惡魔",
+      "poster_url": "https://image.tmdb.org/t/p/w500/y9zbO3Y5w0qvd6WMIsEgjf4g1YY.jpg",
+      "aliases": [
+        "11月高雄市電影館｜盧丹的惡魔"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_f661097eb51e",
@@ -885,11 +1030,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027145029841.jpg",
       "aliases": [
         "11月高雄市電影館｜藍色情挑",
-        "藍色情挑",
-        "Three Colors: Blue"
+        "Three Colors: Blue",
+        "藍色情挑"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -899,11 +1046,13 @@
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027143627553.jpg",
       "aliases": [
         "11月高雄市電影館｜雙面薇若妮卡",
-        "雙面薇若妮卡",
-        "The Double Life of Véronique"
+        "The Double Life of Véronique",
+        "雙面薇若妮卡"
       ],
       "sources": [
-        "kaohsiung-film-archive-official"
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -916,7 +1065,9 @@
         "讓子彈飛"
       ],
       "sources": [
-        "eslite-taiwan-image-search"
+        "eslite-taiwan-image-search",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ]
     },
     {
@@ -928,7 +1079,9 @@
         "Vanya on 42nd Street"
       ],
       "sources": [
-        "original-film-art-image-search"
+        "moc-culture-movie-api",
+        "original-film-art-image-search",
+        "previous-catalog"
       ]
     },
     {
@@ -947,6 +1100,19 @@
       ]
     },
     {
+      "movie_id": "m_c3245bd1c72b",
+      "movie_title": "人體新視界",
+      "poster_url": "https://image.tmdb.org/t/p/w500/hgJyn6bAbGytW5Ywt6EgPs9B2OH.jpg",
+      "aliases": [
+        "人體新視界"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_292a5dad770d",
       "movie_title": "三個傻瓜",
       "poster_url": "https://assets.showtimes.com.tw/images/1e2a3954809b0be0ef53bd191129dbce.jpg",
@@ -959,6 +1125,19 @@
       ]
     },
     {
+      "movie_id": "m_8444b979bf0c",
+      "movie_title": "小小畫家芙烈達",
+      "poster_url": "https://image.tmdb.org/t/p/w500/nbGkOwaxnqINpbNVkLw0QnIx5DV.jpg",
+      "aliases": [
+        "小小畫家芙烈達"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_21bc547714cb",
       "movie_title": "小雨愛蜜莉",
       "poster_url": "https://images.vocus.cc/ef2fc188-3213-4007-801c-cc956806d924.jpg",
@@ -967,6 +1146,8 @@
         "小雨愛蜜莉"
       ],
       "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
         "vocus-taiwan-image-search"
       ]
     },
@@ -1005,7 +1186,9 @@
         "今天不回家（數位修復版）"
       ],
       "sources": [
-        "national-taiwan-history-museum-collection"
+        "moc-culture-movie-api",
+        "national-taiwan-history-museum-collection",
+        "previous-catalog"
       ]
     },
     {
@@ -1017,7 +1200,9 @@
         "水花四濺"
       ],
       "sources": [
-        "filmstarts-image-search"
+        "atmovies-taipei-fallback",
+        "filmstarts-image-search",
+        "previous-catalog"
       ]
     },
     {
@@ -1030,7 +1215,10 @@
         "水花四濺4K修復版"
       ],
       "sources": [
-        "filmstarts-image-search"
+        "filmstarts-image-search",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -1058,6 +1246,23 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_967abb40d306",
+      "movie_title": "出賣影子的女人",
+      "poster_url": "https://image.tmdb.org/t/p/w500/d93SXuPhvd4LOLOufFddcsD9wep.jpg",
+      "aliases": [
+        "出賣影子的女人"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "centuryasia-ximen-official-browser-p1",
+        "hala-official-browser",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "the-movie-database"
       ]
     },
     {
@@ -1130,6 +1335,19 @@
       ]
     },
     {
+      "movie_id": "m_a417fa9971ae",
+      "movie_title": "外來零件",
+      "poster_url": "https://image.tmdb.org/t/p/w500/vJmvkDys5eNtYJKh8XcjxTvBFQ6.jpg",
+      "aliases": [
+        "外來零件"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_0b98910dde56",
       "movie_title": "危險關係 LESLEY MANVILLE版 (英國國家劇院現場)",
       "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260825006.jpg",
@@ -1169,7 +1387,10 @@
         "名偵探柯南 高速公路的墮天使"
       ],
       "sources": [
-        "movie-chill-taiwan-image-search"
+        "atmovies-taipei-fallback",
+        "movie-chill-taiwan-image-search",
+        "previous-catalog",
+        "vieshow-official-browser"
       ]
     },
     {
@@ -1193,6 +1414,8 @@
         "在車上"
       ],
       "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
         "vocus-taiwan-image-search"
       ]
     },
@@ -1227,13 +1450,15 @@
       "movie_title": "吳爾芙的夜與日(海報場)",
       "poster_url": "https://cineamo-tmdb.b-cdn.net/t/p/w780/6psNzdIymhnN8KQggL4tiZRNIXg.jpg?width=1200",
       "aliases": [
-        "吳爾芙的夜與日",
-        "吳爾芙的夜與日(海報場)",
+        "VIRGINIA WOOLFS NIGHT AND DAY",
         "Virginia Woolf's NIGHT & DAY",
-        "VIRGINIA WOOLFS NIGHT AND DAY"
+        "吳爾芙的夜與日",
+        "吳爾芙的夜與日(海報場)"
       ],
       "sources": [
-        "luchs-kino-image-search"
+        "luchs-kino-image-search",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -1242,13 +1467,19 @@
       "movie_title": "吳爾芙的夜與日(海報場)",
       "poster_url": "https://cineamo-tmdb.b-cdn.net/t/p/w780/6psNzdIymhnN8KQggL4tiZRNIXg.jpg?width=1200",
       "aliases": [
-        "吳爾芙的夜與日",
-        "吳爾芙的夜與日(海報場)",
+        "VIRGINIA WOOLFS NIGHT AND DAY",
         "Virginia Woolf's NIGHT & DAY",
-        "VIRGINIA WOOLFS NIGHT AND DAY"
+        "吳爾芙的夜與日",
+        "吳爾芙的夜與日(海報場)"
       ],
       "sources": [
-        "luchs-kino-image-search"
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "luchs-kino-image-search",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1269,13 +1500,32 @@
       "movie_title": "坂本龍一・永恆的迴響(海報場)",
       "poster_url": "https://media.vogue.com.tw/photos/69a00900db3f1ce1df16e312/2%3A3/w_2008%2Ch_3012%2Cc_limit/%E3%80%90Ryuichi%20Sakamoto%20%20Playing%20the%20Orchestra%202014%20~%20%E5%9D%82%E6%9C%AC%E9%BE%8D%E4%B8%80%E3%83%BB%E6%B0%B8%E6%81%86%E7%9A%84%E8%BF%B4%E9%9F%BF%E3%80%91%E4%B8%AD%E6%96%87%E6%B5%B7%E5%A0%B1A.jpg",
       "aliases": [
-        "坂本龍一・永恆的迴響(海報場)",
-        "Ryuichi Sakamoto | Playing the Orchestra 2014~"
+        "Ryuichi Sakamoto | Playing the Orchestra 2014~",
+        "坂本龍一・永恆的迴響(海報場)"
       ],
       "sources": [
+        "previous-catalog",
+        "spot-huashan-official-schedule",
         "vogue-taiwan-image-search"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_970da19b0c70",
+      "movie_title": "完美配對謀殺案：真愛",
+      "poster_url": "https://image.tmdb.org/t/p/w500/znofckBauSBdhH97M9xzmSPnUOG.jpg",
+      "aliases": [
+        "完美配對謀殺案：真愛"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "centuryasia-ximen-official-browser-p0",
+        "hala-official-browser",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_1141c45f9f42",
@@ -1449,6 +1699,21 @@
       ]
     },
     {
+      "movie_id": "m_205b35a57a78",
+      "movie_title": "刺殺小說家2",
+      "poster_url": "https://image.tmdb.org/t/p/w500/pFvcLJ5YdgRloANWh1iryUrgkx2.jpg",
+      "aliases": [
+        "A WRITERS ODYSSEY II",
+        "刺殺小說家2"
+      ],
+      "sources": [
+        "atmovies-taipei-fallback",
+        "previous-catalog",
+        "the-movie-database",
+        "vieshow-official-browser"
+      ]
+    },
+    {
       "movie_id": "m_de6f2b34781a",
       "movie_title": "宛如星辰的你",
       "poster_url": "https://assets.showtimes.com.tw/images/8c76a149cfe18900051dbcc86a1eca0e.jpg",
@@ -1486,7 +1751,11 @@
         "幸福路上.."
       ],
       "sources": [
-        "imdb-image-search"
+        "atmovies-taipei-fallback",
+        "eslite-official-schedule",
+        "imdb-image-search",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog"
       ]
     },
     {
@@ -1499,7 +1768,9 @@
         "幸福路上.."
       ],
       "sources": [
-        "imdb-image-search"
+        "ambassador-official-site",
+        "imdb-image-search",
+        "previous-catalog"
       ]
     },
     {
@@ -1507,10 +1778,11 @@
       "movie_title": "東尼瀧谷:4K數位修復版－早安！周日經典電影院",
       "poster_url": "https://cdn.tatlerasia.com/tatlerasia/i/2023/12/08152032-01020001655021_cover_1120x1600.gif",
       "aliases": [
-        "東尼瀧谷:4K數位修復版－早安！周日經典電影院",
-        "Tony Takitani"
+        "Tony Takitani",
+        "東尼瀧谷:4K數位修復版－早安！周日經典電影院"
       ],
       "sources": [
+        "eslite-official-schedule",
         "tatler-taiwan-image-search"
       ],
       "preferred": true
@@ -1524,6 +1796,7 @@
         "東京教父：4K數位修復版－早安！周日經典電影院"
       ],
       "sources": [
+        "eslite-official-schedule",
         "gq-taiwan-manual-search"
       ]
     },
@@ -1584,6 +1857,8 @@
         "泥面人_特別場"
       ],
       "sources": [
+        "miramar-official-api",
+        "previous-catalog",
         "reused-existing-showtimes-poster-index"
       ],
       "preferred": true
@@ -1617,6 +1892,42 @@
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
         "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_229ab21fb9a2",
+      "movie_title": "金三角 孤軍淚",
+      "poster_url": "https://image.tmdb.org/t/p/w500/uDanLo3ZYuM3CduCCRwyL9E554p.jpg",
+      "aliases": [
+        "TEARS OF THE LOST ARMY IN GOLDEN TRIANGLE",
+        "Tears of the Lost Army in Golden Triangle",
+        "金三角 孤軍淚"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "century-asia-official-browser",
+        "centuryasia-ximen-official-browser-p1",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "the-movie-database",
+        "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_4fd20f1b6c01",
+      "movie_title": "金三角孤軍淚",
+      "poster_url": "https://image.tmdb.org/t/p/w500/uDanLo3ZYuM3CduCCRwyL9E554p.jpg",
+      "aliases": [
+        "Tears of the Lost Army in Golden Triangle",
+        "金三角孤軍淚"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "the-movie-database"
       ]
     },
     {
@@ -1665,7 +1976,9 @@
         "青春電幻物語：數位修復版"
       ],
       "sources": [
-        "harpers-bazaar-taiwan-manual-search"
+        "atmovies-taipei-fallback",
+        "harpers-bazaar-taiwan-manual-search",
+        "previous-catalog"
       ]
     },
     {
@@ -1681,7 +1994,12 @@
         "青春電幻物語：數位修復版"
       ],
       "sources": [
-        "harpers-bazaar-taiwan-manual-search"
+        "eslite-official-schedule",
+        "harpers-bazaar-taiwan-manual-search",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "vieshow-muvie-songren-official"
       ]
     },
     {
@@ -1697,7 +2015,11 @@
         "青春電幻物語：數位修復版"
       ],
       "sources": [
-        "harpers-bazaar-taiwan-manual-search"
+        "ambassador-official-site",
+        "century-asia-official-browser",
+        "harpers-bazaar-taiwan-manual-search",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -1720,11 +2042,18 @@
       "movie_title": "屍控片場性愛死",
       "poster_url": "https://www.cineart.nl/images/resized/16360-600x0.jpg",
       "aliases": [
-        "屍控片場性愛死",
-        "Teenage Sex and Death at Camp Miasma"
+        "Teenage Sex and Death at Camp Miasma",
+        "屍控片場性愛死"
       ],
       "sources": [
-        "cineart-image-search"
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "cineart-image-search",
+        "eslite-official-schedule",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "reelax-lion-plaza-shinkong-web-fallback",
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -1866,10 +2195,13 @@
       "movie_title": "哥吉拉-0.0 全台聯合首映",
       "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
       "aliases": [
-        "哥吉拉-0.0 全台聯合首映",
-        "哥吉拉-0.0"
+        "GODZILLA MINUS ZERO_PREVIEW",
+        "哥吉拉-0.0",
+        "哥吉拉-0.0 全台聯合首映"
       ],
       "sources": [
+        "miramar-official-api",
+        "previous-catalog",
         "showtimes-official-metadata"
       ],
       "preferred": true
@@ -1969,6 +2301,19 @@
       ]
     },
     {
+      "movie_id": "m_632e872c077a",
+      "movie_title": "紐約藝術家的性與愛",
+      "poster_url": "https://image.tmdb.org/t/p/w500/vDMSsp6yF4fD9TgyJKYLMNdA8Cv.jpg",
+      "aliases": [
+        "紐約藝術家的性與愛"
+      ],
+      "sources": [
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_fe8402d66303",
       "movie_title": "紐約攝影師的日與夜",
       "poster_url": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2025/11/16162553/peter-hujars-day-2025-poster-scaled.jpg",
@@ -1978,7 +2323,12 @@
         "紐約攝影師的日與夜"
       ],
       "sources": [
-        "gateway-film-center-image-search"
+        "atmovies-taipei-fallback",
+        "eslite-official-schedule",
+        "gateway-film-center-image-search",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -2001,6 +2351,7 @@
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
+        "filmvandaag-image-search",
         "hala-official-browser",
         "lux-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
@@ -2036,13 +2387,16 @@
       "movie_title": "逃出鯨吞 4DX特別場",
       "poster_url": "https://static.filmvandaag.nl/covers/original/145000/145894.jpg?v=3&width=800",
       "aliases": [
-        "逃出鯨吞",
-        "逃出鯨吞 4DX特別場",
+        "WHALEFALL",
         "Whalefall",
-        "WHALEFALL"
+        "逃出鯨吞",
+        "逃出鯨吞 4DX特別場"
       ],
       "sources": [
-        "filmvandaag-image-search"
+        "filmvandaag-image-search",
+        "previous-catalog",
+        "showtimes-official-api",
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -2051,13 +2405,31 @@
       "movie_title": "逃出鯨吞 4DX特別場",
       "poster_url": "https://static.filmvandaag.nl/covers/original/145000/145894.jpg?v=3&width=800",
       "aliases": [
-        "逃出鯨吞",
-        "逃出鯨吞 4DX特別場",
+        "WHALEFALL",
         "Whalefall",
-        "WHALEFALL"
+        "逃出鯨吞",
+        "逃出鯨吞 4DX特別場"
       ],
       "sources": [
-        "filmvandaag-image-search"
+        "ambassador-official-site",
+        "atmovies-broadway-gongguan-web-fallback",
+        "atmovies-governor-web-fallback",
+        "atmovies-miranew-dazhi-web-fallback",
+        "atmovies-taipei-fallback",
+        "atmovies-tianmu-shinkong-web-fallback",
+        "century-asia-official-browser",
+        "centuryasia-ximen-official-browser-p0",
+        "filmvandaag-image-search",
+        "hala-official-browser",
+        "lux-official-browser",
+        "magichour-centuryasia-nangang-web-fallback",
+        "miramar-official-api",
+        "previous-catalog",
+        "reelax-lion-plaza-shinkong-web-fallback",
+        "showtimes-official-api",
+        "showtimes-official-program",
+        "vieshow-muvie-songren-official",
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2116,6 +2488,20 @@
       ]
     },
     {
+      "movie_id": "m_13a1df31c119",
+      "movie_title": "高校人形金字塔",
+      "poster_url": "https://image.tmdb.org/t/p/w500/v4m63Ymj3didisk3OthFosIzXh7.jpg",
+      "aliases": [
+        "New Group (萬聖節特別場)",
+        "高校人形金字塔"
+      ],
+      "sources": [
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_f2980a9c9791",
       "movie_title": "鬼降靈",
       "poster_url": "https://assets.showtimes.com.tw/images/0cfbadd7ae3a95ccee4a9404a5f96b0c.jpg",
@@ -2137,6 +2523,19 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_1367c7d211b4",
+      "movie_title": "莉維達・地海之詩",
+      "poster_url": "https://image.tmdb.org/t/p/w500/yU626BbyIZ4VraJJuFwXHEhcEK3.jpg",
+      "aliases": [
+        "莉維達・地海之詩"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
       ]
     },
     {
@@ -2178,7 +2577,9 @@
         "麥特與麥斯(特別場)"
       ],
       "sources": [
-        "kinocheck-image-search"
+        "kinocheck-image-search",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -2191,7 +2592,9 @@
         "麥特與麥斯(特別場)"
       ],
       "sources": [
-        "kinocheck-image-search"
+        "kinocheck-image-search",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -2220,6 +2623,9 @@
         "復仇者聯盟：終局之戰"
       ],
       "sources": [
+        "atmovies-taipei-fallback",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
         "tmdb-image-search"
       ]
     },
@@ -2296,6 +2702,8 @@
         "游牧人生"
       ],
       "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
         "shopee-taiwan-image-search"
       ]
     },
@@ -2316,6 +2724,21 @@
       ]
     },
     {
+      "movie_id": "m_e329cdb3efef",
+      "movie_title": "週末的尼諾",
+      "poster_url": "https://image.tmdb.org/t/p/w500/2eyiej0HMvjuv7l0sdPfriEZG7A.jpg",
+      "aliases": [
+        "Nino",
+        "週末的尼諾"
+      ],
+      "sources": [
+        "atmovies-taipei-fallback",
+        "eslite-official-schedule",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_d8a382d323ea",
       "movie_title": "進擊的鼓手",
       "poster_url": "https://assets.showtimes.com.tw/images/c9cf39ce84aa5cceeb9599a52890a176.jpg",
@@ -2326,9 +2749,11 @@
       "sources": [
         "ambassador-official-site",
         "archived-movie-catalog",
+        "atmovies-taipei-fallback",
         "century-asia-official-browser",
         "current-movie-catalog",
         "eslite-official-schedule",
+        "hala-official-browser",
         "miramar-official-api",
         "previous-catalog",
         "reused-canonical-poster-index",
@@ -2441,6 +2866,8 @@
         "愛情萬歲（4K數位修復版）"
       ],
       "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
         "taiwan-cultural-memory-database-image-search"
       ]
     },
@@ -2493,6 +2920,19 @@
       ],
       "sources": [
         "showtimes-official-metadata"
+      ]
+    },
+    {
+      "movie_id": "m_2b8962506f84",
+      "movie_title": "跳越時空的愛戀",
+      "poster_url": "https://image.tmdb.org/t/p/w500/co8vwkhnX8WRPMsXygFl60AwFWB.jpg",
+      "aliases": [
+        "跳越時空的愛戀"
+      ],
+      "sources": [
+        "atmovies-taipei-fallback",
+        "previous-catalog",
+        "the-movie-database"
       ]
     },
     {
@@ -2626,6 +3066,19 @@
       ]
     },
     {
+      "movie_id": "m_1f9334ecbd5b",
+      "movie_title": "碧草如茵",
+      "poster_url": "https://image.tmdb.org/t/p/w500/xTQ7URCmLBWkMJeT4G8uyvpciqU.jpg",
+      "aliases": [
+        "碧草如茵"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_c50f183f4d13",
       "movie_title": "粽邪 4：坤蒂拉娜",
       "poster_url": "https://assets.showtimes.com.tw/images/ce5dacaecc309d261254317bafe2e9f7.jpg",
@@ -2713,12 +3166,19 @@
       "movie_title": "蒙克聲音拼貼",
       "poster_url": "https://static1.squarespace.com/static/6744bf67fcfa54716000a71d/t/67bc7f30f2aa2334efb2eebd/1740406584625/IDA%2BHero%2Bimage_v3.jpg?format=1500w",
       "aliases": [
-        "蒙克聲音拼貼",
+        "MONK IN PIECES",
         "Monk in Pieces",
-        "MONK IN PIECES"
+        "Monk in pieces",
+        "蒙克聲音拼貼"
       ],
       "sources": [
-        "monk-in-pieces-official-image-search"
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "magichour-centuryasia-nangang-web-fallback",
+        "monk-in-pieces-official-image-search",
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2812,7 +3272,9 @@
         "颱風俱樂部 4K修復版(特典場)"
       ],
       "sources": [
-        "pia-japan-image-search"
+        "pia-japan-image-search",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -3030,7 +3492,13 @@
         "歐威爾：2+2=5 + QA"
       ],
       "sources": [
-        "independent-picture-house-image-search"
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "eslite-official-schedule",
+        "independent-picture-house-image-search",
+        "magichour-centuryasia-nangang-web-fallback",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -3043,7 +3511,9 @@
         "歐威爾：2+2=5 + QA"
       ],
       "sources": [
-        "independent-picture-house-image-search"
+        "independent-picture-house-image-search",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -3055,7 +3525,9 @@
         "熱帶魚（數位修復版）"
       ],
       "sources": [
-        "crank-in-image-search"
+        "crank-in-image-search",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ]
     },
     {
@@ -3075,6 +3547,19 @@
       ]
     },
     {
+      "movie_id": "m_948b80453b93",
+      "movie_title": "戰火下的小花",
+      "poster_url": "https://image.tmdb.org/t/p/w500/2d6qmkJz9AWqmk9wBWtd2uFX89t.jpg",
+      "aliases": [
+        "戰火下的小花"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_e7f3a2624932",
       "movie_title": "戰火浮生錄 - 早安!周日經典電影院",
       "poster_url": "https://fr.web.img5.acsta.net/pictures/22/08/25/09/28/0840014.jpg",
@@ -3083,7 +3568,8 @@
         "戰火浮生錄 - 早安!周日經典電影院"
       ],
       "sources": [
-        "allocine-image-search"
+        "allocine-image-search",
+        "eslite-official-schedule"
       ]
     },
     {
@@ -3096,7 +3582,10 @@
         "獨裁大明星"
       ],
       "sources": [
-        "imdb-image-search"
+        "atmovies-taipei-fallback",
+        "imdb-image-search",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -3104,12 +3593,19 @@
       "movie_title": "蕭邦！蕭邦！",
       "poster_url": "https://swiatowid.elblag.pl/storage/informations/13321.jpg",
       "aliases": [
-        "蕭邦！蕭邦！",
+        "CHOPIN, CHOPIN!",
         "Chopin, Chopin!",
-        "CHOPIN, CHOPIN!"
+        "蕭邦！蕭邦！"
       ],
       "sources": [
-        "polish-film-institution-image-search"
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "eslite-official-schedule",
+        "magichour-centuryasia-nangang-web-fallback",
+        "polish-film-institution-image-search",
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3169,6 +3665,19 @@
       ]
     },
     {
+      "movie_id": "m_c49db6d96a54",
+      "movie_title": "霧中風景",
+      "poster_url": "https://image.tmdb.org/t/p/w500/dDQxYLvfeF8mNdHsKEaraUNB2pZ.jpg",
+      "aliases": [
+        "霧中風景"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_374f6fcaf14c",
       "movie_title": "麵包超人電影版：潘坦與約定之星",
       "poster_url": "https://assets.showtimes.com.tw/images/0d4d45e4df40319038877e8a2ca4f073.jpg",
@@ -3223,6 +3732,19 @@
       ]
     },
     {
+      "movie_id": "m_27e21fc2301b",
+      "movie_title": "魔籽公主",
+      "poster_url": "https://image.tmdb.org/t/p/w500/iBQp6MAnVOCc08S1cuU4KBonWOf.jpg",
+      "aliases": [
+        "魔籽公主"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_2909b1629505",
       "movie_title": "歡迎光臨魔法秘境",
       "poster_url": "https://assets.showtimes.com.tw/images/c944d5c226866154abc551dc7c33658f.jpg",
@@ -3270,7 +3792,9 @@
         "蘿拉快跑－早安!周日經典電影院"
       ],
       "sources": [
-        "gamme-taiwan-image-search"
+        "eslite-official-schedule",
+        "gamme-taiwan-image-search",
+        "previous-catalog"
       ]
     },
     {
@@ -3323,6 +3847,20 @@
         "current-movie-catalog",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
+      "movie_id": "m_8e5972b3058e",
+      "movie_title": "讓建築歌唱～徐亞英的交響人生",
+      "poster_url": "https://image.tmdb.org/t/p/w500/ctoY2dhrVO5cAUXa7IqzDmaarK5.jpg",
+      "aliases": [
+        "Tuning Architecture: The Life of Albert Xu in Sound +QA",
+        "讓建築歌唱～徐亞英的交響人生"
+      ],
+      "sources": [
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "the-movie-database"
       ]
     },
     {
@@ -3429,7 +3967,10 @@
         "ENHYPEN World Tour: Blood Saga"
       ],
       "sources": [
-        "telstra-cinema-image-search"
+        "atmovies-taipei-fallback",
+        "previous-catalog",
+        "telstra-cinema-image-search",
+        "vieshow-official-browser"
       ]
     },
     {
@@ -3488,7 +4029,10 @@
         "HYBE CINE FEST 2026"
       ],
       "sources": [
-        "hybe-cine-fest-official-image-search"
+        "atmovies-taipei-fallback",
+        "hybe-cine-fest-official-image-search",
+        "previous-catalog",
+        "vieshow-official-browser"
       ]
     },
     {
@@ -3628,6 +4172,20 @@
       ]
     },
     {
+      "movie_id": "m_b5511e679640",
+      "movie_title": "SEVENTEEN WORLD TOUR NEW",
+      "poster_url": "https://image.tmdb.org/t/p/w500/p3SW5xiKdUJ0zIY3hMyyCQ6tcru.jpg",
+      "aliases": [
+        "SEVENTEEN WORLD TOUR NEW"
+      ],
+      "sources": [
+        "atmovies-taipei-fallback",
+        "previous-catalog",
+        "the-movie-database",
+        "vieshow-official-browser"
+      ]
+    },
+    {
       "movie_id": "m_54a82f7bb372",
       "movie_title": "Stray Kids World Tour 【RUN IT 】現場直播",
       "poster_url": "https://assets.showtimes.com.tw/images/daebeac7e018747e950edfa7f4f7439c.jpg",
@@ -3664,7 +4222,9 @@
         "VR沉浸探險【消失的法老】"
       ],
       "sources": [
-        "mediasphere-taiwan-official"
+        "mediasphere-taiwan-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ]
     },
     {
@@ -3677,7 +4237,25 @@
         "Yorushika Live Plagiarism"
       ],
       "sources": [
+        "atmovies-taipei-fallback",
+        "previous-catalog",
+        "vieshow-muvie-songren-official",
+        "vieshow-official-browser",
+        "vieshow-official-manual-browser",
         "yahoo-japan-event-image-search"
+      ]
+    },
+    {
+      "movie_id": "m_0d4486ea7ba2",
+      "movie_title": "YORUSHIKA LIVE 2024「前世」",
+      "poster_url": "https://image.tmdb.org/t/p/w500/lzRhlYIdtRcGbvo4DtoT4oWCXxl.jpg",
+      "aliases": [
+        "YORUSHIKA LIVE 2024「前世」"
+      ],
+      "sources": [
+        "atmovies-taipei-fallback",
+        "previous-catalog",
+        "the-movie-database"
       ]
     }
   ]

@@ -1,7 +1,7 @@
 {
   "version": 4,
   "city": "yilan",
-  "generated_at": "2026-11-01T18:15:43.968Z",
+  "generated_at": "2026-11-01T19:57:59.936Z",
   "showtime_count": 0,
   "sources": {
     "moc-culture-movie-api": {
@@ -13,7 +13,7 @@
       "fresh_showtimes": 172,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T18:16:21.134Z",
+      "last_success_at": "2026-11-01T19:58:38.661Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T18:16:21.134Z",
+      "last_success_at": "2026-11-01T19:58:38.661Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1881,
+      "showtimes": 1751,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1881,
+      "fresh_showtimes": 1751,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T18:16:21.134Z",
+      "last_success_at": "2026-11-01T19:58:38.661Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -68,7 +68,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T18:16:21.134Z",
+      "last_success_at": "2026-11-01T19:58:38.661Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -93,9 +93,9 @@
       "showtimes": 1140,
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
+        "t02a01/2026-11-06: No showtimes parsed",
         "t02a01/2026-11-02: No showtimes parsed",
         "t02a01/2026-11-07: No showtimes parsed",
-        "t02a01/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-02: No showtimes parsed",
         "t02a11/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-07: No showtimes parsed",
@@ -110,7 +110,7 @@
       "fresh_showtimes": 1140,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T18:16:21.134Z",
+      "last_success_at": "2026-11-01T19:58:38.661Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -138,6 +138,6 @@
       "eslite-official-schedule",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T18:16:21.134Z"
+    "restored_at": "2026-11-01T19:58:38.661Z"
   }
 }
