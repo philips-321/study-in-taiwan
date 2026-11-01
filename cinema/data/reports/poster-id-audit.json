@@ -1,6 +1,6 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-01T20:06:24.402Z",
+  "generated_at": "2026-11-01T20:08:47.785Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
@@ -20,15 +20,14 @@
     "missing": 15,
     "canonical_registry": {
       "unique_active_films": 144,
-      "poster_yes": 127,
-      "poster_no": 17,
+      "poster_yes": 129,
+      "poster_no": 15,
       "fetch_states": {
-        "ambiguous": 2,
         "cooldown": 3,
         "found_manual": 55,
         "found_official": 14,
         "not_found": 12,
-        "reused": 58
+        "reused": 60
       }
     },
     "missing_movies": [
