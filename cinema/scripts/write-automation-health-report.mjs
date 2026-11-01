@@ -62,8 +62,8 @@ const endpointHints = {
 };
 const guidance = {
   'showtimes-official-api': {
-    known_cause: 'GitHub Actions repeatedly receives HTTP 403 from the ShowTimes bootstrap API. When this happens, the collector reuses accessible AtMovies cinema schedule pages for known ShowTimes cinemas.',
-    next_steps: ['Review AtMovies fallback cinema coverage and unmatched cinema warnings.', 'Treat the fallback as short-range schedule coverage; retain canonical future rows until fresh source data replaces them.', 'Preserve last-known-good ShowTimes rows in canonical storage.']
+    known_cause: 'GitHub Actions repeatedly receives HTTP 403 from the ShowTimes bootstrap API. The collector reads first-party schedule HTML pages for each known ShowTimes cinema, then tries AtMovies for any cinema still missing.',
+    next_steps: ['Review first-party HTML page coverage and AtMovies secondary fallback warnings.', 'Treat refreshed HTML sessions as current source evidence; retain canonical future rows until fresh schedule data replaces them.', 'Preserve last-known-good ShowTimes rows in canonical storage.']
   },
   'eslite-official-schedule': {
     known_cause: 'GitHub Actions repeatedly receives HTTP 403 from the official Eslite schedule page. The existing AtMovies Taipei fallback also covers Eslite sessions when AtMovies publishes them.',

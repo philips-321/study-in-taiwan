@@ -6,6 +6,7 @@ import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
 import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
+import { fetchShowTimesHtmlFallback } from './sources/showtimes-html.mjs';
 import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
 import { fetchEsliteShowtimes } from './sources/eslite.mjs';
 import { fetchAtMoviesTaipeiShowtimes, fetchAtMoviesShowtimesFallback } from './sources/atmovies-taipei.mjs';
@@ -243,6 +244,7 @@ const sourceStatus = {
   'spot-huashan-official-schedule': { ok: false, showtimes: 0 },
   'eslite-official-schedule': { ok: false, showtimes: 0 },
   'atmovies-taipei-fallback': { ok: false, showtimes: 0, role: 'fallback only for sources blocked/incomplete from GitHub Actions' },
+  'showtimes-official-html-fallback': { ok: true, showtimes: 0, skipped: true, role: 'first-party ShowTimes cinema HTML fallback when bootstrap API is blocked' },
   'atmovies-showtimes-fallback': { ok: true, showtimes: 0, skipped: true, role: 'accessible Taiwan cinema listing fallback for blocked ShowTimes API' },
   'vieshow-official-browser': {
     ok: true,
@@ -257,7 +259,7 @@ function mergeExternalRows(rows, sourceName) {
     const slug = row.city || citySlug(row.address, row.cinema_name);
     const target = showtimesByCity.has(slug) ? slug : 'unknown';
     const matched = matchCinema(target, row.cinema_name, row.address || null, sourceName);
-    const cinemaId = matched?.id || stableId(target, row.cinema_name, row.address || '');
+    const cinemaId = row.cinema_id || matched?.id || stableId(target, row.cinema_name, row.address || '');
     showtimesByCity.get(target).push({
       id: stableId(sourceName, row.cinema_name, row.movie_title, row.date, row.time, row.hall || '', row.format || ''),
       cinema_id: cinemaId,
@@ -335,45 +337,84 @@ const needsAlternativeFallback = source => {
   return status?.ok === false && (status.retry_suppressed === true || /\b403\b/.test(String(status.error || '')));
 };
 if (needsAlternativeFallback('showtimes-official-api')) {
-  try {
-    const todayTaipei = new Intl.DateTimeFormat('en-CA', {
-      timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
-    }).format(new Date());
-    const sourceCinemaIds = new Set();
-    const canonicalDir = path.join(ROOT, 'canonical');
-    for (const name of (await fs.readdir(canonicalDir)).filter(name => /^20\d{2}-\d{2}\.jsonl$/.test(name))) {
-      const text = await fs.readFile(path.join(canonicalDir, name), 'utf8');
-      for (const line of text.split('\n')) {
-        if (!line) continue;
-        const row = JSON.parse(line);
-        if (row.source_id === 'showtimes-official-api' && row.status !== 'stale' && row.business_date >= todayTaipei && row.cinema_id) sourceCinemaIds.add(row.cinema_id);
+  const todayTaipei = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(new Date());
+  const sourceCinemaIds = new Set();
+  const showtimesPageIds = new Map();
+  const canonicalDir = path.join(ROOT, 'canonical');
+  for (const name of (await fs.readdir(canonicalDir)).filter(name => /^20\d{2}-\d{2}\.jsonl$/.test(name))) {
+    const text = await fs.readFile(path.join(canonicalDir, name), 'utf8');
+    for (const line of text.split('\n')) {
+      if (!line) continue;
+      const row = JSON.parse(line);
+      if (row.source_id === 'showtimes-official-api' && row.status !== 'stale' && row.business_date >= todayTaipei && row.cinema_id) {
+        sourceCinemaIds.add(row.cinema_id);
+        const pageId = String(row.source_url || '').match(/\/cinemas\/(\d+)\/?/)?.[1];
+        if (pageId) showtimesPageIds.set(row.cinema_id, pageId);
       }
     }
-    const targetCinemas = [...cinemasByCity.values()].flatMap(map => [...map.values()])
-      .filter(cinema => sourceCinemaIds.has(cinema.id));
-    const rows = await fetchAtMoviesShowtimesFallback(targetCinemas);
-    mergeExternalRows(rows, 'atmovies-showtimes-fallback');
-    sourceStatus['showtimes-official-api'] = {
-      ...sourceStatus['showtimes-official-api'],
-      substitute_source: 'atmovies-showtimes-fallback',
-      substitute_showtimes: rows.length
+  }
+  const knownCinemas = [...cinemasByCity.values()].flatMap(map => [...map.values()])
+    .filter(cinema => sourceCinemaIds.has(cinema.id));
+  const pageTargets = knownCinemas.filter(cinema => showtimesPageIds.has(cinema.id))
+    .map(cinema => ({ ...cinema, showtimes_cinema_id: showtimesPageIds.get(cinema.id) }));
+  let remainingTargets = [...knownCinemas];
+  try {
+    const htmlRows = await fetchShowTimesHtmlFallback(pageTargets);
+    mergeExternalRows(htmlRows, 'showtimes-official-html-fallback');
+    remainingTargets = knownCinemas.filter(cinema => htmlRows.unmatched_cinemas.includes(cinema.name_zh));
+    sourceStatus['showtimes-official-html-fallback'] = {
+      ok: true,
+      showtimes: htmlRows.length,
+      acquisition_method: htmlRows.acquisition_method,
+      cinema_pages: htmlRows.cinema_pages,
+      cinema_pages_failed: htmlRows.cinema_pages_failed,
+      target_cinemas: htmlRows.target_cinemas,
+      matched_cinemas: htmlRows.matched_cinemas,
+      unmatched_cinemas: htmlRows.unmatched_cinemas,
+      ...(htmlRows.source_errors.length ? { warnings: htmlRows.source_errors.slice(0, 10) } : {})
     };
-    sourceStatus['atmovies-showtimes-fallback'] = {
-      ...sourceStatus['atmovies-showtimes-fallback'],
-      target_cinemas: rows.target_cinemas,
-      matched_cinemas: rows.matched_cinemas,
-      unmatched_cinemas: rows.unmatched_cinemas
-    };
-    console.info(`ShowTimes 403 fallback recovered ${rows.length} AtMovies sessions for ${rows.matched_cinemas}/${rows.target_cinemas} known cinemas.`);
+    console.info(`ShowTimes official HTML fallback recovered ${htmlRows.length} sessions for ${htmlRows.matched_cinemas}/${htmlRows.target_cinemas} cinemas.`);
   } catch (error) {
-    sourceStatus['atmovies-showtimes-fallback'] = {
-      ...sourceStatus['atmovies-showtimes-fallback'],
+    sourceStatus['showtimes-official-html-fallback'] = {
       ok: false,
+      showtimes: 0,
       error: String(error?.message || error).slice(0, 300)
     };
-    console.error('AtMovies ShowTimes fallback failed:', error);
+    console.error('ShowTimes official HTML fallback failed:', error);
   }
+
+  if (remainingTargets.length) {
+    try {
+      const rows = await fetchAtMoviesShowtimesFallback(remainingTargets);
+      mergeExternalRows(rows, 'atmovies-showtimes-fallback');
+      sourceStatus['atmovies-showtimes-fallback'] = {
+        ...sourceStatus['atmovies-showtimes-fallback'],
+        target_cinemas: rows.target_cinemas,
+        matched_cinemas: rows.matched_cinemas,
+        unmatched_cinemas: rows.unmatched_cinemas
+      };
+      console.info(`AtMovies secondary fallback recovered ${rows.length} sessions for ${rows.matched_cinemas}/${rows.target_cinemas} remaining cinemas.`);
+    } catch (error) {
+      sourceStatus['atmovies-showtimes-fallback'] = {
+        ...sourceStatus['atmovies-showtimes-fallback'],
+        ok: false,
+        error: String(error?.message || error).slice(0, 300)
+      };
+      console.error('AtMovies secondary fallback failed:', error);
+    }
+  }
+  sourceStatus['showtimes-official-api'] = {
+    ...sourceStatus['showtimes-official-api'],
+    substitute_source: sourceStatus['showtimes-official-html-fallback']?.ok
+      ? 'showtimes-official-html-fallback' + (sourceStatus['atmovies-showtimes-fallback']?.matched_cinemas ? '+atmovies-showtimes-fallback' : '')
+      : (sourceStatus['atmovies-showtimes-fallback']?.matched_cinemas ? 'atmovies-showtimes-fallback' : null),
+    substitute_showtimes: (sourceStatus['showtimes-official-html-fallback']?.showtimes || 0)
+      + (sourceStatus['atmovies-showtimes-fallback']?.showtimes || 0)
+  };
 }
+
 
 if (needsAlternativeFallback('eslite-official-schedule')) {
   const esliteRows = showtimesByCity.get('taipei').filter(row => row.source === 'atmovies-taipei-fallback' && /誠品電影院/.test(row.cinema_name || ''));
