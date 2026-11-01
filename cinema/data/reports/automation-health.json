@@ -1,11 +1,11 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-01T18:02:59.086Z",
+  "generated_at": "2026-11-01T18:16:24.883Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
-    "rows": 4461,
-    "expected_rows": 4461
+    "rows": 4498,
+    "expected_rows": 4498
   },
   "sources": {
     "checked": 8,
@@ -18,7 +18,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T18:02:58.144Z",
+        "last_success_at": "2026-11-01T18:16:21.134Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -31,7 +31,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T18:02:58.144Z",
+        "last_success_at": "2026-11-01T18:16:21.134Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -39,12 +39,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 1937,
-        "fresh_showtimes": 1937,
+        "showtimes": 1881,
+        "fresh_showtimes": 1881,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T18:02:58.144Z",
+        "last_success_at": "2026-11-01T18:16:21.134Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -70,7 +70,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T18:02:58.144Z",
+        "last_success_at": "2026-11-01T18:16:21.134Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -96,7 +96,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T18:02:58.144Z",
+        "last_success_at": "2026-11-01T18:16:21.134Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null
@@ -213,16 +213,18 @@
   },
   "posters": {
     "active_movies": 158,
-    "available": 59,
-    "missing": 99,
+    "available": 60,
+    "missing": 98,
     "canonical_registry": {
       "unique_active_films": 149,
-      "poster_yes": 48,
-      "poster_no": 101,
+      "poster_yes": 49,
+      "poster_no": 100,
       "fetch_states": {
         "ambiguous": 5,
-        "reused": 48,
-        "waiting_for_provider": 96
+        "found": 1,
+        "not_found": 39,
+        "queued": 56,
+        "reused": 48
       }
     },
     "missing_movies": [
@@ -457,10 +459,6 @@
       {
         "movie_id": "m_3b855d513231",
         "movie_title": "【府中15】紀錄片放映院《殺出個黃昏》"
-      },
-      {
-        "movie_id": "m_96e707798a40",
-        "movie_title": "《我們，巴黎管弦樂團》"
       },
       {
         "movie_id": "m_96a731048ae1",

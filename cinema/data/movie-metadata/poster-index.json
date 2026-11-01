@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T18:02:58.825Z",
+  "generated_at": "2026-11-01T18:16:24.591Z",
   "policy": "Append-only known poster records. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -89,6 +89,19 @@
       ],
       "sources": [
         "showtimes-official-metadata"
+      ]
+    },
+    {
+      "movie_id": "m_96e707798a40",
+      "movie_title": "《我們，巴黎管弦樂團》",
+      "poster_url": "https://image.tmdb.org/t/p/w500/3jxfGH73fGoJcJ9G3IiBTI7vYrw.jpg",
+      "aliases": [
+        "《我們，巴黎管弦樂團》"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
       ]
     },
     {

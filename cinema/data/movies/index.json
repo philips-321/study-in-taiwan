@@ -2191,8 +2191,10 @@
       "movie_title_en": null,
       "metadata_sources": [
         "moc-culture-movie-api",
-        "previous-catalog"
-      ]
+        "previous-catalog",
+        "the-movie-database"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/3jxfGH73fGoJcJ9G3IiBTI7vYrw.jpg"
     },
     {
       "movie_id": "m_970da19b0c70",
@@ -3345,6 +3347,6 @@
       ]
     }
   ],
-  "generated_at": "2026-11-01T18:02:58.800Z",
+  "generated_at": "2026-11-01T18:16:21.988Z",
   "identity_policy": "stable movie_id from normalized primary title; metadata stored once in this catalog"
 }
