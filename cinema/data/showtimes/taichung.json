@@ -1,8 +1,8 @@
 {
   "version": 4,
   "city": "taichung",
-  "generated_at": "2026-11-01T22:50:54.284Z",
-  "showtime_count": 61,
+  "generated_at": "2026-11-01T22:57:42.490Z",
+  "showtime_count": 1141,
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
@@ -13,7 +13,7 @@
       "fresh_showtimes": 256,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:52:01.331Z",
+      "last_success_at": "2026-11-01T22:58:29.240Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:52:01.331Z",
+      "last_success_at": "2026-11-01T22:58:29.240Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1757,
+      "showtimes": 1806,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1757,
+      "fresh_showtimes": 1806,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:52:01.331Z",
+      "last_success_at": "2026-11-01T22:58:29.240Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -49,8 +49,8 @@
       "error": "ShowTimes public API 403 Forbidden",
       "retry_suppressed": true,
       "retry_after": "2026-11-08T17:42:56.311Z",
-      "substitute_source": "atmovies-showtimes-fallback",
-      "substitute_showtimes": 386,
+      "substitute_source": "twshowtimes-aggregator-fallback",
+      "substitute_showtimes": 3959,
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 6,
@@ -70,7 +70,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:52:01.331Z",
+      "last_success_at": "2026-11-01T22:58:29.240Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -98,12 +98,12 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-11-02: No showtimes parsed",
+        "t02a11/2026-11-02: No showtimes parsed",
         "t02a01/2026-11-06: No showtimes parsed",
         "t02a01/2026-11-07: No showtimes parsed",
-        "t02a11/2026-11-02: No showtimes parsed",
-        "t02a11/2026-11-07: No showtimes parsed",
         "t02a11/2026-11-06: No showtimes parsed",
         "t02a12/2026-11-02: No showtimes parsed",
+        "t02a11/2026-11-07: No showtimes parsed",
         "t02a12/2026-11-06: No showtimes parsed",
         "t02a12/2026-11-07: No showtimes parsed",
         "t02b14/2026-11-02: No showtimes parsed"
@@ -114,14 +114,17 @@
       "fresh_showtimes": 1140,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:52:01.331Z",
+      "last_success_at": "2026-11-01T22:58:29.240Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "showtimes-official-html-fallback": {
       "ok": false,
+      "skipped": true,
+      "retry_suppressed": true,
+      "retry_after": "2026-11-08T22:52:07.769Z",
       "showtimes": 0,
-      "error": "Official ShowTimes HTML fallback returned no sessions (大巨蛋秀泰影城: 403 Forbidden; 樹林秀泰影城: 403 Forbidden; 欣欣秀泰影城: 403 Forbidden; 土城秀泰影城: 403 Forbidden; 基隆秀泰影城: 403 Forbidden)",
+      "error": "HTTP 403 from ShowTimes cinema HTML; retry suppressed",
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 1,
@@ -130,35 +133,40 @@
       "fallback": "unavailable",
       "last_success_at": null,
       "last_failure_at": "2026-11-01T22:52:01.331Z",
-      "next_probe_at": "2026-11-01T23:22:01.331Z"
+      "next_probe_at": "2026-11-08T22:52:07.769Z"
     },
-    "atmovies-showtimes-fallback": {
+    "twshowtimes-aggregator-fallback": {
       "ok": true,
-      "showtimes": 386,
-      "acquisition_method": "atmovies-official-schedule-html",
-      "cinema_pages": 6,
+      "showtimes": 3959,
+      "acquisition_method": "twshowtimes-daily-html",
+      "cinema_pages": 105,
       "cinema_pages_failed": 0,
-      "role": "accessible Taiwan cinema listing fallback for blocked ShowTimes API",
       "target_cinemas": 15,
-      "matched_cinemas": 6,
-      "unmatched_cinemas": [
-        "基隆秀泰影城",
-        "台中站前秀泰影城",
-        "台中文心秀泰影城",
-        "台中麗寶秀泰影城",
-        "嘉義秀泰影城",
-        "台南仁德秀泰影城",
-        "高雄岡山秀泰影城",
-        "花蓮秀泰影城",
-        "台東秀泰影城"
-      ],
+      "matched_cinemas": 15,
+      "unmatched_cinemas": [],
+      "cinemas_with_partial_days": [],
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 386,
+      "fresh_showtimes": 3959,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:52:01.331Z",
+      "last_success_at": "2026-11-01T22:58:29.240Z",
+      "last_failure_at": null,
+      "next_probe_at": null
+    },
+    "atmovies-showtimes-fallback": {
+      "ok": true,
+      "showtimes": 0,
+      "skipped": true,
+      "role": "accessible Taiwan cinema listing fallback for blocked ShowTimes API",
+      "health": "healthy",
+      "circuit_state": "closed",
+      "failure_count": 0,
+      "fresh_showtimes": 0,
+      "fallback_showtimes": 0,
+      "fallback": null,
+      "last_success_at": "2026-11-01T22:58:29.240Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -187,6 +195,6 @@
       "showtimes-official-html-fallback",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T22:52:01.331Z"
+    "restored_at": "2026-11-01T22:58:29.240Z"
   }
 }

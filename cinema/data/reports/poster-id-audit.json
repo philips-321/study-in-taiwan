@@ -1,30 +1,31 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-01T22:52:07.769Z",
+  "generated_at": "2026-11-01T22:58:36.366Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
-    "rows": 5790,
-    "expected_rows": 5790
+    "rows": 9749,
+    "expected_rows": 9749
   },
   "ids": {
-    "active_movies": 162,
+    "active_movies": 171,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 162,
-    "available": 157,
+    "active_movies": 171,
+    "available": 166,
     "missing": 5,
     "canonical_registry": {
-      "unique_active_films": 151,
-      "poster_yes": 146,
+      "unique_active_films": 157,
+      "poster_yes": 152,
       "poster_no": 5,
       "fetch_states": {
         "cooldown": 1,
-        "found_manual": 129,
+        "found": 1,
+        "found_manual": 134,
         "found_official": 14,
         "not_found": 4,
         "reused": 3
