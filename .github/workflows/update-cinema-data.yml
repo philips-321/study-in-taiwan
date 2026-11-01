@@ -39,6 +39,21 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Cache Playwright Chromium
+        if: steps.daily_guard.outputs.skip != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-1.64.1-${{ runner.os }}-${{ runner.arch }}
+
+      - name: Install Playwright browser
+        if: steps.daily_guard.outputs.skip != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix "$RUNNER_TEMP/cinema-browser" --no-save --package-lock=false playwright@1.64.1
+          "$RUNNER_TEMP/cinema-browser/node_modules/.bin/playwright" install --with-deps chromium
+
       - name: Skip if cinema JSON was refreshed today in Taiwan
         id: daily_guard
         run: |
@@ -102,6 +117,7 @@ jobs:
         shell: bash
         env:
           MOC_AVAILABLE: ${{ steps.moc_probe.outputs.available }}
+          CINEMA_PLAYWRIGHT_MODULE: ${{ runner.temp }}/cinema-browser/node_modules/playwright/index.mjs
         run: |
           set -euo pipefail
           if [ "$MOC_AVAILABLE" = 'true' ]; then

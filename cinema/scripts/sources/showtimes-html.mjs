@@ -1,3 +1,5 @@
+import { browseOfficialPages } from './browser.mjs';
+
 const BASE = 'https://www.showtimes.com.tw/cinemas';
 const AUDIO_LANGUAGES = [
   ['英語', 'en'], ['日語', 'ja'], ['韓語', 'ko'], ['國語', 'zh'], ['粵語', 'yue'],
@@ -80,43 +82,39 @@ export async function fetchShowTimesHtmlFallback(targetCinemas) {
   const errors = [];
   const matchedCinemaIds = new Set();
   const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-  let cursor = 0;
-  async function worker() {
-    while (cursor < targets.length) {
-      const cinema = targets[cursor++];
-      const url = `${BASE}/${encodeURIComponent(cinema.showtimes_cinema_id)}/`;
-      try {
-        const response = await fetch(url, {
-          headers: {
-            accept: 'text/html,application/xhtml+xml',
-            'accept-language': 'zh-TW,zh;q=0.9,en;q=0.7',
-            'user-agent': 'study-in-taiwan-cinema-data/1.0 (+https://study-in-taiwan.com/cinema/)'
-          },
-          signal: AbortSignal.timeout(20000)
-        });
-        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-        const parsed = parseShowTimesHtml(await response.text(), cinema);
-        if (!parsed.length) throw new Error('Official cinema HTML had no parseable showtime cards');
-        for (const row of parsed) {
-          if (row.date >= today) matchedCinemaIds.add(cinema.id);
-          rows.push(row);
-        }
-      } catch (error) {
-        errors.push(`${cinema.name_zh}: ${String(error?.message || error).slice(0, 180)}`);
-      }
+  const pages = await browseOfficialPages(targets.map(cinema => ({
+    cinema,
+    url: `${BASE}/${encodeURIComponent(cinema.showtimes_cinema_id)}/`
+  })), { concurrency: 3, settleMs: 1200 });
+
+  for (const result of pages) {
+    const cinema = result.target.cinema;
+    if (result.status !== 200) {
+      errors.push(`${cinema.name_zh}: ${result.status ? `HTTP ${result.status}` : result.error || 'browser navigation failed'}`);
+      continue;
+    }
+    const parsed = parseShowTimesHtml(result.html, cinema);
+    if (!parsed.length) {
+      errors.push(`${cinema.name_zh}: official browser page had no parseable showtimes`);
+      continue;
+    }
+    for (const row of parsed) {
+      if (row.date >= today) matchedCinemaIds.add(cinema.id);
+      rows.push(row);
     }
   }
-  await Promise.all(Array.from({ length: Math.min(3, targets.length) }, worker));
-  if (!rows.length) throw new Error(`Official ShowTimes HTML fallback returned no sessions (${errors.slice(0, 5).join('; ')})`);
+  if (!rows.length) throw new Error(`Official ShowTimes browser returned no sessions (${errors.slice(0, 5).join('; ')})`);
 
   const futureRows = rows.filter(row => row.date >= today);
-  if (!futureRows.length) throw new Error('Official ShowTimes HTML had no current or future sessions');
+  if (!futureRows.length) throw new Error('Official ShowTimes browser had no current or future sessions');
   futureRows.source_errors = errors;
-  futureRows.acquisition_method = 'first-party-showtimes-html';
+  futureRows.acquisition_method = 'first-party-showtimes-browser';
   futureRows.cinema_pages = targets.length;
   futureRows.cinema_pages_failed = errors.length;
   futureRows.target_cinemas = targets.length;
   futureRows.matched_cinemas = matchedCinemaIds.size;
   futureRows.unmatched_cinemas = targets.filter(cinema => !matchedCinemaIds.has(cinema.id)).map(cinema => cinema.name_zh);
+  futureRows.fetch_blocked_403 = pages.blocked_by_403 === true;
+  futureRows.pages_requested = pages.pages_requested;
   return futureRows;
 }

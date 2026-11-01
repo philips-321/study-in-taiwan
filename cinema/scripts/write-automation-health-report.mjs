@@ -63,12 +63,12 @@ const endpointHints = {
 };
 const guidance = {
   'showtimes-official-api': {
-    known_cause: 'GitHub Actions repeatedly receives HTTP 403 from both the ShowTimes bootstrap API and its cinema pages. The collector uses server-rendered daily schedules from the Taiwan aggregator 場次通 and AtMovies for remaining cinemas.',
-    next_steps: ['Review 場次通 daily-page coverage and AtMovies secondary fallback warnings.', 'Keep last-known-good ShowTimes rows for dates outside the refreshed window.', 'Preserve canonical historical rows and their source provenance.']
+    known_cause: 'GitHub Actions receives HTTP 403 from the ShowTimes API. The collector now opens each first-party ShowTimes cinema page in headless Chromium and extracts its server-rendered schedule.',
+    next_steps: ['Review the official-browser page count and any HTTP 403 or parse warnings.', 'Keep last-known-good ShowTimes rows when official browser access is blocked.', 'Preserve canonical historical rows and their source provenance.']
   },
   'eslite-official-schedule': {
-    known_cause: 'GitHub Actions repeatedly receives HTTP 403 from the official Eslite schedule page. The existing AtMovies Taipei fallback also covers Eslite sessions when AtMovies publishes them.',
-    next_steps: ['Check AtMovies Taipei fallback coverage for Eslite sessions.', 'Preserve last-known-good Eslite rows in canonical storage.', 'Keep the official Eslite source marked degraded until its endpoint becomes accessible again.']
+    known_cause: 'GitHub Actions receives HTTP 403 from the Eslite schedule request. The collector now opens the first-party Eslite schedule directly in headless Chromium.',
+    next_steps: ['Review the official-browser result and any HTTP 403 or parse warning.', 'Preserve last-known-good Eslite rows in canonical storage.', 'Keep the Eslite source marked degraded when browser access is blocked.']
   }
 };
 const recordSourceHistory = process.argv.includes('--record-source-history');

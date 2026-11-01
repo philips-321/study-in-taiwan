@@ -1,3 +1,5 @@
+import { browseOfficialPages } from './browser.mjs';
+
 const URL = 'https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1';
 const CINEMA_ID = '43ef84bf160e6886';
 const BROWSER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36';
@@ -110,5 +112,17 @@ export async function fetchEsliteShowtimes() {
   if (!response.ok) throw new Error(`Eslite ${response.status} ${response.statusText}`);
   const rows = parseEsliteSchedule(await response.text());
   if (!rows.length) throw new Error('Eslite returned no parseable showtimes');
+  return rows;
+}
+
+export async function fetchEsliteShowtimesInBrowser() {
+  const [result] = await browseOfficialPages([{ url: URL }], { concurrency: 1, settleMs: 1500 });
+  if (result.status !== 200) {
+    throw new Error(`Eslite browser navigation returned HTTP ${result.status ?? 'unknown'}${result.error ? `: ${result.error}` : ''}`);
+  }
+  const rows = parseEsliteSchedule(result.html);
+  if (!rows.length) throw new Error('Official Eslite browser page returned no parseable showtimes');
+  rows.acquisition_method = 'first-party-eslite-browser';
+  rows.pages_requested = 1;
   return rows;
 }
