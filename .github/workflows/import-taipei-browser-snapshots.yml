@@ -65,6 +65,8 @@ jobs:
           };
           fs.writeFileSync(file, `${JSON.stringify(manifest, null, 2)}\n`);
           NODE
+      - name: Write source, matching, poster, and ID health report
+        run: node cinema/scripts/write-automation-health-report.mjs
       - name: Validate canonical data
         run: node cinema/scripts/validate-canonical-data.mjs
       - name: Verify history and display cutoff

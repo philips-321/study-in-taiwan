@@ -159,6 +159,10 @@ jobs:
           fs.writeFileSync(file, `${JSON.stringify(manifest, null, 2)}\n`);
           NODE
 
+      - name: Write source, matching, poster, and ID health report
+        if: steps.daily_guard.outputs.skip != 'true'
+        run: node cinema/scripts/write-automation-health-report.mjs
+
       - name: Validate generated JSON
         if: steps.daily_guard.outputs.skip != 'true'
         run: |
@@ -200,6 +204,11 @@ jobs:
           for (const movie of movieCatalog.movies || []) {
             if (!movie.movie_id || movieIds.has(movie.movie_id)) throw new Error(`Missing or duplicate movie_id: ${movie.movie_id}`);
             movieIds.add(movie.movie_id);
+            if (movie.poster_url) {
+              let poster;
+              try { poster = new URL(movie.poster_url); } catch { throw new Error(`Invalid poster URL for ${movie.movie_id}`); }
+              if (poster.protocol !== 'https:') throw new Error(`Poster URL must use HTTPS for ${movie.movie_id}`);
+            }
           }
           const indexedRows = new Map();
           const sessionKeys = new Set();
@@ -218,7 +227,7 @@ jobs:
               }
               for (const row of chunk.showtimes || []) {
                 totalRows++;
-                if (!row.cinema_id || !row.start_time) throw new Error(`Screening missing cinema or time: ${file}`);
+                if (!/^[a-f0-9]{16}$/.test(row.cinema_id || '') || !row.start_time) throw new Error(`Screening has invalid cinema_id or missing time: ${file}`);
                 if (row.movie_id) {
                   if (!movieIds.has(row.movie_id)) throw new Error(`Unknown movie_id ${row.movie_id}: ${file}`);
                   referencedMovies++;
@@ -265,12 +274,15 @@ jobs:
             for (const filename of fs.readdirSync(dateDir).filter(name => name.endsWith('.json'))) {
               const chunk = readJson(path.join(dateDir, filename));
               for (const row of chunk.showtimes || []) {
-                if (row.movie_id && !movieIds.has(row.movie_id)) throw new Error(`Public screening has unknown movie_id ${row.movie_id}: ${date}/${filename}`);
+                if (!/^m_[a-f0-9]{12}$/.test(row.movie_id || '') || !movieIds.has(row.movie_id)) throw new Error(`Public screening has missing/invalid movie_id ${row.movie_id}: ${date}/${filename}`);
+                if (!/^[a-f0-9]{16}$/.test(row.cinema_id || '') || !row.start_time) throw new Error(`Public screening has invalid cinema_id or missing time: ${date}/${filename}`);
                 publicRows++;
               }
             }
           }
           if (publicRows !== publicManifest.public_rows) throw new Error(`Public view count mismatch: files=${publicRows}, manifest=${publicManifest.public_rows}`);
+          const healthReport = readJson('cinema/data/reports/automation-health.json');
+          if (healthReport.public_window?.rows !== publicRows) throw new Error('Automation health report has stale public-window counts');
           for (const city of fs.readdirSync('cinema/data/showtimes').filter(name => name.endsWith('.json'))) {
             const payload = readJson(path.join('cinema/data/showtimes', city));
             const slug = city.slice(0, -5);

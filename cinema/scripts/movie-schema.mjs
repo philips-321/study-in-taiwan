@@ -37,6 +37,25 @@ function posterMatchKey(value) {
   return normalizeMovieTitle(value).replace(/[\p{P}\p{S}\s]/gu, '');
 }
 
+export function ambiguousPosterTitleMatches(movies) {
+  const candidates = new Map();
+  for (const movie of movies) {
+    if (!movie.poster_url) continue;
+    for (const title of [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || [])].filter(Boolean)) {
+      const key = posterMatchKey(title);
+      if (key.length < 4) continue;
+      const entry = candidates.get(key) || { titles: new Set(), movies: new Set(), posters: new Set() };
+      entry.titles.add(title);
+      entry.movies.add(movie.movie_id);
+      entry.posters.add(movie.poster_url);
+      candidates.set(key, entry);
+    }
+  }
+  return [...candidates.values()]
+    .filter(entry => entry.posters.size > 1)
+    .map(entry => ({ titles: [...entry.titles].slice(0, 10), movie_ids: [...entry.movies].slice(0, 20), poster_count: entry.posters.size }));
+}
+
 export function inheritUnambiguousTitlePosters(movies) {
   const posterCandidates = new Map();
   for (const movie of movies) {

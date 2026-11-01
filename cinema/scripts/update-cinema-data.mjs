@@ -49,6 +49,22 @@ function movieKey(value) {
     .replace(/[\s\u00a0]+/g, ' ').trim();
 }
 const movieMetadataByTitle = new Map(), ambiguousMovieTitles = new Set();
+const ambiguousMovieTitleCandidates = new Map();
+const matchDiagnostics = {
+  ambiguous_movie_metadata: [],
+  ambiguous_cinema_matches: [],
+  unmatched_cinema_matches: []
+};
+const diagnosticCounts = Object.fromEntries(Object.keys(matchDiagnostics).map(key => [key, 0]));
+const diagnosticKeys = new Set();
+function recordDiagnostic(kind, value) {
+  const key = `${kind}|${JSON.stringify(value)}`;
+  if (diagnosticKeys.has(key)) return;
+  diagnosticKeys.add(key);
+  diagnosticCounts[kind]++;
+  const rows = matchDiagnostics[kind];
+  if (rows.length < 200) rows.push(value);
+}
 for (const movie of movieMetadataPayload.movies || []) {
   for (const title of [movie.movie_title, movie.movie_title_en].filter(Boolean)) {
     const key = movieKey(title);
@@ -57,6 +73,10 @@ for (const movie of movieMetadataPayload.movies || []) {
     if (prior && JSON.stringify([prior.movie_title_en, prior.genres, prior.rating, prior.poster_url]) !== JSON.stringify([movie.movie_title_en, movie.genres, movie.rating, movie.poster_url])) {
       movieMetadataByTitle.delete(key);
       ambiguousMovieTitles.add(key);
+      ambiguousMovieTitleCandidates.set(key, [
+        { title: prior.movie_title, title_en: prior.movie_title_en || null, poster_url: prior.poster_url || null },
+        { title: movie.movie_title, title_en: movie.movie_title_en || null, poster_url: movie.poster_url || null }
+      ]);
     } else movieMetadataByTitle.set(key, movie);
   }
 }
@@ -166,15 +186,27 @@ function addressKey(value) {
     .replace(/[\s　，,、()（）\-]/g, '');
   return normalized.match(/^(.+?號)/)?.[1] || normalized;
 }
-function matchCinema(slug, venue, location) {
+function matchCinema(slug, venue, location, source) {
   const list = [...cinemasByCity.get(slug).values()];
   const v = normName(venue);
   const a = addressKey(location);
-  return list.find(c => {
+  const byName = list.filter(c => {
            const n = normName(c.name_zh);
            return v && n && (n.includes(v) || v.includes(n));
-         }) ||
-         list.find(c => a && c.address && addressKey(c.address) === a) || null;
+         });
+  if (byName.length === 1) return byName[0];
+  if (byName.length > 1) {
+    recordDiagnostic('ambiguous_cinema_matches', { source, city: slug, venue, address: location || null, match_by: 'name', candidates: byName.slice(0, 20).map(cinema => ({ id: cinema.id, name: cinema.name_zh, address: cinema.address || null })) });
+    return null;
+  }
+  const byAddress = list.filter(c => a && c.address && addressKey(c.address) === a);
+  if (byAddress.length === 1) return byAddress[0];
+  if (byAddress.length > 1) {
+    recordDiagnostic('ambiguous_cinema_matches', { source, city: slug, venue, address: location || null, match_by: 'address', candidates: byAddress.slice(0, 20).map(cinema => ({ id: cinema.id, name: cinema.name_zh, address: cinema.address || null })) });
+    return null;
+  }
+  recordDiagnostic('unmatched_cinema_matches', { source, city: slug, venue, address: location || null });
+  return null;
 }
 
 for (const event of events) {
@@ -182,7 +214,7 @@ for (const event of events) {
     const venue = clean(show.locationName) || clean(event.showUnit) || clean(event.title) || 'Unknown venue';
     const location = clean(show.location);
     const slug = citySlug(location, venue);
-    const matched = matchCinema(slug, venue, location);
+    const matched = matchCinema(slug, venue, location, 'moc-culture-movie-api');
     const cinemaId = matched?.id || stableId(slug, venue, location || '');
     showtimesByCity.get(slug).push({
       id: stableId('moc', event.UID || '', venue, show.time || '', event.title || ''), cinema_id: cinemaId,
@@ -215,7 +247,7 @@ function mergeExternalRows(rows, sourceName) {
   for (const row of rows) {
     const slug = row.city || citySlug(row.address, row.cinema_name);
     const target = showtimesByCity.has(slug) ? slug : 'unknown';
-    const matched = matchCinema(target, row.cinema_name, row.address || null);
+    const matched = matchCinema(target, row.cinema_name, row.address || null, sourceName);
     const cinemaId = matched?.id || stableId(target, row.cinema_name, row.address || '');
     showtimesByCity.get(target).push({
       id: stableId(sourceName, row.cinema_name, row.movie_title, row.date, row.time, row.hall || '', row.format || ''),
@@ -269,9 +301,17 @@ await runSource('eslite-official-schedule', 'Eslite', fetchEsliteShowtimes);
 await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);
 
 let metadataEnrichedRows = 0;
-for (const rows of showtimesByCity.values()) for (const row of rows) {
-  const match = [...new Set([row.movie_title, row.movie_title_en].filter(Boolean).map(movieKey))]
-    .map(key => movieMetadataByTitle.get(key)).filter(Boolean);
+for (const [city, rows] of showtimesByCity) for (const row of rows) {
+  const titleKeys = [...new Set([row.movie_title, row.movie_title_en].filter(Boolean).map(movieKey))];
+  for (const key of titleKeys) if (ambiguousMovieTitles.has(key)) {
+    recordDiagnostic('ambiguous_movie_metadata', {
+      source: row.source || null, city,
+      title: row.movie_title || row.movie_title_en || null,
+      alternate_title: row.movie_title_en || null,
+      metadata_candidates: ambiguousMovieTitleCandidates.get(key) || []
+    });
+  }
+  const match = titleKeys.map(key => movieMetadataByTitle.get(key)).filter(Boolean);
   const unique = [...new Map(match.map(movie => [movie.id, movie])).values()];
   if (unique.length !== 1) continue;
   const movie = unique[0]; let changed = false;
@@ -405,5 +445,15 @@ await writeJson(path.join(ROOT, 'manifest.json'), {
     movie_metadata: { source: movieMetadataPayload.source || null, retrieved_at: movieMetadataPayload.retrieved_at || null, programs: (movieMetadataPayload.movies || []).length, cross_source_exact_title_enriched_rows: metadataEnrichedRows }
   },
   cities: citySummary
+});
+const diagnosticsRoot = path.join(ROOT, 'reports');
+await fs.mkdir(diagnosticsRoot, { recursive: true });
+await writeJson(path.join(diagnosticsRoot, 'collector-diagnostics.json'), {
+  generated_at: generatedAt,
+  counts: diagnosticCounts,
+  ambiguous_movie_metadata: matchDiagnostics.ambiguous_movie_metadata,
+  ambiguous_cinema_matches: matchDiagnostics.ambiguous_cinema_matches,
+  unmatched_cinema_matches: matchDiagnostics.unmatched_cinema_matches,
+  samples_capped: 200
 });
 console.log(`Cinema master ${master.year}: ${cinemaRows.length} rows; sources: ${JSON.stringify(sourceStatus)}`);
