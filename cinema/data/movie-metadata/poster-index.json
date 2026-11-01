@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T19:40:13.870Z",
+  "generated_at": "2026-11-01T19:41:30.407Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -515,6 +515,32 @@
       "aliases": [
         "【府中15】紀錄片放映院《尋秦記》",
         "尋秦記"
+      ],
+      "sources": [
+        "fuzhong15-official-movie-page"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_14606b70e521",
+      "movie_title": "【府中15】紀錄片放映院《畫外謎踪》",
+      "poster_url": "https://www.fuzhong15.ntpc.gov.tw/files/file_pool/1/0q231554979876231898/%E7%95%AB%E5%A4%96%E8%AC%8E%E8%B8%AA%20%282%29.jpg",
+      "aliases": [
+        "【府中15】紀錄片放映院《畫外謎踪》",
+        "畫外謎踪"
+      ],
+      "sources": [
+        "fuzhong15-official-movie-page"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_5dee2ff44a36",
+      "movie_title": "【府中15】紀錄片放映院《超人力霸王．起源》",
+      "poster_url": "https://www.fuzhong15.ntpc.gov.tw/files/file_pool/1/0q289851137448196928/%E8%B6%85%E4%BA%BA%E5%8A%9B%E9%9C%B8%E7%8E%8B%EF%BC%8E%E8%B5%B7%E6%BA%90%20%283%29.jpg",
+      "aliases": [
+        "【府中15】紀錄片放映院《超人力霸王．起源》",
+        "超人力霸王．起源"
       ],
       "sources": [
         "fuzhong15-official-movie-page"
