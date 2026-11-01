@@ -36,12 +36,14 @@ export async function writePosterIndex(dataRoot, records) {
       ...prior.sources, ...(movie.metadata_sources || []), ...(movie.sources || []),
       movie.source || movie.metadata_source
     ].filter(Boolean))].sort();
+    if (movie.preferred === true || prior.preferred === true) prior.preferred = true;
+    if (movie.historical_only === true || prior.historical_only === true) prior.historical_only = true;
     byIdentity.set(key, prior);
   }
   const output = {
     version: 1,
     generated_at: new Date().toISOString(),
-    policy: 'Append-only known poster records. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched.',
+    policy: 'Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.',
     movies: [...byIdentity.values()].sort((a, b) => String(a.movie_title).localeCompare(String(b.movie_title), 'zh-Hant'))
   };
   await fs.mkdir(path.dirname(file), { recursive: true });
