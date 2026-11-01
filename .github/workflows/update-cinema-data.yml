@@ -59,9 +59,9 @@ jobs:
           process.stdout.write(dates.at(-1) || '');
           NODE
           )"
-          if [ "$latest" = "$today" ]; then
+          if [ "${{ github.event_name }}" = 'schedule' ] && [ "$latest" = "$today" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "Cinema JSON is already current for Taiwan date $today; skipping source/API requests."
+            echo "Cinema JSON is already current for Taiwan date $today; skipping duplicate scheduled source/API requests."
           else
             echo 'skip=false' >> "$GITHUB_OUTPUT"
           fi
@@ -243,9 +243,6 @@ jobs:
           if (referencedMovieIds.size !== manifest.coverage?.unique_title_pairs?.title_pairs) {
             throw new Error(`Unique movie count mismatch: files=${referencedMovieIds.size}, manifest=${manifest.coverage?.unique_title_pairs?.title_pairs}`);
           }
-          if (referencedMovieIds.size !== movieIds.size) {
-            throw new Error(`Unreferenced movie records in catalog: referenced=${referencedMovieIds.size}, catalog=${movieIds.size}`);
-          }
           for (const date of Object.keys(manifest.showtimes_index || {})) {
             const index = manifest.showtimes_index[date];
             let dateTotal = 0;
@@ -260,6 +257,20 @@ jobs:
             const [date, city] = key.split('|');
             if (manifest.showtimes_index?.[date]?.cities?.[city] !== count) throw new Error(`Unindexed date/city chunk: ${date}/${city}`);
           }
+          const publicManifest = readJson('cinema/data/showtimes-public/manifest.json');
+          let publicRows = 0;
+          for (const date of fs.readdirSync('cinema/data/showtimes-public/by-date')) {
+            const dateDir = path.join('cinema/data/showtimes-public/by-date', date);
+            if (!fs.statSync(dateDir).isDirectory()) continue;
+            for (const filename of fs.readdirSync(dateDir).filter(name => name.endsWith('.json'))) {
+              const chunk = readJson(path.join(dateDir, filename));
+              for (const row of chunk.showtimes || []) {
+                if (row.movie_id && !movieIds.has(row.movie_id)) throw new Error(`Public screening has unknown movie_id ${row.movie_id}: ${date}/${filename}`);
+                publicRows++;
+              }
+            }
+          }
+          if (publicRows !== publicManifest.public_rows) throw new Error(`Public view count mismatch: files=${publicRows}, manifest=${publicManifest.public_rows}`);
           for (const city of fs.readdirSync('cinema/data/showtimes').filter(name => name.endsWith('.json'))) {
             const payload = readJson(path.join('cinema/data/showtimes', city));
             const slug = city.slice(0, -5);
