@@ -34,6 +34,37 @@ jobs:
             echo "Importing $snapshot"
             node cinema/scripts/import-taipei-browser-tsv.mjs "$snapshot"
           done
+      - name: Merge reviewed rows into canonical archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cinema-reviewed-canonical
+          node cinema/scripts/convert-to-canonical.mjs --output-root=/tmp/cinema-reviewed-canonical
+          node cinema/scripts/merge-canonical-snapshot.mjs /tmp/cinema-reviewed-canonical/canonical --previous-movies=cinema/data/movies/index.json
+      - name: Rebuild public view from canonical archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          as_of="$(TZ=Asia/Taipei date +%F)"
+          rm -rf /tmp/cinema-reviewed-public
+          node cinema/scripts/materialize-public-window.mjs --canonical-root=cinema/data/canonical --output-root=/tmp/cinema-reviewed-public --as-of="$as_of" --days=30
+          rm -rf cinema/data/showtimes-public
+          mkdir -p cinema/data/showtimes-public
+          cp -a /tmp/cinema-reviewed-public/. cinema/data/showtimes-public/
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const file = 'cinema/data/canonical/manifest.json';
+          const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const view = JSON.parse(fs.readFileSync('cinema/data/showtimes-public/manifest.json', 'utf8'));
+          manifest.public_view = {
+            window_days: view.days,
+            generated_as_of: view.as_of,
+            rows: view.public_rows,
+            excluded_by_window: view.excluded_by_window,
+            sha256: view.sha256
+          };
+          fs.writeFileSync(file, `${JSON.stringify(manifest, null, 2)}\n`);
+          NODE
       - name: Validate canonical data
         run: node cinema/scripts/validate-canonical-data.mjs
       - name: Verify history and display cutoff
