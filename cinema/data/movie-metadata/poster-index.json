@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T18:55:39.272Z",
-  "policy": "Append-only known poster records. Never remove stored posters because a film is temporarily absent from schedules; only consider removal after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched. A preferred record is a human-selected poster for its canonical title and must be reused.",
+  "generated_at": "2026-11-01T19:00:33.806Z",
+  "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
       "movie_id": "m_01eb02db1bf5",
@@ -162,6 +162,18 @@
       ],
       "sources": [
         "giloo-taiwan-image-search"
+      ]
+    },
+    {
+      "movie_id": "m_5d43e52df171",
+      "movie_title": "11月高雄市電影館｜讓子彈飛 全新4K修復版",
+      "poster_url": "https://s.eslite.com/upload/product/o/2680588839001/99922.jpg",
+      "aliases": [
+        "11月高雄市電影館｜讓子彈飛 全新4K修復版",
+        "讓子彈飛"
+      ],
+      "sources": [
+        "eslite-taiwan-image-search"
       ]
     },
     {
@@ -716,6 +728,19 @@
         "showtimes-official-metadata",
         "showtimes-official-program"
       ]
+    },
+    {
+      "movie_id": "m_25b7f097671f",
+      "movie_title": "泥面人_特別場",
+      "poster_url": "https://assets.showtimes.com.tw/images/81905fba8ca38081defb8699f991c7cd.jpg",
+      "aliases": [
+        "CLAYFACE_SPECIAL",
+        "泥面人_特別場"
+      ],
+      "sources": [
+        "reused-existing-showtimes-poster-index"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_ce5f6b42a8e9",
@@ -2389,6 +2414,18 @@
       ]
     },
     {
+      "movie_id": "m_a21b93dc02d9",
+      "movie_title": "ENHYPEN WORLD TOUR BLOOD SAGA",
+      "poster_url": "https://dvvy6louqcr7j.cloudfront.net/vista/HO00017291/heroPoster/enhypen-world-tour-blood-saga.png",
+      "aliases": [
+        "ENHYPEN WORLD TOUR BLOOD SAGA",
+        "ENHYPEN World Tour: Blood Saga"
+      ],
+      "sources": [
+        "telstra-cinema-image-search"
+      ]
+    },
+    {
       "movie_id": "m_f1e434b97271",
       "movie_title": "EXO PLANET #6 - EXhOrizon [dot] in CINEMAS",
       "poster_url": "https://assets.showtimes.com.tw/images/42674fcd02a3521d1c87367edec2e444.jpg",
@@ -2433,6 +2470,18 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program"
+      ]
+    },
+    {
+      "movie_id": "m_fb95842d58ff",
+      "movie_title": "HYBE CHEERING PARTY",
+      "poster_url": "https://hybecinefest2026.jp/assets/img/common/kv_party.jpg",
+      "aliases": [
+        "HYBE CHEERING PARTY",
+        "HYBE CINE FEST 2026"
+      ],
+      "sources": [
+        "hybe-cine-fest-official-image-search"
       ]
     },
     {
