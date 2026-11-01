@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T18:54:20.225Z",
+  "generated_at": "2026-11-01T18:55:39.272Z",
   "policy": "Append-only known poster records. Never remove stored posters because a film is temporarily absent from schedules; only consider removal after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched. A preferred record is a human-selected poster for its canonical title and must be reused.",
   "movies": [
     {
@@ -105,6 +105,18 @@
       ]
     },
     {
+      "movie_id": "m_911e148b4f14",
+      "movie_title": "【府中15】紀錄片放映院《只是一場意外》",
+      "poster_url": "https://aws.photos.atmovies.com.tw/film/2025/S/fsfa36491653/poster/pw_fsfa36491653_0002.jpg",
+      "aliases": [
+        "It Was Just an Accident",
+        "【府中15】紀錄片放映院《只是一場意外》"
+      ],
+      "sources": [
+        "atmovies-taiwan-image-search"
+      ]
+    },
+    {
       "movie_id": "m_b0cb8da0b256",
       "movie_title": "【府中15】紀錄片放映院《只要我長大》",
       "poster_url": "https://img.myvideo.net.tw/images/SAT010/0000/0186/201708091432175748_420x600.jpg",
@@ -138,6 +150,18 @@
       ],
       "sources": [
         "imdb-image-search"
+      ]
+    },
+    {
+      "movie_id": "m_a7062b6731bc",
+      "movie_title": "11月高雄市電影館｜重返巔峰北壁",
+      "poster_url": "https://images.giloo.ist/project/images/d55ed79d-64a5-4aa2-adae-694d6136f12f/86959295135f855e43f91d39c8723164",
+      "aliases": [
+        "11月高雄市電影館｜重返巔峰北壁",
+        "Back on North Face"
+      ],
+      "sources": [
+        "giloo-taiwan-image-search"
       ]
     },
     {
@@ -365,6 +389,19 @@
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_4f7ae2e1f1ef",
+      "movie_title": "名偵探柯南 高速公路的墮天使",
+      "poster_url": "https://movie-chill.tw/movie-img/x1784091040afpssz.jpg.pagespeed.ic.0w5VyXbL9b.jpg",
+      "aliases": [
+        "DETECTIVE CONAN THE MOVIE FALLEN ANGEL OF THE HIGHWAY",
+        "Detective Conan: Highway Angel",
+        "名偵探柯南 高速公路的墮天使"
+      ],
+      "sources": [
+        "movie-chill-taiwan-image-search"
       ]
     },
     {
@@ -1202,6 +1239,32 @@
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
         "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_e1b3d99215ae",
+      "movie_title": "麥特與麥斯(海報場)",
+      "poster_url": "https://cdn.kinocheck.com/i/w%3D1200/9y8e4xv8j3.jpg",
+      "aliases": [
+        "Matthias & Maxime",
+        "麥特與麥斯(海報場)",
+        "麥特與麥斯(特別場)"
+      ],
+      "sources": [
+        "kinocheck-image-search"
+      ]
+    },
+    {
+      "movie_id": "m_b6881a3131ae",
+      "movie_title": "麥特與麥斯(特別場)",
+      "poster_url": "https://cdn.kinocheck.com/i/w%3D1200/9y8e4xv8j3.jpg",
+      "aliases": [
+        "Matthias & Maxime",
+        "麥特與麥斯(海報場)",
+        "麥特與麥斯(特別場)"
+      ],
+      "sources": [
+        "kinocheck-image-search"
       ]
     },
     {
@@ -2164,6 +2227,18 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official"
+      ]
+    },
+    {
+      "movie_id": "m_e7ed4697a459",
+      "movie_title": "蘿拉快跑－早安!周日經典電影院",
+      "poster_url": "https://images.gamme.com.tw/movie/2023/03/3/nJean6KVkaSgrp2W.jpg",
+      "aliases": [
+        "Run Lola Run",
+        "蘿拉快跑－早安!周日經典電影院"
+      ],
+      "sources": [
+        "gamme-taiwan-image-search"
       ]
     },
     {
