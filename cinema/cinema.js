@@ -460,7 +460,8 @@
   function movieCard(showtimes) {
     const first=showtimes[0],movie=movieFor(first),filmTitle=decodeEntities(movie.movie_title||'Untitled screening'),titleEn=decodeEntities(movie.movie_title_en||'');
     const movieId=movie.movie_id||first.movie_id||'';
-    const posterUrl=safeUrl(movie.poster_url),poster=posterUrl?`<img class="movie-poster" src="${esc(posterUrl)}" alt="" loading="lazy" decoding="async">`:'';
+    const posterLabel=(movieDetailLabels[language]||movieDetailLabels.en).unknown;
+    const posterUrl=safeUrl(movie.poster_url),poster=posterUrl?`<img class="movie-poster" src="${esc(posterUrl)}" alt="${esc(posterLabel)}" data-poster-fallback="${esc(posterLabel)}" loading="lazy" decoding="async">`:`<span class="movie-poster-unavailable">${esc(posterLabel)}</span>`;
     const genres=[...new Set(Array.isArray(movie.genres)?movie.genres:[])].map(displayGenre);
     const rating=displayRating(movie.rating);
     const movieMeta=genres.length||rating?`<div class="movie-taxonomy">${genres.map(genre=>`<span class="tag genre-tag">${esc(genre)}</span>`).join('')}${rating?`<span class="tag rating-tag" title="${esc(ageRatingTitles[language]||ageRatingTitles.en)}">${esc(rating)}</span>`:''}</div>`:'';
@@ -634,6 +635,12 @@
     }
   }
   citySelect.addEventListener('change',e=>{mapCaption.classList.remove('location-active');selectCity(e.target.value,true);});
+  resultsEl.addEventListener('error',event=>{
+    const image=event.target;
+    if(!(image instanceof HTMLImageElement)||!image.matches('.movie-poster'))return;
+    const fallback=document.createElement('span');fallback.className='movie-poster-unavailable';
+    fallback.textContent=image.dataset.posterFallback||movieDetailLabels[language].unknown;image.replaceWith(fallback);
+  },true);
   dateSelect.addEventListener('change',()=>{syncDateControls();loadDateShowtimes(dateSelect.value);});
   $('#date-prev').addEventListener('click',()=>changeDate(-1));$('#date-next').addEventListener('click',()=>changeDate(1));
   searchInput.addEventListener('input',renderResults);subtitleSelect.addEventListener('change',renderResults);audioSelect.addEventListener('change',renderResults);brandSelect.addEventListener('change',renderResults);
