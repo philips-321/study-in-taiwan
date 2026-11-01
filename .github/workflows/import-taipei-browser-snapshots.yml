@@ -41,6 +41,10 @@ jobs:
           rm -rf /tmp/cinema-reviewed-canonical
           node cinema/scripts/convert-to-canonical.mjs --output-root=/tmp/cinema-reviewed-canonical
           node cinema/scripts/merge-canonical-snapshot.mjs /tmp/cinema-reviewed-canonical/canonical --previous-movies=cinema/data/movies/index.json
+      - name: Update unique canonical film poster status and fetch missing posters
+        env:
+          TMDB_API_READ_ACCESS_TOKEN: ${{ secrets.TMDB_API_READ_ACCESS_TOKEN }}
+        run: node cinema/scripts/sync-canonical-movie-registry.mjs
       - name: Rebuild public view from canonical archive
         shell: bash
         run: |
@@ -69,6 +73,8 @@ jobs:
         run: node cinema/scripts/write-automation-health-report.mjs
       - name: Validate canonical data
         run: node cinema/scripts/validate-canonical-data.mjs
+      - name: Validate canonical movie poster registry
+        run: node cinema/scripts/validate-canonical-movie-registry.mjs
       - name: Verify history and display cutoff
         shell: bash
         run: |

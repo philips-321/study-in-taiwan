@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T17:48:50.354Z",
+  "generated_at": "2026-11-01T17:59:36.107Z",
   "policy": "Append-only known poster records. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -265,6 +265,7 @@
       "sources": [
         "archived-movie-catalog",
         "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
         "vieshow-official-browser"
       ]
     },

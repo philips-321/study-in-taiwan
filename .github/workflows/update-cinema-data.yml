@@ -134,6 +134,12 @@ jobs:
           node cinema/scripts/convert-to-canonical.mjs --output-root=/tmp/cinema-new-canonical
           node cinema/scripts/merge-canonical-snapshot.mjs /tmp/cinema-new-canonical/canonical --previous-movies=/tmp/cinema-data-prev/movies/index.json
 
+      - name: Update unique canonical film poster status and fetch missing posters
+        if: steps.daily_guard.outputs.skip != 'true'
+        env:
+          TMDB_API_READ_ACCESS_TOKEN: ${{ secrets.TMDB_API_READ_ACCESS_TOKEN }}
+        run: node cinema/scripts/sync-canonical-movie-registry.mjs
+
       - name: Rebuild the public rolling window from canonical JSONL
         if: steps.daily_guard.outputs.skip != 'true'
         run: |
@@ -292,6 +298,10 @@ jobs:
           console.log(JSON.stringify({ cities: manifest.cities, sources: manifest.sources.showtimes }, null, 2));
           console.log(`Validated ${totalRows} screening rows, ${referencedMovieIds.size} referenced films, and ${sessionKeys.size} unique sessions.`);
           NODE
+
+      - name: Validate canonical movie poster registry
+        if: steps.daily_guard.outputs.skip != 'true'
+        run: node cinema/scripts/validate-canonical-movie-registry.mjs
 
       - name: Record completed Taiwan refresh date
         if: steps.daily_guard.outputs.skip != 'true'

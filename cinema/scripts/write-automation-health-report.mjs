@@ -11,6 +11,9 @@ const diagnostics = await read('reports/collector-diagnostics.json').catch(error
   if (error?.code === 'ENOENT') return {};
   throw error;
 });
+const canonicalMovieRecords = await fs.readFile(path.join(ROOT, 'canonical/movie-registry.jsonl'), 'utf8')
+  .then(text => text.split('\n').filter(Boolean).map(JSON.parse))
+  .catch(error => error?.code === 'ENOENT' ? [] : Promise.reject(error));
 const issueHistoryFile = path.join(ROOT, 'reports/source-issue-history.json');
 let issueHistory = await fs.readFile(issueHistoryFile, 'utf8').then(JSON.parse).catch(error => {
   if (error?.code === 'ENOENT') return { schema: 'cinema-source-issue-history', version: 1, issues: [] };
@@ -185,6 +188,7 @@ for (const date of await fs.readdir(path.join(ROOT, 'showtimes-public/by-date'))
 }
 
 const activeMovies = [...activeMovieIds].map(id => movieById.get(id)).filter(Boolean);
+const activeCanonicalMovies = canonicalMovieRecords.filter(movie => (movie.movie_ids || []).some(id => activeMovieIds.has(id)));
 const missingPosters = activeMovies.filter(movie => !movie.poster_url);
 const invalidPosters = [];
 for (const movie of catalog.movies || []) {
@@ -221,6 +225,12 @@ const report = {
     active_movies: activeMovies.length,
     available: activeMovies.length - missingPosters.length,
     missing: missingPosters.length,
+    canonical_registry: {
+      unique_active_films: activeCanonicalMovies.length,
+      poster_yes: activeCanonicalMovies.filter(movie => movie.poster_status === 'yes').length,
+      poster_no: activeCanonicalMovies.filter(movie => movie.poster_status === 'no').length,
+      fetch_states: Object.fromEntries([...new Set(activeCanonicalMovies.map(movie => movie.poster_fetch_state))].sort().map(state => [state, activeCanonicalMovies.filter(movie => movie.poster_fetch_state === state).length]))
+    },
     missing_movies: missingPosters.slice(0, 200).map(movie => ({ movie_id: movie.movie_id, movie_title: movie.movie_title || movie.movie_title_en || null })),
     missing_samples_capped_at: 200,
     invalid_https_urls: invalidPosters,
@@ -266,6 +276,7 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     `- Public window: ${report.public_window.rows} sessions (${report.public_window.as_of} to ${report.public_window.end_date})`,
     `- Sources failed/degraded: ${failedSources.length}`,
     `- Active films without posters: ${missingPosters.length}`,
+    `- Canonical film registry: ${activeCanonicalMovies.length} unique active films; ${activeCanonicalMovies.filter(movie => movie.poster_status === 'yes').length} poster yes; ${activeCanonicalMovies.filter(movie => movie.poster_status === 'no').length} poster no`,
     `- Invalid poster URLs: ${invalidPosters.length}`,
     `- Missing movie IDs: ${missingMovieReferences.length}`,
     `- Unknown cinema IDs: ${unknownCinemaReferences.length}`,

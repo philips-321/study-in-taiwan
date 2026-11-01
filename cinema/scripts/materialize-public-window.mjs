@@ -9,7 +9,7 @@ const asOf = args.get('as-of') || new Date().toISOString().slice(0, 10);
 const days = Number(args.get('days') || 30);
 const start = new Date(`${asOf}T00:00:00Z`), end = new Date(start); end.setUTCDate(end.getUTCDate() + days);
 const rows = [];
-for (const file of fs.readdirSync(canonicalRoot).filter(x => x.endsWith('.jsonl')).sort()) {
+for (const file of fs.readdirSync(canonicalRoot).filter(x => /^\d{4}-\d{2}\.jsonl$/.test(x)).sort()) {
   for (const line of fs.readFileSync(path.join(canonicalRoot, file), 'utf8').split('\n').filter(Boolean)) rows.push(JSON.parse(line));
 }
 const selected = rows.filter(row => row.status === 'canonical' && row.business_date >= asOf && row.business_date <= end.toISOString().slice(0, 10));

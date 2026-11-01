@@ -2676,8 +2676,10 @@
       "movie_title_en": "DOUKYUSEI",
       "metadata_sources": [
         "previous-catalog",
-        "vieshow-official-browser"
-      ]
+        "vieshow-official-browser",
+        "punctuation-insensitive-title-poster-match"
+      ],
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261015005.jpg"
     },
     {
       "movie_id": "m_cdf9505be00f",
@@ -3343,6 +3345,6 @@
       ]
     }
   ],
-  "generated_at": "2026-11-01T17:48:50.705Z",
+  "generated_at": "2026-11-01T17:59:36.080Z",
   "identity_policy": "stable movie_id from normalized primary title; metadata stored once in this catalog"
 }

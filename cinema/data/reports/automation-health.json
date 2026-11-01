@@ -1,6 +1,6 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-01T17:48:51.009Z",
+  "generated_at": "2026-11-01T17:58:00.191Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
@@ -163,7 +163,7 @@
     ],
     "issue_history": {
       "file": "cinema/data/reports/source-issue-history.json",
-      "recorded_this_run": true,
+      "recorded_this_run": false,
       "issues": [
         {
           "issue_id": "showtimes-official-api:http_403:capi.showtimes.com.tw",
@@ -215,6 +215,16 @@
     "active_movies": 158,
     "available": 59,
     "missing": 99,
+    "canonical_registry": {
+      "unique_active_films": 149,
+      "poster_yes": 48,
+      "poster_no": 101,
+      "fetch_states": {
+        "ambiguous": 5,
+        "reused": 48,
+        "waiting_for_provider": 96
+      }
+    },
     "missing_movies": [
       {
         "movie_id": "m_c9079f271cfb",

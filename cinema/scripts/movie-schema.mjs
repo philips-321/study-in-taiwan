@@ -33,7 +33,7 @@ export function knownAgeRating(value) {
   return ({ '普': 'g', '普遍級': 'g', g: 'g', '護': 'p', '保護級': 'p', p: 'p', '輔12': 'pg12', '輔12級': 'pg12', pg12: 'pg12', '輔15': 'pg15', '輔15級': 'pg15', pg15: 'pg15', '限制級': 'r', r: 'r' })[raw] || null;
 }
 
-function posterMatchKey(value) {
+export function posterMatchKey(value) {
   return normalizeMovieTitle(value)
     .replace(/^\((?:安可重播|特別場|中文特別場|數位修復版)\)/, '')
     .replace(/[（(](?:4dx)?特別場[）)]$/i, '')
@@ -46,7 +46,7 @@ export function ambiguousPosterTitleMatches(movies) {
   const candidates = new Map();
   for (const movie of movies) {
     if (!movie.poster_url) continue;
-    for (const title of [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || [])].filter(Boolean)) {
+    for (const title of [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || []), ...(movie.title_aliases || []), ...(movie.aliases || [])].filter(Boolean)) {
       const key = posterMatchKey(title);
       if (key.length < 4) continue;
       const entry = candidates.get(key) || { titles: new Set(), movies: new Set(), posters: new Set() };
@@ -65,7 +65,7 @@ export function inheritUnambiguousTitlePosters(movies, historicalDonors = []) {
   const posterCandidates = new Map();
   for (const movie of [...historicalDonors, ...movies]) {
     if (!movie.poster_url) continue;
-    const titles = [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || [])].filter(Boolean);
+    const titles = [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || []), ...(movie.title_aliases || []), ...(movie.aliases || [])].filter(Boolean);
     for (const title of titles) {
       const key = posterMatchKey(title);
       if (key.length < 4 || (key.length < 6 && !/\p{Script=Han}/u.test(key))) continue;
@@ -77,7 +77,7 @@ export function inheritUnambiguousTitlePosters(movies, historicalDonors = []) {
 
   for (const movie of movies) {
     if (movie.poster_url) continue;
-    const titles = [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || [])].filter(Boolean);
+    const titles = [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || []), ...(movie.title_aliases || []), ...(movie.aliases || [])].filter(Boolean);
     const matches = new Set();
     for (const title of titles) {
       const urls = posterCandidates.get(posterMatchKey(title));
