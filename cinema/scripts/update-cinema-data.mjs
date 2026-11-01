@@ -349,26 +349,14 @@ const recent403RetryAfter = sourceName => {
 };
 
 if (needsAlternativeFallback('showtimes-official-api')) {
-  const todayTaipei = new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
-  }).format(new Date());
-  const sourceCinemaIds = new Set();
-  const showtimesPageIds = new Map();
-  const canonicalDir = path.join(ROOT, 'canonical');
-  for (const name of (await fs.readdir(canonicalDir)).filter(name => /^20\\d{2}-\\d{2}\\.jsonl$/.test(name))) {
-    const text = await fs.readFile(path.join(canonicalDir, name), 'utf8');
-    for (const line of text.split('\\n')) {
-      if (!line) continue;
-      const row = JSON.parse(line);
-      if (row.source_id === 'showtimes-official-api' && row.status !== 'stale' && row.business_date >= todayTaipei && row.cinema_id) {
-        sourceCinemaIds.add(row.cinema_id);
-        const pageId = String(row.source_url || '').match(/\/cinemas\/(\d+)\/?/)?.[1];
-        if (pageId) showtimesPageIds.set(row.cinema_id, pageId);
-      }
-    }
-  }
+  const observedFile = path.join(ROOT, 'research', 'observed-sources.json');
+  const observedSources = await fs.readFile(observedFile, 'utf8').then(JSON.parse);
+  const showtimesPageIds = new Map((observedSources.entries || [])
+    .filter(entry => String(entry.source_type || '').includes('official ShowTimes') && entry.cinema_id && entry.source_url)
+    .map(entry => [entry.cinema_id, String(entry.source_url).match(/\/cinemas\/(\d+)\/?/)?.[1]])
+    .filter(([, pageId]) => pageId));
   const targets = [...cinemasByCity.values()].flatMap(map => [...map.values()])
-    .filter(cinema => sourceCinemaIds.has(cinema.id) && showtimesPageIds.has(cinema.id))
+    .filter(cinema => showtimesPageIds.has(cinema.id))
     .map(cinema => ({ ...cinema, showtimes_cinema_id: showtimesPageIds.get(cinema.id) }));
 
   const retryAfter = recent403RetryAfter('showtimes-official-browser');
