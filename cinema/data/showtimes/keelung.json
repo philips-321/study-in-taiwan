@@ -1,7 +1,7 @@
 {
   "version": 4,
   "city": "keelung",
-  "generated_at": "2026-11-01T23:40:37.680Z",
+  "generated_at": "2026-11-01T23:43:23.226Z",
   "showtime_count": 4,
   "sources": {
     "moc-culture-movie-api": {
@@ -13,7 +13,7 @@
       "fresh_showtimes": 256,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:41:30.358Z",
+      "last_success_at": "2026-11-01T23:44:09.249Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:41:30.358Z",
+      "last_success_at": "2026-11-01T23:44:09.249Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1792,
+      "showtimes": 1831,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1792,
+      "fresh_showtimes": 1831,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:41:30.358Z",
+      "last_success_at": "2026-11-01T23:44:09.249Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -70,7 +70,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:41:30.358Z",
+      "last_success_at": "2026-11-01T23:44:09.249Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -98,8 +98,8 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-11-02: No showtimes parsed",
-        "t02a01/2026-11-06: No showtimes parsed",
         "t02a01/2026-11-07: No showtimes parsed",
+        "t02a01/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-02: No showtimes parsed",
         "t02a11/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-07: No showtimes parsed",
@@ -114,7 +114,7 @@
       "fresh_showtimes": 1095,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:41:30.358Z",
+      "last_success_at": "2026-11-01T23:44:09.249Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -129,23 +129,23 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:41:30.358Z",
+      "last_success_at": "2026-11-01T23:44:09.249Z",
       "last_failure_at": "2026-11-01T22:52:01.331Z",
       "next_probe_at": null
     },
     "showtimes-official-browser": {
       "ok": false,
       "showtimes": 0,
-      "error": "No known ShowTimes cinemas have official HTML page IDs",
+      "error": "Official ShowTimes browser returned no sessions (大巨蛋秀泰影城: HTTP 403; 欣欣秀泰影城: HTTP 403; 樹林秀泰影城: HTTP 403; 土城秀泰影城: Skipped after official site returned HTTP 403; 基隆秀泰影城: Skipped after official site returned HTTP 403)",
       "health": "degraded",
       "circuit_state": "open",
-      "failure_count": 1,
+      "failure_count": 2,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": "unavailable",
       "last_success_at": null,
-      "last_failure_at": "2026-11-01T23:41:30.358Z",
-      "next_probe_at": "2026-11-02T00:11:30.358Z"
+      "last_failure_at": "2026-11-01T23:44:09.249Z",
+      "next_probe_at": "2026-11-02T00:14:09.249Z"
     },
     "eslite-official-browser": {
       "ok": true,
@@ -158,7 +158,7 @@
       "fresh_showtimes": 63,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:41:30.358Z",
+      "last_success_at": "2026-11-01T23:44:09.249Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -187,6 +187,6 @@
       "showtimes-official-browser",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T23:41:30.358Z"
+    "restored_at": "2026-11-01T23:44:09.249Z"
   }
 }

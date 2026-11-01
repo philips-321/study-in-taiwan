@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-01T23:41:35.944Z",
+  "generated_at": "2026-11-01T23:44:14.950Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -86,8 +86,8 @@
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 171,
       "retry_after": "2026-11-08T17:42:56.311Z",
-      "retry_suppressed_run_count": 17,
-      "last_retry_suppressed_at": "2026-11-01T23:41:35.944Z"
+      "retry_suppressed_run_count": 18,
+      "last_retry_suppressed_at": "2026-11-01T23:44:14.950Z"
     },
     {
       "issue_id": "eslite-official-schedule:http_403:meet.eslite.com",
@@ -211,8 +211,8 @@
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 15,
       "retry_after": "2026-11-08T17:42:56.311Z",
-      "retry_suppressed_run_count": 17,
-      "last_retry_suppressed_at": "2026-11-01T23:41:35.944Z"
+      "retry_suppressed_run_count": 18,
+      "last_retry_suppressed_at": "2026-11-01T23:44:14.950Z"
     },
     {
       "issue_id": "showtimes-official-html-fallback:http_403:unknown-host",
@@ -280,6 +280,38 @@
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
       "retry_after": "2026-11-08T23:41:35.944Z"
+    },
+    {
+      "issue_id": "showtimes-official-browser:http_403:unknown-host",
+      "source": "showtimes-official-browser",
+      "error_type": "http_status",
+      "http_status": 403,
+      "host": null,
+      "endpoint": null,
+      "state": "open",
+      "first_seen": "2026-11-01T23:44:14.950Z",
+      "last_seen": "2026-11-01T23:44:14.950Z",
+      "last_success_at": null,
+      "total_occurrence_count": 1,
+      "historical_observation_count": 0,
+      "consecutive_failures": 1,
+      "reopen_count": 0,
+      "known_cause": null,
+      "next_steps": [
+        "Inspect the recorded error and source endpoint before changing the parser."
+      ],
+      "observations": [
+        {
+          "observed_at": "2026-11-01T23:44:14.950Z",
+          "error": "Official ShowTimes browser returned no sessions (大巨蛋秀泰影城: HTTP 403; 欣欣秀泰影城: HTTP 403; 樹林秀泰影城: HTTP 403; 土城秀泰影城: Skipped after official site returned HTTP 403; 基隆秀泰影城: Skipped after official site returned HTTP 403)",
+          "fresh_showtimes": 0,
+          "fallback_showtimes": 0
+        }
+      ],
+      "last_error": "Official ShowTimes browser returned no sessions (大巨蛋秀泰影城: HTTP 403; 欣欣秀泰影城: HTTP 403; 樹林秀泰影城: HTTP 403; 土城秀泰影城: Skipped after official site returned HTTP 403; 基隆秀泰影城: Skipped after official site returned HTTP 403)",
+      "last_fresh_showtimes": 0,
+      "last_fallback_showtimes": 0,
+      "retry_after": "2026-11-08T23:44:14.950Z"
     }
   ],
   "retry_policy": "After an unresolved HTTP 403, suppress automatic source requests for 7 days; keep last-known-good schedules and make one retry after the cooldown."

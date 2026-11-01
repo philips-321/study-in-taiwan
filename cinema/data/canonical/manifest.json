@@ -3,19 +3,19 @@
   "version": 1,
   "source": "daily collector snapshots merged by screening_id",
   "parser_version": "canonical-converter-v1",
-  "screening_rows": 19371,
+  "screening_rows": 19422,
   "unresolved_rows": 0,
   "partitions": {
     "2026-01": 2,
     "2026-10": 8347,
-    "2026-11": 10936,
+    "2026-11": 10987,
     "2026-12": 86
   },
   "migration_status": "active",
   "public_view": {
     "window_days": 30,
     "generated_as_of": "2026-11-02",
-    "rows": 9853,
+    "rows": 9904,
     "excluded_by_window": 9382,
     "excluded_stale_status_rows": 0,
     "excluded_stale_fallback_rows": 136,
@@ -23,9 +23,9 @@
       "showtimes-official-api": 136
     },
     "fallback_max_age_hours": 168,
-    "sha256": "b434409aa976c935b401e8d511b8bb43bd52b5d73b489e3a9e333e817ef211ee"
+    "sha256": "36bcf087832e8e53f4d1e3fbbbf8390846201951baa40e15e9054306789e61f8"
   },
-  "updated_at": "2026-11-01T23:41:31.761Z",
+  "updated_at": "2026-11-01T23:44:10.212Z",
   "movie_registry": {
     "file": "movie-registry.jsonl",
     "unique_films": 221,
@@ -39,19 +39,19 @@
     "official_poster_matches_this_run": 0,
     "poster_lookups_deferred": 0,
     "ambiguous_poster_matches": 0,
-    "last_poster_sync_at": "2026-11-01T23:41:31.761Z"
+    "last_poster_sync_at": "2026-11-01T23:44:10.212Z"
   },
   "generated_at": "2026-11-01T19:41:30.407Z",
   "schedule_reconciliation": {
-    "checked_at": "2026-11-01T23:41:31.413Z",
+    "checked_at": "2026-11-01T23:44:09.916Z",
     "as_of": "2026-11-02",
     "window_days": 30,
     "stale_marked_this_run": 0,
     "stale_screenings_in_window": 0,
-    "pending_candidates": 971,
-    "fresh_snapshot_rows": 3528,
+    "pending_candidates": 982,
+    "fresh_snapshot_rows": 3563,
     "last_known_good_rows": 280,
-    "scopes_without_fresh_evidence": 411,
+    "scopes_without_fresh_evidence": 450,
     "policy": "A screening is marked stale only after it is absent from two consecutive Taiwan-day snapshots in which the same source, cinema, and date scope still returns fresh rows. Stale rows remain archived and are excluded from the public view."
   }
 }
