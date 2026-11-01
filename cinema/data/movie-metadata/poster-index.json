@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T19:03:37.750Z",
+  "generated_at": "2026-11-01T19:05:15.367Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -162,6 +162,18 @@
       ],
       "sources": [
         "imdb-image-search"
+      ]
+    },
+    {
+      "movie_id": "m_c990ab5b0cfc",
+      "movie_title": "11月高雄市電影館｜紅色情深",
+      "poster_url": "https://image.tmdb.org/t/p/original/5fkgMKovYZgbGngbHJg19zmsSaT.jpg",
+      "aliases": [
+        "11月高雄市電影館｜紅色情深",
+        "Trois couleurs: Rouge"
+      ],
+      "sources": [
+        "tmdb-zh-tw-image-search"
       ]
     },
     {
@@ -1444,6 +1456,18 @@
       ]
     },
     {
+      "movie_id": "m_8cf62f41272c",
+      "movie_title": "游牧人生",
+      "poster_url": "https://down-tw.img.susercontent.com/file/24314d0e3990d3f673821b2947831bb7",
+      "aliases": [
+        "Nomadland",
+        "游牧人生"
+      ],
+      "sources": [
+        "shopee-taiwan-image-search"
+      ]
+    },
+    {
       "movie_id": "m_198c0a91767d",
       "movie_title": "華倫夫人的職業 (英國國家劇院現場)",
       "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260825007.jpg",
@@ -1873,12 +1897,14 @@
         "magichour-centuryasia-nangang-web-fallback",
         "miramar-official-api",
         "previous-catalog",
+        "selected-existing-current-cinema-poster",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
         "vieshow-official-browser"
-      ]
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_8dbb4c7dc3c8",
@@ -1929,6 +1955,18 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program"
+      ]
+    },
+    {
+      "movie_id": "m_731b56a1397b",
+      "movie_title": "颱風俱樂部 4K修復版(特典場)",
+      "poster_url": "https://lp.p.pia.jp/shared/materials/34e996a7-4966-4fb0-8ba8-27796911f747/origin.jpg",
+      "aliases": [
+        "Typhoon Club",
+        "颱風俱樂部 4K修復版(特典場)"
+      ],
+      "sources": [
+        "pia-japan-image-search"
       ]
     },
     {
