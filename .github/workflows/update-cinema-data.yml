@@ -66,6 +66,31 @@ jobs:
             echo 'skip=false' >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Cache Playwright and headless Chromium
+        if: steps.daily_guard.outputs.skip != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            /tmp/cinema-playwright/node_modules
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-cinema-playwright-1.56.1-chromium-v1
+
+      - name: Install browser client and choose headless Chrome
+        if: steps.daily_guard.outputs.skip != 'true'
+        id: cinema_browser
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix /tmp/cinema-playwright --no-save --ignore-scripts playwright@1.56.1
+          if command -v google-chrome >/dev/null 2>&1 || command -v google-chrome-stable >/dev/null 2>&1; then
+            echo 'channel=chrome' >> "$GITHUB_OUTPUT"
+            echo 'Using the Chrome browser already installed on the GitHub-hosted runner.'
+          else
+            /tmp/cinema-playwright/node_modules/.bin/playwright install chromium
+            echo 'channel=' >> "$GITHUB_OUTPUT"
+            echo 'Installed Playwright Chromium because Chrome was not present on the runner.'
+          fi
+
       - name: Preserve previous showtimes for last-known-good fallback
         if: steps.daily_guard.outputs.skip != 'true'
         run: |
@@ -102,6 +127,8 @@ jobs:
         shell: bash
         env:
           MOC_AVAILABLE: ${{ steps.moc_probe.outputs.available }}
+          CINEMA_PLAYWRIGHT_MODULE: /tmp/cinema-playwright/node_modules/playwright/index.mjs
+          CINEMA_BROWSER_CHANNEL: ${{ steps.cinema_browser.outputs.channel }}
         run: |
           set -euo pipefail
           if [ "$MOC_AVAILABLE" = 'true' ]; then

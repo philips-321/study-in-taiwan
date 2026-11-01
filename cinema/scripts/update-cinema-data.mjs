@@ -1,13 +1,14 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { pathToFileURL } from 'node:url';
 import { buildMovieIndex, compactShowtime, knownAgeRating, movieIdForRow, screeningKey } from './movie-schema.mjs';
 import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
-import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
+import { fetchShowTimesShowtimes, fetchShowTimesShowtimesInBrowser } from './sources/showtimes.mjs';
 import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
-import { fetchEsliteShowtimes } from './sources/eslite.mjs';
+import { fetchEsliteShowtimes, fetchEsliteShowtimesInBrowser } from './sources/eslite.mjs';
 import { fetchAtMoviesTaipeiShowtimes } from './sources/atmovies-taipei.mjs';
 
 const ROOT = path.resolve('cinema/data');
@@ -102,13 +103,17 @@ async function fetchText(url, attempts = 3) {
       const r = await fetch(url, { headers: { 'user-agent': 'study-in-taiwan-cinema-data/1.0' } });
       if (!r.ok) {
         const error = new Error(`${r.status} ${r.statusText}: ${url}`);
-        if (r.status >= 400 && r.status < 500 && r.status !== 408 && r.status !== 429) throw error;
+        if (r.status >= 400 && r.status < 500 && r.status !== 408 && r.status !== 429) {
+          error.retryable = false;
+          throw error;
+        }
         lastError = error;
       } else {
         return await r.text();
       }
     } catch (error) {
       lastError = error;
+      if (error?.retryable === false) throw error;
     }
     if (attempt < attempts) {
       console.warn(`Fetch attempt ${attempt}/${attempts} failed for ${url}: ${String(lastError?.message || lastError)}`);
@@ -279,6 +284,9 @@ function mergeExternalRows(rows, sourceName) {
   sourceStatus[sourceName] = {
     ok: true,
     showtimes: rows.length,
+    ...(rows.acquisition_method ? { acquisition_method: rows.acquisition_method } : {}),
+    ...(Number.isInteger(rows.branch_pages) ? { branch_pages: rows.branch_pages } : {}),
+    ...(Number.isInteger(rows.branch_pages_failed) ? { branch_pages_failed: rows.branch_pages_failed } : {}),
     ...(sourceStatus[sourceName]?.role ? { role: sourceStatus[sourceName].role } : {}),
     ...(Array.isArray(rows.source_errors) && rows.source_errors.length ? { warnings: rows.source_errors.slice(0, 10) } : {})
   };
@@ -319,6 +327,41 @@ await runSource('showtimes-official-api', 'ShowTimes', fetchShowTimesShowtimes);
 await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuashanShowtimes);
 await runSource('eslite-official-schedule', 'Eslite', fetchEsliteShowtimes);
 await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);
+
+const needsBrowserFallback = source => {
+  const status = sourceStatus[source];
+  return status?.ok === false && (status.retry_suppressed === true || /\b403\b/.test(String(status.error || '')));
+};
+const browserFallbackSources = ['showtimes-official-api', 'eslite-official-schedule'].filter(needsBrowserFallback);
+if (browserFallbackSources.length && process.env.CINEMA_PLAYWRIGHT_MODULE) {
+  let browser = null;
+  try {
+    const { chromium } = await import(pathToFileURL(process.env.CINEMA_PLAYWRIGHT_MODULE).href);
+    browser = await chromium.launch({ headless: true, ...(process.env.CINEMA_BROWSER_CHANNEL ? { channel: process.env.CINEMA_BROWSER_CHANNEL } : {}) });
+  } catch (error) {
+    const message = String(error?.message || error).slice(0, 240);
+    console.error(`Headless Chrome could not start; browser fallback is unavailable: ${message}`);
+    for (const source of browserFallbackSources) sourceStatus[source].browser_error = `Chrome launch failed: ${message}`;
+  }
+  if (browser) {
+    const fallback = async (source, label, loader) => {
+      if (!browserFallbackSources.includes(source)) return;
+      try {
+        const rows = await loader(browser);
+        mergeExternalRows(rows, source);
+        console.info(`${label} recovered via Chromium: ${rows.length} sessions${rows.branch_pages ? ` across ${rows.branch_pages} branch pages` : ''}.`);
+      } catch (error) {
+        const message = String(error?.message || error).slice(0, 300);
+        sourceStatus[source] = { ...sourceStatus[source], browser_error: message };
+        console.error(`${label} browser fallback failed: ${message}`);
+      }
+    };
+    try {
+      await fallback('showtimes-official-api', 'ShowTimes', fetchShowTimesShowtimesInBrowser);
+      await fallback('eslite-official-schedule', 'Eslite', fetchEsliteShowtimesInBrowser);
+    } finally { await browser.close(); }
+  }
+}
 
 let metadataEnrichedRows = 0;
 for (const [city, rows] of showtimesByCity) for (const row of rows) {

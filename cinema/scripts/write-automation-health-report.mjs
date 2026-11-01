@@ -38,11 +38,16 @@ const sourceSummaries = Object.fromEntries(Object.entries(sourceStatuses).map(([
   last_success_at: status.last_success_at || null,
   next_probe_at: status.next_probe_at || null,
   retry_suppressed: status.retry_suppressed === true,
-  retry_after: status.retry_after || null
+  retry_after: status.retry_after || null,
+  acquisition_method: status.acquisition_method || null,
+  branch_pages: status.branch_pages ?? null,
+  branch_pages_failed: status.branch_pages_failed ?? null,
+  browser_error: status.browser_error || null,
+  warnings: status.warnings || []
 }]));
 const failedSources = Object.entries(sourceStatuses)
   .filter(([, status]) => status?.ok === false || status?.health === 'degraded')
-  .map(([source, status]) => ({ source, error: status.error || null, health: status.health || null, showtimes: status.showtimes || 0, retry_suppressed: status.retry_suppressed === true, retry_after: status.retry_after || null }));
+  .map(([source, status]) => ({ source, error: status.error || null, browser_error: status.browser_error || null, health: status.health || null, showtimes: status.showtimes || 0, retry_suppressed: status.retry_suppressed === true, retry_after: status.retry_after || null }));
 
 const endpointHints = {
   'showtimes-official-api': 'https://capi.showtimes.com.tw/4/app/bootstrap',
@@ -315,6 +320,7 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     for (const source of failedSources) {
       const issue = source.recurring_issue;
       lines.push(`- ${source.source}: ${source.error || source.health}${issue ? `; ${issue.consecutive_failures} consecutive failures, ${issue.total_occurrence_count} total observations` : ''}`);
+      if (source.browser_error) lines.push(`  - Browser fallback: ${source.browser_error}`);
       if (issue?.next_steps?.length) lines.push(`  - Next: ${issue.next_steps[0]}`);
     }
   }
