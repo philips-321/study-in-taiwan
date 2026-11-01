@@ -14,7 +14,7 @@ This is a display horizon, not a deletion horizon. Data after 2026-12-07 may rem
 - New browser-reviewed snapshots are merged incrementally into `cinema/data/showtimes/by-date/<date>/taipei.json`.
 - Official sources take precedence over clearly labelled fallback sources when the same screening identity is proven.
 - Absence from a fresh fetch is **not** permission to delete an old movie or screening.
-- `cinema/scripts/update-cinema-data.mjs` is not used for this Taipei incremental path because its full-refresh behavior clears generated JSON before rebuilding.
+- The daily collector still rebuilds its temporary normalized snapshot, but the workflow merges collected rows into `cinema/data/canonical/YYYY-MM.jsonl` and regenerates the public rolling view from that durable archive. A missing row in a later fetch does not delete its canonical record.
 
 ## Display horizon
 
