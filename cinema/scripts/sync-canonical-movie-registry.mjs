@@ -22,6 +22,12 @@ const titleVariants = value => {
   const title = String(value || '').trim();
   if (!title) return [];
   const variants = [title];
+  const catalogPrefix = title.match(/^[A-Z]\d?[-:]\s*(.+)$/i)?.[1];
+  if (catalogPrefix) variants.push(catalogPrefix);
+  const encoreReplay = title.replace(/安可直播/g, '安可重播');
+  if (encoreReplay !== title) variants.push(encoreReplay);
+  const specialEdition = title.replace(/(?:[_\s]*(?:特別場|特別放映)\s*\d*)$/i, '');
+  if (specialEdition !== title) variants.push(specialEdition);
   const suffix = title.match(/[｜|]\s*([^｜|]+)$/)?.[1];
   if (suffix) variants.push(suffix);
   const quoted = (title.match(/《/g) || []).length === 1 ? title.match(/《([^《》]+)》/)?.[1] : null;
@@ -96,7 +102,7 @@ const posterByAlias = new Map();
 for (const record of posterIndex.movies) {
   if (!record.poster_url) continue;
   const aliases = [...new Set([record.movie_title, ...(record.aliases || [])].filter(Boolean))];
-  for (const alias of aliases) {
+  for (const alias of aliases.flatMap(titleVariants)) {
     const key = posterMatchKey(alias);
     if (!usefulKey(key)) continue;
     const urls = posterByAlias.get(key) || new Map();
@@ -288,15 +294,34 @@ for (const group of groupItems) {
   old.forEach(record => matchedPrior.add(record));
   const oldByPoster = new Map(old.filter(record => record.poster_url).map(record => [record.poster_url, record]));
   const currentByPoster = new Map(group.movies.filter(movie => movie.poster_url).map(movie => [movie.poster_url, movie]));
-  const indexedByPoster = new Map();
+  const indexedRanks = new Map();
+  const rawTitleKeys = new Set(group.movies.flatMap(movie => [movie.movie_title, movie.movie_title_en].filter(Boolean).map(posterMatchKey)));
   const expandedLookupKeys = new Set(lookupKeys.flatMap(key => titleVariants(key).map(posterMatchKey).filter(usefulKey)));
-  for (const key of expandedLookupKeys) for (const [url, record] of posterByAlias.get(key) || []) indexedByPoster.set(url, record);
+  const rememberIndexed = (url, record, rank) => {
+    const existing = indexedRanks.get(url);
+    if (!existing || rank > existing.rank) indexedRanks.set(url, { record, rank });
+  };
+  for (const key of expandedLookupKeys) for (const [url, record] of posterByAlias.get(key) || []) {
+    rememberIndexed(url, record, rawTitleKeys.has(key) ? 3 : 2);
+  }
+  if (!indexedRanks.size) for (const key of lookupKeys.filter(value => value.length >= 20 && !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u.test(value))) {
+    for (const [candidateKey, urls] of posterByAlias) {
+      if (candidateKey.length >= key.length && candidateKey.startsWith(key)) {
+        for (const [url, record] of urls) rememberIndexed(url, record, 1);
+      }
+    }
+  }
+  const bestIndexRank = Math.max(0, ...[...indexedRanks.values()].map(candidate => candidate.rank));
+  const indexedByPoster = new Map([...indexedRanks].map(([url, candidate]) => [url, candidate.record]));
   const knownPosters = new Map([...oldByPoster, ...currentByPoster, ...indexedByPoster]);
   const manualPosters = new Map(old.filter(record => record.poster_fetch_state === 'found_manual' && record.poster_url).map(record => [record.poster_url, record]));
   const preferredPosters = new Map([...indexedByPoster].filter(([, record]) => record.preferred === true));
   const protectedPosters = new Map([...manualPosters, ...preferredPosters]);
-  let posterUrl = protectedPosters.size === 1 ? [...protectedPosters.keys()][0]
-    : protectedPosters.size === 0 && knownPosters.size === 1 ? [...knownPosters.keys()][0] : null;
+  const bestIndexedPosters = new Map([...indexedRanks].filter(([, candidate]) => candidate.rank === bestIndexRank));
+  let posterUrl = manualPosters.size === 1 ? [...manualPosters.keys()][0]
+    : bestIndexedPosters.size === 1 ? [...bestIndexedPosters.keys()][0]
+      : preferredPosters.size === 1 ? [...preferredPosters.keys()][0]
+        : protectedPosters.size === 0 && knownPosters.size === 1 ? [...knownPosters.keys()][0] : null;
   let posterSource = posterUrl ? (manualPosters.get(posterUrl)?.poster_source || currentByPoster.get(posterUrl)?.metadata_sources?.[0] || indexedByPoster.get(posterUrl)?.sources?.[0] || oldByPoster.get(posterUrl)?.poster_source || 'poster-index') : null;
   let fetchState = posterUrl ? (manualPosters.has(posterUrl) ? 'found_manual'
     : preferredPosters.has(posterUrl) ? (indexedByPoster.get(posterUrl)?.sources?.some(source => ['kaohsiung-film-archive-official', 'fuzhong15-official-movie-page'].includes(source)) ? 'found_official' : 'found_manual') : 'reused')
