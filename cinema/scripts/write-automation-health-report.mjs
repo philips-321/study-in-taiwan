@@ -48,6 +48,7 @@ const sourceSummaries = Object.fromEntries(Object.entries(sourceStatuses).map(([
   target_cinemas: status.target_cinemas ?? null,
   matched_cinemas: status.matched_cinemas ?? null,
   unmatched_cinemas: status.unmatched_cinemas || [],
+  cinemas_with_partial_days: status.cinemas_with_partial_days || [],
   cinema_pages: status.cinema_pages ?? null,
   cinema_pages_failed: status.cinema_pages_failed ?? null,
   warnings: status.warnings || []
@@ -62,8 +63,8 @@ const endpointHints = {
 };
 const guidance = {
   'showtimes-official-api': {
-    known_cause: 'GitHub Actions repeatedly receives HTTP 403 from the ShowTimes bootstrap API. The collector reads first-party schedule HTML pages for each known ShowTimes cinema, then tries AtMovies for any cinema still missing.',
-    next_steps: ['Review first-party HTML page coverage and AtMovies secondary fallback warnings.', 'Treat refreshed HTML sessions as current source evidence; retain canonical future rows until fresh schedule data replaces them.', 'Preserve last-known-good ShowTimes rows in canonical storage.']
+    known_cause: 'GitHub Actions repeatedly receives HTTP 403 from both the ShowTimes bootstrap API and its cinema pages. The collector uses server-rendered daily schedules from the Taiwan aggregator 場次通 and AtMovies for remaining cinemas.',
+    next_steps: ['Review 場次通 daily-page coverage and AtMovies secondary fallback warnings.', 'Keep last-known-good ShowTimes rows for dates outside the refreshed window.', 'Preserve canonical historical rows and their source provenance.']
   },
   'eslite-official-schedule': {
     known_cause: 'GitHub Actions repeatedly receives HTTP 403 from the official Eslite schedule page. The existing AtMovies Taipei fallback also covers Eslite sessions when AtMovies publishes them.',

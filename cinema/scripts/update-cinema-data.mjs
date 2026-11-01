@@ -7,6 +7,7 @@ import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
 import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
 import { fetchShowTimesHtmlFallback } from './sources/showtimes-html.mjs';
+import { fetchTwShowtimesFallback } from './sources/twshowtimes.mjs';
 import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
 import { fetchEsliteShowtimes } from './sources/eslite.mjs';
 import { fetchAtMoviesTaipeiShowtimes, fetchAtMoviesShowtimesFallback } from './sources/atmovies-taipei.mjs';
@@ -245,6 +246,7 @@ const sourceStatus = {
   'eslite-official-schedule': { ok: false, showtimes: 0 },
   'atmovies-taipei-fallback': { ok: false, showtimes: 0, role: 'fallback only for sources blocked/incomplete from GitHub Actions' },
   'showtimes-official-html-fallback': { ok: true, showtimes: 0, skipped: true, role: 'first-party ShowTimes cinema HTML fallback when bootstrap API is blocked' },
+  'twshowtimes-aggregator-fallback': { ok: true, showtimes: 0, skipped: true, role: 'third-party Taiwan cinema schedule HTML fallback for blocked ShowTimes sources' },
   'atmovies-showtimes-fallback': { ok: true, showtimes: 0, skipped: true, role: 'accessible Taiwan cinema listing fallback for blocked ShowTimes API' },
   'vieshow-official-browser': {
     ok: true,
@@ -336,6 +338,14 @@ const needsAlternativeFallback = source => {
   const status = sourceStatus[source];
   return status?.ok === false && (status.retry_suppressed === true || /\b403\b/.test(String(status.error || '')));
 };
+
+const recent403RetryAfter = sourceName => {
+  const issue = (sourceIssueHistory.issues || []).find(item => item.source === sourceName && item.state === 'open' && item.http_status === 403);
+  const failedAt = Date.parse(issue?.last_seen || '');
+  if (!Number.isFinite(failedAt) || Date.now() - failedAt >= SOURCE_RETRY_COOLDOWN_MS) return null;
+  return new Date(failedAt + SOURCE_RETRY_COOLDOWN_MS).toISOString();
+};
+
 if (needsAlternativeFallback('showtimes-official-api')) {
   const todayTaipei = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
@@ -350,7 +360,7 @@ if (needsAlternativeFallback('showtimes-official-api')) {
       const row = JSON.parse(line);
       if (row.source_id === 'showtimes-official-api' && row.status !== 'stale' && row.business_date >= todayTaipei && row.cinema_id) {
         sourceCinemaIds.add(row.cinema_id);
-        const pageId = String(row.source_url || '').match(/\/cinemas\/(\d+)\/?/)?.[1];
+        const pageId = String(row.source_url || '').match(/\/cinemas\/(\d+)\/?/ )?.[1];
         if (pageId) showtimesPageIds.set(row.cinema_id, pageId);
       }
     }
@@ -360,29 +370,86 @@ if (needsAlternativeFallback('showtimes-official-api')) {
   const pageTargets = knownCinemas.filter(cinema => showtimesPageIds.has(cinema.id))
     .map(cinema => ({ ...cinema, showtimes_cinema_id: showtimesPageIds.get(cinema.id) }));
   let remainingTargets = [...knownCinemas];
-  try {
-    const htmlRows = await fetchShowTimesHtmlFallback(pageTargets);
-    mergeExternalRows(htmlRows, 'showtimes-official-html-fallback');
-    remainingTargets = knownCinemas.filter(cinema => htmlRows.unmatched_cinemas.includes(cinema.name_zh));
-    sourceStatus['showtimes-official-html-fallback'] = {
-      ok: true,
-      showtimes: htmlRows.length,
-      acquisition_method: htmlRows.acquisition_method,
-      cinema_pages: htmlRows.cinema_pages,
-      cinema_pages_failed: htmlRows.cinema_pages_failed,
-      target_cinemas: htmlRows.target_cinemas,
-      matched_cinemas: htmlRows.matched_cinemas,
-      unmatched_cinemas: htmlRows.unmatched_cinemas,
-      ...(htmlRows.source_errors.length ? { warnings: htmlRows.source_errors.slice(0, 10) } : {})
-    };
-    console.info(`ShowTimes official HTML fallback recovered ${htmlRows.length} sessions for ${htmlRows.matched_cinemas}/${htmlRows.target_cinemas} cinemas.`);
-  } catch (error) {
+
+  const htmlRetryAfter = recent403RetryAfter('showtimes-official-html-fallback');
+  if (htmlRetryAfter) {
     sourceStatus['showtimes-official-html-fallback'] = {
       ok: false,
+      skipped: true,
+      retry_suppressed: true,
+      retry_after: htmlRetryAfter,
       showtimes: 0,
-      error: String(error?.message || error).slice(0, 300)
+      error: 'HTTP 403 from ShowTimes cinema HTML; retry suppressed'
     };
-    console.error('ShowTimes official HTML fallback failed:', error);
+    console.info('ShowTimes HTML retry suppressed after recurring HTTP 403; next probe after ' + htmlRetryAfter + '.');
+  } else {
+    try {
+      const htmlRows = await fetchShowTimesHtmlFallback(pageTargets);
+      mergeExternalRows(htmlRows, 'showtimes-official-html-fallback');
+      remainingTargets = knownCinemas.filter(cinema => htmlRows.unmatched_cinemas.includes(cinema.name_zh));
+      sourceStatus['showtimes-official-html-fallback'] = {
+        ok: true,
+        showtimes: htmlRows.length,
+        acquisition_method: htmlRows.acquisition_method,
+        cinema_pages: htmlRows.cinema_pages,
+        cinema_pages_failed: htmlRows.cinema_pages_failed,
+        target_cinemas: htmlRows.target_cinemas,
+        matched_cinemas: htmlRows.matched_cinemas,
+        unmatched_cinemas: htmlRows.unmatched_cinemas,
+        ...(htmlRows.source_errors.length ? { warnings: htmlRows.source_errors.slice(0, 10) } : {})
+      };
+      console.info('ShowTimes official HTML fallback recovered ' + htmlRows.length + ' sessions for ' + htmlRows.matched_cinemas + '/' + htmlRows.target_cinemas + ' cinemas.');
+    } catch (error) {
+      sourceStatus['showtimes-official-html-fallback'] = {
+        ok: false,
+        showtimes: 0,
+        error: String(error?.message || error).slice(0, 300)
+      };
+      console.error('ShowTimes official HTML fallback failed:', error);
+    }
+  }
+
+  const aggregatorRetryAfter = recent403RetryAfter('twshowtimes-aggregator-fallback');
+  if (remainingTargets.length && aggregatorRetryAfter) {
+    sourceStatus['twshowtimes-aggregator-fallback'] = {
+      ok: false,
+      skipped: true,
+      retry_suppressed: true,
+      retry_after: aggregatorRetryAfter,
+      showtimes: 0,
+      error: 'HTTP 403 from 場次通; retry suppressed'
+    };
+    console.info('場次通 retry suppressed after recurring HTTP 403; next probe after ' + aggregatorRetryAfter + '.');
+  } else if (remainingTargets.length) {
+    try {
+      const rows = await fetchTwShowtimesFallback(remainingTargets, 7);
+      mergeExternalRows(rows, 'twshowtimes-aggregator-fallback');
+      const partialNames = rows.cinemas_with_partial_days || [];
+      remainingTargets = remainingTargets.filter(cinema =>
+        rows.unmatched_cinemas.includes(cinema.name_zh) || partialNames.includes(cinema.name_zh));
+      sourceStatus['twshowtimes-aggregator-fallback'] = {
+        ok: rows.fetch_blocked !== true,
+        showtimes: rows.length,
+        acquisition_method: rows.acquisition_method,
+        cinema_pages: rows.cinema_pages,
+        cinema_pages_failed: rows.cinema_pages_failed,
+        target_cinemas: rows.target_cinemas,
+        matched_cinemas: rows.matched_cinemas,
+        unmatched_cinemas: rows.unmatched_cinemas,
+        cinemas_with_partial_days: partialNames,
+        ...(rows.fetch_blocked ? { error: 'HTTP 403 from 場次通; stopped further requests' } : {}),
+        ...(rows.source_errors.length ? { warnings: rows.source_errors.slice(0, 10) } : {})
+      };
+      console.info('場次通 fallback recovered ' + rows.length + ' sessions for ' + rows.matched_cinemas + '/' + rows.target_cinemas + ' cinemas.');
+    } catch (error) {
+      sourceStatus['twshowtimes-aggregator-fallback'] = {
+        ...sourceStatus['twshowtimes-aggregator-fallback'],
+        ok: false,
+        showtimes: 0,
+        error: String(error?.message || error).slice(0, 300)
+      };
+      console.error('場次通 fallback failed:', error);
+    }
   }
 
   if (remainingTargets.length) {
@@ -395,7 +462,7 @@ if (needsAlternativeFallback('showtimes-official-api')) {
         matched_cinemas: rows.matched_cinemas,
         unmatched_cinemas: rows.unmatched_cinemas
       };
-      console.info(`AtMovies secondary fallback recovered ${rows.length} sessions for ${rows.matched_cinemas}/${rows.target_cinemas} remaining cinemas.`);
+      console.info('AtMovies secondary fallback recovered ' + rows.length + ' sessions for ' + rows.matched_cinemas + '/' + rows.target_cinemas + ' remaining cinemas.');
     } catch (error) {
       sourceStatus['atmovies-showtimes-fallback'] = {
         ...sourceStatus['atmovies-showtimes-fallback'],
@@ -405,16 +472,17 @@ if (needsAlternativeFallback('showtimes-official-api')) {
       console.error('AtMovies secondary fallback failed:', error);
     }
   }
+  const substitutes = [
+    sourceStatus['showtimes-official-html-fallback']?.showtimes ? 'showtimes-official-html-fallback' : null,
+    sourceStatus['twshowtimes-aggregator-fallback']?.showtimes ? 'twshowtimes-aggregator-fallback' : null,
+    sourceStatus['atmovies-showtimes-fallback']?.showtimes ? 'atmovies-showtimes-fallback' : null
+  ].filter(Boolean);
   sourceStatus['showtimes-official-api'] = {
     ...sourceStatus['showtimes-official-api'],
-    substitute_source: sourceStatus['showtimes-official-html-fallback']?.ok
-      ? 'showtimes-official-html-fallback' + (sourceStatus['atmovies-showtimes-fallback']?.matched_cinemas ? '+atmovies-showtimes-fallback' : '')
-      : (sourceStatus['atmovies-showtimes-fallback']?.matched_cinemas ? 'atmovies-showtimes-fallback' : null),
-    substitute_showtimes: (sourceStatus['showtimes-official-html-fallback']?.showtimes || 0)
-      + (sourceStatus['atmovies-showtimes-fallback']?.showtimes || 0)
+    substitute_source: substitutes.length ? substitutes.join('+') : null,
+    substitute_showtimes: substitutes.reduce((sum, source) => sum + (sourceStatus[source]?.showtimes || 0), 0)
   };
 }
-
 
 if (needsAlternativeFallback('eslite-official-schedule')) {
   const esliteRows = showtimesByCity.get('taipei').filter(row => row.source === 'atmovies-taipei-fallback' && /誠品電影院/.test(row.cinema_name || ''));
