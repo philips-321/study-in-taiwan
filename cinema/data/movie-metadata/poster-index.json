@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T18:43:38.465Z",
+  "generated_at": "2026-11-01T18:46:20.368Z",
   "policy": "Append-only known poster records. Never remove stored posters because a film is temporarily absent from schedules; only consider removal after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -105,6 +105,18 @@
       ]
     },
     {
+      "movie_id": "m_12ece06a17e5",
+      "movie_title": "11月高雄市電影館｜放送禁止：一夫三妻",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYzQzZmQ0OGUtOTZiOS00YjgxLWJlOTctZWNjZjNiZGYzM2FkXkEyXkFqcGc%40._V1_.jpg",
+      "aliases": [
+        "11月高雄市電影館｜放送禁止：一夫三妻",
+        "Banned from Broadcast: My Three Wives"
+      ],
+      "sources": [
+        "imdb-image-search"
+      ]
+    },
+    {
       "movie_id": "m_123df1c74a22",
       "movie_title": "人狼 4K數位修復版",
       "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261007014.jpg",
@@ -129,6 +141,18 @@
       ],
       "sources": [
         "showtimes-official-metadata"
+      ]
+    },
+    {
+      "movie_id": "m_21bc547714cb",
+      "movie_title": "小雨愛蜜莉",
+      "poster_url": "https://images.vocus.cc/ef2fc188-3213-4007-801c-cc956806d924.jpg",
+      "aliases": [
+        "Little Amélie",
+        "小雨愛蜜莉"
+      ],
+      "sources": [
+        "vocus-taiwan-image-search"
       ]
     },
     {
@@ -292,6 +316,18 @@
       ],
       "sources": [
         "showtimes-official-metadata"
+      ]
+    },
+    {
+      "movie_id": "m_82e61dc8a695",
+      "movie_title": "在車上",
+      "poster_url": "https://images.vocus.cc/df8f3bf6-0afe-4655-bb04-4d9c63e5c3f9.jpg",
+      "aliases": [
+        "Drive My Car",
+        "在車上"
+      ],
+      "sources": [
+        "vocus-taiwan-image-search"
       ]
     },
     {
@@ -1254,6 +1290,18 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_b0d3d942b4c2",
+      "movie_title": "愛情萬歲（4K數位修復版）",
+      "poster_url": "https://collections.culture.tw/ShowGalImage.aspx?FROM=5YKK57&IMG=5SKWKBM7MB0O04KY58M8M2M1M5MDMG0O06MAM1MHM7MI09MDKH5155MHMZM7M7KEK759KQKJMYMQM7MC5159KL5E59K6KDK7KW5S5SKWMJ5EKM53K6K5KCKA5QM4MY0GM4MA0EMD0WMEMA01MWMR0BME&SYSUID=11&TEXT=K7KG575Y",
+      "aliases": [
+        "Vive L’amour",
+        "愛情萬歲（4K數位修復版）"
+      ],
+      "sources": [
+        "taiwan-cultural-memory-database-image-search"
       ]
     },
     {
