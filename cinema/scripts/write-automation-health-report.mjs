@@ -11,6 +11,7 @@ const diagnostics = await read('reports/collector-diagnostics.json').catch(error
   if (error?.code === 'ENOENT') return {};
   throw error;
 });
+const reconciliation = manifest.schedule_reconciliation || null;
 const canonicalMovieRecords = await fs.readFile(path.join(ROOT, 'canonical/movie-registry.jsonl'), 'utf8')
   .then(text => text.split('\n').filter(Boolean).map(JSON.parse))
   .catch(error => error?.code === 'ENOENT' ? [] : Promise.reject(error));
@@ -208,6 +209,20 @@ const report = {
   schema: 'cinema-automation-health',
   generated_at: reportGeneratedAt,
   public_window: { as_of: publicManifest.as_of, end_date: publicManifest.end_date, rows: publicRows, expected_rows: publicManifest.public_rows },
+  schedule_freshness: {
+    checked_at: reconciliation?.checked_at || null,
+    as_of: reconciliation?.as_of || null,
+    stale_screenings_in_window: reconciliation?.stale_screenings_in_window || 0,
+    stale_marked_this_run: reconciliation?.stale_marked_this_run || 0,
+    pending_candidates: reconciliation?.pending_candidates || 0,
+    fresh_snapshot_rows: reconciliation?.fresh_snapshot_rows || 0,
+    last_known_good_rows: reconciliation?.last_known_good_rows || 0,
+    public_excluded_stale_status_rows: publicManifest.excluded_stale_status_rows || 0,
+    public_excluded_stale_fallback_rows: publicManifest.excluded_stale_fallback_rows || 0,
+    public_excluded_stale_fallback_by_source: publicManifest.excluded_stale_fallback_by_source || {},
+    fallback_max_age_hours: publicManifest.fallback_max_age_hours || 168,
+    policy: reconciliation?.policy || null
+  },
   sources: {
     checked: Object.keys(sourceStatuses).length,
     statuses: sourceSummaries,
@@ -274,6 +289,7 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     '## Cinema automation health',
     '',
     `- Public window: ${report.public_window.rows} sessions (${report.public_window.as_of} to ${report.public_window.end_date})`,
+    `- Schedule freshness: ${report.schedule_freshness.pending_candidates} pending checks; ${report.schedule_freshness.stale_screenings_in_window} stale archived; excluded from public view: ${report.schedule_freshness.public_excluded_stale_status_rows} stale and ${report.schedule_freshness.public_excluded_stale_fallback_rows} expired fallback rows`,
     `- Sources failed/degraded: ${failedSources.length}`,
     `- Active films without posters: ${missingPosters.length}`,
     `- Canonical film registry: ${activeCanonicalMovies.length} unique active films; ${activeCanonicalMovies.filter(movie => movie.poster_status === 'yes').length} poster yes; ${activeCanonicalMovies.filter(movie => movie.poster_status === 'no').length} poster no`,

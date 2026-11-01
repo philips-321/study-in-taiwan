@@ -7,12 +7,29 @@ const canonicalRoot = path.resolve(args.get('canonical-root') || '/tmp/cinema-ca
 const outputRoot = path.resolve(args.get('output-root') || '/tmp/cinema-public-window');
 const asOf = args.get('as-of') || new Date().toISOString().slice(0, 10);
 const days = Number(args.get('days') || 30);
+const fallbackMaxAgeHours = Number(args.get('fallback-max-age-hours') || 168);
+const materializedAt = new Date();
 const start = new Date(`${asOf}T00:00:00Z`), end = new Date(start); end.setUTCDate(end.getUTCDate() + days);
 const rows = [];
 for (const file of fs.readdirSync(canonicalRoot).filter(x => /^\d{4}-\d{2}\.jsonl$/.test(x)).sort()) {
   for (const line of fs.readFileSync(path.join(canonicalRoot, file), 'utf8').split('\n').filter(Boolean)) rows.push(JSON.parse(line));
 }
-const selected = rows.filter(row => row.status === 'canonical' && row.business_date >= asOf && row.business_date <= end.toISOString().slice(0, 10));
+const inWindow = rows.filter(row => row.business_date >= asOf && row.business_date <= end.toISOString().slice(0, 10));
+const staleStatusRows = inWindow.filter(row => row.status === 'stale');
+const excludedFallbackBySource = {};
+const selected = inWindow.filter(row => {
+  if (row.status !== 'canonical') return false;
+  const lastKnownGood = row.source_freshness === 'last-known-good' || /last-known-good/i.test(String(row.source_role || ''));
+  if (!lastKnownGood) return true;
+  const observedAt = row.source_observed_at || row.observed_at || null;
+  const ageHours = observedAt ? (materializedAt.getTime() - Date.parse(observedAt)) / 3600000 : Infinity;
+  if (!Number.isFinite(ageHours) || ageHours < 0 || ageHours > fallbackMaxAgeHours) {
+    const source = row.source_id || 'unknown';
+    excludedFallbackBySource[source] = (excludedFallbackBySource[source] || 0) + 1;
+    return false;
+  }
+  return true;
+});
 const groups = new Map();
 for (const row of selected) {
   const city = row.city || row.region || 'unknown'; const key = `${row.business_date}/${city}`;
@@ -22,8 +39,9 @@ for (const row of selected) {
     id: row.screening_id, cinema_id: row.cinema_id, movie_id: row.movie_id,
     start_time: row.start_time, hall: row.hall, format: row.format, audio_language: row.audio,
     subtitles: row.subtitles, source_event_id: row.source_row_key, source_url: row.source_url,
-    source: row.source_id, source_role: row.source_role || row.source_id, freshness: 'fresh',
-    retrieved_at: row.observed_at
+    source: row.source_id, source_role: row.source_role || row.source_id,
+    freshness: row.source_freshness === 'last-known-good' ? 'last-known-good' : 'fresh',
+    retrieved_at: row.source_observed_at || row.observed_at || null
   });
 }
 fs.rmSync(outputRoot, { recursive: true, force: true });
@@ -42,6 +60,6 @@ for (const [key, group] of groups) {
   showtimesIndex[date].cities[city] = group.length;
 }
 for (const date of fs.existsSync(path.join(outputRoot, 'by-date')) ? fs.readdirSync(path.join(outputRoot, 'by-date')).sort() : []) for (const file of fs.readdirSync(path.join(outputRoot, 'by-date', date)).sort()) { const relative = `by-date/${date}/${file}`; const bytes = fs.readFileSync(path.join(outputRoot, relative)); digest.update(relative); digest.update(bytes); files.push(relative); }
-const report = { schema: 'public-window-report', as_of: asOf, days, end_date: end.toISOString().slice(0, 10), generated_at: new Date().toISOString(), input_rows: rows.length, public_rows: selected.length, excluded_by_window: rows.length - selected.length, files: files.length, sha256: digest.digest('hex'), showtimes_index: showtimesIndex, coverage: { showtime_rows: selected.length, explicit_subtitle_rows: selected.filter(row => Array.isArray(row.subtitles) && row.subtitles.length).length } };
+const report = { schema: 'public-window-report', as_of: asOf, days, end_date: end.toISOString().slice(0, 10), generated_at: materializedAt.toISOString(), input_rows: rows.length, public_rows: selected.length, excluded_by_window: rows.length - inWindow.length, excluded_stale_status_rows: staleStatusRows.length, excluded_stale_fallback_rows: Object.values(excludedFallbackBySource).reduce((sum, count) => sum + count, 0), excluded_stale_fallback_by_source: excludedFallbackBySource, fallback_max_age_hours: fallbackMaxAgeHours, files: files.length, sha256: digest.digest('hex'), showtimes_index: showtimesIndex, coverage: { showtime_rows: selected.length, explicit_subtitle_rows: selected.filter(row => Array.isArray(row.subtitles) && row.subtitles.length).length } };
 fs.writeFileSync(path.join(outputRoot, 'manifest.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(report, null, 2));

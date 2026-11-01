@@ -134,6 +134,10 @@ jobs:
           node cinema/scripts/convert-to-canonical.mjs --output-root=/tmp/cinema-new-canonical
           node cinema/scripts/merge-canonical-snapshot.mjs /tmp/cinema-new-canonical/canonical --previous-movies=/tmp/cinema-data-prev/movies/index.json
 
+      - name: Reconcile stale schedules without deleting archive rows
+        if: steps.daily_guard.outputs.skip != 'true'
+        run: node cinema/scripts/reconcile-stale-schedules.mjs --incoming-root=/tmp/cinema-new-canonical/canonical --window-days=30
+
       - name: Update unique canonical film poster status and fetch missing posters
         if: steps.daily_guard.outputs.skip != 'true'
         env:
@@ -146,7 +150,7 @@ jobs:
           set -euo pipefail
           as_of="$(TZ=Asia/Taipei date +%F)"
           rm -rf /tmp/cinema-public-window
-          node cinema/scripts/materialize-public-window.mjs --canonical-root=cinema/data/canonical --output-root=/tmp/cinema-public-window --as-of="$as_of" --days=30
+          node cinema/scripts/materialize-public-window.mjs --canonical-root=cinema/data/canonical --output-root=/tmp/cinema-public-window --as-of="$as_of" --days=30 --fallback-max-age-hours=168
           rm -rf cinema/data/showtimes-public
           mkdir -p cinema/data/showtimes-public
           cp -a /tmp/cinema-public-window/. cinema/data/showtimes-public/
@@ -160,6 +164,10 @@ jobs:
             generated_as_of: view.as_of,
             rows: view.public_rows,
             excluded_by_window: view.excluded_by_window,
+            excluded_stale_status_rows: view.excluded_stale_status_rows,
+            excluded_stale_fallback_rows: view.excluded_stale_fallback_rows,
+            excluded_stale_fallback_by_source: view.excluded_stale_fallback_by_source,
+            fallback_max_age_hours: view.fallback_max_age_hours,
             sha256: view.sha256
           };
           fs.writeFileSync(file, `${JSON.stringify(manifest, null, 2)}\n`);
