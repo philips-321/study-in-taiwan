@@ -11,7 +11,11 @@ const diagnostics = await read('reports/collector-diagnostics.json').catch(error
   if (error?.code === 'ENOENT') return {};
   throw error;
 });
-const reconciliation = manifest.schedule_reconciliation || null;
+const canonicalManifest = await read('canonical/manifest.json').catch(error => {
+  if (error?.code === 'ENOENT') return {};
+  throw error;
+});
+const reconciliation = canonicalManifest.schedule_reconciliation || null;
 const canonicalMovieRecords = await fs.readFile(path.join(ROOT, 'canonical/movie-registry.jsonl'), 'utf8')
   .then(text => text.split('\n').filter(Boolean).map(JSON.parse))
   .catch(error => error?.code === 'ENOENT' ? [] : Promise.reject(error));
