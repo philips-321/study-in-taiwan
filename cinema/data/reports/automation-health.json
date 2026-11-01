@@ -1,19 +1,19 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-01T22:23:10.780Z",
+  "generated_at": "2026-11-01T22:52:07.769Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
-    "rows": 5700,
-    "expected_rows": 5700
+    "rows": 5790,
+    "expected_rows": 5790
   },
   "schedule_freshness": {
-    "checked_at": "2026-11-01T22:23:06.008Z",
+    "checked_at": "2026-11-01T22:52:02.314Z",
     "as_of": "2026-11-02",
     "stale_screenings_in_window": 0,
     "stale_marked_this_run": 0,
-    "pending_candidates": 795,
-    "fresh_snapshot_rows": 3928,
+    "pending_candidates": 888,
+    "fresh_snapshot_rows": 3931,
     "last_known_good_rows": 291,
     "public_excluded_stale_status_rows": 0,
     "public_excluded_stale_fallback_rows": 136,
@@ -24,7 +24,7 @@
     "policy": "A screening is marked stale only after it is absent from two consecutive Taiwan-day snapshots in which the same source, cinema, and date scope still returns fresh rows. Stale rows remain archived and are excluded from the public view."
   },
   "sources": {
-    "checked": 9,
+    "checked": 10,
     "statuses": {
       "moc-culture-movie-api": {
         "health": "healthy",
@@ -34,7 +34,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T22:23:05.053Z",
+        "last_success_at": "2026-11-01T22:52:01.331Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -59,7 +59,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T22:23:05.053Z",
+        "last_success_at": "2026-11-01T22:52:01.331Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -79,12 +79,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 1744,
-        "fresh_showtimes": 1744,
+        "showtimes": 1757,
+        "fresh_showtimes": 1757,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T22:23:05.053Z",
+        "last_success_at": "2026-11-01T22:52:01.331Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -134,7 +134,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T22:23:05.053Z",
+        "last_success_at": "2026-11-01T22:52:01.331Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -184,7 +184,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T22:23:05.053Z",
+        "last_success_at": "2026-11-01T22:52:01.331Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -204,13 +204,38 @@
           "t02a01/2026-11-06: No showtimes parsed",
           "t02a01/2026-11-07: No showtimes parsed",
           "t02a11/2026-11-02: No showtimes parsed",
-          "t02a11/2026-11-06: No showtimes parsed",
           "t02a11/2026-11-07: No showtimes parsed",
+          "t02a11/2026-11-06: No showtimes parsed",
           "t02a12/2026-11-02: No showtimes parsed",
           "t02a12/2026-11-06: No showtimes parsed",
           "t02a12/2026-11-07: No showtimes parsed",
           "t02b14/2026-11-02: No showtimes parsed"
         ]
+      },
+      "showtimes-official-html-fallback": {
+        "health": "degraded",
+        "ok": false,
+        "showtimes": 0,
+        "fresh_showtimes": 0,
+        "fallback_showtimes": 0,
+        "error": "Official ShowTimes HTML fallback returned no sessions (大巨蛋秀泰影城: 403 Forbidden; 樹林秀泰影城: 403 Forbidden; 欣欣秀泰影城: 403 Forbidden; 土城秀泰影城: 403 Forbidden; 基隆秀泰影城: 403 Forbidden)",
+        "retrieved_at": null,
+        "last_success_at": null,
+        "next_probe_at": "2026-11-01T23:22:01.331Z",
+        "retry_suppressed": false,
+        "retry_after": null,
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "substitute_source": null,
+        "substitute_showtimes": 0,
+        "skipped": false,
+        "target_cinemas": null,
+        "matched_cinemas": null,
+        "unmatched_cinemas": [],
+        "cinema_pages": null,
+        "cinema_pages_failed": null,
+        "warnings": []
       },
       "atmovies-showtimes-fallback": {
         "health": "healthy",
@@ -220,7 +245,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T22:23:05.053Z",
+        "last_success_at": "2026-11-01T22:52:01.331Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -323,6 +348,29 @@
             "Keep last-known-good Eslite rows in canonical storage."
           ]
         }
+      },
+      {
+        "source": "showtimes-official-html-fallback",
+        "error": "Official ShowTimes HTML fallback returned no sessions (大巨蛋秀泰影城: 403 Forbidden; 樹林秀泰影城: 403 Forbidden; 欣欣秀泰影城: 403 Forbidden; 土城秀泰影城: 403 Forbidden; 基隆秀泰影城: 403 Forbidden)",
+        "health": "degraded",
+        "showtimes": 0,
+        "substitute_source": null,
+        "substitute_showtimes": 0,
+        "fallback_showtimes": 0,
+        "retry_suppressed": false,
+        "retry_after": null,
+        "recurring_issue": {
+          "issue_id": "showtimes-official-html-fallback:http_403:unknown-host",
+          "state": "open",
+          "total_occurrence_count": 1,
+          "consecutive_failures": 1,
+          "first_seen": "2026-11-01T22:52:07.769Z",
+          "last_seen": "2026-11-01T22:52:07.769Z",
+          "known_cause": null,
+          "next_steps": [
+            "Inspect the recorded error and source endpoint before changing the parser."
+          ]
+        }
       }
     ],
     "issue_history": {
@@ -363,6 +411,22 @@
             "Check endpoint reachability from GitHub Actions before changing parsing code.",
             "If the runner still gets 403, use a verified manual snapshot or an alternate approved access path.",
             "Keep last-known-good Eslite rows in canonical storage."
+          ]
+        },
+        {
+          "issue_id": "showtimes-official-html-fallback:http_403:unknown-host",
+          "source": "showtimes-official-html-fallback",
+          "error_type": "http_status",
+          "http_status": 403,
+          "host": null,
+          "state": "open",
+          "total_occurrence_count": 1,
+          "consecutive_failures": 1,
+          "first_seen": "2026-11-01T22:52:07.769Z",
+          "last_seen": "2026-11-01T22:52:07.769Z",
+          "last_success_at": null,
+          "next_steps": [
+            "Inspect the recorded error and source endpoint before changing the parser."
           ]
         }
       ]
