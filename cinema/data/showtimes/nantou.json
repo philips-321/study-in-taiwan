@@ -1,7 +1,7 @@
 {
   "version": 4,
   "city": "nantou",
-  "generated_at": "2026-11-01T21:29:52.484Z",
+  "generated_at": "2026-11-01T21:35:06.323Z",
   "showtime_count": 0,
   "sources": {
     "moc-culture-movie-api": {
@@ -13,7 +13,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:30:41.800Z",
+      "last_success_at": "2026-11-01T21:35:46.061Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:30:41.800Z",
+      "last_success_at": "2026-11-01T21:35:46.061Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1811,
+      "showtimes": 1930,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1811,
+      "fresh_showtimes": 1930,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:30:41.800Z",
+      "last_success_at": "2026-11-01T21:35:46.061Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -49,7 +49,7 @@
       "error": "ShowTimes public API 403 Forbidden",
       "retry_suppressed": true,
       "retry_after": "2026-11-08T17:42:56.311Z",
-      "browser_error": "ShowTimes cinema directory browser HTTP 403",
+      "browser_error": "Cloudflare Browser Run could not render www.showtimes.com.tw: Authentication error",
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 6,
@@ -69,7 +69,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:30:41.800Z",
+      "last_success_at": "2026-11-01T21:35:46.061Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -79,7 +79,7 @@
       "error": "Eslite 403 Forbidden",
       "retry_suppressed": true,
       "retry_after": "2026-11-08T17:42:56.311Z",
-      "browser_error": "Eslite browser HTTP 403",
+      "browser_error": "Cloudflare Browser Run could not render meet.eslite.com: Authentication error",
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 13,
@@ -96,15 +96,15 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-11-02: No showtimes parsed",
-        "t02a01/2026-11-06: No showtimes parsed",
         "t02a01/2026-11-07: No showtimes parsed",
+        "t02a01/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-02: No showtimes parsed",
         "t02a11/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-07: No showtimes parsed",
         "t02a12/2026-11-02: No showtimes parsed",
         "t02a12/2026-11-06: No showtimes parsed",
-        "t02b14/2026-11-02: No showtimes parsed",
-        "t02a12/2026-11-07: No showtimes parsed"
+        "t02a12/2026-11-07: No showtimes parsed",
+        "t02b14/2026-11-02: No showtimes parsed"
       ],
       "health": "healthy",
       "circuit_state": "closed",
@@ -112,7 +112,7 @@
       "fresh_showtimes": 1140,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:30:41.800Z",
+      "last_success_at": "2026-11-01T21:35:46.061Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -140,6 +140,6 @@
       "eslite-official-schedule",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T21:30:41.800Z"
+    "restored_at": "2026-11-01T21:35:46.061Z"
   }
 }

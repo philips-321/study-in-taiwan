@@ -1,19 +1,19 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-01T21:30:46.663Z",
+  "generated_at": "2026-11-01T21:35:51.973Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
-    "rows": 4528,
-    "expected_rows": 4528
+    "rows": 4606,
+    "expected_rows": 4606
   },
   "schedule_freshness": {
-    "checked_at": "2026-11-01T21:30:42.555Z",
+    "checked_at": "2026-11-01T21:35:46.883Z",
     "as_of": "2026-11-02",
     "stale_screenings_in_window": 0,
     "stale_marked_this_run": 0,
-    "pending_candidates": 579,
-    "fresh_snapshot_rows": 3249,
+    "pending_candidates": 640,
+    "fresh_snapshot_rows": 3275,
     "last_known_good_rows": 291,
     "public_excluded_stale_status_rows": 0,
     "public_excluded_stale_fallback_rows": 136,
@@ -34,7 +34,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T21:30:41.800Z",
+        "last_success_at": "2026-11-01T21:35:46.061Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -52,7 +52,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T21:30:41.800Z",
+        "last_success_at": "2026-11-01T21:35:46.061Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -65,12 +65,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 1811,
-        "fresh_showtimes": 1811,
+        "showtimes": 1930,
+        "fresh_showtimes": 1930,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T21:30:41.800Z",
+        "last_success_at": "2026-11-01T21:35:46.061Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -95,7 +95,7 @@
         "acquisition_method": null,
         "branch_pages": null,
         "branch_pages_failed": null,
-        "browser_error": "ShowTimes cinema directory browser HTTP 403",
+        "browser_error": "Cloudflare Browser Run could not render www.showtimes.com.tw: Authentication error",
         "warnings": []
       },
       "spot-huashan-official-schedule": {
@@ -106,7 +106,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T21:30:41.800Z",
+        "last_success_at": "2026-11-01T21:35:46.061Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -131,7 +131,7 @@
         "acquisition_method": null,
         "branch_pages": null,
         "branch_pages_failed": null,
-        "browser_error": "Eslite browser HTTP 403",
+        "browser_error": "Cloudflare Browser Run could not render meet.eslite.com: Authentication error",
         "warnings": []
       },
       "atmovies-taipei-fallback": {
@@ -142,7 +142,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-01T21:30:41.800Z",
+        "last_success_at": "2026-11-01T21:35:46.061Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -152,15 +152,15 @@
         "browser_error": null,
         "warnings": [
           "t02a01/2026-11-02: No showtimes parsed",
-          "t02a01/2026-11-06: No showtimes parsed",
           "t02a01/2026-11-07: No showtimes parsed",
+          "t02a01/2026-11-06: No showtimes parsed",
           "t02a11/2026-11-02: No showtimes parsed",
           "t02a11/2026-11-06: No showtimes parsed",
           "t02a11/2026-11-07: No showtimes parsed",
           "t02a12/2026-11-02: No showtimes parsed",
           "t02a12/2026-11-06: No showtimes parsed",
-          "t02b14/2026-11-02: No showtimes parsed",
-          "t02a12/2026-11-07: No showtimes parsed"
+          "t02a12/2026-11-07: No showtimes parsed",
+          "t02b14/2026-11-02: No showtimes parsed"
         ]
       },
       "vieshow-official-browser": {
@@ -186,7 +186,7 @@
       {
         "source": "showtimes-official-api",
         "error": "ShowTimes public API 403 Forbidden",
-        "browser_error": "ShowTimes cinema directory browser HTTP 403",
+        "browser_error": "Cloudflare Browser Run could not render www.showtimes.com.tw: Authentication error",
         "health": "degraded",
         "showtimes": 171,
         "retry_suppressed": true,
@@ -209,7 +209,7 @@
       {
         "source": "eslite-official-schedule",
         "error": "Eslite 403 Forbidden",
-        "browser_error": "Eslite browser HTTP 403",
+        "browser_error": "Cloudflare Browser Run could not render meet.eslite.com: Authentication error",
         "health": "degraded",
         "showtimes": 15,
         "retry_suppressed": true,
