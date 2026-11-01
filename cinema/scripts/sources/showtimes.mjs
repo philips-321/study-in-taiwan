@@ -167,51 +167,65 @@ function parseBranchShowtimes(text, movieTitles, cinemaName, address, sourceUrl)
   return rows;
 }
 
-export async function fetchShowTimesShowtimesInBrowser(browser) {
-  const context = await browser.newContext({ locale: 'zh-TW', timezoneId: 'Asia/Taipei' });
-  const landing = await context.newPage();
-  const listingResponse = await landing.goto(SCHEDULES_URL, { waitUntil: 'domcontentloaded', timeout: 30000 });
-  if (!listingResponse?.ok()) throw new Error(`ShowTimes cinema directory browser HTTP ${listingResponse?.status() || 'no response'}`);
-  await landing.waitForFunction(() => [...document.querySelectorAll('a[href]')].some(link => /\/cinemas\/\d+\/?$/.test(new URL(link.href).pathname)), { timeout: 20000 });
-  const branches = await landing.locator('a[href]').evaluateAll(links => [...new Map(links
-    .map(link => new URL(link.href, location.href))
-    .filter(url => url.origin === location.origin && /^\/cinemas\/\d+\/?$/.test(url.pathname))
-    .map(url => [url.href, url.href])).values()]);
-  await landing.close();
-  if (!branches.length) { await context.close(); throw new Error('ShowTimes directory loaded but contained no cinema branch links'); }
+function decodeHtml(value) {
+  return String(value || '').replace(/&nbsp;|&#160;/gi, ' ').replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'").replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([\da-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
+}
 
+function htmlToText(html) {
+  return decodeHtml(String(html || '')
+    .replace(/<(script|style|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<br\b[^>]*>/gi, '\n')
+    .replace(/<\/(?:h[1-6]|p|div|li|section|article|ul|ol|header|footer)\s*>/gi, '\n')
+    .replace(/<[^>]+>/g, ' '))
+    .replace(/[\t\r ]+/g, ' ').replace(/\n\s+/g, '\n').replace(/\n{2,}/g, '\n').trim();
+}
+
+function tagTexts(html, tag) {
+  return [...String(html || '').matchAll(new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)<\\/${tag}\\s*>`, 'gi'))]
+    .map(match => htmlToText(match[1])).filter(Boolean);
+}
+
+function linksFromHtml(html, baseUrl) {
+  const urls = new Set();
+  for (const match of String(html || '').matchAll(/<a\b[^>]*\bhref\s*=\s*(["'])(.*?)\1/gi)) {
+    try {
+      const url = new URL(decodeHtml(match[2]), baseUrl);
+      if (url.origin === new URL(baseUrl).origin && /^\/cinemas\/\d+\/?$/.test(url.pathname)) urls.add(url.href);
+    } catch {}
+  }
+  return [...urls];
+}
+
+export async function fetchShowTimesShowtimesViaBrowser(fetchRenderedHtml) {
+  const landingHtml = await fetchRenderedHtml(SCHEDULES_URL);
+  const branches = linksFromHtml(landingHtml, SCHEDULES_URL);
+  if (!branches.length) throw new Error('ShowTimes browser loaded the directory but found no cinema branch links');
   const rows = [], errors = [];
   let cursor = 0;
   const worker = async () => {
     while (cursor < branches.length) {
-      const index = cursor++, url = branches[index], page = await context.newPage();
+      const url = branches[cursor++];
       try {
-        const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-        if (!response?.ok()) throw new Error(`HTTP ${response?.status() || 'no response'}`);
-        await page.waitForFunction(() => document.body?.innerText.includes('場次表'), { timeout: 20000 });
-        const details = await page.evaluate(() => {
-          const lines = document.body.innerText.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
-          const addressLine = lines.find(line => /[📍][^\n]*(?:市|縣)/.test(line)) || '';
-          return {
-            cinemaName: document.querySelector('h1')?.innerText?.trim() || '',
-            address: addressLine.replace(/^.*?📍\s*/, '').trim(),
-            text: document.body.innerText,
-            movieTitles: [...document.querySelectorAll('h3')].map(node => node.innerText.trim())
-          };
-        });
-        const branchRows = parseBranchShowtimes(details.text, details.movieTitles, details.cinemaName, details.address, url);
-        if (!details.cinemaName || !details.address || !branchRows.length) throw new Error('Page loaded but no complete future showtimes were parsed');
+        const html = await fetchRenderedHtml(url);
+        const text = htmlToText(html);
+        const h1 = tagTexts(html, 'h1')[0] || '';
+        const addressLine = text.split('\n').find(line => /📍[^\n]*(?:市|縣)/.test(line)) || '';
+        const address = addressLine.replace(/^.*?📍\s*/, '').trim();
+        const branchRows = parseBranchShowtimes(text, tagTexts(html, 'h3'), h1, address, url);
+        if (!h1 || !address || !branchRows.length) throw new Error('Page loaded but no complete future showtimes were parsed');
         rows.push(...branchRows);
       } catch (error) {
         errors.push(`${url}: ${String(error?.message || error).slice(0, 180)}`);
-      } finally { await page.close(); }
+      }
     }
   };
   await Promise.all(Array.from({ length: Math.min(3, branches.length) }, worker));
-  await context.close();
   if (!rows.length) throw new Error(`ShowTimes browser extraction found no future sessions${errors.length ? `; ${errors.slice(0, 3).join(' | ')}` : ''}`);
   rows.source_errors = errors;
-  rows.acquisition_method = 'playwright-chromium-branch-pages';
+  rows.acquisition_method = 'cloudflare-browser-rendering-branch-pages';
   rows.branch_pages = branches.length;
   rows.branch_pages_failed = errors.length;
   return rows;

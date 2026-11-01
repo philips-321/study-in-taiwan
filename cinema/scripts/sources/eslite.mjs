@@ -113,25 +113,12 @@ export async function fetchEsliteShowtimes() {
   return rows;
 }
 
-export async function fetchEsliteShowtimesInBrowser(browser) {
-  const context = await browser.newContext({ locale: 'zh-TW', timezoneId: 'Asia/Taipei' });
-  const page = await context.newPage();
-  try {
-    const response = await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 30000 });
-    if (!response?.ok()) throw new Error(`Eslite browser HTTP ${response?.status() || 'no response'}`);
-    await page.waitForFunction(() => {
-      const text = document.body?.innerText || '';
-      return text.includes('電影時刻表') && (text.includes('最後更新時間') || text.includes('字幕'));
-    }, { timeout: 25000 });
-    const html = await page.content();
-    const rows = parseEsliteSchedule(html).filter(row => row.date >= taipeiToday());
-    if (!rows.length) throw new Error('Eslite page rendered but no future sessions were parsed');
-    rows.acquisition_method = 'playwright-chromium-official-page';
-    return rows;
-  } finally {
-    await page.close();
-    await context.close();
-  }
+export async function fetchEsliteShowtimesViaBrowser(fetchRenderedHtml) {
+  const html = await fetchRenderedHtml(URL);
+  const rows = parseEsliteSchedule(html).filter(row => row.date >= taipeiToday());
+  if (!rows.length) throw new Error('Eslite page rendered but no future sessions were parsed');
+  rows.acquisition_method = 'cloudflare-browser-rendering-official-page';
+  return rows;
 }
 
 function taipeiToday() {

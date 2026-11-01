@@ -1,15 +1,15 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { pathToFileURL } from 'node:url';
 import { buildMovieIndex, compactShowtime, knownAgeRating, movieIdForRow, screeningKey } from './movie-schema.mjs';
 import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
-import { fetchShowTimesShowtimes, fetchShowTimesShowtimesInBrowser } from './sources/showtimes.mjs';
+import { fetchShowTimesShowtimes, fetchShowTimesShowtimesViaBrowser } from './sources/showtimes.mjs';
 import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
-import { fetchEsliteShowtimes, fetchEsliteShowtimesInBrowser } from './sources/eslite.mjs';
+import { fetchEsliteShowtimes, fetchEsliteShowtimesViaBrowser } from './sources/eslite.mjs';
 import { fetchAtMoviesTaipeiShowtimes } from './sources/atmovies-taipei.mjs';
+import { fetchRenderedCinemaHtml } from './sources/cloudflare-browser-run.mjs';
 
 const ROOT = path.resolve('cinema/data');
 const CINEMAS_DIR = path.join(ROOT, 'cinemas');
@@ -333,34 +333,21 @@ const needsBrowserFallback = source => {
   return status?.ok === false && (status.retry_suppressed === true || /\b403\b/.test(String(status.error || '')));
 };
 const browserFallbackSources = ['showtimes-official-api', 'eslite-official-schedule'].filter(needsBrowserFallback);
-if (browserFallbackSources.length && process.env.CINEMA_PLAYWRIGHT_MODULE) {
-  let browser = null;
-  try {
-    const { chromium } = await import(pathToFileURL(process.env.CINEMA_PLAYWRIGHT_MODULE).href);
-    browser = await chromium.launch({ headless: true, ...(process.env.CINEMA_BROWSER_CHANNEL ? { channel: process.env.CINEMA_BROWSER_CHANNEL } : {}) });
-  } catch (error) {
-    const message = String(error?.message || error).slice(0, 240);
-    console.error(`Headless Chrome could not start; browser fallback is unavailable: ${message}`);
-    for (const source of browserFallbackSources) sourceStatus[source].browser_error = `Chrome launch failed: ${message}`;
-  }
-  if (browser) {
-    const fallback = async (source, label, loader) => {
-      if (!browserFallbackSources.includes(source)) return;
-      try {
-        const rows = await loader(browser);
-        mergeExternalRows(rows, source);
-        console.info(`${label} recovered via Chromium: ${rows.length} sessions${rows.branch_pages ? ` across ${rows.branch_pages} branch pages` : ''}.`);
-      } catch (error) {
-        const message = String(error?.message || error).slice(0, 300);
-        sourceStatus[source] = { ...sourceStatus[source], browser_error: message };
-        console.error(`${label} browser fallback failed: ${message}`);
-      }
-    };
+if (browserFallbackSources.length) {
+  const fallback = async (source, label, loader) => {
+    if (!browserFallbackSources.includes(source)) return;
     try {
-      await fallback('showtimes-official-api', 'ShowTimes', fetchShowTimesShowtimesInBrowser);
-      await fallback('eslite-official-schedule', 'Eslite', fetchEsliteShowtimesInBrowser);
-    } finally { await browser.close(); }
-  }
+      const rows = await loader();
+      mergeExternalRows(rows, source);
+      console.info(`${label} recovered via Cloudflare Browser Run: ${rows.length} sessions${rows.branch_pages ? ` across ${rows.branch_pages} branch pages` : ''}.`);
+    } catch (error) {
+      const message = String(error?.message || error).slice(0, 300);
+      sourceStatus[source] = { ...sourceStatus[source], browser_error: message };
+      console.error(`${label} Browser Run fallback failed: ${message}`);
+    }
+  };
+  await fallback('showtimes-official-api', 'ShowTimes', () => fetchShowTimesShowtimesViaBrowser(fetchRenderedCinemaHtml));
+  await fallback('eslite-official-schedule', 'Eslite', () => fetchEsliteShowtimesViaBrowser(fetchRenderedCinemaHtml));
 }
 
 let metadataEnrichedRows = 0;
