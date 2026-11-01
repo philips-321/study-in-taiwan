@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T18:16:24.591Z",
-  "policy": "Append-only known poster records. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched.",
+  "generated_at": "2026-11-01T18:43:38.465Z",
+  "policy": "Append-only known poster records. Never remove stored posters because a film is temporarily absent from schedules; only consider removal after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
       "movie_id": "m_01eb02db1bf5",
@@ -498,6 +498,18 @@
       ]
     },
     {
+      "movie_id": "m_dfaa0e43efb7",
+      "movie_title": "東京教父：4K數位修復版－早安！周日經典電影院",
+      "poster_url": "https://media.gq.com.tw/photos/6965de923f9f9f32f677f633/master/w_1600%2Cc_limit/1224%25E3%2580%258A%25E6%259D%25B1%25E4%25BA%25AC%25E6%2595%2599%25E7%2588%25B64K%25E6%2595%25B8%25E4%25BD%258D%25E4%25BF%25AE%25E5%25BE%25A9%25E7%2589%2588%25E3%2580%258B%25E6%25AD%25A3%25E5%25BC%258F%25E6%25B5%25B7%25E5%25A0%25B1.jpg",
+      "aliases": [
+        "Tokyo Godfathers",
+        "東京教父：4K數位修復版－早安！周日經典電影院"
+      ],
+      "sources": [
+        "gq-taiwan-manual-search"
+      ]
+    },
+    {
       "movie_id": "m_35ed006505c1",
       "movie_title": "泥面人",
       "poster_url": "https://assets.showtimes.com.tw/images/81905fba8ca38081defb8699f991c7cd.jpg",
@@ -607,6 +619,54 @@
       ],
       "sources": [
         "showtimes-official-metadata"
+      ]
+    },
+    {
+      "movie_id": "m_b846ad160413",
+      "movie_title": "青春電幻物語",
+      "poster_url": "https://hips.hearstapps.com/hmg-prod/images/%E9%9D%92%E6%98%A5%E9%9B%BB%E5%B9%BB%E7%89%A9%E8%AA%9E-1617695948.jpg?crop=0.489xw%3A0.977xh%3B0.00489xw%2C0.00977xh&resize=640%3A%2A",
+      "aliases": [
+        "(百萬感謝場) All About Lily Chou-Chou",
+        "ALL ABOUT LILY CHOU CHOU",
+        "All About Lily Chou-Chou",
+        "All About Lily Chou-Chou (百萬感謝場)",
+        "青春電幻物語",
+        "青春電幻物語：數位修復版"
+      ],
+      "sources": [
+        "harpers-bazaar-taiwan-manual-search"
+      ]
+    },
+    {
+      "movie_id": "m_05c755e897ee",
+      "movie_title": "青春電幻物語：數位修復版",
+      "poster_url": "https://hips.hearstapps.com/hmg-prod/images/%E9%9D%92%E6%98%A5%E9%9B%BB%E5%B9%BB%E7%89%A9%E8%AA%9E-1617695948.jpg?crop=0.489xw%3A0.977xh%3B0.00489xw%2C0.00977xh&resize=640%3A%2A",
+      "aliases": [
+        "(百萬感謝場) All About Lily Chou-Chou",
+        "ALL ABOUT LILY CHOU CHOU",
+        "All About Lily Chou-Chou",
+        "All About Lily Chou-Chou (百萬感謝場)",
+        "青春電幻物語",
+        "青春電幻物語：數位修復版"
+      ],
+      "sources": [
+        "harpers-bazaar-taiwan-manual-search"
+      ]
+    },
+    {
+      "movie_id": "m_865532b39cd8",
+      "movie_title": "青春電幻物語：數位修復版",
+      "poster_url": "https://hips.hearstapps.com/hmg-prod/images/%E9%9D%92%E6%98%A5%E9%9B%BB%E5%B9%BB%E7%89%A9%E8%AA%9E-1617695948.jpg?crop=0.489xw%3A0.977xh%3B0.00489xw%2C0.00977xh&resize=640%3A%2A",
+      "aliases": [
+        "(百萬感謝場) All About Lily Chou-Chou",
+        "ALL ABOUT LILY CHOU CHOU",
+        "All About Lily Chou-Chou",
+        "All About Lily Chou-Chou (百萬感謝場)",
+        "青春電幻物語",
+        "青春電幻物語：數位修復版"
+      ],
+      "sources": [
+        "harpers-bazaar-taiwan-manual-search"
       ]
     },
     {
