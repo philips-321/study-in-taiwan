@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T19:58:45.819Z",
+  "generated_at": "2026-11-01T20:03:32.495Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -2767,6 +2767,20 @@
       "preferred": true
     },
     {
+      "movie_id": "m_5fa163974588",
+      "movie_title": "進擊的鼓手  4K重映_特別場3",
+      "poster_url": "https://assets.showtimes.com.tw/images/c9cf39ce84aa5cceeb9599a52890a176.jpg",
+      "aliases": [
+        "WHIPLASH_SPECIAL3",
+        "進擊的鼓手  4K重映_特別場3"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_6c190c8b78e4",
       "movie_title": "進擊的鼓手 4K重映",
       "poster_url": "https://assets.showtimes.com.tw/images/c9cf39ce84aa5cceeb9599a52890a176.jpg",
@@ -3944,6 +3958,20 @@
       ]
     },
     {
+      "movie_id": "m_ebd59ac704e6",
+      "movie_title": "BTS WORLD TOUR ARIRANG IN SÃO PAULO安可直播",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260914004.jpg",
+      "aliases": [
+        "BTS WORLD TOUR ARIRANG IN SÃO PAULO:: ENCORE",
+        "BTS WORLD TOUR ARIRANG IN SÃO PAULO安可直播"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_a3db5d15e834",
       "movie_title": "BTS WORLD TOUR ARIRANG IN SÃO PAULO現場直播",
       "poster_url": "https://assets.showtimes.com.tw/images/fb8e5a822ab4f15165af7445072bef02.jpg",
@@ -4197,6 +4225,36 @@
         "miramar-official-api",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
+      "movie_id": "m_c0a7736e6e9e",
+      "movie_title": "Stray Kids World Tour 【RUN IT】 安可重播",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261012007.jpg",
+      "aliases": [
+        "Stray Kids World Tour 【RUN IT】 ENCORE VIEWIN",
+        "Stray Kids World Tour 【RUN IT】 安可重播"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_3bb83e36c7c3",
+      "movie_title": "TOMORROW X TOGETHER WORLD TOUR ACT TOMOR",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260924005.jpg",
+      "aliases": [
+        "TOMORROW X TOGETHER WORLD TOUR ACT TOMOR"
+      ],
+      "sources": [
+        "archived-movie-catalog",
+        "atmovies-taipei-fallback",
+        "canonical-poster-title-match",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-official-browser"
       ]
     },
     {

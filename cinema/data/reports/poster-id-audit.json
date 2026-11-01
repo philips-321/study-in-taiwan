@@ -1,11 +1,11 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-01T19:58:46.109Z",
+  "generated_at": "2026-11-01T20:03:32.787Z",
   "public_window": {
     "as_of": "2026-11-02",
     "end_date": "2026-12-02",
-    "rows": 4566,
-    "expected_rows": 4566
+    "rows": 4572,
+    "expected_rows": 4572
   },
   "ids": {
     "active_movies": 158,
@@ -16,19 +16,19 @@
   },
   "posters": {
     "active_movies": 158,
-    "available": 142,
-    "missing": 16,
+    "available": 143,
+    "missing": 15,
     "canonical_registry": {
-      "unique_active_films": 144,
-      "poster_yes": 127,
+      "unique_active_films": 142,
+      "poster_yes": 125,
       "poster_no": 17,
       "fetch_states": {
-        "ambiguous": 4,
-        "found": 16,
+        "ambiguous": 2,
+        "cooldown": 3,
         "found_manual": 55,
         "found_official": 14,
-        "not_found": 13,
-        "reused": 42
+        "not_found": 12,
+        "reused": 56
       }
     },
     "missing_movies": [
@@ -55,10 +55,6 @@
       {
         "movie_id": "m_0ea10d639fdd",
         "movie_title": "舊情綿綿（數位修復版）"
-      },
-      {
-        "movie_id": "m_c0a7736e6e9e",
-        "movie_title": "Stray Kids World Tour 【RUN IT】 安可重播"
       },
       {
         "movie_id": "m_21e54c39aa80",

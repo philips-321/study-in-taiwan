@@ -418,14 +418,14 @@
       "movie_id": "m_13a1df31c119",
       "movie_title": "高校人形金字塔",
       "movie_title_en": "New Group (萬聖節特別場)",
+      "poster_url": "https://image.tmdb.org/t/p/w500/v4m63Ymj3didisk3OthFosIzXh7.jpg",
       "rating": "pg12",
       "duration_minutes": 81,
       "metadata_sources": [
         "previous-catalog",
         "spot-huashan-official-schedule",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/v4m63Ymj3didisk3OthFosIzXh7.jpg"
+      ]
     },
     {
       "movie_id": "m_14606b70e521",
@@ -514,12 +514,12 @@
       "movie_id": "m_1cf57a1d82ed",
       "movie_title": "11月高雄市電影館｜善男信女",
       "movie_title_en": null,
+      "poster_url": "https://image.tmdb.org/t/p/w500/r8m78up2sJnH9iQvlhiAMJCWlh3.jpg",
       "metadata_sources": [
         "moc-culture-movie-api",
         "previous-catalog",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/r8m78up2sJnH9iQvlhiAMJCWlh3.jpg"
+      ]
     },
     {
       "movie_id": "m_1d4c1183712d",
@@ -559,14 +559,14 @@
       "movie_id": "m_205b35a57a78",
       "movie_title": "刺殺小說家2",
       "movie_title_en": "A WRITERS ODYSSEY II",
+      "poster_url": "https://image.tmdb.org/t/p/w500/pFvcLJ5YdgRloANWh1iryUrgkx2.jpg",
       "duration_minutes": 132,
       "metadata_sources": [
         "atmovies-taipei-fallback",
         "previous-catalog",
-        "vieshow-official-browser",
-        "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/pFvcLJ5YdgRloANWh1iryUrgkx2.jpg"
+        "the-movie-database",
+        "vieshow-official-browser"
+      ]
     },
     {
       "movie_id": "m_21bc547714cb",
@@ -607,6 +607,7 @@
         "Tears of the Lost Army in Golden Triangle",
         "TEARS OF THE LOST ARMY IN GOLDEN TRIANGLE"
       ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/uDanLo3ZYuM3CduCCRwyL9E554p.jpg",
       "rating": "g",
       "duration_minutes": 80,
       "metadata_sources": [
@@ -616,10 +617,9 @@
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "vieshow-official-browser",
-        "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/uDanLo3ZYuM3CduCCRwyL9E554p.jpg"
+        "the-movie-database",
+        "vieshow-official-browser"
+      ]
     },
     {
       "movie_id": "m_22bc89ac6866",
@@ -708,13 +708,13 @@
       "movie_id": "m_2b8962506f84",
       "movie_title": "跳越時空的愛戀",
       "movie_title_en": null,
+      "poster_url": "https://image.tmdb.org/t/p/w500/co8vwkhnX8WRPMsXygFl60AwFWB.jpg",
       "duration_minutes": 147,
       "metadata_sources": [
         "atmovies-taipei-fallback",
         "previous-catalog",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/co8vwkhnX8WRPMsXygFl60AwFWB.jpg"
+      ]
     },
     {
       "movie_id": "m_2e614ae30694",
@@ -967,8 +967,13 @@
       "duration_minutes": 97,
       "metadata_sources": [
         "atmovies-taipei-fallback",
-        "previous-catalog"
-      ]
+        "previous-catalog",
+        "archived-movie-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-official-browser",
+        "canonical-poster-title-match"
+      ],
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260924005.jpg"
     },
     {
       "movie_id": "m_3c75afd6ba43",
@@ -1151,6 +1156,7 @@
       "movie_id": "m_4fd20f1b6c01",
       "movie_title": "金三角孤軍淚",
       "movie_title_en": "Tears of the Lost Army in Golden Triangle",
+      "poster_url": "https://image.tmdb.org/t/p/w500/uDanLo3ZYuM3CduCCRwyL9E554p.jpg",
       "duration_minutes": 80,
       "metadata_sources": [
         "ambassador-official-site",
@@ -1158,8 +1164,7 @@
         "previous-catalog",
         "spot-huashan-official-schedule",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/uDanLo3ZYuM3CduCCRwyL9E554p.jpg"
+      ]
     },
     {
       "movie_id": "m_50cfc1b09c8a",
@@ -1490,8 +1495,10 @@
       "rating": "p",
       "metadata_sources": [
         "miramar-official-api",
-        "previous-catalog"
-      ]
+        "previous-catalog",
+        "canonical-poster-title-match"
+      ],
+      "poster_url": "https://assets.showtimes.com.tw/images/c9cf39ce84aa5cceeb9599a52890a176.jpg"
     },
     {
       "movie_id": "m_632e872c077a",
@@ -2206,14 +2213,14 @@
       "movie_id": "m_8e5972b3058e",
       "movie_title": "讓建築歌唱～徐亞英的交響人生",
       "movie_title_en": "Tuning Architecture: The Life of Albert Xu in Sound +QA",
+      "poster_url": "https://image.tmdb.org/t/p/w500/ctoY2dhrVO5cAUXa7IqzDmaarK5.jpg",
       "rating": "g",
       "duration_minutes": 111,
       "metadata_sources": [
         "previous-catalog",
         "spot-huashan-official-schedule",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/ctoY2dhrVO5cAUXa7IqzDmaarK5.jpg"
+      ]
     },
     {
       "movie_id": "m_8f126f59ee2e",
@@ -2332,6 +2339,7 @@
       "movie_id": "m_967abb40d306",
       "movie_title": "出賣影子的女人",
       "movie_title_en": null,
+      "poster_url": "https://image.tmdb.org/t/p/w500/d93SXuPhvd4LOLOufFddcsD9wep.jpg",
       "duration_minutes": 99,
       "metadata_sources": [
         "ambassador-official-site",
@@ -2341,8 +2349,7 @@
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/d93SXuPhvd4LOLOufFddcsD9wep.jpg"
+      ]
     },
     {
       "movie_id": "m_96a731048ae1",
@@ -2370,6 +2377,7 @@
       "movie_id": "m_970da19b0c70",
       "movie_title": "完美配對謀殺案：真愛",
       "movie_title_en": null,
+      "poster_url": "https://image.tmdb.org/t/p/w500/znofckBauSBdhH97M9xzmSPnUOG.jpg",
       "duration_minutes": 106,
       "metadata_sources": [
         "ambassador-official-site",
@@ -2379,8 +2387,7 @@
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/znofckBauSBdhH97M9xzmSPnUOG.jpg"
+      ]
     },
     {
       "movie_id": "m_989eaf97f4d2",
@@ -2537,12 +2544,12 @@
       "movie_id": "m_a479bb005289",
       "movie_title": "11月高雄市電影館｜有用的人",
       "movie_title_en": null,
+      "poster_url": "https://image.tmdb.org/t/p/w500/f2AHd0mWJrLLwc6elLcSNVbsy8f.jpg",
       "metadata_sources": [
         "moc-culture-movie-api",
         "previous-catalog",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/f2AHd0mWJrLLwc6elLcSNVbsy8f.jpg"
+      ]
     },
     {
       "movie_id": "m_a4d1442e37ec",
@@ -2781,8 +2788,10 @@
       "movie_title_en": "Stray Kids World Tour 【RUN IT】 ENCORE VIEWIN",
       "metadata_sources": [
         "miramar-official-api",
-        "previous-catalog"
-      ]
+        "previous-catalog",
+        "canonical-poster-title-match"
+      ],
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261012007.jpg"
     },
     {
       "movie_id": "m_c1ee25eda6b2",
@@ -3242,6 +3251,7 @@
       "movie_id": "m_e329cdb3efef",
       "movie_title": "週末的尼諾",
       "movie_title_en": "Nino",
+      "poster_url": "https://image.tmdb.org/t/p/w500/2eyiej0HMvjuv7l0sdPfriEZG7A.jpg",
       "rating": "pg12",
       "duration_minutes": 97,
       "metadata_sources": [
@@ -3249,8 +3259,7 @@
         "eslite-official-schedule",
         "previous-catalog",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/2eyiej0HMvjuv7l0sdPfriEZG7A.jpg"
+      ]
     },
     {
       "movie_id": "m_e69643a78c25",
@@ -3365,8 +3374,10 @@
       "movie_title_en": "BTS WORLD TOUR ARIRANG IN SÃO PAULO:: ENCORE",
       "metadata_sources": [
         "miramar-official-api",
-        "previous-catalog"
-      ]
+        "previous-catalog",
+        "canonical-poster-title-match"
+      ],
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260914004.jpg"
     },
     {
       "movie_id": "m_ee6cc93de135",
@@ -3530,12 +3541,12 @@
       "movie_id": "m_fca2946fc668",
       "movie_title": "11月高雄市電影館｜盧丹的惡魔",
       "movie_title_en": null,
+      "poster_url": "https://image.tmdb.org/t/p/w500/y9zbO3Y5w0qvd6WMIsEgjf4g1YY.jpg",
       "metadata_sources": [
         "moc-culture-movie-api",
         "previous-catalog",
         "the-movie-database"
-      ],
-      "poster_url": "https://image.tmdb.org/t/p/w500/y9zbO3Y5w0qvd6WMIsEgjf4g1YY.jpg"
+      ]
     },
     {
       "movie_id": "m_fe8402d66303",
@@ -3616,6 +3627,6 @@
       ]
     }
   ],
-  "generated_at": "2026-11-01T19:58:39.461Z",
+  "generated_at": "2026-11-01T20:03:27.211Z",
   "identity_policy": "stable movie_id from normalized primary title; metadata stored once in this catalog"
 }
