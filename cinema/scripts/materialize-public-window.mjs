@@ -28,13 +28,20 @@ for (const row of selected) {
 }
 fs.rmSync(outputRoot, { recursive: true, force: true });
 for (const [key, group] of groups) {
-  const [date, city] = key.split('/'); const dir = path.join(outputRoot, date); fs.mkdirSync(dir, { recursive: true });
+  const [date, city] = key.split('/'); const dir = path.join(outputRoot, 'by-date', date); fs.mkdirSync(dir, { recursive: true });
   const payload = { schema: 'canonical-screening-public-view', version: 1, date, city, showtimes: group };
   fs.writeFileSync(path.join(dir, `${city}.json`), JSON.stringify(payload, null, 2) + '\n');
 }
 const digest = crypto.createHash('sha256');
 const files = [];
-for (const date of fs.existsSync(outputRoot) ? fs.readdirSync(outputRoot).sort() : []) for (const file of fs.readdirSync(path.join(outputRoot, date)).sort()) { const relative = `${date}/${file}`; const bytes = fs.readFileSync(path.join(outputRoot, relative)); digest.update(relative); digest.update(bytes); files.push(relative); }
-const report = { schema: 'public-window-report', as_of: asOf, days, end_date: end.toISOString().slice(0, 10), input_rows: rows.length, public_rows: selected.length, excluded_by_window: rows.length - selected.length, files: files.length, sha256: digest.digest('hex') };
+const showtimesIndex = {};
+for (const [key, group] of groups) {
+  const [date, city] = key.split('/');
+  showtimesIndex[date] ||= { total: 0, cities: {} };
+  showtimesIndex[date].total += group.length;
+  showtimesIndex[date].cities[city] = group.length;
+}
+for (const date of fs.existsSync(path.join(outputRoot, 'by-date')) ? fs.readdirSync(path.join(outputRoot, 'by-date')).sort() : []) for (const file of fs.readdirSync(path.join(outputRoot, 'by-date', date)).sort()) { const relative = `by-date/${date}/${file}`; const bytes = fs.readFileSync(path.join(outputRoot, relative)); digest.update(relative); digest.update(bytes); files.push(relative); }
+const report = { schema: 'public-window-report', as_of: asOf, days, end_date: end.toISOString().slice(0, 10), generated_at: new Date().toISOString(), input_rows: rows.length, public_rows: selected.length, excluded_by_window: rows.length - selected.length, files: files.length, sha256: digest.digest('hex'), showtimes_index: showtimesIndex, coverage: { showtime_rows: selected.length, explicit_subtitle_rows: selected.filter(row => Array.isArray(row.subtitles) && row.subtitles.length).length } };
 fs.writeFileSync(path.join(outputRoot, 'manifest.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(report, null, 2));

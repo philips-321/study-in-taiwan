@@ -41,7 +41,7 @@ jobs:
         run: |
           set -euo pipefail
           test -f cinema/data/showtimes/by-date/2026-12-16/taipei.json
-          grep -q "maxDisplayDate='2026-12-07'" cinema/cinema.js
+          grep -q "availableDates=Object.keys(showtimesDateIndex)" cinema/cinema.js
       - name: Commit reviewed snapshots
         shell: bash
         run: |

@@ -155,7 +155,7 @@
     const alternate=decodeEntities(movie.movie_title_en||'');
     const aliases=[...new Set([...(movie.international_titles||[]),alternate].filter(value=>value&&normalizeSearch(value)!==normalizeSearch(title)))];
     const posterUrl=safeUrl(movie.poster_url);
-    const poster=posterUrl?`<div class="movie-detail-poster-wrap is-loading"><img class="movie-detail-poster" src="${esc(posterUrl)}" alt="${esc(title)}" decoding="async"><span class="movie-poster-loading" aria-live="polite">Loading<span class="loading-dots" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span></span></div>`:`<div class="movie-detail-poster-empty">${esc(labels.unknown)}</div>`;
+    const poster=posterUrl?`<div class="movie-detail-poster-wrap is-loading"><img class="movie-detail-poster" src="${esc(posterUrl)}" alt="${esc(title)}" decoding="async"><span class="movie-poster-loading" aria-live="polite">Loading...</span></div>`:`<div class="movie-detail-poster-empty">${esc(labels.unknown)}</div>`;
     const genres=[...new Set(Array.isArray(movie.genres)?movie.genres:[])].map(displayGenre);
     const rating=displayRating(movie.rating);
     const conflict=Array.isArray(movie.rating_conflict)&&movie.rating_conflict.length?`<small class="movie-rating-conflict">${esc(movie.rating_conflict.map(displayRating).filter(Boolean).join(' · '))}</small>`:'';
@@ -353,7 +353,7 @@
   }
   function setupDateOptions() {
     const today=todayTaiwan();
-    const maxDisplayDate='2026-12-07'; availableDates=Object.keys(showtimesDateIndex).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today&&x<=maxDisplayDate).sort();
+    availableDates=Object.keys(showtimesDateIndex).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today&&Number(showtimesDateIndex[x]?.total||0)>0).sort();
     if(!availableDates.length)availableDates=[today];
     let initial=availableDates.includes(today)?today:(availableDates[0]||today);
     dateSelect.innerHTML=availableDates.map(d=>`<option value="${d}">${d===today?`${esc(ui('today'))} · `:''}${esc(formatDate(d))} · ${countDate(d)}</option>`).join('');
@@ -500,7 +500,7 @@
         const addressParts=splitAddress(cinema.address),floorLabel=language==='id'?'Lantai':language==='zh-TW'?'樓層':language==='ja'?'フロア':language==='ko'?'층':language==='vi'?'Tầng':language==='th'?'ชั้น':'Floor';
         const address=cinema.address?`<div class="address-row"><div class="address-text"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.address)}" target="_blank" rel="noopener">${esc(addressParts.street)} ↗</a>${addressParts.floor?`<span class="address-floor">${esc(floorLabel)}: ${esc(addressParts.floor)}</span>`:''}</div>${copyButton(addressParts.street,'address')}</div>`:esc(ui('addressUnavailable'));
         const movies=new Map();shows.sort((a,b)=>String(a.start_time).localeCompare(String(b.start_time))).forEach(s=>{const movie=movieFor(s),key=s.movie_id||`${movie.movie_title||''}|${movie.movie_title_en||''}`;if(!movies.has(key))movies.set(key,[]);movies.get(key).push(s);});
-        const moviesHtml=shows.length?[...movies.values()].map(movieCard).join(''):`<div class="empty-show">${showtimesPending?`Loading showtimes<span class="loading-dots" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span>`:esc(ui('noSchedules'))}</div>`;
+        const moviesHtml=shows.length?[...movies.values()].map(movieCard).join(''):`<div class="empty-show">${showtimesPending?'Loading showtimes...':esc(ui('noSchedules'))}</div>`;
         const co=cinema.company_name?`<div class="company-name">${esc(cinema.company_name)}</div>`:'';
         const image=safeUrl(cinema.image_url||cinema.photo_url||cinema.image);
         const photo=image?`<img class="cinema-photo" src="${esc(image)}" alt="${esc(cinema.name_zh||'Cinema building')}" loading="lazy">`:'';
