@@ -1,19 +1,19 @@
 {
   "version": 4,
   "city": "chiayi-county",
-  "generated_at": "2026-11-01T21:35:06.323Z",
+  "generated_at": "2026-11-01T22:15:29.946Z",
   "showtime_count": 0,
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
-      "showtimes": 0,
+      "showtimes": 256,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 0,
+      "fresh_showtimes": 256,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:35:46.061Z",
+      "last_success_at": "2026-11-01T22:16:49.231Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:35:46.061Z",
+      "last_success_at": "2026-11-01T22:16:49.231Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1930,
+      "showtimes": 1897,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1930,
+      "fresh_showtimes": 1897,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:35:46.061Z",
+      "last_success_at": "2026-11-01T22:16:49.231Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -49,7 +49,8 @@
       "error": "ShowTimes public API 403 Forbidden",
       "retry_suppressed": true,
       "retry_after": "2026-11-08T17:42:56.311Z",
-      "browser_error": "Cloudflare Browser Run could not render www.showtimes.com.tw: Authentication error",
+      "substitute_source": "atmovies-showtimes-fallback",
+      "substitute_showtimes": 905,
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 6,
@@ -69,7 +70,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:35:46.061Z",
+      "last_success_at": "2026-11-01T22:16:49.231Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -79,7 +80,8 @@
       "error": "Eslite 403 Forbidden",
       "retry_suppressed": true,
       "retry_after": "2026-11-08T17:42:56.311Z",
-      "browser_error": "Cloudflare Browser Run could not render meet.eslite.com: Authentication error",
+      "substitute_source": "atmovies-taipei-fallback",
+      "substitute_showtimes": 45,
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 13,
@@ -96,8 +98,8 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-11-02: No showtimes parsed",
-        "t02a01/2026-11-07: No showtimes parsed",
         "t02a01/2026-11-06: No showtimes parsed",
+        "t02a01/2026-11-07: No showtimes parsed",
         "t02a11/2026-11-02: No showtimes parsed",
         "t02a11/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-07: No showtimes parsed",
@@ -112,7 +114,29 @@
       "fresh_showtimes": 1140,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T21:35:46.061Z",
+      "last_success_at": "2026-11-01T22:16:49.231Z",
+      "last_failure_at": null,
+      "next_probe_at": null
+    },
+    "atmovies-showtimes-fallback": {
+      "ok": true,
+      "showtimes": 905,
+      "acquisition_method": "atmovies-official-schedule-html",
+      "cinema_pages": 14,
+      "cinema_pages_failed": 0,
+      "role": "accessible Taiwan cinema listing fallback for blocked ShowTimes API",
+      "target_cinemas": 15,
+      "matched_cinemas": 14,
+      "unmatched_cinemas": [
+        "北港秀泰影城"
+      ],
+      "health": "healthy",
+      "circuit_state": "closed",
+      "failure_count": 0,
+      "fresh_showtimes": 905,
+      "fallback_showtimes": 0,
+      "fallback": null,
+      "last_success_at": "2026-11-01T22:16:49.231Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -140,6 +164,6 @@
       "eslite-official-schedule",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T21:35:46.061Z"
+    "restored_at": "2026-11-01T22:16:49.231Z"
   }
 }

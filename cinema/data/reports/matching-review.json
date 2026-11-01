@@ -1,10 +1,10 @@
 {
   "schema": "cinema-matching-review",
-  "generated_at": "2026-11-01T21:35:51.973Z",
+  "generated_at": "2026-11-01T22:16:55.738Z",
   "collector_diagnostic_counts": {
     "ambiguous_movie_metadata": 4,
     "ambiguous_cinema_matches": 0,
-    "unmatched_cinema_matches": 0
+    "unmatched_cinema_matches": 10
   },
   "ambiguous_movie_metadata": [
     {
@@ -81,6 +81,67 @@
     }
   ],
   "ambiguous_cinema_matches": [],
-  "unmatched_cinema_matches": [],
+  "unmatched_cinema_matches": [
+    {
+      "source": "moc-culture-movie-api",
+      "city": "tainan",
+      "venue": "臺南市奇美博物館",
+      "address": "臺南市仁德區文華路二段66號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "nantou",
+      "venue": "車籠埔斷層保存園區",
+      "address": "南投縣竹山鎮集山路二段345號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "changhua",
+      "venue": "彰化縣和美鎮立圖書館",
+      "address": "彰化縣和美鎮道周路346號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "new-taipei",
+      "venue": "國家電影及視聽文化中心-大影格",
+      "address": "新北市新莊區文藝路2號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "new-taipei",
+      "venue": "國家電影及視聽文化中心-小影格",
+      "address": "新北市新莊區文藝路2號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "kaohsiung",
+      "venue": "內惟藝術中心 Reel one 1廳",
+      "address": "高雄市鼓山區馬卡道路329號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "kaohsiung",
+      "venue": "內惟藝術中心 Reel two 2廳",
+      "address": "高雄市鼓山區馬卡道路329號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "kaohsiung",
+      "venue": "高雄市電影館3樓",
+      "address": "高雄市鹽埕區河西路10號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "new-taipei",
+      "venue": "府中15",
+      "address": "新北市板橋區府中路15號B1"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "unknown",
+      "venue": "全台首輪上映戲院",
+      "address": "無無."
+    }
+  ],
   "manual_review_required": true
 }
