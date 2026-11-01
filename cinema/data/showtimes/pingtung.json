@@ -1,7 +1,7 @@
 {
   "version": 4,
   "city": "pingtung",
-  "generated_at": "2026-11-01T22:15:29.946Z",
+  "generated_at": "2026-11-01T22:18:41.124Z",
   "showtime_count": 158,
   "sources": {
     "moc-culture-movie-api": {
@@ -13,7 +13,7 @@
       "fresh_showtimes": 256,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:16:49.231Z",
+      "last_success_at": "2026-11-01T22:20:05.788Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:16:49.231Z",
+      "last_success_at": "2026-11-01T22:20:05.788Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1897,
+      "showtimes": 1866,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1897,
+      "fresh_showtimes": 1866,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:16:49.231Z",
+      "last_success_at": "2026-11-01T22:20:05.788Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -70,7 +70,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:16:49.231Z",
+      "last_success_at": "2026-11-01T22:20:05.788Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -94,27 +94,27 @@
     },
     "atmovies-taipei-fallback": {
       "ok": true,
-      "showtimes": 1140,
+      "showtimes": 957,
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-11-02: No showtimes parsed",
-        "t02a01/2026-11-06: No showtimes parsed",
-        "t02a01/2026-11-07: No showtimes parsed",
         "t02a11/2026-11-02: No showtimes parsed",
+        "t02a01/2026-11-07: No showtimes parsed",
+        "t02a01/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-06: No showtimes parsed",
-        "t02a11/2026-11-07: No showtimes parsed",
         "t02a12/2026-11-02: No showtimes parsed",
-        "t02a12/2026-11-06: No showtimes parsed",
-        "t02a12/2026-11-07: No showtimes parsed",
-        "t02b14/2026-11-02: No showtimes parsed"
+        "t02a11/2026-11-07: No showtimes parsed",
+        "t02a01/2026-11-05: 500 Internal Server Error",
+        "t02a01/2026-11-04: 500 Internal Server Error",
+        "t02a12/2026-11-06: No showtimes parsed"
       ],
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1140,
+      "fresh_showtimes": 957,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:16:49.231Z",
+      "last_success_at": "2026-11-01T22:20:05.788Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -136,7 +136,7 @@
       "fresh_showtimes": 905,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:16:49.231Z",
+      "last_success_at": "2026-11-01T22:20:05.788Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -164,6 +164,6 @@
       "eslite-official-schedule",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T22:16:49.231Z"
+    "restored_at": "2026-11-01T22:20:05.788Z"
   }
 }
