@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T19:00:33.806Z",
+  "generated_at": "2026-11-01T19:02:16.998Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -508,6 +508,40 @@
         "vieshow-muvie-songren-official",
         "vieshow-official-browser"
       ]
+    },
+    {
+      "movie_id": "m_917c99df01f5",
+      "movie_title": "快打旋風_特別場3",
+      "poster_url": "https://assets.showtimes.com.tw/images/655ebd339b1b3a3ad93159c997c56771.jpg",
+      "aliases": [
+        "STREET FIGHTER_SPECIAL3",
+        "快打旋風",
+        "快打旋風_特別場3"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "archived-movie-catalog",
+        "atmovies-breeze-web-fallback",
+        "atmovies-broadway-gongguan-web-fallback",
+        "atmovies-governor-web-fallback",
+        "atmovies-miranew-dazhi-web-fallback",
+        "atmovies-taipei-fallback",
+        "atmovies-tianmu-shinkong-web-fallback",
+        "century-asia-official-browser",
+        "centuryasia-ximen-official-browser-p0",
+        "current-movie-catalog",
+        "hala-official-browser",
+        "miramar-official-api",
+        "previous-catalog",
+        "reelax-lion-plaza-shinkong-web-fallback",
+        "reused-canonical-poster-index",
+        "showtimes-official-api",
+        "showtimes-official-metadata",
+        "showtimes-official-program",
+        "vieshow-muvie-songren-official",
+        "vieshow-official-browser"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_ff6f19f24db6",
@@ -1400,6 +1434,32 @@
         "previous-catalog",
         "vieshow-official-browser"
       ]
+    },
+    {
+      "movie_id": "m_d8a382d323ea",
+      "movie_title": "進擊的鼓手",
+      "poster_url": "https://assets.showtimes.com.tw/images/c9cf39ce84aa5cceeb9599a52890a176.jpg",
+      "aliases": [
+        "進擊的鼓手",
+        "進擊的鼓手 4K重映"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "archived-movie-catalog",
+        "century-asia-official-browser",
+        "current-movie-catalog",
+        "eslite-official-schedule",
+        "miramar-official-api",
+        "previous-catalog",
+        "reused-canonical-poster-index",
+        "showtimes-official-api",
+        "showtimes-official-metadata",
+        "showtimes-official-program",
+        "spot-huashan-official-schedule",
+        "vieshow-muvie-songren-official",
+        "vieshow-official-browser"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_6c190c8b78e4",
