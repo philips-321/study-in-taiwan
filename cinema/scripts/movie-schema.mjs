@@ -33,6 +33,39 @@ export function knownAgeRating(value) {
   return ({ '普': 'g', '普遍級': 'g', g: 'g', '護': 'p', '保護級': 'p', p: 'p', '輔12': 'pg12', '輔12級': 'pg12', pg12: 'pg12', '輔15': 'pg15', '輔15級': 'pg15', pg15: 'pg15', '限制級': 'r', r: 'r' })[raw] || null;
 }
 
+function posterMatchKey(value) {
+  return normalizeMovieTitle(value).replace(/[\p{P}\p{S}\s]/gu, '');
+}
+
+export function inheritUnambiguousTitlePosters(movies) {
+  const posterCandidates = new Map();
+  for (const movie of movies) {
+    if (!movie.poster_url) continue;
+    const titles = [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || [])].filter(Boolean);
+    for (const title of titles) {
+      const key = posterMatchKey(title);
+      if (key.length < 4 || (key.length < 6 && !/\p{Script=Han}/u.test(key))) continue;
+      const urls = posterCandidates.get(key) || new Set();
+      urls.add(movie.poster_url);
+      posterCandidates.set(key, urls);
+    }
+  }
+
+  for (const movie of movies) {
+    if (movie.poster_url) continue;
+    const titles = [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || [])].filter(Boolean);
+    const matches = new Set();
+    for (const title of titles) {
+      const urls = posterCandidates.get(posterMatchKey(title));
+      if (urls?.size === 1) matches.add([...urls][0]);
+    }
+    if (matches.size !== 1) continue;
+    movie.poster_url = [...matches][0];
+    movie.metadata_sources = [...new Set([...(movie.metadata_sources || []), 'punctuation-insensitive-title-poster-match'])];
+  }
+  return movies;
+}
+
 export function buildMovieIndex(rows, programRecords = [], previousRecords = []) {
   const records = new Map();
   const ensure = (title, titleEn = null, movieId = null) => {
@@ -95,6 +128,7 @@ export function buildMovieIndex(rows, programRecords = [], previousRecords = [])
       ...(record.sources.size ? { metadata_sources: [...record.sources].sort() } : {})
     };
   }).sort((a, b) => String(a.movie_title || a.movie_title_en).localeCompare(String(b.movie_title || b.movie_title_en), 'zh-Hant'));
+  inheritUnambiguousTitlePosters(movies);
   return { version: 1, movies };
 }
 
