@@ -1,19 +1,19 @@
 {
   "version": 4,
   "city": "new-taipei",
-  "generated_at": "2026-11-01T20:08:06.276Z",
-  "showtime_count": 638,
+  "generated_at": "2026-11-01T20:43:30.445Z",
+  "showtime_count": 631,
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
-      "showtimes": 172,
+      "showtimes": 0,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 172,
+      "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1674,
+      "showtimes": 1684,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1674,
+      "fresh_showtimes": 1684,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -68,7 +68,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -94,12 +94,12 @@
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-11-02: No showtimes parsed",
-        "t02a01/2026-11-06: No showtimes parsed",
         "t02a01/2026-11-07: No showtimes parsed",
+        "t02a01/2026-11-06: No showtimes parsed",
         "t02a11/2026-11-02: No showtimes parsed",
         "t02a11/2026-11-06: No showtimes parsed",
-        "t02a12/2026-11-02: No showtimes parsed",
         "t02a11/2026-11-07: No showtimes parsed",
+        "t02a12/2026-11-02: No showtimes parsed",
         "t02a12/2026-11-06: No showtimes parsed",
         "t02b14/2026-11-02: No showtimes parsed",
         "t02a12/2026-11-07: No showtimes parsed"
@@ -110,7 +110,7 @@
       "fresh_showtimes": 1140,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -138,6 +138,6 @@
       "eslite-official-schedule",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T20:08:42.412Z"
+    "restored_at": "2026-11-01T20:44:06.726Z"
   }
 }

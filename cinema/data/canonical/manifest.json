@@ -3,23 +3,29 @@
   "version": 1,
   "source": "daily collector snapshots merged by screening_id",
   "parser_version": "canonical-converter-v1",
-  "screening_rows": 14034,
+  "screening_rows": 14037,
   "unresolved_rows": 0,
   "partitions": {
     "2026-01": 2,
     "2026-10": 8347,
-    "2026-11": 5599,
+    "2026-11": 5602,
     "2026-12": 86
   },
   "migration_status": "active",
   "public_view": {
     "window_days": 30,
     "generated_as_of": "2026-11-02",
-    "rows": 4652,
+    "rows": 4519,
     "excluded_by_window": 9382,
-    "sha256": "bdeefd981544582ff36c99ba7288247733a2ea7fd821d29a55d4e36ebb8d0e00"
+    "excluded_stale_status_rows": 0,
+    "excluded_stale_fallback_rows": 136,
+    "excluded_stale_fallback_by_source": {
+      "showtimes-official-api": 136
+    },
+    "fallback_max_age_hours": 168,
+    "sha256": "029afac7a1f13e1ad96621741bb0321b1cea9eb43f5bec1256dd4c226173f7b8"
   },
-  "updated_at": "2026-11-02T00:00:00.000Z",
+  "updated_at": "2026-11-01T20:44:07.417Z",
   "movie_registry": {
     "file": "movie-registry.jsonl",
     "unique_films": 217,
@@ -33,7 +39,19 @@
     "official_poster_matches_this_run": 0,
     "poster_lookups_deferred": 0,
     "ambiguous_poster_matches": 0,
-    "last_poster_sync_at": "2026-11-02T00:00:00.000Z"
+    "last_poster_sync_at": "2026-11-01T20:44:07.417Z"
   },
-  "generated_at": "2026-11-01T19:41:30.407Z"
+  "generated_at": "2026-11-01T19:41:30.407Z",
+  "schedule_reconciliation": {
+    "checked_at": "2026-11-01T20:44:07.246Z",
+    "as_of": "2026-11-02",
+    "window_days": 30,
+    "stale_marked_this_run": 0,
+    "stale_screenings_in_window": 0,
+    "pending_candidates": 591,
+    "fresh_snapshot_rows": 3237,
+    "last_known_good_rows": 291,
+    "scopes_without_fresh_evidence": 599,
+    "policy": "A screening is marked stale only after it is absent from two consecutive Taiwan-day snapshots in which the same source, cinema, and date scope still returns fresh rows. Stale rows remain archived and are excluded from the public view."
+  }
 }

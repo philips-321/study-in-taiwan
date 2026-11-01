@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-02T00:00:00.000Z",
+  "generated_at": "2026-11-01T20:44:11.526Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -13,9 +13,9 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "previous-catalog",
-        "showtimes-official-metadata",
-        "canonical-manual-poster"
+        "showtimes-official-metadata"
       ],
       "preferred": true
     },
@@ -28,12 +28,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -46,12 +46,26 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_eb4cf10a6f0e",
+      "movie_title": "（特別場）太空百合戰鬥姬",
+      "poster_url": "https://cdn.atmovies.com.tw/movie/flen29781139/poster.jpg",
+      "aliases": [
+        "（特別場）太空百合戰鬥姬"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "manual-verified-poster",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -65,9 +79,9 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "previous-catalog",
-        "showtimes-official-metadata",
-        "canonical-manual-poster"
+        "showtimes-official-metadata"
       ],
       "preferred": true
     },
@@ -80,9 +94,9 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-manual-poster"
+        "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
     },
@@ -95,12 +109,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -113,12 +127,26 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_a91a544e084e",
+      "movie_title": "（應援特別場）雙雄起義",
+      "poster_url": "https://image.tmdb.org/t/p/original/e3sA1W6zYQdr8r1fn8Zx8Fwk9Gg.jpg",
+      "aliases": [
+        "（應援特別場）雙雄起義"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "manual-verified-poster",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -132,9 +160,9 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "previous-catalog",
-        "showtimes-official-metadata",
-        "canonical-manual-poster"
+        "showtimes-official-metadata"
       ],
       "preferred": true
     },
@@ -163,6 +191,21 @@
       ]
     },
     {
+      "movie_id": "m_96e707798a40",
+      "movie_title": "《我們，巴黎管弦樂團》",
+      "poster_url": "https://assets.lesfilmspelleas.com/NOUS_L_ORCHESTRE_4_5_AFFICHE_770aa4abb4.jpg",
+      "aliases": [
+        "《我們，巴黎管弦樂團》"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_7e1452b45c8b",
       "movie_title": "【府中15】紀錄片放映院《96分鐘》",
       "poster_url": "https://s3.resource.opentix.life/upload/program/17919686033272qUzrQjc70.jpeg",
@@ -183,10 +226,10 @@
         "【府中15】紀錄片放映院《96分鐘》"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -211,10 +254,10 @@
         "一一：25周年4K經典修復版"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -227,10 +270,10 @@
         "一生二命"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -243,10 +286,10 @@
         "人生海海"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -259,10 +302,10 @@
         "夕陽西下"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -275,10 +318,10 @@
         "五輪物語"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -291,10 +334,10 @@
         "牛奶小姐幫幫忙"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -307,10 +350,10 @@
         "世外"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -324,9 +367,9 @@
       ],
       "sources": [
         "atmovies-taiwan-image-search",
+        "canonical-manual-poster",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -339,10 +382,10 @@
         "只要我長大"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "myvideo-taiwan-image-search",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -355,10 +398,10 @@
         "甘露水"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -371,10 +414,10 @@
         "好奇寶貝方城市"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -388,10 +431,10 @@
         "我家有棵芒果樹"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -404,10 +447,10 @@
         "決戰投手丘"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -420,10 +463,10 @@
         "兩相好"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -437,10 +480,10 @@
         "冠軍之路"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -453,10 +496,10 @@
         "恨女的逆襲"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -470,10 +513,10 @@
         "看見台灣"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -486,10 +529,10 @@
         "時間暫停的季節"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -502,10 +545,10 @@
         "泰山寶藏"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -518,10 +561,10 @@
         "張帝找阿珠"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -534,10 +577,10 @@
         "殺出個黃昏"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -550,10 +593,10 @@
         "單身動物園"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -578,10 +621,10 @@
         "寒戰1994"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -606,10 +649,10 @@
         "尋秦記"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -622,10 +665,10 @@
         "畫外謎踪"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -638,10 +681,10 @@
         "超人力霸王．起源"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -654,10 +697,10 @@
         "新浪潮"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -670,10 +713,10 @@
         "嘰嘰王子：宇宙無敵"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -686,10 +729,10 @@
         "熱戀年代"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -703,9 +746,9 @@
       ],
       "sources": [
         "allocine-image-search",
+        "canonical-manual-poster",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -718,10 +761,10 @@
         "蹦蹦奇遇森友會"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -734,10 +777,10 @@
         "蘿拉的魔法鋼琴"
       ],
       "sources": [
+        "canonical-manual-poster",
         "fuzhong15-official-movie-page",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -751,10 +794,10 @@
         "世紀初戀 楊麗花"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -768,10 +811,10 @@
         "白色情迷"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -783,10 +826,10 @@
         "11月高雄市電影館｜有用的人"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -800,10 +843,10 @@
         "你和我的房間這種感覺"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -817,10 +860,10 @@
         "告別的年代"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -834,10 +877,10 @@
         "坂本龍一・永恆的迴響"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -850,10 +893,10 @@
         "Nous, l’Orchestre"
       ],
       "sources": [
+        "canonical-manual-poster",
         "les-films-pelleas-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -866,10 +909,10 @@
         "沙央"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "showtimes-official-metadata",
-        "canonical-manual-poster"
+        "showtimes-official-metadata"
       ],
       "preferred": true
     },
@@ -882,10 +925,10 @@
         "Banned from Broadcast: My Three Wives"
       ],
       "sources": [
+        "canonical-manual-poster",
         "imdb-image-search",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -899,10 +942,10 @@
         "蹦蹦奇遇森友會"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "opentix-official-event-image",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -915,10 +958,10 @@
         "屍控片場性愛死"
       ],
       "sources": [
+        "canonical-manual-poster",
         "cineart-image-search",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -931,10 +974,10 @@
         "Trois couleurs: Rouge"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "tmdb-zh-tw-image-search",
-        "canonical-manual-poster"
+        "tmdb-zh-tw-image-search"
       ],
       "preferred": true
     },
@@ -947,10 +990,10 @@
         "Back on North Face"
       ],
       "sources": [
+        "canonical-manual-poster",
         "giloo-taiwan-image-search",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -964,10 +1007,10 @@
         "第四幕"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -979,10 +1022,10 @@
         "11月高雄市電影館｜善男信女"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -996,10 +1039,10 @@
         "窗外有藍天"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1012,10 +1055,10 @@
         "黑球"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "showtimes-official-metadata",
-        "canonical-manual-poster"
+        "showtimes-official-metadata"
       ],
       "preferred": true
     },
@@ -1029,10 +1072,10 @@
         "黑潮"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1046,10 +1089,10 @@
         "與畢諾許共舞"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1063,10 +1106,10 @@
         "與達賴喇嘛談心"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1080,10 +1123,10 @@
         "廚師發辦"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1095,10 +1138,10 @@
         "11月高雄市電影館｜盧丹的惡魔"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -1112,10 +1155,10 @@
         "藍色情挑"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1129,10 +1172,10 @@
         "雙面薇若妮卡"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1145,10 +1188,10 @@
         "讓子彈飛"
       ],
       "sources": [
+        "canonical-manual-poster",
         "eslite-taiwan-image-search",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1161,10 +1204,10 @@
         "Vanya on 42nd Street"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "original-film-art-image-search",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1178,10 +1221,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1193,10 +1236,10 @@
         "人體新視界"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -1220,10 +1263,10 @@
         "小小畫家芙烈達"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -1236,10 +1279,10 @@
         "小雨愛蜜莉"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "vocus-taiwan-image-search",
-        "canonical-manual-poster"
+        "vocus-taiwan-image-search"
       ],
       "preferred": true
     },
@@ -1256,6 +1299,7 @@
         "archived-movie-catalog",
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "current-movie-catalog",
         "hala-official-browser",
@@ -1266,8 +1310,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1280,10 +1323,10 @@
         "今天不回家（數位修復版）"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "national-taiwan-history-museum-collection",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1297,9 +1340,9 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "filmstarts-image-search",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1313,11 +1356,11 @@
         "水花四濺4K修復版"
       ],
       "sources": [
+        "canonical-manual-poster",
         "filmstarts-image-search",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -1337,6 +1380,7 @@
         "atmovies-governor-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
         "hala-official-browser",
@@ -1349,6 +1393,33 @@
       ]
     },
     {
+      "movie_id": "m_7e94558337d5",
+      "movie_title": "世紀初戀 楊麗花",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027150107881.jpg",
+      "aliases": [
+        "EMPEROR ON STAGE",
+        "Emperor on Stage",
+        "世紀初戀 楊麗花"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "atmovies-breeze-web-fallback",
+        "atmovies-broadway-gongguan-web-fallback",
+        "atmovies-governor-web-fallback",
+        "atmovies-taipei-fallback",
+        "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
+        "centuryasia-ximen-official-browser-p0",
+        "hala-official-browser",
+        "magichour-centuryasia-nangang-web-fallback",
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-program",
+        "spot-huashan-official-schedule"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_967abb40d306",
       "movie_title": "出賣影子的女人",
       "poster_url": "https://image.tmdb.org/t/p/w500/d93SXuPhvd4LOLOufFddcsD9wep.jpg",
@@ -1358,12 +1429,12 @@
       "sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p1",
         "hala-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -1382,14 +1453,14 @@
         "archived-movie-catalog",
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "miramar-official-api",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1409,6 +1480,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p1",
         "current-movie-catalog",
         "magichour-centuryasia-nangang-web-fallback",
@@ -1418,8 +1490,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1447,10 +1518,42 @@
         "外來零件"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_8b39aff1e5c2",
+      "movie_title": "末路狂花",
+      "poster_url": "https://www.nfbio.dk/sites/nfbio.dk/files/movie-posters/HO00003170_104827.jpg",
+      "aliases": [
+        "末路狂花"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_0b7b9a1df711",
+      "movie_title": "玉照情事",
+      "poster_url": "https://pics.filmaffinity.com/Time_to_Love-505114138-large.jpg",
+      "aliases": [
+        "玉照情事"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-image-search",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "tfai-official-program"
       ],
       "preferred": true
     },
@@ -1464,10 +1567,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1481,10 +1584,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1499,10 +1602,10 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "movie-chill-taiwan-image-search",
         "previous-catalog",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1527,10 +1630,43 @@
         "在車上"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "vocus-taiwan-image-search",
-        "canonical-manual-poster"
+        "vocus-taiwan-image-search"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_21e54c39aa80",
+      "movie_title": "艾哈邁德王子歷險記+童話短片集",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/1789031008485vP8KZkzngt.jpeg",
+      "aliases": [
+        "艾哈邁德王子歷險記+童話短片集"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "tfai-official-program"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_b773c3e5735c",
+      "movie_title": "血之輪迴",
+      "poster_url": "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fmetadata-static.plex.tv%2F1%2Fgracenote%2F1e8ccaa3ce938cf3f1d4f22a03d03a12.jpg",
+      "aliases": [
+        "血之輪迴"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-image-search",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "tfai-official-program"
       ],
       "preferred": true
     },
@@ -1549,6 +1685,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
         "hala-official-browser",
@@ -1557,8 +1694,7 @@
         "previous-catalog",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-muvie-songren-official",
-        "canonical-manual-poster"
+        "vieshow-muvie-songren-official"
       ],
       "preferred": true
     },
@@ -1573,10 +1709,10 @@
         "吳爾芙的夜與日(海報場)"
       ],
       "sources": [
+        "canonical-manual-poster",
         "luchs-kino-image-search",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -1593,12 +1729,12 @@
       "sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "luchs-kino-image-search",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1623,10 +1759,10 @@
         "坂本龍一・永恆的迴響(海報場)"
       ],
       "sources": [
+        "canonical-manual-poster",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "vogue-taiwan-image-search",
-        "canonical-manual-poster"
+        "vogue-taiwan-image-search"
       ],
       "preferred": true
     },
@@ -1640,12 +1776,12 @@
       "sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p0",
         "hala-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -1666,6 +1802,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
@@ -1677,8 +1814,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1700,6 +1836,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
@@ -1712,8 +1849,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1730,14 +1866,14 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "hala-official-browser",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1752,6 +1888,7 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "miramar-official-api",
         "previous-catalog",
@@ -1759,8 +1896,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1777,6 +1913,7 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "current-movie-catalog",
         "eslite-official-schedule",
@@ -1785,8 +1922,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1799,11 +1935,11 @@
         "角落小夥伴電影版 ：從天而降的雲之冒險"
       ],
       "sources": [
+        "canonical-manual-poster",
         "current-movie-catalog",
         "miramar-official-api",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-manual-poster"
+        "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
     },
@@ -1821,6 +1957,7 @@
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "hala-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
@@ -1828,8 +1965,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1843,10 +1979,10 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "previous-catalog",
         "the-movie-database",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1866,6 +2002,7 @@
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "current-movie-catalog",
@@ -1875,8 +2012,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -1891,11 +2027,11 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "eslite-official-schedule",
         "imdb-image-search",
         "magichour-centuryasia-nangang-web-fallback",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1910,9 +2046,9 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "imdb-image-search",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -1925,9 +2061,9 @@
         "東尼瀧谷:4K數位修復版－早安！周日經典電影院"
       ],
       "sources": [
+        "canonical-manual-poster",
         "eslite-official-schedule",
-        "tatler-taiwan-image-search",
-        "canonical-manual-poster"
+        "tatler-taiwan-image-search"
       ],
       "preferred": true
     },
@@ -1940,9 +2076,9 @@
         "東京教父：4K數位修復版－早安！周日經典電影院"
       ],
       "sources": [
+        "canonical-manual-poster",
         "eslite-official-schedule",
-        "gq-taiwan-manual-search",
-        "canonical-manual-poster"
+        "gq-taiwan-manual-search"
       ],
       "preferred": true
     },
@@ -1964,6 +2100,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
@@ -1975,8 +2112,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2005,10 +2141,10 @@
         "泥面人_特別場"
       ],
       "sources": [
+        "canonical-manual-poster",
         "miramar-official-api",
         "previous-catalog",
-        "reused-existing-showtimes-poster-index",
-        "canonical-manual-poster"
+        "reused-existing-showtimes-poster-index"
       ],
       "preferred": true
     },
@@ -2028,6 +2164,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "current-movie-catalog",
@@ -2040,8 +2177,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2056,14 +2192,14 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "spot-huashan-official-schedule",
         "the-movie-database",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2078,10 +2214,10 @@
       "sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -2096,6 +2232,7 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "lux-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
@@ -2103,8 +2240,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2134,9 +2270,9 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "harpers-bazaar-taiwan-manual-search",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -2153,13 +2289,13 @@
         "青春電幻物語：數位修復版"
       ],
       "sources": [
+        "canonical-manual-poster",
         "eslite-official-schedule",
         "harpers-bazaar-taiwan-manual-search",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "vieshow-muvie-songren-official",
-        "canonical-manual-poster"
+        "vieshow-muvie-songren-official"
       ],
       "preferred": true
     },
@@ -2177,11 +2313,11 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "harpers-bazaar-taiwan-manual-search",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -2195,10 +2331,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2213,13 +2349,13 @@
       "sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "cineart-image-search",
         "eslite-official-schedule",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "reelax-lion-plaza-shinkong-web-fallback",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -2234,13 +2370,13 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2260,6 +2396,7 @@
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "current-movie-catalog",
@@ -2272,8 +2409,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2290,6 +2426,7 @@
         "archived-movie-catalog",
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "current-movie-catalog",
@@ -2299,8 +2436,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2317,6 +2453,7 @@
         "ambassador-official-site",
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
         "hala-official-browser",
@@ -2324,8 +2461,7 @@
         "miramar-official-api",
         "previous-catalog",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -2342,6 +2478,23 @@
       ]
     },
     {
+      "movie_id": "m_554a972951a6",
+      "movie_title": "陌生人為伴",
+      "poster_url": "https://playhousecinema.ca/files/princesscinemas/imagecache/u7-movie-poster3/movie-posters/47f7136e12a670f436abf1d69237fd9c.jpeg",
+      "aliases": [
+        "陌生人為伴"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-image-search",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "tfai-official-program"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_730baf7f4574",
       "movie_title": "哥吉拉-0.0",
       "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
@@ -2355,14 +2508,14 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "miramar-official-api",
         "previous-catalog",
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2376,10 +2529,10 @@
         "哥吉拉-0.0 全台聯合首映"
       ],
       "sources": [
+        "canonical-manual-poster",
         "miramar-official-api",
         "previous-catalog",
-        "showtimes-official-metadata",
-        "canonical-manual-poster"
+        "showtimes-official-metadata"
       ],
       "preferred": true
     },
@@ -2393,12 +2546,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -2411,10 +2564,10 @@
         "哥吉拉-0.0_特別場"
       ],
       "sources": [
+        "canonical-manual-poster",
         "miramar-official-api",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-manual-poster"
+        "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
     },
@@ -2428,12 +2581,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -2450,6 +2603,7 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "previous-catalog",
@@ -2457,8 +2611,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2475,6 +2628,7 @@
         "archived-movie-catalog",
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
         "magichour-centuryasia-nangang-web-fallback",
@@ -2482,8 +2636,7 @@
         "previous-catalog",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-muvie-songren-official",
-        "canonical-manual-poster"
+        "vieshow-muvie-songren-official"
       ],
       "preferred": true
     },
@@ -2495,10 +2648,10 @@
         "紐約藝術家的性與愛"
       ],
       "sources": [
+        "canonical-manual-poster",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -2513,12 +2666,12 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "eslite-official-schedule",
         "gateway-film-center-image-search",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -2539,6 +2692,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
@@ -2584,11 +2738,11 @@
         "逃出鯨吞 4DX特別場"
       ],
       "sources": [
+        "canonical-manual-poster",
         "filmvandaag-image-search",
         "previous-catalog",
         "showtimes-official-api",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -2609,6 +2763,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p0",
         "filmvandaag-image-search",
@@ -2621,8 +2776,7 @@
         "showtimes-official-api",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2651,6 +2805,7 @@
         "archived-movie-catalog",
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "current-movie-catalog",
@@ -2659,8 +2814,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2676,11 +2830,11 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "miramar-official-api",
         "previous-catalog",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -2693,10 +2847,10 @@
         "高校人形金字塔"
       ],
       "sources": [
+        "canonical-manual-poster",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -2713,6 +2867,7 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "current-movie-catalog",
@@ -2721,8 +2876,24 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_292d4e79218e",
+      "movie_title": "殺羊人",
+      "poster_url": "https://fr.web.img4.acsta.net/img/6a/96/6a96af610984f98b3795ac96ab9afe28.jpg",
+      "aliases": [
+        "殺羊人"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-image-search",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "tfai-official-program"
       ],
       "preferred": true
     },
@@ -2734,10 +2905,10 @@
         "莉維達・地海之詩"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -2757,6 +2928,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "current-movie-catalog",
         "hala-official-browser",
@@ -2767,8 +2939,23 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_e309140c8b94",
+      "movie_title": "陰森森短片輯 + 延（數位修復版）",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/1788941396458a8rk69EBZg.jpeg",
+      "aliases": [
+        "陰森森短片輯 + 延（數位修復版）"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "tfai-official-program"
       ],
       "preferred": true
     },
@@ -2782,10 +2969,10 @@
         "麥特與麥斯(特別場)"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kinocheck-image-search",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -2799,10 +2986,10 @@
         "麥特與麥斯(特別場)"
       ],
       "sources": [
+        "canonical-manual-poster",
         "kinocheck-image-search",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -2816,12 +3003,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -2835,10 +3022,10 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
-        "tmdb-image-search",
-        "canonical-manual-poster"
+        "tmdb-image-search"
       ],
       "preferred": true
     },
@@ -2853,13 +3040,13 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2873,10 +3060,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "miramar-official-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -2895,6 +3082,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
@@ -2907,8 +3095,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2921,10 +3108,10 @@
         "游牧人生"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "shopee-taiwan-image-search",
-        "canonical-manual-poster"
+        "shopee-taiwan-image-search"
       ],
       "preferred": true
     },
@@ -2939,10 +3126,10 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -2956,10 +3143,10 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "eslite-official-schedule",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -2975,6 +3162,7 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "current-movie-catalog",
         "eslite-official-schedule",
@@ -2987,8 +3175,7 @@
         "showtimes-official-program",
         "spot-huashan-official-schedule",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3001,10 +3188,10 @@
         "進擊的鼓手  4K重映_特別場3"
       ],
       "sources": [
+        "canonical-manual-poster",
         "canonical-poster-title-match",
         "miramar-official-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -3020,6 +3207,7 @@
       "sources": [
         "ambassador-official-site",
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "current-movie-catalog",
         "eslite-official-schedule",
@@ -3030,8 +3218,34 @@
         "showtimes-official-program",
         "spot-huashan-official-schedule",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_6c17c58873d7",
+      "movie_title": "黃色故事（數位修復版）",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/1788943997733YwD7kIMhkP.png",
+      "aliases": [
+        "黃色故事（數位修復版）"
+      ],
+      "sources": [
+        "tfai-official-program"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_6c17c58873d7",
+      "movie_title": "黃色故事（數位修復版）",
+      "poster_url": "https://collections.culture.tw/ShowGalImage?FROM=5YKK57&IMG=5TK25VMAM4M6MRKX5GMSM6M8M6M2MJ0EM2MIMJ0BMHMZ09MD51KAK6MCMAMZMAK25S5SK75SMP0OM1K65SMIKLM4KKK4KL51MFKNKDK7M10954MWKE5S57K8K4KGK704MYM10ZMD01MWMB0WM4090GMG&SYSUID=11&TEXT=K7KG575Y",
+      "aliases": [
+        "黃色故事（數位修復版）"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -3071,6 +3285,7 @@
         "archived-movie-catalog",
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "hala-official-browser",
         "miramar-official-api",
@@ -3078,8 +3293,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3095,13 +3309,13 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3114,10 +3328,26 @@
         "愛情萬歲（4K數位修復版）"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "taiwan-cultural-memory-database-image-search",
-        "canonical-manual-poster"
+        "taiwan-cultural-memory-database-image-search"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_989eaf97f4d2",
+      "movie_title": "愛麗絲漫遊城市",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/1788934264008Exp40YtIxO.png",
+      "aliases": [
+        "愛麗絲漫遊城市"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "tfai-official-program"
       ],
       "preferred": true
     },
@@ -3134,6 +3364,34 @@
       ]
     },
     {
+      "movie_id": "m_7a163cfc0622",
+      "movie_title": "新大陸",
+      "poster_url": "https://image.tmdb.org/t/p/original/eC9SDdBwCa0FGckc76q1MBxlks9.jpg",
+      "aliases": [
+        "新大陸"
+      ],
+      "sources": [
+        "manual-image-search",
+        "tfai-official-program"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_7a163cfc0622",
+      "movie_title": "新大陸",
+      "poster_url": "https://cdn2.bigcommerce.com/n-d57o0b/ptxvsha/products/16086/images/20581/the_new_land__81820.1764283971.1280.1280.jpg?c=2",
+      "aliases": [
+        "新大陸"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_5e4f80d2a0ab",
       "movie_title": "煙囪小鎮的普佩2：約定的鐘樓",
       "poster_url": "https://assets.showtimes.com.tw/images/605d1538d71be10a6d80262ff7772cab.jpg",
@@ -3147,6 +3405,7 @@
         "archived-movie-catalog",
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "hala-official-browser",
@@ -3157,8 +3416,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3183,9 +3441,9 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -3201,14 +3459,14 @@
       "sources": [
         "ambassador-official-site",
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3223,10 +3481,27 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_0114b6d7277c",
+      "movie_title": "運將幻遊",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTVjY2E5MDUtN2U3ZC00NTFiLWJlYWMtZGZhYzQ2OGU2ZDEwXkEyXkFqcGc%40._V1_.jpg",
+      "aliases": [
+        "運將幻遊"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-image-search",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "tfai-official-program"
       ],
       "preferred": true
     },
@@ -3240,10 +3515,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3258,14 +3533,14 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3281,14 +3556,14 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p2",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3304,6 +3579,7 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "hala-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
@@ -3311,8 +3587,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3326,10 +3601,24 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_048b044f946c",
+      "movie_title": "夢想者四夜",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/17889325436836wQjHReT2C.png",
+      "aliases": [
+        "夢想者四夜"
+      ],
+      "sources": [
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -3341,10 +3630,10 @@
         "碧草如茵"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -3356,12 +3645,12 @@
         "粽邪 4：坤蒂拉娜"
       ],
       "sources": [
+        "canonical-manual-poster",
         "current-movie-catalog",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "selected-existing-current-catalog-poster",
-        "canonical-manual-poster"
+        "selected-existing-current-catalog-poster"
       ],
       "preferred": true
     },
@@ -3390,13 +3679,13 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "selected-existing-current-catalog-poster",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -3412,14 +3701,14 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3448,12 +3737,12 @@
       "sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "magichour-centuryasia-nangang-web-fallback",
         "monk-in-pieces-official-image-search",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3472,6 +3761,7 @@
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "current-movie-catalog",
         "hala-official-browser",
@@ -3483,8 +3773,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3522,6 +3811,22 @@
       ]
     },
     {
+      "movie_id": "m_2e614ae30694",
+      "movie_title": "蜘蛛人：重生日 曼哈頓頭條場",
+      "poster_url": "https://assets.showtimes.com.tw/images/9f00d1044341ccd5a1ee1e99d3c8a995.jpg",
+      "aliases": [
+        "SPIDER-MAN: BRAND NEW DAY",
+        "蜘蛛人：重生日 曼哈頓頭條場"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "previous-catalog",
+        "showtimes-official-api",
+        "showtimes-official-program"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_b209db12c52f",
       "movie_title": "誤闖遺忘島",
       "poster_url": "https://assets.showtimes.com.tw/images/ecc512d023929567b7a740bded5656c2.jpg",
@@ -3532,12 +3837,12 @@
       "sources": [
         "ambassador-official-site",
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -3550,10 +3855,10 @@
         "颱風俱樂部 4K修復版(特典場)"
       ],
       "sources": [
+        "canonical-manual-poster",
         "pia-japan-image-search",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -3567,10 +3872,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3587,14 +3892,14 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "hala-official-browser",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3608,13 +3913,13 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -3642,13 +3947,13 @@
       "sources": [
         "ambassador-official-site",
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3661,12 +3966,12 @@
         "劇場版 魔法少女小圓 〈瓦爾普吉斯的迴天〉"
       ],
       "sources": [
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "selected-existing-current-catalog-poster",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3695,13 +4000,13 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "selected-existing-current-catalog-poster",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -3715,10 +4020,10 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-manual-browser",
-        "canonical-manual-poster"
+        "vieshow-official-manual-browser"
       ],
       "preferred": true
     },
@@ -3749,6 +4054,7 @@
         "atmovies-breeze-web-fallback",
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p2",
         "current-movie-catalog",
@@ -3759,8 +4065,7 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3788,12 +4093,12 @@
       "sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "eslite-official-schedule",
         "independent-picture-house-image-search",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -3807,10 +4112,10 @@
         "歐威爾：2+2=5 + QA"
       ],
       "sources": [
+        "canonical-manual-poster",
         "independent-picture-house-image-search",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -3823,10 +4128,10 @@
         "熱帶魚（數位修復版）"
       ],
       "sources": [
+        "canonical-manual-poster",
         "crank-in-image-search",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -3839,12 +4144,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -3856,10 +4161,10 @@
         "戰火下的小花"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -3873,8 +4178,8 @@
       ],
       "sources": [
         "allocine-image-search",
-        "eslite-official-schedule",
-        "canonical-manual-poster"
+        "canonical-manual-poster",
+        "eslite-official-schedule"
       ],
       "preferred": true
     },
@@ -3889,10 +4194,10 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "imdb-image-search",
         "previous-catalog",
-        "spot-huashan-official-schedule",
-        "canonical-manual-poster"
+        "spot-huashan-official-schedule"
       ],
       "preferred": true
     },
@@ -3908,13 +4213,13 @@
       "sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "eslite-official-schedule",
         "magichour-centuryasia-nangang-web-fallback",
         "polish-film-institution-image-search",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3930,6 +4235,7 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
@@ -3937,8 +4243,22 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_a2952e2674ef",
+      "movie_title": "默片音樂會 II：陰森森短片輯 + 延（數位修復版）",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/1788941396458a8rk69EBZg.jpeg",
+      "aliases": [
+        "默片音樂會 II：陰森森短片輯 + 延（數位修復版）"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -3955,6 +4275,22 @@
       ]
     },
     {
+      "movie_id": "m_0ea10d639fdd",
+      "movie_title": "舊情綿綿（數位修復版）",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/1788943564630dMlr0qPowm.png",
+      "aliases": [
+        "舊情綿綿（數位修復版）"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "tfai-official-program"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_6c22ba39b12f",
       "movie_title": "薩滿的最後告解",
       "poster_url": "https://assets.showtimes.com.tw/images/f32cb5706db66523c7579d8b3e89dd7a.jpg",
@@ -3966,14 +4302,30 @@
         "ambassador-official-site",
         "atmovies-broadway-gongguan-web-fallback",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
         "lux-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_88c06991a963",
+      "movie_title": "雙雄起義",
+      "poster_url": "https://image.tmdb.org/t/p/original/e3sA1W6zYQdr8r1fn8Zx8Fwk9Gg.jpg",
+      "aliases": [
+        "雙雄起義"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "magichour-centuryasia-nangang-web-fallback",
+        "manual-verified-poster",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -3985,10 +4337,10 @@
         "霧中風景"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -4006,6 +4358,7 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "hala-official-browser",
         "miramar-official-api",
@@ -4013,8 +4366,38 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_5af5ea9889d0",
+      "movie_title": "鐵律",
+      "poster_url": "https://www.elbe.paris/2769-large_default/vintage-movie-poster-la-loi-france-yves-thos-1959.jpg",
+      "aliases": [
+        "鐵律"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "manual-verified-poster",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_e2e7c88f5614",
+      "movie_title": "驀然回首",
+      "poster_url": "https://images.vocus.cc/30ca45b1-8a6e-456b-b0bf-43ea783a159c.jpg",
+      "aliases": [
+        "驀然回首"
+      ],
+      "sources": [
+        "atmovies-taipei-fallback",
+        "canonical-manual-poster",
+        "lux-official-browser",
+        "manual-verified-poster",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -4028,11 +4411,11 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4046,9 +4429,9 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-manual-poster"
+        "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
     },
@@ -4060,10 +4443,10 @@
         "魔籽公主"
       ],
       "sources": [
+        "canonical-manual-poster",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -4094,6 +4477,7 @@
         "atmovies-miranew-dazhi-web-fallback",
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
         "hala-official-browser",
@@ -4103,8 +4487,7 @@
         "reelax-lion-plaza-shinkong-web-fallback",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-muvie-songren-official",
-        "canonical-manual-poster"
+        "vieshow-muvie-songren-official"
       ],
       "preferred": true
     },
@@ -4117,10 +4500,10 @@
         "蘿拉快跑－早安!周日經典電影院"
       ],
       "sources": [
+        "canonical-manual-poster",
         "eslite-official-schedule",
         "gamme-taiwan-image-search",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -4136,14 +4519,14 @@
       "sources": [
         "ambassador-official-site",
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4157,12 +4540,12 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p1",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -4175,10 +4558,10 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-manual-poster"
+        "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
     },
@@ -4191,10 +4574,10 @@
         "讓建築歌唱～徐亞英的交響人生"
       ],
       "sources": [
+        "canonical-manual-poster",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "the-movie-database",
-        "canonical-manual-poster"
+        "the-movie-database"
       ],
       "preferred": true
     },
@@ -4209,10 +4592,10 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4226,11 +4609,11 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4244,11 +4627,11 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4262,11 +4645,11 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4280,11 +4663,11 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4297,10 +4680,10 @@
         "BTS WORLD TOUR ARIRANG IN SÃO PAULO安可直播"
       ],
       "sources": [
+        "canonical-manual-poster",
         "canonical-poster-title-match",
         "miramar-official-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -4314,10 +4697,10 @@
         "BTS WORLD TOUR ARIRANG IN SÃO PAULO現場直播"
       ],
       "sources": [
+        "canonical-manual-poster",
         "miramar-official-api",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-manual-poster"
+        "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
     },
@@ -4331,10 +4714,10 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "previous-catalog",
         "telstra-cinema-image-search",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4347,12 +4730,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -4366,10 +4749,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4382,12 +4765,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -4401,10 +4784,10 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "hybe-cine-fest-official-image-search",
         "previous-catalog",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4417,12 +4800,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -4435,12 +4818,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -4455,13 +4838,13 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
         "hala-official-browser",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4477,6 +4860,7 @@
         "ambassador-official-site",
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "century-asia-official-browser",
         "current-movie-catalog",
         "eslite-official-schedule",
@@ -4485,8 +4869,7 @@
         "reelax-lion-plaza-shinkong-web-fallback",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -4499,12 +4882,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -4519,10 +4902,10 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4535,10 +4918,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4551,12 +4934,12 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program",
-        "canonical-manual-poster"
+        "showtimes-official-program"
       ],
       "preferred": true
     },
@@ -4569,10 +4952,10 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "previous-catalog",
         "the-movie-database",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4585,10 +4968,10 @@
         "Stray Kids World Tour 【RUN IT】 LIVE VIEWING"
       ],
       "sources": [
+        "canonical-manual-poster",
         "miramar-official-api",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-manual-poster"
+        "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
     },
@@ -4601,10 +4984,10 @@
         "Stray Kids World Tour 【RUN IT】 安可重播"
       ],
       "sources": [
+        "canonical-manual-poster",
         "canonical-poster-title-match",
         "miramar-official-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -4618,11 +5001,11 @@
       "sources": [
         "archived-movie-catalog",
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "canonical-poster-title-match",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4635,10 +5018,10 @@
       ],
       "sources": [
         "archived-movie-catalog",
+        "canonical-manual-poster",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
-        "vieshow-official-browser",
-        "canonical-manual-poster"
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -4651,10 +5034,10 @@
         "VR沉浸探險【消失的法老】"
       ],
       "sources": [
+        "canonical-manual-poster",
         "mediasphere-taiwan-official",
         "moc-culture-movie-api",
-        "previous-catalog",
-        "canonical-manual-poster"
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -4669,12 +5052,12 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "previous-catalog",
         "vieshow-muvie-songren-official",
         "vieshow-official-browser",
         "vieshow-official-manual-browser",
-        "yahoo-japan-event-image-search",
-        "canonical-manual-poster"
+        "yahoo-japan-event-image-search"
       ],
       "preferred": true
     },
@@ -4687,329 +5070,9 @@
       ],
       "sources": [
         "atmovies-taipei-fallback",
+        "canonical-manual-poster",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-manual-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_e309140c8b94",
-      "movie_title": "陰森森短片輯 + 延（數位修復版）",
-      "poster_url": "https://s3.resource.opentix.life/upload/program/1788941396458a8rk69EBZg.jpeg",
-      "aliases": [
-        "陰森森短片輯 + 延（數位修復版）"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_21e54c39aa80",
-      "movie_title": "艾哈邁德王子歷險記+童話短片集",
-      "poster_url": "https://s3.resource.opentix.life/upload/program/1789031008485vP8KZkzngt.jpeg",
-      "aliases": [
-        "艾哈邁德王子歷險記+童話短片集"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_0b7b9a1df711",
-      "movie_title": "玉照情事",
-      "poster_url": "https://pics.filmaffinity.com/Time_to_Love-505114138-large.jpg",
-      "aliases": [
-        "玉照情事"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "manual-image-search",
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_292d4e79218e",
-      "movie_title": "殺羊人",
-      "poster_url": "https://fr.web.img4.acsta.net/img/6a/96/6a96af610984f98b3795ac96ab9afe28.jpg",
-      "aliases": [
-        "殺羊人"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "manual-image-search",
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_0114b6d7277c",
-      "movie_title": "運將幻遊",
-      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTVjY2E5MDUtN2U3ZC00NTFiLWJlYWMtZGZhYzQ2OGU2ZDEwXkEyXkFqcGc%40._V1_.jpg",
-      "aliases": [
-        "運將幻遊"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "manual-image-search",
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_6c17c58873d7",
-      "movie_title": "黃色故事（數位修復版）",
-      "poster_url": "https://s3.resource.opentix.life/upload/program/1788943997733YwD7kIMhkP.png",
-      "aliases": [
-        "黃色故事（數位修復版）"
-      ],
-      "sources": [
-        "tfai-official-program"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_7a163cfc0622",
-      "movie_title": "新大陸",
-      "poster_url": "https://image.tmdb.org/t/p/original/eC9SDdBwCa0FGckc76q1MBxlks9.jpg",
-      "aliases": [
-        "新大陸"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "manual-image-search"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_989eaf97f4d2",
-      "movie_title": "愛麗絲漫遊城市",
-      "poster_url": "https://s3.resource.opentix.life/upload/program/1788934264008Exp40YtIxO.png",
-      "aliases": [
-        "愛麗絲漫遊城市"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_b773c3e5735c",
-      "movie_title": "血之輪迴",
-      "poster_url": "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fmetadata-static.plex.tv%2F1%2Fgracenote%2F1e8ccaa3ce938cf3f1d4f22a03d03a12.jpg",
-      "aliases": [
-        "血之輪迴"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "manual-image-search",
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_0ea10d639fdd",
-      "movie_title": "舊情綿綿（數位修復版）",
-      "poster_url": "https://s3.resource.opentix.life/upload/program/1788943564630dMlr0qPowm.png",
-      "aliases": [
-        "舊情綿綿（數位修復版）"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_554a972951a6",
-      "movie_title": "陌生人為伴",
-      "poster_url": "https://playhousecinema.ca/files/princesscinemas/imagecache/u7-movie-poster3/movie-posters/47f7136e12a670f436abf1d69237fd9c.jpeg",
-      "aliases": [
-        "陌生人為伴"
-      ],
-      "sources": [
-        "tfai-official-program",
-        "manual-image-search",
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_96e707798a40",
-      "movie_title": "《我們，巴黎管弦樂團》",
-      "poster_url": "https://assets.lesfilmspelleas.com/NOUS_L_ORCHESTRE_4_5_AFFICHE_770aa4abb4.jpg",
-      "aliases": [
-        "《我們，巴黎管弦樂團》"
-      ],
-      "sources": [
-        "canonical-manual-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_5af5ea9889d0",
-      "movie_title": "鐵律",
-      "poster_url": "https://www.elbe.paris/2769-large_default/vintage-movie-poster-la-loi-france-yves-thos-1959.jpg",
-      "aliases": [
-        "鐵律"
-      ],
-      "sources": [
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_e2e7c88f5614",
-      "movie_title": "驀然回首",
-      "poster_url": "https://images.vocus.cc/30ca45b1-8a6e-456b-b0bf-43ea783a159c.jpg",
-      "aliases": [
-        "驀然回首"
-      ],
-      "sources": [
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_6c17c58873d7",
-      "movie_title": "黃色故事（數位修復版）",
-      "poster_url": "https://collections.culture.tw/ShowGalImage?FROM=5YKK57&IMG=5TK25VMAM4M6MRKX5GMSM6M8M6M2MJ0EM2MIMJ0BMHMZ09MD51KAK6MCMAMZMAK25S5SK75SMP0OM1K65SMIKLM4KKK4KL51MFKNKDK7M10954MWKE5S57K8K4KGK704MYM10ZMD01MWMB0WM4090GMG&SYSUID=11&TEXT=K7KG575Y",
-      "aliases": [
-        "黃色故事（數位修復版）"
-      ],
-      "sources": [
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_7e94558337d5",
-      "movie_title": "世紀初戀 楊麗花",
-      "poster_url": "https://kfa.kcg.gov.tw/files/20261027150107881.jpg",
-      "aliases": [
-        "世紀初戀 楊麗花",
-        "Emperor on Stage",
-        "EMPEROR ON STAGE"
-      ],
-      "sources": [
-        "canonical-manual-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_2e614ae30694",
-      "movie_title": "蜘蛛人：重生日 曼哈頓頭條場",
-      "poster_url": "https://assets.showtimes.com.tw/images/9f00d1044341ccd5a1ee1e99d3c8a995.jpg",
-      "aliases": [
-        "蜘蛛人：重生日 曼哈頓頭條場"
-      ],
-      "sources": [
-        "canonical-manual-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_7a163cfc0622",
-      "movie_title": "新大陸",
-      "poster_url": "https://cdn2.bigcommerce.com/n-d57o0b/ptxvsha/products/16086/images/20581/the_new_land__81820.1764283971.1280.1280.jpg?c=2",
-      "aliases": [
-        "新大陸"
-      ],
-      "sources": [
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_a2952e2674ef",
-      "movie_title": "默片音樂會 II：陰森森短片輯 + 延（數位修復版）",
-      "poster_url": "https://s3.resource.opentix.life/upload/program/1788941396458a8rk69EBZg.jpeg",
-      "aliases": [
-        "默片音樂會 II：陰森森短片輯 + 延（數位修復版）"
-      ],
-      "sources": [
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_8b39aff1e5c2",
-      "movie_title": "末路狂花",
-      "poster_url": "https://www.nfbio.dk/sites/nfbio.dk/files/movie-posters/HO00003170_104827.jpg",
-      "aliases": [
-        "末路狂花"
-      ],
-      "sources": [
-        "canonical-manual-poster",
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_88c06991a963",
-      "movie_title": "雙雄起義",
-      "poster_url": "https://image.tmdb.org/t/p/original/e3sA1W6zYQdr8r1fn8Zx8Fwk9Gg.jpg",
-      "aliases": [
-        "雙雄起義"
-      ],
-      "sources": [
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_a91a544e084e",
-      "movie_title": "（應援特別場）雙雄起義",
-      "poster_url": "https://image.tmdb.org/t/p/original/e3sA1W6zYQdr8r1fn8Zx8Fwk9Gg.jpg",
-      "aliases": [
-        "（應援特別場）雙雄起義"
-      ],
-      "sources": [
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_eb4cf10a6f0e",
-      "movie_title": "（特別場）太空百合戰鬥姬",
-      "poster_url": "https://cdn.atmovies.com.tw/movie/flen29781139/poster.jpg",
-      "aliases": [
-        "（特別場）太空百合戰鬥姬"
-      ],
-      "sources": [
-        "manual-verified-poster"
-      ],
-      "preferred": true
-    },
-    {
-      "movie_id": "m_048b044f946c",
-      "movie_title": "夢想者四夜",
-      "poster_url": "https://s3.resource.opentix.life/upload/program/17889325436836wQjHReT2C.png",
-      "aliases": [
-        "夢想者四夜"
-      ],
-      "sources": [
-        "manual-verified-poster"
+        "the-movie-database"
       ],
       "preferred": true
     }

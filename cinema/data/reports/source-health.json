@@ -1,17 +1,17 @@
 {
   "schema": "cinema-source-health",
-  "generated_at": "2026-11-01T20:08:47.785Z",
+  "generated_at": "2026-11-01T20:44:11.745Z",
   "checked": 8,
   "statuses": {
     "moc-culture-movie-api": {
       "health": "healthy",
       "ok": true,
-      "showtimes": 172,
-      "fresh_showtimes": 172,
+      "showtimes": 0,
+      "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "next_probe_at": null,
       "retry_suppressed": false,
       "retry_after": null
@@ -24,7 +24,7 @@
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "next_probe_at": null,
       "retry_suppressed": false,
       "retry_after": null
@@ -32,12 +32,12 @@
     "ambassador-official-site": {
       "health": "healthy",
       "ok": true,
-      "showtimes": 1674,
-      "fresh_showtimes": 1674,
+      "showtimes": 1684,
+      "fresh_showtimes": 1684,
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "next_probe_at": null,
       "retry_suppressed": false,
       "retry_after": null
@@ -63,7 +63,7 @@
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "next_probe_at": null,
       "retry_suppressed": false,
       "retry_after": null
@@ -89,7 +89,7 @@
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T20:08:42.412Z",
+      "last_success_at": "2026-11-01T20:44:06.726Z",
       "next_probe_at": null,
       "retry_suppressed": false,
       "retry_after": null
