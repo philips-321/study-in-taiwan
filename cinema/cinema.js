@@ -356,7 +356,7 @@
     availableDates=Object.keys(showtimesDateIndex).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today&&Number(showtimesDateIndex[x]?.total||0)>0).sort();
     if(!availableDates.length)availableDates=[today];
     let initial=availableDates.includes(today)?today:(availableDates[0]||today);
-    dateSelect.innerHTML=availableDates.map(d=>`<option value="${d}">${d===today?`${esc(ui('today'))} · `:''}${esc(formatDate(d))} · ${countDate(d)}</option>`).join('');
+    dateSelect.innerHTML=availableDates.map(d=>`<option value="${d}">${d===today?`${esc(ui('today'))} · `:''}${esc(formatDate(d))} · ${countDate(d)} ${esc(ui('sessions'))}</option>`).join('');
     dateSelect.value=initial;syncDateControls();
   }
   function countDate(date) { return Number(showtimesDateIndex[date]?.total||0); }
