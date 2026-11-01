@@ -1,7 +1,7 @@
 {
   "version": 4,
   "city": "kinmen",
-  "generated_at": "2026-11-01T22:18:41.124Z",
+  "generated_at": "2026-11-01T22:22:21.290Z",
   "showtime_count": 0,
   "sources": {
     "moc-culture-movie-api": {
@@ -13,7 +13,7 @@
       "fresh_showtimes": 256,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:20:05.788Z",
+      "last_success_at": "2026-11-01T22:23:05.053Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:20:05.788Z",
+      "last_success_at": "2026-11-01T22:23:05.053Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1866,
+      "showtimes": 1744,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1866,
+      "fresh_showtimes": 1744,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:20:05.788Z",
+      "last_success_at": "2026-11-01T22:23:05.053Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -50,7 +50,7 @@
       "retry_suppressed": true,
       "retry_after": "2026-11-08T17:42:56.311Z",
       "substitute_source": "atmovies-showtimes-fallback",
-      "substitute_showtimes": 905,
+      "substitute_showtimes": 386,
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 6,
@@ -70,7 +70,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:20:05.788Z",
+      "last_success_at": "2026-11-01T22:23:05.053Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -94,49 +94,57 @@
     },
     "atmovies-taipei-fallback": {
       "ok": true,
-      "showtimes": 957,
+      "showtimes": 1140,
       "role": "fallback only for sources blocked/incomplete from GitHub Actions",
       "warnings": [
         "t02a01/2026-11-02: No showtimes parsed",
-        "t02a11/2026-11-02: No showtimes parsed",
-        "t02a01/2026-11-07: No showtimes parsed",
         "t02a01/2026-11-06: No showtimes parsed",
+        "t02a01/2026-11-07: No showtimes parsed",
+        "t02a11/2026-11-02: No showtimes parsed",
         "t02a11/2026-11-06: No showtimes parsed",
-        "t02a12/2026-11-02: No showtimes parsed",
         "t02a11/2026-11-07: No showtimes parsed",
-        "t02a01/2026-11-05: 500 Internal Server Error",
-        "t02a01/2026-11-04: 500 Internal Server Error",
-        "t02a12/2026-11-06: No showtimes parsed"
+        "t02a12/2026-11-02: No showtimes parsed",
+        "t02a12/2026-11-06: No showtimes parsed",
+        "t02a12/2026-11-07: No showtimes parsed",
+        "t02b14/2026-11-02: No showtimes parsed"
       ],
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 957,
+      "fresh_showtimes": 1140,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:20:05.788Z",
+      "last_success_at": "2026-11-01T22:23:05.053Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "atmovies-showtimes-fallback": {
       "ok": true,
-      "showtimes": 905,
+      "showtimes": 386,
       "acquisition_method": "atmovies-official-schedule-html",
-      "cinema_pages": 14,
+      "cinema_pages": 6,
       "cinema_pages_failed": 0,
       "role": "accessible Taiwan cinema listing fallback for blocked ShowTimes API",
       "target_cinemas": 15,
-      "matched_cinemas": 14,
+      "matched_cinemas": 6,
       "unmatched_cinemas": [
-        "北港秀泰影城"
+        "基隆秀泰影城",
+        "台中站前秀泰影城",
+        "台中文心秀泰影城",
+        "台中麗寶秀泰影城",
+        "嘉義秀泰影城",
+        "台南仁德秀泰影城",
+        "高雄岡山秀泰影城",
+        "花蓮秀泰影城",
+        "台東秀泰影城"
       ],
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 905,
+      "fresh_showtimes": 386,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T22:20:05.788Z",
+      "last_success_at": "2026-11-01T22:23:05.053Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -164,6 +172,6 @@
       "eslite-official-schedule",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T22:20:05.788Z"
+    "restored_at": "2026-11-01T22:23:05.053Z"
   }
 }
