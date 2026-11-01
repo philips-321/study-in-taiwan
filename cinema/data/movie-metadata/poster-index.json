@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T22:58:36.004Z",
+  "generated_at": "2026-11-01T23:41:35.570Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -54,6 +54,19 @@
         "showtimes-official-program"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_ce4928d77697",
+      "movie_title": "(法) Jim Queen：肌情四射",
+      "poster_url": "https://assets.showtimes.com.tw/images/ff54a0cbf59a020440a58b1c6eda0643.jpg",
+      "aliases": [
+        "(法) Jim Queen：肌情四射",
+        "Jim Queen"
+      ],
+      "sources": [
+        "eslite-official-browser",
+        "previous-catalog"
+      ]
     },
     {
       "movie_id": "m_eb4cf10a6f0e",
@@ -1929,6 +1942,7 @@
         "canonical-manual-poster",
         "century-asia-official-browser",
         "current-movie-catalog",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
@@ -2046,6 +2060,7 @@
       "sources": [
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "imdb-image-search",
         "magichour-centuryasia-nangang-web-fallback",
@@ -2080,7 +2095,9 @@
       ],
       "sources": [
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
+        "previous-catalog",
         "tatler-taiwan-image-search"
       ],
       "preferred": true
@@ -2095,8 +2112,10 @@
       ],
       "sources": [
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
-        "gq-taiwan-manual-search"
+        "gq-taiwan-manual-search",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -2189,6 +2208,7 @@
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
         "current-movie-catalog",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "hala-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
@@ -2314,6 +2334,7 @@
       ],
       "sources": [
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "harpers-bazaar-taiwan-manual-search",
         "magichour-centuryasia-nangang-web-fallback",
@@ -2375,6 +2396,7 @@
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
         "cineart-image-search",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
@@ -2703,6 +2725,7 @@
       "sources": [
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "gateway-film-center-image-search",
         "magichour-centuryasia-nangang-web-fallback",
@@ -3205,6 +3228,7 @@
       "sources": [
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "previous-catalog",
         "the-movie-database"
@@ -3272,6 +3296,7 @@
         "canonical-manual-poster",
         "century-asia-official-browser",
         "current-movie-catalog",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "miramar-official-api",
         "previous-catalog",
@@ -4183,6 +4208,7 @@
         "ambassador-official-site",
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "independent-picture-house-image-search",
         "magichour-centuryasia-nangang-web-fallback",
@@ -4263,13 +4289,16 @@
       "movie_title": "戰火浮生錄 - 早安!周日經典電影院",
       "poster_url": "https://fr.web.img5.acsta.net/pictures/22/08/25/09/28/0840014.jpg",
       "aliases": [
+        "Les Uns et les",
         "Les Uns et les Autres",
         "戰火浮生錄 - 早安!周日經典電影院"
       ],
       "sources": [
         "allocine-image-search",
         "canonical-manual-poster",
-        "eslite-official-schedule"
+        "eslite-official-browser",
+        "eslite-official-schedule",
+        "previous-catalog"
       ],
       "preferred": true
     },
@@ -4304,6 +4333,7 @@
         "ambassador-official-site",
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "magichour-centuryasia-nangang-web-fallback",
         "polish-film-institution-image-search",

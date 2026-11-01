@@ -104,6 +104,7 @@
       "duration_minutes": 146,
       "metadata_sources": [
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "harpers-bazaar-taiwan-manual-search",
         "magichour-centuryasia-nangang-web-fallback",
@@ -849,10 +850,11 @@
         "Primetime"
       ],
       "rating": "r",
-      "duration_minutes": 109,
+      "duration_minutes": 110,
       "metadata_sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "previous-catalog",
         "vieshow-official-browser"
@@ -1203,10 +1205,7 @@
       ],
       "duration_minutes": 240,
       "metadata_sources": [
-        "previous-catalog",
-        "showtimes-official-api",
-        "showtimes-official-program",
-        "twshowtimes-aggregator-fallback"
+        "showtimes-official-api"
       ]
     },
     {
@@ -1802,6 +1801,7 @@
         "ambassador-official-site",
         "canonical-manual-poster",
         "century-asia-official-browser",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "miramar-official-api",
         "previous-catalog",
@@ -2139,6 +2139,7 @@
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
         "cineart-image-search",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
@@ -2243,6 +2244,7 @@
         "ambassador-official-site",
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "independent-picture-house-image-search",
         "magichour-centuryasia-nangang-web-fallback",
@@ -2300,11 +2302,7 @@
       "rating": "g",
       "duration_minutes": 124,
       "metadata_sources": [
-        "atmovies-showtimes-fallback",
-        "previous-catalog",
-        "showtimes-official-api",
-        "showtimes-official-program",
-        "twshowtimes-aggregator-fallback"
+        "showtimes-official-api"
       ]
     },
     {
@@ -2366,7 +2364,9 @@
       "rating": "g",
       "duration_minutes": 76,
       "metadata_sources": [
-        "eslite-official-schedule"
+        "eslite-official-browser",
+        "eslite-official-schedule",
+        "previous-catalog"
       ]
     },
     {
@@ -2947,11 +2947,12 @@
       ],
       "poster_url": "https://swiatowid.elblag.pl/storage/informations/13321.jpg",
       "rating": "pg12",
-      "duration_minutes": 113,
+      "duration_minutes": 114,
       "metadata_sources": [
         "ambassador-official-site",
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "magichour-centuryasia-nangang-web-fallback",
         "polish-film-institution-image-search",
@@ -3276,6 +3277,23 @@
       ]
     },
     {
+      "movie_id": "m_ce4928d77697",
+      "movie_title": "(法) Jim Queen：肌情四射",
+      "movie_title_en": "Jim Queen",
+      "poster_url": "https://assets.showtimes.com.tw/images/ff54a0cbf59a020440a58b1c6eda0643.jpg",
+      "genres": [
+        "animation",
+        "comedy",
+        "music"
+      ],
+      "rating": "pg15",
+      "duration_minutes": 85,
+      "metadata_sources": [
+        "eslite-official-browser",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_ce5f6b42a8e9",
       "movie_title": "社群清算",
       "movie_title_en": "THE SOCIAL RECKONING",
@@ -3299,6 +3317,7 @@
         "canonical-manual-poster",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p1",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "hala-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
@@ -3515,7 +3534,9 @@
       "rating": "p",
       "duration_minutes": 92,
       "metadata_sources": [
-        "eslite-official-schedule"
+        "eslite-official-browser",
+        "eslite-official-schedule",
+        "previous-catalog"
       ]
     },
     {
@@ -3575,6 +3596,7 @@
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
         "century-asia-official-browser",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
@@ -3640,6 +3662,7 @@
       "metadata_sources": [
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "previous-catalog",
         "the-movie-database"
@@ -3655,6 +3678,7 @@
       "metadata_sources": [
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "imdb-image-search",
         "magichour-centuryasia-nangang-web-fallback",
@@ -3718,11 +3742,17 @@
       "movie_id": "m_e7f3a2624932",
       "movie_title": "戰火浮生錄 - 早安!周日經典電影院",
       "movie_title_en": "Les Uns et les Autres",
+      "international_titles": [
+        "Les Uns et les Autres",
+        "Les Uns et les"
+      ],
       "poster_url": "https://fr.web.img5.acsta.net/pictures/22/08/25/09/28/0840014.jpg",
       "rating": "p",
       "duration_minutes": 185,
       "metadata_sources": [
-        "eslite-official-schedule"
+        "eslite-official-browser",
+        "eslite-official-schedule",
+        "previous-catalog"
       ]
     },
     {
@@ -3821,10 +3851,7 @@
       ],
       "duration_minutes": 210,
       "metadata_sources": [
-        "previous-catalog",
-        "showtimes-official-api",
-        "showtimes-official-program",
-        "twshowtimes-aggregator-fallback"
+        "showtimes-official-api"
       ]
     },
     {
@@ -3993,6 +4020,7 @@
       "metadata_sources": [
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "eslite-official-browser",
         "eslite-official-schedule",
         "gateway-film-center-image-search",
         "magichour-centuryasia-nangang-web-fallback",
@@ -4063,6 +4091,6 @@
       ]
     }
   ],
-  "generated_at": "2026-11-01T22:58:30.819Z",
+  "generated_at": "2026-11-01T23:41:31.761Z",
   "identity_policy": "stable movie_id from normalized primary title; metadata stored once in this catalog"
 }
