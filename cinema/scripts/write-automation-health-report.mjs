@@ -11,8 +11,14 @@ const diagnostics = await read('reports/collector-diagnostics.json').catch(error
   if (error?.code === 'ENOENT') return {};
   throw error;
 });
+const issueHistoryFile = path.join(ROOT, 'reports/source-issue-history.json');
+let issueHistory = await fs.readFile(issueHistoryFile, 'utf8').then(JSON.parse).catch(error => {
+  if (error?.code === 'ENOENT') return { schema: 'cinema-source-issue-history', version: 1, issues: [] };
+  throw error;
+});
 const movieById = new Map((catalog.movies || []).map(movie => [movie.movie_id, movie]));
 const sourceStatuses = manifest.sources?.showtimes || {};
+const reportGeneratedAt = new Date().toISOString();
 const sourceSummaries = Object.fromEntries(Object.entries(sourceStatuses).map(([source, status]) => [source, {
   health: status.health || (status.ok === false ? 'degraded' : 'healthy'),
   ok: status.ok !== false,
@@ -27,6 +33,117 @@ const sourceSummaries = Object.fromEntries(Object.entries(sourceStatuses).map(([
 const failedSources = Object.entries(sourceStatuses)
   .filter(([, status]) => status?.ok === false || status?.health === 'degraded')
   .map(([source, status]) => ({ source, error: status.error || null, health: status.health || null, showtimes: status.showtimes || 0 }));
+
+const endpointHints = {
+  'showtimes-official-api': 'https://capi.showtimes.com.tw/4/app/bootstrap',
+  'eslite-official-schedule': 'https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1'
+};
+const guidance = {
+  'showtimes-official-api': {
+    known_cause: 'GitHub Actions runner has repeatedly received HTTP 403 from the public bootstrap endpoint. Repository notes say the endpoint was reachable in the manual browser environment; investigate runner access/WAF before changing the parser.',
+    next_steps: ['Check endpoint reachability from GitHub Actions before changing parsing code.', 'If the runner still receives 403, use the reviewed browser/API bootstrap snapshot or another approved access path.', 'Preserve last-known-good ShowTimes rows in canonical storage.']
+  },
+  'eslite-official-schedule': {
+    known_cause: 'GitHub Actions runner has repeatedly received HTTP 403 from the official schedule page, so the parser cannot inspect its schedule response.',
+    next_steps: ['Check endpoint reachability from GitHub Actions before changing parsing code.', 'If the runner still receives 403, use a verified manual snapshot or another approved access path.', 'Preserve last-known-good Eslite rows in canonical storage.']
+  }
+};
+const recordSourceHistory = process.argv.includes('--record-source-history');
+const incidentForSource = new Map();
+const errorClass = error => {
+  const status = String(error || '').match(/\b([45]\d\d)\b/)?.[1];
+  return status ? { type: 'http_status', status: Number(status), key: `http_${status}` } : { type: 'collector_error', status: null, key: 'collector_error' };
+};
+const hostFor = (error, source) => {
+  const url = String(error || '').match(/https?:\/\/[^\s)]+/)?.[0] || endpointHints[source] || null;
+  try { return url ? new URL(url).host : null; } catch { return null; }
+};
+if (recordSourceHistory) {
+  issueHistory.schema = 'cinema-source-issue-history';
+  issueHistory.version = 1;
+  issueHistory.issues ||= [];
+  issueHistory.generated_at = reportGeneratedAt;
+  for (const [source, status] of Object.entries(sourceStatuses)) {
+    const failed = status?.ok === false || status?.health === 'degraded';
+    if (!failed) {
+      if (status?.ok === true && status?.health !== 'degraded') {
+        for (const issue of issueHistory.issues.filter(item => item.source === source && item.state === 'open')) {
+          issue.state = 'resolved';
+          issue.resolved_at = reportGeneratedAt;
+          issue.last_success_at = status.last_success_at || reportGeneratedAt;
+          issue.consecutive_failures = 0;
+        }
+      }
+      continue;
+    }
+
+    const error = String(status.error || 'Source reported degraded health');
+    const classification = errorClass(error);
+    const host = hostFor(error, source);
+    const issueId = `${source}:${classification.key}:${host || 'unknown-host'}`;
+    let issue = issueHistory.issues.find(item => item.issue_id === issueId);
+    if (!issue) {
+      issue = {
+        issue_id: issueId, source, error_type: classification.type,
+        http_status: classification.status, host, endpoint: endpointHints[source] || null,
+        state: 'open', first_seen: reportGeneratedAt, last_seen: null,
+        last_success_at: null, total_occurrence_count: 0,
+        historical_observation_count: 0, consecutive_failures: 0, reopen_count: 0,
+        known_cause: guidance[source]?.known_cause || null,
+        next_steps: guidance[source]?.next_steps || ['Inspect the recorded error and source endpoint before changing the parser.'],
+        observations: []
+      };
+      issueHistory.issues.push(issue);
+    }
+    if (issue.state === 'resolved') {
+      issue.reopen_count = Number(issue.reopen_count || 0) + 1;
+      issue.resolved_at = null;
+      issue.consecutive_failures = 0;
+    }
+    issue.state = 'open';
+    issue.last_seen = reportGeneratedAt;
+    issue.last_error = error;
+    issue.last_fresh_showtimes = status.fresh_showtimes ?? status.showtimes ?? 0;
+    issue.last_fallback_showtimes = status.fallback_showtimes || 0;
+    issue.total_occurrence_count = Number(issue.total_occurrence_count || 0) + 1;
+    issue.consecutive_failures = Number(issue.consecutive_failures || 0) + 1;
+    issue.observations ||= [];
+    issue.observations.push({ observed_at: reportGeneratedAt, error, fresh_showtimes: issue.last_fresh_showtimes, fallback_showtimes: issue.last_fallback_showtimes });
+    if (issue.observations.length > 100) issue.observations.splice(0, issue.observations.length - 100);
+    incidentForSource.set(source, issue);
+  }
+  await fs.mkdir(path.dirname(issueHistoryFile), { recursive: true });
+  await fs.writeFile(issueHistoryFile, `${JSON.stringify(issueHistory, null, 2)}\n`);
+} else {
+  for (const issue of issueHistory.issues || []) if (issue.state === 'open') incidentForSource.set(issue.source, issue);
+}
+for (const source of failedSources) {
+  const issue = incidentForSource.get(source.source);
+  if (issue) source.recurring_issue = {
+    issue_id: issue.issue_id,
+    state: issue.state,
+    total_occurrence_count: issue.total_occurrence_count,
+    consecutive_failures: issue.consecutive_failures,
+    first_seen: issue.first_seen,
+    last_seen: issue.last_seen,
+    known_cause: issue.known_cause,
+    next_steps: issue.next_steps
+  };
+}
+const issueHistorySummary = (issueHistory.issues || []).map(issue => ({
+  issue_id: issue.issue_id,
+  source: issue.source,
+  error_type: issue.error_type,
+  http_status: issue.http_status,
+  host: issue.host,
+  state: issue.state,
+  total_occurrence_count: issue.total_occurrence_count,
+  consecutive_failures: issue.consecutive_failures,
+  first_seen: issue.first_seen,
+  last_seen: issue.last_seen,
+  last_success_at: issue.last_success_at,
+  next_steps: issue.next_steps
+}));
 const activeMovieIds = new Set();
 const missingMovieReferences = [];
 const unknownCinemaReferences = [];
@@ -75,9 +192,14 @@ const cinemaAmbiguities = diagnostics.ambiguous_cinema_matches || [];
 const unmatchedCinemas = diagnostics.unmatched_cinema_matches || [];
 const report = {
   schema: 'cinema-automation-health',
-  generated_at: new Date().toISOString(),
+  generated_at: reportGeneratedAt,
   public_window: { as_of: publicManifest.as_of, end_date: publicManifest.end_date, rows: publicRows, expected_rows: publicManifest.public_rows },
-  sources: { checked: Object.keys(sourceStatuses).length, statuses: sourceSummaries, failed_or_degraded: failedSources },
+  sources: {
+    checked: Object.keys(sourceStatuses).length,
+    statuses: sourceSummaries,
+    failed_or_degraded: failedSources,
+    issue_history: { file: 'cinema/data/reports/source-issue-history.json', recorded_this_run: recordSourceHistory, issues: issueHistorySummary }
+  },
   ids: {
     active_movies: activeMovieIds.size,
     missing_movie_references: missingMovieReferences,
@@ -142,13 +264,18 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     '',
     'Full report files:',
     '- `cinema/data/reports/source-health.json`',
+    '- `cinema/data/reports/source-issue-history.json`',
     '- `cinema/data/reports/matching-review.json`',
     '- `cinema/data/reports/poster-id-audit.json`',
     '- `cinema/data/reports/automation-health.json`'
   ];
   if (failedSources.length) {
     lines.push('', '### Sources needing attention');
-    for (const source of failedSources) lines.push(`- ${source.source}: ${source.error || source.health}`);
+    for (const source of failedSources) {
+      const issue = source.recurring_issue;
+      lines.push(`- ${source.source}: ${source.error || source.health}${issue ? `; ${issue.consecutive_failures} consecutive failures, ${issue.total_occurrence_count} total observations` : ''}`);
+      if (issue?.next_steps?.length) lines.push(`  - Next: ${issue.next_steps[0]}`);
+    }
   }
   if (missingPosters.length) lines.push('', `### Active films without a poster (first 10)`, `- ${missingPosters.slice(0, 10).map(movie => movie.movie_title || movie.movie_title_en || movie.movie_id).join(', ')}`);
   if (invalidPosters.length) lines.push('', '### Invalid poster URLs (first 5)', ...invalidPosters.slice(0, 5).map(item => `- ${item.movie_title || item.movie_id}: ${item.error}`));

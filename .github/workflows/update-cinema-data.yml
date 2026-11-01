@@ -161,7 +161,7 @@ jobs:
 
       - name: Write source, matching, poster, and ID health report
         if: steps.daily_guard.outputs.skip != 'true'
-        run: node cinema/scripts/write-automation-health-report.mjs
+        run: node cinema/scripts/write-automation-health-report.mjs --record-source-history
 
       - name: Validate generated JSON
         if: steps.daily_guard.outputs.skip != 'true'
