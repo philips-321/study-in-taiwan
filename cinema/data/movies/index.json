@@ -2498,8 +2498,10 @@
       "movie_title_en": null,
       "metadata_sources": [
         "moc-culture-movie-api",
+        "myvideo-taiwan-image-search",
         "previous-catalog"
-      ]
+      ],
+      "poster_url": "https://img.myvideo.net.tw/images/SAT010/0000/0186/201708091432175748_420x600.jpg"
     },
     {
       "movie_id": "m_b0d3d942b4c2",
@@ -2642,7 +2644,8 @@
       "metadata_sources": [
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match"
+        "punctuation-insensitive-title-poster-match",
+        "selected-existing-current-catalog-poster"
       ],
       "poster_url": "https://assets.showtimes.com.tw/images/ce5dacaecc309d261254317bafe2e9f7.jpg"
     },
@@ -2876,8 +2879,10 @@
       "metadata_sources": [
         "atmovies-taipei-fallback",
         "magichour-centuryasia-nangang-web-fallback",
-        "previous-catalog"
-      ]
+        "previous-catalog",
+        "tmdb-image-search"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/original/5MbQpXyoduO3BYnUEAEmcTd4OS2.jpg"
     },
     {
       "movie_id": "m_dce36af2c5d2",
@@ -3231,6 +3236,7 @@
       "metadata_sources": [
         "atmovies-taipei-fallback",
         "previous-catalog",
+        "selected-existing-current-catalog-poster",
         "showtimes-official-api",
         "showtimes-official-program"
       ]

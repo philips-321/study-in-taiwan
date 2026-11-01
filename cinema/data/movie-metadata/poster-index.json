@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T18:51:17.576Z",
+  "generated_at": "2026-11-01T18:53:22.606Z",
   "policy": "Append-only known poster records. Never remove stored posters because a film is temporarily absent from schedules; only consider removal after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; ambiguous poster candidates remain unmatched. A preferred record is a human-selected poster for its canonical title and must be reused.",
   "movies": [
     {
@@ -102,6 +102,18 @@
         "moc-culture-movie-api",
         "previous-catalog",
         "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_b0cb8da0b256",
+      "movie_title": "【府中15】紀錄片放映院《只要我長大》",
+      "poster_url": "https://img.myvideo.net.tw/images/SAT010/0000/0186/201708091432175748_420x600.jpg",
+      "aliases": [
+        "【府中15】紀錄片放映院《只要我長大》",
+        "只要我長大"
+      ],
+      "sources": [
+        "myvideo-taiwan-image-search"
       ]
     },
     {
@@ -1198,6 +1210,18 @@
       ]
     },
     {
+      "movie_id": "m_db42c4a10d2c",
+      "movie_title": "復仇者聯盟：終局之戰",
+      "poster_url": "https://image.tmdb.org/t/p/original/5MbQpXyoduO3BYnUEAEmcTd4OS2.jpg",
+      "aliases": [
+        "Avengers: Endgame",
+        "復仇者聯盟：終局之戰"
+      ],
+      "sources": [
+        "tmdb-image-search"
+      ]
+    },
+    {
       "movie_id": "m_11dd64a515b6",
       "movie_title": "復仇者聯盟：終局之戰 加碼重映",
       "poster_url": "https://assets.showtimes.com.tw/images/678bbe5d0b258d566e66580ef6bc5662.jpg",
@@ -1572,8 +1596,10 @@
         "current-movie-catalog",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match"
-      ]
+        "punctuation-insensitive-title-poster-match",
+        "selected-existing-current-catalog-poster"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_c50f183f4d13",
@@ -1602,10 +1628,12 @@
         "atmovies-taipei-fallback",
         "current-movie-catalog",
         "previous-catalog",
+        "selected-existing-current-catalog-poster",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program"
-      ]
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_e69f29425afb",
