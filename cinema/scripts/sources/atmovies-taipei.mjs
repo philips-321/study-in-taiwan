@@ -200,7 +200,10 @@ function anchorsFromHtml(html) {
   for (const match of String(html || '').matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a\s*>/gi)) {
     const href = match[1].match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2];
     if (!href) continue;
-    const label = decodeHtml(match[2].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+    const textLabel = decodeHtml(match[2].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+    const imageTag = match[2].match(/<img\b[^>]*>/i)?.[0] || '';
+    const imageLabel = imageTag.match(/\b(?:alt|title)\s*=\s*(["'])(.*?)\1/i)?.[2] || '';
+    const label = textLabel || decodeHtml(imageLabel).replace(/\s+/g, ' ').trim();
     if (label) output.push({ href: new URL(decodeHtml(href), `${BASE}/`).href, label });
   }
   return output;
