@@ -182,6 +182,13 @@ function regionSlug(label) {
   return REGION_ALIASES.find(([, aliases]) => aliases.some(alias => text.includes(alias)))?.[0] || null;
 }
 
+function withoutRegionPrefix(value, slug) {
+  const aliases = REGION_ALIASES.find(([key]) => key === slug)?.[1] || [];
+  const text = String(value || '').normalize('NFKC').replace(/臺/g, '台').trim();
+  const prefix = aliases.find(alias => text.startsWith(alias));
+  return prefix ? text.slice(prefix.length) : text;
+}
+
 function regionKey(city) {
   if (city === 'new-taipei') return 'taipei';
   if (city === 'hsinchu-county') return 'hsinchu-city';
@@ -248,7 +255,7 @@ export async function fetchAtMoviesShowtimesFallback(targetCinemas) {
       for (const link of anchorsFromHtml(html)) {
         const match = new URL(link.href).pathname.match(/^\/showtime\/(t[a-z0-9]+)\/a\d+\/?$/i);
         if (!match) continue;
-        const label = normalizeCinemaName(link.label);
+        const label = normalizeCinemaName(withoutRegionPrefix(link.label, slug));
         const candidates = targets.filter(cinema => regionKey(cinema.city) === slug &&
           (label === normalizeCinemaName(cinema.name_zh) ||
             (label.length >= 5 && normalizeCinemaName(cinema.name_zh).length >= 5 &&
