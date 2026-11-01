@@ -9,6 +9,7 @@ import {
   movieIdForTitle
 } from './movie-schema.mjs';
 import { dedupeRows } from './direct-source-dedup.mjs';
+import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 import { fetchMuvieSongrenShowtimes } from './sources/vieshow-muvie-songren.mjs';
 import { fetchEsliteShowtimes } from './sources/eslite.mjs';
 import { fetchSpotTaipeiShowtimes } from './sources/spot-taipei.mjs';
@@ -247,8 +248,10 @@ for (const source of selectedSources) {
   }
 }
 
-const movieCatalog = buildMovieIndex(fullNewRows, [], previousMovies.movies || []);
+const posterDonors = await loadPosterDonors(ROOT, previousMovies.movies || []);
+const movieCatalog = buildMovieIndex(fullNewRows, [], previousMovies.movies || [], posterDonors);
 movieCatalog.generated_at = NOW;
+await writePosterIndex(ROOT, [...posterDonors, ...movieCatalog.movies]);
 movieCatalog.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
 for (const full of fullNewRows) {
   const compact = compactShowtime(full, mappedCinemaIds);

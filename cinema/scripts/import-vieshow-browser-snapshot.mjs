@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { buildMovieIndex, compactShowtime, expandShowtime, knownAgeRating, movieIdForRow, screeningIdentityKey, screeningKey } from './movie-schema.mjs';
+import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node cinema/scripts/import-vieshow-browser-snapshot.mjs <browser-review.json>');
@@ -143,8 +144,10 @@ for (const [city, rows] of rowsByCity) {
 }
 
 const allRows = [...canonicalRows.values()].flat();
-const movieIndex = buildMovieIndex(allRows, [], previousMovies.movies || []);
+const posterDonors = await loadPosterDonors(ROOT, previousMovies.movies || []);
+const movieIndex = buildMovieIndex(allRows, [], previousMovies.movies || [], posterDonors);
 movieIndex.generated_at = importedAt;
+await writePosterIndex(ROOT, [...posterDonors, ...movieIndex.movies]);
 movieIndex.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
 await write(MOVIES_FILE, movieIndex);
 

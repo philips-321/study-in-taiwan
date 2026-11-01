@@ -1,5 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { inheritUnambiguousTitlePosters } from './movie-schema.mjs';
+import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 
 const dataRoot = path.resolve('cinema/data');
 const previousRoot = path.resolve(process.env.CINEMA_PREVIOUS_DATA_DIR || '/tmp/cinema-data-prev');
@@ -126,9 +128,12 @@ for (const date of await fs.readdir(path.join(dataRoot, 'showtimes', 'by-date'))
   }
 }
 const movies = [...referencedMovieIds].map(id => movieById.get(id)).filter(Boolean);
+const posterDonors = await loadPosterDonors(dataRoot, [...(previousMovies.movies || []), ...(currentMovies.movies || [])]);
+inheritUnambiguousTitlePosters(movies, posterDonors);
 currentMovies.movies = movies;
 currentMovies.generated_at = new Date().toISOString();
 await writeJson(movieFile, currentMovies);
+await writePosterIndex(dataRoot, [...posterDonors, ...movies]);
 for (const [city, value] of Object.entries(manifest.cities || {})) {
   value.showtimes = countsByCity[city] || 0;
   const file = path.join(dataRoot, 'showtimes', `${city}.json`);

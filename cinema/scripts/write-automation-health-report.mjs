@@ -28,11 +28,13 @@ const sourceSummaries = Object.fromEntries(Object.entries(sourceStatuses).map(([
   error: status.error || null,
   retrieved_at: status.retrieved_at || null,
   last_success_at: status.last_success_at || null,
-  next_probe_at: status.next_probe_at || null
+  next_probe_at: status.next_probe_at || null,
+  retry_suppressed: status.retry_suppressed === true,
+  retry_after: status.retry_after || null
 }]));
 const failedSources = Object.entries(sourceStatuses)
   .filter(([, status]) => status?.ok === false || status?.health === 'degraded')
-  .map(([source, status]) => ({ source, error: status.error || null, health: status.health || null, showtimes: status.showtimes || 0 }));
+  .map(([source, status]) => ({ source, error: status.error || null, health: status.health || null, showtimes: status.showtimes || 0, retry_suppressed: status.retry_suppressed === true, retry_after: status.retry_after || null }));
 
 const endpointHints = {
   'showtimes-official-api': 'https://capi.showtimes.com.tw/4/app/bootstrap',
@@ -95,6 +97,13 @@ if (recordSourceHistory) {
       };
       issueHistory.issues.push(issue);
     }
+    if (status.retry_suppressed) {
+      issue.retry_suppressed_run_count = Number(issue.retry_suppressed_run_count || 0) + 1;
+      issue.last_retry_suppressed_at = reportGeneratedAt;
+      issue.retry_after = status.retry_after || null;
+      incidentForSource.set(source, issue);
+      continue;
+    }
     if (issue.state === 'resolved') {
       issue.reopen_count = Number(issue.reopen_count || 0) + 1;
       issue.resolved_at = null;
@@ -107,6 +116,7 @@ if (recordSourceHistory) {
     issue.last_fallback_showtimes = status.fallback_showtimes || 0;
     issue.total_occurrence_count = Number(issue.total_occurrence_count || 0) + 1;
     issue.consecutive_failures = Number(issue.consecutive_failures || 0) + 1;
+    issue.retry_after = new Date(Date.parse(reportGeneratedAt) + 7 * 24 * 60 * 60 * 1000).toISOString();
     issue.observations ||= [];
     issue.observations.push({ observed_at: reportGeneratedAt, error, fresh_showtimes: issue.last_fresh_showtimes, fallback_showtimes: issue.last_fallback_showtimes });
     if (issue.observations.length > 100) issue.observations.splice(0, issue.observations.length - 100);

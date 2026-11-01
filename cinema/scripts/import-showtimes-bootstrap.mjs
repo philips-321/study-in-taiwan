@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { buildMovieIndex, compactShowtime, expandShowtime, knownAgeRating, movieIdForRow, normalizeMovieTitle, screeningKey } from './movie-schema.mjs';
+import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node cinema/scripts/import-showtimes-bootstrap.mjs <bootstrap.json>');
@@ -207,8 +208,10 @@ const programMetadata = data.programs.map(program => ({
 const activeMovieIds = new Set(allRows.map(movieIdForRow).filter(Boolean));
 const activePreviousMovies = (previousMovieIndex.movies || []).filter(movie => activeMovieIds.has(movie.movie_id));
 const activeProgramMetadata = programMetadata.filter(movie => activeMovieIds.has(movieIdForRow(movie)));
-const movieIndex = buildMovieIndex(allRows, activeProgramMetadata, activePreviousMovies);
+const posterDonors = await loadPosterDonors(ROOT, activePreviousMovies);
+const movieIndex = buildMovieIndex(allRows, activeProgramMetadata, activePreviousMovies, posterDonors);
 movieIndex.generated_at = importedAt;
+await writePosterIndex(ROOT, [...posterDonors, ...movieIndex.movies]);
 movieIndex.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
 await write(MOVIES_FILE, movieIndex);
 const mappedCinemaIds = new Set(cinemas.map(cinema => cinema.id));

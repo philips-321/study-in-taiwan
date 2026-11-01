@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { buildMovieIndex, compactShowtime, knownAgeRating, movieIdForRow, screeningKey } from './movie-schema.mjs';
+import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
 import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
@@ -20,6 +21,9 @@ const movieMetadataPayload = await fs.readFile(path.join(ROOT, 'movie-metadata',
   .then(text => JSON.parse(text)).catch(error => error?.code === 'ENOENT' ? { movies: [] } : Promise.reject(error));
 const previousMovieCatalog = await fs.readFile(path.join(ROOT, 'movies', 'index.json'), 'utf8')
   .then(text => JSON.parse(text)).catch(error => error?.code === 'ENOENT' ? { movies: [] } : Promise.reject(error));
+const sourceIssueHistory = await fs.readFile(path.join(ROOT, 'reports', 'source-issue-history.json'), 'utf8')
+  .then(text => JSON.parse(text)).catch(error => error?.code === 'ENOENT' ? { issues: [] } : Promise.reject(error));
+const SOURCE_RETRY_COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000;
 
 const CITY_MAP = [
   ['taipei', ['臺北市','台北市']], ['new-taipei', ['新北市']], ['keelung', ['基隆市']],
@@ -255,6 +259,7 @@ function mergeExternalRows(rows, sourceName) {
       cinema_name: row.cinema_name,
       movie_title: row.movie_title,
       movie_title_en: row.movie_title_en || null,
+      poster_url: row.poster_url || null,
       rating: row.rating || null,
       start_time: dateTimeToIso(row.date, row.time),
       end_time: null,
@@ -280,6 +285,21 @@ function mergeExternalRows(rows, sourceName) {
 }
 
 async function runSource(sourceName, label, loader) {
+  const open403 = (sourceIssueHistory.issues || []).find(issue => issue.source === sourceName && issue.state === 'open' && issue.http_status === 403);
+  const failedAt = Date.parse(open403?.last_seen || '');
+  if (Number.isFinite(failedAt) && Date.now() - failedAt < SOURCE_RETRY_COOLDOWN_MS) {
+    const retryAfter = new Date(failedAt + SOURCE_RETRY_COOLDOWN_MS).toISOString();
+    sourceStatus[sourceName] = {
+      ...(sourceStatus[sourceName] || {}),
+      ok: false,
+      showtimes: 0,
+      error: open403.last_error || `HTTP 403 from ${open403.host || sourceName}; automatic retry suppressed`,
+      retry_suppressed: true,
+      retry_after: retryAfter
+    };
+    console.info(`${label} retry suppressed after recurring HTTP 403; next probe after ${retryAfter}.`);
+    return;
+  }
   try {
     mergeExternalRows(await loader(), sourceName);
   } catch (error) {
@@ -326,9 +346,11 @@ const allShowtimeRows = [...showtimesByCity.values()].flat();
 const activeMovieIds = new Set(allShowtimeRows.map(movieIdForRow).filter(Boolean));
 const activePreviousMovies = (previousMovieCatalog.movies || []).filter(movie => activeMovieIds.has(movie.movie_id));
 const activeProgramMetadata = (movieMetadataPayload.movies || []).filter(movie => activeMovieIds.has(movieIdForRow(movie)));
-const movieIndex = buildMovieIndex(allShowtimeRows, activeProgramMetadata, activePreviousMovies);
+const posterDonors = await loadPosterDonors(ROOT);
+const movieIndex = buildMovieIndex(allShowtimeRows, activeProgramMetadata, activePreviousMovies, posterDonors);
 movieIndex.generated_at = generatedAt;
 movieIndex.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
+await writePosterIndex(ROOT, [...posterDonors, ...movieIndex.movies]);
 const mappedCinemaIds = new Set([...cinemasByCity.values()].flatMap(cinemaMap => [...cinemaMap.keys()]));
 
 await removeOldJson(CINEMAS_DIR); await removeOldJson(SHOWTIMES_DIR);

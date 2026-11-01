@@ -72,8 +72,32 @@ function cleanMovieTitle(value) {
     .trim();
 }
 
+function posterTitleKey(value) {
+  return cleanMovieTitle(value).normalize('NFKC').toLocaleLowerCase()
+    .replace(/(?:4dx|imax|數位修復版|數位修復|十週年重映|特別場|重映|國語版|中文版)$/i, '')
+    .replace(/[\p{P}\p{S}\s]/gu, '');
+}
+
+function attribute(tag, name) {
+  const match = tag.match(new RegExp(`\\b${name}\\s*=\\s*(["'])(.*?)\\1`, 'i'));
+  return match?.[2] || null;
+}
+
 function parsePage(html, cinema, requestedDate, url) {
   const lines = htmlToLines(html);
+  const posterByTitle = new Map();
+  for (const match of String(html || '').matchAll(/<img\b[^>]*>/gi)) {
+    const tag = match[0];
+    const title = attribute(tag, 'alt') || attribute(tag, 'title');
+    const image = attribute(tag, 'data-original') || attribute(tag, 'data-src') || attribute(tag, 'src');
+    if (!title || !image || /(?:logo|loading|blank|placeholder|pixel)/i.test(image)) continue;
+    try {
+      const imageUrl = new URL(decodeHtml(image), url);
+      if (imageUrl.protocol !== 'https:') continue;
+      const key = posterTitleKey(title);
+      if (key.length >= 4) posterByTitle.set(key, imageUrl.href);
+    } catch { /* Ignore malformed or non-image page decoration URLs. */ }
+  }
   const rows = [];
   let pageDate = requestedDate;
   let movie = null;
@@ -114,6 +138,7 @@ function parsePage(html, cinema, requestedDate, url) {
         address: cinema.address,
         movie_title: movie,
         movie_title_en: null,
+        poster_url: posterByTitle.get(posterTitleKey(movie)) || null,
         rating: null,
         date: pageDate,
         time,

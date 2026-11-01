@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { buildMovieIndex, compactShowtime, expandShowtime, knownAgeRating, movieIdForRow, screeningIdentityKey } from './movie-schema.mjs';
+import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node cinema/scripts/import-taipei-browser-tsv.mjs <snapshot.tsv>');
@@ -95,8 +96,10 @@ for (const row of incoming) {
   else if (sourcePriority(row.source) > sourcePriority(rows[same].source)) rows[same] = row;
 }
 
-const movieIndex = buildMovieIndex(incoming, [], previousMovies.movies || []);
+const posterDonors = await loadPosterDonors(ROOT, previousMovies.movies || []);
+const movieIndex = buildMovieIndex(incoming, [], previousMovies.movies || [], posterDonors);
 movieIndex.generated_at = new Date().toISOString();
+await writePosterIndex(ROOT, [...posterDonors, ...movieIndex.movies]);
 movieIndex.identity_policy = 'persistent normalized movie catalog; historical/unreferenced movie records are retained for future matching';
 await write(MOVIES_FILE, movieIndex);
 const movieById = new Map(movieIndex.movies.map(movie => [movie.movie_id, movie]));

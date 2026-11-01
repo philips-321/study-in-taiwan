@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { buildMovieIndex, compactShowtime, expandShowtime, knownAgeRating, screeningIdentityKey, screeningKey } from './movie-schema.mjs';
+import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 
 const CURRENT_DIR = path.resolve('cinema/data/showtimes');
 const PREVIOUS_DIR = path.resolve(process.env.CINEMA_PREVIOUS_SHOWTIMES_DIR || '/tmp/cinema-showtimes-prev');
@@ -216,14 +217,14 @@ for (const [source, status] of Object.entries(currentStatus)) {
       ok: false,
       health: 'degraded',
       circuit_state: 'open',
-      failure_count: Number(old.failure_count || 0) + 1,
+      failure_count: status.retry_suppressed ? Number(old.failure_count || 0) : Number(old.failure_count || 0) + 1,
       fresh_showtimes: freshCount,
       fallback_showtimes: fallbackCount,
       showtimes: freshCount + fallbackCount,
       fallback: fallbackCount > 0 ? 'last-known-good' : 'unavailable',
       last_success_at: old.last_success_at || (old.ok ? firstPrevious?.generated_at || null : null),
-      last_failure_at: nowIso,
-      next_probe_at: nextProbeIso,
+      last_failure_at: status.retry_suppressed ? old.last_failure_at || null : nowIso,
+      next_probe_at: status.retry_suppressed ? status.retry_after || old.next_probe_at || null : nextProbeIso,
       error: forcedFailures.has(source) ? forcedError : status?.error || old.error || 'source unavailable'
     };
   } else {
@@ -258,8 +259,10 @@ const uniqueMovieCoverage = new Map(), distinctPosterUrls = new Set(), distinctG
 const allRows = [...currentByCity.values()].flatMap(payload => payload.showtimes || []);
 const activeMovieIds = new Set(allRows.map(row => row.movie_id).filter(Boolean));
 const activePreviousMovies = (currentMovieIndex.movies || []).filter(movie => activeMovieIds.has(movie.movie_id));
-const rebuiltMovieIndex = buildMovieIndex(allRows, [], activePreviousMovies);
+const posterDonors = await loadPosterDonors(path.resolve('cinema/data'), activePreviousMovies);
+const rebuiltMovieIndex = buildMovieIndex(allRows, [], activePreviousMovies, posterDonors);
 rebuiltMovieIndex.generated_at = nowIso;
+await writePosterIndex(path.resolve('cinema/data'), [...posterDonors, ...rebuiltMovieIndex.movies]);
 rebuiltMovieIndex.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
 await writeJson(MOVIES_FILE, rebuiltMovieIndex);
 const mappedCinemaIds = new Set();

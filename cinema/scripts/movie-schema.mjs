@@ -34,7 +34,12 @@ export function knownAgeRating(value) {
 }
 
 function posterMatchKey(value) {
-  return normalizeMovieTitle(value).replace(/[\p{P}\p{S}\s]/gu, '');
+  return normalizeMovieTitle(value)
+    .replace(/^\((?:安可重播|特別場|中文特別場|數位修復版)\)/, '')
+    .replace(/[（(](?:4dx)?特別場[）)]$/i, '')
+    .replace(/[（(](?:數位修復版|數位修復|十週年重映|重映|國語版|中文版)[）)]$/i, '')
+    .replace(/(?:4dx|imax|數位修復版|數位修復|十週年重映|特別場|重映|國語版|中文版)$/i, '')
+    .replace(/[\p{P}\p{S}\s]/gu, '');
 }
 
 export function ambiguousPosterTitleMatches(movies) {
@@ -56,9 +61,9 @@ export function ambiguousPosterTitleMatches(movies) {
     .map(entry => ({ titles: [...entry.titles].slice(0, 10), movie_ids: [...entry.movies].slice(0, 20), poster_count: entry.posters.size }));
 }
 
-export function inheritUnambiguousTitlePosters(movies) {
+export function inheritUnambiguousTitlePosters(movies, historicalDonors = []) {
   const posterCandidates = new Map();
-  for (const movie of movies) {
+  for (const movie of [...historicalDonors, ...movies]) {
     if (!movie.poster_url) continue;
     const titles = [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || [])].filter(Boolean);
     for (const title of titles) {
@@ -85,7 +90,7 @@ export function inheritUnambiguousTitlePosters(movies) {
   return movies;
 }
 
-export function buildMovieIndex(rows, programRecords = [], previousRecords = []) {
+export function buildMovieIndex(rows, programRecords = [], previousRecords = [], posterDonors = []) {
   const records = new Map();
   const ensure = (title, titleEn = null, movieId = null) => {
     const id = movieId || movieIdForTitle(title, titleEn);
@@ -147,7 +152,7 @@ export function buildMovieIndex(rows, programRecords = [], previousRecords = [])
       ...(record.sources.size ? { metadata_sources: [...record.sources].sort() } : {})
     };
   }).sort((a, b) => String(a.movie_title || a.movie_title_en).localeCompare(String(b.movie_title || b.movie_title_en), 'zh-Hant'));
-  inheritUnambiguousTitlePosters(movies);
+  inheritUnambiguousTitlePosters(movies, posterDonors);
   return { version: 1, movies };
 }
 
