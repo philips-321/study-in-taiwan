@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-01T17:39:54.971558Z",
+  "generated_at": "2026-11-01T17:42:56.311Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -13,11 +13,11 @@
       "endpoint": "https://capi.showtimes.com.tw/4/app/bootstrap",
       "state": "open",
       "first_seen": "2026-10-24T18:58:48.331000Z",
-      "last_seen": "2026-11-01T17:32:41.617000Z",
+      "last_seen": "2026-11-01T17:42:56.311Z",
       "last_success_at": null,
       "historical_observation_count": 12,
-      "total_occurrence_count": 12,
-      "consecutive_failures": 3,
+      "total_occurrence_count": 13,
+      "consecutive_failures": 4,
       "reopen_count": 0,
       "known_cause": "GitHub Actions received HTTP 403 from the public bootstrap endpoint. Repository notes say the endpoint was reachable in the manual browser research environment; this is runner access/WAF behavior, not a parser failure.",
       "next_steps": [
@@ -73,9 +73,18 @@
         {
           "observed_at": "2026-11-01T17:32:41.617000Z",
           "error": "ShowTimes public API 403 Forbidden"
+        },
+        {
+          "observed_at": "2026-11-01T17:42:56.311Z",
+          "error": "ShowTimes public API 403 Forbidden",
+          "fresh_showtimes": 0,
+          "fallback_showtimes": 171
         }
       ],
-      "observation_basis": "Unique generated_at timestamps in the 50 most recent first-parent commits that changed cinema/data/manifest.json; this is repository evidence, not a count of Actions billing runs."
+      "observation_basis": "Unique generated_at timestamps in the 50 most recent first-parent commits that changed cinema/data/manifest.json; this is repository evidence, not a count of Actions billing runs.",
+      "last_error": "ShowTimes public API 403 Forbidden",
+      "last_fresh_showtimes": 0,
+      "last_fallback_showtimes": 171
     },
     {
       "issue_id": "eslite-official-schedule:http_403:meet.eslite.com",
@@ -86,11 +95,11 @@
       "endpoint": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
       "state": "open",
       "first_seen": "2026-10-23T19:04:02.308000Z",
-      "last_seen": "2026-11-01T17:32:41.617000Z",
+      "last_seen": "2026-11-01T17:42:56.311Z",
       "last_success_at": null,
       "historical_observation_count": 22,
-      "total_occurrence_count": 22,
-      "consecutive_failures": 3,
+      "total_occurrence_count": 23,
+      "consecutive_failures": 4,
       "reopen_count": 0,
       "known_cause": "GitHub Actions received HTTP 403 from the official schedule page, so the parser could not inspect the schedule response.",
       "next_steps": [
@@ -186,9 +195,18 @@
         {
           "observed_at": "2026-11-01T17:32:41.617000Z",
           "error": "Eslite 403 Forbidden"
+        },
+        {
+          "observed_at": "2026-11-01T17:42:56.311Z",
+          "error": "Eslite 403 Forbidden",
+          "fresh_showtimes": 0,
+          "fallback_showtimes": 15
         }
       ],
-      "observation_basis": "Unique generated_at timestamps in the 50 most recent first-parent commits that changed cinema/data/manifest.json; this is repository evidence, not a count of Actions billing runs."
+      "observation_basis": "Unique generated_at timestamps in the 50 most recent first-parent commits that changed cinema/data/manifest.json; this is repository evidence, not a count of Actions billing runs.",
+      "last_error": "Eslite 403 Forbidden",
+      "last_fresh_showtimes": 0,
+      "last_fallback_showtimes": 15
     }
   ]
 }

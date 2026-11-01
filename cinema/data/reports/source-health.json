@@ -1,6 +1,6 @@
 {
   "schema": "cinema-source-health",
-  "generated_at": "2026-11-01T17:33:21.850Z",
+  "generated_at": "2026-11-01T17:42:56.311Z",
   "checked": 8,
   "statuses": {
     "moc-culture-movie-api": {
@@ -11,7 +11,7 @@
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "last_success_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
     "miramar-official-api": {
@@ -22,18 +22,18 @@
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "last_success_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "health": "healthy",
       "ok": true,
-      "showtimes": 2018,
-      "fresh_showtimes": 2018,
+      "showtimes": 1753,
+      "fresh_showtimes": 1753,
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "last_success_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
     "showtimes-official-api": {
@@ -45,7 +45,7 @@
       "error": "ShowTimes public API 403 Forbidden",
       "retrieved_at": null,
       "last_success_at": "2026-10-24T00:00:00.000Z",
-      "next_probe_at": "2026-11-01T18:03:21.176Z"
+      "next_probe_at": "2026-11-01T18:12:55.318Z"
     },
     "spot-huashan-official-schedule": {
       "health": "healthy",
@@ -55,7 +55,7 @@
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "last_success_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
     "eslite-official-schedule": {
@@ -67,7 +67,7 @@
       "error": "Eslite 403 Forbidden",
       "retrieved_at": null,
       "last_success_at": null,
-      "next_probe_at": "2026-11-01T18:03:21.176Z"
+      "next_probe_at": "2026-11-01T18:12:55.318Z"
     },
     "atmovies-taipei-fallback": {
       "health": "healthy",
@@ -77,7 +77,7 @@
       "fallback_showtimes": 0,
       "error": null,
       "retrieved_at": null,
-      "last_success_at": "2026-11-01T17:33:21.176Z",
+      "last_success_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
     "vieshow-official-browser": {
@@ -97,13 +97,83 @@
       "source": "showtimes-official-api",
       "error": "ShowTimes public API 403 Forbidden",
       "health": "degraded",
-      "showtimes": 171
+      "showtimes": 171,
+      "recurring_issue": {
+        "issue_id": "showtimes-official-api:http_403:capi.showtimes.com.tw",
+        "state": "open",
+        "total_occurrence_count": 13,
+        "consecutive_failures": 4,
+        "first_seen": "2026-10-24T18:58:48.331000Z",
+        "last_seen": "2026-11-01T17:42:56.311Z",
+        "known_cause": "GitHub Actions received HTTP 403 from the public bootstrap endpoint. Repository notes say the endpoint was reachable in the manual browser research environment; this is runner access/WAF behavior, not a parser failure.",
+        "next_steps": [
+          "Check endpoint reachability from GitHub Actions before changing parsing code.",
+          "If the runner still gets 403, use the reviewed browser/API bootstrap snapshot or an alternate approved access path.",
+          "Keep last-known-good ShowTimes rows in canonical storage."
+        ]
+      }
     },
     {
       "source": "eslite-official-schedule",
       "error": "Eslite 403 Forbidden",
       "health": "degraded",
-      "showtimes": 15
+      "showtimes": 15,
+      "recurring_issue": {
+        "issue_id": "eslite-official-schedule:http_403:meet.eslite.com",
+        "state": "open",
+        "total_occurrence_count": 23,
+        "consecutive_failures": 4,
+        "first_seen": "2026-10-23T19:04:02.308000Z",
+        "last_seen": "2026-11-01T17:42:56.311Z",
+        "known_cause": "GitHub Actions received HTTP 403 from the official schedule page, so the parser could not inspect the schedule response.",
+        "next_steps": [
+          "Check endpoint reachability from GitHub Actions before changing parsing code.",
+          "If the runner still gets 403, use a verified manual snapshot or an alternate approved access path.",
+          "Keep last-known-good Eslite rows in canonical storage."
+        ]
+      }
     }
-  ]
+  ],
+  "issue_history": {
+    "file": "cinema/data/reports/source-issue-history.json",
+    "recorded_this_run": true,
+    "issues": [
+      {
+        "issue_id": "showtimes-official-api:http_403:capi.showtimes.com.tw",
+        "source": "showtimes-official-api",
+        "error_type": "http_status",
+        "http_status": 403,
+        "host": "capi.showtimes.com.tw",
+        "state": "open",
+        "total_occurrence_count": 13,
+        "consecutive_failures": 4,
+        "first_seen": "2026-10-24T18:58:48.331000Z",
+        "last_seen": "2026-11-01T17:42:56.311Z",
+        "last_success_at": null,
+        "next_steps": [
+          "Check endpoint reachability from GitHub Actions before changing parsing code.",
+          "If the runner still gets 403, use the reviewed browser/API bootstrap snapshot or an alternate approved access path.",
+          "Keep last-known-good ShowTimes rows in canonical storage."
+        ]
+      },
+      {
+        "issue_id": "eslite-official-schedule:http_403:meet.eslite.com",
+        "source": "eslite-official-schedule",
+        "error_type": "http_status",
+        "http_status": 403,
+        "host": "meet.eslite.com",
+        "state": "open",
+        "total_occurrence_count": 23,
+        "consecutive_failures": 4,
+        "first_seen": "2026-10-23T19:04:02.308000Z",
+        "last_seen": "2026-11-01T17:42:56.311Z",
+        "last_success_at": null,
+        "next_steps": [
+          "Check endpoint reachability from GitHub Actions before changing parsing code.",
+          "If the runner still gets 403, use a verified manual snapshot or an alternate approved access path.",
+          "Keep last-known-good Eslite rows in canonical storage."
+        ]
+      }
+    ]
+  }
 }
