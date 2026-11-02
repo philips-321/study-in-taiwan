@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-02T01:57:14.326Z",
+  "generated_at": "2026-11-02T02:06:41.395Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -314,8 +314,40 @@
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
       "retry_after": "2026-11-08T23:44:14.950Z",
-      "retry_suppressed_run_count": 2,
-      "last_retry_suppressed_at": "2026-11-02T01:57:14.326Z"
+      "retry_suppressed_run_count": 3,
+      "last_retry_suppressed_at": "2026-11-02T02:06:41.395Z"
+    },
+    {
+      "issue_id": "eslite-official-browser:collector_error:meet.eslite.com",
+      "source": "eslite-official-browser",
+      "error_type": "collector_error",
+      "http_status": null,
+      "host": "meet.eslite.com",
+      "endpoint": null,
+      "state": "open",
+      "first_seen": "2026-11-02T02:06:41.395Z",
+      "last_seen": "2026-11-02T02:06:41.395Z",
+      "last_success_at": null,
+      "total_occurrence_count": 1,
+      "historical_observation_count": 0,
+      "consecutive_failures": 1,
+      "reopen_count": 0,
+      "known_cause": null,
+      "next_steps": [
+        "Inspect the recorded error and source endpoint before changing the parser."
+      ],
+      "observations": [
+        {
+          "observed_at": "2026-11-02T02:06:41.395Z",
+          "error": "Eslite browser navigation returned HTTP unknown: page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1\", waiting until \"domcontentloaded\"\n",
+          "fresh_showtimes": 0,
+          "fallback_showtimes": 63
+        }
+      ],
+      "last_error": "Eslite browser navigation returned HTTP unknown: page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1\", waiting until \"domcontentloaded\"\n",
+      "last_fresh_showtimes": 0,
+      "last_fallback_showtimes": 63,
+      "retry_after": "2026-11-09T02:06:41.395Z"
     }
   ],
   "retry_policy": "After an unresolved HTTP 403, suppress automatic source requests for 7 days; keep last-known-good schedules and make one retry after the cooldown."
