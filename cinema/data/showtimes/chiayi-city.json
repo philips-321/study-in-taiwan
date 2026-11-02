@@ -1,8 +1,8 @@
 {
   "version": 4,
   "city": "chiayi-city",
-  "generated_at": "2026-11-01T23:43:23.226Z",
-  "showtime_count": 10,
+  "generated_at": "2026-11-02T00:02:06.129Z",
+  "showtime_count": 0,
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
@@ -13,7 +13,7 @@
       "fresh_showtimes": 256,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:44:09.249Z",
+      "last_success_at": "2026-11-02T00:02:33.367Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,40 +26,40 @@
       "fresh_showtimes": 312,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:44:09.249Z",
+      "last_success_at": "2026-11-02T00:02:33.367Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1831,
+      "showtimes": 1774,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1831,
+      "fresh_showtimes": 1774,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:44:09.249Z",
+      "last_success_at": "2026-11-02T00:02:33.367Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "showtimes-official-api": {
-      "ok": false,
-      "showtimes": 171,
-      "error": "ShowTimes public API 403 Forbidden",
-      "retry_suppressed": true,
-      "retry_after": "2026-11-08T17:42:56.311Z",
+      "ok": true,
+      "showtimes": 0,
+      "skipped": true,
+      "disabled": true,
+      "role": "direct API disabled; use Playwright against official branch pages",
       "browser_fallback": "showtimes-official-browser",
       "browser_fallback_showtimes": 0,
-      "health": "degraded",
-      "circuit_state": "open",
-      "failure_count": 6,
+      "health": "healthy",
+      "circuit_state": "closed",
+      "failure_count": 0,
       "fresh_showtimes": 0,
-      "fallback_showtimes": 171,
-      "fallback": "last-known-good",
-      "last_success_at": "2026-10-24T00:00:00.000Z",
+      "fallback_showtimes": 0,
+      "fallback": null,
+      "last_success_at": "2026-11-02T00:02:33.367Z",
       "last_failure_at": "2026-11-01T17:42:55.318Z",
-      "next_probe_at": "2026-11-08T17:42:56.311Z"
+      "next_probe_at": null
     },
     "spot-huashan-official-schedule": {
       "ok": true,
@@ -70,51 +70,41 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:44:09.249Z",
+      "last_success_at": "2026-11-02T00:02:33.367Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "eslite-official-schedule": {
-      "ok": false,
-      "showtimes": 4,
-      "error": "Eslite 403 Forbidden",
-      "retry_suppressed": true,
-      "retry_after": "2026-11-08T17:42:56.311Z",
+      "ok": true,
+      "showtimes": 0,
+      "skipped": true,
+      "disabled": true,
+      "role": "direct HTTP fetch disabled; use Playwright against official schedule page",
       "browser_fallback": "eslite-official-browser",
       "browser_fallback_showtimes": 63,
-      "health": "degraded",
-      "circuit_state": "open",
-      "failure_count": 13,
-      "fresh_showtimes": 0,
-      "fallback_showtimes": 4,
-      "fallback": "last-known-good",
-      "last_success_at": null,
-      "last_failure_at": "2026-11-01T17:42:55.318Z",
-      "next_probe_at": "2026-11-08T17:42:56.311Z"
-    },
-    "atmovies-taipei-fallback": {
-      "ok": true,
-      "showtimes": 1095,
-      "role": "fallback only for sources blocked/incomplete from GitHub Actions",
-      "warnings": [
-        "t02a01/2026-11-02: No showtimes parsed",
-        "t02a01/2026-11-07: No showtimes parsed",
-        "t02a01/2026-11-06: No showtimes parsed",
-        "t02a11/2026-11-02: No showtimes parsed",
-        "t02a11/2026-11-06: No showtimes parsed",
-        "t02a11/2026-11-07: No showtimes parsed",
-        "t02a12/2026-11-02: No showtimes parsed",
-        "t02a12/2026-11-06: No showtimes parsed",
-        "t02a12/2026-11-07: No showtimes parsed",
-        "t02b14/2026-11-02: No showtimes parsed"
-      ],
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1095,
+      "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:44:09.249Z",
+      "last_success_at": "2026-11-02T00:02:33.367Z",
+      "last_failure_at": "2026-11-01T17:42:55.318Z",
+      "next_probe_at": null
+    },
+    "atmovies-taipei-fallback": {
+      "ok": true,
+      "showtimes": 0,
+      "skipped": true,
+      "disabled": true,
+      "role": "disabled; official-source browser registry is authoritative",
+      "health": "healthy",
+      "circuit_state": "closed",
+      "failure_count": 0,
+      "fresh_showtimes": 0,
+      "fallback_showtimes": 0,
+      "fallback": null,
+      "last_success_at": "2026-11-02T00:02:33.367Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -129,14 +119,17 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:44:09.249Z",
+      "last_success_at": "2026-11-02T00:02:33.367Z",
       "last_failure_at": "2026-11-01T22:52:01.331Z",
       "next_probe_at": null
     },
     "showtimes-official-browser": {
       "ok": false,
+      "skipped": true,
+      "retry_suppressed": true,
+      "retry_after": "2026-11-08T23:44:14.950Z",
       "showtimes": 0,
-      "error": "Official ShowTimes browser returned no sessions (大巨蛋秀泰影城: HTTP 403; 欣欣秀泰影城: HTTP 403; 樹林秀泰影城: HTTP 403; 土城秀泰影城: Skipped after official site returned HTTP 403; 基隆秀泰影城: Skipped after official site returned HTTP 403)",
+      "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 2,
@@ -145,7 +138,7 @@
       "fallback": "unavailable",
       "last_success_at": null,
       "last_failure_at": "2026-11-01T23:44:09.249Z",
-      "next_probe_at": "2026-11-02T00:14:09.249Z"
+      "next_probe_at": "2026-11-08T23:44:14.950Z"
     },
     "eslite-official-browser": {
       "ok": true,
@@ -158,7 +151,7 @@
       "fresh_showtimes": 63,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-01T23:44:09.249Z",
+      "last_success_at": "2026-11-02T00:02:33.367Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -182,11 +175,9 @@
   "resilience": {
     "policy": "failed collectors preserve eligible future last-known-good rows while independent collectors continue",
     "restored_sources": [
-      "showtimes-official-api",
-      "eslite-official-schedule",
       "showtimes-official-browser",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-01T23:44:09.249Z"
+    "restored_at": "2026-11-02T00:02:33.367Z"
   }
 }
