@@ -11,12 +11,12 @@ async function loadChromium() {
   return playwright.chromium;
 }
 
-export async function browseOfficialPages(targets, { concurrency = 3, settleMs = 1200 } = {}) {
+export async function browseOfficialPages(targets, { concurrency = 3, settleMs = 1200, navigationTimeoutMs = 25_000 } = {}) {
   const chromium = await loadChromium();
   const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
   const results = Array(targets.length);
   let cursor = 0;
-  let blockedBy403 = false;
+  const blockedHosts = new Set();
 
   try {
     const context = await browser.newContext({
@@ -29,14 +29,15 @@ export async function browseOfficialPages(targets, { concurrency = 3, settleMs =
       while (cursor < targets.length) {
         const index = cursor++;
         const target = targets[index];
-        if (blockedBy403) {
-          results[index] = { target, status: null, html: '', error: 'Skipped after official site returned HTTP 403' };
+        const host = new URL(target.url).hostname;
+        if (blockedHosts.has(host)) {
+          results[index] = { target, status: null, html: '', error: 'Skipped after this official host returned HTTP 403' };
           continue;
         }
         let page;
         try {
           page = await context.newPage();
-          page.setDefaultNavigationTimeout(25_000);
+          page.setDefaultNavigationTimeout(navigationTimeoutMs);
           const response = await page.goto(target.url, { waitUntil: 'domcontentloaded' });
           const initialStatus = response?.status() ?? null;
           if (initialStatus === 403) {
@@ -60,7 +61,7 @@ export async function browseOfficialPages(targets, { concurrency = 3, settleMs =
             title: finalResponse.title,
             bodyLength: finalResponse.bodyLength
           };
-          if (status === 403) blockedBy403 = true;
+          if (status === 403) blockedHosts.add(host);
         } catch (error) {
           results[index] = { target, status: null, html: '', error: String(error?.message || error).slice(0, 240) };
         } finally {
@@ -72,7 +73,8 @@ export async function browseOfficialPages(targets, { concurrency = 3, settleMs =
   } finally {
     await browser.close();
   }
-  results.blocked_by_403 = blockedBy403;
+  results.blocked_hosts = [...blockedHosts];
+  results.blocked_by_403 = blockedHosts.size > 0;
   results.pages_requested = results.filter(result => result?.status !== null).length;
   return results;
 }

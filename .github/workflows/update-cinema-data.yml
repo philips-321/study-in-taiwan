@@ -39,21 +39,6 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Cache Playwright Chromium
-        if: steps.daily_guard.outputs.skip != 'true'
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-chromium-1.64.1-${{ runner.os }}-${{ runner.arch }}
-
-      - name: Install Playwright browser
-        if: steps.daily_guard.outputs.skip != 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          npm install --prefix "$RUNNER_TEMP/cinema-browser" --no-save --package-lock=false playwright@1.64.1
-          "$RUNNER_TEMP/cinema-browser/node_modules/.bin/playwright" install --with-deps chromium
-
       - name: Skip if cinema JSON was refreshed today in Taiwan
         id: daily_guard
         run: |
@@ -80,6 +65,21 @@ jobs:
           else
             echo 'skip=false' >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Cache Playwright Chromium
+        if: steps.daily_guard.outputs.skip != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-1.64.1-${{ runner.os }}-${{ runner.arch }}
+
+      - name: Install Playwright browser
+        if: steps.daily_guard.outputs.skip != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix "$RUNNER_TEMP/cinema-browser" --no-save --package-lock=false playwright@1.64.1
+          "$RUNNER_TEMP/cinema-browser/node_modules/.bin/playwright" install --with-deps chromium
 
       - name: Preserve previous showtimes for last-known-good fallback
         if: steps.daily_guard.outputs.skip != 'true'
@@ -125,6 +125,12 @@ jobs:
           else
             node --import ./cinema/scripts/moc-offline-shim.mjs cinema/scripts/update-cinema-data.mjs
           fi
+
+      - name: Audit all registered official cinema sources in Playwright
+        if: steps.daily_guard.outputs.skip != 'true'
+        env:
+          CINEMA_PLAYWRIGHT_MODULE: ${{ runner.temp }}/cinema-browser/node_modules/playwright/index.mjs
+        run: node cinema/scripts/audit-cinema-source-registry.mjs
 
       - name: Restore failed-source last-known-good rows and source health
         if: steps.daily_guard.outputs.skip != 'true'

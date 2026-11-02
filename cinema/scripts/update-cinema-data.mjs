@@ -5,11 +5,10 @@ import { buildMovieIndex, compactShowtime, knownAgeRating, movieIdForRow, screen
 import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
-import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
 import { fetchShowTimesHtmlFallback } from './sources/showtimes-html.mjs';
 import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
-import { fetchEsliteShowtimes, fetchEsliteShowtimesInBrowser } from './sources/eslite.mjs';
-import { fetchAtMoviesTaipeiShowtimes } from './sources/atmovies-taipei.mjs';
+import { fetchEsliteShowtimesInBrowser } from './sources/eslite.mjs';
+
 
 const ROOT = path.resolve('cinema/data');
 const CINEMAS_DIR = path.join(ROOT, 'cinemas');
@@ -25,6 +24,12 @@ const previousMovieCatalog = await fs.readFile(path.join(ROOT, 'movies', 'index.
 const sourceIssueHistory = await fs.readFile(path.join(ROOT, 'reports', 'source-issue-history.json'), 'utf8')
   .then(text => JSON.parse(text)).catch(error => error?.code === 'ENOENT' ? { issues: [] } : Promise.reject(error));
 const SOURCE_RETRY_COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000;
+const CINEMA_SOURCE_REGISTRY_FILE = path.join(ROOT, 'canonical', 'cinema-source-registry.json');
+const cinemaSourceRegistry = JSON.parse(await fs.readFile(CINEMA_SOURCE_REGISTRY_FILE, 'utf8'));
+const cinemaSourceBindings = cinemaSourceRegistry.tables?.CINEMA_SOURCE_BINDING || [];
+if (cinemaSourceRegistry.tables?.CINEMA?.length !== 107 || cinemaSourceBindings.length !== 107) {
+  throw new Error('Cinema source registry must contain all 107 BAMID cinema records and one source binding per record');
+}
 
 const CITY_MAP = [
   ['taipei', ['臺北市','台北市']], ['new-taipei', ['新北市']], ['keelung', ['基隆市']],
@@ -240,10 +245,10 @@ const sourceStatus = {
   'moc-culture-movie-api': { ok: true, showtimes: [...showtimesByCity.values()].reduce((n, rows) => n + rows.length, 0) },
   'miramar-official-api': { ok: false, showtimes: 0 },
   'ambassador-official-site': { ok: false, showtimes: 0 },
-  'showtimes-official-api': { ok: false, showtimes: 0 },
+  'showtimes-official-api': { ok: true, showtimes: 0, skipped: true, disabled: true, role: 'direct API disabled; use Playwright against official branch pages' },
   'spot-huashan-official-schedule': { ok: false, showtimes: 0 },
-  'eslite-official-schedule': { ok: false, showtimes: 0 },
-  'atmovies-taipei-fallback': { ok: false, showtimes: 0, role: 'fallback only for sources blocked/incomplete from GitHub Actions' },
+  'eslite-official-schedule': { ok: true, showtimes: 0, skipped: true, disabled: true, role: 'direct HTTP fetch disabled; use Playwright against official schedule page' },
+  'atmovies-taipei-fallback': { ok: true, showtimes: 0, skipped: true, disabled: true, role: 'disabled; official-source browser registry is authoritative' },
   'showtimes-official-html-fallback': { ok: true, showtimes: 0, skipped: true, role: 'first-party ShowTimes cinema HTML fallback when bootstrap API is blocked' },
   'showtimes-official-browser': { ok: true, showtimes: 0, skipped: true, role: 'Playwright browser extraction from first-party ShowTimes cinema pages' },
   'eslite-official-browser': { ok: true, showtimes: 0, skipped: true, role: 'Playwright browser extraction from the first-party Eslite schedule page' },
@@ -331,14 +336,12 @@ async function runSource(sourceName, label, loader) {
 
 await runSource('miramar-official-api', 'Miramar', fetchMiramarShowtimes);
 await runSource('ambassador-official-site', 'Ambassador', fetchAmbassadorShowtimes);
-await runSource('showtimes-official-api', 'ShowTimes', fetchShowTimesShowtimes);
 await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuashanShowtimes);
-await runSource('eslite-official-schedule', 'Eslite', fetchEsliteShowtimes);
-await runSource('atmovies-taipei-fallback', 'AtMovies Taipei fallback', fetchAtMoviesTaipeiShowtimes);
+
 
 const needsAlternativeFallback = source => {
   const status = sourceStatus[source];
-  return status?.ok === false && (status.retry_suppressed === true || /\b403\b/.test(String(status.error || '')));
+  return status?.disabled === true || (status?.ok === false && (status.retry_suppressed === true || /\b403\b/.test(String(status.error || ''))));
 };
 
 const recent403RetryAfter = sourceName => {
@@ -349,11 +352,9 @@ const recent403RetryAfter = sourceName => {
 };
 
 if (needsAlternativeFallback('showtimes-official-api')) {
-  const observedFile = path.join(ROOT, 'research', 'observed-sources.json');
-  const observedSources = await fs.readFile(observedFile, 'utf8').then(JSON.parse);
-  const showtimesPageIds = new Map((observedSources.entries || [])
-    .filter(entry => String(entry.source_type || '').includes('official ShowTimes') && entry.cinema_id && entry.source_url)
-    .map(entry => [entry.cinema_id, String(entry.source_url).match(/\/cinemas\/(\d+)\/?/)?.[1]])
+  const showtimesPageIds = new Map(cinemaSourceBindings
+    .filter(binding => binding.source_id === 'SRC_SHOWTIMES' && binding.cinema_id && binding.official_schedule_url)
+    .map(binding => [binding.cinema_id, String(binding.official_schedule_url).match(/\/cinemas\/(\d+)\/?/)?.[1]])
     .filter(([, pageId]) => pageId));
   const targets = [...cinemasByCity.values()].flatMap(map => [...map.values()])
     .filter(cinema => showtimesPageIds.has(cinema.id))
@@ -405,7 +406,9 @@ if (needsAlternativeFallback('eslite-official-schedule')) {
     };
   } else {
     try {
-      const rows = await fetchEsliteShowtimesInBrowser();
+      const esliteBinding = cinemaSourceBindings.find(binding => binding.source_id === 'SRC_ESLITE' && binding.official_schedule_url);
+      if (!esliteBinding) throw new Error('Eslite official schedule URL is missing from cinema-source-registry.json');
+      const rows = await fetchEsliteShowtimesInBrowser(esliteBinding.official_schedule_url);
       mergeExternalRows(rows, 'eslite-official-browser');
       sourceStatus['eslite-official-browser'] = {
         ok: true,

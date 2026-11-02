@@ -103,10 +103,8 @@ export async function fetchShowTimesHtmlFallback(targetCinemas) {
       rows.push(row);
     }
   }
-  if (!rows.length) throw new Error(`Official ShowTimes browser returned no sessions (${errors.slice(0, 5).join('; ')})`);
-
   const futureRows = rows.filter(row => row.date >= today);
-  if (!futureRows.length) throw new Error('Official ShowTimes browser had no current or future sessions');
+  if (!futureRows.length && pages.blocked_by_403 !== true) throw new Error('Official ShowTimes browser had no current or future sessions');
   futureRows.source_errors = errors;
   futureRows.acquisition_method = 'first-party-showtimes-browser';
   futureRows.cinema_pages = targets.length;

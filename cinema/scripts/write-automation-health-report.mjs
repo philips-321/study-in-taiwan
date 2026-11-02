@@ -6,6 +6,10 @@ const ROOT = path.resolve('cinema/data');
 const read = file => fs.readFile(path.join(ROOT, file), 'utf8').then(JSON.parse);
 const manifest = await read('manifest.json');
 const publicManifest = await read('showtimes-public/manifest.json');
+const browserSourceRun = await read('reports/cinema-browser-source-run.json').catch(error => {
+  if (error?.code === 'ENOENT') return null;
+  throw error;
+});
 const catalog = await read('movies/index.json');
 const diagnostics = await read('reports/collector-diagnostics.json').catch(error => {
   if (error?.code === 'ENOENT') return {};
@@ -225,6 +229,17 @@ const unmatchedCinemas = diagnostics.unmatched_cinema_matches || [];
 const report = {
   schema: 'cinema-automation-health',
   generated_at: reportGeneratedAt,
+  browser_source_registry: browserSourceRun ? {
+    checked_at: browserSourceRun.checked_at,
+    run_id: browserSourceRun.run_id,
+    registry_cinemas: browserSourceRun.registry_cinema_count,
+    registry_bindings: browserSourceRun.registry_bindings_count,
+    official_urls: browserSourceRun.confirmed_official_url_count,
+    missing_official_urls: browserSourceRun.official_url_missing_count,
+    page_navigations_attempted: browserSourceRun.page_navigations_attempted,
+    hosts_blocked_by_403: browserSourceRun.hosts_blocked_by_403,
+    status_counts: browserSourceRun.status_counts
+  } : { status: 'missing_browser_source_report' },
   public_window: { as_of: publicManifest.as_of, end_date: publicManifest.end_date, rows: publicRows, expected_rows: publicManifest.public_rows },
   schedule_freshness: {
     checked_at: reconciliation?.checked_at || null,

@@ -115,8 +115,8 @@ export async function fetchEsliteShowtimes() {
   return rows;
 }
 
-export async function fetchEsliteShowtimesInBrowser() {
-  const [result] = await browseOfficialPages([{ url: URL }], { concurrency: 1, settleMs: 1500 });
+export async function fetchEsliteShowtimesInBrowser(scheduleUrl = URL) {
+  const [result] = await browseOfficialPages([{ url: scheduleUrl }], { concurrency: 1, settleMs: 1500 });
   if (result.status !== 200) {
     throw new Error(`Eslite browser navigation returned HTTP ${result.status ?? 'unknown'}${result.error ? `: ${result.error}` : ''}`);
   }
