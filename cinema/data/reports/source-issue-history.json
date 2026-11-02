@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-02T00:02:39.629Z",
+  "generated_at": "2026-11-02T01:57:14.326Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -314,8 +314,8 @@
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
       "retry_after": "2026-11-08T23:44:14.950Z",
-      "retry_suppressed_run_count": 1,
-      "last_retry_suppressed_at": "2026-11-02T00:02:39.629Z"
+      "retry_suppressed_run_count": 2,
+      "last_retry_suppressed_at": "2026-11-02T01:57:14.326Z"
     }
   ],
   "retry_policy": "After an unresolved HTTP 403, suppress automatic source requests for 7 days; keep last-known-good schedules and make one retry after the cooldown."
