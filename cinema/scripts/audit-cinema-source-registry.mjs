@@ -6,6 +6,7 @@ const ROOT = path.resolve('cinema/data');
 const REGISTRY_FILE = path.join(ROOT, 'canonical/cinema-source-registry.json');
 const MANIFEST_FILE = path.join(ROOT, 'manifest.json');
 const REPORT_FILE = path.join(ROOT, 'reports/cinema-browser-source-run.json');
+const CLOSED_INDEX_FILE = path.join(ROOT, 'canonical/closed-cinema-index.json');
 const COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000;
 const CITY_FILES = [
   'changhua', 'chiayi-city', 'chiayi-county', 'hsinchu-city', 'hsinchu-county',
@@ -87,9 +88,16 @@ for (const row of previous?.entries || []) {
   }
 }
 
+const closedCinemas = registryCinemas.filter(row => row.operational_status === 'closed');
+const closedCinemaIds = new Set(closedCinemas.map(row => row.cinema_id));
 const outcomes = new Map();
 const browserTargets = [];
 for (const binding of bindings) {
+  const cinema = registryCinemas.find(row => row.cinema_id === binding.cinema_id);
+  if (closedCinemaIds.has(binding.cinema_id) || binding.binding_status === 'closed') {
+    outcomes.set(binding.binding_id, { run_status: 'cinema_closed', http_status: null, host: null, request_url: null, checked_at: new Date().toISOString() });
+    continue;
+  }
   if (!binding.official_schedule_url || binding.binding_status !== 'ready_for_browser') {
     outcomes.set(binding.binding_id, {
       run_status: 'needs_official_schedule_url',
@@ -206,13 +214,16 @@ const report = {
   registry_cinema_count: registryCinemas.length,
   registry_bindings_count: bindings.length,
   confirmed_official_url_count: bindings.filter(row => row.binding_status === 'ready_for_browser').length,
-  official_url_missing_count: bindings.filter(row => row.binding_status === 'needs_official_schedule_url').length,
+  official_url_missing_count: bindings.filter(row => row.binding_status === 'needs_official_schedule_url' && !closedCinemaIds.has(row.cinema_id)).length,
+  closed_cinema_count: closedCinemas.length,
   page_navigations_attempted: pageResults.pages_requested,
   hosts_blocked_by_403: pageResults.blocked_hosts || [],
   status_counts: counts,
   entries
 };
 await fs.mkdir(path.dirname(REPORT_FILE), { recursive: true });
+const closedIndex = { schema: 'TAIWAN_CINEMA_CLOSED_INDEX', schema_version: 1, generated_at: report.checked_at, registry_file: 'cinema/data/canonical/cinema-source-registry.json', closed_cinema_ids: closedCinemas.map(row => row.cinema_id), closed_cinemas: closedCinemas.map(row => ({ cinema_id: row.cinema_id, name_zh: row.name_zh, city: row.city, closed_on: row.closed_on })) };
+await fs.writeFile(CLOSED_INDEX_FILE, `${JSON.stringify(closedIndex, null, 2)}\n`);
 await fs.writeFile(REPORT_FILE, `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify({
   registry_cinemas: report.registry_cinema_count,

@@ -371,11 +371,13 @@
         "business_id": "24536904",
         "screens": 6,
         "phone": "(082)330287",
-        "operational_status": "unknown",
-        "status_evidence": "no-fresh-showtime-evidence",
-        "status_checked_at": "2026-11-01T23:43:23.226Z",
+        "operational_status": "closed",
+        "status_evidence": "closed_on=2026-05-04; source=https://www.cna.com.tw/news/aloc/202604080368.aspx",
+        "status_checked_at": "2026-11-02T00:00:00.000Z",
         "master_source": "bamid-national-cinema-master",
-        "master_year": 2025
+        "master_year": 2025,
+        "closed_on": "2026-05-04",
+        "closure_evidence_url": "https://www.cna.com.tw/news/aloc/202604080368.aspx"
       },
       {
         "cinema_id": "1564a49f71c52c4a",
@@ -387,11 +389,13 @@
         "business_id": "54371176",
         "screens": 6,
         "phone": "(082)330397",
-        "operational_status": "unknown",
-        "status_evidence": "no-fresh-showtime-evidence",
-        "status_checked_at": "2026-11-01T23:43:23.226Z",
+        "operational_status": "closed",
+        "status_evidence": "closed_on=2026-10-31; source=https://www.kinmen.gov.tw/News_Content2.aspx?n=98E3CA7358C89100&s=A3A77E7A0EFAC8EE",
+        "status_checked_at": "2026-11-02T00:00:00.000Z",
         "master_source": "bamid-national-cinema-master",
-        "master_year": 2025
+        "master_year": 2025,
+        "closed_on": "2026-10-31",
+        "closure_evidence_url": "https://www.kinmen.gov.tw/News_Content2.aspx?n=98E3CA7358C89100&s=A3A77E7A0EFAC8EE"
       },
       {
         "cinema_id": "ee199f2acd555b37",
@@ -1395,11 +1399,13 @@
         "business_id": "53563725",
         "screens": 2,
         "phone": "(02)27653373",
-        "operational_status": "unknown",
-        "status_evidence": "no-fresh-showtime-evidence",
-        "status_checked_at": "2026-11-01T23:43:23.226Z",
+        "operational_status": "closed",
+        "status_evidence": "closed_on=2026-01-31; source=https://news.tvbs.com.tw/life/3091529",
+        "status_checked_at": "2026-11-02T00:00:00.000Z",
         "master_source": "bamid-national-cinema-master",
-        "master_year": 2025
+        "master_year": 2025,
+        "closed_on": "2026-01-31",
+        "closure_evidence_url": "https://news.tvbs.com.tw/life/3091529"
       },
       {
         "cinema_id": "10c63f8de8649fcc",
@@ -1507,11 +1513,13 @@
         "business_id": "03539102",
         "screens": 5,
         "phone": "(02)23315077",
-        "operational_status": "unknown",
-        "status_evidence": "no-fresh-showtime-evidence",
-        "status_checked_at": "2026-11-01T23:43:23.226Z",
+        "operational_status": "closed",
+        "status_evidence": "closed_on=2026-05-31; source=https://news.ttv.com.tw/news/11505200003300W",
+        "status_checked_at": "2026-11-02T00:00:00.000Z",
         "master_source": "bamid-national-cinema-master",
-        "master_year": 2025
+        "master_year": 2025,
+        "closed_on": "2026-05-31",
+        "closure_evidence_url": "https://news.ttv.com.tw/news/11505200003300W"
       },
       {
         "cinema_id": "1b9c4a9b7ed385ea",
@@ -2122,15 +2130,18 @@
         "cinema_id": "1564a49f71c52c4a",
         "source_id": null,
         "official_schedule_url": null,
-        "officiality": "not_verified",
-        "source_type": null,
-        "evidence_file": null,
-        "verified_on": null,
-        "verified_fields": [],
-        "collection_method": "playwright_chromium",
+        "officiality": "not_applicable",
+        "source_type": "not_applicable",
+        "evidence_file": "https://www.kinmen.gov.tw/News_Content2.aspx?n=98E3CA7358C89100&s=A3A77E7A0EFAC8EE",
+        "verified_on": "2026-11-02",
+        "verified_fields": [
+          "operational_status",
+          "closed_on"
+        ],
+        "collection_method": "none_closed",
         "schedule_parser": null,
-        "binding_status": "needs_official_schedule_url",
-        "last_runner_observation": null
+        "binding_status": "closed",
+        "last_runner_observation": "closed"
       },
       {
         "binding_id": "CSB_18ed2c265bbcc977_01",
@@ -2696,15 +2707,18 @@
         "cinema_id": "65d825b5140e9fa9",
         "source_id": null,
         "official_schedule_url": null,
-        "officiality": "not_verified",
-        "source_type": null,
-        "evidence_file": null,
-        "verified_on": null,
-        "verified_fields": [],
-        "collection_method": "playwright_chromium",
+        "officiality": "not_applicable",
+        "source_type": "not_applicable",
+        "evidence_file": "https://www.cna.com.tw/news/aloc/202604080368.aspx",
+        "verified_on": "2026-11-02",
+        "verified_fields": [
+          "operational_status",
+          "closed_on"
+        ],
+        "collection_method": "none_closed",
         "schedule_parser": null,
-        "binding_status": "needs_official_schedule_url",
-        "last_runner_observation": null
+        "binding_status": "closed",
+        "last_runner_observation": "closed"
       },
       {
         "binding_id": "CSB_6763778191e9e511_01",
@@ -3062,15 +3076,18 @@
         "cinema_id": "80090ba98f0571f6",
         "source_id": null,
         "official_schedule_url": null,
-        "officiality": "not_verified",
-        "source_type": null,
-        "evidence_file": null,
-        "verified_on": null,
-        "verified_fields": [],
-        "collection_method": "playwright_chromium",
+        "officiality": "not_applicable",
+        "source_type": "not_applicable",
+        "evidence_file": "https://news.ttv.com.tw/news/11505200003300W",
+        "verified_on": "2026-11-02",
+        "verified_fields": [
+          "operational_status",
+          "closed_on"
+        ],
+        "collection_method": "none_closed",
         "schedule_parser": null,
-        "binding_status": "needs_official_schedule_url",
-        "last_runner_observation": null
+        "binding_status": "closed",
+        "last_runner_observation": "closed"
       },
       {
         "binding_id": "CSB_84c8a585cab096b5_UNRESOLVED",
@@ -3826,15 +3843,18 @@
         "cinema_id": "fb49c0eb0cd2b7cd",
         "source_id": null,
         "official_schedule_url": null,
-        "officiality": "not_verified",
-        "source_type": null,
-        "evidence_file": null,
-        "verified_on": null,
-        "verified_fields": [],
-        "collection_method": "playwright_chromium",
+        "officiality": "not_applicable",
+        "source_type": "not_applicable",
+        "evidence_file": "https://news.tvbs.com.tw/life/3091529",
+        "verified_on": "2026-11-02",
+        "verified_fields": [
+          "operational_status",
+          "closed_on"
+        ],
+        "collection_method": "none_closed",
         "schedule_parser": null,
-        "binding_status": "needs_official_schedule_url",
-        "last_runner_observation": null
+        "binding_status": "closed",
+        "last_runner_observation": "closed"
       },
       {
         "binding_id": "CSB_fb50a15c37b733c3_01",

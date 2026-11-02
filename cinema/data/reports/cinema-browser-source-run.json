@@ -11,20 +11,21 @@
   "registry_cinema_count": 107,
   "registry_bindings_count": 107,
   "confirmed_official_url_count": 49,
-  "official_url_missing_count": 58,
+  "official_url_missing_count": 54,
   "page_navigations_attempted": 15,
   "hosts_blocked_by_403": [
     "www.vscinemas.com.tw"
   ],
   "status_counts": {
-    "handled_by_schedule_adapter": 1,
     "http_403_host_blocked": 4,
-    "http_error": 1,
-    "needs_official_schedule_url": 58,
-    "page_loaded_no_schedule_signals": 2,
-    "page_loaded_schedule_signals_found": 8,
+    "needs_official_schedule_url": 54,
     "schedule_adapter_http_403": 15,
-    "skipped_after_host_403": 18
+    "page_loaded_schedule_signals_found": 8,
+    "cinema_closed": 4,
+    "skipped_after_host_403": 18,
+    "page_loaded_no_schedule_signals": 2,
+    "handled_by_schedule_adapter": 1,
+    "http_error": 1
   },
   "entries": [
     {
@@ -257,12 +258,14 @@
       "city": "kinmen",
       "source_id": null,
       "official_schedule_url": null,
-      "binding_status": "needs_official_schedule_url",
-      "run_status": "needs_official_schedule_url",
+      "binding_status": "closed",
+      "run_status": "cinema_closed",
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-02T00:02:21.444Z"
+      "checked_at": "2026-11-02T00:00:00.000Z",
+      "closed_on": "2026-10-31",
+      "status_evidence_url": "https://www.kinmen.gov.tw/News_Content2.aspx?n=98E3CA7358C89100&s=A3A77E7A0EFAC8EE"
     },
     {
       "binding_id": "CSB_18ed2c265bbcc977_01",
@@ -774,12 +777,14 @@
       "city": "kinmen",
       "source_id": null,
       "official_schedule_url": null,
-      "binding_status": "needs_official_schedule_url",
-      "run_status": "needs_official_schedule_url",
+      "binding_status": "closed",
+      "run_status": "cinema_closed",
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-02T00:02:21.445Z"
+      "checked_at": "2026-11-02T00:00:00.000Z",
+      "closed_on": "2026-05-04",
+      "status_evidence_url": "https://www.cna.com.tw/news/aloc/202604080368.aspx"
     },
     {
       "binding_id": "CSB_6763778191e9e511_01",
@@ -1092,12 +1097,14 @@
       "city": "taipei",
       "source_id": null,
       "official_schedule_url": null,
-      "binding_status": "needs_official_schedule_url",
-      "run_status": "needs_official_schedule_url",
+      "binding_status": "closed",
+      "run_status": "cinema_closed",
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-02T00:02:21.445Z"
+      "checked_at": "2026-11-02T00:00:00.000Z",
+      "closed_on": "2026-05-31",
+      "status_evidence_url": "https://news.ttv.com.tw/news/11505200003300W"
     },
     {
       "binding_id": "CSB_84c8a585cab096b5_UNRESOLVED",
@@ -1780,12 +1787,14 @@
       "city": "taipei",
       "source_id": null,
       "official_schedule_url": null,
-      "binding_status": "needs_official_schedule_url",
-      "run_status": "needs_official_schedule_url",
+      "binding_status": "closed",
+      "run_status": "cinema_closed",
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-02T00:02:21.445Z"
+      "checked_at": "2026-11-02T00:00:00.000Z",
+      "closed_on": "2026-01-31",
+      "status_evidence_url": "https://news.tvbs.com.tw/life/3091529"
     },
     {
       "binding_id": "CSB_fb50a15c37b733c3_01",
@@ -1853,5 +1862,7 @@
       "request_url": null,
       "checked_at": "2026-11-02T00:02:21.445Z"
     }
-  ]
+  ],
+  "registry_updated_at": "2026-11-02T00:00:00.000Z",
+  "closed_cinema_count": 4
 }

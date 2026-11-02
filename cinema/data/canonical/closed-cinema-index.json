@@ -1,0 +1,38 @@
+{
+  "schema": "TAIWAN_CINEMA_CLOSED_INDEX",
+  "schema_version": 1,
+  "generated_at": "2026-11-02T00:00:00.000Z",
+  "registry_file": "cinema/data/canonical/cinema-source-registry.json",
+  "closed_cinema_ids": [
+    "65d825b5140e9fa9",
+    "1564a49f71c52c4a",
+    "fb49c0eb0cd2b7cd",
+    "80090ba98f0571f6"
+  ],
+  "closed_cinemas": [
+    {
+      "cinema_id": "65d825b5140e9fa9",
+      "name_zh": "金門昇恆昌國賓影城",
+      "city": "kinmen",
+      "closed_on": "2026-05-04"
+    },
+    {
+      "cinema_id": "1564a49f71c52c4a",
+      "name_zh": "金獅影城",
+      "city": "kinmen",
+      "closed_on": "2026-10-31"
+    },
+    {
+      "cinema_id": "fb49c0eb0cd2b7cd",
+      "name_zh": "新民生戲院",
+      "city": "taipei",
+      "closed_on": "2026-01-31"
+    },
+    {
+      "cinema_id": "80090ba98f0571f6",
+      "name_zh": "in89豪華數位影城",
+      "city": "taipei",
+      "closed_on": "2026-05-31"
+    }
+  ]
+}

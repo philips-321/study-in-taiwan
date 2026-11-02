@@ -10,14 +10,26 @@ Browser Actions adalah Playwright dengan Chromium pada runner GitHub Actions. UR
 
 ## Cakupan registry
 
-Registry memuat **107 record bioskop** dari seluruh 22 file kota/kabupaten pada master BAMID Kementerian Kebudayaan tahun 2025. Ini adalah record administratif, bukan klaim bahwa ada 107 gedung berbeda yang semuanya masih beroperasi. Status 19 record tercatat aktif dan 88 belum diketahui; ketiadaan jadwal tidak dianggap bukti penutupan.
+Registry memuat **107 record bioskop** dari seluruh 22 file kota/kabupaten pada master BAMID Kementerian Kebudayaan tahun 2025. Ini adalah record administratif, bukan klaim bahwa ada 107 gedung berbeda yang semuanya masih beroperasi. Pada 2 November 2026, 19 record tercatat aktif, 4 tercatat tutup berdasarkan pengumuman/sumber berita, dan 84 belum diketahui; ketiadaan jadwal tidak dianggap bukti penutupan.
 
 Dari 107 record:
 
 - **49** memiliki URL jadwal/situs resmi yang sudah tercatat pada bukti riset.
-- **58** belum memiliki URL resmi yang terverifikasi.
+- **54 bioskop yang belum tutup** belum memiliki URL resmi terverifikasi; empat record yang tutup sengaja tidak dicari URL jadwalnya.
 - Semua 107 tetap punya satu baris source binding dan satu hasil di laporan setiap run.
-- Binding tanpa URL resmi berstatus `needs_official_schedule_url`; workflow tidak mencari jadwal pengganti di aggregator.
+- Binding bioskop tutup berstatus `closed` dan tidak masuk pencarian URL/kunjungan browser. Binding aktif tanpa URL resmi berstatus `needs_official_schedule_url`; workflow tidak mencari jadwal pengganti di aggregator.
+- Aplikasi peta/daftar memuat `cinema/data/canonical/closed-cinema-index.json` yang dibuat dari Oracle registry setiap audit, lalu menyembunyikan cabang tutup dari marker, daftar bioskop, dan jadwal publik. Rekamannya tetap tersimpan di Oracle.
+
+### Penutupan terverifikasi
+
+| Bioskop | Tutup sejak | Bukti |
+|---|---|---|
+| 新民生戲院 | 2026-01-31 | https://news.tvbs.com.tw/life/3091529 |
+| 金門昇恆昌國賓影城 | 2026-05-04 | https://www.cna.com.tw/news/aloc/202604080368.aspx |
+| in89豪華數位影城 | 2026-05-31 | https://news.ttv.com.tw/news/11505200003300W |
+| 金獅影城 | 2026-10-31 | https://www.kinmen.gov.tw/News_Content2.aspx?n=98E3CA7358C89100&s=A3A77E7A0EFAC8EE |
+
+Status tutup hanya mengubah status cabang dan tampilan jadwal; arsip jadwal serta poster film tidak dihapus. Jika cabang buka kembali, perbarui status dan bukti di Oracle registry.
 
 Daftar ini mengikuti master lokal yang ada di repo. Jika penelitian menemukan bioskop baru yang belum tercatat di master, tambahkan record dengan ID stabil dan catat bukti sumber sebelum menganggap census fisik Taiwan lengkap.
 
@@ -36,7 +48,7 @@ Registry menyimpan konfigurasi sumber yang ditinjau. Hasil akses per run disimpa
 
 1. Validasi 107 ID dari semua shard kota terhadap 107 baris `CINEMA` dan 107 binding. Run gagal bila satu record hilang atau duplikat.
 2. Kumpulkan jadwal dari URL resmi dengan Playwright Chromium. Sumber yang sudah punya parser resmi menggunakan parser itu; sumber resmi lain tetap dibuka oleh audit browser dan dicatat sebagai page probe.
-3. Buat hasil untuk semua 107 binding. URL hilang, HTTP 403/451, timeout, halaman terbuka tanpa pola jadwal, serta jadwal yang berhasil diparse memiliki status yang berbeda.
+3. Buat hasil untuk semua 107 binding; bioskop berstatus `closed` dicatat sebagai `cinema_closed` tanpa membuka browser. URL hilang, HTTP 403/451, timeout, halaman terbuka tanpa pola jadwal, serta jadwal yang berhasil diparse memiliki status yang berbeda.
 4. Setelah host memberi 403, hentikan request tambahan ke host itu untuk run tersebut. Simpan waktu dan aktifkan cooldown tujuh hari. Cinema lain tetap diproses.
 5. Jangan pindah ke 場次通, AtMovies, atau aggregator lain saat source resmi gagal. Jangan menulis jadwal kanonis dari pola waktu generik; hanya parser sumber yang memahami struktur halaman boleh menghasilkan session rows.
 6. Simpan last-known-good dan baris JSONL kanonis. Kegagalan refresh tidak menghapus jadwal atau poster yang sudah tersimpan.

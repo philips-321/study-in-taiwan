@@ -44,6 +44,7 @@
   let cinemaByCity = {};
   let showsByCity = {};
   let venueLocations = [];
+  let closedCinemaIds = new Set();
   let cinemaEnglishNames = {};
   let cinemaLogoKeys = {};
   let logoMarks = {};
@@ -263,6 +264,7 @@
     return cityNames[slug] || ui('unknownCity');
   }
   function cinemaCount(slug) { return (cinemaByCity[slug]?.cinemas || []).length; }
+  function isClosedCinema(record) { return closedCinemaIds.has(record?.id || record?.cinema_id); }
   function locationCount(slug='all') { return venueLocations.filter(location=>slug==='all'||location.city===slug).length; }
   function cinemaPoint(cinema) {
     const lng = Number(cinema?.longitude ?? cinema?.lng ?? cinema?.coordinates?.[0]);
@@ -425,7 +427,7 @@
       catch(error){console.warn(`Showtimes unavailable for ${slug} on ${date}`,error);return [slug,{showtimes:[]}];}
     }));
     if(sequence!==dateLoadSequence||date!==dateSelect.value)return;
-    showsByCity=Object.fromEntries(loaded);
+    showsByCity=Object.fromEntries(loaded.map(([slug,data])=>[slug,{...data,showtimes:(data.showtimes||[]).filter(show=>!isClosedCinema(show))}]));
     showtimesPending=false;
     setupLanguageFilters();syncDateControls();renderMarkers();renderResults();
   }
@@ -604,18 +606,19 @@
     let savedLanguage='en',savedTheme='dark';try{savedLanguage=localStorage.getItem('cinema-language')||'en';savedTheme=localStorage.getItem('cinema-theme')||'dark';}catch{}
     language=localeInfo[savedLanguage]?savedLanguage:'en';languageSelect.value=language;setTheme(savedTheme==='light'?'light':'dark');
     try {
-      const [cityData,manifest,locationData,nameData,ticketIndex,movieIndex]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/showtimes-public/manifest.json').catch(()=>loadJson('data/manifest.json').catch(()=>null)),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}})),loadJson('data/ticket-prices/index.json').catch(()=>({cinemas:{}})),loadJson('data/movies/index.json').catch(()=>({movies:[]}))]);
+      const [cityData,manifest,locationData,nameData,ticketIndex,movieIndex,closedIndex]=await Promise.all([loadJson('../garbage-truck/v2/data/cities.json'),loadJson('data/showtimes-public/manifest.json').catch(()=>loadJson('data/manifest.json').catch(()=>null)),loadJson('data/locations.json').catch(()=>({locations:[]})),loadJson('data/cinema-names-en.json').catch(()=>({names:{},logo_keys:{},marks:{},colors:{}})),loadJson('data/ticket-prices/index.json').catch(()=>({cinemas:{}})),loadJson('data/movies/index.json').catch(()=>({movies:[]})),loadJson('data/canonical/closed-cinema-index.json')]);
       cinemaEnglishNames=nameData.names||{};cinemaLogoKeys=nameData.logo_keys||{};locationLogoKeys=nameData.location_logo_keys||{};locationEnglishNames=nameData.location_names_en||{};logoMarks=nameData.marks||{};logoColors=nameData.colors||{};logoImages=nameData.logo_images||{};logoBackgrounds=nameData.logo_backgrounds||{};
       ticketPriceIndex=ticketIndex;
       movieById=new Map((movieIndex.movies||[]).map(movie=>[movie.movie_id,movie]));
       movieByTitle=new Map();
       for(const movie of movieIndex.movies||[])for(const title of [movie.movie_title,movie.movie_title_en,...(movie.international_titles||[])]){const key=normalizeSearch(title);if(key&&!movieByTitle.has(key))movieByTitle.set(key,movie);}
       cityDefs=cityData.cities.map(c=>({slug:c.slug,center:c.center}));dataGeneratedDate=(manifest?.generated_at||'').slice(0,10);showtimesDateIndex=manifest?.showtimes_index||{};
-      venueLocations=locationData.locations||[];
+      closedCinemaIds=new Set(closedIndex.closed_cinema_ids||[]);
+      venueLocations=(locationData.locations||[]).filter(location=>!isClosedCinema(location));
       const slugs=[...cityDefs.map(c=>c.slug),'unknown'];
       await Promise.all(slugs.map(async slug=>{
         const cinemas=await loadJson(`data/cinemas/${slug}.json`).catch(()=>({cinemas:[]}));
-        cinemas.cinemas=(cinemas.cinemas||[]).map(cinema=>({...cinema,name_en:cinema.name_en||cinemaEnglishNames[cinema.id]}));
+        cinemas.cinemas=(cinemas.cinemas||[]).filter(cinema=>!isClosedCinema(cinema)).map(cinema=>({...cinema,name_en:cinema.name_en||cinemaEnglishNames[cinema.id]}));
         cinemaByCity[slug]=cinemas;
       }));
       knownShowtimeRows=Number(manifest?.coverage?.showtime_rows||Object.values(showtimesDateIndex).reduce((sum,entry)=>sum+Number(entry.total||0),0));
