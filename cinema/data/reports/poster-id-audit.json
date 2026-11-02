@@ -1,48 +1,36 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-02T02:06:41.395Z",
+  "generated_at": "2026-11-02T19:38:19.796Z",
   "public_window": {
-    "as_of": "2026-11-02",
-    "end_date": "2026-12-02",
-    "rows": 9980,
-    "expected_rows": 9980
+    "as_of": "2026-11-03",
+    "end_date": "2026-12-03",
+    "rows": 6324,
+    "expected_rows": 6324
   },
   "ids": {
-    "active_movies": 172,
+    "active_movies": 166,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 172,
-    "available": 167,
-    "missing": 5,
+    "active_movies": 166,
+    "available": 164,
+    "missing": 2,
     "canonical_registry": {
-      "unique_active_films": 157,
-      "poster_yes": 152,
-      "poster_no": 5,
+      "unique_active_films": 153,
+      "poster_yes": 151,
+      "poster_no": 2,
       "fetch_states": {
         "cooldown": 1,
-        "found_manual": 134,
-        "found_official": 14,
-        "not_found": 4,
-        "reused": 4
+        "found_manual": 133,
+        "found_official": 15,
+        "not_found": 1,
+        "reused": 3
       }
     },
     "missing_movies": [
-      {
-        "movie_id": "m_55a394daf977",
-        "movie_title": "粽邪4"
-      },
-      {
-        "movie_id": "m_eb194ff55dce",
-        "movie_title": "蠟筆小新：奇奇怪怪！我的妖怪假期"
-      },
-      {
-        "movie_id": "m_49c82182e224",
-        "movie_title": "SB19 Wakas at Simula"
-      },
       {
         "movie_id": "m_319fe9a28ce9",
         "movie_title": "實境誘捕"

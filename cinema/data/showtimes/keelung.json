@@ -1,45 +1,45 @@
 {
   "version": 4,
   "city": "keelung",
-  "generated_at": "2026-11-02T02:05:46.005Z",
+  "generated_at": "2026-11-02T19:37:42.864Z",
   "showtime_count": 0,
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
-      "showtimes": 256,
+      "showtimes": 172,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 256,
+      "fresh_showtimes": 172,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T02:06:35.684Z",
+      "last_success_at": "2026-11-02T19:38:14.410Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
     "miramar-official-api": {
       "ok": true,
-      "showtimes": 312,
+      "showtimes": 252,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 312,
+      "fresh_showtimes": 252,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T02:06:35.684Z",
+      "last_success_at": "2026-11-02T19:38:14.410Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1704,
+      "showtimes": 1472,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1704,
+      "fresh_showtimes": 1472,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T02:06:35.684Z",
+      "last_success_at": "2026-11-02T19:38:14.410Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -57,7 +57,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T02:06:35.684Z",
+      "last_success_at": "2026-11-02T19:38:14.410Z",
       "last_failure_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
@@ -70,7 +70,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T02:06:35.684Z",
+      "last_success_at": "2026-11-02T19:38:14.410Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -80,13 +80,15 @@
       "skipped": true,
       "disabled": true,
       "role": "direct HTTP fetch disabled; use Playwright against official schedule page",
+      "browser_fallback": "eslite-official-browser",
+      "browser_fallback_showtimes": 48,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T02:06:35.684Z",
+      "last_success_at": "2026-11-02T19:38:14.410Z",
       "last_failure_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
@@ -102,7 +104,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T02:06:35.684Z",
+      "last_success_at": "2026-11-02T19:38:14.410Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -117,7 +119,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T02:06:35.684Z",
+      "last_success_at": "2026-11-02T19:38:14.410Z",
       "last_failure_at": "2026-11-01T22:52:01.331Z",
       "next_probe_at": null
     },
@@ -139,18 +141,19 @@
       "next_probe_at": "2026-11-08T23:44:14.950Z"
     },
     "eslite-official-browser": {
-      "ok": false,
-      "showtimes": 63,
-      "error": "Eslite browser navigation returned HTTP unknown: page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1\", waiting until \"domcontentloaded\"\n",
-      "health": "degraded",
-      "circuit_state": "open",
-      "failure_count": 1,
-      "fresh_showtimes": 0,
-      "fallback_showtimes": 63,
-      "fallback": "last-known-good",
-      "last_success_at": "2026-11-02T01:57:09.391Z",
+      "ok": true,
+      "showtimes": 48,
+      "acquisition_method": "first-party-eslite-browser",
+      "pages_requested": 1,
+      "health": "healthy",
+      "circuit_state": "closed",
+      "failure_count": 0,
+      "fresh_showtimes": 48,
+      "fallback_showtimes": 0,
+      "fallback": null,
+      "last_success_at": "2026-11-02T19:38:14.410Z",
       "last_failure_at": "2026-11-02T02:06:35.684Z",
-      "next_probe_at": "2026-11-02T02:36:35.684Z"
+      "next_probe_at": null
     },
     "vieshow-official-browser": {
       "ok": true,
@@ -173,9 +176,8 @@
     "policy": "failed collectors preserve eligible future last-known-good rows while independent collectors continue",
     "restored_sources": [
       "showtimes-official-browser",
-      "eslite-official-browser",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-02T02:06:35.684Z"
+    "restored_at": "2026-11-02T19:38:14.410Z"
   }
 }
