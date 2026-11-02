@@ -92,6 +92,8 @@ const closedCinemas = registryCinemas.filter(row => row.operational_status === '
 const closedCinemaIds = new Set(closedCinemas.map(row => row.cinema_id));
 const outcomes = new Map();
 const browserTargets = [];
+const vieshowSource = (registry.tables?.SOURCE || []).find(row => row.source_id === 'SRC_VIESHOW');
+const vieshowIndexUrl = vieshowSource?.official_schedule_index_url || null;
 for (const binding of bindings) {
   const cinema = registryCinemas.find(row => row.cinema_id === binding.cinema_id);
   if (closedCinemaIds.has(binding.cinema_id) || binding.binding_status === 'closed') {
@@ -186,6 +188,42 @@ for (const result of pageResults) {
   });
 }
 
+function pageControls(html) {
+  return [...String(html || '').matchAll(/<select\b([^>]*)>([\s\S]*?)<\/select>/gi)].slice(0, 8).map(match => {
+    const attrs = match[1];
+    const select = { id: attrs.match(/\bid=["']([^"']+)/i)?.[1] || null, name: attrs.match(/\bname=["']([^"']+)/i)?.[1] || null };
+    select.options = [...match[2].matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option>/gi)].slice(0, 40).map(option => ({
+      value: option[1].match(/\bvalue=["']([^"']*)/i)?.[1] || '',
+      text: option[2].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
+    }));
+    return select;
+  });
+}
+
+let siteProbes = [];
+if (vieshowIndexUrl) {
+  const previousProbe = (previous?.site_probes || []).find(row => row.source_id === 'SRC_VIESHOW' && row.url === vieshowIndexUrl);
+  const previousProbeAt = Date.parse(previousProbe?.checked_at || '');
+  if (Number.isFinite(previousProbeAt) && Date.now() - previousProbeAt < COOLDOWN_MS) {
+    siteProbes = [{ source_id: 'SRC_VIESHOW', url: vieshowIndexUrl, status: 'probe_cooldown', http_status: previousProbe.http_status, retry_after: new Date(previousProbeAt + COOLDOWN_MS).toISOString(), checked_at: previousProbe.checked_at }];
+  } else {
+    const [probe] = await browseOfficialPages([{ url: vieshowIndexUrl }], { concurrency: 1, settleMs: 1000, navigationTimeoutMs: 12_000 });
+    const signals = scheduleSignals(probe?.html);
+    siteProbes = [{
+      source_id: 'SRC_VIESHOW',
+      url: vieshowIndexUrl,
+      status: probe?.status === 403 ? 'http_403' : probe?.status >= 200 && probe?.status < 300 ? 'loaded' : probe?.status === null ? 'navigation_failed' : 'http_error',
+      http_status: probe?.status ?? null,
+      page_title: probe?.title || null,
+      body_length: probe?.bodyLength || 0,
+      ...signals,
+      controls: pageControls(probe?.html),
+      error: probe?.error || null,
+      checked_at: new Date().toISOString()
+    }];
+  }
+}
+
 const entries = bindings.map(binding => {
   const cinema = registryCinemas.find(row => row.cinema_id === binding.cinema_id);
   return {
@@ -216,8 +254,9 @@ const report = {
   confirmed_official_url_count: bindings.filter(row => row.binding_status === 'ready_for_browser').length,
   official_url_missing_count: bindings.filter(row => row.binding_status === 'needs_official_schedule_url' && !closedCinemaIds.has(row.cinema_id)).length,
   closed_cinema_count: closedCinemas.length,
-  page_navigations_attempted: pageResults.pages_requested,
-  hosts_blocked_by_403: pageResults.blocked_hosts || [],
+  page_navigations_attempted: pageResults.pages_requested + siteProbes.filter(row => ['loaded','http_403','http_error'].includes(row.status)).length,
+  hosts_blocked_by_403: [...new Set([...(pageResults.blocked_hosts || []), ...siteProbes.filter(row => row.http_status === 403).map(row => hostOf(row.url))])],
+  site_probes: siteProbes,
   status_counts: counts,
   entries
 };
@@ -232,5 +271,6 @@ console.log(JSON.stringify({
   page_navigations_attempted: report.page_navigations_attempted,
   blocked_hosts: report.hosts_blocked_by_403,
   status_counts: report.status_counts,
+  site_probes: report.site_probes,
   output: REPORT_FILE
 }, null, 2));

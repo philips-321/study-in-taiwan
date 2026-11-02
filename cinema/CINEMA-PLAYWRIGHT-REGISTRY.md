@@ -10,7 +10,7 @@ Browser Actions adalah Playwright dengan Chromium pada runner GitHub Actions. UR
 
 ## Cakupan registry
 
-Registry memuat **107 record bioskop** dari seluruh 22 file kota/kabupaten pada master BAMID Kementerian Kebudayaan tahun 2025. Ini adalah record administratif, bukan klaim bahwa ada 107 gedung berbeda yang semuanya masih beroperasi. Pada 2 November 2026, 19 record tercatat aktif, 4 tercatat tutup berdasarkan pengumuman/sumber berita, dan 84 belum diketahui; ketiadaan jadwal tidak dianggap bukti penutupan.
+Registry memuat **107 record bioskop** dari seluruh 22 file kota/kabupaten pada master BAMID Kementerian Kebudayaan tahun 2025. Ini adalah record administratif, bukan klaim bahwa ada 107 gedung berbeda yang semuanya masih beroperasi. Pada 2 November 2026, 19 record tercatat aktif, 4 tercatat tutup berdasarkan pengumuman/sumber berita, dan 84 belum diketahui; ketiadaan jadwal tidak dianggap bukti penutupan. Untuk Vieshow, selain URL cabang, registry mencatat halaman jadwal resmi `https://www.vscinemas.com.tw/ShowTimes/`; Actions mengujinya satu kali per periode cooldown sebagai jalur resmi alternatif.
 
 Dari 107 record:
 
