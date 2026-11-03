@@ -2,6 +2,17 @@
   "version": 1,
   "movies": [
     {
+      "movie_id": "m_00251bd339c9",
+      "movie_title": "三個傻瓜.",
+      "movie_title_en": null,
+      "poster_url": "https://assets.showtimes.com.tw/images/1e2a3954809b0be0ef53bd191129dbce.jpg",
+      "metadata_sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
       "movie_id": "m_0114b6d7277c",
       "movie_title": "運將幻遊",
       "movie_title_en": null,
@@ -814,6 +825,26 @@
       ]
     },
     {
+      "movie_id": "m_306e4a2a6ce2",
+      "movie_title": "與達賴喇嘛談心：尋找幸福的智慧",
+      "movie_title_en": "Wisdom of Happiness",
+      "poster_url": "https://assets.showtimes.com.tw/images/93f8398d37df6a02e49f2cf2fe2af020.jpg",
+      "genres": [
+        "documentary",
+        "drama"
+      ],
+      "rating": "p",
+      "metadata_sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-program",
+        "canonical-manual-poster",
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "canonical-poster-title-match"
+      ]
+    },
+    {
       "movie_id": "m_30f778c43a53",
       "movie_title": "（特別場）黑球",
       "movie_title_en": null,
@@ -1193,6 +1224,17 @@
       ]
     },
     {
+      "movie_id": "m_4c5a5a8498da",
+      "movie_title": "暮光禁地",
+      "movie_title_en": null,
+      "metadata_sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "the-movie-database"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/zevUp8oAEn0loUElqIZiJ11hUi6.jpg"
+    },
+    {
       "movie_id": "m_4c86ad639cce",
       "movie_title": "學園偶像大師 LIVE TOUR -標- FINAL公演 LIVE VIEWING",
       "movie_title_en": "學園偶像大師 LIVE TOUR -標- FINAL公演 LIVE VIEWING",
@@ -1486,6 +1528,23 @@
       ]
     },
     {
+      "movie_id": "m_593149a55a97",
+      "movie_title": "名偵探柯南 第30號殺人事件",
+      "movie_title_en": "Detective Conan: The Counterfeit Case of Ultra 30",
+      "poster_url": "https://assets.showtimes.com.tw/images/85e4e47a6e3b801d5d7b243d7921d511.jpg",
+      "genres": [
+        "animation",
+        "drama",
+        "mystery"
+      ],
+      "rating": "p",
+      "metadata_sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-program"
+      ]
+    },
+    {
       "movie_id": "m_59abf437061e",
       "movie_title": "VR沉浸探險【消失的法老】",
       "movie_title_en": null,
@@ -1508,6 +1567,17 @@
         "manual-verified-poster"
       ],
       "poster_url": "https://www.elbe.paris/2769-large_default/vintage-movie-poster-la-loi-france-yves-thos-1959.jpg"
+    },
+    {
+      "movie_id": "m_5bfe35d36ac0",
+      "movie_title": "UFO離奇命案",
+      "movie_title_en": null,
+      "metadata_sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "the-movie-database"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/lMwNyDJDh0NEpoA8EWATi1XCQ5N.jpg"
     },
     {
       "movie_id": "m_5c7d6f8b8ffc",
@@ -1844,7 +1914,8 @@
         "canonical-manual-poster",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
-        "previous-catalog"
+        "previous-catalog",
+        "canonical-poster-title-match"
       ]
     },
     {
@@ -3232,13 +3303,14 @@
       "movie_id": "m_cac0a456ea95",
       "movie_title": "同級生：十週年重映",
       "movie_title_en": "DOUKYUSEI",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261015005.jpg",
       "metadata_sources": [
+        "ambassador-official-site",
+        "canonical-manual-poster",
         "previous-catalog",
-        "vieshow-official-browser",
         "punctuation-insensitive-title-poster-match",
-        "canonical-manual-poster"
-      ],
-      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261015005.jpg"
+        "vieshow-official-browser"
+      ]
     },
     {
       "movie_id": "m_cdf9505be00f",
@@ -4076,6 +4148,6 @@
       ]
     }
   ],
-  "generated_at": "2026-11-02T19:38:15.589Z",
+  "generated_at": "2026-11-03T17:11:40.754Z",
   "identity_policy": "stable movie_id from normalized primary title; metadata stored once in this catalog"
 }

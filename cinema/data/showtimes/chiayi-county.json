@@ -1,7 +1,7 @@
 {
   "version": 4,
   "city": "chiayi-county",
-  "generated_at": "2026-11-02T19:37:42.864Z",
+  "generated_at": "2026-11-03T17:11:16.140Z",
   "showtime_count": 0,
   "sources": {
     "moc-culture-movie-api": {
@@ -13,33 +13,33 @@
       "fresh_showtimes": 172,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T19:38:14.410Z",
+      "last_success_at": "2026-11-03T17:11:39.341Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
     "miramar-official-api": {
       "ok": true,
-      "showtimes": 252,
+      "showtimes": 192,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 252,
+      "fresh_showtimes": 192,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T19:38:14.410Z",
+      "last_success_at": "2026-11-03T17:11:39.341Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 1472,
+      "showtimes": 2229,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 1472,
+      "fresh_showtimes": 2229,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T19:38:14.410Z",
+      "last_success_at": "2026-11-03T17:11:39.341Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -57,7 +57,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T19:38:14.410Z",
+      "last_success_at": "2026-11-03T17:11:39.341Z",
       "last_failure_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
@@ -70,7 +70,7 @@
       "fresh_showtimes": 101,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T19:38:14.410Z",
+      "last_success_at": "2026-11-03T17:11:39.341Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -81,14 +81,14 @@
       "disabled": true,
       "role": "direct HTTP fetch disabled; use Playwright against official schedule page",
       "browser_fallback": "eslite-official-browser",
-      "browser_fallback_showtimes": 48,
+      "browser_fallback_showtimes": 32,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T19:38:14.410Z",
+      "last_success_at": "2026-11-03T17:11:39.341Z",
       "last_failure_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
@@ -104,7 +104,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T19:38:14.410Z",
+      "last_success_at": "2026-11-03T17:11:39.341Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -119,7 +119,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T19:38:14.410Z",
+      "last_success_at": "2026-11-03T17:11:39.341Z",
       "last_failure_at": "2026-11-01T22:52:01.331Z",
       "next_probe_at": null
     },
@@ -142,29 +142,29 @@
     },
     "eslite-official-browser": {
       "ok": true,
-      "showtimes": 48,
+      "showtimes": 32,
       "acquisition_method": "first-party-eslite-browser",
       "pages_requested": 1,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 48,
+      "fresh_showtimes": 32,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-02T19:38:14.410Z",
+      "last_success_at": "2026-11-03T17:11:39.341Z",
       "last_failure_at": "2026-11-02T02:06:35.684Z",
       "next_probe_at": null
     },
     "vieshow-official-browser": {
       "ok": true,
-      "showtimes": 105,
+      "showtimes": 103,
       "manual_snapshot": true,
       "role": "manual browser snapshot; refresh from official branch pages, not GitHub Actions",
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
       "fresh_showtimes": 0,
-      "fallback_showtimes": 105,
+      "fallback_showtimes": 103,
       "fallback": "manual-browser-snapshot",
       "last_success_at": "2026-10-27T02:19:11.397Z",
       "last_failure_at": null,
@@ -178,6 +178,6 @@
       "showtimes-official-browser",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-02T19:38:14.410Z"
+    "restored_at": "2026-11-03T17:11:39.341Z"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-02T19:38:19.445Z",
+  "generated_at": "2026-11-03T17:11:45.434Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -1120,6 +1120,7 @@
       ],
       "sources": [
         "canonical-manual-poster",
+        "canonical-poster-title-match",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
         "previous-catalog"
@@ -1266,6 +1267,19 @@
       ],
       "sources": [
         "showtimes-official-metadata"
+      ]
+    },
+    {
+      "movie_id": "m_00251bd339c9",
+      "movie_title": "三個傻瓜.",
+      "poster_url": "https://assets.showtimes.com.tw/images/1e2a3954809b0be0ef53bd191129dbce.jpg",
+      "aliases": [
+        "三個傻瓜."
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
       ]
     },
     {
@@ -1604,6 +1618,7 @@
         "同級生：十週年重映"
       ],
       "sources": [
+        "ambassador-official-site",
         "archived-movie-catalog",
         "canonical-manual-poster",
         "previous-catalog",
@@ -1639,7 +1654,10 @@
         "名偵探柯南 第30號殺人事件"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-metadata",
+        "showtimes-official-program"
       ]
     },
     {
@@ -3825,7 +3843,14 @@
         "與達賴喇嘛談心：尋找幸福的智慧"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "ambassador-official-site",
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "showtimes-official-metadata",
+        "showtimes-official-program"
       ]
     },
     {
@@ -4149,6 +4174,19 @@
       ],
       "sources": [
         "showtimes-official-metadata"
+      ]
+    },
+    {
+      "movie_id": "m_4c5a5a8498da",
+      "movie_title": "暮光禁地",
+      "poster_url": "https://image.tmdb.org/t/p/w500/zevUp8oAEn0loUElqIZiJ11hUi6.jpg",
+      "aliases": [
+        "暮光禁地"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "the-movie-database"
       ]
     },
     {
@@ -5188,6 +5226,19 @@
         "vieshow-official-browser"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_5bfe35d36ac0",
+      "movie_title": "UFO離奇命案",
+      "poster_url": "https://image.tmdb.org/t/p/w500/lMwNyDJDh0NEpoA8EWATi1XCQ5N.jpg",
+      "aliases": [
+        "UFO離奇命案"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_59abf437061e",
