@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-03T17:11:45.740Z",
+  "generated_at": "2026-11-04T17:24:03.413Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -314,8 +314,8 @@
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
       "retry_after": "2026-11-08T23:44:14.950Z",
-      "retry_suppressed_run_count": 5,
-      "last_retry_suppressed_at": "2026-11-03T17:11:45.740Z"
+      "retry_suppressed_run_count": 6,
+      "last_retry_suppressed_at": "2026-11-04T17:24:03.413Z"
     },
     {
       "issue_id": "eslite-official-browser:collector_error:meet.eslite.com",

@@ -1,8 +1,21 @@
 {
   "version": 1,
-  "generated_at": "2026-11-03T17:11:45.434Z",
+  "generated_at": "2026-11-04T17:24:03.024Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
+    {
+      "movie_id": "m_cb36c91aeb9c",
+      "movie_title": "(中) Jim Queen：肌情四射",
+      "poster_url": "https://assets.showtimes.com.tw/images/ff54a0cbf59a020440a58b1c6eda0643.jpg",
+      "aliases": [
+        "(中) Jim Queen：肌情四射",
+        "Jim Queen"
+      ],
+      "sources": [
+        "eslite-official-browser",
+        "previous-catalog"
+      ]
+    },
     {
       "movie_id": "m_0b9d00ae89ee",
       "movie_title": "（全台聯合首映）哥吉拉-0.0",
@@ -1610,6 +1623,20 @@
       "preferred": true
     },
     {
+      "movie_id": "m_ad1083db3932",
+      "movie_title": "同級生：10週年重映",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261015005.jpg",
+      "aliases": [
+        "DOUKYUSEI",
+        "同級生：10週年重映"
+      ],
+      "sources": [
+        "miramar-official-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
       "movie_id": "m_cac0a456ea95",
       "movie_title": "同級生：十週年重映",
       "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261015005.jpg",
@@ -1650,11 +1677,13 @@
       "movie_title": "名偵探柯南 第30號殺人事件",
       "poster_url": "https://assets.showtimes.com.tw/images/85e4e47a6e3b801d5d7b243d7921d511.jpg",
       "aliases": [
+        "DETECTIVE CONAN: THE COUNTERFEIT CASE OF ULTR",
         "Detective Conan: The Counterfeit Case of Ultra 30",
         "名偵探柯南 第30號殺人事件"
       ],
       "sources": [
         "ambassador-official-site",
+        "miramar-official-api",
         "previous-catalog",
         "showtimes-official-metadata",
         "showtimes-official-program"
@@ -1895,6 +1924,19 @@
         "vieshow-official-browser"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_079283c76af2",
+      "movie_title": "我要當總統",
+      "poster_url": "https://image.tmdb.org/t/p/w500/au0PYWVJsW9eowLDiwiy2Gp6rkN.jpg",
+      "aliases": [
+        "我要當總統"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_ff6f19f24db6",
@@ -3058,6 +3100,20 @@
       "preferred": true
     },
     {
+      "movie_id": "m_c18ed6b6ce2c",
+      "movie_title": "麥特與麥斯",
+      "poster_url": "https://cdn.kinocheck.com/i/w%3D1200/9y8e4xv8j3.jpg",
+      "aliases": [
+        "Matthias & Maxime",
+        "麥特與麥斯"
+      ],
+      "sources": [
+        "eslite-official-browser",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
       "movie_id": "m_e1b3d99215ae",
       "movie_title": "麥特與麥斯(海報場)",
       "poster_url": "https://cdn.kinocheck.com/i/w%3D1200/9y8e4xv8j3.jpg",
@@ -3354,6 +3410,20 @@
         "previous-catalog"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_2a2169e6fd91",
+      "movie_title": "黑牢城 黑白版",
+      "poster_url": "https://image.tmdb.org/t/p/w500/1GWVlPM1v6k84LsmDkfDzLlGf0O.jpg",
+      "aliases": [
+        "The Samurai And The Prisoner",
+        "黑牢城 黑白版"
+      ],
+      "sources": [
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_b47b3f88d758",
@@ -3840,17 +3910,20 @@
       "poster_url": "https://assets.showtimes.com.tw/images/93f8398d37df6a02e49f2cf2fe2af020.jpg",
       "aliases": [
         "Wisdom of Happiness",
+        "Wisdom of Happiness: A Heart-to-Heart with the Dalai Lama",
         "與達賴喇嘛談心：尋找幸福的智慧"
       ],
       "sources": [
         "ambassador-official-site",
         "canonical-manual-poster",
         "canonical-poster-title-match",
+        "eslite-official-browser",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
         "previous-catalog",
         "showtimes-official-metadata",
-        "showtimes-official-program"
+        "showtimes-official-program",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -4165,6 +4238,20 @@
       "preferred": true
     },
     {
+      "movie_id": "m_4887d0b83538",
+      "movie_title": "廚師發辦 +QA",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027151238638.jpeg",
+      "aliases": [
+        "The Dating Menu",
+        "廚師發辦 +QA"
+      ],
+      "sources": [
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
       "movie_id": "m_fb773d05c03d",
       "movie_title": "憤怒鳥玩電影3：全家總動員",
       "poster_url": "https://assets.showtimes.com.tw/images/e24b73e1e2451e8abc352c11c63df468.jpg",
@@ -4230,7 +4317,24 @@
         "樂園追放"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-metadata",
+        "showtimes-official-program"
+      ]
+    },
+    {
+      "movie_id": "m_5a4968904da0",
+      "movie_title": "樂園追放 10週年紀念 4K修復版",
+      "poster_url": "https://assets.showtimes.com.tw/images/915ce3038071d99e586e4887a01f2569.jpg",
+      "aliases": [
+        "RAKUEN TSUIHO-EXPELLED FROM PARADISE-",
+        "樂園追放 10週年紀念 4K修復版"
+      ],
+      "sources": [
+        "miramar-official-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
       ]
     },
     {
@@ -5232,10 +5336,12 @@
       "movie_title": "UFO離奇命案",
       "poster_url": "https://image.tmdb.org/t/p/w500/lMwNyDJDh0NEpoA8EWATi1XCQ5N.jpg",
       "aliases": [
-        "UFO離奇命案"
+        "UFO離奇命案",
+        "Unidentified Murder"
       ],
       "sources": [
         "ambassador-official-site",
+        "eslite-official-browser",
         "previous-catalog",
         "the-movie-database"
       ]

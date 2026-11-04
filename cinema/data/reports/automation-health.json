@@ -1,9 +1,9 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-03T17:11:45.740Z",
+  "generated_at": "2026-11-04T17:24:03.413Z",
   "browser_source_registry": {
-    "checked_at": "2026-11-03T17:11:39.278Z",
-    "run_id": "41681635725",
+    "checked_at": "2026-11-04T17:23:56.204Z",
+    "run_id": "41877087675",
     "registry_cinemas": 107,
     "registry_bindings": 107,
     "official_urls": 49,
@@ -24,23 +24,23 @@
     }
   },
   "public_window": {
-    "as_of": "2026-11-04",
-    "end_date": "2026-12-04",
-    "rows": 5569,
-    "expected_rows": 5569
+    "as_of": "2026-11-05",
+    "end_date": "2026-12-05",
+    "rows": 5427,
+    "expected_rows": 5427
   },
   "schedule_freshness": {
-    "checked_at": "2026-11-03T17:11:40.136Z",
-    "as_of": "2026-11-04",
-    "stale_screenings_in_window": 899,
-    "stale_marked_this_run": 87,
-    "pending_candidates": 35,
-    "fresh_snapshot_rows": 2639,
+    "checked_at": "2026-11-04T17:23:57.221Z",
+    "as_of": "2026-11-05",
+    "stale_screenings_in_window": 792,
+    "stale_marked_this_run": 16,
+    "pending_candidates": 146,
+    "fresh_snapshot_rows": 3634,
     "last_known_good_rows": 103,
-    "public_excluded_stale_status_rows": 899,
-    "public_excluded_stale_fallback_rows": 168,
+    "public_excluded_stale_status_rows": 792,
+    "public_excluded_stale_fallback_rows": 143,
     "public_excluded_stale_fallback_by_source": {
-      "showtimes-official-api": 86,
+      "showtimes-official-api": 61,
       "vieshow-official-browser": 82
     },
     "fallback_max_age_hours": 168,
@@ -57,7 +57,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-03T17:11:39.341Z",
+        "last_success_at": "2026-11-04T17:23:56.276Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -78,12 +78,12 @@
       "miramar-official-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 192,
-        "fresh_showtimes": 192,
+        "showtimes": 474,
+        "fresh_showtimes": 474,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-03T17:11:39.341Z",
+        "last_success_at": "2026-11-04T17:23:56.276Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -104,12 +104,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 2229,
-        "fresh_showtimes": 2229,
+        "showtimes": 2993,
+        "fresh_showtimes": 2993,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-03T17:11:39.341Z",
+        "last_success_at": "2026-11-04T17:23:56.276Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -135,7 +135,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-03T17:11:39.341Z",
+        "last_success_at": "2026-11-04T17:23:56.276Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -156,12 +156,12 @@
       "spot-huashan-official-schedule": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 101,
-        "fresh_showtimes": 101,
+        "showtimes": 89,
+        "fresh_showtimes": 89,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-03T17:11:39.341Z",
+        "last_success_at": "2026-11-04T17:23:56.276Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -187,7 +187,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-03T17:11:39.341Z",
+        "last_success_at": "2026-11-04T17:23:56.276Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -213,7 +213,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-03T17:11:39.341Z",
+        "last_success_at": "2026-11-04T17:23:56.276Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -239,7 +239,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-03T17:11:39.341Z",
+        "last_success_at": "2026-11-04T17:23:56.276Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -286,12 +286,12 @@
       "eslite-official-browser": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 32,
-        "fresh_showtimes": 32,
+        "showtimes": 134,
+        "fresh_showtimes": 134,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-03T17:11:39.341Z",
+        "last_success_at": "2026-11-04T17:23:56.276Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -469,27 +469,28 @@
     }
   },
   "ids": {
-    "active_movies": 167,
+    "active_movies": 183,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 167,
-    "available": 165,
-    "missing": 2,
+    "active_movies": 183,
+    "available": 172,
+    "missing": 11,
     "canonical_registry": {
-      "unique_active_films": 153,
-      "poster_yes": 151,
-      "poster_no": 2,
+      "unique_active_films": 165,
+      "poster_yes": 155,
+      "poster_no": 10,
       "fetch_states": {
+        "ambiguous": 6,
         "cooldown": 1,
         "found": 2,
         "found_manual": 129,
         "found_official": 15,
-        "not_found": 1,
-        "reused": 5
+        "not_found": 3,
+        "reused": 9
       }
     },
     "missing_movies": [
@@ -498,8 +499,44 @@
         "movie_title": "實境誘捕"
       },
       {
+        "movie_id": "m_faa4e2e2405b",
+        "movie_title": "幸福的麵包"
+      },
+      {
+        "movie_id": "m_979e23cbca0b",
+        "movie_title": "老千：惡魔之歌"
+      },
+      {
+        "movie_id": "m_97d8d79b7330",
+        "movie_title": "全家就弒你家"
+      },
+      {
+        "movie_id": "m_1a58d9aaf13a",
+        "movie_title": "黑球_搶先場"
+      },
+      {
+        "movie_id": "m_772d2f5101f1",
+        "movie_title": "貓貓影片節CVF 2026"
+      },
+      {
+        "movie_id": "m_875cda6b131c",
+        "movie_title": "我們不是什麼"
+      },
+      {
+        "movie_id": "m_4dd219cbc21b",
+        "movie_title": "麥可傑克森"
+      },
+      {
+        "movie_id": "m_d3b997540a52",
+        "movie_title": "(特別場) 全家就弒你家"
+      },
+      {
         "movie_id": "m_a0365cd6725d",
         "movie_title": "2026年11月【和美鎮立圖書館-電影欣賞】"
+      },
+      {
+        "movie_id": "m_9af2c98ddd5c",
+        "movie_title": "下一站，天國!－早安！周日經典電影院"
       }
     ],
     "missing_samples_capped_at": 200,
@@ -525,6 +562,24 @@
       "unmatched_cinema_matches": 6
     },
     "ambiguous_movie_metadata": [
+      {
+        "source": "miramar-official-api",
+        "city": "taipei",
+        "title": "蜘蛛人：重生日",
+        "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
+        "metadata_candidates": [
+          {
+            "title": "蜘蛛人：重生日 曼哈頓頭條場",
+            "title_en": "SPIDER-MAN: BRAND NEW DAY",
+            "poster_url": "https://assets.showtimes.com.tw/images/f3881041db299c5b200b6bb29114a6aa.jpg"
+          },
+          {
+            "title": "蜘蛛人：重生日 友誼牽絆場",
+            "title_en": "SPIDER-MAN: BRAND NEW DAY",
+            "poster_url": "https://assets.showtimes.com.tw/images/0642471261c476efaab24988e1794180.jpg"
+          }
+        ]
+      },
       {
         "source": "miramar-official-api",
         "city": "taipei",
@@ -576,24 +631,6 @@
             "title": "另一個媽咪",
             "title_en": "Other Mommy",
             "poster_url": "https://assets.showtimes.com.tw/images/f2a55c32fb6d4303771ede47236aa859.jpg"
-          }
-        ]
-      },
-      {
-        "source": "miramar-official-api",
-        "city": "taipei",
-        "title": "蜘蛛人：重生日",
-        "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
-        "metadata_candidates": [
-          {
-            "title": "蜘蛛人：重生日 曼哈頓頭條場",
-            "title_en": "SPIDER-MAN: BRAND NEW DAY",
-            "poster_url": "https://assets.showtimes.com.tw/images/f3881041db299c5b200b6bb29114a6aa.jpg"
-          },
-          {
-            "title": "蜘蛛人：重生日 友誼牽絆場",
-            "title_en": "SPIDER-MAN: BRAND NEW DAY",
-            "poster_url": "https://assets.showtimes.com.tw/images/0642471261c476efaab24988e1794180.jpg"
           }
         ]
       }
