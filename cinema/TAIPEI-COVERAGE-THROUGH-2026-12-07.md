@@ -1,8 +1,8 @@
-# Taipei cinema coverage through 2026-12-07
+# Taipei cinema coverage — rolling H+14
 
 ## Goal
 
-Keep `/cinema` useful for a Taipei Airbnb guest through 2026-12-06, with **2026-12-07 as the hard maximum date shown in the UI**.
+Keep `/cinema` useful with an **inclusive rolling window from today through H+14**, calculated in `Asia/Taipei` at page load. The window advances automatically each day.
 
 This is a display horizon, not a deletion horizon. Data after 2026-12-07 may remain stored for later reconciliation and must not be deleted merely because it is outside the current guest-planning window.
 
@@ -18,7 +18,7 @@ This is a display horizon, not a deletion horizon. Data after 2026-12-07 may rem
 
 ## Display horizon
 
-`cinema/cinema.js` limits selectable dates to `2026-12-07`. The repository intentionally retains stored data after that date, including existing 2026-12-16 Taipei rows.
+`cinema/cinema.js` limits selectable dates to Taipei-local today through H+14. Importers retain verified future schedules beyond the UI window, including presales; historical records are never removed due to display limits.
 
 ## Current Taipei gap fill — 2026-11-01
 
@@ -45,12 +45,12 @@ Two zero-row company/legacy master records remain `unknown` and recommendation-i
 
 ## Rolling publication reality
 
-A complete schedule through 2026-12-07 cannot be truthfully prefilled on 2026-11-01 because cinemas publish future sessions on rolling schedules. Therefore the correct policy is:
+A complete H+14 schedule cannot be truthfully prefilled because cinemas publish future sessions on rolling schedules. Therefore the correct policy is:
 
 1. show all already-published verified sessions now;
 2. refresh Taipei sources progressively as new schedules are announced;
 3. never fabricate unpublished future showtimes;
-4. stop exposing dates after 2026-12-07 for this guest-planning window.
+4. show only published dates within the current rolling H+14 UI window.
 
 A recurring Taipei cinema refresh is scheduled for Wednesday and Friday evenings through early December so newly published sessions can be added without repeating this research manually.
 
