@@ -33,9 +33,13 @@ function taipeiNowParts() {
   return { year: get('year'), month: get('month'), day: get('day') };
 }
 
-function mapAudio(format) {
-  const label = String(format || '').match(/[（(]([^）)]+)[）)]/)?.[1]?.trim() || '';
-  return ({ 英: 'en', 國: 'zh', 日: 'ja', 韓: 'ko', 粵: 'yue', 法: 'fr', 德: 'de', 西: 'es', 泰: 'th', 越: 'vi' })[label] || null;
+export function mapAudio(format) {
+  const text = String(format || '');
+  // Only an explicit language label is evidence; never infer from film title,
+  // origin, or the existence of Chinese subtitles.
+  const label = text.match(/[（(]([^）)]+)[）)]/)?.[1]?.trim() || '';
+  const codes = { 英:'en', 英語:'en', 英文:'en', 國:'zh', 國語:'zh', 中文:'zh', 華語:'zh', 日:'ja', 日語:'ja', 日文:'ja', 韓:'ko', 韓語:'ko', 韓文:'ko', 粵:'yue', 粵語:'yue', 法:'fr', 法語:'fr', 德:'de', 德語:'de', 西:'es', 西語:'es', 泰:'th', 泰語:'th', 越:'vi', 越語:'vi' };
+  return codes[label] || null;
 }
 
 function dateMapFromHtml(html) {
