@@ -59,3 +59,27 @@ test('keeps different formats', () => {
 
   assert.equal(mergeAdditive([a], [b]).length, 2);
 });
+
+test('preserves verified audio and subtitles when refresh returns unknown', () => {
+  const old = { ...base, audio_language: 'ja', subtitles: ['zh', 'en'], source: 'official' };
+  const newer = { ...base, audio_language: null, subtitles: null, source: 'official' };
+  const [row] = mergeAdditive([old], [newer]);
+  assert.equal(row.audio_language, 'ja');
+  assert.deepEqual(row.subtitles, ['zh', 'en']);
+});
+
+test('enriches missing language facts without replacing provenance', () => {
+  const old = { ...base, source: 'old', source_url: 'https://example.org/old' };
+  const newer = { ...base, source: 'new', source_url: 'https://example.org/new', audio_language: 'ko', subtitles: ['zh'] };
+  const [row] = mergeAdditive([old], [newer]);
+  assert.equal(row.audio_language, 'ko');
+  assert.deepEqual(row.subtitles, ['zh']);
+  assert.equal(row.source, 'old');
+  assert.equal(row.source_url, 'https://example.org/old');
+});
+
+test('does not replace conflicting verified language metadata', () => {
+  const old = { ...base, audio_language: 'en', subtitles: ['zh'] };
+  const newer = { ...base, audio_language: 'ja', subtitles: ['en'] };
+  assert.deepEqual(mergeAdditive([old], [newer])[0], old);
+});
