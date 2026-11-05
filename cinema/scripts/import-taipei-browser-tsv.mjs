@@ -7,7 +7,7 @@ import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node cinema/scripts/import-taipei-browser-tsv.mjs <snapshot.tsv>');
 
-const MAX_DATE = '2026-12-07';
+// Import all source-verified published dates; the UI applies its own rolling H+14 window.
 const ROOT = path.resolve('cinema/data');
 const DATE_ROOT = path.join(ROOT, 'showtimes', 'by-date');
 const MOVIES_FILE = path.join(ROOT, 'movies', 'index.json');
@@ -57,7 +57,7 @@ const prefixInfo = title => {
 const incoming = [];
 for (const line of dataLines) {
   const [date, rawTitle, timeRaw, formatRaw = ''] = line.split('\t');
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '') || date > MAX_DATE) continue;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '')) continue;
   if (!/^\d{2}:\d{2}$/.test(timeRaw || '') || !rawTitle) continue;
   const info = prefixInfo(rawTitle);
   const format = formatRaw || info.prefix_format || null;
@@ -173,7 +173,7 @@ Object.assign(manifest.coverage, {
     catalog_movies_retained: movieIndex.movies.length
   }
 });
-manifest.display_policy = { ...(manifest.display_policy || {}), max_date: MAX_DATE, reason: 'Airbnb guest planning horizon through 2026-12-07; data after this date may remain stored but is not shown.' };
+manifest.display_policy = { ...(manifest.display_policy || {}), mode: 'rolling', timezone: 'Asia/Taipei', horizon_days: 14, inclusive: true, reason: 'UI shows today through H+14; verified published future sessions remain stored.' }; delete manifest.display_policy.max_date;
 manifest.sources ||= {}; manifest.sources.showtimes ||= {};
 manifest.sources.showtimes[metadata.source] = {
   ok: true, browser_snapshot: true, health: 'healthy', circuit_state: 'closed',
@@ -191,4 +191,4 @@ taipeiStatus.sources ||= {};
 taipeiStatus.sources[metadata.source] = manifest.sources.showtimes[metadata.source];
 await write(TAIPEI_STATUS_FILE, taipeiStatus);
 
-console.log(JSON.stringify({ cinema: cinema.name_zh, source: metadata.source, imported: incoming.length, dates: [...affectedDates].sort(), max_date: MAX_DATE, catalog_movies_retained: movieIndex.movies.length }, null, 2));
+console.log(JSON.stringify({ cinema: cinema.name_zh, source: metadata.source, imported: incoming.length, dates: [...affectedDates].sort(), display_horizon_days: 14, catalog_movies_retained: movieIndex.movies.length }, null, 2));
