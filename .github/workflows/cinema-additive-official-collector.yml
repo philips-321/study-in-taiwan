@@ -24,12 +24,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Install real Chromium for 403 fallback
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
       - name: Unit tests and baseline validation
         run: |
           set -euo pipefail
           node --check cinema/scripts/refresh-direct-official-sources.mjs
           node --check cinema/cinema.js
           node --test cinema/tests/additive-screening-merge.test.mjs
+          node --check cinema/scripts/audit-language-coverage.mjs
           node cinema/scripts/validate-canonical-data.mjs
           node cinema/scripts/validate-canonical-movie-registry.mjs
       - name: Test live official sources without writes
@@ -51,6 +56,7 @@ jobs:
           set -euo pipefail
           node cinema/scripts/refresh-direct-official-sources.mjs --additive --source=all
           node cinema/scripts/validate-canonical-data.mjs
+          node cinema/scripts/audit-language-coverage.mjs --write > /tmp/cinema-language-coverage.json
           # The additive collector adds films to movies/index.json. Keep the canonical
           # movie registry in sync before validating and committing either dataset.
           CINEMA_MAX_POSTER_LOOKUPS=0 CINEMA_MAX_OFFICIAL_POSTER_LOOKUPS=0 node cinema/scripts/sync-canonical-movie-registry.mjs
@@ -66,12 +72,25 @@ jobs:
               p=pathlib.Path(file)
               if not p.exists(): raise SystemExit(f'Deleted historical file: {file}')
               after=json.loads(p.read_text())['showtimes']
-              def signature(row): return json.dumps(row,sort_keys=True,ensure_ascii=False)
-              from collections import Counter
-              oldrows=Counter(map(signature,before))
-              newrows=Counter(map(signature,after))
-              missing=oldrows-newrows
-              if missing: raise SystemExit(f'Historical screening changed or removed: {file}, {sum(missing.values())} rows')
+              # Existing rows may only gain previously absent verified language facts.
+              # Every other field, including provenance, must remain unchanged.
+              def identity(row):
+                  return (row.get('cinema_id'),row.get('movie_id'),row.get('start_time'),row.get('hall'),row.get('format'))
+              after_by_key={}
+              for row in after: after_by_key.setdefault(identity(row),[]).append(row)
+              for old in before:
+                  candidates=after_by_key.get(identity(old),[])
+                  def safe_upgrade(new):
+                      for field,value in old.items():
+                          if field in ('audio_language','subtitles') and (value is None or value == []):
+                              continue
+                          if new.get(field)!=value: return False
+                      for field in ('audio_language','subtitles'):
+                          if field not in old and field in new and not new[field]: return False
+                      return True
+                  found=next((i for i,new in enumerate(candidates) if safe_upgrade(new)),None)
+                  if found is None: raise SystemExit(f'Historical screening removed or language regressed: {file}, {identity(old)}')
+                  candidates.pop(found)
               checked+=1
           print('Historical screening preservation PASS:',checked,'Taipei chunks')
           PY
