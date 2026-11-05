@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mergeAdditive } from '../scripts/additive-screening-merge.mjs';
+import { mapAudio } from '../scripts/sources/vieshow-muvie-songren.mjs';
 
 const base = {
   cinema_id: '1234567890abcdef',
@@ -82,4 +83,13 @@ test('does not replace conflicting verified language metadata', () => {
   const old = { ...base, audio_language: 'en', subtitles: ['zh'] };
   const newer = { ...base, audio_language: 'ja', subtitles: ['en'] };
   assert.deepEqual(mergeAdditive([old], [newer])[0], old);
+});
+
+test('recognizes only explicitly labelled MUVIE audio languages', () => {
+  assert.equal(mapAudio('數位(英)'), 'en');
+  assert.equal(mapAudio('數位（英語）'), 'en');
+  assert.equal(mapAudio('數位（國語）'), 'zh');
+  assert.equal(mapAudio('數位（日語）'), 'ja');
+  assert.equal(mapAudio('數位'), null);
+  assert.equal(mapAudio('English film with Chinese subtitles'), null);
 });
