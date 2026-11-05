@@ -9,6 +9,7 @@ import {
   movieIdForTitle
 } from './movie-schema.mjs';
 import { dedupeRows } from './direct-source-dedup.mjs';
+import { mergeAdditive } from './additive-screening-merge.mjs';
 import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 import { fetchMuvieSongrenShowtimes } from './sources/vieshow-muvie-songren.mjs';
 import { fetchEsliteShowtimes } from './sources/eslite.mjs';
@@ -214,6 +215,7 @@ const rowsByDate = await loadTaipeiDateRows();
 const sourceResults = {};
 const fullNewRows = [];
 const touchedDates = new Set();
+const incomingByDate = new Map();
 
 for (const source of selectedSources) {
   const config = SOURCES[source];
@@ -257,12 +259,28 @@ movieCatalog.identity_policy = 'stable movie_id from normalized primary title; m
 for (const full of fullNewRows) {
   const compact = compactShowtime(full, mappedCinemaIds);
   const date = String(full.start_time).slice(0, 10);
-  const current = rowsByDate.get(date) || [];
-  current.push(compact);
-  rowsByDate.set(date, current);
+  if (additive) {
+    const incoming = incomingByDate.get(date) || [];
+    incoming.push(compact);
+    incomingByDate.set(date, incoming);
+  } else {
+    const current = rowsByDate.get(date) || [];
+    current.push(compact);
+    rowsByDate.set(date, current);
+  }
 }
 
-for (const date of touchedDates) rowsByDate.set(date, dedupeRows(rowsByDate.get(date) || []));
+for (const date of touchedDates) {
+  const existing = rowsByDate.get(date) || [];
+  if (additive) {
+    rowsByDate.set(
+      date,
+      mergeAdditive(existing, incomingByDate.get(date) || [])
+    );
+  } else {
+    rowsByDate.set(date, dedupeRows(existing));
+  }
+}
 
 // Keep metadata once, and only for films still referenced anywhere in the dataset.
 const referencedMovies = new Set([...rowsByDate.values()].flat().map(row => row.movie_id));

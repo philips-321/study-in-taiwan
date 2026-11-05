@@ -105,7 +105,12 @@
   };
   const currentLocationLabels = {en:'Your location','zh-TW':'您的位置',id:'Lokasi Anda',ja:'現在地',ko:'내 위치',vi:'Vị trí của bạn',th:'ตำแหน่งของคุณ'};
   function todayTaiwan() {
-    return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+    const parts=new Intl.DateTimeFormat('en-US',{
+      timeZone:'Asia/Taipei',
+      year:'numeric',month:'2-digit',day:'2-digit'
+    }).formatToParts(new Date());
+    const values=Object.fromEntries(parts.map(p=>[p.type,p.value]));
+    return `${values.year}-${values.month}-${values.day}`;
   }
   // Rolling inclusive display window: today through H+14 in Taipei local time.
   function rollingMaxDate(days=14) {
