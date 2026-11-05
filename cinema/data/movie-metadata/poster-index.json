@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-05T03:53:13.892Z",
+  "generated_at": "2026-11-05T05:14:28.101Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -1412,6 +1412,7 @@
       "poster_url": "https://assets.showtimes.com.tw/images/15eab632a80199b85f3d60c48b480cff.jpg",
       "aliases": [
         "EMPEROR ON STAGE",
+        "Emperor On Stage",
         "Emperor on Stage",
         "世紀初戀 楊麗花"
       ],
@@ -1433,6 +1434,7 @@
         "showtimes-official-metadata",
         "showtimes-official-program",
         "spot-huashan-official-schedule",
+        "spot-taipei-official-schedule",
         "twshowtimes-aggregator-fallback"
       ]
     },
@@ -1677,6 +1679,7 @@
       "movie_title": "名偵探柯南 第30號殺人事件",
       "poster_url": "https://assets.showtimes.com.tw/images/85e4e47a6e3b801d5d7b243d7921d511.jpg",
       "aliases": [
+        "DETECTIVE CONAN THE COUNTERFEIT CASE OF ULTRA 30",
         "DETECTIVE CONAN: THE COUNTERFEIT CASE OF ULTR",
         "Detective Conan: The Counterfeit Case of Ultra 30",
         "名偵探柯南 第30號殺人事件"
@@ -1686,7 +1689,8 @@
         "miramar-official-api",
         "previous-catalog",
         "showtimes-official-metadata",
-        "showtimes-official-program"
+        "showtimes-official-program",
+        "vieshow-muvie-songren-official"
       ]
     },
     {
@@ -1793,6 +1797,7 @@
       "aliases": [
         "VIRGINIA WOOLFS NIGHT AND DAY",
         "Virginia Woolf's NIGHT & DAY",
+        "Virginia Woolf's Night and Day",
         "吳爾芙的夜與日",
         "吳爾芙的夜與日(海報場)"
       ],
@@ -1804,6 +1809,7 @@
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
         "spot-huashan-official-schedule",
+        "spot-taipei-official-schedule",
         "vieshow-official-browser"
       ],
       "preferred": true
@@ -2826,6 +2832,7 @@
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
         "canonical-manual-poster",
+        "canonical-poster-title-match",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p0",
         "current-movie-catalog",
@@ -3110,7 +3117,8 @@
       "sources": [
         "eslite-official-browser",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match"
+        "punctuation-insensitive-title-poster-match",
+        "spot-taipei-official-schedule"
       ]
     },
     {
@@ -3431,10 +3439,13 @@
       "poster_url": "https://assets.showtimes.com.tw/images/43c0cf9508b4f544d4da7270d5572fea.jpg",
       "aliases": [
         "La Bola Negra",
+        "La bola negra",
         "黑球"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "punctuation-insensitive-title-poster-match",
+        "showtimes-official-metadata",
+        "vieshow-muvie-songren-official"
       ]
     },
     {
@@ -3903,6 +3914,19 @@
         "vieshow-official-browser"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_20ac6c742437",
+      "movie_title": "與達賴喇嘛談心： 尋找幸福的智慧",
+      "poster_url": "https://assets.showtimes.com.tw/images/93f8398d37df6a02e49f2cf2fe2af020.jpg",
+      "aliases": [
+        "Wisdom of Happiness: A Heart-to-Heart with the Dalai Lama",
+        "與達賴喇嘛談心： 尋找幸福的智慧"
+      ],
+      "sources": [
+        "punctuation-insensitive-title-poster-match",
+        "spot-taipei-official-schedule"
+      ]
     },
     {
       "movie_id": "m_306e4a2a6ce2",
@@ -4481,6 +4505,7 @@
         "polish-film-institution-image-search",
         "previous-catalog",
         "spot-huashan-official-schedule",
+        "spot-taipei-official-schedule",
         "vieshow-official-browser"
       ],
       "preferred": true
