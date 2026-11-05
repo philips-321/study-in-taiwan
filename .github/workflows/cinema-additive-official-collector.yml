@@ -51,6 +51,9 @@ jobs:
           set -euo pipefail
           node cinema/scripts/refresh-direct-official-sources.mjs --additive --source=all
           node cinema/scripts/validate-canonical-data.mjs
+          # The additive collector adds films to movies/index.json. Keep the canonical
+          # movie registry in sync before validating and committing either dataset.
+          CINEMA_MAX_POSTER_LOOKUPS=0 CINEMA_MAX_OFFICIAL_POSTER_LOOKUPS=0 node cinema/scripts/sync-canonical-movie-registry.mjs
           node cinema/scripts/validate-canonical-movie-registry.mjs
           python3 - <<'PY'
           import json,subprocess,pathlib
