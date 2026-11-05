@@ -1,12 +1,7 @@
 name: Import reviewed Taipei cinema snapshots
 
+# Manual-only: do not spend Actions minutes on each snapshot push.
 on:
-  push:
-    branches:
-      - main
-      - ops/taipei-cinema-through-20261207
-    paths:
-      - 'cinema/data/research/snapshots/**/*.tsv'
   workflow_dispatch:
 
 concurrency:
