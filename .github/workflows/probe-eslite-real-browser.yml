@@ -1,0 +1,40 @@
+name: Probe Eslite with real Chromium
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/probe-eslite-real-browser.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium for actual browser probe
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Compare HTTP headers with real browser and parse Eslite
+        run: |
+          node --input-type=module <<'NODE'
+          import { fetchEsliteShowtimesInBrowser, parseEsliteSchedule } from './cinema/scripts/sources/eslite.mjs';
+          const url='https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1';
+          const chrome='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+          for(const [label,headers] of [
+            ['node-default',{}],
+            ['chrome-headers',{'User-Agent':chrome,'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8','Accept-Language':'zh-TW,zh;q=0.9,en;q=0.8'}]
+          ]){
+            try{const r=await fetch(url,{headers,signal:AbortSignal.timeout(25000)});const html=await r.text();console.log('HTTP_PROBE',JSON.stringify({label,url,status:r.status,finalUrl:r.url,bytes:html.length,parsedRows:r.ok?parseEsliteSchedule(html).length:null,server:r.headers.get('server')}));}
+            catch(e){console.log('HTTP_PROBE_ERROR',JSON.stringify({label,error:String(e)}));}
+          }
+          try{
+            const rows=await fetchEsliteShowtimesInBrowser();
+            console.log('BROWSER_PROBE',JSON.stringify({url,status:200,parsedRows:rows.length,firstRow:rows[0]?{date:rows[0].date,time:rows[0].time,subtitles:rows[0].subtitles,audio_language:rows[0].audio_language}:null}));
+          }catch(e){console.log('BROWSER_PROBE_ERROR',JSON.stringify({url,error:String(e)}));process.exitCode=1;}
+          NODE
