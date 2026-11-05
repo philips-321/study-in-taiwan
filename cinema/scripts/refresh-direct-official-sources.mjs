@@ -45,6 +45,7 @@ const SOURCES = {
 
 const args = process.argv.slice(2);
 const dryRun = args.includes('--dry-run');
+const additive = args.includes('--additive');
 const snapshotDir = args.find(arg => arg.startsWith('--snapshot-dir='))?.slice('--snapshot-dir='.length);
 const sourceArg = args.find(arg => arg.startsWith('--source='))?.slice('--source='.length) || 'all';
 const selectedSources = sourceArg === 'all' ? Object.keys(SOURCES) : sourceArg.split(',').map(v => v.trim()).filter(Boolean);
@@ -228,8 +229,8 @@ for (const source of selectedSources) {
       if (!mappedCinemaIds.has(row.cinema_id)) throw new Error(`${config.label} cinema_id not found in Taipei master: ${row.cinema_id || row.cinema_name}`);
     }
 
-    // Only a successfully fetched source is replaced. A failed source keeps its last-known-good rows.
-    for (const [date, existing] of rowsByDate) {
+    // Additive mode never removes prior screenings, even if the source no longer lists them.
+    if (!additive) for (const [date, existing] of rowsByDate) {
       const filtered = existing.filter(row => row.source !== source);
       if (filtered.length !== existing.length) {
         rowsByDate.set(date, filtered);
@@ -251,7 +252,7 @@ for (const source of selectedSources) {
 const posterDonors = await loadPosterDonors(ROOT, previousMovies.movies || []);
 const movieCatalog = buildMovieIndex(fullNewRows, [], previousMovies.movies || [], posterDonors);
 movieCatalog.generated_at = NOW;
-await writePosterIndex(ROOT, [...posterDonors, ...movieCatalog.movies]);
+if (!dryRun) await writePosterIndex(ROOT, [...posterDonors, ...movieCatalog.movies]);
 movieCatalog.identity_policy = 'stable movie_id from normalized primary title; metadata stored once in this catalog';
 for (const full of fullNewRows) {
   const compact = compactShowtime(full, mappedCinemaIds);
@@ -359,6 +360,7 @@ if (!dryRun) {
 
 console.log(JSON.stringify({
   dry_run: dryRun,
+  additive,
   generated_at: NOW,
   selected_sources: selectedSources,
   touched_dates: [...touchedDates].sort(),
