@@ -40,6 +40,8 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(metadata.reviewed_on)) throw new Error('reviewed
 const cinemasDoc = await read(CINEMAS_FILE);
 const cinema = cinemasDoc.cinemas.find(item => item.id === metadata.cinema_id);
 if (!cinema) throw new Error(`Unknown Taipei cinema_id ${metadata.cinema_id}`);
+if (cinema.operational_status === 'closed' || cinema.recommendation_eligible === false && /closed/i.test(cinema.status_evidence || '')) throw new Error(`Refusing import for closed cinema ${metadata.cinema_id}`);
+if (metadata.source_role === 'aggregator' && !metadata.official_source_failure_reason) throw new Error('Aggregator snapshot requires documented official_source_failure_reason');
 
 const prefixInfo = title => {
   const value = String(title || '').trim();
@@ -93,7 +95,10 @@ for (const row of incoming) {
   const key = screeningIdentityKey(row);
   const same = rows.findIndex(item => screeningIdentityKey(item) === key);
   if (same < 0) rows.push(row);
-  else if (sourcePriority(row.source) > sourcePriority(rows[same].source)) rows[same] = row;
+  else if (sourcePriority(row.source) > sourcePriority(rows[same].source)) {
+    // Preserve existing provenance and screening identity; never silently overwrite a historical row.
+    rows[same] = { ...rows[same], source_alternative: row.source, source_alternative_url: row.source_url };
+  }
 }
 
 const posterDonors = await loadPosterDonors(ROOT, previousMovies.movies || []);
@@ -110,7 +115,7 @@ for (const [date, rows] of rowsByDate) {
   for (const row of rows) {
     const key = screeningIdentityKey(row);
     const prior = deduped.get(key);
-    if (!prior || sourcePriority(row.source) > sourcePriority(prior.source)) deduped.set(key, row);
+    if (!prior) deduped.set(key, row);
   }
   const sorted = [...deduped.values()].sort((a,b) => String(a.start_time).localeCompare(String(b.start_time)) || String(a.cinema_id).localeCompare(String(b.cinema_id)));
   await write(path.join(DATE_ROOT, date, 'taipei.json'), {
@@ -121,10 +126,12 @@ for (const [date, rows] of rowsByDate) {
 
 // A fresh verified schedule proves this cinema is currently operating.
 const now = new Date().toISOString();
-cinema.operational_status = 'active';
-cinema.recommendation_eligible = true;
-cinema.status_evidence = 'fresh-showtime-source';
-cinema.status_checked_at = now;
+if (metadata.source_role !== 'aggregator' && metadata.operational_status_verified === 'true') {
+  cinema.operational_status = 'active';
+  cinema.recommendation_eligible = true;
+  cinema.status_evidence = 'verified-operating-official-schedule';
+  cinema.status_checked_at = now;
+}
 await write(CINEMAS_FILE, cinemasDoc);
 
 // Recompute manifest/index/coverage without deleting any date chunk or movie catalog record.
