@@ -121,3 +121,15 @@ This section is the owner's latest instruction and **takes precedence over any c
 - Preserve functional workflows. Replace or disable a working workflow only after the replacement has passed real validation, or when the owner explicitly instructs it. Prevent destructive updates, lost records, concurrent write conflicts, and infinite trigger loops.
 - Verify repository visibility before applying public/private-specific rules. Do not assume public-repo exceptions apply to downstream private workflows or other separately billed services.
 - The owner explicitly prefers reliable and comprehensive automation over saving Actions minutes in public repositories. Earlier instructions restricting public-repo workflows for quota conservation are superseded.
+
+<!-- BEGIN OWNER ACTIONS VISIBILITY POLICY v2 -->
+## Owner directive: GitHub Actions by repository visibility (2026-11-05)
+
+This is the latest owner instruction. It overrides conflicting older shared Actions budget, reservation, notification, and pause rules **for public repositories only**.
+
+- PUBLIC repositories: use standard GitHub-hosted Actions freely, as often as needed for CI/CD, tests, collectors, validation, monitoring, deployment, and refreshes. Do not reduce frequency, disable or migrate a working workflow solely to save included Actions minutes. No private-budget snapshot, master-ledger reservation, or advance quota notice is required for ordinary public-repo Actions.
+- PRIVATE repositories: retain the existing shared Actions budget policy, cost monitoring, reservations, and safeguards. Do not interpret this public-repo exception as permission to spend private Actions minutes without checks.
+- Verify actual repository visibility before applying either rule. Downstream private workflows, larger/paid runners, Cloudflare resources, and other billable services remain separate; do not enable paid overage without owner authorization.
+- Preserve functional workflows. Validate replacements before disabling existing workflows, except when the owner explicitly requests otherwise. Prevent destructive data updates, concurrency conflicts, and runaway trigger loops.
+- Reliability and comprehensive automation take priority over GitHub Actions minute conservation in PUBLIC repositories.
+<!-- END OWNER ACTIONS VISIBILITY POLICY v2 -->
