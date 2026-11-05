@@ -1,0 +1,39 @@
+name: Verify live cinema publication
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-live-cinema-publication.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify public domain through browser-like HTTPS request
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request, urllib.error, json, hashlib, sys
+          base='https://study-in-taiwan.com'
+          headers={'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36','Accept':'text/html,application/json;q=0.9,*/*;q=0.8','Cache-Control':'no-cache'}
+          failed=False
+          for path in ['/cinema/','/cinema/data/canonical/manifest.json','/cinema/data/canonical/movie-registry.jsonl','/cinema/data/movies/index.json']:
+              url=base+path
+              try:
+                  req=urllib.request.Request(url,headers=headers)
+                  with urllib.request.urlopen(req,timeout=25) as res:
+                      data=res.read()
+                      print('URL',url,'status',res.status,'bytes',len(data),'cf-cache-status',res.headers.get('CF-Cache-Status'),'etag',res.headers.get('ETag'))
+                      if path.endswith('manifest.json'):
+                          j=json.loads(data)
+                          print('LIVE_CANONICAL',json.dumps({'updated_at':j.get('updated_at'),'unique_films':j.get('movie_registry',{}).get('unique_films'),'screening_rows':j.get('screening_rows')}))
+                          if j.get('movie_registry',{}).get('unique_films')!=241 or j.get('updated_at')!='2026-11-05T05:14:21.594Z':
+                              failed=True;print('FAIL: live canonical manifest does not match published production data')
+                      if path=='/cinema/':
+                          if b'<html' not in data.lower():failed=True;print('FAIL: cinema page missing HTML')
+              except Exception as e:
+                  failed=True;print('FAIL',url,repr(e))
+          if failed:sys.exit(1)
+          print('PASS: public domain serves updated canonical production manifest')
+          PY
