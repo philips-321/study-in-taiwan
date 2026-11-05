@@ -1,11 +1,11 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-04T17:24:03.413Z",
+  "generated_at": "2026-11-05T03:49:02.752Z",
   "public_window": {
     "as_of": "2026-11-05",
     "end_date": "2026-12-05",
-    "rows": 5427,
-    "expected_rows": 5427
+    "rows": 5517,
+    "expected_rows": 5517
   },
   "ids": {
     "active_movies": 183,
@@ -23,13 +23,11 @@
       "poster_yes": 155,
       "poster_no": 10,
       "fetch_states": {
-        "ambiguous": 6,
-        "cooldown": 1,
-        "found": 2,
+        "cooldown": 7,
         "found_manual": 129,
         "found_official": 15,
         "not_found": 3,
-        "reused": 9
+        "reused": 11
       }
     },
     "missing_movies": [

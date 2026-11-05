@@ -1,29 +1,11 @@
 {
-  "generated_at": "2026-11-04T17:23:29.890Z",
+  "generated_at": "2026-11-05T03:48:33.249Z",
   "counts": {
     "ambiguous_movie_metadata": 4,
     "ambiguous_cinema_matches": 0,
-    "unmatched_cinema_matches": 6
+    "unmatched_cinema_matches": 10
   },
   "ambiguous_movie_metadata": [
-    {
-      "source": "miramar-official-api",
-      "city": "taipei",
-      "title": "蜘蛛人：重生日",
-      "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
-      "metadata_candidates": [
-        {
-          "title": "蜘蛛人：重生日 曼哈頓頭條場",
-          "title_en": "SPIDER-MAN: BRAND NEW DAY",
-          "poster_url": "https://assets.showtimes.com.tw/images/f3881041db299c5b200b6bb29114a6aa.jpg"
-        },
-        {
-          "title": "蜘蛛人：重生日 友誼牽絆場",
-          "title_en": "SPIDER-MAN: BRAND NEW DAY",
-          "poster_url": "https://assets.showtimes.com.tw/images/0642471261c476efaab24988e1794180.jpg"
-        }
-      ]
-    },
     {
       "source": "miramar-official-api",
       "city": "taipei",
@@ -77,6 +59,24 @@
           "poster_url": "https://assets.showtimes.com.tw/images/f2a55c32fb6d4303771ede47236aa859.jpg"
         }
       ]
+    },
+    {
+      "source": "miramar-official-api",
+      "city": "taipei",
+      "title": "蜘蛛人：重生日",
+      "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
+      "metadata_candidates": [
+        {
+          "title": "蜘蛛人：重生日 曼哈頓頭條場",
+          "title_en": "SPIDER-MAN: BRAND NEW DAY",
+          "poster_url": "https://assets.showtimes.com.tw/images/f3881041db299c5b200b6bb29114a6aa.jpg"
+        },
+        {
+          "title": "蜘蛛人：重生日 友誼牽絆場",
+          "title_en": "SPIDER-MAN: BRAND NEW DAY",
+          "poster_url": "https://assets.showtimes.com.tw/images/0642471261c476efaab24988e1794180.jpg"
+        }
+      ]
     }
   ],
   "ambiguous_cinema_matches": [],
@@ -101,6 +101,18 @@
     },
     {
       "source": "moc-culture-movie-api",
+      "city": "new-taipei",
+      "venue": "國家電影及視聽文化中心-大影格",
+      "address": "新北市新莊區文藝路2號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "new-taipei",
+      "venue": "國家電影及視聽文化中心-小影格",
+      "address": "新北市新莊區文藝路2號"
+    },
+    {
+      "source": "moc-culture-movie-api",
       "city": "kaohsiung",
       "venue": "內惟藝術中心 Reel one 1廳",
       "address": "高雄市鼓山區馬卡道路329號"
@@ -116,6 +128,18 @@
       "city": "kaohsiung",
       "venue": "高雄市電影館3樓",
       "address": "高雄市鹽埕區河西路10號"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "new-taipei",
+      "venue": "府中15",
+      "address": "新北市板橋區府中路15號B1"
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "unknown",
+      "venue": "全台首輪上映戲院",
+      "address": "無無."
     }
   ],
   "samples_capped": 200

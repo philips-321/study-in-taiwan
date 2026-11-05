@@ -1,10 +1,10 @@
 {
   "schema": "CINEMA_BROWSER_SOURCE_RUN",
   "schema_version": 1,
-  "run_id": "41877087675",
+  "run_id": "41963833791",
   "workflow": "Update Taiwan cinema JSON",
-  "commit_sha": "5466f957c90b308594c204d6dbf3d7095b201129",
-  "checked_at": "2026-11-04T17:23:56.204Z",
+  "commit_sha": "3ee3a908ff52b53b75a358f6c6e8f38b121934b0",
+  "checked_at": "2026-11-05T03:48:58.473Z",
   "taipei_date": "2026-11-05",
   "browser": "Playwright Chromium",
   "registry_file": "cinema/data/canonical/cinema-source-registry.json",
@@ -50,8 +50,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_066bac028bf2da57_UNRESOLVED",
@@ -65,7 +65,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_06e26c038c52d33d_01",
@@ -79,8 +79,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_07a7306480fdbf03_UNRESOLVED",
@@ -94,7 +94,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_0a13c96a4123d0b5_01",
@@ -108,8 +108,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_0bc190790a97a92b_01",
@@ -127,7 +127,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_0f4e87f63d25b981_UNRESOLVED",
@@ -141,7 +141,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_1059473f086628f7_UNRESOLVED",
@@ -155,7 +155,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_10c63f8de8649fcc_UNRESOLVED",
@@ -169,7 +169,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_12d76a4689377275_UNRESOLVED",
@@ -183,7 +183,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "checked_at": "2026-11-05T03:48:49.257Z"
     },
     {
       "binding_id": "CSB_14587ce107fa2a13_UNRESOLVED",
@@ -197,7 +197,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.844Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_14904f55b4c30ea4_01",
@@ -212,21 +212,21 @@
       "host": "halarcity.com.tw",
       "request_url": "https://halarcity.com.tw/Browsing/Cinemas/Details/0000000001",
       "page_title": "哈拉影城",
-      "body_length": 2071,
-      "time_marker_count": 399,
-      "date_marker_count": 180,
+      "body_length": 2009,
+      "time_marker_count": 389,
+      "date_marker_count": 179,
       "sample_times": [
         "22:10",
         "16:00",
         "15:00",
         "15:15",
         "12:40",
-        "10:00",
         "15:20",
-        "9:45"
+        "9:45",
+        "10:00"
       ],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.197Z"
+      "checked_at": "2026-11-05T03:48:58.467Z"
     },
     {
       "binding_id": "CSB_14b8214762818432_01",
@@ -244,7 +244,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_1564a49f71c52c4a_UNRESOLVED",
@@ -258,7 +258,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_18ed2c265bbcc977_01",
@@ -273,9 +273,9 @@
       "host": "www.ccmovie.com.tw",
       "request_url": "https://www.ccmovie.com.tw/product.php?_path=product_showtimes",
       "page_title": "【親親影城官網 Chin Chin】最新電影放映時刻查詢！",
-      "body_length": 2409,
-      "time_marker_count": 137,
-      "date_marker_count": 42,
+      "body_length": 2284,
+      "time_marker_count": 92,
+      "date_marker_count": 28,
       "sample_times": [
         "10:30",
         "12:40",
@@ -287,7 +287,7 @@
         "10:20"
       ],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.198Z"
+      "checked_at": "2026-11-05T03:48:58.468Z"
     },
     {
       "binding_id": "CSB_1b9c4a9b7ed385ea_01",
@@ -301,8 +301,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_1cb2ad9bb7e14f9f_01",
@@ -316,8 +316,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_1fd71390ad48865f_UNRESOLVED",
@@ -331,7 +331,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_21ea5948a31721df_01",
@@ -345,8 +345,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_2677bacaeb7d8d3d_01",
@@ -360,8 +360,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_29fa20640d772416_01",
@@ -375,8 +375,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_2e33433ca052e5dd_01",
@@ -390,8 +390,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_2f06b3e2df1c96f3_UNRESOLVED",
@@ -405,7 +405,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_3071c450f8e42deb_01",
@@ -419,8 +419,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_31d9eecd32050b08_UNRESOLVED",
@@ -434,7 +434,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_3420199bc644cf09_UNRESOLVED",
@@ -448,7 +448,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_36eb08cbc0a2c346_01",
@@ -462,8 +462,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_3831da6ae664fad3_01",
@@ -477,8 +477,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_3ac5369b1e1edf71_01",
@@ -498,7 +498,7 @@
       "date_marker_count": 0,
       "sample_times": [],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.198Z"
+      "checked_at": "2026-11-05T03:48:58.468Z"
     },
     {
       "binding_id": "CSB_40b1b5887858aded_01",
@@ -513,21 +513,21 @@
       "host": "nantoutheater.com",
       "request_url": "https://nantoutheater.com/showings?date=2026-11-05&range=all",
       "page_title": "南投戲院 Nantou Theater",
-      "body_length": 955,
-      "time_marker_count": 19,
+      "body_length": 923,
+      "time_marker_count": 16,
       "date_marker_count": 9,
       "sample_times": [
         "16:00",
         "12:30",
         "19:00",
-        "10:30",
         "12:40",
         "14:40",
         "18:50",
-        "16:30"
+        "16:30",
+        "21:30"
       ],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.199Z"
+      "checked_at": "2026-11-05T03:48:58.469Z"
     },
     {
       "binding_id": "CSB_43ef84bf160e6886_01",
@@ -542,10 +542,10 @@
       "host": "meet.eslite.com",
       "request_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
       "pages_requested_by_adapter": 1,
-      "schedule_rows": 134,
+      "schedule_rows": 131,
       "adapter_id": "eslite-official-browser",
       "error": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_454a06074601ed9c_UNRESOLVED",
@@ -559,7 +559,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_4553f6d29b7e0ab2_UNRESOLVED",
@@ -573,7 +573,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_47df5fba03472430_UNRESOLVED",
@@ -587,7 +587,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_48dd9d30f73ece53_UNRESOLVED",
@@ -601,7 +601,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_4fa2390a26e73a65_UNRESOLVED",
@@ -615,7 +615,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_5130fcc97b11b16d_UNRESOLVED",
@@ -629,7 +629,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_58aceabee919fb31_UNRESOLVED",
@@ -643,7 +643,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_5a8e854557da8367_01",
@@ -658,7 +658,7 @@
       "host": "www.shanmingcinema.com.tw",
       "request_url": "https://www.shanmingcinema.com.tw/showtimes.php",
       "page_title": "時刻查詢|山明影城",
-      "body_length": 329,
+      "body_length": 349,
       "time_marker_count": 2,
       "date_marker_count": 0,
       "sample_times": [
@@ -666,7 +666,7 @@
         "22:00"
       ],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.199Z"
+      "checked_at": "2026-11-05T03:48:58.469Z"
     },
     {
       "binding_id": "CSB_5c35b8e61739d367_01",
@@ -684,7 +684,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_61cc60cb6f32651f_UNRESOLVED",
@@ -698,7 +698,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_63bd8f4351bab496_01",
@@ -716,7 +716,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_65d825b5140e9fa9_UNRESOLVED",
@@ -730,7 +730,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_6763778191e9e511_01",
@@ -748,7 +748,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_680545a43a5093a6_01",
@@ -766,7 +766,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_692aebc297877ec2_01",
@@ -780,8 +780,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_699829fd94ac6d73_UNRESOLVED",
@@ -795,7 +795,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_6dcee18b54059d96_UNRESOLVED",
@@ -809,7 +809,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_719e1a68f2f3f9f5_01",
@@ -823,8 +823,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_74592dcd403b6eb2_01",
@@ -842,7 +842,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_751de215a8ca075a_UNRESOLVED",
@@ -856,7 +856,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_757bc5cac5b68cc9_01",
@@ -874,7 +874,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_758a39fe5ae9a51d_01",
@@ -888,8 +888,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_785b0aaafc496ce0_01",
@@ -904,21 +904,21 @@
       "host": "booking.mldcinema.com",
       "request_url": "https://booking.mldcinema.com/Browsing/QuickTickets/Compare",
       "page_title": "台鋁影城",
-      "body_length": 6008,
-      "time_marker_count": 381,
+      "body_length": 5945,
+      "time_marker_count": 374,
       "date_marker_count": 0,
       "sample_times": [
-        "11:20",
         "05:30",
         "01:50",
         "07:10",
         "03:00",
         "07:40",
         "11:50",
-        "02:00"
+        "02:00",
+        "04:50"
       ],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.201Z"
+      "checked_at": "2026-11-05T03:48:58.471Z"
     },
     {
       "binding_id": "CSB_7b209adf3838f023_01",
@@ -933,8 +933,8 @@
       "host": "ximen.centuryasia.com.tw",
       "request_url": "https://ximen.centuryasia.com.tw/ticket_online.aspx",
       "page_title": "喜樂時代影城-今日店",
-      "body_length": 1940,
-      "time_marker_count": 50,
+      "body_length": 1905,
+      "time_marker_count": 46,
       "date_marker_count": 0,
       "sample_times": [
         "10:30",
@@ -947,7 +947,7 @@
         "12:50"
       ],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.201Z"
+      "checked_at": "2026-11-05T03:48:58.471Z"
     },
     {
       "binding_id": "CSB_7b54c922f6cc6f74_01",
@@ -965,7 +965,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_7cf79c12e5a5270c_01",
@@ -979,8 +979,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_7ecfd57492a43ef3_01",
@@ -1000,7 +1000,7 @@
       "date_marker_count": 5,
       "sample_times": [],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.201Z"
+      "checked_at": "2026-11-05T03:48:58.471Z"
     },
     {
       "binding_id": "CSB_7f9f49b0f891b19e_UNRESOLVED",
@@ -1014,7 +1014,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_80090ba98f0571f6_UNRESOLVED",
@@ -1028,7 +1028,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_84c8a585cab096b5_UNRESOLVED",
@@ -1042,7 +1042,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_8a2c78238c246672_01",
@@ -1057,11 +1057,11 @@
       "host": "www.sbcmovies.com.tw",
       "request_url": "https://www.sbcmovies.com.tw/browsing/Cinemas/Details/1001",
       "page_title": "星橋國際影城",
-      "body_length": 2617,
-      "time_marker_count": 531,
+      "body_length": 2427,
+      "time_marker_count": 519,
       "date_marker_count": 0,
       "sample_times": [
-        "12:30",
+        "08:20",
         "04:05",
         "07:55",
         "08:25",
@@ -1071,7 +1071,7 @@
         "10:00"
       ],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.202Z"
+      "checked_at": "2026-11-05T03:48:58.472Z"
     },
     {
       "binding_id": "CSB_8e09faf24bf0485d_UNRESOLVED",
@@ -1085,7 +1085,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_8f25580bc6455651_UNRESOLVED",
@@ -1099,7 +1099,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_9593243720ef4f8a_UNRESOLVED",
@@ -1113,7 +1113,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_9598ae26696bb28a_UNRESOLVED",
@@ -1127,7 +1127,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_97564919bff574aa_01",
@@ -1141,8 +1141,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_9933d32740e38892_UNRESOLVED",
@@ -1156,7 +1156,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_9dfa1238328c40c7_UNRESOLVED",
@@ -1170,7 +1170,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_a07e94ac5664ad37_UNRESOLVED",
@@ -1184,7 +1184,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_a15851ac9eeccb48_UNRESOLVED",
@@ -1198,7 +1198,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_a254972ff2dbb85b_UNRESOLVED",
@@ -1212,7 +1212,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_a56fdffcc50eaa98_UNRESOLVED",
@@ -1226,7 +1226,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_a8e6f550f7aee40b_01",
@@ -1244,7 +1244,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_a8ee8dc17714ae2d_UNRESOLVED",
@@ -1258,7 +1258,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_a976a9f1cdf76e8e_01",
@@ -1272,8 +1272,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_ac63d7b0f653cff3_01",
@@ -1291,7 +1291,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.845Z"
+      "checked_at": "2026-11-05T03:48:49.258Z"
     },
     {
       "binding_id": "CSB_afa3562511df19d5_01",
@@ -1320,7 +1320,7 @@
         "13:50"
       ],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.203Z"
+      "checked_at": "2026-11-05T03:48:58.472Z"
     },
     {
       "binding_id": "CSB_b11ec81197b97388_UNRESOLVED",
@@ -1334,7 +1334,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_b2156062da72f956_UNRESOLVED",
@@ -1348,7 +1348,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_b311f3204b81a053_UNRESOLVED",
@@ -1362,7 +1362,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_b7843607f93e577c_01",
@@ -1380,7 +1380,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_b8450eabc146ac0f_UNRESOLVED",
@@ -1394,7 +1394,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_c36f64f601a18c19_01",
@@ -1414,7 +1414,7 @@
       "date_marker_count": 0,
       "sample_times": [],
       "error": null,
-      "checked_at": "2026-11-04T17:23:56.203Z"
+      "checked_at": "2026-11-05T03:48:58.472Z"
     },
     {
       "binding_id": "CSB_c417e32ef975fafc_UNRESOLVED",
@@ -1428,7 +1428,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_c49578bdeb514807_UNRESOLVED",
@@ -1442,7 +1442,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_c697fdf332cf0850_UNRESOLVED",
@@ -1456,7 +1456,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_c7dc5005bb5aaae9_UNRESOLVED",
@@ -1470,7 +1470,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_ca71a7fc4415892a_UNRESOLVED",
@@ -1484,7 +1484,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_cf2a2d27ba5ba2a8_UNRESOLVED",
@@ -1498,7 +1498,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_cfcdd8c5a019bd3f_01",
@@ -1512,8 +1512,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_d0408434529e9e36_01",
@@ -1531,7 +1531,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_d9426a1d2bce86db_UNRESOLVED",
@@ -1545,7 +1545,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_d9a17e260f26a5ec_UNRESOLVED",
@@ -1559,7 +1559,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_dc423d2c07f6571c_UNRESOLVED",
@@ -1573,7 +1573,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_df48f3de96b1afc2_UNRESOLVED",
@@ -1587,7 +1587,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_e060ce6fcd128989_UNRESOLVED",
@@ -1601,7 +1601,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_e20ff150d90cfea0_UNRESOLVED",
@@ -1615,7 +1615,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_eb8dfd87a1064105_01",
@@ -1633,7 +1633,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_ec4911ca1e68c895_UNRESOLVED",
@@ -1647,7 +1647,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_ee199f2acd555b37_01",
@@ -1661,8 +1661,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_f8d37545467089d9_01",
@@ -1676,8 +1676,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_fb49c0eb0cd2b7cd_UNRESOLVED",
@@ -1691,7 +1691,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_fb50a15c37b733c3_01",
@@ -1705,8 +1705,8 @@
       "http_status": 403,
       "host": "www.vscinemas.com.tw",
       "request_url": null,
-      "retry_after": "2026-11-10T17:11:30.343Z",
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "retry_after": "2026-11-11T17:23:44.846Z",
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_fb93ad5f8950d65e_UNRESOLVED",
@@ -1720,7 +1720,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_fc41f9ba7672f9c4_01",
@@ -1738,7 +1738,7 @@
       "schedule_rows": 0,
       "adapter_id": "showtimes-official-browser",
       "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     },
     {
       "binding_id": "CSB_ffc2e1b99a630f3d_UNRESOLVED",
@@ -1752,7 +1752,7 @@
       "http_status": null,
       "host": null,
       "request_url": null,
-      "checked_at": "2026-11-04T17:23:44.846Z"
+      "checked_at": "2026-11-05T03:48:49.259Z"
     }
   ]
 }

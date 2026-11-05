@@ -3,9 +3,9 @@
   "as_of": "2026-11-05",
   "days": 30,
   "end_date": "2026-12-05",
-  "generated_at": "2026-11-04T17:24:03.099Z",
-  "input_rows": 22394,
-  "public_rows": 5427,
+  "generated_at": "2026-11-05T03:49:02.490Z",
+  "input_rows": 22484,
+  "public_rows": 5517,
   "excluded_by_window": 16032,
   "excluded_stale_status_rows": 792,
   "excluded_stale_fallback_rows": 143,
@@ -15,13 +15,13 @@
   },
   "fallback_max_age_hours": 168,
   "files": 102,
-  "sha256": "d64d3a36bfdc3deeec2ac82209ff466246994c21989584ef54683e6a416221e6",
+  "sha256": "9ed8c76716945128f31f5b129e1f4bf09dc404915ddf330ba1d5e713722ffef0",
   "showtimes_index": {
     "2026-11-05": {
-      "total": 1827,
+      "total": 1860,
       "cities": {
         "new-taipei": 272,
-        "kaohsiung": 229,
+        "kaohsiung": 262,
         "taichung": 248,
         "taipei": 772,
         "taoyuan": 43,
@@ -52,11 +52,11 @@
       }
     },
     "2026-11-07": {
-      "total": 628,
+      "total": 646,
       "cities": {
-        "kaohsiung": 100,
+        "kaohsiung": 115,
         "taipei": 217,
-        "new-taipei": 169,
+        "new-taipei": 172,
         "yunlin": 3,
         "taoyuan": 46,
         "pingtung": 34,
@@ -85,30 +85,30 @@
       }
     },
     "2026-11-10": {
-      "total": 478,
+      "total": 505,
       "cities": {
         "new-taipei": 141,
         "taipei": 208,
         "kaohsiung": 79,
         "taoyuan": 43,
-        "pingtung": 7
+        "pingtung": 34
       }
     },
     "2026-11-11": {
-      "total": 460,
+      "total": 471,
       "cities": {
         "pingtung": 34,
         "new-taipei": 137,
-        "taipei": 167,
+        "taipei": 178,
         "kaohsiung": 79,
         "taoyuan": 43
       }
     },
     "2026-11-08": {
-      "total": 611,
+      "total": 612,
       "cities": {
         "new-taipei": 171,
-        "taipei": 197,
+        "taipei": 198,
         "pingtung": 34,
         "taichung": 28,
         "taoyuan": 43,
@@ -256,7 +256,7 @@
     }
   },
   "coverage": {
-    "showtime_rows": 5427,
+    "showtime_rows": 5517,
     "explicit_subtitle_rows": 228
   }
 }

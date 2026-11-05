@@ -3,19 +3,19 @@
   "version": 1,
   "source": "daily collector snapshots merged by screening_id",
   "parser_version": "canonical-converter-v1",
-  "screening_rows": 22394,
+  "screening_rows": 22484,
   "unresolved_rows": 0,
   "partitions": {
     "2026-01": 2,
     "2026-10": 8347,
-    "2026-11": 13959,
+    "2026-11": 14049,
     "2026-12": 86
   },
   "migration_status": "active",
   "public_view": {
     "window_days": 30,
     "generated_as_of": "2026-11-05",
-    "rows": 5427,
+    "rows": 5517,
     "excluded_by_window": 16032,
     "excluded_stale_status_rows": 792,
     "excluded_stale_fallback_rows": 143,
@@ -24,35 +24,35 @@
       "vieshow-official-browser": 82
     },
     "fallback_max_age_hours": 168,
-    "sha256": "d64d3a36bfdc3deeec2ac82209ff466246994c21989584ef54683e6a416221e6"
+    "sha256": "9ed8c76716945128f31f5b129e1f4bf09dc404915ddf330ba1d5e713722ffef0"
   },
-  "updated_at": "2026-11-04T17:23:57.623Z",
+  "updated_at": "2026-11-05T03:48:59.689Z",
   "movie_registry": {
     "file": "movie-registry.jsonl",
     "unique_films": 237,
     "poster_yes": 222,
     "poster_no": 15,
-    "poster_lookups_attempted_this_run": 18,
-    "poster_fetches_this_run": 2,
+    "poster_lookups_attempted_this_run": 0,
+    "poster_fetches_this_run": 0,
     "official_poster_calendar_requests_this_run": 1,
     "official_poster_schedule_requests_this_run": 1,
     "official_poster_page_requests_this_run": 0,
     "official_poster_matches_this_run": 0,
     "poster_lookups_deferred": 0,
-    "ambiguous_poster_matches": 6,
-    "last_poster_sync_at": "2026-11-04T17:23:57.623Z"
+    "ambiguous_poster_matches": 0,
+    "last_poster_sync_at": "2026-11-05T03:48:59.689Z"
   },
   "generated_at": "2026-11-01T19:41:30.407Z",
   "schedule_reconciliation": {
-    "checked_at": "2026-11-04T17:23:57.221Z",
+    "checked_at": "2026-11-05T03:48:59.355Z",
     "as_of": "2026-11-05",
     "window_days": 30,
-    "stale_marked_this_run": 16,
+    "stale_marked_this_run": 0,
     "stale_screenings_in_window": 792,
-    "pending_candidates": 146,
-    "fresh_snapshot_rows": 3634,
+    "pending_candidates": 219,
+    "fresh_snapshot_rows": 3735,
     "last_known_good_rows": 103,
-    "scopes_without_fresh_evidence": 522,
+    "scopes_without_fresh_evidence": 460,
     "policy": "A screening is marked stale only after it is absent from two consecutive Taiwan-day snapshots in which the same source, cinema, and date scope still returns fresh rows. Stale rows remain archived and are excluded from the public view."
   }
 }
