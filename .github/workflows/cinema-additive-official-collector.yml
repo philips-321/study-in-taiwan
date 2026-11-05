@@ -106,4 +106,8 @@ jobs:
             exit 0
           fi
           git commit -m 'data(cinema): validated additive official refresh [skip ci]'
+          # Documentation commits may land while a scheduled collection runs.
+          # Rebase on the latest main instead of force-pushing or losing data.
+          git fetch origin main
+          git rebase origin/main
           git push origin HEAD:main
