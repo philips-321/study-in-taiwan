@@ -1,16 +1,9 @@
 name: Update Taiwan cinema JSON
 
+# Disabled: legacy collector invokes destructive update-cinema-data.mjs.
+# Keep workflow as a reference; do not run it until replaced by a verified additive collector.
 on:
   workflow_dispatch:
-  schedule:
-    # 17:27 Taiwan time (UTC+8), after common midweek schedule-release windows.
-    - cron: '27 9 * * *'
-  push:
-    branches:
-      - main
-    paths:
-      - 'cinema/scripts/**'
-      - '.github/workflows/update-cinema-data.yml'
 
 concurrency:
   group: update-cinema-data
@@ -25,6 +18,7 @@ permissions:
 
 jobs:
   update:
+    if: ${{ false }} # Safety lock: do not execute legacy destructive update path.
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
