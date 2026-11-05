@@ -1,0 +1,83 @@
+name: Taipei additive official collector (validated)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 10 * * *' # 18:37 Asia/Taipei; once per day
+permissions:
+  contents: write
+concurrency:
+  group: cinema-additive-official-collector
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Unit tests and baseline validation
+        run: |
+          set -euo pipefail
+          node --check cinema/scripts/refresh-direct-official-sources.mjs
+          node --check cinema/cinema.js
+          node --test cinema/tests/additive-screening-merge.test.mjs
+          node cinema/scripts/validate-canonical-data.mjs
+          node cinema/scripts/validate-canonical-movie-registry.mjs
+      - name: Test live official sources without writes
+        run: |
+          set -euo pipefail
+          node cinema/scripts/refresh-direct-official-sources.mjs --additive --dry-run --source=all | tee /tmp/cinema-probe.json
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const p=JSON.parse(fs.readFileSync('/tmp/cinema-probe.json','utf8'));
+          if (!p.dry_run || !p.additive) throw Error('Incorrect collector mode');
+          const successes=Object.values(p.sources||{}).filter(s=>s.ok);
+          if (!successes.length) throw Error('No successful official sources');
+          if (successes.some(s=>s.rows<=0)) throw Error('Empty successful source');
+          console.log('Official-source probe passed:',successes.length);
+          NODE
+          git diff --exit-code -- cinema/data
+      - name: Collect additively, validate, and check historical preservation
+        run: |
+          set -euo pipefail
+          node cinema/scripts/refresh-direct-official-sources.mjs --additive --source=all
+          node cinema/scripts/validate-canonical-data.mjs
+          node cinema/scripts/validate-canonical-movie-registry.mjs
+          python3 - <<'PY'
+          import json,subprocess,pathlib
+          base='cinema/data/showtimes/by-date/'
+          old=subprocess.check_output(['git','ls-tree','-r','--name-only','HEAD','cinema/data/showtimes/by-date'],text=True).splitlines()
+          checked=0
+          for file in old:
+              if not file.endswith('/taipei.json'): continue
+              before=json.loads(subprocess.check_output(['git','show',f'HEAD:{file}'],text=True))['showtimes']
+              p=pathlib.Path(file)
+              if not p.exists(): raise SystemExit(f'Deleted historical file: {file}')
+              after=json.loads(p.read_text())['showtimes']
+              def signature(row): return json.dumps(row,sort_keys=True,ensure_ascii=False)
+              from collections import Counter
+              oldrows=Counter(map(signature,before))
+              newrows=Counter(map(signature,after))
+              missing=oldrows-newrows
+              if missing: raise SystemExit(f'Historical screening changed or removed: {file}, {sum(missing.values())} rows')
+              checked+=1
+          print('Historical screening preservation PASS:',checked,'Taipei chunks')
+          PY
+          git diff --check
+      - name: Commit only validated cinema data
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add cinema/data
+          if git diff --cached --quiet; then
+            echo 'No data changes'
+            exit 0
+          fi
+          git commit -m 'data(cinema): validated additive official refresh [skip ci]'
+          git push origin HEAD:main
