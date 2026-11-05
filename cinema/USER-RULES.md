@@ -44,3 +44,10 @@ Read this before researching sources, editing cinema data, changing the cinema U
 ## Handoff
 
 For a new cinema chat, read this file, then `README.md`, then inspect the branch, `data/manifest.json`, `SOURCE-RESEARCH-NOTES.md`, and `data/research/observed-sources.json`. Continue from the current source tracker; do not restart research or use an update workflow in place of browser review.
+
+## Browser fallback and verified language metadata (owner directive, 2026-11-05)
+
+- If an official source returns HTTP 403, compare default HTTP and Chrome-like request headers, then test real Chromium + Playwright before declaring it unavailable. Log the URL, methods, statuses, parseable rows and access limitations; do not bypass CAPTCHA or login. Eslite's official schedule returned 403 for Node HTTP (including Chrome headers) but 200 and 131 parseable rows in actual Chromium during the 2026-11-05 probe.
+- The production collector must use the tested Chromium fallback for Eslite 403, preserving last-known-good data if both paths fail. Browser fetching is offline/scheduled, never per visitor.
+- Audio language and subtitle languages are separate, source-verified facts. Do not infer one from the other. Preserve previously verified values when later source refresh omits them; only fill previously unknown fields from explicit evidence. Do not silently replace conflicting verified facts.
+- Run `node cinema/scripts/audit-language-coverage.mjs --write` and review `cinema/data/reports/language-coverage.json` for per-cinema completeness and regressions. A successful collector run alone does not prove language coverage is complete.
