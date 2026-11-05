@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-05T05:14:28.101Z",
+  "generated_at": "2026-11-05T11:40:21.777Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -13,6 +13,7 @@
       ],
       "sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog"
       ]
     },
@@ -3116,6 +3117,7 @@
       ],
       "sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "spot-taipei-official-schedule"
@@ -3443,6 +3445,7 @@
         "黑球"
       ],
       "sources": [
+        "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "showtimes-official-metadata",
         "vieshow-muvie-songren-official"
@@ -3924,6 +3927,7 @@
         "與達賴喇嘛談心： 尋找幸福的智慧"
       ],
       "sources": [
+        "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "spot-taipei-official-schedule"
       ]
@@ -3942,6 +3946,7 @@
         "canonical-manual-poster",
         "canonical-poster-title-match",
         "eslite-official-browser",
+        "eslite-official-schedule",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
         "previous-catalog",
@@ -5367,6 +5372,7 @@
       "sources": [
         "ambassador-official-site",
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog",
         "the-movie-database"
       ]

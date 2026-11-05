@@ -15,6 +15,7 @@
       "duration_minutes": 85,
       "metadata_sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog"
       ]
     },
@@ -457,6 +458,7 @@
       "rating": "pg12",
       "duration_minutes": 106,
       "metadata_sources": [
+        "previous-catalog",
         "spot-taipei-official-schedule"
       ]
     },
@@ -822,6 +824,7 @@
       "duration_minutes": 119,
       "metadata_sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog"
       ]
     },
@@ -1035,6 +1038,7 @@
       "metadata_sources": [
         "ambassador-official-site",
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog"
       ]
     },
@@ -1271,6 +1275,7 @@
       "duration_minutes": 128,
       "metadata_sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog"
       ]
     },
@@ -1404,6 +1409,7 @@
       "duration_minutes": 111,
       "metadata_sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog"
       ]
     },
@@ -1428,6 +1434,7 @@
       "duration_minutes": 76,
       "metadata_sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog"
       ]
     },
@@ -1440,6 +1447,7 @@
       "duration_minutes": 92,
       "metadata_sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog"
       ]
     },
@@ -1821,6 +1829,7 @@
         "atmovies-taipei-fallback",
         "atmovies-tianmu-shinkong-web-fallback",
         "canonical-manual-poster",
+        "canonical-poster-title-match",
         "century-asia-official-browser",
         "centuryasia-ximen-official-browser-p0",
         "filmvandaag-image-search",
@@ -1834,8 +1843,7 @@
         "showtimes-official-program",
         "twshowtimes-aggregator-fallback",
         "vieshow-muvie-songren-official",
-        "vieshow-official-browser",
-        "canonical-poster-title-match"
+        "vieshow-official-browser"
       ]
     },
     {
@@ -1976,6 +1984,7 @@
       "duration_minutes": 119,
       "metadata_sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "spot-taipei-official-schedule"
@@ -2114,11 +2123,12 @@
       "movie_id": "m_b47b3f88d758",
       "movie_title": "黑球",
       "movie_title_en": "La bola negra",
+      "poster_url": "https://assets.showtimes.com.tw/images/43c0cf9508b4f544d4da7270d5572fea.jpg",
       "metadata_sources": [
-        "vieshow-muvie-songren-official",
-        "punctuation-insensitive-title-poster-match"
-      ],
-      "poster_url": "https://assets.showtimes.com.tw/images/43c0cf9508b4f544d4da7270d5572fea.jpg"
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-muvie-songren-official"
+      ]
     },
     {
       "movie_id": "m_1a58d9aaf13a",
@@ -2253,13 +2263,14 @@
       "movie_id": "m_20ac6c742437",
       "movie_title": "與達賴喇嘛談心： 尋找幸福的智慧",
       "movie_title_en": "Wisdom of Happiness: A Heart-to-Heart with the Dalai Lama",
+      "poster_url": "https://assets.showtimes.com.tw/images/93f8398d37df6a02e49f2cf2fe2af020.jpg",
       "rating": "p",
       "duration_minutes": 90,
       "metadata_sources": [
-        "spot-taipei-official-schedule",
-        "punctuation-insensitive-title-poster-match"
-      ],
-      "poster_url": "https://assets.showtimes.com.tw/images/93f8398d37df6a02e49f2cf2fe2af020.jpg"
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "spot-taipei-official-schedule"
+      ]
     },
     {
       "movie_id": "m_306e4a2a6ce2",
@@ -2281,6 +2292,7 @@
         "canonical-manual-poster",
         "canonical-poster-title-match",
         "eslite-official-browser",
+        "eslite-official-schedule",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
         "previous-catalog",
@@ -2484,6 +2496,7 @@
       "duration_minutes": 185,
       "metadata_sources": [
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog"
       ]
     },
@@ -2737,12 +2750,30 @@
       "movie_title": "K1-BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG 現場直播",
       "movie_title_en": "K1-BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG：LIVE VIEWING",
       "metadata_sources": [
+        "previous-catalog",
+        "vieshow-muvie-songren-official"
+      ]
+    },
+    {
+      "movie_id": "m_5fe620f299a8",
+      "movie_title": "K1-BTS WORLD TOUR ARIRANG IN KAOHSIUNG現場直播",
+      "movie_title_en": "K1-BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG：LIVE VIEWING",
+      "metadata_sources": [
         "vieshow-muvie-songren-official"
       ]
     },
     {
       "movie_id": "m_7ee0f948c629",
       "movie_title": "K2-BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG 安可重播",
+      "movie_title_en": "K2-BTS WORLD TOUR 'ARIRANG' IN KAOHSIUG：ENCORE VIEWING",
+      "metadata_sources": [
+        "previous-catalog",
+        "vieshow-muvie-songren-official"
+      ]
+    },
+    {
+      "movie_id": "m_764b9587e66b",
+      "movie_title": "K2-BTS WORLD TOUR ARIRANG IN KAOHSIUNG安可重播",
       "movie_title_en": "K2-BTS WORLD TOUR 'ARIRANG' IN KAOHSIUG：ENCORE VIEWING",
       "metadata_sources": [
         "vieshow-muvie-songren-official"
@@ -2782,6 +2813,7 @@
       "metadata_sources": [
         "ambassador-official-site",
         "eslite-official-browser",
+        "eslite-official-schedule",
         "previous-catalog",
         "the-movie-database"
       ]
@@ -2819,6 +2851,6 @@
       ]
     }
   ],
-  "generated_at": "2026-11-05T05:14:21.594Z",
+  "generated_at": "2026-11-05T11:40:19.016Z",
   "identity_policy": "stable movie_id from normalized primary title; metadata stored once in this catalog"
 }
