@@ -110,3 +110,14 @@ Aturan ini berlaku untuk setiap agen. Pertahankan aturan khusus proyek di atas. 
 ## Owner instruction: public repository workflows (2026-10-29)
 
 The owner authorized normal operation of public repository workflows and their Cloudflare integrations before November 1; do not block them solely because private GitHub Actions minutes are low. The cinema workflow's prior daily schedule and path-scoped push trigger are restored under that instruction. Standard GitHub-hosted runner minutes in public repositories do not consume the private included minutes; Cloudflare builds, source requests, other resources, downstream private workflows, and non-standard runners have separate limits or costs. Before agent-initiated runs or changes that start Actions, give the owner the existing execution notice with estimated effects. Preserve separately cancelled work such as Vinone and Cloudflare onboarding; do not enable paid overage. Existing JSON/data remains readable without running Actions.
+
+## Owner directive: GitHub Actions for public repositories (2026-11-05)
+
+This section is the owner's latest instruction and **takes precedence over any conflicting Actions budget, reservation, preflight, pause, or notification rules above** for this public repository.
+
+- **Public repository:** use GitHub Actions freely and as often as needed for CI/CD, tests, official-source collectors, scheduled refreshes, validation, monitoring, and deployments. Do not reduce frequency, disable a workflow, delay a run, or migrate it to Cloudflare solely to save included GitHub Actions minutes.
+- Do not require a private Actions budget snapshot, master-ledger reservation, or advance cost notice before normal GitHub-hosted Actions runs in this public repository. Run tests and dispatches when needed. Distinguish GitHub-hosted standard runners from paid/larger runners and other billable services; never enable paid overage without owner authorization.
+- **Private repositories:** the shared Actions budget policy still applies, including usage checks, cost controls, and pause thresholds.
+- Preserve functional workflows. Replace or disable a working workflow only after the replacement has passed real validation, or when the owner explicitly instructs it. Prevent destructive updates, lost records, concurrent write conflicts, and infinite trigger loops.
+- Verify repository visibility before applying public/private-specific rules. Do not assume public-repo exceptions apply to downstream private workflows or other separately billed services.
+- The owner explicitly prefers reliable and comprehensive automation over saving Actions minutes in public repositories. Earlier instructions restricting public-repo workflows for quota conservation are superseded.
