@@ -133,3 +133,9 @@ This is the latest owner instruction. It overrides conflicting older shared Acti
 - Preserve functional workflows. Validate replacements before disabling existing workflows, except when the owner explicitly requests otherwise. Prevent destructive data updates, concurrency conflicts, and runaway trigger loops.
 - Reliability and comprehensive automation take priority over GitHub Actions minute conservation in PUBLIC repositories.
 <!-- END OWNER ACTIONS VISIBILITY POLICY v2 -->
+
+<!-- BEGIN OWNER BROWSER 403 POLICY v1 -->
+## Owner directive: browser fallback for official-source HTTP 403 (2026-11-05)
+
+For website research, source collection, and public-data retrieval: start with a normal, bounded HTTP request using a realistic browser User-Agent, Accept, and Accept-Language. If HTTP 403 persists, compare the default and browser-header responses, then **run real Chromium via Playwright** (actual browser navigation and JavaScript execution) before declaring the official source inaccessible. Log the exact URL, methods, status codes, whether the browser changes the outcome, and parseable row counts. Distinguish network/environment failures from genuine site responses. A User-Agent string alone is not a real browser. Respect rate limits and access controls; do not bypass login, CAPTCHA, or explicit prohibitions. Preserve last-known-good data when access fails; do not invent missing values. Do not add expensive browser jobs to every visitor request: perform bounded scheduled/offline collection and publish cached static data. This rule applies to all agents and overrides older instructions that prematurely stop at a single HTTP 403.
+<!-- END OWNER BROWSER 403 POLICY v1 -->
