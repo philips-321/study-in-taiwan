@@ -107,6 +107,12 @@
   function todayTaiwan() {
     return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
   }
+  // Rolling inclusive display window: today through H+14 in Taipei local time.
+  function rollingMaxDate(days=14) {
+    const [year,month,day]=todayTaiwan().split('-').map(Number);
+    const end=new Date(Date.UTC(year,month-1,day+days));
+    return end.toISOString().slice(0,10);
+  }
   function esc(value) {
     return String(value ?? '').replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
@@ -355,7 +361,7 @@
   }
   function setupDateOptions() {
     const today=todayTaiwan();
-    availableDates=Object.keys(showtimesDateIndex).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today&&Number(showtimesDateIndex[x]?.total||0)>0).sort();
+    availableDates=Object.keys(showtimesDateIndex).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&x>=today&&x<=rollingMaxDate()&&Number(showtimesDateIndex[x]?.total||0)>0).sort();
     if(!availableDates.length)availableDates=[today];
     let initial=availableDates.includes(today)?today:(availableDates[0]||today);
     dateSelect.innerHTML=availableDates.map(d=>`<option value="${d}">${d===today?`${esc(ui('today'))} · `:''}${esc(formatDate(d))} · ${countDate(d)} ${esc(ui('sessions'))}</option>`).join('');
