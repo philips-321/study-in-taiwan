@@ -109,6 +109,12 @@ export async function fetchEsliteShowtimes() {
       'user-agent': BROWSER_UA
     }
   });
+  if (response.status === 403) {
+    // A real Chromium navigation was verified to parse the official schedule
+    // when Node fetch (including Chrome-like headers) returned Cloudflare 403.
+    // Never retry with arbitrary spoofed identities or bypass a CAPTCHA.
+    return fetchEsliteShowtimesInBrowser();
+  }
   if (!response.ok) throw new Error(`Eslite ${response.status} ${response.statusText}`);
   const rows = parseEsliteSchedule(await response.text());
   if (!rows.length) throw new Error('Eslite returned no parseable showtimes');
