@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "generated_at": "2026-11-06T17:40:52.136Z",
+  "generated_at": "2026-11-07T16:37:11.304Z",
   "timezone": "Asia/Taipei",
   "model": "normalized movie catalog plus per-date/per-city screening references; collectors keep source rows in memory and date chunks are the only persisted showtime records",
   "showtimes_index": {
@@ -505,8 +505,8 @@
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "last_success_at": "2026-11-06T17:40:52.136Z",
-        "retrieved_at": "2026-11-06T17:40:52.136Z",
+        "last_success_at": "2026-11-07T16:37:11.304Z",
+        "retrieved_at": "2026-11-07T16:37:11.304Z",
         "error": null,
         "last_error": null,
         "next_probe_at": null,
@@ -609,18 +609,18 @@
         "published_showtimes": 103
       },
       "vieshow-muvie-songren-official": {
-        "ok": true,
+        "ok": false,
         "showtimes": 329,
         "fresh_showtimes": 329,
         "fallback_showtimes": 0,
-        "fallback": null,
-        "health": "healthy",
-        "circuit_state": "closed",
-        "failure_count": 0,
+        "fallback": "last-known-good rows retained because direct refresh failed",
+        "health": "degraded",
+        "circuit_state": "open",
+        "failure_count": 1,
         "last_success_at": "2026-11-06T17:40:52.136Z",
         "retrieved_at": "2026-11-06T17:40:52.136Z",
         "error": null,
-        "last_error": null,
+        "last_error": "MUVIE Songren returned no parseable showtimes",
         "next_probe_at": null,
         "access_path": "direct official source",
         "direct_refresh": true,
@@ -634,6 +634,7 @@
           "explicit audio language"
         ],
         "subtitles": "not supplied; stored as unknown",
+        "last_failure_at": "2026-11-07T16:37:11.304Z",
         "published_showtimes": 329
       },
       "spot-taipei-official-schedule": {
@@ -645,8 +646,8 @@
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "last_success_at": "2026-11-06T17:40:52.136Z",
-        "retrieved_at": "2026-11-06T17:40:52.136Z",
+        "last_success_at": "2026-11-07T16:37:11.304Z",
+        "retrieved_at": "2026-11-07T16:37:11.304Z",
         "error": null,
         "last_error": null,
         "next_probe_at": null,
