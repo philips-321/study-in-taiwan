@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-08T16:47:21.881Z",
+  "generated_at": "2026-11-09T21:02:54.670Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -1943,6 +1943,19 @@
         "ambassador-official-site",
         "previous-catalog",
         "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_ee66389dca47",
+      "movie_title": "我們，巴黎管弦樂團",
+      "poster_url": "https://assets.lesfilmspelleas.com/NOUS_L_ORCHESTRE_4_5_AFFICHE_770aa4abb4.jpg",
+      "aliases": [
+        "NOUS, LORCHESTRE DE PARIS",
+        "我們，巴黎管弦樂團"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "vieshow-muvie-songren-official"
       ]
     },
     {

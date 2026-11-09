@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "generated_at": "2026-11-08T16:47:10.344Z",
+  "generated_at": "2026-11-09T21:02:46.642Z",
   "timezone": "Asia/Taipei",
   "model": "normalized movie catalog plus per-date/per-city screening references; collectors keep source rows in memory and date chunks are the only persisted showtime records",
   "showtimes_index": {
@@ -122,10 +122,11 @@
       }
     },
     "2026-11-14": {
-      "total": 16,
+      "total": 17,
       "cities": {
         "kaohsiung": 10,
-        "new-taipei": 6
+        "new-taipei": 6,
+        "taipei": 1
       }
     },
     "2026-11-15": {
@@ -384,15 +385,15 @@
     }
   },
   "coverage": {
-    "showtime_rows": 4400,
+    "showtime_rows": 4401,
     "explicit_subtitle_rows": 272,
-    "international_title_rows": 3717,
+    "international_title_rows": 3718,
     "poster_rows": 4269,
     "genre_rows": 3238,
     "rating_rows": 3281,
     "unique_title_pairs": {
-      "title_pairs": 179,
-      "with_international_title": 86,
+      "title_pairs": 180,
+      "with_international_title": 87,
       "with_poster": 161,
       "distinct_posters": 143,
       "with_genres": 36,
@@ -505,8 +506,8 @@
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "last_success_at": "2026-11-08T16:47:10.344Z",
-        "retrieved_at": "2026-11-08T16:47:10.344Z",
+        "last_success_at": "2026-11-09T21:02:46.642Z",
+        "retrieved_at": "2026-11-09T21:02:46.642Z",
         "error": null,
         "last_error": null,
         "next_probe_at": null,
@@ -610,15 +611,15 @@
       },
       "vieshow-muvie-songren-official": {
         "ok": true,
-        "showtimes": 329,
-        "fresh_showtimes": 329,
+        "showtimes": 330,
+        "fresh_showtimes": 330,
         "fallback_showtimes": 0,
         "fallback": null,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "last_success_at": "2026-11-08T16:47:10.344Z",
-        "retrieved_at": "2026-11-08T16:47:10.344Z",
+        "last_success_at": "2026-11-09T21:02:46.642Z",
+        "retrieved_at": "2026-11-09T21:02:46.642Z",
         "error": null,
         "last_error": null,
         "next_probe_at": null,
@@ -634,7 +635,7 @@
           "explicit audio language"
         ],
         "subtitles": "not supplied; stored as unknown",
-        "published_showtimes": 329
+        "published_showtimes": 330
       },
       "spot-taipei-official-schedule": {
         "ok": true,
@@ -645,8 +646,8 @@
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "last_success_at": "2026-11-08T16:47:10.344Z",
-        "retrieved_at": "2026-11-08T16:47:10.344Z",
+        "last_success_at": "2026-11-09T21:02:46.642Z",
+        "retrieved_at": "2026-11-09T21:02:46.642Z",
         "error": null,
         "last_error": null,
         "next_probe_at": null,
@@ -678,7 +679,7 @@
       "cinemas": 30,
       "active_cinemas": 7,
       "unknown_cinemas": 23,
-      "showtimes": 1766
+      "showtimes": 1767
     },
     "new-taipei": {
       "cinemas": 13,
