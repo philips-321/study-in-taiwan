@@ -1,7 +1,7 @@
 {
   "version": 4,
   "city": "taipei",
-  "generated_at": "2026-11-09T21:02:46.642Z",
+  "generated_at": "2026-11-10T18:13:42.509Z",
   "showtime_count": 1767,
   "sources": {
     "moc-culture-movie-api": {
@@ -83,8 +83,8 @@
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "last_success_at": "2026-11-09T21:02:46.642Z",
-      "retrieved_at": "2026-11-09T21:02:46.642Z",
+      "last_success_at": "2026-11-10T18:13:42.509Z",
+      "retrieved_at": "2026-11-10T18:13:42.509Z",
       "error": null,
       "last_error": null,
       "next_probe_at": null,
@@ -189,8 +189,8 @@
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "last_success_at": "2026-11-09T21:02:46.642Z",
-      "retrieved_at": "2026-11-09T21:02:46.642Z",
+      "last_success_at": "2026-11-10T18:13:42.509Z",
+      "retrieved_at": "2026-11-10T18:13:42.509Z",
       "error": null,
       "last_error": null,
       "next_probe_at": null,
@@ -208,18 +208,18 @@
       "subtitles": "not supplied; stored as unknown"
     },
     "spot-taipei-official-schedule": {
-      "ok": true,
+      "ok": false,
       "showtimes": 50,
       "fresh_showtimes": 50,
       "fallback_showtimes": 0,
-      "fallback": null,
-      "health": "healthy",
-      "circuit_state": "closed",
-      "failure_count": 0,
+      "fallback": "last-known-good rows retained because direct refresh failed",
+      "health": "degraded",
+      "circuit_state": "open",
+      "failure_count": 1,
       "last_success_at": "2026-11-09T21:02:46.642Z",
       "retrieved_at": "2026-11-09T21:02:46.642Z",
       "error": null,
-      "last_error": null,
+      "last_error": "fetch failed",
       "next_probe_at": null,
       "access_path": "direct official source",
       "direct_refresh": true,
@@ -233,7 +233,8 @@
         "runtime",
         "explicit subtitles"
       ],
-      "subtitles": "explicit values preserved from official per-film detail pages"
+      "subtitles": "explicit values preserved from official per-film detail pages",
+      "last_failure_at": "2026-11-10T18:13:42.509Z"
     }
   },
   "showtimes": [],

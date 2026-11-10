@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-09T21:02:54.670Z",
+  "generated_at": "2026-11-10T18:14:01.025Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -1955,6 +1955,7 @@
       ],
       "sources": [
         "canonical-poster-title-match",
+        "previous-catalog",
         "vieshow-muvie-songren-official"
       ]
     },
