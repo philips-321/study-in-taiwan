@@ -1,3 +1,5 @@
+import { cloudflareBrowserAvailable, fetchRenderedCinemaPage } from './cloudflare-browser-run.mjs';
+
 const BROWSER_UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
 
 async function loadChromium() {
@@ -13,6 +15,7 @@ async function loadChromium() {
 
 export async function browseOfficialPages(targets, { concurrency = 3, settleMs = 1200, navigationTimeoutMs = 25_000 } = {}) {
   const chromium = await loadChromium();
+  const useCloudflareBrowser = cloudflareBrowserAvailable();
   const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
   const results = Array(targets.length);
   let cursor = 0;
@@ -30,12 +33,32 @@ export async function browseOfficialPages(targets, { concurrency = 3, settleMs =
         const index = cursor++;
         const target = targets[index];
         const host = new URL(target.url).hostname;
-        if (blockedHosts.has(host)) {
+        if (blockedHosts.has(host) && !useCloudflareBrowser) {
           results[index] = { target, status: null, html: '', error: 'Skipped after this official host returned HTTP 403' };
           continue;
         }
         let page;
         try {
+          if (useCloudflareBrowser) {
+            try {
+              const rendered = await fetchRenderedCinemaPage(target.url);
+              results[index] = {
+                target,
+                status: rendered.status,
+                html: rendered.html,
+                finalUrl: rendered.finalUrl,
+                title: rendered.html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.replace(/<[^>]+>/g, ' ').trim() || '',
+                bodyLength: rendered.html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().length,
+                acquisition_method: rendered.provider
+              };
+              if (rendered.status === 403) blockedHosts.add(host);
+              continue;
+            } catch (error) {
+              // Keep the local Chromium path as a bounded fallback if the
+              // remote browser service is unavailable or lacks permission.
+              results[index] = { target, status: null, html: '', error: `Cloudflare Browser Rendering: ${String(error?.message || error).slice(0, 240)}` };
+            }
+          }
           page = await context.newPage();
           page.setDefaultNavigationTimeout(navigationTimeoutMs);
           const response = await page.goto(target.url, { waitUntil: 'domcontentloaded' });
@@ -59,7 +82,8 @@ export async function browseOfficialPages(targets, { concurrency = 3, settleMs =
             html,
             finalUrl: finalResponse.url,
             title: finalResponse.title,
-            bodyLength: finalResponse.bodyLength
+            bodyLength: finalResponse.bodyLength,
+            ...(results[index]?.error ? { browser_fallback_error: results[index].error } : {})
           };
           if (status === 403) blockedHosts.add(host);
         } catch (error) {
