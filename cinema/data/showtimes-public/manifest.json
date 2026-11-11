@@ -3,9 +3,9 @@
   "as_of": "2026-11-11",
   "days": 30,
   "end_date": "2026-12-11",
-  "generated_at": "2026-11-11T13:27:14.407Z",
-  "input_rows": 26487,
-  "public_rows": 4126,
+  "generated_at": "2026-11-11T13:29:58.487Z",
+  "input_rows": 26560,
+  "public_rows": 4199,
   "excluded_by_window": 22345,
   "excluded_stale_status_rows": 2,
   "excluded_stale_fallback_rows": 14,
@@ -16,7 +16,7 @@
   },
   "fallback_max_age_hours": 168,
   "files": 82,
-  "sha256": "fb3587372d5d6a47d23e71b0b48b2f857f8fbcf4d5cd52a7ae45d42936a17c7c",
+  "sha256": "a548821e358aad66636eb7a73ec1c1c7203aec17d6411d6140e6f2ff63fa3db1",
   "showtimes_index": {
     "2026-11-14": {
       "total": 565,
@@ -56,12 +56,12 @@
       }
     },
     "2026-11-13": {
-      "total": 440,
+      "total": 507,
       "cities": {
         "new-taipei": 140,
         "pingtung": 36,
         "kaohsiung": 83,
-        "taipei": 135,
+        "taipei": 202,
         "taoyuan": 45,
         "unknown": 1
       }
@@ -77,9 +77,9 @@
       }
     },
     "2026-11-17": {
-      "total": 514,
+      "total": 515,
       "cities": {
-        "taipei": 192,
+        "taipei": 193,
         "taoyuan": 45,
         "new-taipei": 139,
         "kaohsiung": 102,
@@ -87,10 +87,10 @@
       }
     },
     "2026-11-12": {
-      "total": 547,
+      "total": 552,
       "cities": {
         "new-taipei": 140,
-        "taipei": 250,
+        "taipei": 255,
         "pingtung": 35,
         "kaohsiung": 79,
         "taoyuan": 43
@@ -242,7 +242,7 @@
     }
   },
   "coverage": {
-    "showtime_rows": 4126,
+    "showtime_rows": 4199,
     "explicit_subtitle_rows": 241
   }
 }

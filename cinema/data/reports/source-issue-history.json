@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-11T13:27:14.744Z",
+  "generated_at": "2026-11-11T13:29:58.836Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -292,11 +292,11 @@
       "endpoint": null,
       "state": "open",
       "first_seen": "2026-11-01T23:44:14.950Z",
-      "last_seen": "2026-11-11T13:05:08.357Z",
+      "last_seen": "2026-11-11T13:29:58.836Z",
       "last_success_at": null,
-      "total_occurrence_count": 2,
+      "total_occurrence_count": 3,
       "historical_observation_count": 0,
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "reopen_count": 0,
       "known_cause": null,
       "next_steps": [
@@ -314,12 +314,18 @@
           "error": "HTTP 403 from first-party ShowTimes page; stopped remaining browser navigations",
           "fresh_showtimes": 0,
           "fallback_showtimes": 0
+        },
+        {
+          "observed_at": "2026-11-11T13:29:58.836Z",
+          "error": "HTTP 403 from first-party ShowTimes page; stopped remaining browser navigations",
+          "fresh_showtimes": 0,
+          "fallback_showtimes": 0
         }
       ],
       "last_error": "HTTP 403 from first-party ShowTimes page; stopped remaining browser navigations",
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
-      "retry_after": "2026-11-18T13:05:08.357Z",
+      "retry_after": "2026-11-18T13:29:58.836Z",
       "retry_suppressed_run_count": 9,
       "last_retry_suppressed_at": "2026-11-11T13:27:14.744Z"
     },
