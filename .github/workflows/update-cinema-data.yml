@@ -146,9 +146,9 @@ jobs:
           import fs from 'node:fs';
           const manifest = JSON.parse(fs.readFileSync('cinema/data/manifest.json', 'utf8'));
           const sources = manifest.sources?.showtimes || {};
-          for (const source of ['showtimes-official-browser', 'eslite-official-browser']) {
+          for (const source of ['showtimes-official-cloudflare-bootstrap', 'showtimes-official-browser', 'eslite-official-browser']) {
             const status = sources[source];
-            if (status?.ok === false && /403|Cloudflare Browser Rendering/i.test(String(status.error || ''))) {
+            if (status?.ok === false && /403|Cloudflare Browser Rendering|Browser Run/i.test(String(status.error || ''))) {
               throw new Error(`${source} did not pass through the required remote browser: ${status.error}`);
             }
           }

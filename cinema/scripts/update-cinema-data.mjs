@@ -4,6 +4,7 @@ import crypto from 'node:crypto';
 import { buildMovieIndex, compactShowtime, knownAgeRating, movieIdForRow, screeningKey } from './movie-schema.mjs';
 import { loadPosterDonors, writePosterIndex } from './poster-index.mjs';
 import { fetchMiramarShowtimes } from './sources/miramar.mjs';
+import { fetchShowTimesShowtimes } from './sources/showtimes.mjs';
 import { fetchAmbassadorShowtimes } from './sources/ambassador.mjs';
 import { fetchShowTimesHtmlFallback } from './sources/showtimes-html.mjs';
 import { fetchSpotHuashanShowtimes } from './sources/spot-huashan.mjs';
@@ -245,7 +246,8 @@ const sourceStatus = {
   'moc-culture-movie-api': { ok: true, showtimes: [...showtimesByCity.values()].reduce((n, rows) => n + rows.length, 0) },
   'miramar-official-api': { ok: false, showtimes: 0 },
   'ambassador-official-site': { ok: false, showtimes: 0 },
-  'showtimes-official-api': { ok: true, showtimes: 0, skipped: true, disabled: true, role: 'direct API disabled; use Playwright against official branch pages' },
+  'showtimes-official-api': { ok: true, showtimes: 0, skipped: true, disabled: false, role: 'Cloudflare Browser Run official bootstrap; direct API fallback only when remote browser is unavailable' },
+  'showtimes-official-cloudflare-bootstrap': { ok: true, showtimes: 0, skipped: true, role: 'official ShowTimes bootstrap fetched inside Cloudflare Browser Run' },
   'spot-huashan-official-schedule': { ok: false, showtimes: 0 },
   'eslite-official-schedule': { ok: true, showtimes: 0, skipped: true, disabled: true, role: 'direct HTTP fetch disabled; use Playwright against official schedule page' },
   'atmovies-taipei-fallback': { ok: true, showtimes: 0, skipped: true, disabled: true, role: 'disabled; official-source browser registry is authoritative' },
@@ -308,7 +310,9 @@ function mergeExternalRows(rows, sourceName) {
 async function runSource(sourceName, label, loader) {
   const open403 = (sourceIssueHistory.issues || []).find(issue => issue.source === sourceName && issue.state === 'open' && issue.http_status === 403);
   const failedAt = Date.parse(open403?.last_seen || '');
-  if (Number.isFinite(failedAt) && Date.now() - failedAt < SOURCE_RETRY_COOLDOWN_MS) {
+  const remoteBrowserAvailable = Boolean(process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN);
+  const accessPathChanged = remoteBrowserAvailable && sourceName === 'showtimes-official-cloudflare-bootstrap';
+  if (!accessPathChanged && Number.isFinite(failedAt) && Date.now() - failedAt < SOURCE_RETRY_COOLDOWN_MS) {
     const retryAfter = new Date(failedAt + SOURCE_RETRY_COOLDOWN_MS).toISOString();
     sourceStatus[sourceName] = {
       ...(sourceStatus[sourceName] || {}),
@@ -336,6 +340,16 @@ async function runSource(sourceName, label, loader) {
 
 await runSource('miramar-official-api', 'Miramar', fetchMiramarShowtimes);
 await runSource('ambassador-official-site', 'Ambassador', fetchAmbassadorShowtimes);
+await runSource('showtimes-official-cloudflare-bootstrap', 'ShowTimes Cloudflare bootstrap', fetchShowTimesShowtimes);
+sourceStatus['showtimes-official-api'] = {
+  ...sourceStatus['showtimes-official-api'],
+  ok: sourceStatus['showtimes-official-cloudflare-bootstrap']?.ok === true,
+  disabled: sourceStatus['showtimes-official-cloudflare-bootstrap']?.ok !== true,
+  showtimes: sourceStatus['showtimes-official-cloudflare-bootstrap']?.showtimes || 0,
+  browser_fallback: 'showtimes-official-cloudflare-bootstrap',
+  browser_fallback_showtimes: sourceStatus['showtimes-official-cloudflare-bootstrap']?.showtimes || 0,
+  ...(sourceStatus['showtimes-official-cloudflare-bootstrap']?.error ? { error: sourceStatus['showtimes-official-cloudflare-bootstrap'].error } : {})
+};
 await runSource('spot-huashan-official-schedule', 'SPOT Huashan', fetchSpotHuashanShowtimes);
 
 

@@ -67,8 +67,8 @@ const endpointHints = {
 };
 const guidance = {
   'showtimes-official-api': {
-    known_cause: 'GitHub Actions receives HTTP 403 from the ShowTimes API. The collector now opens each first-party ShowTimes cinema page in headless Chromium and extracts its server-rendered schedule.',
-    next_steps: ['Review the official-browser page count and any HTTP 403 or parse warnings.', 'Keep last-known-good ShowTimes rows when official browser access is blocked.', 'Preserve canonical historical rows and their source provenance.']
+    known_cause: 'GitHub Actions receives HTTP 403 from the ShowTimes API. The collector now fetches the official ShowTimes bootstrap from inside Cloudflare Browser Run and keeps the page browser fallback for degraded runs.',
+    next_steps: ['Review the Cloudflare bootstrap row count and any Browser Run errors.', 'Keep last-known-good ShowTimes rows when the remote browser path is unavailable.', 'Preserve canonical historical rows and their source provenance.']
   },
   'eslite-official-schedule': {
     known_cause: 'GitHub Actions receives HTTP 403 from the Eslite schedule request. The collector now opens the first-party Eslite schedule directly in headless Chromium.',

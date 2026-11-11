@@ -1,3 +1,5 @@
+import { cloudflareBrowserAvailable, fetchShowTimesBootstrapPayload } from './cloudflare-browser-run.mjs';
+
 const API = 'https://capi.showtimes.com.tw/4/app/bootstrap';
 const SCHEDULES_URL = 'https://www.showtimes.com.tw/cinemas/';
 
@@ -41,20 +43,24 @@ function audioLanguage(format) {
 }
 
 export async function fetchShowTimesShowtimes() {
-  const response = await fetch(API, {
-    headers: {
-      accept: 'application/json',
-      'accept-language': 'zh-TW,zh;q=0.9,en;q=0.7',
-      origin: 'https://www.showtimes.com.tw',
-      referer: 'https://www.showtimes.com.tw/',
-      'user-agent': 'study-in-taiwan-cinema-data/1.0'
-    }
-  });
-  if (!response.ok) throw new Error(`ShowTimes public API ${response.status} ${response.statusText}`);
-
-  const payload = (await response.json())?.payload;
+  let payload;
+  if (cloudflareBrowserAvailable()) {
+    payload = await fetchShowTimesBootstrapPayload();
+  } else {
+    const response = await fetch(API, {
+      headers: {
+        accept: 'application/json',
+        'accept-language': 'zh-TW,zh;q=0.9,en;q=0.7',
+        origin: 'https://www.showtimes.com.tw',
+        referer: 'https://www.showtimes.com.tw/',
+        'user-agent': 'study-in-taiwan-cinema-data/1.0'
+      }
+    });
+    if (!response.ok) throw new Error(`ShowTimes public API ${response.status} ${response.statusText}`);
+    payload = (await response.json())?.payload;
+  }
   if (!payload || !Array.isArray(payload.corporations) || !Array.isArray(payload.programs) || !payload.eventsForCorporations) {
-    throw new Error('ShowTimes public API response format changed');
+    throw new Error('ShowTimes bootstrap response format changed');
   }
 
   const corporations = new Map(payload.corporations.map(corporation => [Number(corporation.id), corporation]));

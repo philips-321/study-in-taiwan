@@ -3,12 +3,12 @@
   "version": 1,
   "source": "daily collector snapshots merged by screening_id",
   "parser_version": "canonical-converter-v1",
-  "screening_rows": 26560,
+  "screening_rows": 33179,
   "unresolved_rows": 0,
   "partitions": {
     "2026-01": 2,
     "2026-10": 8347,
-    "2026-11": 17601,
+    "2026-11": 24220,
     "2026-12": 299,
     "2027-01": 211,
     "2027-02": 100
@@ -17,7 +17,7 @@
   "public_view": {
     "window_days": 30,
     "generated_as_of": "2026-11-11",
-    "rows": 4199,
+    "rows": 10818,
     "excluded_by_window": 22345,
     "excluded_stale_status_rows": 2,
     "excluded_stale_fallback_rows": 14,
@@ -27,23 +27,23 @@
       "showtimes-official-api": 5
     },
     "fallback_max_age_hours": 168,
-    "sha256": "a548821e358aad66636eb7a73ec1c1c7203aec17d6411d6140e6f2ff63fa3db1"
+    "sha256": "94ce6de886070b029e6311f7948c581463468c5ffb1ed4140767f1a8176b1aa6"
   },
-  "updated_at": "2026-11-11T13:29:53.362Z",
+  "updated_at": "2026-11-11T14:12:13.442Z",
   "movie_registry": {
     "file": "movie-registry.jsonl",
-    "unique_films": 260,
-    "poster_yes": 233,
-    "poster_no": 27,
+    "unique_films": 263,
+    "poster_yes": 234,
+    "poster_no": 29,
     "poster_lookups_attempted_this_run": 0,
     "poster_fetches_this_run": 0,
-    "official_poster_calendar_requests_this_run": 1,
-    "official_poster_schedule_requests_this_run": 1,
+    "official_poster_calendar_requests_this_run": 0,
+    "official_poster_schedule_requests_this_run": 0,
     "official_poster_page_requests_this_run": 0,
     "official_poster_matches_this_run": 0,
-    "poster_lookups_deferred": 0,
+    "poster_lookups_deferred": 4,
     "ambiguous_poster_matches": 0,
-    "last_poster_sync_at": "2026-11-11T13:29:53.362Z"
+    "last_poster_sync_at": "2026-11-11T14:12:13.442Z"
   },
   "generated_at": "2026-11-01T19:41:30.407Z",
   "schedule_reconciliation": {
