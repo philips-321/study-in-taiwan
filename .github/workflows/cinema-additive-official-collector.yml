@@ -1,12 +1,6 @@
-name: Taipei additive official collector (validated)
+name: Taipei additive official collector (manual)
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/cinema-additive-official-collector.yml'
   workflow_dispatch:
-  schedule:
-    - cron: '37 10 * * *' # 18:37 Asia/Taipei; once per day
 permissions:
   contents: write
 concurrency:

@@ -1,9 +1,9 @@
 name: Update Taiwan cinema JSON
 
-# Disabled: legacy collector invokes destructive update-cinema-data.mjs.
-# Keep workflow as a reference; do not run it until replaced by a verified additive collector.
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 18 * * *' # 02:17 Asia/Taipei; one complete refresh per day
 
 concurrency:
   group: update-cinema-data
@@ -18,9 +18,8 @@ permissions:
 
 jobs:
   update:
-    if: ${{ false }} # Safety lock: do not execute legacy destructive update path.
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -175,6 +174,12 @@ jobs:
           const file = 'cinema/data/canonical/manifest.json';
           const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
           const view = JSON.parse(fs.readFileSync('cinema/data/showtimes-public/manifest.json', 'utf8'));
+          const asOfParts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+            timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
+          }).formatToParts(new Date()).map(part => [part.type, part.value]));
+          const expectedAsOf = `${asOfParts.year}-${asOfParts.month}-${asOfParts.day}`;
+          if (view.as_of !== expectedAsOf) throw new Error(`Public window is stale: expected ${expectedAsOf}, got ${view.as_of}`);
+          if (!Number.isInteger(view.public_rows) || view.public_rows <= 0) throw new Error('Public window contains no screenings');
           manifest.public_view = {
             window_days: view.days,
             generated_as_of: view.as_of,
