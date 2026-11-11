@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-05T03:53:14.271Z",
+  "generated_at": "2026-11-11T13:05:08.357Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -292,11 +292,11 @@
       "endpoint": null,
       "state": "open",
       "first_seen": "2026-11-01T23:44:14.950Z",
-      "last_seen": "2026-11-01T23:44:14.950Z",
+      "last_seen": "2026-11-11T13:05:08.357Z",
       "last_success_at": null,
-      "total_occurrence_count": 1,
+      "total_occurrence_count": 2,
       "historical_observation_count": 0,
-      "consecutive_failures": 1,
+      "consecutive_failures": 2,
       "reopen_count": 0,
       "known_cause": null,
       "next_steps": [
@@ -308,12 +308,18 @@
           "error": "Official ShowTimes browser returned no sessions (大巨蛋秀泰影城: HTTP 403; 欣欣秀泰影城: HTTP 403; 樹林秀泰影城: HTTP 403; 土城秀泰影城: Skipped after official site returned HTTP 403; 基隆秀泰影城: Skipped after official site returned HTTP 403)",
           "fresh_showtimes": 0,
           "fallback_showtimes": 0
+        },
+        {
+          "observed_at": "2026-11-11T13:05:08.357Z",
+          "error": "HTTP 403 from first-party ShowTimes page; stopped remaining browser navigations",
+          "fresh_showtimes": 0,
+          "fallback_showtimes": 0
         }
       ],
-      "last_error": "Official ShowTimes browser returned no sessions (大巨蛋秀泰影城: HTTP 403; 欣欣秀泰影城: HTTP 403; 樹林秀泰影城: HTTP 403; 土城秀泰影城: Skipped after official site returned HTTP 403; 基隆秀泰影城: Skipped after official site returned HTTP 403)",
+      "last_error": "HTTP 403 from first-party ShowTimes page; stopped remaining browser navigations",
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
-      "retry_after": "2026-11-08T23:44:14.950Z",
+      "retry_after": "2026-11-18T13:05:08.357Z",
       "retry_suppressed_run_count": 8,
       "last_retry_suppressed_at": "2026-11-05T03:53:14.271Z"
     },

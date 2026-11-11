@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-10T18:14:01.025Z",
+  "generated_at": "2026-11-11T13:05:08.063Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -14,6 +14,19 @@
       "sources": [
         "eslite-official-browser",
         "eslite-official-schedule",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_91ca3a50e148",
+      "movie_title": "（加開特別場）Jim Queen：肌情四射",
+      "poster_url": "https://assets.showtimes.com.tw/images/ff54a0cbf59a020440a58b1c6eda0643.jpg",
+      "aliases": [
+        "（加開特別場）Jim Queen：肌情四射"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "canonical-poster-title-match",
         "previous-catalog"
       ]
     },
@@ -97,6 +110,19 @@
       "preferred": true
     },
     {
+      "movie_id": "m_fb02e8a1999e",
+      "movie_title": "（特別場）屍控片場性愛死",
+      "poster_url": "https://www.cineart.nl/images/resized/16360-600x0.jpg",
+      "aliases": [
+        "（特別場）屍控片場性愛死"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
       "movie_id": "m_30f778c43a53",
       "movie_title": "（特別場）黑球",
       "poster_url": "https://assets.showtimes.com.tw/images/43c0cf9508b4f544d4da7270d5572fea.jpg",
@@ -107,6 +133,7 @@
       "sources": [
         "ambassador-official-site",
         "canonical-manual-poster",
+        "canonical-poster-title-match",
         "previous-catalog",
         "showtimes-official-metadata"
       ],
@@ -178,6 +205,19 @@
       "preferred": true
     },
     {
+      "movie_id": "m_2b4816d02f9e",
+      "movie_title": "（應援特別場）讓子彈飛",
+      "poster_url": "https://assets.showtimes.com.tw/images/1046ac5c4be6c2bc4046ae4a6950b01e.jpg",
+      "aliases": [
+        "（應援特別場）讓子彈飛"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "canonical-poster-title-match",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_3bad90e676f7",
       "movie_title": "（Q&A場）歡迎來到朵莉之家",
       "poster_url": "https://assets.showtimes.com.tw/images/71b030dbeea2f78fc6e4ae610756752c.jpg",
@@ -202,6 +242,32 @@
       ],
       "sources": [
         "showtimes-official-metadata"
+      ]
+    },
+    {
+      "movie_id": "m_c0ad47a05727",
+      "movie_title": "《世紀首登：聖母峰1953》VR自選套票",
+      "poster_url": "https://image.tmdb.org/t/p/w500/mqWgJWEEQfAWKxOp4EyoIAwnDIK.jpg",
+      "aliases": [
+        "《世紀首登：聖母峰1953》VR自選套票"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_113f936ae530",
+      "movie_title": "《世紀首登：聖母峰1953》VR沉浸大展",
+      "poster_url": "https://image.tmdb.org/t/p/w500/mqWgJWEEQfAWKxOp4EyoIAwnDIK.jpg",
+      "aliases": [
+        "《世紀首登：聖母峰1953》VR沉浸大展"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
       ]
     },
     {
@@ -447,6 +513,19 @@
         "previous-catalog"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_db242c510c0c",
+      "movie_title": "【府中15】紀錄片放映院《好奇寶貝方城市－法國新影像學院兒童動畫短片精選》Feat.高雄市電影館",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/1792065175781sFhdCCkFvt.jpeg",
+      "aliases": [
+        "【府中15】紀錄片放映院《好奇寶貝方城市－法國新影像學院兒童動畫短片精選》Feat.高雄市電影館"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
     },
     {
       "movie_id": "m_93b58f99615b",
@@ -748,6 +827,19 @@
       "preferred": true
     },
     {
+      "movie_id": "m_0c4d288df0bf",
+      "movie_title": "【府中15】紀錄片放映院《嘰嘰王子：宇宙無敵》Feat.高雄市電影館",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/17923751602682QGzByjnCW.jpeg",
+      "aliases": [
+        "【府中15】紀錄片放映院《嘰嘰王子：宇宙無敵》Feat.高雄市電影館"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_887199072e18",
       "movie_title": "【府中15】紀錄片放映院《熱戀年代》",
       "poster_url": "https://www.fuzhong15.ntpc.gov.tw/files/file_pool/1/0q289830616680415283/%E7%86%B1%E6%88%80%E5%B9%B4%E4%BB%A3%20%287%29.jpg",
@@ -796,6 +888,19 @@
       "preferred": true
     },
     {
+      "movie_id": "m_440ff741bdfe",
+      "movie_title": "【府中15】紀錄片放映院《蹦蹦奇遇森友會》Feat.高雄市電影館",
+      "poster_url": "https://s3.resource.opentix.life/upload/program/1792065670288mfdrKgq2rP.jpeg",
+      "aliases": [
+        "【府中15】紀錄片放映院《蹦蹦奇遇森友會》Feat.高雄市電影館"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_7ec57ba64f4c",
       "movie_title": "【府中15】紀錄片放映院《蘿拉的魔法鋼琴》",
       "poster_url": "https://www.fuzhong15.ntpc.gov.tw/files/file_pool/1/0q292545632675626779/%E8%98%BF%E6%8B%89%E7%9A%84%E9%AD%94%E6%B3%95%E9%8B%BC%E7%90%B4.jpg",
@@ -810,6 +915,19 @@
         "previous-catalog"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_89fccb2d5028",
+      "movie_title": "【府中15】紀錄片放映院《蘿拉的魔法鋼琴》Feat.高雄市電影館",
+      "poster_url": "https://www.fuzhong15.ntpc.gov.tw/files/file_pool/1/0q292545632675626779/%E8%98%BF%E6%8B%89%E7%9A%84%E9%AD%94%E6%B3%95%E9%8B%BC%E7%90%B4.jpg",
+      "aliases": [
+        "【府中15】紀錄片放映院《蘿拉的魔法鋼琴》Feat.高雄市電影館"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
     },
     {
       "movie_id": "m_2f80712ba3a9",
@@ -888,6 +1006,7 @@
       ],
       "sources": [
         "canonical-manual-poster",
+        "canonical-poster-title-match",
         "kaohsiung-film-archive-official",
         "moc-culture-movie-api",
         "previous-catalog"
@@ -1711,6 +1830,39 @@
       "preferred": true
     },
     {
+      "movie_id": "m_c1fabc1af3df",
+      "movie_title": "有用的人",
+      "poster_url": "https://image.tmdb.org/t/p/w500/f2AHd0mWJrLLwc6elLcSNVbsy8f.jpg",
+      "aliases": [
+        "TO BE ORDINARY",
+        "To Be Ordinary",
+        "To be Ordinary",
+        "有用的人"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "canonical-poster-title-match",
+        "eslite-official-browser",
+        "miramar-official-api",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_994f0a6f1b44",
+      "movie_title": "有用的人 + 映前QA",
+      "poster_url": "https://image.tmdb.org/t/p/w500/f2AHd0mWJrLLwc6elLcSNVbsy8f.jpg",
+      "aliases": [
+        "To Be Ordinary",
+        "有用的人 + 映前QA"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
       "movie_id": "m_21e54c39aa80",
       "movie_title": "艾哈邁德王子歷險記+童話短片集",
       "poster_url": "https://s3.resource.opentix.life/upload/program/1789031008485vP8KZkzngt.jpeg",
@@ -1820,11 +1972,56 @@
       "movie_title": "告別的年代",
       "poster_url": "https://assets.showtimes.com.tw/images/bdde084ee4a87067ac4ad94743d11174.jpg",
       "aliases": [
+        "THE AGE OF GOODBYES",
         "The Age of Goodbyes",
         "告別的年代"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "ambassador-official-site",
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "eslite-official-browser",
+        "kaohsiung-film-archive-official",
+        "miramar-official-api",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "showtimes-official-metadata",
+        "showtimes-official-program",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_4f7954cdbeb1",
+      "movie_title": "告別的年代 +QA",
+      "poster_url": "https://assets.showtimes.com.tw/images/bdde084ee4a87067ac4ad94743d11174.jpg",
+      "aliases": [
+        "The Age of Goodbyes",
+        "告別的年代 +QA"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_2a1de8561fae",
+      "movie_title": "告別的年代_特別場",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027165403124.jpg",
+      "aliases": [
+        "THE AGE OF GOODBYES_SPECIAL",
+        "告別的年代_特別場"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "kaohsiung-film-archive-official",
+        "miramar-official-api",
+        "moc-culture-movie-api",
+        "previous-catalog"
       ]
     },
     {
@@ -1954,6 +2151,7 @@
         "我們，巴黎管弦樂團"
       ],
       "sources": [
+        "ambassador-official-site",
         "canonical-poster-title-match",
         "previous-catalog",
         "vieshow-muvie-songren-official"
@@ -2165,6 +2363,19 @@
         "previous-catalog"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_3cd045d8ff9f",
+      "movie_title": "放送禁止：一夫三妻",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYzQzZmQ0OGUtOTZiOS00YjgxLWJlOTctZWNjZjNiZGYzM2FkXkEyXkFqcGc%40._V1_.jpg",
+      "aliases": [
+        "放送禁止：一夫三妻"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "canonical-poster-title-match",
+        "previous-catalog"
+      ]
     },
     {
       "movie_id": "m_89aefd63031b",
@@ -3001,12 +3212,15 @@
       "movie_title": "高校人形金字塔",
       "poster_url": "https://image.tmdb.org/t/p/w500/v4m63Ymj3didisk3OthFosIzXh7.jpg",
       "aliases": [
+        "New Group",
         "New Group (萬聖節特別場)",
         "高校人形金字塔"
       ],
       "sources": [
+        "ambassador-official-site",
         "canonical-manual-poster",
         "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
         "spot-huashan-official-schedule",
         "the-movie-database"
       ],
@@ -3039,6 +3253,19 @@
         "vieshow-official-browser"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_77042e496dff",
+      "movie_title": "鬼聲泣0",
+      "poster_url": "https://image.tmdb.org/t/p/w500/rZ6C1U1NTDDT0ZMUJ0wwEO2RFRs.jpg",
+      "aliases": [
+        "鬼聲泣0"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_292d4e79218e",
@@ -3436,6 +3663,20 @@
       "preferred": true
     },
     {
+      "movie_id": "m_7941957ce1c3",
+      "movie_title": "黑牢城 (黑白版)",
+      "poster_url": "https://image.tmdb.org/t/p/w500/1GWVlPM1v6k84LsmDkfDzLlGf0O.jpg",
+      "aliases": [
+        "THE SAMURAI AND THE PRISONER",
+        "黑牢城 (黑白版)"
+      ],
+      "sources": [
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
       "movie_id": "m_2a2169e6fd91",
       "movie_title": "黑牢城 黑白版",
       "poster_url": "https://image.tmdb.org/t/p/w500/1GWVlPM1v6k84LsmDkfDzLlGf0O.jpg",
@@ -3456,13 +3697,29 @@
       "aliases": [
         "La Bola Negra",
         "La bola negra",
+        "The Black Ball",
         "黑球"
       ],
       "sources": [
+        "eslite-official-browser",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "showtimes-official-metadata",
+        "showtimes-official-program",
         "vieshow-muvie-songren-official"
+      ]
+    },
+    {
+      "movie_id": "m_306e2992a8bd",
+      "movie_title": "黑球 (口碑場)",
+      "poster_url": "https://assets.showtimes.com.tw/images/43c0cf9508b4f544d4da7270d5572fea.jpg",
+      "aliases": [
+        "La Bola Negra",
+        "黑球 (口碑場)"
+      ],
+      "sources": [
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -3470,11 +3727,31 @@
       "movie_title": "黑潮",
       "poster_url": "https://assets.showtimes.com.tw/images/d21bb3705dbda5ee42e46bcffd291aa2.jpg",
       "aliases": [
+        "DEAD TIDE",
         "Dead Tide",
         "黑潮"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "ambassador-official-site",
+        "eslite-official-browser",
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-metadata",
+        "showtimes-official-program",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_70eecb9c3eac",
+      "movie_title": "黑潮 + QA",
+      "poster_url": "https://assets.showtimes.com.tw/images/d21bb3705dbda5ee42e46bcffd291aa2.jpg",
+      "aliases": [
+        "Dead Tide",
+        "黑潮 + QA"
+      ],
+      "sources": [
+        "previous-catalog",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -3568,7 +3845,11 @@
         "搶銀行先修班"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "ambassador-official-site",
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-metadata",
+        "showtimes-official-program"
       ]
     },
     {
@@ -3639,7 +3920,38 @@
         "聖誕驚奇夜"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "ambassador-official-site",
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-metadata",
+        "showtimes-official-program"
+      ]
+    },
+    {
+      "movie_id": "m_844432c909af",
+      "movie_title": "聖誕驚奇夜_特別場",
+      "poster_url": "https://assets.showtimes.com.tw/images/61269f667b7673167db464847b88cd4e.jpg",
+      "aliases": [
+        "EBENEZER: A CHRISTMAS CAROL_SPECIAL",
+        "聖誕驚奇夜_特別場"
+      ],
+      "sources": [
+        "miramar-official-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
+      "movie_id": "m_cd7cbd01dca0",
+      "movie_title": "跟我一起玩吧？",
+      "poster_url": "https://image.tmdb.org/t/p/w500/epdqClnFAuFw9bklW7QUU8RroKk.jpg",
+      "aliases": [
+        "跟我一起玩吧？"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "the-movie-database"
       ]
     },
     {
@@ -3968,6 +4280,20 @@
         "showtimes-official-program",
         "spot-huashan-official-schedule"
       ]
+    },
+    {
+      "movie_id": "m_5cccaee999af",
+      "movie_title": "與達賴喇嘛談心：尋找幸福的智慧Wisdom of Happiness",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027152349433.jpg",
+      "aliases": [
+        "與達賴喇嘛談心：尋找幸福的智慧Wisdom of Happiness"
+      ],
+      "sources": [
+        "kaohsiung-film-archive-official",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_f60a3e26a08a",
@@ -4530,6 +4856,21 @@
       "preferred": true
     },
     {
+      "movie_id": "m_772d2f5101f1",
+      "movie_title": "貓貓影片節CVF 2026",
+      "poster_url": "https://image.tmdb.org/t/p/w500/wXgqFo84RwEt6cRIe24BCjBPqPS.jpg",
+      "aliases": [
+        "CatVideoFest 2026",
+        "貓貓影片節CVF 2026"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "the-movie-database",
+        "vieshow-muvie-songren-official"
+      ]
+    },
+    {
       "movie_id": "m_cdf9505be00f",
       "movie_title": "駭速劫案",
       "poster_url": "https://assets.showtimes.com.tw/images/59dad952f2df446e92224276e3009391.jpg",
@@ -4640,6 +4981,21 @@
       "preferred": true
     },
     {
+      "movie_id": "m_1389cf6aebae",
+      "movie_title": "雞智逃亡生活",
+      "poster_url": "https://image.tmdb.org/t/p/w500/y7dyoH3dbSfPUMU675T5blwhU3v.jpg",
+      "aliases": [
+        "Hen",
+        "雞智逃亡生活"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "eslite-official-browser",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_c49db6d96a54",
       "movie_title": "霧中風景",
       "poster_url": "https://image.tmdb.org/t/p/w500/dDQxYLvfeF8mNdHsKEaraUNB2pZ.jpg",
@@ -4653,6 +5009,20 @@
         "the-movie-database"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_3bacef99874d",
+      "movie_title": "蘇州河（4K修復版）－早安！周日經典電影院",
+      "poster_url": "https://image.tmdb.org/t/p/w500/npmg7vTFvmFmxZsiThHFwWE86hA.jpg",
+      "aliases": [
+        "Suzhou River",
+        "蘇州河（4K修復版）－早安！周日經典電影院"
+      ],
+      "sources": [
+        "eslite-official-browser",
+        "previous-catalog",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_374f6fcaf14c",
@@ -4892,6 +5262,7 @@
       "sources": [
         "canonical-manual-poster",
         "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
         "spot-huashan-official-schedule",
         "the-movie-database"
       ],

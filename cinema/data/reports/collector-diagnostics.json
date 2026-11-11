@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-05T03:52:37.966Z",
+  "generated_at": "2026-11-11T13:04:30.357Z",
   "counts": {
-    "ambiguous_movie_metadata": 4,
+    "ambiguous_movie_metadata": 3,
     "ambiguous_cinema_matches": 0,
-    "unmatched_cinema_matches": 10
+    "unmatched_cinema_matches": 11
   },
   "ambiguous_movie_metadata": [
     {
@@ -21,24 +21,6 @@
           "title": "泥面人 特別場",
           "title_en": "CLAYFACE",
           "poster_url": "https://assets.showtimes.com.tw/images/81905fba8ca38081defb8699f991c7cd.jpg"
-        }
-      ]
-    },
-    {
-      "source": "miramar-official-api",
-      "city": "taipei",
-      "title": "逃出鯨吞",
-      "alternate_title": "WHALEFALL",
-      "metadata_candidates": [
-        {
-          "title": "逃出鯨吞 4DX特別場",
-          "title_en": "Whalefall",
-          "poster_url": "https://assets.showtimes.com.tw/images/4816d898fa8b4f37533891cc68d457f1.jpg"
-        },
-        {
-          "title": "逃出鯨吞",
-          "title_en": "Whalefall",
-          "poster_url": "https://assets.showtimes.com.tw/images/c84aecacc8077f69e60b6a801459696d.jpg"
         }
       ]
     },
@@ -63,18 +45,18 @@
     {
       "source": "miramar-official-api",
       "city": "taipei",
-      "title": "蜘蛛人：重生日",
-      "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
+      "title": "逃出鯨吞",
+      "alternate_title": "WHALEFALL",
       "metadata_candidates": [
         {
-          "title": "蜘蛛人：重生日 曼哈頓頭條場",
-          "title_en": "SPIDER-MAN: BRAND NEW DAY",
-          "poster_url": "https://assets.showtimes.com.tw/images/f3881041db299c5b200b6bb29114a6aa.jpg"
+          "title": "逃出鯨吞 4DX特別場",
+          "title_en": "Whalefall",
+          "poster_url": "https://assets.showtimes.com.tw/images/4816d898fa8b4f37533891cc68d457f1.jpg"
         },
         {
-          "title": "蜘蛛人：重生日 友誼牽絆場",
-          "title_en": "SPIDER-MAN: BRAND NEW DAY",
-          "poster_url": "https://assets.showtimes.com.tw/images/0642471261c476efaab24988e1794180.jpg"
+          "title": "逃出鯨吞",
+          "title_en": "Whalefall",
+          "poster_url": "https://assets.showtimes.com.tw/images/c84aecacc8077f69e60b6a801459696d.jpg"
         }
       ]
     }
@@ -140,6 +122,12 @@
       "city": "unknown",
       "venue": "全台首輪上映戲院",
       "address": "無無."
+    },
+    {
+      "source": "moc-culture-movie-api",
+      "city": "kaohsiung",
+      "venue": "內惟藝術中心",
+      "address": "高雄市鼓山區馬卡道路329號"
     }
   ],
   "samples_capped": 200
