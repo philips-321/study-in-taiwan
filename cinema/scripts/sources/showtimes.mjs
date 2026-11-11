@@ -18,7 +18,7 @@ const AUDIO_LANGUAGES = [
   ['英語', 'en'], ['日語', 'ja'], ['韓語', 'ko'], ['國語', 'zh'],
   ['粵語', 'yue'], ['越語', 'vi'], ['泰語', 'th'], ['菲語', 'fil'],
   ['法語', 'fr'], ['德語', 'de'], ['西語', 'es'], ['印尼語', 'id'],
-  ['馬來語', 'ms'], ['印度語', 'hi']
+  ['馬來語', 'ms'], ['印度語', 'hi'], ['印地語', 'hi']
 ];
 
 function cityFromAddress(address) {
@@ -87,6 +87,8 @@ export async function fetchShowTimesShowtimes() {
         address: corporation.address || null,
         movie_title: program.name,
         movie_title_en: program.nameAlternative || null,
+        poster_url: program.coverImagePortrait?.url || null,
+        genres: Array.isArray(program.genres) ? program.genres : [],
         rating: program.rating || null,
         date: session.date,
         time: session.time,

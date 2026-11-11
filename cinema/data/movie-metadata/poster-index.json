@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-11T14:12:13.595Z",
+  "generated_at": "2026-11-11T14:25:06.934Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -45,6 +45,18 @@
         "showtimes-official-metadata"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_45f36a1606ce",
+      "movie_title": "(安可重播) BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWING",
+      "poster_url": "https://assets.showtimes.com.tw/images/6a49e1ecb6384cbdbb7c46bdfbc8ae4b.jpg",
+      "aliases": [
+        "(安可重播) BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWING"
+      ],
+      "sources": [
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
     },
     {
       "movie_id": "m_01eb02db1bf5",
@@ -155,6 +167,18 @@
       "preferred": true
     },
     {
+      "movie_id": "m_a5b16d1c4c3c",
+      "movie_title": "(現場直播) BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWING",
+      "poster_url": "https://assets.showtimes.com.tw/images/6a49e1ecb6384cbdbb7c46bdfbc8ae4b.jpg",
+      "aliases": [
+        "(現場直播) BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWING"
+      ],
+      "sources": [
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
+    },
+    {
       "movie_id": "m_1a578d609f4e",
       "movie_title": "(現場直播) BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: LIVE VIEWING",
       "poster_url": "https://assets.showtimes.com.tw/images/fb8e5a822ab4f15165af7445072bef02.jpg",
@@ -171,6 +195,19 @@
         "showtimes-official-program"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_8454060115e5",
+      "movie_title": "(現場直播) NMIXX 1ST WORLD TOUR 〈EPISODE 1: ZERO FRONTIER〉 FINALE IN INCHEON LIVE VIEWING",
+      "poster_url": "https://assets.showtimes.com.tw/images/618e51a2bfcd942b11304bcc4ad82da0.jpg",
+      "aliases": [
+        "(現場直播) NMIXX 1ST WORLD TOUR 〈EPISODE 1: ZERO FRONTIER〉 FINALE IN INCHEON LIVE VIEWING",
+        "NMIXX 1ST WORLD TOUR 〈EPISODE 1: ZERO FRONTIER〉 FINALE IN INCHEON LIVE VIEWING"
+      ],
+      "sources": [
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
     },
     {
       "movie_id": "m_770b0c08b425",
@@ -1497,6 +1534,20 @@
       "preferred": true
     },
     {
+      "movie_id": "m_7f63be05ccf2",
+      "movie_title": "六個說謊的大學生",
+      "poster_url": "https://assets.showtimes.com.tw/images/e3db2bb860db49beb02a6b7d5ce7cf53.jpg",
+      "aliases": [
+        "FINAL INTERVIEW",
+        "六個說謊的大學生"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
+    },
+    {
       "movie_id": "m_ea68cd0a50c5",
       "movie_title": "水花四濺",
       "poster_url": "https://de.web.img2.acsta.net/pictures/16/02/10/13/42/316535.jpg",
@@ -1786,6 +1837,24 @@
       "preferred": true
     },
     {
+      "movie_id": "m_cac0a456ea95",
+      "movie_title": "同級生：十週年重映",
+      "poster_url": "https://assets.showtimes.com.tw/images/c0dab30623f4d7151962d7c52c065479.jpg",
+      "aliases": [
+        "DOUKYUSEI",
+        "Doukyusei",
+        "同級生：十週年重映"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "canonical-manual-poster",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "showtimes-official-cloudflare-bootstrap",
+        "vieshow-official-browser"
+      ]
+    },
+    {
       "movie_id": "m_4f7ae2e1f1ef",
       "movie_title": "名偵探柯南 高速公路的墮天使",
       "poster_url": "https://movie-chill.tw/movie-img/x1784091040afpssz.jpg.pagespeed.ic.0w5VyXbL9b.jpg",
@@ -1860,6 +1929,26 @@
       ]
     },
     {
+      "movie_id": "m_c1fabc1af3df",
+      "movie_title": "有用的人",
+      "poster_url": "https://assets.showtimes.com.tw/images/99eb45972430c39a4ed06ea965d5b019.jpg",
+      "aliases": [
+        "TO BE ORDINARY",
+        "To Be Ordinary",
+        "To be Ordinary",
+        "有用的人"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "canonical-poster-title-match",
+        "eslite-official-browser",
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
       "movie_id": "m_994f0a6f1b44",
       "movie_title": "有用的人 + 映前QA",
       "poster_url": "https://image.tmdb.org/t/p/w500/f2AHd0mWJrLLwc6elLcSNVbsy8f.jpg",
@@ -1871,6 +1960,22 @@
         "canonical-poster-title-match",
         "previous-catalog",
         "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_979e23cbca0b",
+      "movie_title": "老千：惡魔之歌",
+      "poster_url": "https://assets.showtimes.com.tw/images/f8feb0160c368c0865fc9e6205b49e21.jpg",
+      "aliases": [
+        "TAZZA: THE SONG OF BEELZEBUB",
+        "TAZZA: The Song of Beelzebub",
+        "老千：惡魔之歌"
+      ],
+      "sources": [
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "vieshow-muvie-songren-official"
       ]
     },
     {
@@ -2159,6 +2264,21 @@
       ]
     },
     {
+      "movie_id": "m_079283c76af2",
+      "movie_title": "我要當總統",
+      "poster_url": "https://assets.showtimes.com.tw/images/15cd36a0b97c01fa18e44dfbf1370e15.jpg",
+      "aliases": [
+        "Meat the Future",
+        "我要當總統"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_ee66389dca47",
       "movie_title": "我們，巴黎管弦樂團",
       "poster_url": "https://assets.lesfilmspelleas.com/NOUS_L_ORCHESTRE_4_5_AFFICHE_770aa4abb4.jpg",
@@ -2198,6 +2318,20 @@
       "preferred": true
     },
     {
+      "movie_id": "m_8dc6e16d6bfd",
+      "movie_title": "沙丘：第二部（重映版）",
+      "poster_url": "https://assets.showtimes.com.tw/images/9be11dff6b0bfeb6105731e33e57a78d.jpg",
+      "aliases": [
+        "DUNE: PART TWO",
+        "沙丘：第二部（重映版）"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
+    },
+    {
       "movie_id": "m_5c7d6f8b8ffc",
       "movie_title": "沙丘：第三部",
       "poster_url": "https://assets.showtimes.com.tw/images/deadeb649408fdba47e76fe967c60f54.jpg",
@@ -2219,6 +2353,20 @@
         "vieshow-official-browser"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_dd7cc0122e18",
+      "movie_title": "沙丘（重映版）",
+      "poster_url": "https://assets.showtimes.com.tw/images/274da7f91c90a1a546ad415b0cb24b7e.jpg",
+      "aliases": [
+        "Dune",
+        "沙丘（重映版）"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
     },
     {
       "movie_id": "m_e1e5c854b656",
@@ -2888,6 +3036,29 @@
       "preferred": true
     },
     {
+      "movie_id": "m_730baf7f4574",
+      "movie_title": "哥吉拉-0.0",
+      "poster_url": "https://assets.showtimes.com.tw/images/d69301e966f687093a96c1f8f318cfe8.jpg",
+      "aliases": [
+        "GODZILLA MINUS ZERO",
+        "Godzilla Minus Zero",
+        "GodzillaMinusZero ",
+        "哥吉拉-0.0"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "atmovies-taipei-fallback",
+        "canonical-manual-poster",
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "showtimes-official-program",
+        "twshowtimes-aggregator-fallback",
+        "vieshow-muvie-songren-official",
+        "vieshow-official-browser"
+      ]
+    },
+    {
       "movie_id": "m_5f5f4403e711",
       "movie_title": "哥吉拉-0.0 全台聯合首映",
       "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
@@ -3064,6 +3235,20 @@
         "showtimes-official-cloudflare-bootstrap",
         "the-movie-database",
         "twshowtimes-aggregator-fallback"
+      ]
+    },
+    {
+      "movie_id": "m_f8aa768fabfd",
+      "movie_title": "追蹤者遊戲W 水魚交融",
+      "poster_url": "https://assets.showtimes.com.tw/images/bf4a166d9055b0ed5e79fdf1fa6792e2.jpg",
+      "aliases": [
+        "Chaser Game W: A Fateful Encounter",
+        "追蹤者遊戲W 水魚交融"
+      ],
+      "sources": [
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "showtimes-official-cloudflare-bootstrap"
       ]
     },
     {
@@ -3289,6 +3474,21 @@
       "movie_id": "m_77042e496dff",
       "movie_title": "鬼聲泣0",
       "poster_url": "https://image.tmdb.org/t/p/w500/rZ6C1U1NTDDT0ZMUJ0wwEO2RFRs.jpg",
+      "aliases": [
+        "DEATH WHISPERER: SAMING THE WEREBEAST",
+        "鬼聲泣0"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_77042e496dff",
+      "movie_title": "鬼聲泣0",
+      "poster_url": "https://assets.showtimes.com.tw/images/09f6b016e65aeb1551b9631c0f18d373.jpg",
       "aliases": [
         "DEATH WHISPERER: SAMING THE WEREBEAST",
         "鬼聲泣0"
@@ -3908,6 +4108,20 @@
       ]
     },
     {
+      "movie_id": "m_37576abb151c",
+      "movie_title": "搶銀行先修班 特別場",
+      "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg",
+      "aliases": [
+        "How To Rob a Bank",
+        "搶銀行先修班 特別場"
+      ],
+      "sources": [
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
+    },
+    {
       "movie_id": "m_7a163cfc0622",
       "movie_title": "新大陸",
       "poster_url": "https://image.tmdb.org/t/p/original/eC9SDdBwCa0FGckc76q1MBxlks9.jpg",
@@ -4016,6 +4230,21 @@
       "movie_id": "m_cd7cbd01dca0",
       "movie_title": "跟我一起玩吧？",
       "poster_url": "https://image.tmdb.org/t/p/w500/epdqClnFAuFw9bklW7QUU8RroKk.jpg",
+      "aliases": [
+        "SANA: Play with Me",
+        "跟我一起玩吧？"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_cd7cbd01dca0",
+      "movie_title": "跟我一起玩吧？",
+      "poster_url": "https://assets.showtimes.com.tw/images/e68674707573ddc6c3aa64084453d2b6.jpg",
       "aliases": [
         "SANA: Play with Me",
         "跟我一起玩吧？"
@@ -4494,6 +4723,20 @@
       ]
     },
     {
+      "movie_id": "m_c3c66546e59b",
+      "movie_title": "蜘蛛人：重生日 最終決戰場",
+      "poster_url": "https://assets.showtimes.com.tw/images/0bdc8bbdb17cd6a7b8ffb8f6be3383fd.jpg",
+      "aliases": [
+        "SPIDER-MAN: BRAND NEW DAY",
+        "蜘蛛人：重生日 最終決戰場"
+      ],
+      "sources": [
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
+    },
+    {
       "movie_id": "m_b209db12c52f",
       "movie_title": "誤闖遺忘島",
       "poster_url": "https://assets.showtimes.com.tw/images/ecc512d023929567b7a740bded5656c2.jpg",
@@ -4601,6 +4844,20 @@
       "movie_id": "m_d69e8be24c88",
       "movie_title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
       "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg",
+      "aliases": [
+        "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+        "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場"
+      ],
+      "sources": [
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
+    },
+    {
+      "movie_id": "m_d69e8be24c88",
+      "movie_title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
+      "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg",
       "aliases": [
         "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
         "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場"
@@ -4749,6 +5006,21 @@
       "movie_id": "m_4c5a5a8498da",
       "movie_title": "暮光禁地",
       "poster_url": "https://image.tmdb.org/t/p/w500/zevUp8oAEn0loUElqIZiJ11hUi6.jpg",
+      "aliases": [
+        "VAMPIRE CARNIVAL",
+        "暮光禁地"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_4c5a5a8498da",
+      "movie_title": "暮光禁地",
+      "poster_url": "https://assets.showtimes.com.tw/images/a09140fbdc703cef3a1573c62cd99a5f.jpg",
       "aliases": [
         "VAMPIRE CARNIVAL",
         "暮光禁地"
@@ -4976,6 +5248,22 @@
       "movie_id": "m_772d2f5101f1",
       "movie_title": "貓貓影片節CVF 2026",
       "poster_url": "https://image.tmdb.org/t/p/w500/wXgqFo84RwEt6cRIe24BCjBPqPS.jpg",
+      "aliases": [
+        "CatVideoFest 2026",
+        "貓貓影片節CVF 2026"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "the-movie-database",
+        "vieshow-muvie-songren-official"
+      ]
+    },
+    {
+      "movie_id": "m_772d2f5101f1",
+      "movie_title": "貓貓影片節CVF 2026",
+      "poster_url": "https://assets.showtimes.com.tw/images/6f88b9c2df855dd37d1587d073cfa7d9.jpg",
       "aliases": [
         "CatVideoFest 2026",
         "貓貓影片節CVF 2026"
@@ -5883,6 +6171,23 @@
       "movie_id": "m_5bfe35d36ac0",
       "movie_title": "UFO離奇命案",
       "poster_url": "https://image.tmdb.org/t/p/w500/lMwNyDJDh0NEpoA8EWATi1XCQ5N.jpg",
+      "aliases": [
+        "UFO離奇命案",
+        "Unidentified Murder"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "eslite-official-browser",
+        "eslite-official-schedule",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_5bfe35d36ac0",
+      "movie_title": "UFO離奇命案",
+      "poster_url": "https://assets.showtimes.com.tw/images/c5d6d02006cd77bb6e114705e5bf919a.jpg",
       "aliases": [
         "UFO離奇命案",
         "Unidentified Murder"

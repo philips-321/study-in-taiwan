@@ -10,6 +10,8 @@ const files = fs.readdirSync(research).filter(name => /^showtimes-cloudflare-bat
 if (!files.length) throw new Error('No Cloudflare ShowTimes snapshot files found');
 const incoming = files.flatMap(name => JSON.parse(fs.readFileSync(path.join(research, name), 'utf8')));
 if (!incoming.length) throw new Error('Cloudflare ShowTimes snapshots are empty');
+const programFile = path.join(research, 'showtimes-cloudflare-programs.json');
+const programs = fs.existsSync(programFile) ? JSON.parse(fs.readFileSync(programFile, 'utf8')) : [];
 
 const readJson = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const writeJson = (file, value) => {
@@ -17,6 +19,21 @@ const writeJson = (file, value) => {
   fs.writeFileSync(file, JSON.stringify(value, null, 2) + '\n');
 };
 const hash = value => crypto.createHash('sha1').update(value).digest('hex').slice(0, 16);
+const audioLanguage = format => {
+  const match = String(format || '').match(/(英語|日語|韓語|國語|粵語|越語|泰語|菲語|法語|德語|西語|印尼語|馬來語|印度語|印地語)$/);
+  return match ? ({
+    '英語': 'en', '日語': 'ja', '韓語': 'ko', '國語': 'zh', '粵語': 'yue',
+    '越語': 'vi', '泰語': 'th', '菲語': 'fil', '法語': 'fr', '德語': 'de',
+    '西語': 'es', '印尼語': 'id', '馬來語': 'ms', '印度語': 'hi', '印地語': 'hi'
+  }[match[1]] || null) : null;
+};
+const programByTitle = new Map();
+for (const program of programs) {
+  for (const title of [program.name, program.nameAlternative].filter(Boolean)) {
+    const key = normalizeMovieTitle(title);
+    if (key && !programByTitle.has(key)) programByTitle.set(key, program);
+  }
+}
 const cityFiles = new Map();
 for (const city of new Set(incoming.map(row => row.city))) {
   const file = path.join(root, 'cinemas', city + '.json');
@@ -35,7 +52,13 @@ for (const movie of previousCatalog.movies || []) {
 }
 const normalizedIncoming = incoming.map(row => ({
   ...row,
-  cinema_id: showtimesCinemaIds.get(String(row.cinema_id)) || row.cinema_id
+  cinema_id: showtimesCinemaIds.get(String(row.cinema_id)) || row.cinema_id,
+  audio_language: row.audio_language || audioLanguage(row.format),
+  movie_title_en: row.movie_title_en || programByTitle.get(normalizeMovieTitle(row.movie_title))?.nameAlternative || null,
+  poster_url: row.poster_url || programByTitle.get(normalizeMovieTitle(row.movie_title))?.poster_url || null,
+  genres: row.genres?.length ? row.genres : (programByTitle.get(normalizeMovieTitle(row.movie_title))?.genres || []),
+  rating: row.rating || programByTitle.get(normalizeMovieTitle(row.movie_title))?.rating || null,
+  duration_minutes: row.duration_minutes || (Number(programByTitle.get(normalizeMovieTitle(row.movie_title))?.duration) > 0 ? Math.round(Number(programByTitle.get(normalizeMovieTitle(row.movie_title)).duration) / 60) : null)
 }));
 const cinemaIds = new Set([...normalizedIncoming.map(row => row.cinema_id), ...incoming.map(row => row.cinema_id)]);
 const fullRows = normalizedIncoming.map(row => {
@@ -93,6 +116,22 @@ const movieCatalog = buildMovieIndex(fullRows, [], previousCatalog.movies || [])
 movieCatalog.generated_at = new Date().toISOString();
 movieCatalog.identity_policy = previousCatalog.identity_policy || 'stable movie_id from normalized primary title; metadata stored once in this catalog';
 writeJson(path.join(root, 'movies', 'index.json'), movieCatalog);
+if (programs.length) {
+  writeJson(path.join(root, 'movie-metadata', 'showtimes.json'), {
+    version: 1,
+    source: 'ShowTimes official bootstrap program records',
+    retrieved_at: fullRows.map(row => row.retrieved_at).sort().at(-1) || new Date().toISOString(),
+    movies: programs.map(program => ({
+      id: program.id,
+      movie_title: program.name,
+      movie_title_en: program.nameAlternative || null,
+      genres: Array.isArray(program.genres) ? program.genres : [],
+      rating: program.rating || null,
+      duration_minutes: Number(program.duration) > 0 ? Math.round(Number(program.duration) / 60) : null,
+      poster_url: program.poster_url || null
+    }))
+  });
+}
 
 const manifestFile = path.join(root, 'manifest.json');
 const manifest = readJson(manifestFile);

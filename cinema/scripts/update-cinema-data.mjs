@@ -278,6 +278,7 @@ function mergeExternalRows(rows, sourceName) {
       movie_title: row.movie_title,
       movie_title_en: row.movie_title_en || null,
       poster_url: row.poster_url || null,
+      genres: Array.isArray(row.genres) ? row.genres : [],
       rating: row.rating || null,
       start_time: dateTimeToIso(row.date, row.time),
       end_time: null,
