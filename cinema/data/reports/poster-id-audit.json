@@ -1,11 +1,11 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-11T13:05:08.357Z",
+  "generated_at": "2026-11-11T13:27:14.744Z",
   "public_window": {
     "as_of": "2026-11-11",
     "end_date": "2026-12-11",
-    "rows": 3893,
-    "expected_rows": 3893
+    "rows": 4126,
+    "expected_rows": 4126
   },
   "ids": {
     "active_movies": 158,
@@ -23,23 +23,21 @@
       "poster_yes": 119,
       "poster_no": 17,
       "fetch_states": {
-        "ambiguous": 1,
-        "cooldown": 6,
-        "found": 6,
+        "cooldown": 7,
         "found_manual": 81,
         "found_official": 17,
         "not_found": 10,
-        "reused": 15
+        "reused": 21
       }
     },
     "missing_movies": [
       {
-        "movie_id": "m_7f63be05ccf2",
-        "movie_title": "六個說謊的大學生"
-      },
-      {
         "movie_id": "m_dd7cc0122e18",
         "movie_title": "沙丘（重映版）"
+      },
+      {
+        "movie_id": "m_7f63be05ccf2",
+        "movie_title": "六個說謊的大學生"
       },
       {
         "movie_id": "m_8dc6e16d6bfd",

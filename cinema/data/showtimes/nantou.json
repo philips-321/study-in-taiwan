@@ -1,7 +1,7 @@
 {
   "version": 4,
   "city": "nantou",
-  "generated_at": "2026-11-11T13:04:30.357Z",
+  "generated_at": "2026-11-11T13:26:39.158Z",
   "showtime_count": 1,
   "sources": {
     "moc-culture-movie-api": {
@@ -13,7 +13,7 @@
       "fresh_showtimes": 805,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-11T13:04:58.948Z",
+      "last_success_at": "2026-11-11T13:27:08.042Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,20 +26,20 @@
       "fresh_showtimes": 455,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-11T13:04:58.948Z",
+      "last_success_at": "2026-11-11T13:27:08.042Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 2871,
+      "showtimes": 3119,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 2871,
+      "fresh_showtimes": 3119,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-11T13:04:58.948Z",
+      "last_success_at": "2026-11-11T13:27:08.042Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -57,7 +57,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-11T13:04:58.948Z",
+      "last_success_at": "2026-11-11T13:27:08.042Z",
       "last_failure_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
@@ -70,7 +70,7 @@
       "fresh_showtimes": 97,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-11T13:04:58.948Z",
+      "last_success_at": "2026-11-11T13:27:08.042Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -81,14 +81,14 @@
       "disabled": true,
       "role": "direct HTTP fetch disabled; use Playwright against official schedule page",
       "browser_fallback": "eslite-official-browser",
-      "browser_fallback_showtimes": 130,
+      "browser_fallback_showtimes": 129,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-11T13:04:58.948Z",
+      "last_success_at": "2026-11-11T13:27:08.042Z",
       "last_failure_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
@@ -104,7 +104,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-11T13:04:58.948Z",
+      "last_success_at": "2026-11-11T13:27:08.042Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -119,48 +119,17 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-11T13:04:58.948Z",
+      "last_success_at": "2026-11-11T13:27:08.042Z",
       "last_failure_at": "2026-11-01T22:52:01.331Z",
       "next_probe_at": null
     },
     "showtimes-official-browser": {
       "ok": false,
+      "skipped": true,
+      "retry_suppressed": true,
+      "retry_after": "2026-11-18T13:05:08.357Z",
       "showtimes": 0,
-      "acquisition_method": "first-party-showtimes-browser",
-      "pages_requested": 3,
-      "target_cinemas": 15,
-      "matched_cinemas": 0,
-      "unmatched_cinemas": [
-        "大巨蛋秀泰影城",
-        "欣欣秀泰影城",
-        "樹林秀泰影城",
-        "土城秀泰影城",
-        "基隆秀泰影城",
-        "台中站前秀泰影城",
-        "台中文心秀泰影城",
-        "台中麗寶秀泰影城",
-        "北港秀泰影城",
-        "嘉義秀泰影城",
-        "台南仁德秀泰影城",
-        "高雄岡山秀泰影城",
-        "高雄夢時代秀泰影城",
-        "花蓮秀泰影城",
-        "台東秀泰影城"
-      ],
-      "cinema_pages_failed": 15,
-      "error": "HTTP 403 from first-party ShowTimes page; stopped remaining browser navigations",
-      "warnings": [
-        "大巨蛋秀泰影城: HTTP 403",
-        "欣欣秀泰影城: HTTP 403",
-        "樹林秀泰影城: HTTP 403",
-        "土城秀泰影城: Skipped after this official host returned HTTP 403",
-        "基隆秀泰影城: Skipped after this official host returned HTTP 403",
-        "台中站前秀泰影城: Skipped after this official host returned HTTP 403",
-        "台中文心秀泰影城: Skipped after this official host returned HTTP 403",
-        "台中麗寶秀泰影城: Skipped after this official host returned HTTP 403",
-        "北港秀泰影城: Skipped after this official host returned HTTP 403",
-        "嘉義秀泰影城: Skipped after this official host returned HTTP 403"
-      ],
+      "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
       "health": "degraded",
       "circuit_state": "open",
       "failure_count": 3,
@@ -169,20 +138,20 @@
       "fallback": "unavailable",
       "last_success_at": null,
       "last_failure_at": "2026-11-11T13:04:58.948Z",
-      "next_probe_at": "2026-11-11T13:34:58.948Z"
+      "next_probe_at": "2026-11-18T13:05:08.357Z"
     },
     "eslite-official-browser": {
       "ok": true,
-      "showtimes": 130,
+      "showtimes": 129,
       "acquisition_method": "first-party-eslite-browser",
       "pages_requested": 1,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 130,
+      "fresh_showtimes": 129,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-11T13:04:58.948Z",
+      "last_success_at": "2026-11-11T13:27:08.042Z",
       "last_failure_at": "2026-11-02T02:06:35.684Z",
       "next_probe_at": null
     },
@@ -209,6 +178,6 @@
       "showtimes-official-browser",
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-11T13:04:58.948Z"
+    "restored_at": "2026-11-11T13:27:08.042Z"
   }
 }
