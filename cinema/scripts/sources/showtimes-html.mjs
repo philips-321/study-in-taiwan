@@ -104,9 +104,15 @@ export async function fetchShowTimesHtmlFallback(targetCinemas) {
     }
   }
   const futureRows = rows.filter(row => row.date >= today);
-  if (!futureRows.length && pages.blocked_by_403 !== true) throw new Error('Official ShowTimes browser had no current or future sessions');
-  futureRows.source_errors = errors;
-  futureRows.acquisition_method = 'first-party-showtimes-browser';
+  const browserErrors = pages.filter(result => result?.error).map(result => result.error);
+  if (!futureRows.length && pages.blocked_by_403 !== true) {
+    const detail = [...errors, ...browserErrors].slice(0, 3).join(' | ');
+    throw new Error(`Official ShowTimes browser had no current or future sessions${detail ? `; ${detail}` : ''}`);
+  }
+  futureRows.source_errors = [...errors, ...browserErrors];
+  futureRows.acquisition_method = pages.some(result => result?.acquisition_method === 'cloudflare-browser-rendering')
+    ? 'cloudflare-browser-rendering'
+    : 'first-party-showtimes-browser';
   futureRows.cinema_pages = targets.length;
   futureRows.cinema_pages_failed = errors.length;
   futureRows.target_cinemas = targets.length;
