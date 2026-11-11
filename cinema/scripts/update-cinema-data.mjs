@@ -345,6 +345,11 @@ const needsAlternativeFallback = source => {
 };
 
 const recent403RetryAfter = sourceName => {
+  // A previous 403 from the runner's local browser must not suppress a new
+  // Cloudflare Browser Rendering attempt. The access path changed, so probe it
+  // immediately instead of waiting out the old cooldown.
+  const remoteBrowserAvailable = Boolean(process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN);
+  if (remoteBrowserAvailable && ['showtimes-official-browser', 'eslite-official-browser'].includes(sourceName)) return null;
   const issue = (sourceIssueHistory.issues || []).find(item => item.source === sourceName && item.state === 'open' && item.http_status === 403);
   const failedAt = Date.parse(issue?.last_seen || '');
   if (!Number.isFinite(failedAt) || Date.now() - failedAt >= SOURCE_RETRY_COOLDOWN_MS) return null;
