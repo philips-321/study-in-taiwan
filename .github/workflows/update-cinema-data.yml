@@ -113,6 +113,7 @@ jobs:
           CINEMA_PLAYWRIGHT_MODULE: ${{ runner.temp }}/cinema-browser/node_modules/playwright/index.mjs
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CINEMA_REQUIRE_REMOTE_BROWSER: 'true'
         run: |
           set -euo pipefail
           if [ "$MOC_AVAILABLE" = 'true' ]; then
@@ -137,6 +138,21 @@ jobs:
           CINEMA_MOC_AVAILABLE: ${{ steps.moc_probe.outputs.available }}
           CINEMA_FORCED_SOURCE_ERROR: MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests
         run: node cinema/scripts/restore-failed-source-fallbacks.mjs
+
+      - name: Fail if the required WAF browser path still returned 403
+        if: steps.daily_guard.outputs.skip != 'true'
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const manifest = JSON.parse(fs.readFileSync('cinema/data/manifest.json', 'utf8'));
+          const sources = manifest.sources?.showtimes || {};
+          for (const source of ['showtimes-official-browser', 'eslite-official-browser']) {
+            const status = sources[source];
+            if (status?.ok === false && /403|Cloudflare Browser Rendering/i.test(String(status.error || ''))) {
+              throw new Error(`${source} did not pass through the required remote browser: ${status.error}`);
+            }
+          }
+          NODE
 
       - name: Isolate repeated city data failures and write report
         if: steps.daily_guard.outputs.skip != 'true'

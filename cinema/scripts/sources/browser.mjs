@@ -16,6 +16,10 @@ async function loadChromium() {
 export async function browseOfficialPages(targets, { concurrency = 3, settleMs = 1200, navigationTimeoutMs = 25_000 } = {}) {
   const chromium = await loadChromium();
   const useCloudflareBrowser = cloudflareBrowserAvailable();
+  const requireCloudflareBrowser = process.env.CINEMA_REQUIRE_REMOTE_BROWSER === 'true';
+  if (requireCloudflareBrowser && !useCloudflareBrowser) {
+    throw new Error('Cloudflare Browser Rendering is required for this collector, but CLOUDFLARE_ACCOUNT_ID/API_TOKEN is unavailable');
+  }
   const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
   const results = Array(targets.length);
   let cursor = 0;
@@ -54,6 +58,7 @@ export async function browseOfficialPages(targets, { concurrency = 3, settleMs =
               if (rendered.status === 403) blockedHosts.add(host);
               continue;
             } catch (error) {
+              if (requireCloudflareBrowser) throw error;
               // Keep the local Chromium path as a bounded fallback if the
               // remote browser service is unavailable or lacks permission.
               results[index] = { target, status: null, html: '', error: `Cloudflare Browser Rendering: ${String(error?.message || error).slice(0, 240)}` };
