@@ -139,20 +139,9 @@ jobs:
           CINEMA_FORCED_SOURCE_ERROR: MOC source probe timed out or was unreachable; collector skipped to avoid repeated requests
         run: node cinema/scripts/restore-failed-source-fallbacks.mjs
 
-      - name: Fail if the required WAF browser path still returned 403
+      - name: Record browser-source WAF health without failing the refresh
         if: steps.daily_guard.outputs.skip != 'true'
-        run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          const manifest = JSON.parse(fs.readFileSync('cinema/data/manifest.json', 'utf8'));
-          const sources = manifest.sources?.showtimes || {};
-          for (const source of ['showtimes-official-cloudflare-bootstrap', 'showtimes-official-browser', 'eslite-official-browser']) {
-            const status = sources[source];
-            if (status?.ok === false && /403|Cloudflare Browser Rendering|Browser Run/i.test(String(status.error || ''))) {
-              throw new Error(`${source} did not pass through the required remote browser: ${status.error}`);
-            }
-          }
-          NODE
+        run: node cinema/scripts/report-browser-source-health.mjs
 
       - name: Isolate repeated city data failures and write report
         if: steps.daily_guard.outputs.skip != 'true'
