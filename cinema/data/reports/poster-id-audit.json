@@ -1,71 +1,48 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-11T13:29:58.836Z",
+  "generated_at": "2026-11-12T23:42:21.608Z",
   "public_window": {
-    "as_of": "2026-11-11",
-    "end_date": "2026-12-11",
-    "rows": 4199,
-    "expected_rows": 4199
+    "as_of": "2026-11-13",
+    "end_date": "2026-12-13",
+    "rows": 8874,
+    "expected_rows": 8874
   },
   "ids": {
-    "active_movies": 158,
+    "active_movies": 166,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 158,
-    "available": 141,
-    "missing": 17,
+    "active_movies": 166,
+    "available": 155,
+    "missing": 11,
     "canonical_registry": {
-      "unique_active_films": 136,
-      "poster_yes": 119,
-      "poster_no": 17,
+      "unique_active_films": 139,
+      "poster_yes": 127,
+      "poster_no": 12,
       "fetch_states": {
-        "cooldown": 7,
-        "found_manual": 81,
-        "found_official": 17,
-        "not_found": 10,
-        "reused": 21
+        "ambiguous": 1,
+        "cooldown": 4,
+        "found_manual": 83,
+        "found_official": 16,
+        "not_found": 7,
+        "reused": 28
       }
     },
     "missing_movies": [
       {
-        "movie_id": "m_dd7cc0122e18",
-        "movie_title": "沙丘（重映版）"
-      },
-      {
-        "movie_id": "m_7f63be05ccf2",
-        "movie_title": "六個說謊的大學生"
-      },
-      {
-        "movie_id": "m_8dc6e16d6bfd",
-        "movie_title": "沙丘：第二部（重映版）"
+        "movie_id": "m_2a9c3037d485",
+        "movie_title": "沙丘_經典重映"
       },
       {
         "movie_id": "m_97d8d79b7330",
         "movie_title": "全家就弒你家"
       },
       {
-        "movie_id": "m_875cda6b131c",
-        "movie_title": "我們不是什麼"
-      },
-      {
-        "movie_id": "m_4dd219cbc21b",
-        "movie_title": "麥可傑克森"
-      },
-      {
-        "movie_id": "m_979e23cbca0b",
-        "movie_title": "老千：惡魔之歌"
-      },
-      {
         "movie_id": "m_faa4e2e2405b",
         "movie_title": "幸福的麵包"
-      },
-      {
-        "movie_id": "m_2a9c3037d485",
-        "movie_title": "沙丘_經典重映"
       },
       {
         "movie_id": "m_e5b9823d9027",
@@ -76,12 +53,12 @@
         "movie_title": "沙丘+沙丘:第二部_連映特別場"
       },
       {
-        "movie_id": "m_192e3975fcd4",
-        "movie_title": "【王登鈺動畫作品展】"
+        "movie_id": "m_875cda6b131c",
+        "movie_title": "我們不是什麼"
       },
       {
-        "movie_id": "m_c42b17fafe36",
-        "movie_title": "BTS WORLD TOUR ARIRANG IN KAOHSIUNG現場直播"
+        "movie_id": "m_192e3975fcd4",
+        "movie_title": "【王登鈺動畫作品展】"
       },
       {
         "movie_id": "m_283294392342",
@@ -105,12 +82,66 @@
     "ambiguous_title_matches": [
       {
         "titles": [
+          "SPIDER-MAN: BRAND NEW DAY"
+        ],
+        "movie_ids": [
+          "m_06f5422d36b4",
+          "m_c3c66546e59b"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "哥吉拉-0.0_特別場",
+          "哥吉拉-0.0"
+        ],
+        "movie_ids": [
+          "m_22bc89ac6866",
+          "m_730baf7f4574"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
           "告別的年代_特別場",
           "告別的年代"
         ],
         "movie_ids": [
           "m_2a1de8561fae",
           "m_50f301cf7baf"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "搶銀行先修班 特別場",
+          "搶銀行先修班"
+        ],
+        "movie_ids": [
+          "m_37576abb151c",
+          "m_bb2bf4b4466c"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "How To Rob a Bank",
+          "HOW TO ROB A BANK"
+        ],
+        "movie_ids": [
+          "m_37576abb151c",
+          "m_bb2bf4b4466c"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND"
+        ],
+        "movie_ids": [
+          "m_3c75afd6ba43",
+          "m_b75518dd4086",
+          "m_d69e8be24c88"
         ],
         "poster_count": 2
       }

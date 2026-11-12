@@ -13,9 +13,19 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_e7f3a2624932"
+      "movie_id": "m_e7f3a2624932",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "fb3abe42ae18c68b",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-22T12:00:00+08:00",
+      "hall": "LIVE",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_283294392342"
     },
     {
       "id": "aa6288a8ec07416b",
@@ -27,9 +37,10 @@
       "audio_language": "ko",
       "source_event_id": "4831254",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "25b94e296b0d4acd",
@@ -41,18 +52,10 @@
       "audio_language": "ko",
       "source_event_id": "4831235",
       "source_url": "https://www.showtimes.com.tw/cinemas/2/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "fb3abe42ae18c68b",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-22T12:00:00+08:00",
-      "hall": "LIVE",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_283294392342"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     }
   ]
 }

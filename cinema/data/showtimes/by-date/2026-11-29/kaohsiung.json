@@ -96,20 +96,6 @@
       "movie_id": "m_fca2946fc668"
     },
     {
-      "id": "7850df0f023622b5",
-      "cinema_id": "5c35b8e61739d367",
-      "movie_id": "m_8454060115e5",
-      "start_time": "2026-11-29T15:00:00+08:00",
-      "hall": "巨幕1廳",
-      "format": "SCREENX 韓語",
-      "audio_language": "ko",
-      "source_event_id": "4838155",
-      "source_url": "https://www.showtimes.com.tw/cinemas/84/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
       "id": "ff6b6fde2a39fb9b",
       "cinema_id": "75fffb3e70aecfba",
       "cinema_name": "內惟藝術中心",
@@ -123,6 +109,21 @@
       "movie_id": "m_113f936ae530"
     },
     {
+      "id": "7850df0f023622b5",
+      "cinema_id": "5c35b8e61739d367",
+      "movie_id": "m_8454060115e5",
+      "start_time": "2026-11-29T15:00:00+08:00",
+      "hall": "巨幕1廳",
+      "format": "SCREENX 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4838155",
+      "source_url": "https://www.showtimes.com.tw/cinemas/84/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
       "id": "212494500afe72a7",
       "cinema_id": "b7843607f93e577c",
       "movie_id": "m_8454060115e5",
@@ -132,9 +133,10 @@
       "audio_language": "ko",
       "source_event_id": "4838147",
       "source_url": "https://www.showtimes.com.tw/cinemas/87/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "e0fd4da2a5acd5d3",
@@ -146,9 +148,10 @@
       "audio_language": "ko",
       "source_event_id": "4838148",
       "source_url": "https://www.showtimes.com.tw/cinemas/87/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "6e8d81e4125b5b96",
@@ -177,19 +180,6 @@
       "movie_id": "m_21dc3b326377"
     },
     {
-      "id": "b906259a4f16dcb1",
-      "cinema_id": "75fffb3e70aecfba",
-      "cinema_name": "內惟藝術中心",
-      "start_time": "2026-11-29T17:00:00+08:00",
-      "end_time": "2026-11-29T18:00:00+08:00",
-      "price": "799",
-      "on_sales": "Y",
-      "source_event_id": "6aeeeff126b3245efc7537a8",
-      "source_url": "https://ticket.com.tw/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1I7E1FQ",
-      "source": "moc-culture-movie-api",
-      "movie_id": "m_113f936ae530"
-    },
-    {
       "id": "f7248272a7083395",
       "cinema_id": "ef1c3baebc0650eb",
       "cinema_name": "內惟藝術中心 Reel one 1廳",
@@ -201,6 +191,19 @@
       "source_url": "https://ticket.com.tw/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1HFE3O0",
       "source": "moc-culture-movie-api",
       "movie_id": "m_362fa5be8c23"
+    },
+    {
+      "id": "b906259a4f16dcb1",
+      "cinema_id": "75fffb3e70aecfba",
+      "cinema_name": "內惟藝術中心",
+      "start_time": "2026-11-29T17:00:00+08:00",
+      "end_time": "2026-11-29T18:00:00+08:00",
+      "price": "799",
+      "on_sales": "Y",
+      "source_event_id": "6aeeeff126b3245efc7537a8",
+      "source_url": "https://ticket.com.tw/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1I7E1FQ",
+      "source": "moc-culture-movie-api",
+      "movie_id": "m_113f936ae530"
     },
     {
       "id": "1672b372b01de794",

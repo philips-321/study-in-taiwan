@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-11T14:25:06.934Z",
+  "generated_at": "2026-11-12T23:42:21.179Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -165,6 +165,15 @@
         "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_bead787d1f19",
+      "movie_title": "(現場直播) BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING",
+      "poster_url": "https://assets.showtimes.com.tw/images/6a49e1ecb6384cbdbb7c46bdfbc8ae4b.jpg",
+      "aliases": [
+        "(現場直播) BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING"
+      ],
+      "sources": []
     },
     {
       "movie_id": "m_a5b16d1c4c3c",
@@ -1009,6 +1018,7 @@
       ],
       "sources": [
         "canonical-manual-poster",
+        "canonical-poster-title-match",
         "moc-culture-movie-api",
         "previous-catalog",
         "the-movie-database"
@@ -1544,7 +1554,8 @@
       "sources": [
         "ambassador-official-site",
         "previous-catalog",
-        "showtimes-official-cloudflare-bootstrap"
+        "showtimes-official-cloudflare-bootstrap",
+        "showtimes-official-program"
       ]
     },
     {
@@ -1817,6 +1828,21 @@
       ]
     },
     {
+      "movie_id": "m_ad1083db3932",
+      "movie_title": "同級生：10週年重映",
+      "poster_url": "https://assets.showtimes.com.tw/images/c0dab30623f4d7151962d7c52c065479.jpg",
+      "aliases": [
+        "DOUKYUSEI",
+        "同級生：10週年重映"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
       "movie_id": "m_cac0a456ea95",
       "movie_title": "同級生：十週年重映",
       "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261015005.jpg",
@@ -1848,6 +1874,8 @@
       "sources": [
         "ambassador-official-site",
         "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "miramar-official-api",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "showtimes-official-cloudflare-bootstrap",
@@ -1940,12 +1968,16 @@
       ],
       "sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "canonical-poster-title-match",
         "eslite-official-browser",
         "miramar-official-api",
+        "moc-culture-movie-api",
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap",
-        "spot-huashan-official-schedule"
+        "showtimes-official-program",
+        "spot-huashan-official-schedule",
+        "the-movie-database"
       ]
     },
     {
@@ -1963,6 +1995,23 @@
       ]
     },
     {
+      "movie_id": "m_994f0a6f1b44",
+      "movie_title": "有用的人 + 映前QA",
+      "poster_url": "https://assets.showtimes.com.tw/images/99eb45972430c39a4ed06ea965d5b019.jpg",
+      "aliases": [
+        "To Be Ordinary",
+        "有用的人 + 映前QA"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_979e23cbca0b",
       "movie_title": "老千：惡魔之歌",
       "poster_url": "https://assets.showtimes.com.tw/images/f8feb0160c368c0865fc9e6205b49e21.jpg",
@@ -1975,6 +2024,7 @@
         "miramar-official-api",
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap",
+        "showtimes-official-program",
         "vieshow-muvie-songren-official"
       ]
     },
@@ -2294,6 +2344,16 @@
       ]
     },
     {
+      "movie_id": "m_3382e6798b79",
+      "movie_title": "我就是洛基",
+      "poster_url": "https://assets.showtimes.com.tw/images/ce62709aa9c05616e467155de945c1ad.jpg",
+      "aliases": [
+        "I PLAY ROCKY",
+        "我就是洛基"
+      ],
+      "sources": []
+    },
+    {
       "movie_id": "m_ff6f19f24db6",
       "movie_title": "汪汪隊立大功：恐龍大電影",
       "poster_url": "https://assets.showtimes.com.tw/images/63afc0f9c4a805a05f5c9e4449d8cda7.jpg",
@@ -2328,7 +2388,8 @@
       "sources": [
         "ambassador-official-site",
         "previous-catalog",
-        "showtimes-official-cloudflare-bootstrap"
+        "showtimes-official-cloudflare-bootstrap",
+        "showtimes-official-program"
       ]
     },
     {
@@ -2365,7 +2426,8 @@
       "sources": [
         "ambassador-official-site",
         "previous-catalog",
-        "showtimes-official-cloudflare-bootstrap"
+        "showtimes-official-cloudflare-bootstrap",
+        "showtimes-official-program"
       ]
     },
     {
@@ -3111,6 +3173,22 @@
       "preferred": true
     },
     {
+      "movie_id": "m_0b062c223f83",
+      "movie_title": "哥吉拉-0.0_特別場2",
+      "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
+      "aliases": [
+        "GODZILLA MINUS ZERO_SPECIAL2",
+        "哥吉拉-0.0_特別場2"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
       "movie_id": "m_922740c268b3",
       "movie_title": "哥吉拉-1.0",
       "poster_url": "https://assets.showtimes.com.tw/images/8c87c6f3f4d763105ac5cc3fba75071b.jpg",
@@ -3373,6 +3451,16 @@
       ]
     },
     {
+      "movie_id": "m_514fba1d8524",
+      "movie_title": "飢餓遊戲：黎明收割 特別場",
+      "poster_url": "https://assets.showtimes.com.tw/images/9d7a34cd7ae6c30a2fee8a3bddce9f43.jpg",
+      "aliases": [
+        "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+        "飢餓遊戲：黎明收割 特別場"
+      ],
+      "sources": []
+    },
+    {
       "movie_id": "m_7f82a61deb49",
       "movie_title": "高年級實習生",
       "poster_url": "https://assets.showtimes.com.tw/images/93a6af00790f161bd187f4a3f229fa79.jpg",
@@ -3442,6 +3530,16 @@
       "preferred": true
     },
     {
+      "movie_id": "m_4eecc18cd544",
+      "movie_title": "高寮大劫",
+      "poster_url": "https://assets.showtimes.com.tw/images/cd39ab47d9f995b5592b1e474fcfe899.jpg",
+      "aliases": [
+        "The Kaoliao Breakout",
+        "高寮大劫"
+      ],
+      "sources": []
+    },
+    {
       "movie_id": "m_f2980a9c9791",
       "movie_title": "鬼降靈",
       "poster_url": "https://assets.showtimes.com.tw/images/0cfbadd7ae3a95ccee4a9404a5f96b0c.jpg",
@@ -3497,8 +3595,19 @@
         "ambassador-official-site",
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap",
+        "showtimes-official-program",
         "the-movie-database"
       ]
+    },
+    {
+      "movie_id": "m_7b6b3fbc5ecf",
+      "movie_title": "晚窒息",
+      "poster_url": "https://assets.showtimes.com.tw/images/e9397df3eb88a1915673ac4c4996ea99.jpg",
+      "aliases": [
+        "Suffocation",
+        "晚窒息"
+      ],
+      "sources": []
     },
     {
       "movie_id": "m_292d4e79218e",
@@ -3516,6 +3625,16 @@
         "tfai-official-program"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_18af273248bd",
+      "movie_title": "第四幕",
+      "poster_url": "https://assets.showtimes.com.tw/images/8797b1d98f2c141208d3deaf57075001.jpg",
+      "aliases": [
+        "Afterpiece",
+        "第四幕"
+      ],
+      "sources": []
     },
     {
       "movie_id": "m_1367c7d211b4",
@@ -4253,6 +4372,7 @@
         "ambassador-official-site",
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap",
+        "showtimes-official-program",
         "the-movie-database"
       ]
     },
@@ -4550,6 +4670,16 @@
         "vieshow-official-browser"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_2f2816e407fe",
+      "movie_title": "綻放的巴黎之星",
+      "poster_url": "https://assets.showtimes.com.tw/images/0568913b3f94c54d120adf0883716df8.jpg",
+      "aliases": [
+        "Samurai Ballerina",
+        "綻放的巴黎之星"
+      ],
+      "sources": []
     },
     {
       "movie_id": "m_20ac6c742437",
@@ -5272,6 +5402,7 @@
         "ambassador-official-site",
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap",
+        "showtimes-official-program",
         "the-movie-database",
         "vieshow-muvie-songren-official"
       ]
@@ -5546,13 +5677,16 @@
       "poster_url": "https://assets.showtimes.com.tw/images/c944d5c226866154abc551dc7c33658f.jpg",
       "aliases": [
         "DISNEY'S HEXED",
+        "HEXED",
         "歡迎光臨魔法秘境"
       ],
       "sources": [
+        "miramar-official-api",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "showtimes-official-cloudflare-bootstrap",
-        "showtimes-official-metadata"
+        "showtimes-official-metadata",
+        "showtimes-official-program"
       ]
     },
     {
@@ -5771,6 +5905,35 @@
         "vieshow-official-browser"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_946e4300a160",
+      "movie_title": "BTS WORLD TOUR ARIRANG IN JAKARTA現場直播",
+      "poster_url": "https://assets.showtimes.com.tw/images/6a49e1ecb6384cbdbb7c46bdfbc8ae4b.jpg",
+      "aliases": [
+        "BTS WORLD TOUR ARIRANG IN JAKARTA: LIVE VIEW",
+        "BTS WORLD TOUR ARIRANG IN JAKARTA現場直播"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_c42b17fafe36",
+      "movie_title": "BTS WORLD TOUR ARIRANG IN KAOHSIUNG現場直播",
+      "poster_url": "https://assets.showtimes.com.tw/images/6a49e1ecb6384cbdbb7c46bdfbc8ae4b.jpg",
+      "aliases": [
+        "BTS WORLD TOUR ARIRANG IN KAOHSIUNG: LIVE VI",
+        "BTS WORLD TOUR ARIRANG IN KAOHSIUNG現場直播"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
     },
     {
       "movie_id": "m_ebd59ac704e6",

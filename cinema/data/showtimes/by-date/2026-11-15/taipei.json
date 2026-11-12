@@ -5,6 +5,15 @@
   "date": "2026-11-15",
   "showtimes": [
     {
+      "id": "fce4339b665f084a",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T10:00:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_490b5d916534"
+    },
+    {
       "id": "7a1d2c4c4d7eec2f",
       "cinema_id": "066bac028bf2da57",
       "start_time": "2026-11-15T10:00:00+08:00",
@@ -15,15 +24,6 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
       "source": "ambassador-official-site",
       "movie_id": "m_730baf7f4574"
-    },
-    {
-      "id": "fce4339b665f084a",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T10:00:00+08:00",
-      "hall": "Dolby Cinema",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_490b5d916534"
     },
     {
       "id": "9c395f32b2a041d7",
@@ -53,32 +53,13 @@
       "movie_id": "m_ad1083db3932"
     },
     {
-      "id": "8d3cf40e31777f83",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_66546ef7a6fc",
+      "id": "f69cde86a595818a",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T10:20:00+08:00",
-      "hall": "3廳",
-      "format": "數位 英語",
-      "audio_language": "en",
-      "source_event_id": "4841254",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "2404fdaaad1a9715",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_86af9fdc3eb1",
-      "start_time": "2026-11-15T10:20:00+08:00",
-      "hall": "14廳",
-      "format": "ULTRA 韓語",
-      "audio_language": "ko",
-      "source_event_id": "4841253",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "hall": "IMAX",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "d4af7ffee8d075c9",
@@ -92,13 +73,34 @@
       "movie_id": "m_5cccaee999af"
     },
     {
-      "id": "f69cde86a595818a",
-      "cinema_id": "b8450eabc146ac0f",
+      "id": "8d3cf40e31777f83",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_66546ef7a6fc",
       "start_time": "2026-11-15T10:20:00+08:00",
-      "hall": "IMAX",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
+      "hall": "3廳",
+      "format": "數位 英語",
+      "audio_language": "en",
+      "source_event_id": "4841254",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "2404fdaaad1a9715",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_86af9fdc3eb1",
+      "start_time": "2026-11-15T10:20:00+08:00",
+      "hall": "14廳",
+      "format": "ULTRA 韓語",
+      "audio_language": "ko",
+      "source_event_id": "4841253",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "e47b59385ff76ea9",
@@ -122,9 +124,10 @@
       "audio_language": "en",
       "source_event_id": "4841256",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "0ab67e54a7b52896",
@@ -136,9 +139,10 @@
       "audio_language": "ko",
       "source_event_id": "4841255",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "5af657a0be71dff0",
@@ -150,9 +154,10 @@
       "audio_language": "en",
       "source_event_id": "4841257",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "08dbd6e8e70c90d5",
@@ -176,9 +181,10 @@
       "audio_language": "en",
       "source_event_id": "4841259",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "e47852a4ba66981a",
@@ -190,20 +196,19 @@
       "audio_language": "ja",
       "source_event_id": "4841258",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
-      "id": "ce20a3a31df3532d",
-      "cinema_id": "2f06b3e2df1c96f3",
+      "id": "c5b72af907fca0c6",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T10:50:00+08:00",
-      "hall": "13廳 36席",
-      "format": "數位‧印度語版",
-      "source_event_id": "7d2d0b9e-5bca-4740-8e83-9b6c5afdb0b1",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_00251bd339c9"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "43302fccf01e1cad",
@@ -230,6 +235,17 @@
       "movie_id": "m_ee66389dca47"
     },
     {
+      "id": "ce20a3a31df3532d",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T10:50:00+08:00",
+      "hall": "13廳 36席",
+      "format": "數位‧印度語版",
+      "source_event_id": "7d2d0b9e-5bca-4740-8e83-9b6c5afdb0b1",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_00251bd339c9"
+    },
+    {
       "id": "04b97ad2087cf8ae",
       "cinema_id": "a8ee8dc17714ae2d",
       "start_time": "2026-11-15T10:50:00+08:00",
@@ -241,13 +257,13 @@
       "movie_id": "m_faa4e2e2405b"
     },
     {
-      "id": "c5b72af907fca0c6",
+      "id": "e571e80d49ebe26e",
       "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T10:50:00+08:00",
-      "hall": "標準廳",
+      "start_time": "2026-11-15T11:00:00+08:00",
+      "hall": "日文(JPN)",
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
+      "movie_id": "m_5a4968904da0"
     },
     {
       "id": "2a4203e503e2291c",
@@ -270,9 +286,10 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_89aefd63031b"
+      "movie_id": "m_89aefd63031b",
+      "freshness": "last-known-good"
     },
     {
       "id": "405deb1753cdcc15",
@@ -283,9 +300,10 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_c1fabc1af3df"
+      "movie_id": "m_c1fabc1af3df",
+      "freshness": "last-known-good"
     },
     {
       "id": "6b2961e52adbf598",
@@ -297,9 +315,10 @@
       "audio_language": "ja",
       "source_event_id": "4841260",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "35585bdeb8157ded",
@@ -311,29 +330,19 @@
       "audio_language": "ja",
       "source_event_id": "4838420",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
-      "id": "e571e80d49ebe26e",
+      "id": "f05df73016f47d40",
       "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T11:00:00+08:00",
-      "hall": "日文(JPN)",
+      "start_time": "2026-11-15T11:10:00+08:00",
+      "hall": "標準廳",
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
-      "movie_id": "m_5a4968904da0"
-    },
-    {
-      "id": "d20b065623930ed2",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T11:10:00+08:00",
-      "hall": "12廳 35席",
-      "format": "數位‧其他語版",
-      "source_event_id": "7cbf1de2-90f9-4c2a-aa5f-0676414d646f",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_1389cf6aebae"
+      "movie_id": "m_35ed006505c1"
     },
     {
       "id": "3511ed293cb59f9a",
@@ -348,17 +357,6 @@
       "movie_id": "m_730baf7f4574"
     },
     {
-      "id": "05c09aef9968de77",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T11:10:00+08:00",
-      "hall": "4廳 110席",
-      "format": "數位‧波蘭語版",
-      "source_event_id": "2cd9de94-0c0f-4de6-be1a-609557753adc",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_a982b1f65624"
-    },
-    {
       "id": "d4de12df51c58b2c",
       "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-15T11:10:00+08:00",
@@ -371,6 +369,28 @@
       "movie_id": "m_bb2bf4b4466c"
     },
     {
+      "id": "d20b065623930ed2",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T11:10:00+08:00",
+      "hall": "12廳 35席",
+      "format": "數位‧其他語版",
+      "source_event_id": "7cbf1de2-90f9-4c2a-aa5f-0676414d646f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_1389cf6aebae"
+    },
+    {
+      "id": "05c09aef9968de77",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T11:10:00+08:00",
+      "hall": "4廳 110席",
+      "format": "數位‧波蘭語版",
+      "source_event_id": "2cd9de94-0c0f-4de6-be1a-609557753adc",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_a982b1f65624"
+    },
+    {
       "id": "b7664d28834fbf60",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_35ed006505c1",
@@ -380,18 +400,10 @@
       "audio_language": "en",
       "source_event_id": "4841261",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "f05df73016f47d40",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T11:10:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_35ed006505c1"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "104d4ae6bc584191",
@@ -445,9 +457,10 @@
       "audio_language": "ja",
       "source_event_id": "4841262",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "b282a67f4ec71c30",
@@ -471,6 +484,15 @@
       "movie_id": "m_82a1d81c3cdf"
     },
     {
+      "id": "f71467d3537aaa94",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T12:00:00+08:00",
+      "hall": "日文(JPN)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_593149a55a97"
+    },
+    {
       "id": "02f92fa2fb768bc6",
       "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-15T12:00:00+08:00",
@@ -481,15 +503,6 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
       "source": "ambassador-official-site",
       "movie_id": "m_37c4602113f4"
-    },
-    {
-      "id": "f71467d3537aaa94",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T12:00:00+08:00",
-      "hall": "日文(JPN)",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_593149a55a97"
     },
     {
       "id": "d4532974369deacc",
@@ -503,6 +516,15 @@
       "movie_id": "m_13a1df31c119"
     },
     {
+      "id": "3408a651dccc6248",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T12:20:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_730baf7f4574"
+    },
+    {
       "id": "b56bbd4a2d1c47da",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_593149a55a97",
@@ -512,18 +534,19 @@
       "audio_language": "ja",
       "source_event_id": "4841263",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
-      "id": "3408a651dccc6248",
+      "id": "5c3dc14a58eaf0e1",
       "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T12:20:00+08:00",
-      "hall": "Dolby Cinema",
+      "start_time": "2026-11-15T12:30:00+08:00",
+      "hall": "日文(JPN)",
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
+      "movie_id": "m_651bcd48b0d1"
     },
     {
       "id": "93eb160601841409",
@@ -536,15 +559,6 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
       "source": "ambassador-official-site",
       "movie_id": "m_730baf7f4574"
-    },
-    {
-      "id": "5c3dc14a58eaf0e1",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T12:30:00+08:00",
-      "hall": "日文(JPN)",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_651bcd48b0d1"
     },
     {
       "id": "839aff0c9742fd06",
@@ -567,9 +581,10 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_306e4a2a6ce2"
+      "movie_id": "m_306e4a2a6ce2",
+      "freshness": "last-known-good"
     },
     {
       "id": "e3e322a8079cec4c",
@@ -593,9 +608,10 @@
       "audio_language": "en",
       "source_event_id": "4841264",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "44f700290687cede",
@@ -607,9 +623,10 @@
       "audio_language": "ja",
       "source_event_id": "4841266",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "b9e2bcd362804fd5",
@@ -621,9 +638,10 @@
       "audio_language": "zh",
       "source_event_id": "4841265",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "ec5feee2ace9ce54",
@@ -647,9 +665,43 @@
       "audio_language": "th",
       "source_event_id": "4841267",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "9f5b3337650dafe9",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T13:00:00+08:00",
+      "hall": "IMAX",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_e5b9823d9027"
+    },
+    {
+      "id": "549421624c9b4b43",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T13:00:00+08:00",
+      "hall": "12廳 35席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "03e0a71c-2980-400a-adea-da85481bf207",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_cefb2ab38376"
+    },
+    {
+      "id": "f935a1a496161810",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T13:00:00+08:00",
+      "hall": "B廳 114席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_490b5d916534"
     },
     {
       "id": "0b3232171c50e7c9",
@@ -676,58 +728,6 @@
       "movie_id": "m_730baf7f4574"
     },
     {
-      "id": "f935a1a496161810",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T13:00:00+08:00",
-      "hall": "B廳 114席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_490b5d916534"
-    },
-    {
-      "id": "549421624c9b4b43",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T13:00:00+08:00",
-      "hall": "12廳 35席",
-      "format": "數位‧中文版",
-      "audio_language": "zh",
-      "source_event_id": "03e0a71c-2980-400a-adea-da85481bf207",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_cefb2ab38376"
-    },
-    {
-      "id": "95060eb8310d95eb",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_490b5d916534",
-      "start_time": "2026-11-15T13:00:00+08:00",
-      "hall": "13廳",
-      "format": "數位 英語",
-      "audio_language": "en",
-      "source_event_id": "4841269",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "6c9163ea577977d2",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_bb2bf4b4466c",
-      "start_time": "2026-11-15T13:00:00+08:00",
-      "hall": "8廳",
-      "format": "DVA 英語",
-      "audio_language": "en",
-      "source_event_id": "4841268",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
       "id": "450eb4ad45f2321e",
       "cinema_id": "a8ee8dc17714ae2d",
       "start_time": "2026-11-15T13:00:00+08:00",
@@ -740,13 +740,34 @@
       "movie_id": "m_a982b1f65624"
     },
     {
-      "id": "9f5b3337650dafe9",
-      "cinema_id": "b8450eabc146ac0f",
+      "id": "95060eb8310d95eb",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_490b5d916534",
       "start_time": "2026-11-15T13:00:00+08:00",
-      "hall": "IMAX",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_e5b9823d9027"
+      "hall": "13廳",
+      "format": "數位 英語",
+      "audio_language": "en",
+      "source_event_id": "4841269",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "6c9163ea577977d2",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_bb2bf4b4466c",
+      "start_time": "2026-11-15T13:00:00+08:00",
+      "hall": "8廳",
+      "format": "DVA 英語",
+      "audio_language": "en",
+      "source_event_id": "4841268",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "a3f05e9763903de6",
@@ -756,6 +777,15 @@
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
       "movie_id": "m_593149a55a97"
+    },
+    {
+      "id": "bef9b220b3f10a47",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T13:20:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "e2f9548dadd2d6db",
@@ -779,30 +809,10 @@
       "audio_language": "en",
       "source_event_id": "4841270",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "bef9b220b3f10a47",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T13:20:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
-    },
-    {
-      "id": "e6ebbb8877137f4a",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T13:25:00+08:00",
-      "hall": "7廳 44席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "b3b2d519-c1f8-48aa-a81f-30aea1ab3578",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_306e4a2a6ce2"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "64388e2f1039a3ad",
@@ -817,6 +827,18 @@
       "movie_id": "m_bb2bf4b4466c"
     },
     {
+      "id": "e6ebbb8877137f4a",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T13:25:00+08:00",
+      "hall": "7廳 44席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "b3b2d519-c1f8-48aa-a81f-30aea1ab3578",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_306e4a2a6ce2"
+    },
+    {
       "id": "53aba39e7ede4a2f",
       "cinema_id": "43ef84bf160e6886",
       "start_time": "2026-11-15T13:25:00+08:00",
@@ -825,8 +847,27 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
+      "movie_id": "m_cefb2ab38376",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "436159675e2bf2d9",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T13:30:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_490b5d916534"
+    },
+    {
+      "id": "161a4737fb422de1",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T13:30:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
       "movie_id": "m_cefb2ab38376"
     },
     {
@@ -850,27 +891,10 @@
       "format": "數位 多元語",
       "source_event_id": "4841271",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "436159675e2bf2d9",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T13:30:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_490b5d916534"
-    },
-    {
-      "id": "161a4737fb422de1",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T13:30:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_cefb2ab38376"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "918822e433f6dda5",
@@ -906,9 +930,10 @@
       "audio_language": "ja",
       "source_event_id": "4838422",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "a0e4c08cea2dfcdf",
@@ -932,20 +957,19 @@
       "audio_language": "th",
       "source_event_id": "4841272",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
-      "id": "cdef1af4501b98be",
-      "cinema_id": "2f06b3e2df1c96f3",
+      "id": "6cb63fa81e2c582c",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T14:00:00+08:00",
-      "hall": "13廳 36席",
-      "format": "數位‧泰語版",
-      "source_event_id": "190283bf-f281-4f75-aaa5-7f088f1b680d",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_77042e496dff"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_bb2bf4b4466c"
     },
     {
       "id": "6e5b702b75c72cb2",
@@ -957,13 +981,15 @@
       "movie_id": "m_7e94558337d5"
     },
     {
-      "id": "6cb63fa81e2c582c",
-      "cinema_id": "b8450eabc146ac0f",
+      "id": "cdef1af4501b98be",
+      "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-15T14:00:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_bb2bf4b4466c"
+      "hall": "13廳 36席",
+      "format": "數位‧泰語版",
+      "source_event_id": "190283bf-f281-4f75-aaa5-7f088f1b680d",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_77042e496dff"
     },
     {
       "id": "b41aa6d4394fe4fe",
@@ -987,23 +1013,10 @@
       "audio_language": "en",
       "source_event_id": "4841273",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "443846d53d7c3281",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_593149a55a97",
-      "start_time": "2026-11-15T14:20:00+08:00",
-      "hall": "3廳",
-      "format": "數位 日語",
-      "audio_language": "ja",
-      "source_event_id": "4841274",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "ed438cf44747bb86",
@@ -1015,6 +1028,21 @@
       "movie_id": "m_730baf7f4574"
     },
     {
+      "id": "443846d53d7c3281",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_593149a55a97",
+      "start_time": "2026-11-15T14:20:00+08:00",
+      "hall": "3廳",
+      "format": "數位 日語",
+      "audio_language": "ja",
+      "source_event_id": "4841274",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
       "id": "e0e14257c2e1c06d",
       "cinema_id": "43ef84bf160e6886",
       "start_time": "2026-11-15T14:25:00+08:00",
@@ -1023,9 +1051,10 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_50f301cf7baf"
+      "movie_id": "m_50f301cf7baf",
+      "freshness": "last-known-good"
     },
     {
       "id": "2219d5cba78e8a73",
@@ -1040,20 +1069,6 @@
       "movie_id": "m_c1fabc1af3df"
     },
     {
-      "id": "d59804969a6bde02",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_5ec239224265",
-      "start_time": "2026-11-15T14:50:00+08:00",
-      "hall": "7廳",
-      "format": "數位 英語",
-      "audio_language": "en",
-      "source_event_id": "4841275",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
       "id": "e53c22cfa837abfa",
       "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T14:50:00+08:00",
@@ -1063,28 +1078,19 @@
       "movie_id": "m_490b5d916534"
     },
     {
-      "id": "18cc4768bf8b286f",
-      "cinema_id": "066bac028bf2da57",
-      "start_time": "2026-11-15T15:00:00+08:00",
-      "hall": "2廳 97席",
-      "format": "數位‧日文版",
-      "audio_language": "ja",
-      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_730baf7f4574"
-    },
-    {
-      "id": "0aa29e7faa4975d3",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T15:00:00+08:00",
-      "hall": "12廳 35席",
-      "format": "數位‧日文版",
-      "audio_language": "ja",
-      "source_event_id": "8db28e85-5737-4b3f-86f5-d80dcc517ee4",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_3cd045d8ff9f"
+      "id": "d59804969a6bde02",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_5ec239224265",
+      "start_time": "2026-11-15T14:50:00+08:00",
+      "hall": "7廳",
+      "format": "數位 英語",
+      "audio_language": "en",
+      "source_event_id": "4841275",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "5c117c69f2675d51",
@@ -1111,6 +1117,30 @@
       "movie_id": "m_bb2bf4b4466c"
     },
     {
+      "id": "0aa29e7faa4975d3",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T15:00:00+08:00",
+      "hall": "12廳 35席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "8db28e85-5737-4b3f-86f5-d80dcc517ee4",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_3cd045d8ff9f"
+    },
+    {
+      "id": "18cc4768bf8b286f",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-15T15:00:00+08:00",
+      "hall": "2廳 97席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_730baf7f4574"
+    },
+    {
       "id": "41a6f7a33b41bdf0",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_86af9fdc3eb1",
@@ -1120,9 +1150,28 @@
       "audio_language": "ko",
       "source_event_id": "4841276",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "9fed8c58078ba272",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T15:10:00+08:00",
+      "hall": "日文(JPN)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_593149a55a97"
+    },
+    {
+      "id": "18702977b03ae7d6",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T15:10:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_0b062c223f83"
     },
     {
       "id": "5f2814bb31353f01",
@@ -1161,15 +1210,6 @@
       "movie_id": "m_4887d0b83538"
     },
     {
-      "id": "9fed8c58078ba272",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T15:10:00+08:00",
-      "hall": "日文(JPN)",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_593149a55a97"
-    },
-    {
       "id": "08f5a68615ba4ab7",
       "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-15T15:15:00+08:00",
@@ -1202,9 +1242,10 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_1389cf6aebae"
+      "movie_id": "m_1389cf6aebae",
+      "freshness": "last-known-good"
     },
     {
       "id": "b2263094e1b73ef2",
@@ -1216,9 +1257,10 @@
       "audio_language": "en",
       "source_event_id": "4841277",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "4d26628ff2a6b4bb",
@@ -1230,9 +1272,10 @@
       "audio_language": "ja",
       "source_event_id": "4841278",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "13c018b1ed044c5e",
@@ -1244,21 +1287,10 @@
       "audio_language": "en",
       "source_event_id": "4841279",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "08137af96853097e",
-      "cinema_id": "066bac028bf2da57",
-      "start_time": "2026-11-15T15:30:00+08:00",
-      "hall": "3廳 102席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_490b5d916534"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "ca2f99803f1d1826",
@@ -1273,6 +1305,18 @@
       "movie_id": "m_593149a55a97"
     },
     {
+      "id": "08137af96853097e",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-15T15:30:00+08:00",
+      "hall": "3廳 102席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_490b5d916534"
+    },
+    {
       "id": "284c7ee7b3ddb224",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_490b5d916534",
@@ -1282,9 +1326,19 @@
       "audio_language": "en",
       "source_event_id": "4841280",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "ebde300e5b43a392",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T15:40:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "f6d64f7084056e31",
@@ -1307,18 +1361,10 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_a982b1f65624"
-    },
-    {
-      "id": "ebde300e5b43a392",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T15:40:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
+      "movie_id": "m_a982b1f65624",
+      "freshness": "last-known-good"
     },
     {
       "id": "7a92ff1bf65e29d3",
@@ -1328,6 +1374,15 @@
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
       "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "2c41766a03ff90b7",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T16:00:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "d01c117133ff214c",
@@ -1351,18 +1406,10 @@
       "audio_language": "ko",
       "source_event_id": "4841281",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "2c41766a03ff90b7",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T16:00:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "4abd57fa188d80b1",
@@ -1376,16 +1423,37 @@
       "movie_id": "m_77042e496dff"
     },
     {
-      "id": "86a82cf5ae36a8b6",
+      "id": "7fdfe9c4f55f7f29",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T16:10:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_bb2bf4b4466c"
+    },
+    {
+      "id": "d5601d8e722d76c1",
       "cinema_id": "2f06b3e2df1c96f3",
       "start_time": "2026-11-15T16:10:00+08:00",
-      "hall": "10廳 34席",
-      "format": "數位‧韓語版",
-      "audio_language": "ko",
-      "source_event_id": "aeba1fed-b2f7-467b-8e7e-4872bb2060ca",
+      "hall": "A廳 396席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "9c91ca71-8e85-40a0-88b6-3dac437d0bfc",
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
       "source": "ambassador-official-site",
-      "movie_id": "m_7f63be05ccf2"
+      "movie_id": "m_2b4816d02f9e"
+    },
+    {
+      "id": "fdf368810aa37fdd",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T16:10:00+08:00",
+      "hall": "8廳 61席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "e0780d9bd0e1cf22",
@@ -1400,6 +1468,18 @@
       "movie_id": "m_dd7cc0122e18"
     },
     {
+      "id": "86a82cf5ae36a8b6",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T16:10:00+08:00",
+      "hall": "10廳 34席",
+      "format": "數位‧韓語版",
+      "audio_language": "ko",
+      "source_event_id": "aeba1fed-b2f7-467b-8e7e-4872bb2060ca",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_7f63be05ccf2"
+    },
+    {
       "id": "08496a631e1e3081",
       "cinema_id": "a8ee8dc17714ae2d",
       "start_time": "2026-11-15T16:10:00+08:00",
@@ -1411,13 +1491,13 @@
       "movie_id": "m_306e2992a8bd"
     },
     {
-      "id": "7fdfe9c4f55f7f29",
+      "id": "b5c7c6d6fe0387b2",
       "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T16:10:00+08:00",
-      "hall": "標準廳",
+      "start_time": "2026-11-15T16:20:00+08:00",
+      "hall": "IMAX",
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
-      "movie_id": "m_bb2bf4b4466c"
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "6cc06f31b27ff529",
@@ -1429,9 +1509,10 @@
       "audio_language": "ja",
       "source_event_id": "4838423",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "de80cf1519421ba2",
@@ -1443,18 +1524,19 @@
       "audio_language": "zh",
       "source_event_id": "4841282",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
-      "id": "b5c7c6d6fe0387b2",
+      "id": "b2286abf9226f3e4",
       "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T16:20:00+08:00",
-      "hall": "IMAX",
+      "start_time": "2026-11-15T16:30:00+08:00",
+      "hall": "標準廳",
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
+      "movie_id": "m_c1fabc1af3df"
     },
     {
       "id": "915f88acce28267b",
@@ -1465,18 +1547,10 @@
       "format": "數位 多元語",
       "source_event_id": "4841283",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "b2286abf9226f3e4",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T16:30:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_c1fabc1af3df"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "7d19db1106619197",
@@ -1491,20 +1565,6 @@
       "movie_id": "m_ee66389dca47"
     },
     {
-      "id": "7342c108a1b9f84e",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_35ed006505c1",
-      "start_time": "2026-11-15T17:00:00+08:00",
-      "hall": "7廳",
-      "format": "數位 英語",
-      "audio_language": "en",
-      "source_event_id": "4841284",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
       "id": "48a2b334515df969",
       "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T17:00:00+08:00",
@@ -1514,13 +1574,19 @@
       "movie_id": "m_730baf7f4574"
     },
     {
-      "id": "ab4bc1a4e9053f8d",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T17:10:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_50f301cf7baf"
+      "id": "7342c108a1b9f84e",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_35ed006505c1",
+      "start_time": "2026-11-15T17:00:00+08:00",
+      "hall": "7廳",
+      "format": "數位 英語",
+      "audio_language": "en",
+      "source_event_id": "4841284",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "7bae810a2369b3ef",
@@ -1532,16 +1598,13 @@
       "movie_id": "m_593149a55a97"
     },
     {
-      "id": "4e871290a8dc0a29",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T17:15:00+08:00",
-      "hall": "7廳 44席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "b3b2d519-c1f8-48aa-a81f-30aea1ab3578",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_306e4a2a6ce2"
+      "id": "ab4bc1a4e9053f8d",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T17:10:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_50f301cf7baf"
     },
     {
       "id": "96184a206383a1e0",
@@ -1556,6 +1619,18 @@
       "movie_id": "m_bb2bf4b4466c"
     },
     {
+      "id": "4e871290a8dc0a29",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T17:15:00+08:00",
+      "hall": "7廳 44席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "b3b2d519-c1f8-48aa-a81f-30aea1ab3578",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_306e4a2a6ce2"
+    },
+    {
       "id": "1919ce0a0eaad2ff",
       "cinema_id": "43ef84bf160e6886",
       "start_time": "2026-11-15T17:15:00+08:00",
@@ -1563,9 +1638,10 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_97d8d79b7330"
+      "movie_id": "m_97d8d79b7330",
+      "freshness": "last-known-good"
     },
     {
       "id": "f907fd275d8d7422",
@@ -1576,21 +1652,10 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_c1fabc1af3df"
-    },
-    {
-      "id": "195bf935e8a361a0",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T17:20:00+08:00",
-      "hall": "B廳 114席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_490b5d916534"
+      "movie_id": "m_c1fabc1af3df",
+      "freshness": "last-known-good"
     },
     {
       "id": "f0210ecf5502469b",
@@ -1603,6 +1668,18 @@
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
       "source": "ambassador-official-site",
       "movie_id": "m_593149a55a97"
+    },
+    {
+      "id": "195bf935e8a361a0",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T17:20:00+08:00",
+      "hall": "B廳 114席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_490b5d916534"
     },
     {
       "id": "51be4ccfd78277d1",
@@ -1626,21 +1703,10 @@
       "audio_language": "ja",
       "source_event_id": "4841285",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "4b1132939b89f789",
-      "cinema_id": "066bac028bf2da57",
-      "start_time": "2026-11-15T17:30:00+08:00",
-      "hall": "2廳 97席",
-      "format": "數位‧日文版",
-      "audio_language": "ja",
-      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_730baf7f4574"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "68f6c2d1d8f84895",
@@ -1679,6 +1745,18 @@
       "movie_id": "m_cefb2ab38376"
     },
     {
+      "id": "4b1132939b89f789",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-15T17:30:00+08:00",
+      "hall": "2廳 97席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_730baf7f4574"
+    },
+    {
       "id": "750a993d4e7a8aaa",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_6d71a791c9b4",
@@ -1688,9 +1766,10 @@
       "audio_language": "en",
       "source_event_id": "4841286",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "93ea9dfa5a89d68d",
@@ -1702,9 +1781,10 @@
       "audio_language": "en",
       "source_event_id": "4841288",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "27d1adb756921016",
@@ -1716,9 +1796,10 @@
       "audio_language": "ja",
       "source_event_id": "4841287",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "8175f6be741d374b",
@@ -1754,21 +1835,10 @@
       "audio_language": "en",
       "source_event_id": "4841289",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "005e0af8d4c2c229",
-      "cinema_id": "43ef84bf160e6886",
-      "start_time": "2026-11-15T17:55:00+08:00",
-      "subtitles": [
-        "zh"
-      ],
-      "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "source": "eslite-official-browser",
-      "movie_id": "m_7da9db910487"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "bd4f3b95bab4fa84",
@@ -1783,32 +1853,17 @@
       "movie_id": "m_4f7954cdbeb1"
     },
     {
-      "id": "d5609920ec7558a1",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_37576abb151c",
-      "start_time": "2026-11-15T18:00:00+08:00",
-      "hall": "8廳",
-      "format": "DVA 英語",
-      "audio_language": "en",
-      "source_event_id": "4841291",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "d6a308b1818c7650",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_730baf7f4574",
-      "start_time": "2026-11-15T18:00:00+08:00",
-      "hall": "10廳",
-      "format": "數位 日語",
-      "audio_language": "ja",
-      "source_event_id": "4841548",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "id": "005e0af8d4c2c229",
+      "cinema_id": "43ef84bf160e6886",
+      "start_time": "2026-11-15T17:55:00+08:00",
+      "subtitles": [
+        "zh"
+      ],
+      "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "source": "eslite-official-browser",
+      "movie_id": "m_7da9db910487",
+      "freshness": "last-known-good"
     },
     {
       "id": "fc0cf907c4581420",
@@ -1827,6 +1882,36 @@
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
       "movie_id": "m_66546ef7a6fc"
+    },
+    {
+      "id": "d5609920ec7558a1",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_37576abb151c",
+      "start_time": "2026-11-15T18:00:00+08:00",
+      "hall": "8廳",
+      "format": "DVA 英語",
+      "audio_language": "en",
+      "source_event_id": "4841291",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "d6a308b1818c7650",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_730baf7f4574",
+      "start_time": "2026-11-15T18:00:00+08:00",
+      "hall": "10廳",
+      "format": "數位 日語",
+      "audio_language": "ja",
+      "source_event_id": "4841548",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "bc49cc459cce4c10",
@@ -1852,20 +1937,6 @@
       "movie_id": "m_9402f33dea2b"
     },
     {
-      "id": "79da654e490aba3b",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_66546ef7a6fc",
-      "start_time": "2026-11-15T18:20:00+08:00",
-      "hall": "3廳",
-      "format": "數位 英語",
-      "audio_language": "en",
-      "source_event_id": "4841292",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
       "id": "af4b4cd5763486ce",
       "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T18:20:00+08:00",
@@ -1875,16 +1946,28 @@
       "movie_id": "m_730baf7f4574"
     },
     {
-      "id": "d104cf4a2ce2ada0",
-      "cinema_id": "066bac028bf2da57",
+      "id": "79da654e490aba3b",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_66546ef7a6fc",
+      "start_time": "2026-11-15T18:20:00+08:00",
+      "hall": "3廳",
+      "format": "數位 英語",
+      "audio_language": "en",
+      "source_event_id": "4841292",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "b960ceb41ac0d212",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T18:30:00+08:00",
-      "hall": "鉅院廳 745席",
-      "format": "ATMOS‧數位‧日文版",
-      "audio_language": "ja",
-      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_730baf7f4574"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_35ed006505c1"
     },
     {
       "id": "b34f611864fa2096",
@@ -1899,13 +1982,16 @@
       "movie_id": "m_c1fabc1af3df"
     },
     {
-      "id": "b960ceb41ac0d212",
-      "cinema_id": "b8450eabc146ac0f",
+      "id": "d104cf4a2ce2ada0",
+      "cinema_id": "066bac028bf2da57",
       "start_time": "2026-11-15T18:30:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_35ed006505c1"
+      "hall": "鉅院廳 745席",
+      "format": "ATMOS‧數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "5f9a5c2da0d4ec0f",
@@ -1926,16 +2012,13 @@
       "movie_id": "m_cefb2ab38376"
     },
     {
-      "id": "3de2b3ca4b8ac82f",
-      "cinema_id": "2f06b3e2df1c96f3",
+      "id": "c526b69656208f03",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T19:00:00+08:00",
-      "hall": "7廳 44席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_35ed006505c1"
+      "hall": "IMAX",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "5567bd93ef41654f",
@@ -1950,6 +2033,30 @@
       "movie_id": "m_730baf7f4574"
     },
     {
+      "id": "3de2b3ca4b8ac82f",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T19:00:00+08:00",
+      "hall": "7廳 44席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "ac23c46854b9a5bc",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T19:00:00+08:00",
+      "hall": "11廳 33席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "b3b2d519-c1f8-48aa-a81f-30aea1ab3578",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_306e4a2a6ce2"
+    },
+    {
       "id": "4c0112cade521db8",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_730baf7f4574",
@@ -1959,9 +2066,10 @@
       "audio_language": "ja",
       "source_event_id": "4838425",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "c9869b175f200645",
@@ -1973,31 +2081,10 @@
       "audio_language": "th",
       "source_event_id": "4841293",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "c526b69656208f03",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T19:00:00+08:00",
-      "hall": "IMAX",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
-    },
-    {
-      "id": "e8914bce40366388",
-      "cinema_id": "43ef84bf160e6886",
-      "start_time": "2026-11-15T19:05:00+08:00",
-      "subtitles": [
-        "zh",
-        "en"
-      ],
-      "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "source": "eslite-official-browser",
-      "movie_id": "m_50f301cf7baf"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "2d555ea3543b3be4",
@@ -2010,6 +2097,29 @@
       "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
       "source": "spot-huashan-official-schedule",
       "movie_id": "m_c1fabc1af3df"
+    },
+    {
+      "id": "e8914bce40366388",
+      "cinema_id": "43ef84bf160e6886",
+      "start_time": "2026-11-15T19:05:00+08:00",
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "source": "eslite-official-browser",
+      "movie_id": "m_50f301cf7baf",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "57651159b28d27cf",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T19:10:00+08:00",
+      "hall": "日文(JPN)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_593149a55a97"
     },
     {
       "id": "86cce0acc4b18b0d",
@@ -2045,18 +2155,10 @@
       "audio_language": "en",
       "source_event_id": "4841294",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "57651159b28d27cf",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T19:10:00+08:00",
-      "hall": "日文(JPN)",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_593149a55a97"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "9d5d57e5f8e6972b",
@@ -2079,9 +2181,22 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_306e4a2a6ce2"
+      "movie_id": "m_306e4a2a6ce2",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "792f614ac47947ad",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T19:30:00+08:00",
+      "hall": "5廳 49席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "76e1f176-e896-4889-ad21-f207b464b3b9",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_bb2bf4b4466c"
     },
     {
       "id": "d934d748dba3c6f5",
@@ -2108,18 +2223,6 @@
       "movie_id": "m_7da9db910487"
     },
     {
-      "id": "792f614ac47947ad",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T19:30:00+08:00",
-      "hall": "5廳 49席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "76e1f176-e896-4889-ad21-f207b464b3b9",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_bb2bf4b4466c"
-    },
-    {
       "id": "aef229d052aca4bb",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_50f301cf7baf",
@@ -2128,9 +2231,10 @@
       "format": "數位 多元語",
       "source_event_id": "4841295",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "82a3f1d3a883cddc",
@@ -2142,16 +2246,22 @@
       "movie_id": "m_730baf7f4574"
     },
     {
-      "id": "f72cb0dcdb0ac543",
-      "cinema_id": "066bac028bf2da57",
+      "id": "e998b99dd439ff51",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T20:00:00+08:00",
-      "hall": "2廳 97席",
-      "format": "數位‧中文版",
-      "audio_language": "zh",
-      "source_event_id": "4dbc28c5-3501-4560-8861-55376b1ea372",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_d4d379e9993e"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_bb2bf4b4466c"
+    },
+    {
+      "id": "e2421b54db20d616",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T20:00:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_c1fabc1af3df"
     },
     {
       "id": "78ad610bf206ed51",
@@ -2178,6 +2288,18 @@
       "movie_id": "m_cefb2ab38376"
     },
     {
+      "id": "f72cb0dcdb0ac543",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-15T20:00:00+08:00",
+      "hall": "2廳 97席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "4dbc28c5-3501-4560-8861-55376b1ea372",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_d4d379e9993e"
+    },
+    {
       "id": "21583c4576339b9c",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_35ed006505c1",
@@ -2187,9 +2309,10 @@
       "audio_language": "en",
       "source_event_id": "4841296",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "5f19f5228267dca9",
@@ -2201,27 +2324,10 @@
       "audio_language": "ja",
       "source_event_id": "4841297",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "e998b99dd439ff51",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T20:00:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_bb2bf4b4466c"
-    },
-    {
-      "id": "e2421b54db20d616",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T20:00:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_c1fabc1af3df"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "1d0b83979c407665",
@@ -2231,21 +2337,10 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_cb36c91aeb9c"
-    },
-    {
-      "id": "277c3451e9251eb4",
-      "cinema_id": "066bac028bf2da57",
-      "start_time": "2026-11-15T20:10:00+08:00",
-      "hall": "3廳 102席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_490b5d916534"
+      "movie_id": "m_cb36c91aeb9c",
+      "freshness": "last-known-good"
     },
     {
       "id": "3d84cff62ae6b5fa",
@@ -2260,6 +2355,18 @@
       "movie_id": "m_7f63be05ccf2"
     },
     {
+      "id": "277c3451e9251eb4",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-15T20:10:00+08:00",
+      "hall": "3廳 102席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_490b5d916534"
+    },
+    {
       "id": "9d611c59287676b9",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_593149a55a97",
@@ -2269,9 +2376,10 @@
       "audio_language": "ja",
       "source_event_id": "4841299",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "e00c39076e05ed9a",
@@ -2283,9 +2391,10 @@
       "audio_language": "en",
       "source_event_id": "4841298",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "52fce6e872c7fb1c",
@@ -2299,6 +2408,15 @@
       "movie_id": "m_77042e496dff"
     },
     {
+      "id": "3830e45427c5fd74",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T20:20:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_730baf7f4574"
+    },
+    {
       "id": "023ea3b473609d77",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_cefb2ab38376",
@@ -2308,18 +2426,10 @@
       "audio_language": "zh",
       "source_event_id": "4841300",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "3830e45427c5fd74",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T20:20:00+08:00",
-      "hall": "Dolby Cinema",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "07ddadf4e99c3eed",
@@ -2331,9 +2441,10 @@
       "audio_language": "en",
       "source_event_id": "4841301",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "a42ed9fde5d5b2d6",
@@ -2345,9 +2456,10 @@
       "audio_language": "en",
       "source_event_id": "4841302",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "961d7a7c3531f2ea",
@@ -2371,18 +2483,13 @@
       "movie_id": "m_35ed006505c1"
     },
     {
-      "id": "5e7f61f0708571f8",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_77042e496dff",
+      "id": "353ae858057e9eef",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T20:50:00+08:00",
-      "hall": "14廳",
-      "format": "ULTRA 泰語",
-      "audio_language": "th",
-      "source_event_id": "4841303",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "adf56b4c3f281500",
@@ -2396,37 +2503,19 @@
       "movie_id": "m_7941957ce1c3"
     },
     {
-      "id": "353ae858057e9eef",
-      "cinema_id": "b8450eabc146ac0f",
+      "id": "5e7f61f0708571f8",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_77042e496dff",
       "start_time": "2026-11-15T20:50:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
-    },
-    {
-      "id": "a1e04861c1971999",
-      "cinema_id": "066bac028bf2da57",
-      "start_time": "2026-11-15T21:00:00+08:00",
-      "hall": "鉅院廳 745席",
-      "format": "ATMOS‧數位‧日文版",
-      "audio_language": "ja",
-      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_730baf7f4574"
-    },
-    {
-      "id": "5daea74dc52b8c08",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T21:00:00+08:00",
-      "hall": "4廳 110席",
-      "format": "數位‧日文版",
-      "audio_language": "ja",
-      "source_event_id": "d3fec9c7-7142-46fb-8581-acba6c770147",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_593149a55a97"
+      "hall": "14廳",
+      "format": "ULTRA 泰語",
+      "audio_language": "th",
+      "source_event_id": "4841303",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "7c25f5fcc7e7cccf",
@@ -2447,16 +2536,40 @@
       "movie_id": "m_979e23cbca0b"
     },
     {
-      "id": "88b8715a3e7bb9c2",
+      "id": "5daea74dc52b8c08",
       "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T21:05:00+08:00",
-      "hall": "7廳 44席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "f03cbaa5-6d58-43f7-ab06-d902b0897bec",
+      "start_time": "2026-11-15T21:00:00+08:00",
+      "hall": "4廳 110席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "d3fec9c7-7142-46fb-8581-acba6c770147",
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
       "source": "ambassador-official-site",
-      "movie_id": "m_6d71a791c9b4"
+      "movie_id": "m_593149a55a97"
+    },
+    {
+      "id": "b3db328b084259a6",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T21:00:00+08:00",
+      "hall": "11廳 33席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "74a37a70-92f7-42c8-8809-b69f94ee3453",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_35ed006505c1"
+    },
+    {
+      "id": "a1e04861c1971999",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-15T21:00:00+08:00",
+      "hall": "鉅院廳 745席",
+      "format": "ATMOS‧數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_730baf7f4574"
     },
     {
       "id": "d0f2b0ea3b51b425",
@@ -2468,17 +2581,16 @@
       "movie_id": "m_593149a55a97"
     },
     {
-      "id": "ea042e6ea56adebc",
-      "cinema_id": "43ef84bf160e6886",
-      "start_time": "2026-11-15T21:15:00+08:00",
-      "subtitles": [
-        "zh",
-        "en"
-      ],
-      "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
-      "source": "eslite-official-browser",
-      "movie_id": "m_50f301cf7baf"
+      "id": "88b8715a3e7bb9c2",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T21:05:00+08:00",
+      "hall": "7廳 44席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "f03cbaa5-6d58-43f7-ab06-d902b0897bec",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_6d71a791c9b4"
     },
     {
       "id": "d61934a82ad7cf00",
@@ -2493,6 +2605,20 @@
       "movie_id": "m_cefb2ab38376"
     },
     {
+      "id": "ea042e6ea56adebc",
+      "cinema_id": "43ef84bf160e6886",
+      "start_time": "2026-11-15T21:15:00+08:00",
+      "subtitles": [
+        "zh",
+        "en"
+      ],
+      "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
+      "source_role": "official Eslite Art House schedule;last-known-good",
+      "source": "eslite-official-browser",
+      "movie_id": "m_50f301cf7baf",
+      "freshness": "last-known-good"
+    },
+    {
       "id": "d75dc15fa3d84ef5",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_5ec239224265",
@@ -2502,9 +2628,10 @@
       "audio_language": "en",
       "source_event_id": "4841305",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "52a7c9317a3c2386",
@@ -2516,6 +2643,15 @@
       "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
       "source": "ambassador-official-site",
+      "movie_id": "m_730baf7f4574"
+    },
+    {
+      "id": "9e437566fe76960b",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T21:40:00+08:00",
+      "hall": "IMAX",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
       "movie_id": "m_730baf7f4574"
     },
     {
@@ -2540,18 +2676,10 @@
       "audio_language": "ja",
       "source_event_id": "4838427",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
-    },
-    {
-      "id": "9e437566fe76960b",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T21:40:00+08:00",
-      "hall": "IMAX",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "e0ac268615f47c10",
@@ -2585,9 +2713,10 @@
         "zh"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_6c190c8b78e4"
+      "movie_id": "m_6c190c8b78e4",
+      "freshness": "last-known-good"
     },
     {
       "id": "0b745a8b84e7bc6c",
@@ -2598,9 +2727,22 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_1389cf6aebae"
+      "movie_id": "m_1389cf6aebae",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "96d0d40601c1c286",
+      "cinema_id": "2f06b3e2df1c96f3",
+      "start_time": "2026-11-15T22:00:00+08:00",
+      "hall": "6廳 36席",
+      "format": "數位‧中文版",
+      "audio_language": "zh",
+      "source_event_id": "e9bc00bb-9d99-4420-a0ba-edd0c99f713a",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_50f301cf7baf"
     },
     {
       "id": "3b3f0bbe31da6fdf",
@@ -2614,16 +2756,13 @@
       "movie_id": "m_1389cf6aebae"
     },
     {
-      "id": "96d0d40601c1c286",
-      "cinema_id": "2f06b3e2df1c96f3",
-      "start_time": "2026-11-15T22:00:00+08:00",
-      "hall": "6廳 36席",
-      "format": "數位‧中文版",
-      "audio_language": "zh",
-      "source_event_id": "e9bc00bb-9d99-4420-a0ba-edd0c99f713a",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_50f301cf7baf"
+      "id": "32ddb856065adf92",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T22:10:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_c1fabc1af3df"
     },
     {
       "id": "6a2e830fce67fc20",
@@ -2647,9 +2786,10 @@
       "audio_language": "en",
       "source_event_id": "4841306",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "b978f82c25531917",
@@ -2661,30 +2801,28 @@
       "audio_language": "en",
       "source_event_id": "4841307",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
-      "id": "32ddb856065adf92",
+      "id": "f0d3bdedecb48bac",
       "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T22:10:00+08:00",
+      "start_time": "2026-11-15T22:20:00+08:00",
       "hall": "標準廳",
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
-      "movie_id": "m_c1fabc1af3df"
+      "movie_id": "m_730baf7f4574"
     },
     {
-      "id": "f2e4d259a2b0550a",
-      "cinema_id": "066bac028bf2da57",
+      "id": "f7500b7d8fdea742",
+      "cinema_id": "b8450eabc146ac0f",
       "start_time": "2026-11-15T22:20:00+08:00",
-      "hall": "3廳 102席",
-      "format": "數位‧英文版",
-      "audio_language": "en",
-      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
-      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
-      "source": "ambassador-official-site",
-      "movie_id": "m_490b5d916534"
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_bb2bf4b4466c"
     },
     {
       "id": "3dad1bf8910c0063",
@@ -2710,34 +2848,16 @@
       "movie_id": "m_77042e496dff"
     },
     {
-      "id": "f0d3bdedecb48bac",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T22:20:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_730baf7f4574"
-    },
-    {
-      "id": "f7500b7d8fdea742",
-      "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T22:20:00+08:00",
-      "hall": "標準廳",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_bb2bf4b4466c"
-    },
-    {
-      "id": "8530f34cf9da4757",
+      "id": "f2e4d259a2b0550a",
       "cinema_id": "066bac028bf2da57",
-      "start_time": "2026-11-15T22:30:00+08:00",
-      "hall": "2廳 97席",
-      "format": "數位‧日文版",
-      "audio_language": "ja",
-      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
+      "start_time": "2026-11-15T22:20:00+08:00",
+      "hall": "3廳 102席",
+      "format": "數位‧英文版",
+      "audio_language": "en",
+      "source_event_id": "cc24b06e-6170-4d41-98bf-c88d851d9524",
       "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
       "source": "ambassador-official-site",
-      "movie_id": "m_730baf7f4574"
+      "movie_id": "m_490b5d916534"
     },
     {
       "id": "f51faee9d7a1e4fe",
@@ -2752,6 +2872,18 @@
       "movie_id": "m_730baf7f4574"
     },
     {
+      "id": "8530f34cf9da4757",
+      "cinema_id": "066bac028bf2da57",
+      "start_time": "2026-11-15T22:30:00+08:00",
+      "hall": "2廳 97席",
+      "format": "數位‧日文版",
+      "audio_language": "ja",
+      "source_event_id": "2648fddc-9695-4a46-a622-edd01e70368f",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F15",
+      "source": "ambassador-official-site",
+      "movie_id": "m_730baf7f4574"
+    },
+    {
       "id": "0ac7ffe493ece8cc",
       "cinema_id": "680545a43a5093a6",
       "movie_id": "m_50f301cf7baf",
@@ -2760,9 +2892,10 @@
       "format": "數位 多元語",
       "source_event_id": "4841309",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "8b1d6eba1ddd57a4",
@@ -2774,9 +2907,10 @@
       "audio_language": "zh",
       "source_event_id": "4841308",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "aa41595daa44f442",
@@ -2800,9 +2934,10 @@
       "audio_language": "en",
       "source_event_id": "4841311",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "9caf46968f0f6fde",
@@ -2814,9 +2949,19 @@
       "audio_language": "ja",
       "source_event_id": "4841310",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "f60ad2e378b1b4d5",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-15T22:50:00+08:00",
+      "hall": "標準廳",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_35ed006505c1"
     },
     {
       "id": "f55ec252c554e773",
@@ -2840,32 +2985,19 @@
       "audio_language": "en",
       "source_event_id": "4841312",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
-      "id": "f60ad2e378b1b4d5",
+      "id": "e8ef851935cb44bd",
       "cinema_id": "b8450eabc146ac0f",
-      "start_time": "2026-11-15T22:50:00+08:00",
-      "hall": "標準廳",
+      "start_time": "2026-11-15T23:00:00+08:00",
+      "hall": "日文(JPN)",
       "source_url": "https://www.miramarcinemas.tw/booking/timetable",
       "source": "miramar-official-api",
-      "movie_id": "m_35ed006505c1"
-    },
-    {
-      "id": "593da6295e044563",
-      "cinema_id": "680545a43a5093a6",
-      "movie_id": "m_77042e496dff",
-      "start_time": "2026-11-15T23:00:00+08:00",
-      "hall": "14廳",
-      "format": "ULTRA 泰語",
-      "audio_language": "th",
-      "source_event_id": "4841313",
-      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
-      "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "movie_id": "m_593149a55a97"
     },
     {
       "id": "8d2b73aafd5f99f4",
@@ -2877,13 +3009,19 @@
       "movie_id": "m_2a9c3037d485"
     },
     {
-      "id": "e8ef851935cb44bd",
-      "cinema_id": "b8450eabc146ac0f",
+      "id": "593da6295e044563",
+      "cinema_id": "680545a43a5093a6",
+      "movie_id": "m_77042e496dff",
       "start_time": "2026-11-15T23:00:00+08:00",
-      "hall": "日文(JPN)",
-      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
-      "source": "miramar-official-api",
-      "movie_id": "m_593149a55a97"
+      "hall": "14廳",
+      "format": "ULTRA 泰語",
+      "audio_language": "th",
+      "source_event_id": "4841313",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
+      "source": "showtimes-official-cloudflare-bootstrap",
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "39ca3b74c5235823",

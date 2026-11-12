@@ -1,9 +1,9 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-11T13:29:58.836Z",
+  "generated_at": "2026-11-12T23:42:21.608Z",
   "browser_source_registry": {
-    "checked_at": "2026-11-11T13:29:51.649Z",
-    "run_id": "43029402265",
+    "checked_at": "2026-11-12T23:42:15.139Z",
+    "run_id": "43330958532",
     "registry_cinemas": 107,
     "registry_bindings": 107,
     "official_urls": 49,
@@ -14,51 +14,50 @@
     ],
     "status_counts": {
       "cinema_closed": 4,
-      "handled_by_schedule_adapter": 1,
       "http_error": 1,
       "needs_official_schedule_url": 54,
       "page_loaded_no_schedule_signals": 2,
       "page_loaded_schedule_signals_found": 8,
       "schedule_adapter_http_403": 15,
+      "schedule_adapter_no_rows": 1,
       "suppressed_after_recent_host_403": 22
     }
   },
   "public_window": {
-    "as_of": "2026-11-11",
-    "end_date": "2026-12-11",
-    "rows": 4199,
-    "expected_rows": 4199
+    "as_of": "2026-11-13",
+    "end_date": "2026-12-13",
+    "rows": 8874,
+    "expected_rows": 8874
   },
   "schedule_freshness": {
-    "checked_at": "2026-11-11T13:29:52.884Z",
-    "as_of": "2026-11-11",
+    "checked_at": "2026-11-12T23:42:16.567Z",
+    "as_of": "2026-11-13",
     "stale_screenings_in_window": 2,
     "stale_marked_this_run": 0,
-    "pending_candidates": 317,
-    "fresh_snapshot_rows": 4312,
-    "last_known_good_rows": 28,
+    "pending_candidates": 149,
+    "fresh_snapshot_rows": 4143,
+    "last_known_good_rows": 5005,
     "public_excluded_stale_status_rows": 2,
-    "public_excluded_stale_fallback_rows": 14,
+    "public_excluded_stale_fallback_rows": 9,
     "public_excluded_stale_fallback_by_source": {
       "vieshow-official-browser": 7,
-      "eslite-official-schedule": 2,
-      "showtimes-official-api": 5
+      "eslite-official-schedule": 2
     },
     "fallback_max_age_hours": 168,
     "policy": "A screening is marked stale only after it is absent from two consecutive Taiwan-day snapshots in which the same source, cinema, and date scope still returns fresh rows. Stale rows remain archived and are excluded from the public view."
   },
   "sources": {
-    "checked": 11,
+    "checked": 12,
     "statuses": {
       "moc-culture-movie-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 805,
-        "fresh_showtimes": 805,
+        "showtimes": 723,
+        "fresh_showtimes": 723,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-11T13:29:51.719Z",
+        "last_success_at": "2026-11-12T23:42:15.204Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -79,12 +78,12 @@
       "miramar-official-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 455,
-        "fresh_showtimes": 455,
+        "showtimes": 440,
+        "fresh_showtimes": 440,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-11T13:29:51.719Z",
+        "last_success_at": "2026-11-12T23:42:15.204Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -105,12 +104,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 2987,
-        "fresh_showtimes": 2987,
+        "showtimes": 2986,
+        "fresh_showtimes": 2986,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-11T13:29:51.719Z",
+        "last_success_at": "2026-11-12T23:42:15.204Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -129,15 +128,41 @@
         "warnings": []
       },
       "showtimes-official-api": {
-        "health": "healthy",
-        "ok": true,
+        "health": "degraded",
+        "ok": false,
         "showtimes": 0,
         "fresh_showtimes": 0,
         "fallback_showtimes": 0,
-        "error": null,
+        "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
         "retrieved_at": null,
         "last_success_at": "2026-11-11T13:29:51.719Z",
-        "next_probe_at": null,
+        "next_probe_at": "2026-11-13T00:12:15.204Z",
+        "retry_suppressed": false,
+        "retry_after": null,
+        "acquisition_method": null,
+        "branch_pages": null,
+        "branch_pages_failed": null,
+        "substitute_source": null,
+        "substitute_showtimes": 0,
+        "skipped": true,
+        "target_cinemas": null,
+        "matched_cinemas": null,
+        "unmatched_cinemas": [],
+        "cinemas_with_partial_days": [],
+        "cinema_pages": null,
+        "cinema_pages_failed": null,
+        "warnings": []
+      },
+      "showtimes-official-cloudflare-bootstrap": {
+        "health": "degraded",
+        "ok": false,
+        "showtimes": 4864,
+        "fresh_showtimes": 0,
+        "fallback_showtimes": 4864,
+        "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
+        "retrieved_at": null,
+        "last_success_at": "2026-11-11T14:24:27.520Z",
+        "next_probe_at": "2026-11-13T00:12:15.204Z",
         "retry_suppressed": false,
         "retry_after": null,
         "acquisition_method": null,
@@ -162,7 +187,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-11T13:29:51.719Z",
+        "last_success_at": "2026-11-12T23:42:15.204Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -188,7 +213,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-11T13:29:51.719Z",
+        "last_success_at": "2026-11-12T23:42:15.204Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -214,7 +239,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-11T13:29:51.719Z",
+        "last_success_at": "2026-11-12T23:42:15.204Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -240,7 +265,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-11T13:29:51.719Z",
+        "last_success_at": "2026-11-12T23:42:15.204Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -264,66 +289,39 @@
         "showtimes": 0,
         "fresh_showtimes": 0,
         "fallback_showtimes": 0,
-        "error": "HTTP 403 from first-party ShowTimes page; stopped remaining browser navigations",
+        "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
         "retrieved_at": null,
         "last_success_at": null,
-        "next_probe_at": "2026-11-11T13:59:51.719Z",
-        "retry_suppressed": false,
-        "retry_after": null,
-        "acquisition_method": "first-party-showtimes-browser",
+        "next_probe_at": "2026-11-18T13:29:58.836Z",
+        "retry_suppressed": true,
+        "retry_after": "2026-11-18T13:29:58.836Z",
+        "acquisition_method": null,
         "branch_pages": null,
         "branch_pages_failed": null,
         "substitute_source": null,
         "substitute_showtimes": 0,
-        "skipped": false,
-        "target_cinemas": 15,
-        "matched_cinemas": 0,
-        "unmatched_cinemas": [
-          "大巨蛋秀泰影城",
-          "欣欣秀泰影城",
-          "樹林秀泰影城",
-          "土城秀泰影城",
-          "基隆秀泰影城",
-          "台中站前秀泰影城",
-          "台中文心秀泰影城",
-          "台中麗寶秀泰影城",
-          "北港秀泰影城",
-          "嘉義秀泰影城",
-          "台南仁德秀泰影城",
-          "高雄岡山秀泰影城",
-          "高雄夢時代秀泰影城",
-          "花蓮秀泰影城",
-          "台東秀泰影城"
-        ],
+        "skipped": true,
+        "target_cinemas": null,
+        "matched_cinemas": null,
+        "unmatched_cinemas": [],
         "cinemas_with_partial_days": [],
         "cinema_pages": null,
-        "cinema_pages_failed": 15,
-        "warnings": [
-          "大巨蛋秀泰影城: HTTP 403",
-          "欣欣秀泰影城: HTTP 403",
-          "樹林秀泰影城: HTTP 403",
-          "土城秀泰影城: HTTP 403",
-          "基隆秀泰影城: HTTP 403",
-          "台中站前秀泰影城: HTTP 403",
-          "台中文心秀泰影城: HTTP 403",
-          "台中麗寶秀泰影城: HTTP 403",
-          "北港秀泰影城: HTTP 403",
-          "嘉義秀泰影城: HTTP 403"
-        ]
+        "cinema_pages_failed": null,
+        "warnings": []
       },
       "eslite-official-browser": {
-        "health": "healthy",
-        "ok": true,
-        "showtimes": 130,
-        "fresh_showtimes": 130,
-        "fallback_showtimes": 0,
-        "error": null,
+        "health": "degraded",
+        "ok": false,
+        "showtimes": 113,
+        "fresh_showtimes": 0,
+        "fallback_showtimes": 113,
+        "error": "Eslite browser navigation returned HTTP unknown: Cloudflare Browser Rendering failed for meet.eslite.com: Authentication error",
         "retrieved_at": null,
         "last_success_at": "2026-11-11T13:29:51.719Z",
-        "next_probe_at": null,
+        "next_probe_at": "2026-11-13T00:12:15.204Z",
         "retry_suppressed": false,
         "retry_after": null,
-        "acquisition_method": "first-party-eslite-browser",
+        "acquisition_method": null,
         "branch_pages": null,
         "branch_pages_failed": null,
         "substitute_source": null,
@@ -366,8 +364,8 @@
     },
     "failed_or_degraded": [
       {
-        "source": "showtimes-official-browser",
-        "error": "HTTP 403 from first-party ShowTimes page; stopped remaining browser navigations",
+        "source": "showtimes-official-api",
+        "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
         "health": "degraded",
         "showtimes": 0,
         "substitute_source": null,
@@ -376,12 +374,83 @@
         "retry_suppressed": false,
         "retry_after": null,
         "recurring_issue": {
+          "issue_id": "showtimes-official-api:collector_error:capi.showtimes.com.tw",
+          "state": "open",
+          "total_occurrence_count": 1,
+          "consecutive_failures": 1,
+          "first_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-12T23:42:21.608Z",
+          "known_cause": "GitHub Actions receives HTTP 403 from the ShowTimes API. The collector now fetches the official ShowTimes bootstrap from inside Cloudflare Browser Run and keeps the page browser fallback for degraded runs.",
+          "next_steps": [
+            "Review the Cloudflare bootstrap row count and any Browser Run errors.",
+            "Keep last-known-good ShowTimes rows when the remote browser path is unavailable.",
+            "Preserve canonical historical rows and their source provenance."
+          ]
+        }
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
+        "health": "degraded",
+        "showtimes": 4864,
+        "substitute_source": null,
+        "substitute_showtimes": 0,
+        "fallback_showtimes": 4864,
+        "retry_suppressed": false,
+        "retry_after": null,
+        "recurring_issue": {
+          "issue_id": "showtimes-official-cloudflare-bootstrap:collector_error:unknown-host",
+          "state": "open",
+          "total_occurrence_count": 1,
+          "consecutive_failures": 1,
+          "first_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-12T23:42:21.608Z",
+          "known_cause": null,
+          "next_steps": [
+            "Inspect the recorded error and source endpoint before changing the parser."
+          ]
+        }
+      },
+      {
+        "source": "showtimes-official-browser",
+        "error": "HTTP 403 from first-party ShowTimes browser page; retry suppressed",
+        "health": "degraded",
+        "showtimes": 0,
+        "substitute_source": null,
+        "substitute_showtimes": 0,
+        "fallback_showtimes": 0,
+        "retry_suppressed": true,
+        "retry_after": "2026-11-18T13:29:58.836Z",
+        "recurring_issue": {
           "issue_id": "showtimes-official-browser:http_403:unknown-host",
           "state": "open",
           "total_occurrence_count": 3,
           "consecutive_failures": 3,
           "first_seen": "2026-11-01T23:44:14.950Z",
           "last_seen": "2026-11-11T13:29:58.836Z",
+          "known_cause": null,
+          "next_steps": [
+            "Inspect the recorded error and source endpoint before changing the parser."
+          ]
+        }
+      },
+      {
+        "source": "eslite-official-browser",
+        "error": "Eslite browser navigation returned HTTP unknown: Cloudflare Browser Rendering failed for meet.eslite.com: Authentication error",
+        "health": "degraded",
+        "showtimes": 113,
+        "substitute_source": null,
+        "substitute_showtimes": 0,
+        "fallback_showtimes": 113,
+        "retry_suppressed": false,
+        "retry_after": null,
+        "recurring_issue": {
+          "issue_id": "eslite-official-browser:collector_error:unknown-host",
+          "state": "open",
+          "total_occurrence_count": 1,
+          "consecutive_failures": 1,
+          "first_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-12T23:42:21.608Z",
           "known_cause": null,
           "next_steps": [
             "Inspect the recorded error and source endpoint before changing the parser."
@@ -492,69 +561,96 @@
           "next_steps": [
             "Inspect the recorded error and source endpoint before changing the parser."
           ]
+        },
+        {
+          "issue_id": "showtimes-official-api:collector_error:capi.showtimes.com.tw",
+          "source": "showtimes-official-api",
+          "error_type": "collector_error",
+          "http_status": null,
+          "host": "capi.showtimes.com.tw",
+          "state": "open",
+          "total_occurrence_count": 1,
+          "consecutive_failures": 1,
+          "first_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-12T23:42:21.608Z",
+          "last_success_at": null,
+          "next_steps": [
+            "Review the Cloudflare bootstrap row count and any Browser Run errors.",
+            "Keep last-known-good ShowTimes rows when the remote browser path is unavailable.",
+            "Preserve canonical historical rows and their source provenance."
+          ]
+        },
+        {
+          "issue_id": "showtimes-official-cloudflare-bootstrap:collector_error:unknown-host",
+          "source": "showtimes-official-cloudflare-bootstrap",
+          "error_type": "collector_error",
+          "http_status": null,
+          "host": null,
+          "state": "open",
+          "total_occurrence_count": 1,
+          "consecutive_failures": 1,
+          "first_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-12T23:42:21.608Z",
+          "last_success_at": null,
+          "next_steps": [
+            "Inspect the recorded error and source endpoint before changing the parser."
+          ]
+        },
+        {
+          "issue_id": "eslite-official-browser:collector_error:unknown-host",
+          "source": "eslite-official-browser",
+          "error_type": "collector_error",
+          "http_status": null,
+          "host": null,
+          "state": "open",
+          "total_occurrence_count": 1,
+          "consecutive_failures": 1,
+          "first_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-12T23:42:21.608Z",
+          "last_success_at": null,
+          "next_steps": [
+            "Inspect the recorded error and source endpoint before changing the parser."
+          ]
         }
       ]
     }
   },
   "ids": {
-    "active_movies": 158,
+    "active_movies": 166,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 158,
-    "available": 141,
-    "missing": 17,
+    "active_movies": 166,
+    "available": 155,
+    "missing": 11,
     "canonical_registry": {
-      "unique_active_films": 136,
-      "poster_yes": 119,
-      "poster_no": 17,
+      "unique_active_films": 139,
+      "poster_yes": 127,
+      "poster_no": 12,
       "fetch_states": {
-        "cooldown": 7,
-        "found_manual": 81,
-        "found_official": 17,
-        "not_found": 10,
-        "reused": 21
+        "ambiguous": 1,
+        "cooldown": 4,
+        "found_manual": 83,
+        "found_official": 16,
+        "not_found": 7,
+        "reused": 28
       }
     },
     "missing_movies": [
       {
-        "movie_id": "m_dd7cc0122e18",
-        "movie_title": "沙丘（重映版）"
-      },
-      {
-        "movie_id": "m_7f63be05ccf2",
-        "movie_title": "六個說謊的大學生"
-      },
-      {
-        "movie_id": "m_8dc6e16d6bfd",
-        "movie_title": "沙丘：第二部（重映版）"
+        "movie_id": "m_2a9c3037d485",
+        "movie_title": "沙丘_經典重映"
       },
       {
         "movie_id": "m_97d8d79b7330",
         "movie_title": "全家就弒你家"
       },
       {
-        "movie_id": "m_875cda6b131c",
-        "movie_title": "我們不是什麼"
-      },
-      {
-        "movie_id": "m_4dd219cbc21b",
-        "movie_title": "麥可傑克森"
-      },
-      {
-        "movie_id": "m_979e23cbca0b",
-        "movie_title": "老千：惡魔之歌"
-      },
-      {
         "movie_id": "m_faa4e2e2405b",
         "movie_title": "幸福的麵包"
-      },
-      {
-        "movie_id": "m_2a9c3037d485",
-        "movie_title": "沙丘_經典重映"
       },
       {
         "movie_id": "m_e5b9823d9027",
@@ -565,12 +661,12 @@
         "movie_title": "沙丘+沙丘:第二部_連映特別場"
       },
       {
-        "movie_id": "m_192e3975fcd4",
-        "movie_title": "【王登鈺動畫作品展】"
+        "movie_id": "m_875cda6b131c",
+        "movie_title": "我們不是什麼"
       },
       {
-        "movie_id": "m_c42b17fafe36",
-        "movie_title": "BTS WORLD TOUR ARIRANG IN KAOHSIUNG現場直播"
+        "movie_id": "m_192e3975fcd4",
+        "movie_title": "【王登鈺動畫作品展】"
       },
       {
         "movie_id": "m_283294392342",
@@ -594,6 +690,27 @@
     "ambiguous_title_matches": [
       {
         "titles": [
+          "SPIDER-MAN: BRAND NEW DAY"
+        ],
+        "movie_ids": [
+          "m_06f5422d36b4",
+          "m_c3c66546e59b"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "哥吉拉-0.0_特別場",
+          "哥吉拉-0.0"
+        ],
+        "movie_ids": [
+          "m_22bc89ac6866",
+          "m_730baf7f4574"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
           "告別的年代_特別場",
           "告別的年代"
         ],
@@ -602,67 +719,64 @@
           "m_50f301cf7baf"
         ],
         "poster_count": 2
+      },
+      {
+        "titles": [
+          "搶銀行先修班 特別場",
+          "搶銀行先修班"
+        ],
+        "movie_ids": [
+          "m_37576abb151c",
+          "m_bb2bf4b4466c"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "How To Rob a Bank",
+          "HOW TO ROB A BANK"
+        ],
+        "movie_ids": [
+          "m_37576abb151c",
+          "m_bb2bf4b4466c"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND"
+        ],
+        "movie_ids": [
+          "m_3c75afd6ba43",
+          "m_b75518dd4086",
+          "m_d69e8be24c88"
+        ],
+        "poster_count": 2
       }
     ]
   },
   "matching": {
     "collector_diagnostic_counts": {
-      "ambiguous_movie_metadata": 3,
+      "ambiguous_movie_metadata": 1,
       "ambiguous_cinema_matches": 0,
-      "unmatched_cinema_matches": 11
+      "unmatched_cinema_matches": 7
     },
     "ambiguous_movie_metadata": [
       {
         "source": "miramar-official-api",
         "city": "taipei",
-        "title": "泥面人",
-        "alternate_title": "CLAYFACE",
+        "title": "搶銀行先修班",
+        "alternate_title": "HOW TO ROB A BANK",
         "metadata_candidates": [
           {
-            "title": "泥面人",
-            "title_en": "Clayface",
-            "poster_url": "https://assets.showtimes.com.tw/images/81905fba8ca38081defb8699f991c7cd.jpg"
+            "title": "搶銀行先修班 特別場",
+            "title_en": "How To Rob a Bank",
+            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
           },
           {
-            "title": "泥面人 特別場",
-            "title_en": "CLAYFACE",
-            "poster_url": "https://assets.showtimes.com.tw/images/81905fba8ca38081defb8699f991c7cd.jpg"
-          }
-        ]
-      },
-      {
-        "source": "miramar-official-api",
-        "city": "taipei",
-        "title": "另一個媽咪",
-        "alternate_title": "OTHER MOMMY",
-        "metadata_candidates": [
-          {
-            "title": "另一個媽咪 特別場",
-            "title_en": "Other Mommy",
-            "poster_url": "https://assets.showtimes.com.tw/images/ae25f5e845d831dfa361ee923f407c8b.jpg"
-          },
-          {
-            "title": "另一個媽咪",
-            "title_en": "Other Mommy",
-            "poster_url": "https://assets.showtimes.com.tw/images/f2a55c32fb6d4303771ede47236aa859.jpg"
-          }
-        ]
-      },
-      {
-        "source": "miramar-official-api",
-        "city": "taipei",
-        "title": "逃出鯨吞",
-        "alternate_title": "WHALEFALL",
-        "metadata_candidates": [
-          {
-            "title": "逃出鯨吞 4DX特別場",
-            "title_en": "Whalefall",
-            "poster_url": "https://assets.showtimes.com.tw/images/4816d898fa8b4f37533891cc68d457f1.jpg"
-          },
-          {
-            "title": "逃出鯨吞",
-            "title_en": "Whalefall",
-            "poster_url": "https://assets.showtimes.com.tw/images/c84aecacc8077f69e60b6a801459696d.jpg"
+            "title": "搶銀行先修班",
+            "title_en": "HOW TO ROB A BANK",
+            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
           }
         ]
       }
@@ -689,18 +803,6 @@
       },
       {
         "source": "moc-culture-movie-api",
-        "city": "new-taipei",
-        "venue": "國家電影及視聽文化中心-大影格",
-        "address": "新北市新莊區文藝路2號"
-      },
-      {
-        "source": "moc-culture-movie-api",
-        "city": "new-taipei",
-        "venue": "國家電影及視聽文化中心-小影格",
-        "address": "新北市新莊區文藝路2號"
-      },
-      {
-        "source": "moc-culture-movie-api",
         "city": "kaohsiung",
         "venue": "內惟藝術中心 Reel one 1廳",
         "address": "高雄市鼓山區馬卡道路329號"
@@ -716,18 +818,6 @@
         "city": "kaohsiung",
         "venue": "高雄市電影館3樓",
         "address": "高雄市鹽埕區河西路10號"
-      },
-      {
-        "source": "moc-culture-movie-api",
-        "city": "new-taipei",
-        "venue": "府中15",
-        "address": "新北市板橋區府中路15號B1"
-      },
-      {
-        "source": "moc-culture-movie-api",
-        "city": "unknown",
-        "venue": "全台首輪上映戲院",
-        "address": "無無."
       },
       {
         "source": "moc-culture-movie-api",

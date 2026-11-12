@@ -5,6 +5,24 @@
   "date": "2026-11-29",
   "showtimes": [
     {
+      "id": "2e0cd3c7fe32ddc6",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T10:30:00+08:00",
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
+    },
+    {
+      "id": "51bf0c153d0c3433",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T11:00:00+08:00",
+      "hall": "英文(ENG)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
+    },
+    {
       "id": "1949772a7463ea77",
       "cinema_id": "43ef84bf160e6886",
       "start_time": "2026-11-29T11:00:00+08:00",
@@ -13,9 +31,46 @@
         "en"
       ],
       "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
-      "source_role": "official Eslite Art House schedule",
+      "source_role": "official Eslite Art House schedule;last-known-good",
       "source": "eslite-official-browser",
-      "movie_id": "m_9af2c98ddd5c"
+      "movie_id": "m_9af2c98ddd5c",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "a3c31b3c38fa40f6",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T12:20:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
+    },
+    {
+      "id": "aa4ab547c8a9b5ce",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T12:40:00+08:00",
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
+    },
+    {
+      "id": "19685fd8cf46a587",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T13:10:00+08:00",
+      "hall": "英文(ENG)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
+    },
+    {
+      "id": "758ce07d7b61bb14",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T14:50:00+08:00",
+      "hall": "中文(CHI)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
     },
     {
       "id": "a4a68f4d47493646",
@@ -27,9 +82,10 @@
       "audio_language": "ko",
       "source_event_id": "4838159",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "ffe267d2c96086b0",
@@ -41,9 +97,10 @@
       "audio_language": "ko",
       "source_event_id": "4838160",
       "source_url": "https://www.showtimes.com.tw/cinemas/91/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
     },
     {
       "id": "68c37ea4ff7f1800",
@@ -55,9 +112,55 @@
       "audio_language": "ko",
       "source_event_id": "4838153",
       "source_url": "https://www.showtimes.com.tw/cinemas/2/",
-      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
+      "source_role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run;last-known-good",
       "source": "showtimes-official-cloudflare-bootstrap",
-      "retrieved_at": "2026-11-11T13:50:00.000Z"
+      "retrieved_at": "2026-11-11T13:50:00.000Z",
+      "freshness": "last-known-good"
+    },
+    {
+      "id": "1f7a78169d17a5e1",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T15:20:00+08:00",
+      "hall": "英文(ENG)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
+    },
+    {
+      "id": "ec5ac7219c695afe",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T16:20:00+08:00",
+      "hall": "Dolby Cinema",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
+    },
+    {
+      "id": "a451811b55eab0b6",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T17:30:00+08:00",
+      "hall": "英文(ENG)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
+    },
+    {
+      "id": "d252d25ab69727d8",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T19:40:00+08:00",
+      "hall": "英文(ENG)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
+    },
+    {
+      "id": "013ac5d665fc7f23",
+      "cinema_id": "b8450eabc146ac0f",
+      "start_time": "2026-11-29T21:50:00+08:00",
+      "hall": "英文(ENG)",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source": "miramar-official-api",
+      "movie_id": "m_2909b1629505"
     }
   ]
 }
