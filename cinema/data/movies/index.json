@@ -205,15 +205,15 @@
       "movie_id": "m_0b062c223f83",
       "movie_title": "哥吉拉-0.0_特別場2",
       "movie_title_en": "GODZILLA MINUS ZERO_SPECIAL2",
+      "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
       "rating": "p",
       "metadata_sources": [
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
         "miramar-official-api",
         "previous-catalog",
-        "canonical-manual-poster",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-poster-title-match"
-      ],
-      "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg"
+        "punctuation-insensitive-title-poster-match"
+      ]
     },
     {
       "movie_id": "m_0b2e1e897a6f",
@@ -2319,12 +2319,12 @@
       "movie_id": "m_946e4300a160",
       "movie_title": "BTS WORLD TOUR ARIRANG IN JAKARTA現場直播",
       "movie_title_en": "BTS WORLD TOUR ARIRANG IN JAKARTA: LIVE VIEW",
+      "poster_url": "https://assets.showtimes.com.tw/images/6a49e1ecb6384cbdbb7c46bdfbc8ae4b.jpg",
       "metadata_sources": [
+        "canonical-poster-title-match",
         "miramar-official-api",
-        "previous-catalog",
-        "canonical-poster-title-match"
-      ],
-      "poster_url": "https://assets.showtimes.com.tw/images/6a49e1ecb6384cbdbb7c46bdfbc8ae4b.jpg"
+        "previous-catalog"
+      ]
     },
     {
       "movie_id": "m_948b80453b93",
@@ -2452,11 +2452,11 @@
       "rating": "g",
       "duration_minutes": 111,
       "metadata_sources": [
+        "canonical-manual-poster",
         "canonical-poster-title-match",
+        "moc-culture-movie-api",
         "previous-catalog",
         "spot-huashan-official-schedule",
-        "canonical-manual-poster",
-        "moc-culture-movie-api",
         "the-movie-database"
       ]
     },
@@ -2584,10 +2584,10 @@
       "poster_url": "https://image.tmdb.org/t/p/w500/f2AHd0mWJrLLwc6elLcSNVbsy8f.jpg",
       "metadata_sources": [
         "canonical-manual-poster",
+        "canonical-poster-title-match",
         "moc-culture-movie-api",
         "previous-catalog",
-        "the-movie-database",
-        "canonical-poster-title-match"
+        "the-movie-database"
       ]
     },
     {
@@ -2691,10 +2691,10 @@
       ],
       "rating": "pg12",
       "metadata_sources": [
+        "canonical-poster-title-match",
         "miramar-official-api",
         "previous-catalog",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-poster-title-match"
+        "punctuation-insensitive-title-poster-match"
       ]
     },
     {
@@ -2846,15 +2846,15 @@
       "duration_minutes": 111,
       "metadata_sources": [
         "ambassador-official-site",
+        "canonical-manual-poster",
         "canonical-poster-title-match",
         "eslite-official-browser",
         "miramar-official-api",
+        "moc-culture-movie-api",
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap",
         "showtimes-official-program",
         "spot-huashan-official-schedule",
-        "canonical-manual-poster",
-        "moc-culture-movie-api",
         "the-movie-database"
       ]
     },
@@ -2891,13 +2891,13 @@
       "movie_id": "m_c42b17fafe36",
       "movie_title": "BTS WORLD TOUR ARIRANG IN KAOHSIUNG現場直播",
       "movie_title_en": "BTS WORLD TOUR ARIRANG IN KAOHSIUNG: LIVE VI",
+      "poster_url": "https://assets.showtimes.com.tw/images/6a49e1ecb6384cbdbb7c46bdfbc8ae4b.jpg",
       "metadata_sources": [
+        "canonical-poster-title-match",
         "miramar-official-api",
         "previous-catalog",
-        "showtimes-official-cloudflare-bootstrap",
-        "canonical-poster-title-match"
-      ],
-      "poster_url": "https://assets.showtimes.com.tw/images/6a49e1ecb6384cbdbb7c46bdfbc8ae4b.jpg"
+        "showtimes-official-cloudflare-bootstrap"
+      ]
     },
     {
       "movie_id": "m_c49db6d96a54",
@@ -3645,6 +3645,6 @@
       ]
     }
   ],
-  "generated_at": "2026-11-12T23:42:17.103Z",
+  "generated_at": "2026-11-13T23:39:03.554Z",
   "identity_policy": "stable movie_id from normalized primary title; metadata stored once in this catalog"
 }

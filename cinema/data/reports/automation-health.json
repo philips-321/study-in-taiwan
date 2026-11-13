@@ -1,9 +1,9 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-12T23:42:21.608Z",
+  "generated_at": "2026-11-13T23:39:16.250Z",
   "browser_source_registry": {
-    "checked_at": "2026-11-12T23:42:15.139Z",
-    "run_id": "43330958532",
+    "checked_at": "2026-11-13T23:39:01.719Z",
+    "run_id": "43528575548",
     "registry_cinemas": 107,
     "registry_bindings": 107,
     "official_urls": 49,
@@ -24,20 +24,20 @@
     }
   },
   "public_window": {
-    "as_of": "2026-11-13",
-    "end_date": "2026-12-13",
-    "rows": 8874,
-    "expected_rows": 8874
+    "as_of": "2026-11-14",
+    "end_date": "2026-12-14",
+    "rows": 7649,
+    "expected_rows": 7649
   },
   "schedule_freshness": {
-    "checked_at": "2026-11-12T23:42:16.567Z",
-    "as_of": "2026-11-13",
-    "stale_screenings_in_window": 2,
-    "stale_marked_this_run": 0,
-    "pending_candidates": 149,
-    "fresh_snapshot_rows": 4143,
-    "last_known_good_rows": 5005,
-    "public_excluded_stale_status_rows": 2,
+    "checked_at": "2026-11-13T23:39:03.025Z",
+    "as_of": "2026-11-14",
+    "stale_screenings_in_window": 125,
+    "stale_marked_this_run": 123,
+    "pending_candidates": 188,
+    "fresh_snapshot_rows": 3681,
+    "last_known_good_rows": 4302,
+    "public_excluded_stale_status_rows": 125,
     "public_excluded_stale_fallback_rows": 9,
     "public_excluded_stale_fallback_by_source": {
       "vieshow-official-browser": 7,
@@ -52,12 +52,12 @@
       "moc-culture-movie-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 723,
-        "fresh_showtimes": 723,
+        "showtimes": 717,
+        "fresh_showtimes": 717,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-12T23:42:15.204Z",
+        "last_success_at": "2026-11-13T23:39:01.779Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -78,12 +78,12 @@
       "miramar-official-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 440,
-        "fresh_showtimes": 440,
+        "showtimes": 468,
+        "fresh_showtimes": 468,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-12T23:42:15.204Z",
+        "last_success_at": "2026-11-13T23:39:01.779Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -104,12 +104,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 2986,
-        "fresh_showtimes": 2986,
+        "showtimes": 2572,
+        "fresh_showtimes": 2572,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-12T23:42:15.204Z",
+        "last_success_at": "2026-11-13T23:39:01.779Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -136,7 +136,7 @@
         "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
         "retrieved_at": null,
         "last_success_at": "2026-11-11T13:29:51.719Z",
-        "next_probe_at": "2026-11-13T00:12:15.204Z",
+        "next_probe_at": "2026-11-14T00:09:01.779Z",
         "retry_suppressed": false,
         "retry_after": null,
         "acquisition_method": null,
@@ -156,13 +156,13 @@
       "showtimes-official-cloudflare-bootstrap": {
         "health": "degraded",
         "ok": false,
-        "showtimes": 4864,
+        "showtimes": 4177,
         "fresh_showtimes": 0,
-        "fallback_showtimes": 4864,
+        "fallback_showtimes": 4177,
         "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
         "retrieved_at": null,
         "last_success_at": "2026-11-11T14:24:27.520Z",
-        "next_probe_at": "2026-11-13T00:12:15.204Z",
+        "next_probe_at": "2026-11-14T00:09:01.779Z",
         "retry_suppressed": false,
         "retry_after": null,
         "acquisition_method": null,
@@ -187,7 +187,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-12T23:42:15.204Z",
+        "last_success_at": "2026-11-13T23:39:01.779Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -213,7 +213,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-12T23:42:15.204Z",
+        "last_success_at": "2026-11-13T23:39:01.779Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -239,7 +239,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-12T23:42:15.204Z",
+        "last_success_at": "2026-11-13T23:39:01.779Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -265,7 +265,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-12T23:42:15.204Z",
+        "last_success_at": "2026-11-13T23:39:01.779Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -312,13 +312,13 @@
       "eslite-official-browser": {
         "health": "degraded",
         "ok": false,
-        "showtimes": 113,
+        "showtimes": 97,
         "fresh_showtimes": 0,
-        "fallback_showtimes": 113,
+        "fallback_showtimes": 97,
         "error": "Eslite browser navigation returned HTTP unknown: Cloudflare Browser Rendering failed for meet.eslite.com: Authentication error",
         "retrieved_at": null,
         "last_success_at": "2026-11-11T13:29:51.719Z",
-        "next_probe_at": "2026-11-13T00:12:15.204Z",
+        "next_probe_at": "2026-11-14T00:09:01.779Z",
         "retry_suppressed": false,
         "retry_after": null,
         "acquisition_method": null,
@@ -376,10 +376,10 @@
         "recurring_issue": {
           "issue_id": "showtimes-official-api:collector_error:capi.showtimes.com.tw",
           "state": "open",
-          "total_occurrence_count": 1,
-          "consecutive_failures": 1,
+          "total_occurrence_count": 2,
+          "consecutive_failures": 2,
           "first_seen": "2026-11-12T23:42:21.608Z",
-          "last_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-13T23:39:16.250Z",
           "known_cause": "GitHub Actions receives HTTP 403 from the ShowTimes API. The collector now fetches the official ShowTimes bootstrap from inside Cloudflare Browser Run and keeps the page browser fallback for degraded runs.",
           "next_steps": [
             "Review the Cloudflare bootstrap row count and any Browser Run errors.",
@@ -392,19 +392,19 @@
         "source": "showtimes-official-cloudflare-bootstrap",
         "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
         "health": "degraded",
-        "showtimes": 4864,
+        "showtimes": 4177,
         "substitute_source": null,
         "substitute_showtimes": 0,
-        "fallback_showtimes": 4864,
+        "fallback_showtimes": 4177,
         "retry_suppressed": false,
         "retry_after": null,
         "recurring_issue": {
           "issue_id": "showtimes-official-cloudflare-bootstrap:collector_error:unknown-host",
           "state": "open",
-          "total_occurrence_count": 1,
-          "consecutive_failures": 1,
+          "total_occurrence_count": 2,
+          "consecutive_failures": 2,
           "first_seen": "2026-11-12T23:42:21.608Z",
-          "last_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-13T23:39:16.250Z",
           "known_cause": null,
           "next_steps": [
             "Inspect the recorded error and source endpoint before changing the parser."
@@ -438,19 +438,19 @@
         "source": "eslite-official-browser",
         "error": "Eslite browser navigation returned HTTP unknown: Cloudflare Browser Rendering failed for meet.eslite.com: Authentication error",
         "health": "degraded",
-        "showtimes": 113,
+        "showtimes": 97,
         "substitute_source": null,
         "substitute_showtimes": 0,
-        "fallback_showtimes": 113,
+        "fallback_showtimes": 97,
         "retry_suppressed": false,
         "retry_after": null,
         "recurring_issue": {
           "issue_id": "eslite-official-browser:collector_error:unknown-host",
           "state": "open",
-          "total_occurrence_count": 1,
-          "consecutive_failures": 1,
+          "total_occurrence_count": 2,
+          "consecutive_failures": 2,
           "first_seen": "2026-11-12T23:42:21.608Z",
-          "last_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-13T23:39:16.250Z",
           "known_cause": null,
           "next_steps": [
             "Inspect the recorded error and source endpoint before changing the parser."
@@ -569,10 +569,10 @@
           "http_status": null,
           "host": "capi.showtimes.com.tw",
           "state": "open",
-          "total_occurrence_count": 1,
-          "consecutive_failures": 1,
+          "total_occurrence_count": 2,
+          "consecutive_failures": 2,
           "first_seen": "2026-11-12T23:42:21.608Z",
-          "last_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-13T23:39:16.250Z",
           "last_success_at": null,
           "next_steps": [
             "Review the Cloudflare bootstrap row count and any Browser Run errors.",
@@ -587,10 +587,10 @@
           "http_status": null,
           "host": null,
           "state": "open",
-          "total_occurrence_count": 1,
-          "consecutive_failures": 1,
+          "total_occurrence_count": 2,
+          "consecutive_failures": 2,
           "first_seen": "2026-11-12T23:42:21.608Z",
-          "last_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-13T23:39:16.250Z",
           "last_success_at": null,
           "next_steps": [
             "Inspect the recorded error and source endpoint before changing the parser."
@@ -603,10 +603,10 @@
           "http_status": null,
           "host": null,
           "state": "open",
-          "total_occurrence_count": 1,
-          "consecutive_failures": 1,
+          "total_occurrence_count": 2,
+          "consecutive_failures": 2,
           "first_seen": "2026-11-12T23:42:21.608Z",
-          "last_seen": "2026-11-12T23:42:21.608Z",
+          "last_seen": "2026-11-13T23:39:16.250Z",
           "last_success_at": null,
           "next_steps": [
             "Inspect the recorded error and source endpoint before changing the parser."
@@ -616,33 +616,37 @@
     }
   },
   "ids": {
-    "active_movies": 166,
+    "active_movies": 161,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 166,
-    "available": 155,
+    "active_movies": 161,
+    "available": 150,
     "missing": 11,
     "canonical_registry": {
-      "unique_active_films": 139,
-      "poster_yes": 127,
+      "unique_active_films": 136,
+      "poster_yes": 124,
       "poster_no": 12,
       "fetch_states": {
         "ambiguous": 1,
         "cooldown": 4,
-        "found_manual": 83,
-        "found_official": 16,
+        "found_manual": 81,
+        "found_official": 15,
         "not_found": 7,
         "reused": 28
       }
     },
     "missing_movies": [
       {
-        "movie_id": "m_2a9c3037d485",
-        "movie_title": "沙丘_經典重映"
+        "movie_id": "m_c7e9b9be8323",
+        "movie_title": "沙丘+沙丘:第二部_連映特別場"
+      },
+      {
+        "movie_id": "m_875cda6b131c",
+        "movie_title": "我們不是什麼"
       },
       {
         "movie_id": "m_97d8d79b7330",
@@ -653,16 +657,12 @@
         "movie_title": "幸福的麵包"
       },
       {
+        "movie_id": "m_2a9c3037d485",
+        "movie_title": "沙丘_經典重映"
+      },
+      {
         "movie_id": "m_e5b9823d9027",
         "movie_title": "沙丘：第二部_經典重映"
-      },
-      {
-        "movie_id": "m_c7e9b9be8323",
-        "movie_title": "沙丘+沙丘:第二部_連映特別場"
-      },
-      {
-        "movie_id": "m_875cda6b131c",
-        "movie_title": "我們不是什麼"
       },
       {
         "movie_id": "m_192e3975fcd4",

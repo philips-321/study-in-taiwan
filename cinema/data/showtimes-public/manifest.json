@@ -1,29 +1,29 @@
 {
   "schema": "public-window-report",
-  "as_of": "2026-11-13",
+  "as_of": "2026-11-14",
   "days": 30,
-  "end_date": "2026-12-13",
-  "generated_at": "2026-11-12T23:42:21.233Z",
-  "input_rows": 34090,
-  "public_rows": 8874,
-  "excluded_by_window": 25205,
-  "excluded_stale_status_rows": 2,
+  "end_date": "2026-12-14",
+  "generated_at": "2026-11-13T23:39:15.883Z",
+  "input_rows": 34277,
+  "public_rows": 7649,
+  "excluded_by_window": 26494,
+  "excluded_stale_status_rows": 125,
   "excluded_stale_fallback_rows": 9,
   "excluded_stale_fallback_by_source": {
     "vieshow-official-browser": 7,
     "eslite-official-schedule": 2
   },
   "fallback_max_age_hours": 168,
-  "files": 159,
-  "sha256": "2bce0443e4805ad973329d336e392c2b83915a5c55793f67ccc1bd73cf6b2619",
+  "files": 146,
+  "sha256": "380e78987b5631e6ab893c0e20bd5d41ae969c02f1dcdf22487fd2e7b598661d",
   "showtimes_index": {
     "2026-11-14": {
-      "total": 1252,
+      "total": 1216,
       "cities": {
         "new-taipei": 235,
         "taoyuan": 45,
         "kaohsiung": 250,
-        "taipei": 285,
+        "taipei": 249,
         "pingtung": 36,
         "keelung": 45,
         "taichung": 184,
@@ -34,30 +34,12 @@
         "tainan": 21
       }
     },
-    "2026-11-13": {
-      "total": 1205,
-      "cities": {
-        "chiayi-city": 60,
-        "taipei": 279,
-        "new-taipei": 213,
-        "taichung": 184,
-        "pingtung": 36,
-        "kaohsiung": 226,
-        "yunlin": 16,
-        "hualien": 45,
-        "taitung": 37,
-        "taoyuan": 45,
-        "keelung": 42,
-        "tainan": 21,
-        "unknown": 1
-      }
-    },
     "2026-11-18": {
-      "total": 1119,
+      "total": 1140,
       "cities": {
-        "new-taipei": 206,
+        "new-taipei": 207,
         "taichung": 183,
-        "taipei": 260,
+        "taipei": 280,
         "tainan": 21,
         "yunlin": 16,
         "kaohsiung": 226,
@@ -69,16 +51,16 @@
       }
     },
     "2026-11-16": {
-      "total": 1148,
+      "total": 1153,
       "cities": {
-        "taipei": 256,
+        "taipei": 260,
         "chiayi-city": 53,
         "hualien": 45,
         "kaohsiung": 210,
         "pingtung": 36,
         "taichung": 181,
         "tainan": 21,
-        "new-taipei": 204,
+        "new-taipei": 205,
         "keelung": 44,
         "taitung": 37,
         "taoyuan": 45,
@@ -86,15 +68,15 @@
       }
     },
     "2026-11-19": {
-      "total": 1096,
+      "total": 1126,
       "cities": {
         "hualien": 45,
         "taichung": 184,
         "kaohsiung": 228,
         "pingtung": 36,
-        "taipei": 245,
+        "taipei": 274,
         "keelung": 34,
-        "new-taipei": 205,
+        "new-taipei": 206,
         "tainan": 21,
         "taoyuan": 45,
         "taitung": 37,
@@ -102,14 +84,14 @@
       }
     },
     "2026-11-15": {
-      "total": 1255,
+      "total": 1218,
       "cities": {
         "taoyuan": 45,
         "kaohsiung": 254,
         "taichung": 184,
         "hualien": 45,
-        "new-taipei": 231,
-        "taipei": 289,
+        "new-taipei": 232,
+        "taipei": 251,
         "taitung": 35,
         "keelung": 45,
         "pingtung": 36,
@@ -119,13 +101,13 @@
       }
     },
     "2026-11-17": {
-      "total": 1205,
+      "total": 1158,
       "cities": {
-        "taipei": 280,
+        "taipei": 257,
         "taoyuan": 45,
-        "new-taipei": 205,
+        "new-taipei": 206,
         "taichung": 184,
-        "kaohsiung": 241,
+        "kaohsiung": 216,
         "tainan": 20,
         "pingtung": 36,
         "keelung": 44,
@@ -188,6 +170,13 @@
         "chiayi-city": 1
       }
     },
+    "2026-11-20": {
+      "total": 54,
+      "cities": {
+        "new-taipei": 45,
+        "kaohsiung": 9
+      }
+    },
     "2026-11-27": {
       "total": 88,
       "cities": {
@@ -216,13 +205,6 @@
         "chiayi-city": 2,
         "taichung": 2,
         "taipei": 3
-      }
-    },
-    "2026-11-20": {
-      "total": 10,
-      "cities": {
-        "kaohsiung": 9,
-        "new-taipei": 1
       }
     },
     "2026-11-25": {
@@ -318,7 +300,7 @@
     }
   },
   "coverage": {
-    "showtime_rows": 8874,
-    "explicit_subtitle_rows": 190
+    "showtime_rows": 7649,
+    "explicit_subtitle_rows": 164
   }
 }

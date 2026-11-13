@@ -1,40 +1,44 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-12T23:42:21.608Z",
+  "generated_at": "2026-11-13T23:39:16.250Z",
   "public_window": {
-    "as_of": "2026-11-13",
-    "end_date": "2026-12-13",
-    "rows": 8874,
-    "expected_rows": 8874
+    "as_of": "2026-11-14",
+    "end_date": "2026-12-14",
+    "rows": 7649,
+    "expected_rows": 7649
   },
   "ids": {
-    "active_movies": 166,
+    "active_movies": 161,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 166,
-    "available": 155,
+    "active_movies": 161,
+    "available": 150,
     "missing": 11,
     "canonical_registry": {
-      "unique_active_films": 139,
-      "poster_yes": 127,
+      "unique_active_films": 136,
+      "poster_yes": 124,
       "poster_no": 12,
       "fetch_states": {
         "ambiguous": 1,
         "cooldown": 4,
-        "found_manual": 83,
-        "found_official": 16,
+        "found_manual": 81,
+        "found_official": 15,
         "not_found": 7,
         "reused": 28
       }
     },
     "missing_movies": [
       {
-        "movie_id": "m_2a9c3037d485",
-        "movie_title": "沙丘_經典重映"
+        "movie_id": "m_c7e9b9be8323",
+        "movie_title": "沙丘+沙丘:第二部_連映特別場"
+      },
+      {
+        "movie_id": "m_875cda6b131c",
+        "movie_title": "我們不是什麼"
       },
       {
         "movie_id": "m_97d8d79b7330",
@@ -45,16 +49,12 @@
         "movie_title": "幸福的麵包"
       },
       {
+        "movie_id": "m_2a9c3037d485",
+        "movie_title": "沙丘_經典重映"
+      },
+      {
         "movie_id": "m_e5b9823d9027",
         "movie_title": "沙丘：第二部_經典重映"
-      },
-      {
-        "movie_id": "m_c7e9b9be8323",
-        "movie_title": "沙丘+沙丘:第二部_連映特別場"
-      },
-      {
-        "movie_id": "m_875cda6b131c",
-        "movie_title": "我們不是什麼"
       },
       {
         "movie_id": "m_192e3975fcd4",
