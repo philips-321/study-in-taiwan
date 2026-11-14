@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-13T23:39:16.250Z",
+  "generated_at": "2026-11-14T22:31:48.367Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -326,8 +326,8 @@
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
       "retry_after": "2026-11-18T13:29:58.836Z",
-      "retry_suppressed_run_count": 11,
-      "last_retry_suppressed_at": "2026-11-13T23:39:16.250Z"
+      "retry_suppressed_run_count": 12,
+      "last_retry_suppressed_at": "2026-11-14T22:31:48.367Z"
     },
     {
       "issue_id": "eslite-official-browser:collector_error:meet.eslite.com",
@@ -371,11 +371,11 @@
       "endpoint": "https://capi.showtimes.com.tw/4/app/bootstrap",
       "state": "open",
       "first_seen": "2026-11-12T23:42:21.608Z",
-      "last_seen": "2026-11-13T23:39:16.250Z",
+      "last_seen": "2026-11-14T22:31:48.367Z",
       "last_success_at": null,
-      "total_occurrence_count": 2,
+      "total_occurrence_count": 3,
       "historical_observation_count": 0,
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "reopen_count": 0,
       "known_cause": "GitHub Actions receives HTTP 403 from the ShowTimes API. The collector now fetches the official ShowTimes bootstrap from inside Cloudflare Browser Run and keeps the page browser fallback for degraded runs.",
       "next_steps": [
@@ -395,12 +395,18 @@
           "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
           "fresh_showtimes": 0,
           "fallback_showtimes": 0
+        },
+        {
+          "observed_at": "2026-11-14T22:31:48.367Z",
+          "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
+          "fresh_showtimes": 0,
+          "fallback_showtimes": 0
         }
       ],
       "last_error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
-      "retry_after": "2026-11-20T23:39:16.250Z"
+      "retry_after": "2026-11-21T22:31:48.367Z"
     },
     {
       "issue_id": "showtimes-official-cloudflare-bootstrap:collector_error:unknown-host",
@@ -411,11 +417,11 @@
       "endpoint": null,
       "state": "open",
       "first_seen": "2026-11-12T23:42:21.608Z",
-      "last_seen": "2026-11-13T23:39:16.250Z",
+      "last_seen": "2026-11-14T22:31:48.367Z",
       "last_success_at": null,
-      "total_occurrence_count": 2,
+      "total_occurrence_count": 3,
       "historical_observation_count": 0,
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "reopen_count": 0,
       "known_cause": null,
       "next_steps": [
@@ -433,12 +439,18 @@
           "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
           "fresh_showtimes": 0,
           "fallback_showtimes": 4177
+        },
+        {
+          "observed_at": "2026-11-14T22:31:48.367Z",
+          "error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
+          "fresh_showtimes": 0,
+          "fallback_showtimes": 3500
         }
       ],
       "last_error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
       "last_fresh_showtimes": 0,
-      "last_fallback_showtimes": 4177,
-      "retry_after": "2026-11-20T23:39:16.250Z"
+      "last_fallback_showtimes": 3500,
+      "retry_after": "2026-11-21T22:31:48.367Z"
     },
     {
       "issue_id": "eslite-official-browser:collector_error:unknown-host",
@@ -449,11 +461,11 @@
       "endpoint": null,
       "state": "open",
       "first_seen": "2026-11-12T23:42:21.608Z",
-      "last_seen": "2026-11-13T23:39:16.250Z",
+      "last_seen": "2026-11-14T22:31:48.367Z",
       "last_success_at": null,
-      "total_occurrence_count": 2,
+      "total_occurrence_count": 3,
       "historical_observation_count": 0,
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "reopen_count": 0,
       "known_cause": null,
       "next_steps": [
@@ -471,12 +483,18 @@
           "error": "Eslite browser navigation returned HTTP unknown: Cloudflare Browser Rendering failed for meet.eslite.com: Authentication error",
           "fresh_showtimes": 0,
           "fallback_showtimes": 97
+        },
+        {
+          "observed_at": "2026-11-14T22:31:48.367Z",
+          "error": "Eslite browser navigation returned HTTP unknown: Cloudflare Browser Rendering failed for meet.eslite.com: Authentication error",
+          "fresh_showtimes": 0,
+          "fallback_showtimes": 84
         }
       ],
       "last_error": "Eslite browser navigation returned HTTP unknown: Cloudflare Browser Rendering failed for meet.eslite.com: Authentication error",
       "last_fresh_showtimes": 0,
-      "last_fallback_showtimes": 97,
-      "retry_after": "2026-11-20T23:39:16.250Z"
+      "last_fallback_showtimes": 84,
+      "retry_after": "2026-11-21T22:31:48.367Z"
     }
   ],
   "retry_policy": "After an unresolved HTTP 403, suppress automatic source requests for 7 days; keep last-known-good schedules and make one retry after the cooldown."
