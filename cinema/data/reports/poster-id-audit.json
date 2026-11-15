@@ -1,45 +1,37 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-14T22:31:48.367Z",
+  "generated_at": "2026-11-15T22:55:35.408Z",
   "public_window": {
-    "as_of": "2026-11-15",
-    "end_date": "2026-12-15",
-    "rows": 6375,
-    "expected_rows": 6375
+    "as_of": "2026-11-16",
+    "end_date": "2026-12-16",
+    "rows": 5151,
+    "expected_rows": 5151
   },
   "ids": {
-    "active_movies": 153,
+    "active_movies": 142,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 153,
-    "available": 142,
-    "missing": 11,
+    "active_movies": 142,
+    "available": 132,
+    "missing": 10,
     "canonical_registry": {
-      "unique_active_films": 133,
-      "poster_yes": 121,
-      "poster_no": 12,
+      "unique_active_films": 126,
+      "poster_yes": 115,
+      "poster_no": 11,
       "fetch_states": {
         "ambiguous": 1,
         "cooldown": 4,
-        "found_manual": 79,
+        "found_manual": 75,
         "found_official": 14,
-        "not_found": 7,
-        "reused": 28
+        "not_found": 6,
+        "reused": 26
       }
     },
     "missing_movies": [
-      {
-        "movie_id": "m_97d8d79b7330",
-        "movie_title": "全家就弒你家"
-      },
-      {
-        "movie_id": "m_faa4e2e2405b",
-        "movie_title": "幸福的麵包"
-      },
       {
         "movie_id": "m_2a9c3037d485",
         "movie_title": "沙丘_經典重映"
@@ -49,8 +41,12 @@
         "movie_title": "沙丘：第二部_經典重映"
       },
       {
-        "movie_id": "m_192e3975fcd4",
-        "movie_title": "【王登鈺動畫作品展】"
+        "movie_id": "m_faa4e2e2405b",
+        "movie_title": "幸福的麵包"
+      },
+      {
+        "movie_id": "m_97d8d79b7330",
+        "movie_title": "全家就弒你家"
       },
       {
         "movie_id": "m_875cda6b131c",
