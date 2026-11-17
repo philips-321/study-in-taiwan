@@ -1,31 +1,31 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-15T22:55:35.408Z",
+  "generated_at": "2026-11-17T01:53:43.627Z",
   "public_window": {
-    "as_of": "2026-11-16",
-    "end_date": "2026-12-16",
-    "rows": 5151,
-    "expected_rows": 5151
+    "as_of": "2026-11-17",
+    "end_date": "2026-12-17",
+    "rows": 4155,
+    "expected_rows": 4155
   },
   "ids": {
-    "active_movies": 142,
+    "active_movies": 145,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 142,
-    "available": 132,
-    "missing": 10,
+    "active_movies": 145,
+    "available": 134,
+    "missing": 11,
     "canonical_registry": {
-      "unique_active_films": 126,
-      "poster_yes": 115,
+      "unique_active_films": 128,
+      "poster_yes": 117,
       "poster_no": 11,
       "fetch_states": {
         "ambiguous": 1,
         "cooldown": 4,
-        "found_manual": 75,
+        "found_manual": 77,
         "found_official": 14,
         "not_found": 6,
         "reused": 26
@@ -33,20 +33,20 @@
     },
     "missing_movies": [
       {
-        "movie_id": "m_2a9c3037d485",
-        "movie_title": "沙丘_經典重映"
+        "movie_id": "m_97d8d79b7330",
+        "movie_title": "全家就弒你家"
       },
       {
         "movie_id": "m_e5b9823d9027",
         "movie_title": "沙丘：第二部_經典重映"
       },
       {
-        "movie_id": "m_faa4e2e2405b",
-        "movie_title": "幸福的麵包"
+        "movie_id": "m_2a9c3037d485",
+        "movie_title": "沙丘_經典重映"
       },
       {
-        "movie_id": "m_97d8d79b7330",
-        "movie_title": "全家就弒你家"
+        "movie_id": "m_faa4e2e2405b",
+        "movie_title": "幸福的麵包"
       },
       {
         "movie_id": "m_875cda6b131c",
@@ -55,6 +55,10 @@
       {
         "movie_id": "m_5a2cdfa4cd9e",
         "movie_title": "（特別場）巴霍巴利王：王者再臨"
+      },
+      {
+        "movie_id": "m_598d276e7fb2",
+        "movie_title": "搶銀行先修班_特別場"
       },
       {
         "movie_id": "m_283294392342",
