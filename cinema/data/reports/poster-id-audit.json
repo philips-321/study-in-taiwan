@@ -1,56 +1,56 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-17T01:53:43.627Z",
+  "generated_at": "2026-11-18T01:00:39.246Z",
   "public_window": {
-    "as_of": "2026-11-17",
-    "end_date": "2026-12-17",
-    "rows": 4155,
-    "expected_rows": 4155
+    "as_of": "2026-11-18",
+    "end_date": "2026-12-18",
+    "rows": 3041,
+    "expected_rows": 3041
   },
   "ids": {
-    "active_movies": 145,
+    "active_movies": 147,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 145,
+    "active_movies": 147,
     "available": 134,
-    "missing": 11,
+    "missing": 13,
     "canonical_registry": {
-      "unique_active_films": 128,
+      "unique_active_films": 130,
       "poster_yes": 117,
-      "poster_no": 11,
+      "poster_no": 13,
       "fetch_states": {
-        "ambiguous": 1,
+        "ambiguous": 2,
         "cooldown": 4,
         "found_manual": 77,
         "found_official": 14,
-        "not_found": 6,
+        "not_found": 7,
         "reused": 26
       }
     },
     "missing_movies": [
       {
-        "movie_id": "m_97d8d79b7330",
-        "movie_title": "全家就弒你家"
+        "movie_id": "m_2a9c3037d485",
+        "movie_title": "沙丘_經典重映"
       },
       {
         "movie_id": "m_e5b9823d9027",
         "movie_title": "沙丘：第二部_經典重映"
       },
       {
-        "movie_id": "m_2a9c3037d485",
-        "movie_title": "沙丘_經典重映"
-      },
-      {
-        "movie_id": "m_faa4e2e2405b",
-        "movie_title": "幸福的麵包"
+        "movie_id": "m_97d8d79b7330",
+        "movie_title": "全家就弒你家"
       },
       {
         "movie_id": "m_875cda6b131c",
         "movie_title": "我們不是什麼"
+      },
+      {
+        "movie_id": "m_faa4e2e2405b",
+        "movie_title": "幸福的麵包"
       },
       {
         "movie_id": "m_5a2cdfa4cd9e",
@@ -59,6 +59,10 @@
       {
         "movie_id": "m_598d276e7fb2",
         "movie_title": "搶銀行先修班_特別場"
+      },
+      {
+        "movie_id": "m_2953443d99ae",
+        "movie_title": "沙丘+沙丘:第二部_連映特別場2"
       },
       {
         "movie_id": "m_283294392342",
@@ -75,6 +79,10 @@
       {
         "movie_id": "m_57990b5e8193",
         "movie_title": "2026年12月【和美鎮立圖書館-電影欣賞】"
+      },
+      {
+        "movie_id": "m_b6ff66c450f7",
+        "movie_title": "12月高雄市電影館｜34街的奇蹟"
       }
     ],
     "missing_samples_capped_at": 200,

@@ -89,15 +89,15 @@
       "movie_id": "m_05a40b3e268c",
       "movie_title": "哥吉拉-0.0_特別場3",
       "movie_title_en": "GODZILLA MINUS ZERO_SPECIAL3",
+      "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
       "rating": "p",
       "metadata_sources": [
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
         "miramar-official-api",
         "previous-catalog",
-        "canonical-manual-poster",
-        "punctuation-insensitive-title-poster-match",
-        "canonical-poster-title-match"
-      ],
-      "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg"
+        "punctuation-insensitive-title-poster-match"
+      ]
     },
     {
       "movie_id": "m_05c755e897ee",
@@ -620,6 +620,16 @@
         "canonical-manual-poster",
         "manual-verified-poster",
         "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_2953443d99ae",
+      "movie_title": "沙丘+沙丘:第二部_連映特別場2",
+      "movie_title_en": "DUNE+DUNE:PART TWO",
+      "rating": "pg12",
+      "metadata_sources": [
+        "miramar-official-api",
         "previous-catalog"
       ]
     },
@@ -2075,6 +2085,15 @@
       ]
     },
     {
+      "movie_id": "m_83237c6650d0",
+      "movie_title": "12月高雄市電影館｜東京教父 4K修復",
+      "movie_title_en": null,
+      "metadata_sources": [
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_844432c909af",
       "movie_title": "聖誕驚奇夜_特別場",
       "movie_title_en": "EBENEZER: A CHRISTMAS CAROL_SPECIAL",
@@ -2758,6 +2777,15 @@
       ]
     },
     {
+      "movie_id": "m_b6ff66c450f7",
+      "movie_title": "12月高雄市電影館｜34街的奇蹟",
+      "movie_title_en": null,
+      "metadata_sources": [
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_b75518dd4086",
       "movie_title": "劇場版 吉伊卡哇 人魚島的秘密 (國語版)",
       "movie_title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
@@ -3151,7 +3179,7 @@
         "romance"
       ],
       "rating": "pg12",
-      "duration_minutes": 107,
+      "duration_minutes": 106,
       "metadata_sources": [
         "ambassador-official-site",
         "eslite-official-browser",
@@ -3678,6 +3706,6 @@
       ]
     }
   ],
-  "generated_at": "2026-11-17T01:53:39.680Z",
+  "generated_at": "2026-11-18T01:00:33.821Z",
   "identity_policy": "stable movie_id from normalized primary title; metadata stored once in this catalog"
 }
