@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewed_on": "2026-10-29",
+  "reviewed_on": "2026-11-20",
   "method": "manual browser review, cinema by cinema; branch pages opened sequentially",
   "entries": [
     {
@@ -1747,6 +1747,1337 @@
       "reviewed_on": "2026-10-29",
       "browser_status": "schedule-visible",
       "notes": "107 canonical direct-official sessions across 11 dates. Historical GitHub runner 403 is path-specific; direct source access succeeded. Full Les Uns et les Autres title verified at https://meet.eslite.com/tw/tc/artshow/202610280009. Earlier browser research is recorded in DIRECT-OFFICIAL-SOURCE-RESEARCH-2026-10-29.md; this continuation reused those parsers with sequential direct HTTP capture."
+    },
+    {
+      "cinema_id": "01ff4bc24e3038a2",
+      "cinema_name": "板橋大遠百威秀影城",
+      "city": "new-taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=4",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 395 parsed rows, 373 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "06e26c038c52d33d",
+      "cinema_name": "南港LaLaport威秀影城",
+      "city": "taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=34",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 660 parsed rows, 608 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "0a13c96a4123d0b5",
+      "cinema_name": "台北信義威秀影城",
+      "city": "taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=1",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 502 parsed rows, 465 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "0bc190790a97a92b",
+      "cinema_name": "花蓮秀泰影城",
+      "city": "hualien",
+      "source_url": "https://www.showtimes.com.tw/cinemas/3/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 64 parsed rows, 64 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "14904f55b4c30ea4",
+      "cinema_name": "哈拉影城",
+      "city": "taipei",
+      "source_url": "https://halarcity.com.tw/Browsing/Cinemas/Details/0000000001",
+      "source_type": "official",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 362 parsed rows, 31 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "14b8214762818432",
+      "cinema_name": "台南仁德秀泰影城",
+      "city": "tainan",
+      "source_url": "https://www.showtimes.com.tw/cinemas/60/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 84 parsed rows, 84 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "18ed2c265bbcc977",
+      "cinema_name": "親親大戲院",
+      "city": "taichung",
+      "source_url": "https://www.ccmovie.com.tw/product.php?_path=product_showtimes",
+      "source_type": "official",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 76 parsed rows, 75 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "1b9c4a9b7ed385ea",
+      "cinema_name": "MUVIE CINEMAS威秀影城",
+      "city": "taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
+      "source_type": "official MUVIE Songren server-rendered schedule",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 246 parsed rows, 233 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "1cb2ad9bb7e14f9f",
+      "cinema_name": "台南大遠百威秀影城",
+      "city": "tainan",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=15",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 349 parsed rows, 328 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "21ea5948a31721df",
+      "cinema_name": "桃園統領威秀影城",
+      "city": "taoyuan",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=20",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 595 parsed rows, 513 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "2677bacaeb7d8d3d",
+      "cinema_name": "台南南紡威秀影城",
+      "city": "tainan",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=16",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 562 parsed rows, 524 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "29fa20640d772416",
+      "cinema_name": "台北西門威秀影城",
+      "city": "taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=31",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 322 parsed rows, 279 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "2e33433ca052e5dd",
+      "cinema_name": "高雄大遠百威秀影城",
+      "city": "kaohsiung",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=18",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 736 parsed rows, 690 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "3071c450f8e42deb",
+      "cinema_name": "台中大魯閣新時代威秀影城",
+      "city": "taichung",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=26",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 378 parsed rows, 369 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "36eb08cbc0a2c346",
+      "cinema_name": "桃知道威秀影城",
+      "city": "taoyuan",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=29",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 158 parsed rows, 148 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "3831da6ae664fad3",
+      "cinema_name": "新店裕隆城威秀影城",
+      "city": "new-taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=28",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 578 parsed rows, 520 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "3ac5369b1e1edf71",
+      "cinema_name": "全球影城",
+      "city": "taichung",
+      "source_url": "https://www.ucc-cinema.com.tw/product.html",
+      "source_type": "official cinema website",
+      "browser_status": "no-verified-current-schedule",
+      "observed_fields": [],
+      "notes": "HTTP 200; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "40b1b5887858aded",
+      "cinema_name": "南投戲院",
+      "city": "nantou",
+      "source_url": "https://nantoutheater.com/showings?date=2026-11-20&range=all",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime"
+      ],
+      "notes": "HTTP 200; 17 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "43ef84bf160e6886",
+      "cinema_name": "誠品電影院",
+      "city": "taipei",
+      "source_url": "https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1",
+      "source_type": "official Eslite Art House schedule",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit subtitles"
+      ],
+      "notes": "HTTP 200; 111 parsed rows, 0 explicit audio, 111 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "5a8e854557da8367",
+      "cinema_name": "山明電影院",
+      "city": "nantou",
+      "source_url": "https://www.shanmingcinema.com.tw/showtimes.php",
+      "source_type": "official",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 2 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "5c35b8e61739d367",
+      "cinema_name": "高雄岡山秀泰影城",
+      "city": "kaohsiung",
+      "source_url": "https://www.showtimes.com.tw/cinemas/84/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 49 parsed rows, 48 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "63bd8f4351bab496",
+      "cinema_name": "台東秀泰影城",
+      "city": "taitung",
+      "source_url": "https://www.showtimes.com.tw/cinemas/7/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 72 parsed rows, 72 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "6763778191e9e511",
+      "cinema_name": "土城秀泰影城",
+      "city": "new-taipei",
+      "source_url": "https://www.showtimes.com.tw/cinemas/55/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 57 parsed rows, 56 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "680545a43a5093a6",
+      "cinema_name": "大巨蛋秀泰影城",
+      "city": "taipei",
+      "source_url": "https://www.showtimes.com.tw/cinemas/91/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 52 parsed rows, 49 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "692aebc297877ec2",
+      "cinema_name": "台南FOCUS威秀影城",
+      "city": "tainan",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=22",
+      "source_type": "official VieShow branch page",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 98 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "719e1a68f2f3f9f5",
+      "cinema_name": "中和環球威秀影城",
+      "city": "new-taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=25",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 421 parsed rows, 397 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "74592dcd403b6eb2",
+      "cinema_name": "欣欣秀泰影城",
+      "city": "taipei",
+      "source_url": "https://www.showtimes.com.tw/cinemas/2/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "no-verified-current-schedule",
+      "observed_fields": [],
+      "notes": "HTTP 200; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "757bc5cac5b68cc9",
+      "cinema_name": "北港秀泰影城",
+      "city": "yunlin",
+      "source_url": "https://www.showtimes.com.tw/cinemas/58/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 88 parsed rows, 88 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "758a39fe5ae9a51d",
+      "cinema_name": "花蓮新天堂樂園威秀影城",
+      "city": "hualien",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 219 parsed rows, 219 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "785b0aaafc496ce0",
+      "cinema_name": "台鋁影城",
+      "city": "kaohsiung",
+      "source_url": "https://booking.mldcinema.com/Browsing/QuickTickets/Compare",
+      "source_type": "official",
+      "browser_status": "browser-navigation-failed",
+      "observed_fields": [],
+      "notes": "page.goto: Timeout 8500ms exceeded.; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "7b209adf3838f023",
+      "cinema_name": "喜樂時代影城今日店",
+      "city": "taipei",
+      "source_url": "https://ximen.centuryasia.com.tw/ticket_online.aspx",
+      "source_type": "official",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 41 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "7b54c922f6cc6f74",
+      "cinema_name": "嘉義秀泰影城",
+      "city": "chiayi-city",
+      "source_url": "https://www.showtimes.com.tw/cinemas/9/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 57 parsed rows, 53 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "7cf79c12e5a5270c",
+      "cinema_name": "台中大遠百威秀影城",
+      "city": "taichung",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=11",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 262 parsed rows, 262 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "7ecfd57492a43ef3",
+      "cinema_name": "時代戲院二館",
+      "city": "taichung",
+      "source_url": "https://www.timescinema.com.tw/times.php?pageNum_showtimes=0&showtimes=2178",
+      "source_type": "official cinema website",
+      "browser_status": "no-verified-current-schedule",
+      "observed_fields": [],
+      "notes": "HTTP 200; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "8a2c78238c246672",
+      "cinema_name": "星橋國際影城",
+      "city": "taoyuan",
+      "source_url": "https://www.sbcmovies.com.tw/browsing/Cinemas/Details/1001",
+      "source_type": "official",
+      "browser_status": "browser-navigation-failed",
+      "observed_fields": [],
+      "notes": "page.goto: Timeout 8500ms exceeded.; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "97564919bff574aa",
+      "cinema_name": "台北京站威秀影城",
+      "city": "taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=2",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 381 parsed rows, 376 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "a8e6f550f7aee40b",
+      "cinema_name": "台中麗寶秀泰影城",
+      "city": "taichung",
+      "source_url": "https://www.showtimes.com.tw/cinemas/59/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 61 parsed rows, 61 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "a976a9f1cdf76e8e",
+      "cinema_name": "林口MITSUI OUTLET PARK威秀影城",
+      "city": "new-taipei",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=5",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 383 parsed rows, 380 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "ac63d7b0f653cff3",
+      "cinema_name": "樹林秀泰影城",
+      "city": "new-taipei",
+      "source_url": "https://www.showtimes.com.tw/cinemas/54/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 52 parsed rows, 48 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "afa3562511df19d5",
+      "cinema_name": "高雄SKM PARK國賓影城",
+      "city": "kaohsiung",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=f760950a-94b6-4e04-9573-831ed7283c5c&DT=2026%2F11%2F20",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 44 parsed rows, 40 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "b7843607f93e577c",
+      "cinema_name": "高雄夢時代秀泰影城",
+      "city": "kaohsiung",
+      "source_url": "https://www.showtimes.com.tw/cinemas/87/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 51 parsed rows, 51 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "c36f64f601a18c19",
+      "cinema_name": "樂聲影城",
+      "city": "taipei",
+      "source_url": "https://www.luxcinema.com.tw/web/2020.php?type=ShowTimes",
+      "source_type": "official cinema schedule",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime"
+      ],
+      "notes": "HTTP 200; 54 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "cfcdd8c5a019bd3f",
+      "cinema_name": "台中Tiger City威秀影城",
+      "city": "taichung",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=12",
+      "source_type": "official",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 368 parsed rows, 324 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "d0408434529e9e36",
+      "cinema_name": "台中站前秀泰影城",
+      "city": "taichung",
+      "source_url": "https://www.showtimes.com.tw/cinemas/53/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 33 parsed rows, 33 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "eb8dfd87a1064105",
+      "cinema_name": "基隆秀泰影城",
+      "city": "keelung",
+      "source_url": "https://www.showtimes.com.tw/cinemas/5/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 68 parsed rows, 68 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "ee199f2acd555b37",
+      "cinema_name": "頭份尚順威秀影城",
+      "city": "miaoli",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=10",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 315 parsed rows, 281 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "f8d37545467089d9",
+      "cinema_name": "新竹巨城威秀影城",
+      "city": "hsinchu-city",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=9",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 186 parsed rows, 186 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "fb50a15c37b733c3",
+      "cinema_name": "新竹大遠百威秀影城",
+      "city": "hsinchu-city",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=7",
+      "source_type": "official VieShow branch page",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 336 parsed rows, 300 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "fc41f9ba7672f9c4",
+      "cinema_name": "台中文心秀泰影城",
+      "city": "taichung",
+      "source_url": "https://www.showtimes.com.tw/cinemas/56/",
+      "source_type": "official ShowTimes branch page + bootstrap API",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 34 parsed rows, 32 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "47df5fba03472430",
+      "cinema_name": "天台戲院",
+      "city": "new-taipei",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/theater/%E5%A4%A9%E5%8F%B0%E6%88%B2%E9%99%A2",
+      "source_type": "third-party daily showtime aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 318 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "5130fcc97b11b16d",
+      "cinema_name": "員林大戲院",
+      "city": "changhua",
+      "source_url": "https://showtimes.magichour.tw/cinema/c60a4447b7b",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "8e09faf24bf0485d",
+      "cinema_name": "龍祥百老匯影城",
+      "city": "taipei",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/theater/%E7%99%BE%E8%80%81%E5%8C%AF%E5%85%AC%E9%A4%A8%E5%BA%97",
+      "source_type": "third-party aggregator (Daily Showtimes)",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 213 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "8f25580bc6455651",
+      "cinema_name": "新月豪華影城",
+      "city": "yilan",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/theater/%E6%96%B0%E6%9C%88%E8%B1%AA%E8%8F%AF%E5%BD%B1%E5%9F%8E",
+      "source_type": "third-party aggregator (Daily Showtimes)",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 124 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "a07e94ac5664ad37",
+      "cinema_name": "威尼斯影城",
+      "city": "taoyuan",
+      "source_url": "https://showtimes.magichour.tw/cinema/cecda84e2cb",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "a15851ac9eeccb48",
+      "cinema_name": "鴻金寶麻吉影城",
+      "city": "new-taipei",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/theater/%E9%B4%BB%E9%87%91%E5%AF%B6%E9%BA%BB%E5%90%89%E5%BD%B1%E5%9F%8E",
+      "source_type": "third-party aggregator (Daily Showtimes)",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 107 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "b11ec81197b97388",
+      "cinema_name": "總督大戲院",
+      "city": "taipei",
+      "source_url": "https://showtimes.magichour.tw/cinema/cf91204ef87",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "c697fdf332cf0850",
+      "cinema_name": "中華影城",
+      "city": "yunlin",
+      "source_url": "https://showtimes.magichour.tw/cinema/c24719a2201",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "df48f3de96b1afc2",
+      "cinema_name": "竹北百老匯影城",
+      "city": "hsinchu-county",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/theater/%E7%99%BE%E8%80%81%E5%8C%AF%E7%AB%B9%E5%8C%97%E5%BA%97",
+      "source_type": "third-party aggregator (Daily Showtimes)",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 211 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "e20ff150d90cfea0",
+      "cinema_name": "嘉年華戲院",
+      "city": "chiayi-city",
+      "source_url": "https://showtimes.magichour.tw/cinema/cf79b446e05",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "ffc2e1b99a630f3d",
+      "cinema_name": "喜樂時代影城南港店",
+      "city": "taipei",
+      "source_url": "https://showtimes.magichour.tw/cinema/cbe29efc0b6",
+      "source_type": "third-party aggregator (Magic Hour)",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "31d9eecd32050b08",
+      "cinema_name": "光點台北電影館",
+      "city": "taipei",
+      "source_url": "https://www.spot.org.tw/movies/201404/movies201404.html",
+      "source_type": "official cinema schedule",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit subtitles"
+      ],
+      "notes": "HTTP 200; 38 parsed rows, 0 explicit audio, 38 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "a8ee8dc17714ae2d",
+      "cinema_name": "光點華山電影館",
+      "city": "taipei",
+      "source_url": "https://www.spot-hs.org.tw/movie/schedule.html",
+      "source_type": "official cinema schedule",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit subtitles"
+      ],
+      "notes": "HTTP 200; 73 parsed rows, 0 explicit audio, 73 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "3420199bc644cf09",
+      "cinema_name": "嘉義影食匯in89豪華影城",
+      "city": "chiayi-city",
+      "source_url": "https://www.in89cinemax.com/film.aspx?TheaterId=17",
+      "source_type": "official schedule candidate",
+      "browser_status": "browser-navigation-failed",
+      "observed_fields": [],
+      "notes": "page.goto: Timeout 6500ms exceeded.; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "c49578bdeb514807",
+      "cinema_name": "高雄大立in89豪華影城",
+      "city": "kaohsiung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c68e05c7196",
+      "source_type": "third-party aggregator",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "9593243720ef4f8a",
+      "cinema_name": "高雄義大國賓影城",
+      "city": "kaohsiung",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=ec07626b-b382-474e-be39-ad45eac5cd1c&DT=2026%2F11%2F20",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 28 parsed rows, 27 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "699829fd94ac6d73",
+      "cinema_name": "喜樂時代影城高雄總圖店",
+      "city": "kaohsiung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c38cef5102f",
+      "source_type": "third-party aggregator",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "48dd9d30f73ece53",
+      "cinema_name": "環球影城",
+      "city": "kaohsiung",
+      "source_url": "https://www.moovietime.com/cinemas/independent-umovie",
+      "source_type": "third-party aggregator",
+      "browser_status": "no-verified-current-schedule",
+      "observed_fields": [],
+      "notes": "HTTP 200; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "e060ce6fcd128989",
+      "cinema_name": "in89駁二電影院",
+      "city": "kaohsiung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c5a3e565853",
+      "source_type": "third-party aggregator",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "c7dc5005bb5aaae9",
+      "cinema_name": "林口昕境國賓影城",
+      "city": "new-taipei",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=9383c5fa-b4f3-4ba8-ba7a-c25c7df95fd0&DT=2026%2F11%2F20",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 32 parsed rows, 31 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "d9426a1d2bce86db",
+      "cinema_name": "淡水禮萊國賓影城",
+      "city": "new-taipei",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=1e42d235-c3cf-4f75-a382-af60f67a4aad&DT=2026%2F11%2F20",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 32 parsed rows, 31 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "cf2a2d27ba5ba2a8",
+      "cinema_name": "喜樂時代影城永和店",
+      "city": "new-taipei",
+      "source_url": "https://www.moovietime.com/cinemas/centuryasia-Beyond?date=2026-11-20",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 67 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "9933d32740e38892",
+      "cinema_name": "新莊晶冠國賓影城",
+      "city": "new-taipei",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=3301d822-b385-4aa8-a9eb-aa59d58e95c9&DT=2026%2F11%2F20",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 60 parsed rows, 53 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "454a06074601ed9c",
+      "cinema_name": "澎湖in89豪華影城",
+      "city": "penghu",
+      "source_url": "https://www.in89cinemax.com/film.aspx?TheaterId=18",
+      "source_type": "official schedule candidate",
+      "browser_status": "no-verified-current-schedule",
+      "observed_fields": [],
+      "notes": "HTTP 200; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "14587ce107fa2a13",
+      "cinema_name": "中影屏東影城",
+      "city": "pingtung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c31ca053fa7",
+      "source_type": "third-party aggregator",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "ec4911ca1e68c895",
+      "cinema_name": "屏東環球國賓影城",
+      "city": "pingtung",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=41aae717-4464-49f4-ac26-fec2d16acbd6&DT=2026%2F11%2F20",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 35 parsed rows, 34 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "84c8a585cab096b5",
+      "cinema_name": "日日新大戲院",
+      "city": "taichung",
+      "source_url": "https://showtimes.magichour.tw/cinema/cc8653b4e21",
+      "source_type": "third-party aggregator",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "dc423d2c07f6571c",
+      "cinema_name": "王牌映畫影城",
+      "city": "taichung",
+      "source_url": "https://showtimes.magichour.tw/cinema/cd3ef1e7e43",
+      "source_type": "third-party aggregator",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "9598ae26696bb28a",
+      "cinema_name": "台中新光影城",
+      "city": "taichung",
+      "source_url": "https://twshowtimes.com/cinemas/skcinemas-taichung/2026-11-20/",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 58 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "7f9f49b0f891b19e",
+      "cinema_name": "豐原in89豪華影城",
+      "city": "taichung",
+      "source_url": "https://showtimes.magichour.tw/cinema/c244ae65409",
+      "source_type": "third-party aggregator",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "a254972ff2dbb85b",
+      "cinema_name": "今日戲院",
+      "city": "tainan",
+      "source_url": "https://www.cm-movie.com.tw/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91/",
+      "source_type": "official schedule candidate",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 2 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "fb93ad5f8950d65e",
+      "cinema_name": "台南新光影城",
+      "city": "tainan",
+      "source_url": "https://cdn.atmovies.com.tw/showtime/t06607/a06/20261120/",
+      "source_type": "third-party aggregator",
+      "browser_status": "browser-navigation-failed",
+      "observed_fields": [],
+      "notes": "page.goto: Timeout 6500ms exceeded.; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "b2156062da72f956",
+      "cinema_name": "全美戲院",
+      "city": "tainan",
+      "source_url": "https://www.moovietime.com/cinemas/independent-chuanmei",
+      "source_type": "third-party aggregator",
+      "browser_status": "no-verified-current-schedule",
+      "observed_fields": [],
+      "notes": "HTTP 200; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "c417e32ef975fafc",
+      "cinema_name": "南台影城",
+      "city": "tainan",
+      "source_url": "https://www.moovietime.com/cinemas/independent-nantai",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 46 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "2f06b3e2df1c96f3",
+      "cinema_name": "台北長春國賓影城",
+      "city": "taipei",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F20",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 73 parsed rows, 58 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "4fa2390a26e73a65",
+      "cinema_name": "台北獅子林新光影城",
+      "city": "taipei",
+      "source_url": "https://xn--i0yt6h0rn.tw/movie/2026/11/20",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 7626 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "b8450eabc146ac0f",
+      "cinema_name": "美麗華大直影城",
+      "city": "taipei",
+      "source_url": "https://www.miramarcinemas.tw/booking/timetable",
+      "source_type": "official schedule candidate",
+      "browser_status": "browser-navigation-failed",
+      "observed_fields": [],
+      "notes": "page.goto: Timeout 6500ms exceeded.; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "58aceabee919fb31",
+      "cinema_name": "美麗新大直皇家影城",
+      "city": "taipei",
+      "source_url": "https://showtimes.magichour.tw/cinema/c1664dd57a1",
+      "source_type": "third-party aggregator",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "9dfa1238328c40c7",
+      "cinema_name": "真善美劇院",
+      "city": "taipei",
+      "source_url": "https://www.atmovies.com.tw/showtime/t02b07/a02/20261120/",
+      "source_type": "third-party aggregator",
+      "browser_status": "browser-navigation-failed",
+      "observed_fields": [],
+      "notes": "page.goto: Timeout 6500ms exceeded.; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "066bac028bf2da57",
+      "cinema_name": "國賓大戲院",
+      "city": "taipei",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F20",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 16 parsed rows, 14 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "ca71a7fc4415892a",
+      "cinema_name": "景美佳佳戲院",
+      "city": "taipei",
+      "source_url": "https://origin.atmovies.com.tw/showtime/t02f05/a02/20261120/",
+      "source_type": "third-party aggregator",
+      "browser_status": "browser-navigation-failed",
+      "observed_fields": [],
+      "notes": "page.goto: Timeout 6500ms exceeded.; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "d9a17e260f26a5ec",
+      "cinema_name": "微風影城",
+      "city": "taipei",
+      "source_url": "https://origin.atmovies.com.tw/showtime/t02a03/a02/20261120/",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 1 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "10c63f8de8649fcc",
+      "cinema_name": "新光天母影城",
+      "city": "taipei",
+      "source_url": "https://www.moovietime.com/cinemas/skcinemas-1005?date=2026-11-20",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 38 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "751de215a8ca075a",
+      "cinema_name": "八德置地國賓影城",
+      "city": "taoyuan",
+      "source_url": "https://www.ambassador.com.tw/home/Showtime?ID=8fda9934-73d4-4c14-b1c4-386c2b81045c&DT=2026%2F11%2F20",
+      "source_type": "official schedule candidate",
+      "browser_status": "schedule-verified",
+      "observed_fields": [
+        "date",
+        "movie title",
+        "showtime",
+        "explicit audio"
+      ],
+      "notes": "HTTP 200; 44 parsed rows, 43 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "61cc60cb6f32651f",
+      "cinema_name": "美麗新台茂影城",
+      "city": "taoyuan",
+      "source_url": "https://showtimes.magichour.tw/cinema/c51ff88ec90",
+      "source_type": "third-party aggregator",
+      "browser_status": "http-451",
+      "observed_fields": [],
+      "notes": "HTTP 451; 0 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "4553f6d29b7e0ab2",
+      "cinema_name": "桃園站前in89豪華影城",
+      "city": "taoyuan",
+      "source_url": "https://www.atmovies.com.tw/showtime/t03307/a03/20261120/",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 1 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "07a7306480fdbf03",
+      "cinema_name": "桃園新光影城",
+      "city": "taoyuan",
+      "source_url": "https://www.atmovies.com.tw/showtime/t03315/a03/20261120/",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 1 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "12d76a4689377275",
+      "cinema_name": "喜樂時代桃園A19影城",
+      "city": "taoyuan",
+      "source_url": "https://www.atmovies.com.tw/showtime/t03316/a03/",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 1 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
+    },
+    {
+      "cinema_id": "1059473f086628f7",
+      "cinema_name": "日新大戲院",
+      "city": "yilan",
+      "source_url": "https://www.moovietime.com/cinemas/independent-ilan-rixin",
+      "source_type": "third-party aggregator",
+      "browser_status": "time-markers-unverified",
+      "observed_fields": [],
+      "notes": "HTTP 200; 12 time markers without verified current title/date/time associations; 0 parsed rows, 0 explicit audio, 0 explicit subtitles",
+      "reviewed_on": "2026-11-20"
     }
   ],
   "title_audit": {

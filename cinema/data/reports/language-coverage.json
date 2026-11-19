@@ -1,85 +1,460 @@
 {
   "schema": "cinema-language-coverage-v1",
+  "dataset": "public-window",
   "policy": "Verified source facts only. Missing does not mean no audio/subtitles. Never infer subtitles from audio.",
   "cinemas": [
     {
+      "cinema_id": "01ff4bc24e3038a2",
+      "total": 380,
+      "audio_verified": 358,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 380,
+          "audio_verified": 358,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 94.21,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
       "cinema_id": "066bac028bf2da57",
-      "total": 120,
-      "audio_verified": 120,
+      "total": 39,
+      "audio_verified": 37,
       "subtitles_verified": 0,
       "both_verified": 0,
       "by_source": {
         "ambassador-official-site": {
-          "total": 120,
-          "audio_verified": 120,
+          "total": 39,
+          "audio_verified": 37,
           "subtitles_verified": 0
         }
       },
-      "audio_pct": 100,
+      "audio_pct": 94.87,
       "subtitles_pct": 0,
       "both_pct": 0
     },
     {
       "cinema_id": "06e26c038c52d33d",
-      "total": 4,
-      "audio_verified": 4,
+      "total": 654,
+      "audio_verified": 602,
       "subtitles_verified": 0,
       "both_verified": 0,
       "by_source": {
         "vieshow-official-browser": {
-          "total": 4,
-          "audio_verified": 4,
+          "total": 654,
+          "audio_verified": 602,
           "subtitles_verified": 0
         }
       },
-      "audio_pct": 100,
+      "audio_pct": 92.05,
       "subtitles_pct": 0,
       "both_pct": 0
     },
     {
       "cinema_id": "0a13c96a4123d0b5",
-      "total": 7,
-      "audio_verified": 7,
+      "total": 485,
+      "audio_verified": 448,
       "subtitles_verified": 0,
       "both_verified": 0,
       "by_source": {
         "vieshow-official-browser": {
-          "total": 7,
-          "audio_verified": 7,
+          "total": 485,
+          "audio_verified": 448,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 92.37,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "0bc190790a97a92b",
+      "total": 64,
+      "audio_verified": 64,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 64,
+          "audio_verified": 64,
           "subtitles_verified": 0
         }
       },
       "audio_pct": 100,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "14904f55b4c30ea4",
+      "total": 362,
+      "audio_verified": 31,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "hala-official-browser": {
+          "total": 362,
+          "audio_verified": 31,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 8.56,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "14b8214762818432",
+      "total": 84,
+      "audio_verified": 84,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 84,
+          "audio_verified": 84,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 100,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "18ed2c265bbcc977",
+      "total": 76,
+      "audio_verified": 75,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "chin-chin-official-browser": {
+          "total": 76,
+          "audio_verified": 75,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 98.68,
       "subtitles_pct": 0,
       "both_pct": 0
     },
     {
       "cinema_id": "1b9c4a9b7ed385ea",
-      "total": 330,
-      "audio_verified": 296,
+      "total": 235,
+      "audio_verified": 222,
       "subtitles_verified": 0,
       "both_verified": 0,
       "by_source": {
-        "vieshow-muvie-songren-official": {
-          "total": 330,
-          "audio_verified": 296,
+        "vieshow-official-browser": {
+          "total": 235,
+          "audio_verified": 222,
           "subtitles_verified": 0
         }
       },
-      "audio_pct": 89.7,
+      "audio_pct": 94.47,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "1cb2ad9bb7e14f9f",
+      "total": 332,
+      "audio_verified": 311,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 332,
+          "audio_verified": 311,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 93.67,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "2191f3afc7c7f5a7",
+      "total": 7,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "moc-culture-movie-api": {
+          "total": 7,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "21ea5948a31721df",
+      "total": 588,
+      "audio_verified": 506,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 588,
+          "audio_verified": 506,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 86.05,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "2677bacaeb7d8d3d",
+      "total": 546,
+      "audio_verified": 508,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 546,
+          "audio_verified": 508,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 93.04,
       "subtitles_pct": 0,
       "both_pct": 0
     },
     {
       "cinema_id": "29fa20640d772416",
-      "total": 4,
-      "audio_verified": 4,
+      "total": 309,
+      "audio_verified": 266,
       "subtitles_verified": 0,
       "both_verified": 0,
       "by_source": {
         "vieshow-official-browser": {
-          "total": 4,
-          "audio_verified": 4,
+          "total": 309,
+          "audio_verified": 266,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 86.08,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "2e33433ca052e5dd",
+      "total": 696,
+      "audio_verified": 650,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 696,
+          "audio_verified": 650,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 93.39,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "2f06b3e2df1c96f3",
+      "total": 87,
+      "audio_verified": 70,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "ambassador-official-site": {
+          "total": 87,
+          "audio_verified": 70,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 80.46,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "3071c450f8e42deb",
+      "total": 369,
+      "audio_verified": 360,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 369,
+          "audio_verified": 360,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 97.56,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "31d9eecd32050b08",
+      "total": 35,
+      "audio_verified": 0,
+      "subtitles_verified": 35,
+      "both_verified": 0,
+      "by_source": {
+        "spot-taipei-official-schedule": {
+          "total": 35,
+          "audio_verified": 0,
+          "subtitles_verified": 35
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 100,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "36eb08cbc0a2c346",
+      "total": 153,
+      "audio_verified": 143,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 153,
+          "audio_verified": 143,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 93.46,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "3831da6ae664fad3",
+      "total": 541,
+      "audio_verified": 483,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 541,
+          "audio_verified": 483,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 89.28,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "403177a4056c68f4",
+      "total": 22,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "moc-culture-movie-api": {
+          "total": 22,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "40b1b5887858aded",
+      "total": 17,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "nantou-official-browser": {
+          "total": 17,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "43ef84bf160e6886",
+      "total": 108,
+      "audio_verified": 0,
+      "subtitles_verified": 108,
+      "both_verified": 0,
+      "by_source": {
+        "eslite-official-schedule": {
+          "total": 108,
+          "audio_verified": 0,
+          "subtitles_verified": 108
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 100,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "5223efb5d4bbb508",
+      "total": 2,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "moc-culture-movie-api": {
+          "total": 2,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "5c35b8e61739d367",
+      "total": 49,
+      "audio_verified": 48,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 49,
+          "audio_verified": 48,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 97.96,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "62277162f80376b3",
+      "total": 32,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "moc-culture-movie-api": {
+          "total": 32,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "63bd8f4351bab496",
+      "total": 72,
+      "audio_verified": 72,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 72,
+          "audio_verified": 72,
           "subtitles_verified": 0
         }
       },
@@ -88,71 +463,219 @@
       "both_pct": 0
     },
     {
-      "cinema_id": "2f06b3e2df1c96f3",
-      "total": 560,
-      "audio_verified": 506,
+      "cinema_id": "6763778191e9e511",
+      "total": 57,
+      "audio_verified": 56,
       "subtitles_verified": 0,
       "both_verified": 0,
       "by_source": {
-        "ambassador-official-site": {
-          "total": 560,
-          "audio_verified": 506,
+        "showtimes-official-html-fallback": {
+          "total": 57,
+          "audio_verified": 56,
           "subtitles_verified": 0
         }
       },
-      "audio_pct": 90.36,
+      "audio_pct": 98.25,
       "subtitles_pct": 0,
       "both_pct": 0
     },
     {
-      "cinema_id": "31d9eecd32050b08",
-      "total": 50,
-      "audio_verified": 0,
-      "subtitles_verified": 50,
+      "cinema_id": "680545a43a5093a6",
+      "total": 52,
+      "audio_verified": 49,
+      "subtitles_verified": 0,
       "both_verified": 0,
       "by_source": {
-        "spot-taipei-official-schedule": {
-          "total": 50,
-          "audio_verified": 0,
-          "subtitles_verified": 50
+        "showtimes-official-html-fallback": {
+          "total": 52,
+          "audio_verified": 49,
+          "subtitles_verified": 0
         }
       },
-      "audio_pct": 0,
-      "subtitles_pct": 100,
+      "audio_pct": 94.23,
+      "subtitles_pct": 0,
       "both_pct": 0
     },
     {
-      "cinema_id": "43ef84bf160e6886",
-      "total": 134,
-      "audio_verified": 0,
-      "subtitles_verified": 134,
-      "both_verified": 0,
-      "by_source": {
-        "eslite-official-browser": {
-          "total": 131,
-          "audio_verified": 0,
-          "subtitles_verified": 131
-        },
-        "eslite-official-schedule": {
-          "total": 3,
-          "audio_verified": 0,
-          "subtitles_verified": 3
-        }
-      },
-      "audio_pct": 0,
-      "subtitles_pct": 100,
-      "both_pct": 0
-    },
-    {
-      "cinema_id": "97564919bff574aa",
-      "total": 4,
-      "audio_verified": 4,
+      "cinema_id": "719e1a68f2f3f9f5",
+      "total": 410,
+      "audio_verified": 386,
       "subtitles_verified": 0,
       "both_verified": 0,
       "by_source": {
         "vieshow-official-browser": {
-          "total": 4,
-          "audio_verified": 4,
+          "total": 410,
+          "audio_verified": 386,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 94.15,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "751de215a8ca075a",
+      "total": 44,
+      "audio_verified": 43,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "ambassador-official-site": {
+          "total": 44,
+          "audio_verified": 43,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 97.73,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "757bc5cac5b68cc9",
+      "total": 88,
+      "audio_verified": 88,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 88,
+          "audio_verified": 88,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 100,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "758a39fe5ae9a51d",
+      "total": 208,
+      "audio_verified": 208,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 208,
+          "audio_verified": 208,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 100,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "75fffb3e70aecfba",
+      "total": 203,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "moc-culture-movie-api": {
+          "total": 203,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "7b54c922f6cc6f74",
+      "total": 57,
+      "audio_verified": 53,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 57,
+          "audio_verified": 53,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 92.98,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "7cf79c12e5a5270c",
+      "total": 246,
+      "audio_verified": 246,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 246,
+          "audio_verified": 246,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 100,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "9593243720ef4f8a",
+      "total": 44,
+      "audio_verified": 42,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "ambassador-official-site": {
+          "total": 44,
+          "audio_verified": 42,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 95.45,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "97564919bff574aa",
+      "total": 368,
+      "audio_verified": 363,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 368,
+          "audio_verified": 363,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 98.64,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "9933d32740e38892",
+      "total": 171,
+      "audio_verified": 153,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "ambassador-official-site": {
+          "total": 171,
+          "audio_verified": 153,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 89.47,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "a8e6f550f7aee40b",
+      "total": 61,
+      "audio_verified": 61,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 61,
+          "audio_verified": 61,
           "subtitles_verified": 0
         }
       },
@@ -162,35 +685,341 @@
     },
     {
       "cinema_id": "a8ee8dc17714ae2d",
-      "total": 89,
+      "total": 73,
       "audio_verified": 0,
-      "subtitles_verified": 88,
+      "subtitles_verified": 73,
       "both_verified": 0,
       "by_source": {
         "spot-huashan-official-schedule": {
-          "total": 89,
+          "total": 73,
           "audio_verified": 0,
-          "subtitles_verified": 88
+          "subtitles_verified": 73
         }
       },
       "audio_pct": 0,
-      "subtitles_pct": 98.88,
+      "subtitles_pct": 100,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "a976a9f1cdf76e8e",
+      "total": 355,
+      "audio_verified": 352,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 355,
+          "audio_verified": 352,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 99.15,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "ac63d7b0f653cff3",
+      "total": 52,
+      "audio_verified": 48,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 52,
+          "audio_verified": 48,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 92.31,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "afa3562511df19d5",
+      "total": 45,
+      "audio_verified": 41,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "ambassador-official-site": {
+          "total": 45,
+          "audio_verified": 41,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 91.11,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "b7843607f93e577c",
+      "total": 51,
+      "audio_verified": 51,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 51,
+          "audio_verified": 51,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 100,
+      "subtitles_pct": 0,
       "both_pct": 0
     },
     {
       "cinema_id": "b8450eabc146ac0f",
-      "total": 465,
+      "total": 114,
       "audio_verified": 0,
       "subtitles_verified": 0,
       "both_verified": 0,
       "by_source": {
         "miramar-official-api": {
-          "total": 465,
+          "total": 114,
           "audio_verified": 0,
           "subtitles_verified": 0
         }
       },
       "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "c36f64f601a18c19",
+      "total": 54,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "lux-official-browser": {
+          "total": 54,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "c7dc5005bb5aaae9",
+      "total": 32,
+      "audio_verified": 31,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "ambassador-official-site": {
+          "total": 32,
+          "audio_verified": 31,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 96.88,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "cfcdd8c5a019bd3f",
+      "total": 354,
+      "audio_verified": 310,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 354,
+          "audio_verified": 310,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 87.57,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "d0408434529e9e36",
+      "total": 33,
+      "audio_verified": 33,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 33,
+          "audio_verified": 33,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 100,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "d3ee4cacff0f42c7",
+      "total": 11,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "moc-culture-movie-api": {
+          "total": 11,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "d9426a1d2bce86db",
+      "total": 32,
+      "audio_verified": 31,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "ambassador-official-site": {
+          "total": 32,
+          "audio_verified": 31,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 96.88,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "eb8dfd87a1064105",
+      "total": 68,
+      "audio_verified": 68,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 68,
+          "audio_verified": 68,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 100,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "ec4911ca1e68c895",
+      "total": 35,
+      "audio_verified": 34,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "ambassador-official-site": {
+          "total": 35,
+          "audio_verified": 34,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 97.14,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "ee199f2acd555b37",
+      "total": 304,
+      "audio_verified": 270,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 304,
+          "audio_verified": 270,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 88.82,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "ef1c3baebc0650eb",
+      "total": 29,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "moc-culture-movie-api": {
+          "total": 29,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "f69326db9dc60c8c",
+      "total": 27,
+      "audio_verified": 0,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "moc-culture-movie-api": {
+          "total": 27,
+          "audio_verified": 0,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 0,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "f8d37545467089d9",
+      "total": 186,
+      "audio_verified": 186,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 186,
+          "audio_verified": 186,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 100,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "fb50a15c37b733c3",
+      "total": 331,
+      "audio_verified": 295,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "vieshow-official-browser": {
+          "total": 331,
+          "audio_verified": 295,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 89.12,
+      "subtitles_pct": 0,
+      "both_pct": 0
+    },
+    {
+      "cinema_id": "fc41f9ba7672f9c4",
+      "total": 34,
+      "audio_verified": 32,
+      "subtitles_verified": 0,
+      "both_verified": 0,
+      "by_source": {
+        "showtimes-official-html-fallback": {
+          "total": 34,
+          "audio_verified": 32,
+          "subtitles_verified": 0
+        }
+      },
+      "audio_pct": 94.12,
       "subtitles_pct": 0,
       "both_pct": 0
     }

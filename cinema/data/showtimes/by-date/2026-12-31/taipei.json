@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "schema": "normalized-movie-references",
+  "city": "taipei",
+  "date": "2026-12-31",
+  "showtimes": [
+    {
+      "id": "e8734ff5f944d955",
+      "cinema_id": "0a13c96a4123d0b5",
+      "movie_id": "m_3254a103387d",
+      "start_time": "2026-12-31T11:15:00+08:00",
+      "format": "LIVE(日)",
+      "audio_language": "ja",
+      "source": "vieshow-official-browser",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=1",
+      "source_event_id": "1887458",
+      "source_role": "official VieShow branch schedule reviewed in Chromium",
+      "retrieved_at": "2026-11-19T17:56:59.505Z",
+      "freshness": "fresh"
+    },
+    {
+      "id": "0b4ac68e5f4a8050",
+      "cinema_id": "0a13c96a4123d0b5",
+      "movie_id": "m_e42b4a8e25a8",
+      "start_time": "2026-12-31T16:45:00+08:00",
+      "format": "LIVE(日)",
+      "audio_language": "ja",
+      "source": "vieshow-official-browser",
+      "source_url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=1",
+      "source_event_id": "1887457",
+      "source_role": "official VieShow branch schedule reviewed in Chromium",
+      "retrieved_at": "2026-11-19T17:56:59.505Z",
+      "freshness": "fresh"
+    }
+  ]
+}

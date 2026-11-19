@@ -458,3 +458,110 @@ The earlier browser review is recorded in `DIRECT-OFFICIAL-SOURCE-RESEARCH-2026-
 Canonical Taipei counts for Oct 29/30/31 are 166/83/79. Total Taipei: 2,899; nationwide saved rows: 9,065; referenced films: 236. Source event/version prefixes for three Eslite title variants reuse existing movie IDs while retaining the exact source title on their screening rows. Official precedence was exercised against canonical data and synthetic collisions; this input has no losing fallback/manual overlaps, so zero existing screenings were removed. Different official formats, times and cinemas remain separate.
 
 Validation also found 11 stale city summary counts and four already-normalized chunks with a legacy schema label. Counts and labels were reconciled without changing those other cities' screenings. Ten MOC cultural venue IDs are intentionally supplemental to the BAMID commercial master and retain their explicit venue names. All new MUVIE/Eslite rows reference existing Taipei cinema IDs.
+
+## Chromium schedule and language review — 2026-11-20 (Taiwan)
+
+Opened sources for 98 venues sequentially in Chromium, including official branch pages and identified third-party fallbacks. Verified schedules at 51 venues. Other results: no-verified-current-schedule (6), time-markers-unverified (19), browser-navigation-failed (7), http-451 (15). Audio and subtitle languages were taken from explicit source labels. Missing fields stayed unknown.
+
+The 5 non-closed registry entries without a browser capture in this pass were 美麗新宏匯影城, 麻豆戲院, 映捌玖數位影城有限公司, 國元影業股份有限公司, 龍子電影事業股份有限公司（首都戲院）.
+
+| Venue | Browser result | Sessions | Explicit audio | Explicit subtitles | Source |
+|---|---|---:|---:|---:|---|
+| 板橋大遠百威秀影城 | schedule-verified | 395 | 373 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=4) |
+| 南港LaLaport威秀影城 | schedule-verified | 660 | 608 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=34) |
+| 台北信義威秀影城 | schedule-verified | 502 | 465 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=1) |
+| 花蓮秀泰影城 | schedule-verified | 64 | 64 | 0 | [Page](https://www.showtimes.com.tw/cinemas/3/) |
+| 哈拉影城 | schedule-verified | 362 | 31 | 0 | [Page](https://halarcity.com.tw/Browsing/Cinemas/Details/0000000001) |
+| 台南仁德秀泰影城 | schedule-verified | 84 | 84 | 0 | [Page](https://www.showtimes.com.tw/cinemas/60/) |
+| 親親大戲院 | schedule-verified | 76 | 75 | 0 | [Page](https://www.ccmovie.com.tw/product.php?_path=product_showtimes) |
+| MUVIE CINEMAS威秀影城 | schedule-verified | 246 | 233 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail2.aspx?id=23) |
+| 台南大遠百威秀影城 | schedule-verified | 349 | 328 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=15) |
+| 桃園統領威秀影城 | schedule-verified | 595 | 513 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=20) |
+| 台南南紡威秀影城 | schedule-verified | 562 | 524 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=16) |
+| 台北西門威秀影城 | schedule-verified | 322 | 279 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=31) |
+| 高雄大遠百威秀影城 | schedule-verified | 736 | 690 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=18) |
+| 台中大魯閣新時代威秀影城 | schedule-verified | 378 | 369 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=26) |
+| 桃知道威秀影城 | schedule-verified | 158 | 148 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=29) |
+| 新店裕隆城威秀影城 | schedule-verified | 578 | 520 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=28) |
+| 全球影城 | no-verified-current-schedule | 0 | 0 | 0 | [Page](https://www.ucc-cinema.com.tw/product.html) |
+| 南投戲院 | schedule-verified | 17 | 0 | 0 | [Page](https://nantoutheater.com/showings?date=2026-11-20&range=all) |
+| 誠品電影院 | schedule-verified | 111 | 0 | 111 | [Page](https://meet.eslite.com/tw/tc/gallery/movieschedule/201803020001?v=1) |
+| 山明電影院 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.shanmingcinema.com.tw/showtimes.php) |
+| 高雄岡山秀泰影城 | schedule-verified | 49 | 48 | 0 | [Page](https://www.showtimes.com.tw/cinemas/84/) |
+| 台東秀泰影城 | schedule-verified | 72 | 72 | 0 | [Page](https://www.showtimes.com.tw/cinemas/7/) |
+| 土城秀泰影城 | schedule-verified | 57 | 56 | 0 | [Page](https://www.showtimes.com.tw/cinemas/55/) |
+| 大巨蛋秀泰影城 | schedule-verified | 52 | 49 | 0 | [Page](https://www.showtimes.com.tw/cinemas/91/) |
+| 台南FOCUS威秀影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=22) |
+| 中和環球威秀影城 | schedule-verified | 421 | 397 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=25) |
+| 欣欣秀泰影城 | no-verified-current-schedule | 0 | 0 | 0 | [Page](https://www.showtimes.com.tw/cinemas/2/) |
+| 北港秀泰影城 | schedule-verified | 88 | 88 | 0 | [Page](https://www.showtimes.com.tw/cinemas/58/) |
+| 花蓮新天堂樂園威秀影城 | schedule-verified | 219 | 219 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=21) |
+| 台鋁影城 | browser-navigation-failed | 0 | 0 | 0 | [Page](https://booking.mldcinema.com/Browsing/QuickTickets/Compare) |
+| 喜樂時代影城今日店 | time-markers-unverified | 0 | 0 | 0 | [Page](https://ximen.centuryasia.com.tw/ticket_online.aspx) |
+| 嘉義秀泰影城 | schedule-verified | 57 | 53 | 0 | [Page](https://www.showtimes.com.tw/cinemas/9/) |
+| 台中大遠百威秀影城 | schedule-verified | 262 | 262 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=11) |
+| 時代戲院二館 | no-verified-current-schedule | 0 | 0 | 0 | [Page](https://www.timescinema.com.tw/times.php?pageNum_showtimes=0&showtimes=2178) |
+| 星橋國際影城 | browser-navigation-failed | 0 | 0 | 0 | [Page](https://www.sbcmovies.com.tw/browsing/Cinemas/Details/1001) |
+| 台北京站威秀影城 | schedule-verified | 381 | 376 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=2) |
+| 台中麗寶秀泰影城 | schedule-verified | 61 | 61 | 0 | [Page](https://www.showtimes.com.tw/cinemas/59/) |
+| 林口MITSUI OUTLET PARK威秀影城 | schedule-verified | 383 | 380 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=5) |
+| 樹林秀泰影城 | schedule-verified | 52 | 48 | 0 | [Page](https://www.showtimes.com.tw/cinemas/54/) |
+| 高雄SKM PARK國賓影城 | schedule-verified | 44 | 40 | 0 | [Page](https://www.ambassador.com.tw/home/Showtime?ID=f760950a-94b6-4e04-9573-831ed7283c5c&DT=2026%2F11%2F20) |
+| 高雄夢時代秀泰影城 | schedule-verified | 51 | 51 | 0 | [Page](https://www.showtimes.com.tw/cinemas/87/) |
+| 樂聲影城 | schedule-verified | 54 | 0 | 0 | [Page](https://www.luxcinema.com.tw/web/2020.php?type=ShowTimes) |
+| 台中Tiger City威秀影城 | schedule-verified | 368 | 324 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail2.aspx?id=12) |
+| 台中站前秀泰影城 | schedule-verified | 33 | 33 | 0 | [Page](https://www.showtimes.com.tw/cinemas/53/) |
+| 基隆秀泰影城 | schedule-verified | 68 | 68 | 0 | [Page](https://www.showtimes.com.tw/cinemas/5/) |
+| 頭份尚順威秀影城 | schedule-verified | 315 | 281 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=10) |
+| 新竹巨城威秀影城 | schedule-verified | 186 | 186 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=9) |
+| 新竹大遠百威秀影城 | schedule-verified | 336 | 300 | 0 | [Page](https://www.vscinemas.com.tw/theater/detail.aspx?id=7) |
+| 台中文心秀泰影城 | schedule-verified | 34 | 32 | 0 | [Page](https://www.showtimes.com.tw/cinemas/56/) |
+| 天台戲院 | time-markers-unverified | 0 | 0 | 0 | [Page](https://xn--i0yt6h0rn.tw/movie/theater/%E5%A4%A9%E5%8F%B0%E6%88%B2%E9%99%A2) |
+| 員林大戲院 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/c60a4447b7b) |
+| 龍祥百老匯影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://xn--i0yt6h0rn.tw/movie/theater/%E7%99%BE%E8%80%81%E5%8C%AF%E5%85%AC%E9%A4%A8%E5%BA%97) |
+| 新月豪華影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://xn--i0yt6h0rn.tw/movie/theater/%E6%96%B0%E6%9C%88%E8%B1%AA%E8%8F%AF%E5%BD%B1%E5%9F%8E) |
+| 威尼斯影城 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/cecda84e2cb) |
+| 鴻金寶麻吉影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://xn--i0yt6h0rn.tw/movie/theater/%E9%B4%BB%E9%87%91%E5%AF%B6%E9%BA%BB%E5%90%89%E5%BD%B1%E5%9F%8E) |
+| 總督大戲院 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/cf91204ef87) |
+| 中華影城 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/c24719a2201) |
+| 竹北百老匯影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://xn--i0yt6h0rn.tw/movie/theater/%E7%99%BE%E8%80%81%E5%8C%AF%E7%AB%B9%E5%8C%97%E5%BA%97) |
+| 嘉年華戲院 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/cf79b446e05) |
+| 喜樂時代影城南港店 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/cbe29efc0b6) |
+| 光點台北電影館 | schedule-verified | 38 | 0 | 38 | [Page](https://www.spot.org.tw/movies/201404/movies201404.html) |
+| 光點華山電影館 | schedule-verified | 73 | 0 | 73 | [Page](https://www.spot-hs.org.tw/movie/schedule.html) |
+| 嘉義影食匯in89豪華影城 | browser-navigation-failed | 0 | 0 | 0 | [Page](https://www.in89cinemax.com/film.aspx?TheaterId=17) |
+| 高雄大立in89豪華影城 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/c68e05c7196) |
+| 高雄義大國賓影城 | schedule-verified | 28 | 27 | 0 | [Page](https://www.ambassador.com.tw/home/Showtime?ID=ec07626b-b382-474e-be39-ad45eac5cd1c&DT=2026%2F11%2F20) |
+| 喜樂時代影城高雄總圖店 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/c38cef5102f) |
+| 環球影城 | no-verified-current-schedule | 0 | 0 | 0 | [Page](https://www.moovietime.com/cinemas/independent-umovie) |
+| in89駁二電影院 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/c5a3e565853) |
+| 林口昕境國賓影城 | schedule-verified | 32 | 31 | 0 | [Page](https://www.ambassador.com.tw/home/Showtime?ID=9383c5fa-b4f3-4ba8-ba7a-c25c7df95fd0&DT=2026%2F11%2F20) |
+| 淡水禮萊國賓影城 | schedule-verified | 32 | 31 | 0 | [Page](https://www.ambassador.com.tw/home/Showtime?ID=1e42d235-c3cf-4f75-a382-af60f67a4aad&DT=2026%2F11%2F20) |
+| 喜樂時代影城永和店 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.moovietime.com/cinemas/centuryasia-Beyond?date=2026-11-20) |
+| 新莊晶冠國賓影城 | schedule-verified | 60 | 53 | 0 | [Page](https://www.ambassador.com.tw/home/Showtime?ID=3301d822-b385-4aa8-a9eb-aa59d58e95c9&DT=2026%2F11%2F20) |
+| 澎湖in89豪華影城 | no-verified-current-schedule | 0 | 0 | 0 | [Page](https://www.in89cinemax.com/film.aspx?TheaterId=18) |
+| 中影屏東影城 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/c31ca053fa7) |
+| 屏東環球國賓影城 | schedule-verified | 35 | 34 | 0 | [Page](https://www.ambassador.com.tw/home/Showtime?ID=41aae717-4464-49f4-ac26-fec2d16acbd6&DT=2026%2F11%2F20) |
+| 日日新大戲院 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/cc8653b4e21) |
+| 王牌映畫影城 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/cd3ef1e7e43) |
+| 台中新光影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://twshowtimes.com/cinemas/skcinemas-taichung/2026-11-20/) |
+| 豐原in89豪華影城 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/c244ae65409) |
+| 今日戲院 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.cm-movie.com.tw/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91/) |
+| 台南新光影城 | browser-navigation-failed | 0 | 0 | 0 | [Page](https://cdn.atmovies.com.tw/showtime/t06607/a06/20261120/) |
+| 全美戲院 | no-verified-current-schedule | 0 | 0 | 0 | [Page](https://www.moovietime.com/cinemas/independent-chuanmei) |
+| 南台影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.moovietime.com/cinemas/independent-nantai) |
+| 台北長春國賓影城 | schedule-verified | 73 | 58 | 0 | [Page](https://www.ambassador.com.tw/home/Showtime?ID=453b2966-f7c2-44a9-b2eb-687493855d0e&DT=2026%2F11%2F20) |
+| 台北獅子林新光影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://xn--i0yt6h0rn.tw/movie/2026/11/20) |
+| 美麗華大直影城 | browser-navigation-failed | 0 | 0 | 0 | [Page](https://www.miramarcinemas.tw/booking/timetable) |
+| 美麗新大直皇家影城 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/c1664dd57a1) |
+| 真善美劇院 | browser-navigation-failed | 0 | 0 | 0 | [Page](https://www.atmovies.com.tw/showtime/t02b07/a02/20261120/) |
+| 國賓大戲院 | schedule-verified | 16 | 14 | 0 | [Page](https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e&DT=2026%2F11%2F20) |
+| 景美佳佳戲院 | browser-navigation-failed | 0 | 0 | 0 | [Page](https://origin.atmovies.com.tw/showtime/t02f05/a02/20261120/) |
+| 微風影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://origin.atmovies.com.tw/showtime/t02a03/a02/20261120/) |
+| 新光天母影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.moovietime.com/cinemas/skcinemas-1005?date=2026-11-20) |
+| 八德置地國賓影城 | schedule-verified | 44 | 43 | 0 | [Page](https://www.ambassador.com.tw/home/Showtime?ID=8fda9934-73d4-4c14-b1c4-386c2b81045c&DT=2026%2F11%2F20) |
+| 美麗新台茂影城 | http-451 | 0 | 0 | 0 | [Page](https://showtimes.magichour.tw/cinema/c51ff88ec90) |
+| 桃園站前in89豪華影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.atmovies.com.tw/showtime/t03307/a03/20261120/) |
+| 桃園新光影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.atmovies.com.tw/showtime/t03315/a03/20261120/) |
+| 喜樂時代桃園A19影城 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.atmovies.com.tw/showtime/t03316/a03/) |
+| 日新大戲院 | time-markers-unverified | 0 | 0 | 0 | [Page](https://www.moovietime.com/cinemas/independent-ilan-rixin) |

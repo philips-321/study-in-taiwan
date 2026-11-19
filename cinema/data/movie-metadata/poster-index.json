@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-18T01:00:38.783Z",
+  "generated_at": "2026-11-19T18:04:44.620Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -1657,6 +1657,7 @@
       "movie_title": "出賣影子的女人",
       "poster_url": "https://image.tmdb.org/t/p/w500/d93SXuPhvd4LOLOufFddcsD9wep.jpg",
       "aliases": [
+        "WOMAN WHO SOLD HER SHADOW",
         "出賣影子的女人"
       ],
       "sources": [
@@ -2012,6 +2013,23 @@
       ]
     },
     {
+      "movie_id": "m_e1e9a916280f",
+      "movie_title": "有用的人 + QA",
+      "poster_url": "https://image.tmdb.org/t/p/w500/f2AHd0mWJrLLwc6elLcSNVbsy8f.jpg",
+      "aliases": [
+        "To Be Ordinary",
+        "有用的人 + QA"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "spot-huashan-official-schedule",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_979e23cbca0b",
       "movie_title": "老千：惡魔之歌",
       "poster_url": "https://assets.showtimes.com.tw/images/f8feb0160c368c0865fc9e6205b49e21.jpg",
@@ -2060,6 +2078,19 @@
         "tfai-official-program"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_12bf043a9d58",
+      "movie_title": "你和我的房間這種感覺",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027171135387.jpeg",
+      "aliases": [
+        "OUR FLOOR LIKE THIS",
+        "你和我的房間這種感覺"
+      ],
+      "sources": [
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-official-browser"
+      ]
     },
     {
       "movie_id": "m_9402f33dea2b",
@@ -2370,6 +2401,7 @@
         "current-movie-catalog",
         "hala-official-browser",
         "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
@@ -2497,6 +2529,7 @@
         "hala-official-browser",
         "magichour-centuryasia-nangang-web-fallback",
         "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program",
@@ -2517,6 +2550,7 @@
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
         "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
         "the-movie-database",
         "vieshow-official-browser"
       ],
@@ -3051,6 +3085,19 @@
       ],
       "sources": [
         "showtimes-official-metadata"
+      ]
+    },
+    {
+      "movie_id": "m_spot_202611_northface",
+      "movie_title": "重返巔峰北壁",
+      "poster_url": "https://assets.showtimes.com.tw/images/dace69cff4a50c1ddcc4d9a867ec71e7.jpg",
+      "aliases": [
+        "Back on North Face",
+        "重返巔峰北壁"
+      ],
+      "sources": [
+        "punctuation-insensitive-title-poster-match",
+        "spot-huashan-official-schedule"
       ]
     },
     {
@@ -3653,6 +3700,23 @@
       "sources": []
     },
     {
+      "movie_id": "m_spot_202611_afterpiece",
+      "movie_title": "第四幕",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027171511342.jpeg",
+      "aliases": [
+        "Afterpiece",
+        "第四幕"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
       "movie_id": "m_1367c7d211b4",
       "movie_title": "莉維達・地海之詩",
       "poster_url": "https://image.tmdb.org/t/p/w500/yU626BbyIZ4VraJJuFwXHEhcEK3.jpg",
@@ -3768,6 +3832,19 @@
       "preferred": true
     },
     {
+      "movie_id": "m_spot_202611_born_good",
+      "movie_title": "善男信女",
+      "poster_url": "https://image.tmdb.org/t/p/w500/r8m78up2sJnH9iQvlhiAMJCWlh3.jpg",
+      "aliases": [
+        "We Are Born Good",
+        "善男信女"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
       "movie_id": "m_a887d2a45e21",
       "movie_title": "復仇者聯盟：末日崛起",
       "poster_url": "https://assets.showtimes.com.tw/images/6b74bcaafde0cc0d5f0c9c260c9ab52f.jpg",
@@ -3780,9 +3857,11 @@
         "canonical-manual-poster",
         "current-movie-catalog",
         "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
         "showtimes-official-api",
         "showtimes-official-metadata",
-        "showtimes-official-program"
+        "showtimes-official-program",
+        "vieshow-official-browser"
       ],
       "preferred": true
     },
@@ -3893,6 +3972,19 @@
         "shopee-taiwan-image-search"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_spot_202611_room_view",
+      "movie_title": "窗外有藍天 4K全新修復版",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027171904864.jpg",
+      "aliases": [
+        "A Room with a View",
+        "窗外有藍天 4K全新修復版"
+      ],
+      "sources": [
+        "punctuation-insensitive-title-poster-match",
+        "spot-huashan-official-schedule"
+      ]
     },
     {
       "movie_id": "m_198c0a91767d",
@@ -4485,6 +4577,18 @@
       "preferred": true
     },
     {
+      "movie_id": "m_20392cb1ad5e",
+      "movie_title": "電影哆啦A夢：新‧大雄的海底鬼岩城",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260615003.jfif",
+      "aliases": [
+        "電影哆啦A夢：新‧大雄的海底鬼岩城"
+      ],
+      "sources": [
+        "hala-official-browser",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
       "movie_id": "m_8d0b60e78e9a",
       "movie_title": "電影蠟筆小新：奇奇怪怪！我的妖怪假期",
       "poster_url": "https://assets.showtimes.com.tw/images/c7082ed644450a436320ab81dd00650e.jpg",
@@ -4692,10 +4796,14 @@
       "movie_title": "綻放的巴黎之星",
       "poster_url": "https://assets.showtimes.com.tw/images/0568913b3f94c54d120adf0883716df8.jpg",
       "aliases": [
+        "SAMURAI BALLERINA",
         "Samurai Ballerina",
         "綻放的巴黎之星"
       ],
-      "sources": []
+      "sources": [
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-official-browser"
+      ]
     },
     {
       "movie_id": "m_20ac6c742437",
@@ -5019,11 +5127,39 @@
       "movie_title": "劇場版 來自深淵: 覺醒的神祕",
       "poster_url": "https://assets.showtimes.com.tw/images/3897a8164484d779802939ea7ef48433.jpg",
       "aliases": [
+        "MADE IN ABYSS AWAKENING MYSTERY",
         "Made in Abyss: Awakening Mystery",
         "劇場版 來自深淵: 覺醒的神祕"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "punctuation-insensitive-title-poster-match",
+        "showtimes-official-metadata",
+        "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_c0f971ea73d8",
+      "movie_title": "劇場版 來自深淵：覺醒的神祕",
+      "poster_url": "https://assets.showtimes.com.tw/images/3897a8164484d779802939ea7ef48433.jpg",
+      "aliases": [
+        "劇場版 來自深淵：覺醒的神祕"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
+      "movie_id": "m_c88c3b3334c2",
+      "movie_title": "劇場版 來自深淵：覺醒的神秘",
+      "poster_url": "https://assets.showtimes.com.tw/images/3897a8164484d779802939ea7ef48433.jpg",
+      "aliases": [
+        "Made in Abyss: Awakening Mystery",
+        "劇場版 來自深淵：覺醒的神秘"
+      ],
+      "sources": [
+        "chin-chin-official-browser",
+        "punctuation-insensitive-title-poster-match"
       ]
     },
     {
@@ -5058,6 +5194,7 @@
       ],
       "sources": [
         "canonical-manual-poster",
+        "canonical-poster-title-match",
         "current-movie-catalog",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
@@ -5473,7 +5610,9 @@
         "戴帽子的貓"
       ],
       "sources": [
-        "showtimes-official-metadata"
+        "punctuation-insensitive-title-poster-match",
+        "showtimes-official-metadata",
+        "vieshow-official-browser"
       ]
     },
     {
@@ -5627,11 +5766,13 @@
       "movie_title": "驀然回首",
       "poster_url": "https://images.vocus.cc/30ca45b1-8a6e-456b-b0bf-43ea783a159c.jpg",
       "aliases": [
+        "LOOK BACK",
         "驀然回首"
       ],
       "sources": [
         "atmovies-taipei-fallback",
         "canonical-manual-poster",
+        "canonical-poster-title-match",
         "lux-official-browser",
         "manual-verified-poster",
         "previous-catalog"
