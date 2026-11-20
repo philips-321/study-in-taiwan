@@ -112,11 +112,9 @@
     const values=Object.fromEntries(parts.map(p=>[p.type,p.value]));
     return `${values.year}-${values.month}-${values.day}`;
   }
-  // Rolling inclusive display window: today through H+14 in Taipei local time.
-  function rollingMaxDate(days=14) {
-    const [year,month,day]=todayTaiwan().split('-').map(Number);
-    const end=new Date(Date.UTC(year,month-1,day+days));
-    return end.toISOString().slice(0,10);
+  // Hard public display horizon for this cinema release. Historical source data is retained.
+  function rollingMaxDate() {
+    return '2026-12-07';
   }
   function esc(value) {
     return String(value ?? '').replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
