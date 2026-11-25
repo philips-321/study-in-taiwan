@@ -1,10 +1,10 @@
 {
   "version": 1,
   "paused": true,
-  "paused_at": "2026-11-24T03:59:21Z",
-  "run_id": 45323121976,
-  "failed_sha": "6003663e7d55c4003d19498ead1024d25e226b55",
-  "failed_event": "schedule",
-  "reason": "The cinema refresh failed during validation after official browser-source authentication errors. Scheduled retries are paused until a manual workflow run succeeds.",
+  "paused_at": "2026-11-25T01:49:05.127Z",
+  "run_id": 45528463398,
+  "failed_sha": "a80671557aa142b45ad69a949986bf74c3204bff",
+  "failed_event": "workflow_dispatch",
+  "reason": "The cinema refresh failed. Scheduled retries are paused until a manual workflow run succeeds.",
   "resume": "Run Update Taiwan cinema JSON manually after fixing the source or credential error."
 }
