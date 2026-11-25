@@ -103,7 +103,42 @@ function dateTimeToIso(date, time) {
   return `${date}T${time}:00+08:00`;
 }
 function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+async function fetchTextInLocalBrowser(url) {
+  const modulePath = process.env.CINEMA_PLAYWRIGHT_MODULE || 'playwright';
+  let playwright;
+  try {
+    playwright = await import(modulePath);
+  } catch (error) {
+    throw new Error(`Playwright is unavailable at ${modulePath}: ${String(error?.message || error)}`);
+  }
+  const browser = await playwright.chromium.launch({ headless: true, args: ['--no-sandbox'] });
+  try {
+    const context = await browser.newContext({
+      locale: 'zh-TW',
+      timezoneId: 'Asia/Taipei',
+      userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+      viewport: { width: 1365, height: 900 }
+    });
+    const page = await context.newPage();
+    page.setDefaultNavigationTimeout(45_000);
+    const response = await page.goto(url, { waitUntil: 'domcontentloaded' });
+    if ((response?.status() || 0) >= 400) {
+      await page.waitForTimeout(2_500);
+      if ((await page.evaluate(() => document.body?.innerText || '')).trim().length < 20) {
+        throw new Error(`Local browser HTTP ${response.status()} for ${url}`);
+      }
+    }
+    const responseText = response ? await response.text().catch(() => '') : '';
+    if (responseText.trim()) return responseText;
+    return page.evaluate(() => document.body?.innerText || document.documentElement?.textContent || '');
+  } finally {
+    await browser.close();
+  }
+}
 async function fetchText(url, attempts = 3) {
+  const useLocalBrowser = process.env.CINEMA_USE_LOCAL_BROWSER === 'true'
+    && /^https:\/\/(?:www\.)?bamid\.gov\.tw\//i.test(url);
+  if (useLocalBrowser) return fetchTextInLocalBrowser(url);
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt++) {
     try {
