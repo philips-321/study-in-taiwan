@@ -408,7 +408,7 @@ jobs:
           exit 1
 
   pause-schedule:
-    if: ${{ needs.update.result == 'failure' }}
+    if: ${{ always() && needs.update.result == 'failure' }}
     needs: update
     runs-on: ubuntu-latest
     timeout-minutes: 5
