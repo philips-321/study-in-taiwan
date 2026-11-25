@@ -52,7 +52,20 @@ jobs:
           process.stdout.write(dates.at(-1) || '');
           NODE
           )"
-          if [ "${{ github.event_name }}" = 'schedule' ] && [ "$latest" = "$today" ]; then
+          paused="false"
+          if [ -f .github/cinema-update-paused.json ]; then
+            paused="$(node --input-type=module <<'NODE'
+            import fs from 'node:fs';
+            const pause = JSON.parse(fs.readFileSync('.github/cinema-update-paused.json', 'utf8'));
+            process.stdout.write(pause.paused === true ? 'true' : 'false');
+            NODE
+            )"
+          fi
+          if [ "${{ github.event_name }}" = 'schedule' ] && [ "$paused" = 'true' ]; then
+            echo 'skip=true' >> "$GITHUB_OUTPUT"
+            echo 'paused=true' >> "$GITHUB_OUTPUT"
+            echo 'Cinema refresh is paused after a previous failure. Run this workflow manually after fixing the source error.'
+          elif [ "${{ github.event_name }}" = 'schedule' ] && [ "$latest" = "$today" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Cinema JSON is already current for Taiwan date $today; skipping duplicate scheduled source/API requests."
           else
@@ -114,6 +127,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CINEMA_REQUIRE_REMOTE_BROWSER: 'true'
+          CINEMA_FAIL_FAST_ON_SOURCE_ERROR: 'true'
         run: |
           set -euo pipefail
           if [ "$MOC_AVAILABLE" = 'true' ]; then
@@ -360,18 +374,22 @@ jobs:
           fs.writeFileSync(file, `${JSON.stringify(manifest, null, 2)}\n`);
           NODE
 
+      - name: Clear scheduled pause after successful manual recovery
+        if: steps.daily_guard.outputs.skip != 'true' && github.event_name == 'workflow_dispatch'
+        run: rm -f .github/cinema-update-paused.json
+
       - name: Commit changed JSON only
         if: steps.daily_guard.outputs.skip != 'true'
         run: |
           set -euo pipefail
-          if [ -z "$(git status --porcelain -- cinema/data .github/cinema-city-update-health.json)" ]; then
+          if [ -z "$(git status --porcelain -- cinema/data .github/cinema-city-update-health.json .github/cinema-update-paused.json)" ]; then
             echo 'No cinema data or city-health changes.'
             exit 0
           fi
 
           git config user.name 'cinema-data-bot'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add cinema/data .github/cinema-city-update-health.json
+          git add cinema/data .github/cinema-city-update-health.json .github/cinema-update-paused.json
           git commit -m 'Update Taiwan cinema JSON [skip ci]'
 
           # main may move while collectors are running. Retry from current main
@@ -387,4 +405,54 @@ jobs:
           done
 
           echo 'Unable to push cinema JSON after 3 attempts.' >&2
+          exit 1
+
+  pause-schedule:
+    if: ${{ needs.update.result == 'failure' }}
+    needs: update
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 5
+
+      - name: Persist automatic pause marker
+        shell: bash
+        env:
+          CINEMA_RUN_ID: ${{ github.run_id }}
+          CINEMA_SHA: ${{ github.sha }}
+          CINEMA_EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const marker = {
+            version: 1,
+            paused: true,
+            paused_at: new Date().toISOString(),
+            run_id: Number(process.env.CINEMA_RUN_ID),
+            failed_sha: process.env.CINEMA_SHA,
+            failed_event: process.env.CINEMA_EVENT,
+            reason: 'The cinema refresh failed. Scheduled retries are paused until a manual workflow run succeeds.',
+            resume: 'Run Update Taiwan cinema JSON manually after fixing the source or credential error.'
+          };
+          fs.writeFileSync('.github/cinema-update-paused.json', `${JSON.stringify(marker, null, 2)}\n`);
+          NODE
+          git config user.name 'cinema-data-bot'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .github/cinema-update-paused.json
+          git commit -m 'ci(cinema): pause scheduled refresh after failure [skip ci]'
+          for attempt in 1 2 3; do
+            git fetch --deepen=20 origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Pause-marker push attempt ${attempt} failed; retrying."
+            sleep $((attempt * 2))
+          done
+          echo 'Unable to persist cinema refresh pause marker.' >&2
           exit 1

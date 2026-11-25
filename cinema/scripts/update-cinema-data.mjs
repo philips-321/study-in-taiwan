@@ -25,6 +25,7 @@ const previousMovieCatalog = await fs.readFile(path.join(ROOT, 'movies', 'index.
 const sourceIssueHistory = await fs.readFile(path.join(ROOT, 'reports', 'source-issue-history.json'), 'utf8')
   .then(text => JSON.parse(text)).catch(error => error?.code === 'ENOENT' ? { issues: [] } : Promise.reject(error));
 const SOURCE_RETRY_COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000;
+const FAIL_FAST_ON_SOURCE_ERROR = process.env.CINEMA_FAIL_FAST_ON_SOURCE_ERROR !== 'false';
 const CINEMA_SOURCE_REGISTRY_FILE = path.join(ROOT, 'canonical', 'cinema-source-registry.json');
 const cinemaSourceRegistry = JSON.parse(await fs.readFile(CINEMA_SOURCE_REGISTRY_FILE, 'utf8'));
 const cinemaSourceBindings = cinemaSourceRegistry.tables?.CINEMA_SOURCE_BINDING || [];
@@ -162,6 +163,9 @@ async function removeOldJson(dir) {
 }
 
 const generatedAt = new Date().toISOString();
+if (process.env.MOC_AVAILABLE === 'false' && FAIL_FAST_ON_SOURCE_ERROR) {
+  throw new Error('MOC movie source probe failed; refusing to continue with an offline shim');
+}
 const [events, cinemaMeta] = await Promise.all([fetchJson(MOVIE_API), fetchJson(CINEMA_META_API)]);
 if (!Array.isArray(events)) throw new Error('Movie API did not return an array');
 if (!Array.isArray(cinemaMeta) || !cinemaMeta[0]?.['相關檔案']) throw new Error('Cinema master metadata unavailable');
@@ -324,6 +328,9 @@ async function runSource(sourceName, label, loader) {
       retry_after: retryAfter
     };
     console.info(`${label} retry suppressed after recurring HTTP 403; next probe after ${retryAfter}.`);
+    if (FAIL_FAST_ON_SOURCE_ERROR) {
+      throw new Error(`${label} retry suppressed after recurring HTTP 403; scheduled refresh is paused`);
+    }
     return;
   }
   try {
@@ -336,6 +343,7 @@ async function runSource(sourceName, label, loader) {
       error: String(error?.message || error).slice(0, 300)
     };
     console.error(`${label} source failed:`, error);
+    if (FAIL_FAST_ON_SOURCE_ERROR) throw error;
   }
 }
 
@@ -385,9 +393,15 @@ if (needsAlternativeFallback('showtimes-official-api')) {
       ok: false, skipped: true, retry_suppressed: true, retry_after: retryAfter, showtimes: 0,
       error: 'HTTP 403 from first-party ShowTimes browser page; retry suppressed'
     };
+    if (FAIL_FAST_ON_SOURCE_ERROR) {
+      throw new Error('Official ShowTimes browser retry suppressed after recurring HTTP 403');
+    }
   } else {
     try {
       const rows = await fetchShowTimesHtmlFallback(targets);
+      if (rows.fetch_blocked_403 === true && FAIL_FAST_ON_SOURCE_ERROR) {
+        throw new Error('Official ShowTimes browser access was blocked with HTTP 403');
+      }
       if (rows.length) mergeExternalRows(rows, 'showtimes-official-browser');
       sourceStatus['showtimes-official-browser'] = {
         ok: rows.fetch_blocked_403 !== true,
@@ -407,6 +421,7 @@ if (needsAlternativeFallback('showtimes-official-api')) {
         ok: false, showtimes: 0, error: String(error?.message || error).slice(0, 300)
       };
       console.error('Official ShowTimes browser extraction failed:', error);
+      if (FAIL_FAST_ON_SOURCE_ERROR) throw error;
     }
   }
   sourceStatus['showtimes-official-api'] = {
@@ -423,6 +438,9 @@ if (needsAlternativeFallback('eslite-official-schedule')) {
       ok: false, skipped: true, retry_suppressed: true, retry_after: retryAfter, showtimes: 0,
       error: 'HTTP 403 from first-party Eslite browser page; retry suppressed'
     };
+    if (FAIL_FAST_ON_SOURCE_ERROR) {
+      throw new Error('Official Eslite browser retry suppressed after recurring HTTP 403');
+    }
   } else {
     try {
       const esliteBinding = cinemaSourceBindings.find(binding => binding.source_id === 'SRC_ESLITE' && binding.official_schedule_url);
@@ -446,6 +464,7 @@ if (needsAlternativeFallback('eslite-official-schedule')) {
         ok: false, showtimes: 0, error: String(error?.message || error).slice(0, 300)
       };
       console.error('Official Eslite browser extraction failed:', error);
+      if (FAIL_FAST_ON_SOURCE_ERROR) throw error;
     }
   }
 }
