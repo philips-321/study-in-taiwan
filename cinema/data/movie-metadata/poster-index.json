@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-25T02:02:16.361Z",
+  "generated_at": "2026-11-25T02:09:52.059Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -133,6 +133,19 @@
         "previous-catalog"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_5a2cdfa4cd9e",
+      "movie_title": "（特別場）巴霍巴利王：王者再臨",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261113002.jpg",
+      "aliases": [
+        "（特別場）巴霍巴利王：王者再臨"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
     },
     {
       "movie_id": "m_fb02e8a1999e",
@@ -1422,6 +1435,21 @@
       "preferred": true
     },
     {
+      "movie_id": "m_b6ff66c450f7",
+      "movie_title": "12月高雄市電影館｜34街的奇蹟",
+      "poster_url": "https://imgs2.utiki.com.tw/Data/ERA/Images/UTK2401/P1ILEQ45_Other.JPG?v=202611230832",
+      "aliases": [
+        "12月高雄市電影館｜34街的奇蹟"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "ticket-com-tw-official-program-page"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_4c779fcb4d72",
       "movie_title": "12月高雄市電影館｜千禧曼波",
       "poster_url": "https://image.tmdb.org/t/p/w500/888UkmrPLxe4cKAj9T0wx2Z8JAU.jpg",
@@ -1446,6 +1474,21 @@
         "moc-culture-movie-api",
         "previous-catalog"
       ]
+    },
+    {
+      "movie_id": "m_83237c6650d0",
+      "movie_title": "12月高雄市電影館｜東京教父 4K修復",
+      "poster_url": "https://imgs2.utiki.com.tw/Data/ERA/Images/UTK2401/P1ILEDRB_Other.JPG?v=202611230832",
+      "aliases": [
+        "12月高雄市電影館｜東京教父 4K修復"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "ticket-com-tw-official-program-page"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_3e65890c75ed",
@@ -1476,6 +1519,21 @@
       ]
     },
     {
+      "movie_id": "m_1d88c4405982",
+      "movie_title": "12月高雄市電影館｜海上花",
+      "poster_url": "https://imgs2.utiki.com.tw/Data/ERA/Images/UTK2401/P1IOSO2V_Other.JPG?v=202611230832",
+      "aliases": [
+        "12月高雄市電影館｜海上花"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "ticket-com-tw-official-program-page"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_6908d85cfa18",
       "movie_title": "12月高雄市電影館｜秘密會議",
       "poster_url": "https://image.tmdb.org/t/p/w500/1BWhKsbUTiBD0WQhrOfQlU6zrc5.jpg",
@@ -1487,6 +1545,36 @@
         "previous-catalog",
         "the-movie-database"
       ]
+    },
+    {
+      "movie_id": "m_efce1dc362d8",
+      "movie_title": "12月高雄市電影館｜迴山",
+      "poster_url": "https://imgs2.utiki.com.tw/Data/ERA/Images/UTK2401/P1IOW6ON_Other.JPG?v=202611230832",
+      "aliases": [
+        "12月高雄市電影館｜迴山"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "ticket-com-tw-official-program-page"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_192d7b51ed4f",
+      "movie_title": "12月高雄市電影館｜黑球",
+      "poster_url": "https://imgs2.utiki.com.tw/Data/ERA/Images/UTK2401/P1IVC77I_Other.JPG?v=202611230832",
+      "aliases": [
+        "12月高雄市電影館｜黑球"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "ticket-com-tw-official-program-page"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_a0e693bf0818",
@@ -1589,6 +1677,22 @@
         "previous-catalog",
         "punctuation-insensitive-title-poster-match"
       ]
+    },
+    {
+      "movie_id": "m_9af2c98ddd5c",
+      "movie_title": "下一站，天國!－早安！周日經典電影院",
+      "poster_url": "https://meet.eslite.com/Content/Images/ArtShow/Q4p_20261103182937.jpg",
+      "aliases": [
+        "After Life",
+        "下一站，天國!－早安！周日經典電影院"
+      ],
+      "sources": [
+        "eslite-official-browser",
+        "eslite-official-movie-page",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_df0000c0bac2",
@@ -1695,6 +1799,23 @@
         "showtimes-official-cloudflare-bootstrap",
         "showtimes-official-program"
       ]
+    },
+    {
+      "movie_id": "m_440b46e492fa",
+      "movie_title": "巴霍巴利王：王者再臨",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261113002.jpg",
+      "aliases": [
+        "BAAHUBALI THE EPIC",
+        "巴霍巴利王：王者再臨"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-official-browser",
+        "vieshow-official-movie-page"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_ea68cd0a50c5",
@@ -3169,6 +3290,22 @@
       ]
     },
     {
+      "movie_id": "m_6a1bb819b689",
+      "movie_title": "後來，有個克里夫",
+      "poster_url": "https://www.miramarcinemas.tw/MiramarRes/a9b677e9-3ab3-4d9b-b512-bcd9697087b8.jpg",
+      "aliases": [
+        "THE FURTHER MIS-ADVENTURES OF CLIFF BOOTH",
+        "後來，有個克里夫"
+      ],
+      "sources": [
+        "miramar-official-api",
+        "miramar-official-movie-page",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_8abc5f754368",
       "movie_title": "怎麼可能我家的祖先是你家的鬼",
       "poster_url": "https://assets.showtimes.com.tw/images/7dfd7e044315c853539fe270a6aa929b.jpg",
@@ -3568,6 +3705,22 @@
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap"
       ]
+    },
+    {
+      "movie_id": "m_6c48c930fd45",
+      "movie_title": "神隱少女_25周年紀念",
+      "poster_url": "https://www.miramarcinemas.tw/MiramarRes/3057537d-828b-42b9-8082-5a592d44ff5e.jpg",
+      "aliases": [
+        "SPIRITED AWAY_25 ANNIVERSARY",
+        "神隱少女_25周年紀念"
+      ],
+      "sources": [
+        "miramar-official-api",
+        "miramar-official-movie-page",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ],
+      "preferred": true
     },
     {
       "movie_id": "m_632e872c077a",
@@ -4097,6 +4250,22 @@
       ]
     },
     {
+      "movie_id": "m_bd6c967cfac5",
+      "movie_title": "袒裎相見_口碑場",
+      "poster_url": "https://www.miramarcinemas.tw/MiramarRes/32f2f59f-ad92-46f0-bbff-92ab7730634f.jpg",
+      "aliases": [
+        "YOU CAN SEE EVERYTHING_PREVIEW",
+        "袒裎相見_口碑場"
+      ],
+      "sources": [
+        "miramar-official-api",
+        "miramar-official-movie-page",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_a965317eb051",
       "movie_title": "野獸之心",
       "poster_url": "https://assets.showtimes.com.tw/images/759972a653ab08104b51ed66dabf079d.jpg",
@@ -4353,6 +4522,23 @@
         "moc-culture-movie-api",
         "previous-catalog",
         "shopee-taiwan-image-search"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_8c1d5ee779c8",
+      "movie_title": "無人知曉的夏日清晨─早安！周日經典電影院",
+      "poster_url": "https://meet.eslite.com/Content/Images/ArtShow/Q4p_20261118103011.jpg",
+      "aliases": [
+        "Nobody Knows",
+        "無人知曉的夏日清晨─早安！周日經典電影院"
+      ],
+      "sources": [
+        "eslite-official-browser",
+        "eslite-official-movie-page",
+        "eslite-official-schedule",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
     },
@@ -6150,6 +6336,22 @@
       ]
     },
     {
+      "movie_id": "m_572a10eca9d6",
+      "movie_title": "戴帽子的貓_人偶搶先場",
+      "poster_url": "https://www.miramarcinemas.tw/MiramarRes/be7c02ed-5ac5-4ea5-af9e-fb15a9ace237.jpg",
+      "aliases": [
+        "THE CAT IN THE HAT_SPECIAL",
+        "戴帽子的貓_人偶搶先場"
+      ],
+      "sources": [
+        "miramar-official-api",
+        "miramar-official-movie-page",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_0ea10d639fdd",
       "movie_title": "舊情綿綿（數位修復版）",
       "poster_url": "https://s3.resource.opentix.life/upload/program/1788943564630dMlr0qPowm.png",
@@ -6559,6 +6761,21 @@
       "preferred": true
     },
     {
+      "movie_id": "m_820b54c6ce5c",
+      "movie_title": "ANGERME 2026 AUTUMN FINAL 風林火山・極 現場直播",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261124003.jpg",
+      "aliases": [
+        "ANGERME 2026 AUTUMN FINAL 風林火山・極 LIVE VIEWING",
+        "ANGERME 2026 AUTUMN FINAL 風林火山・極 現場直播"
+      ],
+      "sources": [
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-official-browser",
+        "vieshow-official-movie-page"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_3d6900e4709d",
       "movie_title": "B-Stray Kids World Tour RUN IT 安可重播",
       "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261012007.jpg",
@@ -6882,6 +7099,21 @@
       "preferred": true
     },
     {
+      "movie_id": "m_d026858bd9ba",
+      "movie_title": "Juice=Juice Room Tour 2026 「5ROOMS -ROYAL SUITE-」現場直播",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261029001.JPG",
+      "aliases": [
+        "Juice=Juice Room Tour 2026 「5ROOMS -ROYAL SUITE-」 LIVE VIEWING",
+        "Juice=Juice Room Tour 2026 「5ROOMS -ROYAL SUITE-」現場直播"
+      ],
+      "sources": [
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-official-browser",
+        "vieshow-official-concert-page"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_396eed364040",
       "movie_title": "LE SSERAFIM VR CONCERT INVITATION",
       "poster_url": "https://image.tmdb.org/t/p/w500/ta1pMbbPzlLwezc7CBfm54v3i8d.jpg",
@@ -7039,6 +7271,21 @@
       "preferred": true
     },
     {
+      "movie_id": "m_c768b831eff3",
+      "movie_title": "THE ALFEE 3000PREMIUM ONE NIGHT ENCORE現場直播",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261103002.JPG",
+      "aliases": [
+        "THE ALFEE 3000PREMIUM ONE NIGHT ENCORE LIVE VIEWING",
+        "THE ALFEE 3000PREMIUM ONE NIGHT ENCORE現場直播"
+      ],
+      "sources": [
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-official-browser",
+        "vieshow-official-movie-page"
+      ],
+      "preferred": true
+    },
+    {
       "movie_id": "m_3bb83e36c7c3",
       "movie_title": "TOMORROW X TOGETHER WORLD TOUR ACT TOMOR",
       "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20260924005.jpg",
@@ -7154,6 +7401,21 @@
         "canonical-manual-poster",
         "previous-catalog",
         "the-movie-database"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_11b6d9d27ab8",
+      "movie_title": "Yuzuru Hanyu REALIVE an ICE STORY project in Saga 現場直播",
+      "poster_url": "https://www.unicornpopcorn.com.tw/ForVsWeb/upload/film/film_20261110001.jpg",
+      "aliases": [
+        "Yuzuru Hanyu REALIVE an ICE STORY project in Saga Live Viewing",
+        "Yuzuru Hanyu REALIVE an ICE STORY project in Saga 現場直播"
+      ],
+      "sources": [
+        "punctuation-insensitive-title-poster-match",
+        "vieshow-official-browser",
+        "vieshow-official-movie-page"
       ],
       "preferred": true
     }

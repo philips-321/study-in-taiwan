@@ -1,6 +1,6 @@
 {
   "schema": "cinema-source-health",
-  "generated_at": "2026-11-25T02:02:16.846Z",
+  "generated_at": "2026-11-25T02:10:00.492Z",
   "checked": 12,
   "statuses": {
     "moc-culture-movie-api": {
@@ -319,7 +319,7 @@
   "failed_or_degraded": [],
   "issue_history": {
     "file": "cinema/data/reports/source-issue-history.json",
-    "recorded_this_run": true,
+    "recorded_this_run": false,
     "issues": [
       {
         "issue_id": "showtimes-official-api:http_403:capi.showtimes.com.tw",

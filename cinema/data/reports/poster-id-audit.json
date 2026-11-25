@@ -1,6 +1,6 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-25T02:02:16.846Z",
+  "generated_at": "2026-11-25T02:10:00.492Z",
   "public_window": {
     "as_of": "2026-11-25",
     "end_date": "2026-12-25",
@@ -16,94 +16,28 @@
   },
   "posters": {
     "active_movies": 177,
-    "available": 159,
-    "missing": 18,
+    "available": 175,
+    "missing": 2,
     "canonical_registry": {
       "unique_active_films": 149,
-      "poster_yes": 128,
-      "poster_no": 21,
+      "poster_yes": 144,
+      "poster_no": 5,
       "fetch_states": {
-        "ambiguous": 5,
-        "cooldown": 2,
-        "found": 9,
-        "found_manual": 70,
+        "ambiguous": 3,
+        "found_manual": 86,
         "found_official": 16,
-        "not_found": 14,
-        "reused": 33
+        "not_found": 2,
+        "reused": 42
       }
     },
     "missing_movies": [
-      {
-        "movie_id": "m_6a1bb819b689",
-        "movie_title": "後來，有個克里夫"
-      },
-      {
-        "movie_id": "m_440b46e492fa",
-        "movie_title": "巴霍巴利王：王者再臨"
-      },
-      {
-        "movie_id": "m_d026858bd9ba",
-        "movie_title": "Juice=Juice Room Tour 2026 「5ROOMS -ROYAL SUITE-」現場直播"
-      },
-      {
-        "movie_id": "m_6c48c930fd45",
-        "movie_title": "神隱少女_25周年紀念"
-      },
-      {
-        "movie_id": "m_bd6c967cfac5",
-        "movie_title": "袒裎相見_口碑場"
-      },
-      {
-        "movie_id": "m_572a10eca9d6",
-        "movie_title": "戴帽子的貓_人偶搶先場"
-      },
       {
         "movie_id": "m_a0365cd6725d",
         "movie_title": "2026年11月【和美鎮立圖書館-電影欣賞】"
       },
       {
-        "movie_id": "m_11b6d9d27ab8",
-        "movie_title": "Yuzuru Hanyu REALIVE an ICE STORY project in Saga 現場直播"
-      },
-      {
-        "movie_id": "m_9af2c98ddd5c",
-        "movie_title": "下一站，天國!－早安！周日經典電影院"
-      },
-      {
-        "movie_id": "m_192d7b51ed4f",
-        "movie_title": "12月高雄市電影館｜黑球"
-      },
-      {
-        "movie_id": "m_efce1dc362d8",
-        "movie_title": "12月高雄市電影館｜迴山"
-      },
-      {
-        "movie_id": "m_820b54c6ce5c",
-        "movie_title": "ANGERME 2026 AUTUMN FINAL 風林火山・極 現場直播"
-      },
-      {
         "movie_id": "m_57990b5e8193",
         "movie_title": "2026年12月【和美鎮立圖書館-電影欣賞】"
-      },
-      {
-        "movie_id": "m_c768b831eff3",
-        "movie_title": "THE ALFEE 3000PREMIUM ONE NIGHT ENCORE現場直播"
-      },
-      {
-        "movie_id": "m_b6ff66c450f7",
-        "movie_title": "12月高雄市電影館｜34街的奇蹟"
-      },
-      {
-        "movie_id": "m_1d88c4405982",
-        "movie_title": "12月高雄市電影館｜海上花"
-      },
-      {
-        "movie_id": "m_8c1d5ee779c8",
-        "movie_title": "無人知曉的夏日清晨─早安！周日經典電影院"
-      },
-      {
-        "movie_id": "m_83237c6650d0",
-        "movie_title": "12月高雄市電影館｜東京教父 4K修復"
       }
     ],
     "missing_samples_capped_at": 200,
