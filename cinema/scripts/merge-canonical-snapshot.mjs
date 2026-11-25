@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { normalizeMovieTitle } from './movie-schema.mjs';
 
 const dataRoot = path.resolve('cinema/data');
 const canonicalRoot = path.join(dataRoot, 'canonical');
@@ -25,6 +26,39 @@ for (const file of fs.readdirSync(incomingRoot).filter(name => /^\d{4}-\d{2}\.js
     added++;
   }
   rowsByMonth.set(month, rows);
+}
+
+// Older SPOT imports used source-specific movie IDs such as
+// m_spot_202611_papertiger. Reconcile those IDs to the current title-derived
+// catalog before materializing the public view, while keeping screening IDs and
+// all source/provenance fields unchanged.
+let migratedMovieIds = 0;
+if (previousMoviesFile && fs.existsSync(previousMoviesFile)) {
+  const moviesFile = path.join(dataRoot, 'movies', 'index.json');
+  const currentCatalog = JSON.parse(fs.readFileSync(moviesFile, 'utf8'));
+  const previousCatalog = JSON.parse(fs.readFileSync(previousMoviesFile, 'utf8'));
+  const currentByTitle = new Map();
+  for (const movie of currentCatalog.movies || []) {
+    for (const title of [movie.movie_title, movie.movie_title_en, ...(movie.international_titles || [])].filter(Boolean)) {
+      const key = normalizeMovieTitle(title);
+      if (!key) continue;
+      const prior = currentByTitle.get(key);
+      currentByTitle.set(key, prior && prior !== movie.movie_id ? null : movie.movie_id);
+    }
+  }
+  const legacyToCurrent = new Map();
+  for (const movie of previousCatalog.movies || []) {
+    if (/^m_[a-f0-9]{12}$/.test(movie.movie_id || '')) continue;
+    const candidates = new Set([movie.movie_title, movie.movie_title_en, ...(movie.international_titles || [])]
+      .filter(Boolean).map(normalizeMovieTitle).map(key => currentByTitle.get(key)).filter(Boolean));
+    if (candidates.size === 1) legacyToCurrent.set(movie.movie_id, [...candidates][0]);
+  }
+  for (const rows of rowsByMonth.values()) for (const row of rows) {
+    const replacement = legacyToCurrent.get(row.movie_id);
+    if (!replacement) continue;
+    row.movie_id = replacement;
+    migratedMovieIds++;
+  }
 }
 
 fs.mkdirSync(canonicalRoot, { recursive: true });
@@ -62,4 +96,4 @@ if (previousMoviesFile && fs.existsSync(previousMoviesFile)) {
   currentCatalog.generated_at = new Date().toISOString();
   fs.writeFileSync(moviesFile, `${JSON.stringify(currentCatalog, null, 2)}\n`);
 }
-console.log(JSON.stringify({ added_rows: added, screening_rows: total, partitions }, null, 2));
+console.log(JSON.stringify({ added_rows: added, screening_rows: total, migrated_movie_ids: migratedMovieIds, partitions }, null, 2));
