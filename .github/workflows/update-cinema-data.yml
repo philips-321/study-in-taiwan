@@ -115,7 +115,7 @@ jobs:
             echo 'MOC movie source probe succeeded.'
           else
             echo 'available=false' >> "$GITHUB_OUTPUT"
-            echo '::warning::MOC movie source probe failed. Circuit is open for this run; independent collectors will continue and eligible last-known-good MOC rows will be restored.'
+            echo '::error::MOC movie source probe failed; stopping refresh and pausing the schedule.'
           fi
 
       - name: Refresh cinema JSON
@@ -133,7 +133,8 @@ jobs:
           if [ "$MOC_AVAILABLE" = 'true' ]; then
             node cinema/scripts/update-cinema-data.mjs
           else
-            node --import ./cinema/scripts/moc-offline-shim.mjs cinema/scripts/update-cinema-data.mjs
+            echo 'MOC movie source is unavailable; refusing to continue with fallback data.' >&2
+            exit 1
           fi
 
       - name: Audit all registered official cinema sources in Playwright
