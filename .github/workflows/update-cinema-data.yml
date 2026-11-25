@@ -55,11 +55,11 @@ jobs:
           paused="false"
           if [ -f .github/cinema-update-paused.json ]; then
             paused="$(node --input-type=module <<'NODE'
-            import fs from 'node:fs';
-            const pause = JSON.parse(fs.readFileSync('.github/cinema-update-paused.json', 'utf8'));
-            process.stdout.write(pause.paused === true ? 'true' : 'false');
-            NODE
-            )"
+          import fs from 'node:fs';
+          const pause = JSON.parse(fs.readFileSync('.github/cinema-update-paused.json', 'utf8'));
+          process.stdout.write(pause.paused === true ? 'true' : 'false');
+          NODE
+          )"
           fi
           if [ "${{ github.event_name }}" = 'schedule' ] && [ "$paused" = 'true' ]; then
             echo 'skip=true' >> "$GITHUB_OUTPUT"
