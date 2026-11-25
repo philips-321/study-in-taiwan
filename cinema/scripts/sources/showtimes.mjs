@@ -44,7 +44,7 @@ function audioLanguage(format) {
 
 export async function fetchShowTimesShowtimes() {
   let payload;
-  if (cloudflareBrowserAvailable()) {
+  if (cloudflareBrowserAvailable() || process.env.CINEMA_USE_LOCAL_BROWSER === 'true') {
     payload = await fetchShowTimesBootstrapPayload();
   } else {
     const response = await fetch(API, {

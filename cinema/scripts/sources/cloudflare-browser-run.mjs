@@ -2,7 +2,54 @@ const API = 'https://api.cloudflare.com/client/v4/accounts';
 const ALLOWED_HOSTS = new Set(['www.showtimes.com.tw', 'meet.eslite.com']);
 
 export function cloudflareBrowserAvailable() {
-  return Boolean(process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN);
+  return process.env.CINEMA_USE_LOCAL_BROWSER !== 'true'
+    && Boolean(process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN);
+}
+
+async function loadLocalChromium() {
+  const modulePath = process.env.CINEMA_PLAYWRIGHT_MODULE || 'playwright';
+  let playwright;
+  try {
+    playwright = await import(modulePath);
+  } catch (error) {
+    throw new Error(`Playwright is unavailable at ${modulePath}: ${String(error?.message || error)}`);
+  }
+  return playwright.chromium;
+}
+
+async function fetchShowTimesBootstrapPayloadLocally() {
+  const chromium = await loadLocalChromium();
+  const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
+  try {
+    const context = await browser.newContext({
+      locale: 'zh-TW',
+      timezoneId: 'Asia/Taipei',
+      userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+      viewport: { width: 1365, height: 900 }
+    });
+    const page = await context.newPage();
+    page.setDefaultNavigationTimeout(45_000);
+    const response = await page.goto('https://www.showtimes.com.tw/cinemas/91/', { waitUntil: 'domcontentloaded' });
+    if ((response?.status() || 0) >= 400) throw new Error(`ShowTimes page HTTP ${response.status()}`);
+    await page.waitForTimeout(3_000);
+    const payload = await page.evaluate(async () => {
+      const response = await fetch('https://capi.showtimes.com.tw/4/app/bootstrap', {
+        headers: {
+          accept: 'application/json',
+          origin: 'https://www.showtimes.com.tw',
+          referer: 'https://www.showtimes.com.tw/'
+        }
+      });
+      if (!response.ok) throw new Error(`ShowTimes bootstrap HTTP ${response.status}`);
+      return response.json();
+    });
+    if (!payload?.payload?.corporations || !payload.payload.programs || !payload.payload.eventsForCorporations) {
+      throw new Error('Local browser returned an invalid ShowTimes bootstrap payload');
+    }
+    return payload.payload;
+  } finally {
+    await browser.close();
+  }
 }
 
 export async function fetchRenderedCinemaPage(rawUrl, { addScriptTag = [], waitForTimeout = 300 } = {}) {
@@ -48,6 +95,9 @@ export async function fetchRenderedCinemaPage(rawUrl, { addScriptTag = [], waitF
 }
 
 export async function fetchShowTimesBootstrapPayload() {
+  if (process.env.CINEMA_USE_LOCAL_BROWSER === 'true') {
+    return fetchShowTimesBootstrapPayloadLocally();
+  }
   const script = 'setTimeout(async()=>{try{const response=await fetch("https://capi.showtimes.com.tw/4/app/bootstrap",{headers:{accept:"application/json",origin:"https://www.showtimes.com.tw",referer:"https://www.showtimes.com.tw/"}});const payload=await response.json();document.body.textContent=JSON.stringify(payload)}catch(error){document.body.textContent=JSON.stringify({__browser_error:String(error)})}},3000)';
   const rendered = await fetchRenderedCinemaPage('https://www.showtimes.com.tw/cinemas/91/', {
     addScriptTag: [{ content: script }],
