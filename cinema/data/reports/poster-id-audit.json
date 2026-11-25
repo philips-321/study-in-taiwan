@@ -1,88 +1,109 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-18T01:00:39.246Z",
+  "generated_at": "2026-11-25T02:02:16.846Z",
   "public_window": {
-    "as_of": "2026-11-18",
-    "end_date": "2026-12-18",
-    "rows": 3041,
-    "expected_rows": 3041
+    "as_of": "2026-11-25",
+    "end_date": "2026-12-25",
+    "rows": 6971,
+    "expected_rows": 6971
   },
   "ids": {
-    "active_movies": 147,
+    "active_movies": 177,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 147,
-    "available": 134,
-    "missing": 13,
+    "active_movies": 177,
+    "available": 159,
+    "missing": 18,
     "canonical_registry": {
-      "unique_active_films": 130,
-      "poster_yes": 117,
-      "poster_no": 13,
+      "unique_active_films": 149,
+      "poster_yes": 128,
+      "poster_no": 21,
       "fetch_states": {
-        "ambiguous": 2,
-        "cooldown": 4,
-        "found_manual": 77,
-        "found_official": 14,
-        "not_found": 7,
-        "reused": 26
+        "ambiguous": 5,
+        "cooldown": 2,
+        "found": 9,
+        "found_manual": 70,
+        "found_official": 16,
+        "not_found": 14,
+        "reused": 33
       }
     },
     "missing_movies": [
       {
-        "movie_id": "m_2a9c3037d485",
-        "movie_title": "沙丘_經典重映"
+        "movie_id": "m_6a1bb819b689",
+        "movie_title": "後來，有個克里夫"
       },
       {
-        "movie_id": "m_e5b9823d9027",
-        "movie_title": "沙丘：第二部_經典重映"
+        "movie_id": "m_440b46e492fa",
+        "movie_title": "巴霍巴利王：王者再臨"
       },
       {
-        "movie_id": "m_97d8d79b7330",
-        "movie_title": "全家就弒你家"
+        "movie_id": "m_d026858bd9ba",
+        "movie_title": "Juice=Juice Room Tour 2026 「5ROOMS -ROYAL SUITE-」現場直播"
       },
       {
-        "movie_id": "m_875cda6b131c",
-        "movie_title": "我們不是什麼"
+        "movie_id": "m_6c48c930fd45",
+        "movie_title": "神隱少女_25周年紀念"
       },
       {
-        "movie_id": "m_faa4e2e2405b",
-        "movie_title": "幸福的麵包"
+        "movie_id": "m_bd6c967cfac5",
+        "movie_title": "袒裎相見_口碑場"
       },
       {
-        "movie_id": "m_5a2cdfa4cd9e",
-        "movie_title": "（特別場）巴霍巴利王：王者再臨"
-      },
-      {
-        "movie_id": "m_598d276e7fb2",
-        "movie_title": "搶銀行先修班_特別場"
-      },
-      {
-        "movie_id": "m_2953443d99ae",
-        "movie_title": "沙丘+沙丘:第二部_連映特別場2"
-      },
-      {
-        "movie_id": "m_283294392342",
-        "movie_title": "BTS WORLD TOUR ARIRANG IN KAOHSIUNG安可重播"
+        "movie_id": "m_572a10eca9d6",
+        "movie_title": "戴帽子的貓_人偶搶先場"
       },
       {
         "movie_id": "m_a0365cd6725d",
         "movie_title": "2026年11月【和美鎮立圖書館-電影欣賞】"
       },
       {
+        "movie_id": "m_11b6d9d27ab8",
+        "movie_title": "Yuzuru Hanyu REALIVE an ICE STORY project in Saga 現場直播"
+      },
+      {
         "movie_id": "m_9af2c98ddd5c",
         "movie_title": "下一站，天國!－早安！周日經典電影院"
+      },
+      {
+        "movie_id": "m_192d7b51ed4f",
+        "movie_title": "12月高雄市電影館｜黑球"
+      },
+      {
+        "movie_id": "m_efce1dc362d8",
+        "movie_title": "12月高雄市電影館｜迴山"
+      },
+      {
+        "movie_id": "m_820b54c6ce5c",
+        "movie_title": "ANGERME 2026 AUTUMN FINAL 風林火山・極 現場直播"
       },
       {
         "movie_id": "m_57990b5e8193",
         "movie_title": "2026年12月【和美鎮立圖書館-電影欣賞】"
       },
       {
+        "movie_id": "m_c768b831eff3",
+        "movie_title": "THE ALFEE 3000PREMIUM ONE NIGHT ENCORE現場直播"
+      },
+      {
         "movie_id": "m_b6ff66c450f7",
         "movie_title": "12月高雄市電影館｜34街的奇蹟"
+      },
+      {
+        "movie_id": "m_1d88c4405982",
+        "movie_title": "12月高雄市電影館｜海上花"
+      },
+      {
+        "movie_id": "m_8c1d5ee779c8",
+        "movie_title": "無人知曉的夏日清晨─早安！周日經典電影院"
+      },
+      {
+        "movie_id": "m_83237c6650d0",
+        "movie_title": "12月高雄市電影館｜東京教父 4K修復"
       }
     ],
     "missing_samples_capped_at": 200,
@@ -94,7 +115,20 @@
         ],
         "movie_ids": [
           "m_06f5422d36b4",
+          "m_3c9b4dcf2964",
           "m_c3c66546e59b"
+        ],
+        "poster_count": 3
+      },
+      {
+        "titles": [
+          "PUELLA MAGI MADOKA MAGICA THE MOVIE -WALPURGISNACHT RISING-",
+          "Puella Magi Madoka Magica the Movie -Walpurgisnacht: Rising-"
+        ],
+        "movie_ids": [
+          "m_07e5f536be76",
+          "m_50cfc1b09c8a",
+          "m_d63cc4142905"
         ],
         "poster_count": 2
       },
@@ -150,6 +184,52 @@
           "m_3c75afd6ba43",
           "m_b75518dd4086",
           "m_d69e8be24c88"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "The Cat in the Hat"
+        ],
+        "movie_ids": [
+          "m_4870b5080628",
+          "m_4a4c1042b464",
+          "m_910962b353ad"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "門當父不對之親家駕到",
+          "門當父不對之親家駕到 特別場"
+        ],
+        "movie_ids": [
+          "m_6b1eeff1a4c1",
+          "m_acaa526840e4"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "FOCKER IN-LAW",
+          "FOCKER-IN-LAW"
+        ],
+        "movie_ids": [
+          "m_6b1eeff1a4c1",
+          "m_acaa526840e4"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "To Be Ordinary",
+          "TO BE ORDINARY",
+          "To be Ordinary"
+        ],
+        "movie_ids": [
+          "m_994f0a6f1b44",
+          "m_c1fabc1af3df",
+          "m_e1e9a916280f"
         ],
         "poster_count": 2
       }

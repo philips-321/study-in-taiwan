@@ -1,7 +1,7 @@
 {
   "schema": "cinema-source-issue-history",
   "version": 1,
-  "generated_at": "2026-11-18T01:00:39.246Z",
+  "generated_at": "2026-11-25T02:02:16.846Z",
   "history_policy": "Append source failures by source, HTTP status, and endpoint host. Successful fetches resolve open incidents but do not delete their history.",
   "issues": [
     {
@@ -258,13 +258,13 @@
       "http_status": null,
       "host": null,
       "endpoint": null,
-      "state": "open",
+      "state": "resolved",
       "first_seen": "2026-11-01T23:41:35.944Z",
       "last_seen": "2026-11-01T23:41:35.944Z",
-      "last_success_at": null,
+      "last_success_at": "2026-11-25T02:02:05.796Z",
       "total_occurrence_count": 1,
       "historical_observation_count": 0,
-      "consecutive_failures": 1,
+      "consecutive_failures": 0,
       "reopen_count": 0,
       "known_cause": null,
       "next_steps": [
@@ -281,7 +281,8 @@
       "last_error": "No known ShowTimes cinemas have official HTML page IDs",
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
-      "retry_after": "2026-11-08T23:41:35.944Z"
+      "retry_after": "2026-11-08T23:41:35.944Z",
+      "resolved_at": "2026-11-25T02:02:16.846Z"
     },
     {
       "issue_id": "showtimes-official-browser:http_403:unknown-host",
@@ -290,13 +291,13 @@
       "http_status": 403,
       "host": null,
       "endpoint": null,
-      "state": "open",
+      "state": "resolved",
       "first_seen": "2026-11-01T23:44:14.950Z",
       "last_seen": "2026-11-11T13:29:58.836Z",
-      "last_success_at": null,
+      "last_success_at": "2026-11-25T02:02:05.796Z",
       "total_occurrence_count": 3,
       "historical_observation_count": 0,
-      "consecutive_failures": 3,
+      "consecutive_failures": 0,
       "reopen_count": 0,
       "known_cause": null,
       "next_steps": [
@@ -327,7 +328,8 @@
       "last_fallback_showtimes": 0,
       "retry_after": "2026-11-18T13:29:58.836Z",
       "retry_suppressed_run_count": 15,
-      "last_retry_suppressed_at": "2026-11-18T01:00:39.246Z"
+      "last_retry_suppressed_at": "2026-11-18T01:00:39.246Z",
+      "resolved_at": "2026-11-25T02:02:16.846Z"
     },
     {
       "issue_id": "eslite-official-browser:collector_error:meet.eslite.com",
@@ -369,13 +371,13 @@
       "http_status": null,
       "host": "capi.showtimes.com.tw",
       "endpoint": "https://capi.showtimes.com.tw/4/app/bootstrap",
-      "state": "open",
+      "state": "resolved",
       "first_seen": "2026-11-12T23:42:21.608Z",
       "last_seen": "2026-11-18T01:00:39.246Z",
-      "last_success_at": null,
+      "last_success_at": "2026-11-25T02:02:05.796Z",
       "total_occurrence_count": 6,
       "historical_observation_count": 0,
-      "consecutive_failures": 6,
+      "consecutive_failures": 0,
       "reopen_count": 0,
       "known_cause": "GitHub Actions receives HTTP 403 from the ShowTimes API. The collector now fetches the official ShowTimes bootstrap from inside Cloudflare Browser Run and keeps the page browser fallback for degraded runs.",
       "next_steps": [
@@ -424,7 +426,8 @@
       "last_error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 0,
-      "retry_after": "2026-11-25T01:00:39.246Z"
+      "retry_after": "2026-11-25T01:00:39.246Z",
+      "resolved_at": "2026-11-25T02:02:16.846Z"
     },
     {
       "issue_id": "showtimes-official-cloudflare-bootstrap:collector_error:unknown-host",
@@ -433,13 +436,13 @@
       "http_status": null,
       "host": null,
       "endpoint": null,
-      "state": "open",
+      "state": "resolved",
       "first_seen": "2026-11-12T23:42:21.608Z",
       "last_seen": "2026-11-18T01:00:39.246Z",
-      "last_success_at": null,
+      "last_success_at": "2026-11-25T02:02:05.796Z",
       "total_occurrence_count": 6,
       "historical_observation_count": 0,
-      "consecutive_failures": 6,
+      "consecutive_failures": 0,
       "reopen_count": 0,
       "known_cause": null,
       "next_steps": [
@@ -486,7 +489,8 @@
       "last_error": "Cloudflare Browser Rendering failed for www.showtimes.com.tw: Authentication error",
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 1496,
-      "retry_after": "2026-11-25T01:00:39.246Z"
+      "retry_after": "2026-11-25T01:00:39.246Z",
+      "resolved_at": "2026-11-25T02:02:16.846Z"
     },
     {
       "issue_id": "eslite-official-browser:collector_error:unknown-host",
@@ -495,13 +499,13 @@
       "http_status": null,
       "host": null,
       "endpoint": null,
-      "state": "open",
+      "state": "resolved",
       "first_seen": "2026-11-12T23:42:21.608Z",
       "last_seen": "2026-11-18T01:00:39.246Z",
-      "last_success_at": null,
+      "last_success_at": "2026-11-25T02:02:05.796Z",
       "total_occurrence_count": 6,
       "historical_observation_count": 0,
-      "consecutive_failures": 6,
+      "consecutive_failures": 0,
       "reopen_count": 0,
       "known_cause": null,
       "next_steps": [
@@ -548,7 +552,8 @@
       "last_error": "Eslite browser navigation returned HTTP unknown: Cloudflare Browser Rendering failed for meet.eslite.com: Authentication error",
       "last_fresh_showtimes": 0,
       "last_fallback_showtimes": 36,
-      "retry_after": "2026-11-25T01:00:39.246Z"
+      "retry_after": "2026-11-25T01:00:39.246Z",
+      "resolved_at": "2026-11-25T02:02:16.846Z"
     }
   ],
   "retry_policy": "After an unresolved HTTP 403, suppress automatic source requests for 7 days; keep last-known-good schedules and make one retry after the cooldown."
