@@ -14,8 +14,13 @@ export function movieIdForTitle(title, alternateTitle = null) {
   return key ? `m_${crypto.createHash('sha1').update(key).digest('hex').slice(0, 12)}` : null;
 }
 
+function isCanonicalMovieId(value) {
+  return /^m_[a-f0-9]{12}$/.test(String(value || ''));
+}
+
 export function movieIdForRow(row) {
-  return row.movie_id || movieIdForTitle(row.movie_title, row.movie_title_en);
+  if (isCanonicalMovieId(row.movie_id)) return row.movie_id;
+  return movieIdForTitle(row.movie_title, row.movie_title_en) || row.movie_id || null;
 }
 
 export function screeningKey(row) {
@@ -93,7 +98,7 @@ export function inheritUnambiguousTitlePosters(movies, historicalDonors = []) {
 export function buildMovieIndex(rows, programRecords = [], previousRecords = [], posterDonors = []) {
   const records = new Map();
   const ensure = (title, titleEn = null, movieId = null) => {
-    const id = movieId || movieIdForTitle(title, titleEn);
+    const id = isCanonicalMovieId(movieId) ? movieId : movieIdForTitle(title, titleEn) || movieId;
     if (!id) return null;
     if (!records.has(id)) records.set(id, {
       movie_id: id,
