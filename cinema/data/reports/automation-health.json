@@ -1,46 +1,45 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-25T02:10:00.492Z",
+  "generated_at": "2026-11-26T06:15:13.886Z",
   "browser_source_registry": {
-    "checked_at": "2026-11-25T02:02:05.738Z",
-    "run_id": "45529892459",
+    "checked_at": "2026-11-26T06:15:01.655Z",
+    "run_id": "45766749491",
     "registry_cinemas": 107,
     "registry_bindings": 107,
     "official_urls": 49,
     "missing_official_urls": 54,
-    "page_navigations_attempted": 34,
+    "page_navigations_attempted": 11,
     "hosts_blocked_by_403": [
       "www.vscinemas.com.tw"
     ],
     "status_counts": {
       "cinema_closed": 4,
       "handled_by_schedule_adapter": 1,
-      "http_403_host_blocked": 22,
       "http_error": 1,
       "needs_official_schedule_url": 54,
       "page_loaded_no_schedule_signals": 2,
       "page_loaded_schedule_signals_found": 8,
-      "schedule_adapter_no_rows": 15
+      "schedule_adapter_no_rows": 15,
+      "suppressed_after_recent_host_403": 22
     }
   },
   "public_window": {
-    "as_of": "2026-11-25",
-    "end_date": "2026-12-25",
-    "rows": 6971,
-    "expected_rows": 6971
+    "as_of": "2026-11-26",
+    "end_date": "2026-12-26",
+    "rows": 13844,
+    "expected_rows": 13844
   },
   "schedule_freshness": {
-    "checked_at": "2026-11-25T02:02:07.766Z",
-    "as_of": "2026-11-25",
-    "stale_screenings_in_window": 2,
-    "stale_marked_this_run": 0,
-    "pending_candidates": 273,
-    "fresh_snapshot_rows": 5038,
-    "last_known_good_rows": 2103,
-    "public_excluded_stale_status_rows": 2,
-    "public_excluded_stale_fallback_rows": 307,
+    "checked_at": "2026-11-26T06:15:04.469Z",
+    "as_of": "2026-11-26",
+    "stale_screenings_in_window": 263,
+    "stale_marked_this_run": 261,
+    "pending_candidates": 84,
+    "fresh_snapshot_rows": 11918,
+    "last_known_good_rows": 2063,
+    "public_excluded_stale_status_rows": 263,
+    "public_excluded_stale_fallback_rows": 56,
     "public_excluded_stale_fallback_by_source": {
-      "showtimes-official-cloudflare-bootstrap": 251,
       "showtimes-official-api": 35,
       "vieshow-official-browser": 21
     },
@@ -53,12 +52,12 @@
       "moc-culture-movie-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 669,
-        "fresh_showtimes": 669,
+        "showtimes": 763,
+        "fresh_showtimes": 763,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -79,12 +78,12 @@
       "miramar-official-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 651,
-        "fresh_showtimes": 651,
+        "showtimes": 578,
+        "fresh_showtimes": 578,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -105,12 +104,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 957,
-        "fresh_showtimes": 957,
+        "showtimes": 2928,
+        "fresh_showtimes": 2928,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -131,12 +130,12 @@
       "showtimes-official-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 2683,
-        "fresh_showtimes": 2683,
+        "showtimes": 7505,
+        "fresh_showtimes": 7505,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -157,12 +156,12 @@
       "showtimes-official-cloudflare-bootstrap": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 2683,
-        "fresh_showtimes": 2683,
+        "showtimes": 7505,
+        "fresh_showtimes": 7505,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -183,12 +182,12 @@
       "spot-huashan-official-schedule": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 53,
-        "fresh_showtimes": 53,
+        "showtimes": 96,
+        "fresh_showtimes": 96,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -214,7 +213,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -240,7 +239,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -266,7 +265,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -292,7 +291,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -313,12 +312,12 @@
       "eslite-official-browser": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 34,
-        "fresh_showtimes": 34,
+        "showtimes": 122,
+        "fresh_showtimes": 122,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -339,9 +338,9 @@
       "vieshow-official-browser": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 2103,
+        "showtimes": 2063,
         "fresh_showtimes": 0,
-        "fallback_showtimes": 2103,
+        "fallback_showtimes": 2063,
         "error": null,
         "retrieved_at": null,
         "last_success_at": "2026-10-27T02:19:11.397Z",
@@ -366,7 +365,7 @@
     "failed_or_degraded": [],
     "issue_history": {
       "file": "cinema/data/reports/source-issue-history.json",
-      "recorded_this_run": false,
+      "recorded_this_run": true,
       "issues": [
         {
           "issue_id": "showtimes-official-api:http_403:capi.showtimes.com.tw",
@@ -522,36 +521,84 @@
     }
   },
   "ids": {
-    "active_movies": 177,
+    "active_movies": 206,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 177,
-    "available": 175,
-    "missing": 2,
+    "active_movies": 206,
+    "available": 192,
+    "missing": 14,
     "canonical_registry": {
-      "unique_active_films": 149,
-      "poster_yes": 144,
-      "poster_no": 5,
+      "unique_active_films": 159,
+      "poster_yes": 141,
+      "poster_no": 18,
       "fetch_states": {
-        "ambiguous": 3,
-        "found_manual": 86,
+        "ambiguous": 8,
+        "found_manual": 83,
         "found_official": 16,
-        "not_found": 2,
+        "not_found": 10,
         "reused": 42
       }
     },
     "missing_movies": [
       {
+        "movie_id": "m_f15c5558aaf2",
+        "movie_title": "窗外有藍天 4K全新修復"
+      },
+      {
+        "movie_id": "m_bc91c6a325a7",
+        "movie_title": "被消失的家園"
+      },
+      {
+        "movie_id": "m_9c4e4418b80d",
+        "movie_title": "比爾艾文斯三重奏變"
+      },
+      {
+        "movie_id": "m_b24275a31af3",
+        "movie_title": "（限定場）黑球"
+      },
+      {
         "movie_id": "m_a0365cd6725d",
         "movie_title": "2026年11月【和美鎮立圖書館-電影欣賞】"
       },
       {
+        "movie_id": "m_d91a2691e99c",
+        "movie_title": "完美家庭風暴 (搶先看)"
+      },
+      {
+        "movie_id": "m_c39fa9c51e19",
+        "movie_title": "燕尾蝶 4K全新修復版 (搶先看)"
+      },
+      {
+        "movie_id": "m_20ebbc7765cc",
+        "movie_title": "12月高雄市電影館｜比爾艾文斯三重奏變"
+      },
+      {
+        "movie_id": "m_6f4f7a4823dc",
+        "movie_title": "12月高雄市電影館｜第四幕"
+      },
+      {
+        "movie_id": "m_3275e9686318",
+        "movie_title": "就是柳柳的他(搶先場)"
+      },
+      {
+        "movie_id": "m_b2fa5778d248",
+        "movie_title": "12月高雄市電影館｜日光"
+      },
+      {
         "movie_id": "m_57990b5e8193",
         "movie_title": "2026年12月【和美鎮立圖書館-電影欣賞】"
+      },
+      {
+        "movie_id": "m_84e285c3af87",
+        "movie_title": "12月高雄市電影館｜燕尾蝶 4K全新修復版"
+      },
+      {
+        "movie_id": "m_584a5f5fef84",
+        "movie_title": "非普通教慾：4K數位修復版－早安！周日經典電影院"
       }
     ],
     "missing_samples_capped_at": 200,
@@ -564,9 +611,10 @@
         "movie_ids": [
           "m_06f5422d36b4",
           "m_3c9b4dcf2964",
-          "m_c3c66546e59b"
+          "m_c3c66546e59b",
+          "m_fdf4ea58dcac"
         ],
-        "poster_count": 3
+        "poster_count": 4
       },
       {
         "titles": [
@@ -588,6 +636,17 @@
         "movie_ids": [
           "m_22bc89ac6866",
           "m_730baf7f4574"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "大搜查線 N.E.W.",
+          "大搜查線N.E.W."
+        ],
+        "movie_ids": [
+          "m_25cc80ed5dbf",
+          "m_df0000c0bac2"
         ],
         "poster_count": 2
       },
@@ -648,6 +707,19 @@
       },
       {
         "titles": [
+          "You Can See Everything",
+          "YOU CAN SEE EVERYTHING"
+        ],
+        "movie_ids": [
+          "m_4bccffa6eb5f",
+          "m_921dfc509e1e",
+          "m_c55ea90c7a47",
+          "m_d94f3b753d01"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
           "門當父不對之親家駕到",
           "門當父不對之親家駕到 特別場"
         ],
@@ -670,6 +742,28 @@
       },
       {
         "titles": [
+          "DUNE",
+          "Dune"
+        ],
+        "movie_ids": [
+          "m_6fab15c432bf",
+          "m_dd7cc0122e18"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "HAIKYU!! THE DUMPSTER BATTLE",
+          "Haikyu!!: The Dumpster Battle"
+        ],
+        "movie_ids": [
+          "m_71d8afa8c01b",
+          "m_b2c8a143338a"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
           "To Be Ordinary",
           "TO BE ORDINARY",
           "To be Ordinary"
@@ -685,7 +779,7 @@
   },
   "matching": {
     "collector_diagnostic_counts": {
-      "ambiguous_movie_metadata": 32,
+      "ambiguous_movie_metadata": 39,
       "ambiguous_cinema_matches": 0,
       "unmatched_cinema_matches": 7
     },
@@ -783,7 +877,7 @@
       {
         "source": "showtimes-official-cloudflare-bootstrap",
         "city": "taipei",
-        "title": "蜘蛛人：重生日 蛻變重生加場",
+        "title": "蜘蛛人：重生日 決戰手合場",
         "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
         "metadata_candidates": [
           {
@@ -801,6 +895,24 @@
       {
         "source": "showtimes-official-cloudflare-bootstrap",
         "city": "new-taipei",
+        "title": "飢餓遊戲：黎明收割",
+        "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+        "metadata_candidates": [
+          {
+            "title": "飢餓遊戲：黎明收割 特別場",
+            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+            "poster_url": "https://assets.showtimes.com.tw/images/9d7a34cd7ae6c30a2fee8a3bddce9f43.jpg"
+          },
+          {
+            "title": "飢餓遊戲：黎明收割",
+            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+            "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "new-taipei",
         "title": "搶銀行先修班",
         "alternate_title": "HOW TO ROB A BANK",
         "metadata_candidates": [
@@ -819,18 +931,18 @@
       {
         "source": "showtimes-official-cloudflare-bootstrap",
         "city": "new-taipei",
-        "title": "飢餓遊戲：黎明收割",
-        "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+        "title": "劇場版 吉伊卡哇 人魚島的秘密 (國語版)",
+        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
         "metadata_candidates": [
           {
-            "title": "飢餓遊戲：黎明收割 特別場",
-            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-            "poster_url": "https://assets.showtimes.com.tw/images/9d7a34cd7ae6c30a2fee8a3bddce9f43.jpg"
+            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
           },
           {
-            "title": "飢餓遊戲：黎明收割",
-            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-            "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
+            "title": "劇場版 吉伊卡哇 人魚島的秘密",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
           }
         ]
       },
@@ -890,19 +1002,19 @@
       },
       {
         "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "taichung",
-        "title": "搶銀行先修班",
-        "alternate_title": "HOW TO ROB A BANK",
+        "city": "keelung",
+        "title": "劇場版 吉伊卡哇 人魚島的秘密",
+        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
         "metadata_candidates": [
           {
-            "title": "搶銀行先修班 特別場",
-            "title_en": "How To Rob a Bank",
-            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
+            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
           },
           {
-            "title": "搶銀行先修班",
-            "title_en": "HOW TO ROB A BANK",
-            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
+            "title": "劇場版 吉伊卡哇 人魚島的秘密",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
           }
         ]
       },
@@ -939,6 +1051,42 @@
             "title": "劇場版 吉伊卡哇 人魚島的秘密",
             "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
             "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "taichung",
+        "title": "搶銀行先修班",
+        "alternate_title": "HOW TO ROB A BANK",
+        "metadata_candidates": [
+          {
+            "title": "搶銀行先修班 特別場",
+            "title_en": "How To Rob a Bank",
+            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
+          },
+          {
+            "title": "搶銀行先修班",
+            "title_en": "HOW TO ROB A BANK",
+            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "taichung",
+        "title": "蜘蛛人：重生日 決戰手合場",
+        "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
+        "metadata_candidates": [
+          {
+            "title": "蜘蛛人：重生日 最終決戰場",
+            "title_en": "SPIDER-MAN: BRAND NEW DAY",
+            "poster_url": "https://assets.showtimes.com.tw/images/0bdc8bbdb17cd6a7b8ffb8f6be3383fd.jpg"
+          },
+          {
+            "title": "蜘蛛人：重生日",
+            "title_en": "SPIDER-MAN: BRAND NEW DAY",
+            "poster_url": "https://assets.showtimes.com.tw/images/9f00d1044341ccd5a1ee1e99d3c8a995.jpg"
           }
         ]
       },
@@ -1016,6 +1164,24 @@
       },
       {
         "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "yunlin",
+        "title": "劇場版 吉伊卡哇 人魚島的秘密",
+        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+        "metadata_candidates": [
+          {
+            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
+          },
+          {
+            "title": "劇場版 吉伊卡哇 人魚島的秘密",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
         "city": "chiayi-city",
         "title": "飢餓遊戲：黎明收割",
         "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
@@ -1047,6 +1213,42 @@
             "title": "搶銀行先修班",
             "title_en": "HOW TO ROB A BANK",
             "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "chiayi-city",
+        "title": "劇場版 吉伊卡哇 人魚島的秘密",
+        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+        "metadata_candidates": [
+          {
+            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
+          },
+          {
+            "title": "劇場版 吉伊卡哇 人魚島的秘密",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "tainan",
+        "title": "飢餓遊戲：黎明收割",
+        "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+        "metadata_candidates": [
+          {
+            "title": "飢餓遊戲：黎明收割 特別場",
+            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+            "poster_url": "https://assets.showtimes.com.tw/images/9d7a34cd7ae6c30a2fee8a3bddce9f43.jpg"
+          },
+          {
+            "title": "飢餓遊戲：黎明收割",
+            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+            "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
           }
         ]
       },
@@ -1088,24 +1290,6 @@
       },
       {
         "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "tainan",
-        "title": "飢餓遊戲：黎明收割",
-        "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-        "metadata_candidates": [
-          {
-            "title": "飢餓遊戲：黎明收割 特別場",
-            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-            "poster_url": "https://assets.showtimes.com.tw/images/9d7a34cd7ae6c30a2fee8a3bddce9f43.jpg"
-          },
-          {
-            "title": "飢餓遊戲：黎明收割",
-            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-            "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
         "city": "kaohsiung",
         "title": "飢餓遊戲：黎明收割",
         "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
@@ -1155,6 +1339,24 @@
             "title": "劇場版 吉伊卡哇 人魚島的秘密",
             "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
             "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "kaohsiung",
+        "title": "蜘蛛人：重生日 決戰手合場",
+        "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
+        "metadata_candidates": [
+          {
+            "title": "蜘蛛人：重生日 最終決戰場",
+            "title_en": "SPIDER-MAN: BRAND NEW DAY",
+            "poster_url": "https://assets.showtimes.com.tw/images/0bdc8bbdb17cd6a7b8ffb8f6be3383fd.jpg"
+          },
+          {
+            "title": "蜘蛛人：重生日",
+            "title_en": "SPIDER-MAN: BRAND NEW DAY",
+            "poster_url": "https://assets.showtimes.com.tw/images/9f00d1044341ccd5a1ee1e99d3c8a995.jpg"
           }
         ]
       },
@@ -1214,7 +1416,7 @@
       },
       {
         "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "taitung",
+        "city": "hualien",
         "title": "劇場版 吉伊卡哇 人魚島的秘密",
         "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
         "metadata_candidates": [
@@ -1245,6 +1447,24 @@
             "title": "飢餓遊戲：黎明收割",
             "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
             "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "taitung",
+        "title": "劇場版 吉伊卡哇 人魚島的秘密",
+        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+        "metadata_candidates": [
+          {
+            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
+          },
+          {
+            "title": "劇場版 吉伊卡哇 人魚島的秘密",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
           }
         ]
       },

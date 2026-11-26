@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-25T02:09:52.059Z",
+  "generated_at": "2026-11-26T06:15:13.296Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -17,6 +17,22 @@
       ]
     },
     {
+      "movie_id": "m_374bcc995dc8",
+      "movie_title": "（口碑場）袒裎相見",
+      "poster_url": "https://www.miramarcinemas.tw/MiramarRes/32f2f59f-ad92-46f0-bbff-92ab7730634f.jpg",
+      "aliases": [
+        "（口碑場）袒裎相見"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "miramar-official-movie-page",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
       "movie_id": "m_cb36c91aeb9c",
       "movie_title": "(中) Jim Queen：肌情四射",
       "poster_url": "https://assets.showtimes.com.tw/images/ff54a0cbf59a020440a58b1c6eda0643.jpg",
@@ -28,6 +44,20 @@
         "eslite-official-browser",
         "eslite-official-schedule",
         "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_88e3c679dd63",
+      "movie_title": "(日) 神隱少女",
+      "poster_url": "https://assets.showtimes.com.tw/images/afd8ec0e6ceca38c044fcdba511a9afb.jpg",
+      "aliases": [
+        "(日) 神隱少女",
+        "Spirited Away"
+      ],
+      "sources": [
+        "eslite-official-browser",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
       ]
     },
     {
@@ -118,6 +148,20 @@
       "sources": [
         "eslite-official-browser",
         "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_01e8da29b19f",
+      "movie_title": "(特別場) 黑球",
+      "poster_url": "https://assets.showtimes.com.tw/images/43c0cf9508b4f544d4da7270d5572fea.jpg",
+      "aliases": [
+        "(特別場) 黑球",
+        "The Black Ball"
+      ],
+      "sources": [
+        "eslite-official-browser",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
       ]
     },
     {
@@ -1562,6 +1606,61 @@
       "preferred": true
     },
     {
+      "movie_id": "m_7d59577d0540",
+      "movie_title": "12月高雄市電影館｜袒裎相見",
+      "poster_url": "https://www.miramarcinemas.tw/MiramarRes/32f2f59f-ad92-46f0-bbff-92ab7730634f.jpg",
+      "aliases": [
+        "12月高雄市電影館｜袒裎相見"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "miramar-official-movie-page",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
+      "movie_id": "m_d17d8b8037d0",
+      "movie_title": "12月高雄市電影館｜善男信女",
+      "poster_url": "https://image.tmdb.org/t/p/w500/r8m78up2sJnH9iQvlhiAMJCWlh3.jpg",
+      "aliases": [
+        "12月高雄市電影館｜善男信女"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_a60e64f6f9ec",
+      "movie_title": "12月高雄市電影館｜窗外有藍天 4K經典數位修復",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027171904864.jpg",
+      "aliases": [
+        "12月高雄市電影館｜窗外有藍天 4K經典數位修復"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_56cef200985e",
+      "movie_title": "12月高雄市電影館｜黑牢城 黑白版",
+      "poster_url": "https://image.tmdb.org/t/p/w500/1GWVlPM1v6k84LsmDkfDzLlGf0O.jpg",
+      "aliases": [
+        "12月高雄市電影館｜黑牢城 黑白版"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_192d7b51ed4f",
       "movie_title": "12月高雄市電影館｜黑球",
       "poster_url": "https://imgs2.utiki.com.tw/Data/ERA/Images/UTK2401/P1IVC77I_Other.JPG?v=202611230832",
@@ -1577,11 +1676,66 @@
       "preferred": true
     },
     {
+      "movie_id": "m_05e9bd61be21",
+      "movie_title": "12月高雄市電影館｜當風吹來奈義町",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261122190206501.jpg",
+      "aliases": [
+        "12月高雄市電影館｜當風吹來奈義町"
+      ],
+      "sources": [
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ],
+      "preferred": true
+    },
+    {
+      "movie_id": "m_d0a605675202",
+      "movie_title": "12月高雄市電影館｜與達賴喇嘛談心：尋找幸福的智慧",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027152349433.jpg",
+      "aliases": [
+        "12月高雄市電影館｜與達賴喇嘛談心：尋找幸福的智慧"
+      ],
+      "sources": [
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "kaohsiung-film-archive-official",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
       "movie_id": "m_a0e693bf0818",
       "movie_title": "12月高雄市電影館｜廚師發辦",
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027151238638.jpeg",
       "aliases": [
         "12月高雄市電影館｜廚師發辦"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_652d28a13617",
+      "movie_title": "12月高雄市電影館｜盧丹的惡魔",
+      "poster_url": "https://image.tmdb.org/t/p/w500/y9zbO3Y5w0qvd6WMIsEgjf4g1YY.jpg",
+      "aliases": [
+        "12月高雄市電影館｜盧丹的惡魔"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_e64c5d3cb82b",
+      "movie_title": "12月高雄市電影館｜蕭邦！蕭邦！",
+      "poster_url": "https://swiatowid.elblag.pl/storage/informations/13321.jpg",
+      "aliases": [
+        "12月高雄市電影館｜蕭邦！蕭邦！"
       ],
       "sources": [
         "canonical-poster-title-match",
@@ -1693,6 +1847,19 @@
         "punctuation-insensitive-title-poster-match"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_25cc80ed5dbf",
+      "movie_title": "大搜查線 N.E.W.",
+      "poster_url": "https://assets.showtimes.com.tw/images/9be567b3703bc5c4b6432e5574a40b14.jpg",
+      "aliases": [
+        "Bayside Shakedown N.E.W.",
+        "大搜查線 N.E.W."
+      ],
+      "sources": [
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
     },
     {
       "movie_id": "m_df0000c0bac2",
@@ -2649,6 +2816,21 @@
       ]
     },
     {
+      "movie_id": "m_ba0010de8269",
+      "movie_title": "我們不是陌生人",
+      "poster_url": "https://assets.showtimes.com.tw/images/523fc6c2f7a3588859a7dc031c2ce370.jpg",
+      "aliases": [
+        "WE ARE ALL STRANGERS",
+        "我們不是陌生人"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_3382e6798b79",
       "movie_title": "我就是洛基",
       "poster_url": "https://assets.showtimes.com.tw/images/ce62709aa9c05616e467155de945c1ad.jpg",
@@ -2750,6 +2932,7 @@
       "movie_title": "沙丘（重映版）",
       "poster_url": "https://assets.showtimes.com.tw/images/274da7f91c90a1a546ad415b0cb24b7e.jpg",
       "aliases": [
+        "DUNE",
         "Dune",
         "沙丘（重映版）"
       ],
@@ -2758,6 +2941,19 @@
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap",
         "showtimes-official-program"
+      ]
+    },
+    {
+      "movie_id": "m_6fab15c432bf",
+      "movie_title": "沙丘1+2 連映場",
+      "poster_url": "https://assets.showtimes.com.tw/images/96377c02a23a268b570482561648fa52.jpg",
+      "aliases": [
+        "DUNE",
+        "沙丘1+2 連映場"
+      ],
+      "sources": [
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
       ]
     },
     {
@@ -3152,8 +3348,10 @@
         "門當父不對之親家駕到"
       ],
       "sources": [
+        "ambassador-official-site",
         "miramar-official-api",
         "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
         "showtimes-official-metadata",
         "showtimes-official-program"
       ]
@@ -3286,6 +3484,21 @@
       "sources": [
         "ambassador-official-site",
         "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_b8d3b753f5ed",
+      "movie_title": "屍蹤拼圖",
+      "poster_url": "https://assets.showtimes.com.tw/images/0e50a0fb8d6622e42f324669c5735cb8.jpg",
+      "aliases": [
+        "The Cycle",
+        "屍蹤拼圖"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
         "the-movie-database"
       ]
     },
@@ -3471,6 +3684,19 @@
       "preferred": true
     },
     {
+      "movie_id": "m_b66fcf9aaf37",
+      "movie_title": "哥吉拉 連映場",
+      "poster_url": "https://assets.showtimes.com.tw/images/d69301e966f687093a96c1f8f318cfe8.jpg",
+      "aliases": [
+        "GodzillaMinusZero ",
+        "哥吉拉 連映場"
+      ],
+      "sources": [
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
+    },
+    {
       "movie_id": "m_730baf7f4574",
       "movie_title": "哥吉拉-0.0",
       "poster_url": "https://assets.showtimes.com.tw/images/f80e9b4dbec1d5bc122a921cb1e94568.jpg",
@@ -3639,6 +3865,23 @@
       ]
     },
     {
+      "movie_id": "m_97aa4c60000c",
+      "movie_title": "庫洛魔法使 劇場版：被封印的卡片",
+      "poster_url": "https://assets.showtimes.com.tw/images/0af9088c346ed4b9e19f731b644b29d7.jpg",
+      "aliases": [
+        "CARDCAPTOR SAKURA THE MOVIE 2: THE SEALED CAR",
+        "Cardcaptor Sakura the Movie 2- The Sealed Card",
+        "庫洛魔法使 劇場版：被封印的卡片"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_e2c37fce61af",
       "movie_title": "浪花男女",
       "poster_url": "https://assets.showtimes.com.tw/images/0039646f7fa59febf4c0529c0fd4df2a.jpg",
@@ -3692,6 +3935,34 @@
         "vieshow-muvie-songren-official"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_b453fc58e85c",
+      "movie_title": "神隱少女",
+      "poster_url": "https://assets.showtimes.com.tw/images/afd8ec0e6ceca38c044fcdba511a9afb.jpg",
+      "aliases": [
+        "Spirited Away",
+        "神隱少女"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_577117c5e824",
+      "movie_title": "神隱少女 演奏加場",
+      "poster_url": "https://assets.showtimes.com.tw/images/afd8ec0e6ceca38c044fcdba511a9afb.jpg",
+      "aliases": [
+        "Spirited Away",
+        "神隱少女 演奏加場"
+      ],
+      "sources": [
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
     },
     {
       "movie_id": "m_f7f01b32a9a1",
@@ -3819,6 +4090,19 @@
       "sources": [
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
+    },
+    {
+      "movie_id": "m_d1f5d5fc330d",
+      "movie_title": "逃",
+      "poster_url": "https://assets.showtimes.com.tw/images/b16275c02af4b2daa778757a5bb4e9d4.jpg",
+      "aliases": [
+        "THE RUN",
+        "逃"
+      ],
+      "sources": [
+        "previous-catalog",
         "showtimes-official-cloudflare-bootstrap"
       ]
     },
@@ -4137,6 +4421,7 @@
       "sources": [
         "ambassador-official-site",
         "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap",
         "showtimes-official-program"
       ]
     },
@@ -4229,11 +4514,51 @@
       "poster_url": "https://assets.showtimes.com.tw/images/aedff49d1952077f635a9c3756071d32.jpg",
       "aliases": [
         "YOU CAN SEE EVERYTHING",
+        "You Can See Everything",
         "袒裎相見"
       ],
       "sources": [
+        "canonical-poster-title-match",
+        "eslite-official-browser",
+        "miramar-official-api",
+        "miramar-official-movie-page",
+        "previous-catalog",
         "punctuation-insensitive-title-poster-match",
         "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_921dfc509e1e",
+      "movie_title": "袒裎相見 (口碑場)",
+      "poster_url": "https://www.miramarcinemas.tw/MiramarRes/32f2f59f-ad92-46f0-bbff-92ab7730634f.jpg",
+      "aliases": [
+        "You Can See Everything",
+        "袒裎相見 (口碑場)"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "miramar-official-movie-page",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_d94f3b753d01",
+      "movie_title": "袒裎相見 限量口碑場",
+      "poster_url": "https://assets.showtimes.com.tw/images/aedff49d1952077f635a9c3756071d32.jpg",
+      "aliases": [
+        "You Can See Everything",
+        "袒裎相見 限量口碑場"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "miramar-official-movie-page",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "showtimes-official-cloudflare-bootstrap"
       ]
     },
     {
@@ -4245,7 +4570,11 @@
         "袒裎相見 搶先場"
       ],
       "sources": [
+        "canonical-poster-title-match",
+        "miramar-official-api",
+        "miramar-official-movie-page",
         "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
         "showtimes-official-cloudflare-bootstrap"
       ]
     },
@@ -4258,6 +4587,7 @@
         "袒裎相見_口碑場"
       ],
       "sources": [
+        "canonical-poster-title-match",
         "miramar-official-api",
         "miramar-official-movie-page",
         "previous-catalog",
@@ -4314,6 +4644,20 @@
         "tfai-official-program"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_fa1941a9bce9",
+      "movie_title": "麥可傑克森：流行樂之王",
+      "poster_url": "https://assets.showtimes.com.tw/images/d6c38faa841658c18183f7bf99fddfa3.jpg",
+      "aliases": [
+        "MICHAEL JACKSON – HISTORY",
+        "麥可傑克森：流行樂之王"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
+      ]
     },
     {
       "movie_id": "m_c18ed6b6ce2c",
@@ -4560,6 +4904,7 @@
       "movie_title": "窗外有藍天 4K全新修復版",
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027171904864.jpg",
       "aliases": [
+        "Room with a View",
         "Room with a View (搶先場)",
         "窗外有藍天 4K全新修復版"
       ],
@@ -5415,9 +5760,11 @@
         "綻放的巴黎之星"
       ],
       "sources": [
+        "ambassador-official-site",
         "miramar-official-api",
         "previous-catalog",
         "punctuation-insensitive-title-poster-match",
+        "showtimes-official-cloudflare-bootstrap",
         "showtimes-official-program",
         "vieshow-official-browser"
       ]
@@ -5557,6 +5904,19 @@
         "showtimes-official-api",
         "showtimes-official-metadata",
         "showtimes-official-program"
+      ]
+    },
+    {
+      "movie_id": "m_fdf4ea58dcac",
+      "movie_title": "蜘蛛人：重生日 決戰手合場",
+      "poster_url": "https://assets.showtimes.com.tw/images/f3881041db299c5b200b6bb29114a6aa.jpg",
+      "aliases": [
+        "SPIDER-MAN: BRAND NEW DAY",
+        "蜘蛛人：重生日 決戰手合場"
+      ],
+      "sources": [
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
       ]
     },
     {
@@ -5809,6 +6169,19 @@
       "sources": [
         "chin-chin-official-browser",
         "punctuation-insensitive-title-poster-match"
+      ]
+    },
+    {
+      "movie_id": "m_b2c8a143338a",
+      "movie_title": "劇場版 排球少年!! 垃圾場的決戰",
+      "poster_url": "https://assets.showtimes.com.tw/images/42ff6e2fefc947309d58dc8b785e1797.jpg",
+      "aliases": [
+        "Haikyu!!: The Dumpster Battle",
+        "劇場版 排球少年!! 垃圾場的決戰"
+      ],
+      "sources": [
+        "previous-catalog",
+        "showtimes-official-cloudflare-bootstrap"
       ]
     },
     {
@@ -6196,6 +6569,22 @@
         "spot-huashan-official-schedule"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_ddae41f99e29",
+      "movie_title": "盧丹的惡魔",
+      "poster_url": "https://image.tmdb.org/t/p/w500/y9zbO3Y5w0qvd6WMIsEgjf4g1YY.jpg",
+      "aliases": [
+        "The Devils",
+        "盧丹的惡魔"
+      ],
+      "sources": [
+        "ambassador-official-site",
+        "eslite-official-browser",
+        "previous-catalog",
+        "punctuation-insensitive-title-poster-match",
+        "spot-huashan-official-schedule"
+      ]
     },
     {
       "movie_id": "m_a982b1f65624",

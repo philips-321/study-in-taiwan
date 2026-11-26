@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "generated_at": "2026-11-25T02:01:23.264Z",
+  "generated_at": "2026-11-26T06:14:29.136Z",
   "timezone": "Asia/Taipei",
   "model": "normalized movie catalog plus per-date/per-city screening references; collectors keep source rows in memory and date chunks are the only persisted showtime records",
   "showtimes_index": {
@@ -22,221 +22,225 @@
         "kaohsiung": 1
       }
     },
-    "2026-11-22": {
-      "total": 10,
-      "cities": {
-        "taipei": 10
-      }
-    },
-    "2026-11-23": {
-      "total": 10,
-      "cities": {
-        "taipei": 10
-      }
-    },
-    "2026-11-24": {
-      "total": 11,
-      "cities": {
-        "taipei": 11
-      }
-    },
     "2026-11-25": {
-      "total": 1339,
+      "total": 12,
       "cities": {
-        "chiayi-city": 56,
-        "hualien": 44,
-        "kaohsiung": 224,
-        "keelung": 40,
-        "new-taipei": 254,
-        "pingtung": 35,
-        "taichung": 232,
-        "tainan": 20,
-        "taipei": 344,
-        "taitung": 34,
-        "taoyuan": 41,
-        "yunlin": 15
+        "taipei": 12
       }
     },
     "2026-11-26": {
-      "total": 1410,
+      "total": 1448,
       "cities": {
         "chiayi-city": 59,
         "hsinchu-city": 6,
-        "hualien": 49,
-        "kaohsiung": 239,
+        "hualien": 48,
+        "kaohsiung": 252,
         "keelung": 42,
         "miaoli": 2,
-        "new-taipei": 289,
+        "new-taipei": 285,
         "pingtung": 36,
-        "taichung": 240,
-        "tainan": 35,
-        "taipei": 311,
+        "taichung": 234,
+        "tainan": 32,
+        "taipei": 351,
         "taitung": 36,
         "taoyuan": 51,
-        "yunlin": 15
+        "yunlin": 14
       }
     },
     "2026-11-27": {
-      "total": 375,
+      "total": 1519,
       "cities": {
-        "chiayi-city": 6,
+        "chiayi-city": 56,
         "hsinchu-city": 6,
-        "hualien": 10,
-        "kaohsiung": 44,
-        "keelung": 6,
+        "hualien": 50,
+        "kaohsiung": 260,
+        "keelung": 45,
         "miaoli": 3,
-        "new-taipei": 72,
-        "pingtung": 4,
-        "taichung": 40,
-        "tainan": 20,
-        "taipei": 147,
-        "taitung": 4,
-        "taoyuan": 9,
-        "yunlin": 4
+        "new-taipei": 294,
+        "pingtung": 38,
+        "taichung": 239,
+        "tainan": 35,
+        "taipei": 387,
+        "taitung": 38,
+        "taoyuan": 51,
+        "yunlin": 17
       }
     },
     "2026-11-28": {
-      "total": 353,
+      "total": 1524,
       "cities": {
-        "chiayi-city": 5,
+        "chiayi-city": 52,
         "hsinchu-city": 6,
-        "hualien": 10,
-        "kaohsiung": 50,
-        "keelung": 6,
+        "hualien": 50,
+        "kaohsiung": 260,
+        "keelung": 45,
         "miaoli": 4,
-        "new-taipei": 75,
-        "pingtung": 4,
-        "taichung": 40,
-        "tainan": 20,
-        "taipei": 116,
-        "taitung": 4,
-        "taoyuan": 9,
-        "yunlin": 4
+        "new-taipei": 310,
+        "pingtung": 37,
+        "taichung": 239,
+        "tainan": 34,
+        "taipei": 381,
+        "taitung": 38,
+        "taoyuan": 51,
+        "yunlin": 17
       }
     },
     "2026-11-29": {
-      "total": 387,
+      "total": 1471,
       "cities": {
         "changhua": 1,
-        "chiayi-city": 6,
+        "chiayi-city": 49,
         "hsinchu-city": 6,
-        "hualien": 10,
-        "kaohsiung": 55,
-        "keelung": 6,
+        "hualien": 50,
+        "kaohsiung": 257,
+        "keelung": 45,
         "miaoli": 4,
-        "new-taipei": 78,
-        "pingtung": 4,
-        "taichung": 49,
-        "tainan": 23,
-        "taipei": 128,
-        "taitung": 4,
-        "taoyuan": 9,
-        "yunlin": 4
+        "new-taipei": 300,
+        "pingtung": 38,
+        "taichung": 240,
+        "tainan": 35,
+        "taipei": 375,
+        "taitung": 38,
+        "taoyuan": 18,
+        "yunlin": 15
       }
     },
     "2026-11-30": {
-      "total": 191,
+      "total": 1443,
       "cities": {
+        "chiayi-city": 55,
         "hsinchu-city": 6,
-        "hualien": 5,
-        "kaohsiung": 13,
+        "hualien": 50,
+        "kaohsiung": 223,
+        "keelung": 45,
         "miaoli": 5,
-        "new-taipei": 44,
-        "taichung": 10,
-        "tainan": 15,
-        "taipei": 88,
-        "taoyuan": 5
+        "new-taipei": 291,
+        "pingtung": 38,
+        "taichung": 229,
+        "tainan": 33,
+        "taipei": 360,
+        "taitung": 38,
+        "taoyuan": 53,
+        "yunlin": 17
       }
     },
     "2026-12-01": {
-      "total": 83,
+      "total": 1338,
       "cities": {
-        "kaohsiung": 12,
-        "new-taipei": 17,
-        "taichung": 1,
-        "taipei": 53
+        "chiayi-city": 55,
+        "hualien": 45,
+        "kaohsiung": 226,
+        "keelung": 45,
+        "new-taipei": 263,
+        "pingtung": 38,
+        "taichung": 222,
+        "tainan": 19,
+        "taipei": 324,
+        "taitung": 38,
+        "taoyuan": 46,
+        "yunlin": 17
       }
     },
     "2026-12-02": {
-      "total": 67,
+      "total": 1342,
       "cities": {
-        "kaohsiung": 10,
-        "taipei": 57
+        "chiayi-city": 53,
+        "hualien": 44,
+        "kaohsiung": 227,
+        "keelung": 45,
+        "new-taipei": 263,
+        "pingtung": 38,
+        "taichung": 224,
+        "tainan": 18,
+        "taipei": 329,
+        "taitung": 38,
+        "taoyuan": 46,
+        "yunlin": 17
       }
     },
     "2026-12-03": {
-      "total": 56,
+      "total": 932,
       "cities": {
-        "kaohsiung": 10,
-        "taipei": 46
+        "chiayi-city": 53,
+        "hualien": 45,
+        "kaohsiung": 155,
+        "keelung": 45,
+        "new-taipei": 128,
+        "taichung": 217,
+        "tainan": 19,
+        "taipei": 215,
+        "taitung": 38,
+        "yunlin": 17
       }
     },
     "2026-12-04": {
-      "total": 8,
+      "total": 20,
       "cities": {
-        "kaohsiung": 8
+        "kaohsiung": 15,
+        "taipei": 5
       }
     },
     "2026-12-05": {
-      "total": 12,
+      "total": 18,
       "cities": {
-        "kaohsiung": 11,
+        "kaohsiung": 17,
         "taipei": 1
       }
     },
     "2026-12-06": {
-      "total": 14,
+      "total": 22,
       "cities": {
         "changhua": 1,
-        "kaohsiung": 12,
+        "kaohsiung": 20,
         "taipei": 1
       }
     },
     "2026-12-08": {
-      "total": 10,
+      "total": 17,
       "cities": {
-        "kaohsiung": 9,
+        "kaohsiung": 16,
         "taipei": 1
       }
     },
     "2026-12-09": {
-      "total": 8,
+      "total": 15,
       "cities": {
-        "kaohsiung": 8
+        "kaohsiung": 15
       }
     },
     "2026-12-10": {
-      "total": 9,
+      "total": 18,
       "cities": {
-        "kaohsiung": 9
+        "kaohsiung": 16,
+        "taipei": 2
       }
     },
     "2026-12-11": {
-      "total": 9,
+      "total": 15,
       "cities": {
-        "kaohsiung": 9
+        "kaohsiung": 15
       }
     },
     "2026-12-12": {
-      "total": 13,
+      "total": 19,
       "cities": {
-        "kaohsiung": 13
+        "kaohsiung": 19
       }
     },
     "2026-12-13": {
-      "total": 12,
+      "total": 19,
       "cities": {
-        "kaohsiung": 11,
+        "kaohsiung": 18,
         "taipei": 1
       }
     },
     "2026-12-15": {
-      "total": 199,
+      "total": 203,
       "cities": {
         "chiayi-city": 3,
         "hsinchu-city": 4,
         "hualien": 10,
-        "kaohsiung": 27,
+        "kaohsiung": 31,
         "keelung": 2,
         "miaoli": 4,
         "new-taipei": 38,
@@ -249,12 +253,12 @@
       }
     },
     "2026-12-16": {
-      "total": 330,
+      "total": 334,
       "cities": {
         "chiayi-city": 10,
         "hsinchu-city": 3,
         "hualien": 10,
-        "kaohsiung": 52,
+        "kaohsiung": 56,
         "keelung": 5,
         "miaoli": 8,
         "new-taipei": 72,
@@ -267,12 +271,12 @@
       }
     },
     "2026-12-17": {
-      "total": 329,
+      "total": 333,
       "cities": {
         "chiayi-city": 11,
         "hsinchu-city": 3,
         "hualien": 10,
-        "kaohsiung": 53,
+        "kaohsiung": 57,
         "keelung": 5,
         "miaoli": 8,
         "new-taipei": 74,
@@ -285,12 +289,12 @@
       }
     },
     "2026-12-18": {
-      "total": 326,
+      "total": 328,
       "cities": {
         "chiayi-city": 11,
         "hsinchu-city": 3,
         "hualien": 10,
-        "kaohsiung": 53,
+        "kaohsiung": 55,
         "keelung": 5,
         "miaoli": 8,
         "new-taipei": 74,
@@ -321,18 +325,18 @@
       }
     },
     "2026-12-20": {
-      "total": 322,
+      "total": 325,
       "cities": {
         "chiayi-city": 9,
         "hsinchu-city": 3,
         "hualien": 9,
-        "kaohsiung": 53,
+        "kaohsiung": 55,
         "keelung": 5,
         "miaoli": 8,
         "new-taipei": 70,
         "taichung": 45,
         "tainan": 24,
-        "taipei": 81,
+        "taipei": 82,
         "taitung": 3,
         "taoyuan": 11,
         "yunlin": 1
@@ -357,11 +361,11 @@
       }
     },
     "2026-12-22": {
-      "total": 181,
+      "total": 184,
       "cities": {
         "chiayi-city": 11,
         "hualien": 2,
-        "kaohsiung": 35,
+        "kaohsiung": 38,
         "keelung": 5,
         "miaoli": 3,
         "new-taipei": 33,
@@ -373,45 +377,45 @@
       }
     },
     "2026-12-23": {
-      "total": 13,
+      "total": 18,
       "cities": {
         "chiayi-city": 1,
-        "kaohsiung": 9,
+        "kaohsiung": 14,
         "new-taipei": 1,
         "taichung": 1,
         "taipei": 1
       }
     },
     "2026-12-24": {
-      "total": 10,
+      "total": 11,
       "cities": {
-        "kaohsiung": 10
+        "kaohsiung": 11
       }
     },
     "2026-12-25": {
-      "total": 12,
+      "total": 14,
       "cities": {
-        "kaohsiung": 12
+        "kaohsiung": 14
       }
     },
     "2026-12-26": {
-      "total": 12,
+      "total": 13,
       "cities": {
-        "kaohsiung": 12
+        "kaohsiung": 13
       }
     },
     "2026-12-27": {
-      "total": 12,
+      "total": 14,
       "cities": {
-        "kaohsiung": 12
+        "kaohsiung": 14
       }
     },
     "2026-12-29": {
-      "total": 26,
+      "total": 28,
       "cities": {
         "chiayi-city": 1,
         "hsinchu-city": 1,
-        "kaohsiung": 11,
+        "kaohsiung": 13,
         "new-taipei": 3,
         "taichung": 2,
         "tainan": 1,
@@ -420,15 +424,15 @@
       }
     },
     "2026-12-30": {
-      "total": 10,
+      "total": 11,
       "cities": {
-        "kaohsiung": 10
+        "kaohsiung": 11
       }
     },
     "2026-12-31": {
-      "total": 19,
+      "total": 20,
       "cities": {
-        "kaohsiung": 13,
+        "kaohsiung": 14,
         "new-taipei": 2,
         "taichung": 2,
         "taipei": 2
@@ -670,20 +674,20 @@
     }
   },
   "coverage": {
-    "showtime_rows": 7141,
-    "explicit_subtitle_rows": 87,
-    "international_title_rows": 6382,
-    "poster_rows": 6798,
-    "genre_rows": 6120,
-    "rating_rows": 3951,
+    "showtime_rows": 13981,
+    "explicit_subtitle_rows": 218,
+    "international_title_rows": 12918,
+    "poster_rows": 13787,
+    "genre_rows": 12587,
+    "rating_rows": 10383,
     "unique_title_pairs": {
-      "title_pairs": 151,
-      "with_international_title": 102,
-      "with_poster": 113,
-      "distinct_posters": 95,
-      "with_genres": 71,
-      "distinct_genre_codes": 18,
-      "with_known_age_rating": 81
+      "title_pairs": 179,
+      "with_international_title": 118,
+      "with_poster": 150,
+      "distinct_posters": 122,
+      "with_genres": 80,
+      "distinct_genre_codes": 19,
+      "with_known_age_rating": 100
     }
   },
   "movie_catalog": "movies/index.json; movie title, poster, genres, rating, and runtime are stored once and referenced by movie_id",
@@ -709,85 +713,85 @@
     "showtimes": {
       "moc-culture-movie-api": {
         "ok": true,
-        "showtimes": 669,
+        "showtimes": 763,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "fresh_showtimes": 669,
+        "fresh_showtimes": 763,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": "2026-10-24T18:59:27.328Z",
         "next_probe_at": null
       },
       "miramar-official-api": {
         "ok": true,
-        "showtimes": 651,
+        "showtimes": 578,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "fresh_showtimes": 651,
+        "fresh_showtimes": 578,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
       "ambassador-official-site": {
         "ok": true,
-        "showtimes": 957,
+        "showtimes": 2928,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "fresh_showtimes": 957,
+        "fresh_showtimes": 2928,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
       "showtimes-official-api": {
         "ok": true,
-        "showtimes": 2683,
+        "showtimes": 7505,
         "skipped": true,
         "disabled": false,
         "role": "Cloudflare Browser Run official bootstrap; direct API fallback only when remote browser is unavailable",
         "browser_fallback": "showtimes-official-cloudflare-bootstrap",
-        "browser_fallback_showtimes": 2683,
+        "browser_fallback_showtimes": 7505,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "fresh_showtimes": 2683,
+        "fresh_showtimes": 7505,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": "2026-11-18T01:00:31.999Z",
         "next_probe_at": null
       },
       "showtimes-official-cloudflare-bootstrap": {
         "ok": true,
-        "showtimes": 2683,
+        "showtimes": 7505,
         "role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "fresh_showtimes": 2683,
+        "fresh_showtimes": 7505,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": "2026-11-18T01:00:31.999Z",
         "next_probe_at": null
       },
       "spot-huashan-official-schedule": {
         "ok": true,
-        "showtimes": 53,
+        "showtimes": 96,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "fresh_showtimes": 53,
+        "fresh_showtimes": 96,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
@@ -798,14 +802,14 @@
         "disabled": true,
         "role": "direct HTTP fetch disabled; use Playwright against official schedule page",
         "browser_fallback": "eslite-official-browser",
-        "browser_fallback_showtimes": 34,
+        "browser_fallback_showtimes": 122,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
         "fresh_showtimes": 0,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": "2026-11-01T17:42:55.318Z",
         "next_probe_at": null
       },
@@ -821,7 +825,7 @@
         "fresh_showtimes": 0,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": null,
         "next_probe_at": null
       },
@@ -836,7 +840,7 @@
         "fresh_showtimes": 0,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": "2026-11-01T22:52:01.331Z",
         "next_probe_at": null
       },
@@ -851,35 +855,35 @@
         "fresh_showtimes": 0,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": "2026-11-11T13:29:51.719Z",
         "next_probe_at": null
       },
       "eslite-official-browser": {
         "ok": true,
-        "showtimes": 34,
+        "showtimes": 122,
         "acquisition_method": "first-party-eslite-browser",
         "pages_requested": 1,
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
-        "fresh_showtimes": 34,
+        "fresh_showtimes": 122,
         "fallback_showtimes": 0,
         "fallback": null,
-        "last_success_at": "2026-11-25T02:02:05.796Z",
+        "last_success_at": "2026-11-26T06:15:01.714Z",
         "last_failure_at": "2026-11-18T01:00:31.999Z",
         "next_probe_at": null
       },
       "vieshow-official-browser": {
         "ok": true,
-        "showtimes": 2103,
+        "showtimes": 2063,
         "manual_snapshot": true,
         "role": "manual browser snapshot; refresh from official branch pages, not GitHub Actions",
         "health": "healthy",
         "circuit_state": "closed",
         "failure_count": 0,
         "fresh_showtimes": 0,
-        "fallback_showtimes": 2103,
+        "fallback_showtimes": 2063,
         "fallback": "manual-browser-snapshot",
         "last_success_at": "2026-10-27T02:19:11.397Z",
         "last_failure_at": null,
@@ -890,7 +894,7 @@
       "source": "ShowTimes official bootstrap program records",
       "retrieved_at": "2026-11-11T13:50:00.000Z",
       "programs": 84,
-      "cross_source_exact_title_enriched_rows": 1285
+      "cross_source_exact_title_enriched_rows": 2715
     }
   },
   "cities": {
@@ -898,25 +902,25 @@
       "cinemas": 30,
       "active_cinemas": 7,
       "unknown_cinemas": 23,
-      "showtimes": 1917
+      "showtimes": 3338
     },
     "new-taipei": {
       "cinemas": 13,
       "active_cinemas": 5,
       "unknown_cinemas": 8,
-      "showtimes": 1339
+      "showtimes": 2644
     },
     "keelung": {
       "cinemas": 1,
       "active_cinemas": 1,
       "unknown_cinemas": 0,
-      "showtimes": 137
+      "showtimes": 394
     },
     "taoyuan": {
       "cinemas": 9,
       "active_cinemas": 1,
       "unknown_cinemas": 8,
-      "showtimes": 197
+      "showtimes": 389
     },
     "hsinchu-city": {
       "cinemas": 2,
@@ -940,7 +944,7 @@
       "cinemas": 13,
       "active_cinemas": 3,
       "unknown_cinemas": 10,
-      "showtimes": 951
+      "showtimes": 2183
     },
     "changhua": {
       "cinemas": 1,
@@ -958,13 +962,13 @@
       "cinemas": 2,
       "active_cinemas": 1,
       "unknown_cinemas": 1,
-      "showtimes": 50
+      "showtimes": 139
     },
     "chiayi-city": {
       "cinemas": 3,
       "active_cinemas": 1,
       "unknown_cinemas": 2,
-      "showtimes": 210
+      "showtimes": 510
     },
     "chiayi-county": {
       "cinemas": 0,
@@ -976,19 +980,19 @@
       "cinemas": 9,
       "active_cinemas": 1,
       "unknown_cinemas": 8,
-      "showtimes": 305
+      "showtimes": 397
     },
     "kaohsiung": {
       "cinemas": 10,
       "active_cinemas": 4,
       "unknown_cinemas": 6,
-      "showtimes": 1519
+      "showtimes": 2817
     },
     "pingtung": {
       "cinemas": 2,
       "active_cinemas": 1,
       "unknown_cinemas": 1,
-      "showtimes": 83
+      "showtimes": 263
     },
     "yilan": {
       "cinemas": 2,
@@ -1000,13 +1004,13 @@
       "cinemas": 2,
       "active_cinemas": 1,
       "unknown_cinemas": 1,
-      "showtimes": 198
+      "showtimes": 452
     },
     "taitung": {
       "cinemas": 1,
       "active_cinemas": 1,
       "unknown_cinemas": 0,
-      "showtimes": 106
+      "showtimes": 326
     },
     "penghu": {
       "cinemas": 1,
@@ -1041,6 +1045,6 @@
   },
   "refresh_policy": {
     "cadence": "at most once per Taiwan calendar day",
-    "last_completed_taiwan_date": "2026-11-25"
+    "last_completed_taiwan_date": "2026-11-26"
   }
 }

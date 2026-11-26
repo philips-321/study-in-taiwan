@@ -1,43 +1,91 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-25T02:10:00.492Z",
+  "generated_at": "2026-11-26T06:15:13.886Z",
   "public_window": {
-    "as_of": "2026-11-25",
-    "end_date": "2026-12-25",
-    "rows": 6971,
-    "expected_rows": 6971
+    "as_of": "2026-11-26",
+    "end_date": "2026-12-26",
+    "rows": 13844,
+    "expected_rows": 13844
   },
   "ids": {
-    "active_movies": 177,
+    "active_movies": 206,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 177,
-    "available": 175,
-    "missing": 2,
+    "active_movies": 206,
+    "available": 192,
+    "missing": 14,
     "canonical_registry": {
-      "unique_active_films": 149,
-      "poster_yes": 144,
-      "poster_no": 5,
+      "unique_active_films": 159,
+      "poster_yes": 141,
+      "poster_no": 18,
       "fetch_states": {
-        "ambiguous": 3,
-        "found_manual": 86,
+        "ambiguous": 8,
+        "found_manual": 83,
         "found_official": 16,
-        "not_found": 2,
+        "not_found": 10,
         "reused": 42
       }
     },
     "missing_movies": [
       {
+        "movie_id": "m_f15c5558aaf2",
+        "movie_title": "窗外有藍天 4K全新修復"
+      },
+      {
+        "movie_id": "m_bc91c6a325a7",
+        "movie_title": "被消失的家園"
+      },
+      {
+        "movie_id": "m_9c4e4418b80d",
+        "movie_title": "比爾艾文斯三重奏變"
+      },
+      {
+        "movie_id": "m_b24275a31af3",
+        "movie_title": "（限定場）黑球"
+      },
+      {
         "movie_id": "m_a0365cd6725d",
         "movie_title": "2026年11月【和美鎮立圖書館-電影欣賞】"
       },
       {
+        "movie_id": "m_d91a2691e99c",
+        "movie_title": "完美家庭風暴 (搶先看)"
+      },
+      {
+        "movie_id": "m_c39fa9c51e19",
+        "movie_title": "燕尾蝶 4K全新修復版 (搶先看)"
+      },
+      {
+        "movie_id": "m_20ebbc7765cc",
+        "movie_title": "12月高雄市電影館｜比爾艾文斯三重奏變"
+      },
+      {
+        "movie_id": "m_6f4f7a4823dc",
+        "movie_title": "12月高雄市電影館｜第四幕"
+      },
+      {
+        "movie_id": "m_3275e9686318",
+        "movie_title": "就是柳柳的他(搶先場)"
+      },
+      {
+        "movie_id": "m_b2fa5778d248",
+        "movie_title": "12月高雄市電影館｜日光"
+      },
+      {
         "movie_id": "m_57990b5e8193",
         "movie_title": "2026年12月【和美鎮立圖書館-電影欣賞】"
+      },
+      {
+        "movie_id": "m_84e285c3af87",
+        "movie_title": "12月高雄市電影館｜燕尾蝶 4K全新修復版"
+      },
+      {
+        "movie_id": "m_584a5f5fef84",
+        "movie_title": "非普通教慾：4K數位修復版－早安！周日經典電影院"
       }
     ],
     "missing_samples_capped_at": 200,
@@ -50,9 +98,10 @@
         "movie_ids": [
           "m_06f5422d36b4",
           "m_3c9b4dcf2964",
-          "m_c3c66546e59b"
+          "m_c3c66546e59b",
+          "m_fdf4ea58dcac"
         ],
-        "poster_count": 3
+        "poster_count": 4
       },
       {
         "titles": [
@@ -74,6 +123,17 @@
         "movie_ids": [
           "m_22bc89ac6866",
           "m_730baf7f4574"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "大搜查線 N.E.W.",
+          "大搜查線N.E.W."
+        ],
+        "movie_ids": [
+          "m_25cc80ed5dbf",
+          "m_df0000c0bac2"
         ],
         "poster_count": 2
       },
@@ -134,6 +194,19 @@
       },
       {
         "titles": [
+          "You Can See Everything",
+          "YOU CAN SEE EVERYTHING"
+        ],
+        "movie_ids": [
+          "m_4bccffa6eb5f",
+          "m_921dfc509e1e",
+          "m_c55ea90c7a47",
+          "m_d94f3b753d01"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
           "門當父不對之親家駕到",
           "門當父不對之親家駕到 特別場"
         ],
@@ -151,6 +224,28 @@
         "movie_ids": [
           "m_6b1eeff1a4c1",
           "m_acaa526840e4"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "DUNE",
+          "Dune"
+        ],
+        "movie_ids": [
+          "m_6fab15c432bf",
+          "m_dd7cc0122e18"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "HAIKYU!! THE DUMPSTER BATTLE",
+          "Haikyu!!: The Dumpster Battle"
+        ],
+        "movie_ids": [
+          "m_71d8afa8c01b",
+          "m_b2c8a143338a"
         ],
         "poster_count": 2
       },
