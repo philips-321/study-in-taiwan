@@ -135,8 +135,11 @@ jobs:
           CINEMA_PLAYWRIGHT_MODULE: ${{ runner.temp }}/cinema-browser/node_modules/playwright/index.mjs
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CINEMA_USE_LOCAL_BROWSER: ${{ github.event_name == 'workflow_dispatch' && inputs.browser_mode == 'local' }}
-          CINEMA_REQUIRE_REMOTE_BROWSER: ${{ github.event_name == 'schedule' || inputs.browser_mode == 'remote' }}
+          # Scheduled runs use the runner's Chromium directly. The remote
+          # Cloudflare browser is opt-in for manual diagnostics only because
+          # an expired/mis-scoped token must not take down the daily refresh.
+          CINEMA_USE_LOCAL_BROWSER: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.browser_mode == 'local') }}
+          CINEMA_REQUIRE_REMOTE_BROWSER: ${{ github.event_name == 'workflow_dispatch' && inputs.browser_mode == 'remote' }}
           CINEMA_FAIL_FAST_ON_SOURCE_ERROR: 'true'
         run: |
           set -euo pipefail
@@ -153,6 +156,8 @@ jobs:
           CINEMA_PLAYWRIGHT_MODULE: ${{ runner.temp }}/cinema-browser/node_modules/playwright/index.mjs
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CINEMA_USE_LOCAL_BROWSER: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.browser_mode == 'local') }}
+          CINEMA_REQUIRE_REMOTE_BROWSER: ${{ github.event_name == 'workflow_dispatch' && inputs.browser_mode == 'remote' }}
         run: node cinema/scripts/audit-cinema-source-registry.mjs
 
       - name: Restore failed-source last-known-good rows and source health
