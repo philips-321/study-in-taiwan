@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-26T06:15:13.296Z",
+  "generated_at": "2026-11-27T15:53:05.281Z",
   "policy": "Append-only known poster records. Never delete a poster only because its film is temporarily absent; consider deletion only after confirmed no Taiwan cinema screenings for 180 days. Exact normalized title aliases are reused; preferred records are honored; ambiguous poster candidates remain unmatched.",
   "movies": [
     {
@@ -1520,6 +1520,54 @@
       ]
     },
     {
+      "movie_id": "m_04199b81b057",
+      "movie_title": "12月高雄市電影館｜正義女聲",
+      "poster_url": "https://image.tmdb.org/t/p/w500/s0BNmv4jtWp2XClygvzGqPQ0TQp.jpg",
+      "aliases": [
+        "12月高雄市電影館｜正義女聲"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_94b3849319c4",
+      "movie_title": "12月高雄市電影館｜白色情迷",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027144541878.jpg",
+      "aliases": [
+        "12月高雄市電影館｜白色情迷"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_204cbbf110e2",
+      "movie_title": "12月高雄市電影館｜沙丘：第三部",
+      "poster_url": "https://assets.showtimes.com.tw/images/deadeb649408fdba47e76fe967c60f54.jpg",
+      "aliases": [
+        "12月高雄市電影館｜沙丘：第三部"
+      ],
+      "sources": [
+        "archived-movie-catalog",
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "current-movie-catalog",
+        "miramar-official-api",
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "showtimes-official-api",
+        "showtimes-official-metadata",
+        "showtimes-official-program",
+        "vieshow-muvie-songren-official",
+        "vieshow-official-browser"
+      ]
+    },
+    {
       "movie_id": "m_83237c6650d0",
       "movie_title": "12月高雄市電影館｜東京教父 4K修復",
       "poster_url": "https://imgs2.utiki.com.tw/Data/ERA/Images/UTK2401/P1ILEDRB_Other.JPG?v=202611230832",
@@ -1533,6 +1581,32 @@
         "ticket-com-tw-official-program-page"
       ],
       "preferred": true
+    },
+    {
+      "movie_id": "m_bbd779849b6c",
+      "movie_title": "12月高雄市電影館｜泡泡糖女孩",
+      "poster_url": "https://image.tmdb.org/t/p/w500/9WKeQ2rOHxVbl93DvmL8DpycF2d.jpg",
+      "aliases": [
+        "12月高雄市電影館｜泡泡糖女孩"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
+      "movie_id": "m_fc30edd842db",
+      "movie_title": "12月高雄市電影館｜肯尼斯布萊納之哈姆雷特",
+      "poster_url": "https://image.tmdb.org/t/p/w500/ilurgUOp6SCl4cuhfjctj1qxlfZ.jpg",
+      "aliases": [
+        "12月高雄市電影館｜肯尼斯布萊納之哈姆雷特"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
     },
     {
       "movie_id": "m_3e65890c75ed",
@@ -1635,6 +1709,19 @@
       ]
     },
     {
+      "movie_id": "m_d988dc07d645",
+      "movie_title": "12月高雄市電影館｜就是柳柳的他",
+      "poster_url": "https://image.tmdb.org/t/p/w500/jU1waMPXONkQbPCP1Ec8AVMuqZV.jpg",
+      "aliases": [
+        "12月高雄市電影館｜就是柳柳的他"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_a60e64f6f9ec",
       "movie_title": "12月高雄市電影館｜窗外有藍天 4K經典數位修復",
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027171904864.jpg",
@@ -1690,6 +1777,19 @@
       "preferred": true
     },
     {
+      "movie_id": "m_443ebc65b84d",
+      "movie_title": "12月高雄市電影館｜蜂蜜幸運草",
+      "poster_url": "https://image.tmdb.org/t/p/w500/qP6Bho2vJ6S863AeJDsHSCfa3ID.jpg",
+      "aliases": [
+        "12月高雄市電影館｜蜂蜜幸運草"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_d0a605675202",
       "movie_title": "12月高雄市電影館｜與達賴喇嘛談心：尋找幸福的智慧",
       "poster_url": "https://kfa.kcg.gov.tw/files/20261027152349433.jpg",
@@ -1736,6 +1836,19 @@
       "poster_url": "https://swiatowid.elblag.pl/storage/informations/13321.jpg",
       "aliases": [
         "12月高雄市電影館｜蕭邦！蕭邦！"
+      ],
+      "sources": [
+        "canonical-poster-title-match",
+        "moc-culture-movie-api",
+        "previous-catalog"
+      ]
+    },
+    {
+      "movie_id": "m_cad68131389f",
+      "movie_title": "12月高雄市電影館｜藍色情挑",
+      "poster_url": "https://kfa.kcg.gov.tw/files/20261027145029841.jpg",
+      "aliases": [
+        "12月高雄市電影館｜藍色情挑"
       ],
       "sources": [
         "canonical-poster-title-match",
@@ -2911,6 +3024,29 @@
         "DUNE: PART THREE",
         "Dune: Part Three",
         "沙丘：第三部"
+      ],
+      "sources": [
+        "archived-movie-catalog",
+        "canonical-manual-poster",
+        "canonical-poster-title-match",
+        "current-movie-catalog",
+        "miramar-official-api",
+        "previous-catalog",
+        "showtimes-official-api",
+        "showtimes-official-cloudflare-bootstrap",
+        "showtimes-official-metadata",
+        "showtimes-official-program",
+        "vieshow-muvie-songren-official",
+        "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_c749e0ee2576",
+      "movie_title": "沙丘：第三部 首日首場特別場",
+      "poster_url": "https://assets.showtimes.com.tw/images/deadeb649408fdba47e76fe967c60f54.jpg",
+      "aliases": [
+        "DUNE: PART THREE",
+        "沙丘：第三部 首日首場特別場"
       ],
       "sources": [
         "archived-movie-catalog",
@@ -4411,6 +4547,19 @@
       ]
     },
     {
+      "movie_id": "m_79a6a3c2d013",
+      "movie_title": "接觸未來",
+      "poster_url": "https://image.tmdb.org/t/p/w500/yOQlVT5CJhFJsFhrIyarpH6871z.jpg",
+      "aliases": [
+        "接觸未來"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_7b6b3fbc5ecf",
       "movie_title": "晚窒息",
       "poster_url": "https://assets.showtimes.com.tw/images/e9397df3eb88a1915673ac4c4996ea99.jpg",
@@ -4443,6 +4592,19 @@
       "preferred": true
     },
     {
+      "movie_id": "m_41994dd437fe",
+      "movie_title": "異星入境",
+      "poster_url": "https://image.tmdb.org/t/p/w500/wLTrOjouU56VdwlLiCgaIdwyff2.jpg",
+      "aliases": [
+        "異星入境"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
+      ]
+    },
+    {
       "movie_id": "m_9497bbcaa887",
       "movie_title": "皎潔深宵之月",
       "poster_url": "https://assets.showtimes.com.tw/images/76982140efa8feff916b0bbc6efc9080.jpg",
@@ -4457,6 +4619,19 @@
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap",
         "vieshow-official-browser"
+      ]
+    },
+    {
+      "movie_id": "m_d317597c212b",
+      "movie_title": "第三類接觸",
+      "poster_url": "https://image.tmdb.org/t/p/w500/dTWvLWur0XM7YezSTSoZxZ7gDfM.jpg",
+      "aliases": [
+        "第三類接觸"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
       ]
     },
     {
@@ -4736,6 +4911,19 @@
         "previous-catalog",
         "showtimes-official-cloudflare-bootstrap",
         "spot-huashan-official-schedule"
+      ]
+    },
+    {
+      "movie_id": "m_839270cebe39",
+      "movie_title": "喵的奇幻漂流",
+      "poster_url": "https://image.tmdb.org/t/p/w500/myG36fCGf6AMRQdWASJ66izCn7C.jpg",
+      "aliases": [
+        "喵的奇幻漂流"
+      ],
+      "sources": [
+        "moc-culture-movie-api",
+        "previous-catalog",
+        "the-movie-database"
       ]
     },
     {

@@ -1,33 +1,35 @@
 {
   "schema": "cinema-poster-id-audit",
-  "generated_at": "2026-11-26T06:15:13.886Z",
+  "generated_at": "2026-11-27T15:53:05.929Z",
   "public_window": {
-    "as_of": "2026-11-26",
-    "end_date": "2026-12-26",
-    "rows": 13844,
-    "expected_rows": 13844
+    "as_of": "2026-11-27",
+    "end_date": "2026-12-27",
+    "rows": 11034,
+    "expected_rows": 11034
   },
   "ids": {
-    "active_movies": 206,
+    "active_movies": 217,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 206,
-    "available": 192,
-    "missing": 14,
+    "active_movies": 217,
+    "available": 185,
+    "missing": 32,
     "canonical_registry": {
-      "unique_active_films": 159,
-      "poster_yes": 141,
-      "poster_no": 18,
+      "unique_active_films": 170,
+      "poster_yes": 134,
+      "poster_no": 36,
       "fetch_states": {
-        "ambiguous": 8,
-        "found_manual": 83,
+        "ambiguous": 5,
+        "cooldown": 3,
+        "found": 8,
+        "found_manual": 72,
         "found_official": 16,
-        "not_found": 10,
-        "reused": 42
+        "not_found": 28,
+        "reused": 38
       }
     },
     "missing_movies": [
@@ -76,6 +78,14 @@
         "movie_title": "12月高雄市電影館｜日光"
       },
       {
+        "movie_id": "m_13f28d4073e7",
+        "movie_title": "安納塔漢奇譚"
+      },
+      {
+        "movie_id": "m_c3f188d97614",
+        "movie_title": "海浦春潮"
+      },
+      {
         "movie_id": "m_57990b5e8193",
         "movie_title": "2026年12月【和美鎮立圖書館-電影欣賞】"
       },
@@ -84,8 +94,72 @@
         "movie_title": "12月高雄市電影館｜燕尾蝶 4K全新修復版"
       },
       {
+        "movie_id": "m_9f7d43fb622f",
+        "movie_title": "國寶"
+      },
+      {
+        "movie_id": "m_eae856ef049a",
+        "movie_title": "徵婚啟事（數位修復版）"
+      },
+      {
+        "movie_id": "m_fd1d5f3ec954",
+        "movie_title": "男人之禁地"
+      },
+      {
+        "movie_id": "m_bbcf34274da5",
+        "movie_title": "女與男"
+      },
+      {
+        "movie_id": "m_4c0457c4e6e7",
+        "movie_title": "12月高雄市電影館｜無處安放我的雙眼"
+      },
+      {
+        "movie_id": "m_252b084fca1e",
+        "movie_title": "慾海奇花"
+      },
+      {
+        "movie_id": "m_f0a21a1b7d54",
+        "movie_title": "女真珠王"
+      },
+      {
+        "movie_id": "m_346bfe184d46",
+        "movie_title": "禁海黑珍珠"
+      },
+      {
+        "movie_id": "m_c89d0e265c7c",
+        "movie_title": "快樂腳"
+      },
+      {
+        "movie_id": "m_84b139537778",
+        "movie_title": "沙丘：第三部_紀念銀幕票卡 特別場"
+      },
+      {
+        "movie_id": "m_4fb7c5360194",
+        "movie_title": "12月高雄市電影館｜金法尤物 4K修復"
+      },
+      {
+        "movie_id": "m_cb33246688f4",
+        "movie_title": "蚵女"
+      },
+      {
+        "movie_id": "m_37d070fa7fb0",
+        "movie_title": "12月高雄市電影館｜燃燒歲月 4K修復"
+      },
+      {
+        "movie_id": "m_25d6d7fb81bb",
+        "movie_title": "殘菊物語"
+      },
+      {
         "movie_id": "m_584a5f5fef84",
         "movie_title": "非普通教慾：4K數位修復版－早安！周日經典電影院"
+      },
+      {
+        "movie_id": "m_8f6ec12ae7c7",
+        "movie_title": "12月高雄市電影館｜鼠門秀"
+      },
+      {
+        "movie_id": "m_021b69c7d03b",
+        "movie_title": "12月高雄市電影館｜見晴世代"
       }
     ],
     "missing_samples_capped_at": 200,
@@ -202,6 +276,17 @@
           "m_921dfc509e1e",
           "m_c55ea90c7a47",
           "m_d94f3b753d01"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
+          "DUNE: PART THREE",
+          "Dune: Part Three"
+        ],
+        "movie_ids": [
+          "m_5c7d6f8b8ffc",
+          "m_c749e0ee2576"
         ],
         "poster_count": 2
       },

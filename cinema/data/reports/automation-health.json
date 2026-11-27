@@ -1,9 +1,9 @@
 {
   "schema": "cinema-automation-health",
-  "generated_at": "2026-11-26T06:15:13.886Z",
+  "generated_at": "2026-11-27T15:53:05.929Z",
   "browser_source_registry": {
-    "checked_at": "2026-11-26T06:15:01.655Z",
-    "run_id": "45766749491",
+    "checked_at": "2026-11-27T15:52:54.583Z",
+    "run_id": "46028510238",
     "registry_cinemas": 107,
     "registry_bindings": 107,
     "official_urls": 49,
@@ -17,31 +17,31 @@
       "handled_by_schedule_adapter": 1,
       "http_error": 1,
       "needs_official_schedule_url": 54,
-      "page_loaded_no_schedule_signals": 2,
-      "page_loaded_schedule_signals_found": 8,
+      "page_loaded_no_schedule_signals": 3,
+      "page_loaded_schedule_signals_found": 7,
       "schedule_adapter_no_rows": 15,
       "suppressed_after_recent_host_403": 22
     }
   },
   "public_window": {
-    "as_of": "2026-11-26",
-    "end_date": "2026-12-26",
-    "rows": 13844,
-    "expected_rows": 13844
+    "as_of": "2026-11-27",
+    "end_date": "2026-12-27",
+    "rows": 11034,
+    "expected_rows": 11034
   },
   "schedule_freshness": {
-    "checked_at": "2026-11-26T06:15:04.469Z",
-    "as_of": "2026-11-26",
-    "stale_screenings_in_window": 263,
-    "stale_marked_this_run": 261,
-    "pending_candidates": 84,
-    "fresh_snapshot_rows": 11918,
-    "last_known_good_rows": 2063,
-    "public_excluded_stale_status_rows": 263,
-    "public_excluded_stale_fallback_rows": 56,
+    "checked_at": "2026-11-27T15:52:57.786Z",
+    "as_of": "2026-11-27",
+    "stale_screenings_in_window": 240,
+    "stale_marked_this_run": 46,
+    "pending_candidates": 144,
+    "fresh_snapshot_rows": 11139,
+    "last_known_good_rows": 1826,
+    "public_excluded_stale_status_rows": 240,
+    "public_excluded_stale_fallback_rows": 1971,
     "public_excluded_stale_fallback_by_source": {
-      "showtimes-official-api": 35,
-      "vieshow-official-browser": 21
+      "vieshow-official-browser": 1936,
+      "showtimes-official-api": 35
     },
     "fallback_max_age_hours": 168,
     "policy": "A screening is marked stale only after it is absent from two consecutive Taiwan-day snapshots in which the same source, cinema, and date scope still returns fresh rows. Stale rows remain archived and are excluded from the public view."
@@ -52,12 +52,12 @@
       "moc-culture-movie-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 763,
-        "fresh_showtimes": 763,
+        "showtimes": 894,
+        "fresh_showtimes": 894,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -78,12 +78,12 @@
       "miramar-official-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 578,
-        "fresh_showtimes": 578,
+        "showtimes": 493,
+        "fresh_showtimes": 493,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -104,12 +104,12 @@
       "ambassador-official-site": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 2928,
-        "fresh_showtimes": 2928,
+        "showtimes": 2891,
+        "fresh_showtimes": 2891,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -130,12 +130,12 @@
       "showtimes-official-api": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 7505,
-        "fresh_showtimes": 7505,
+        "showtimes": 6765,
+        "fresh_showtimes": 6765,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -156,12 +156,12 @@
       "showtimes-official-cloudflare-bootstrap": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 7505,
-        "fresh_showtimes": 7505,
+        "showtimes": 6765,
+        "fresh_showtimes": 6765,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -187,7 +187,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -213,7 +213,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -239,7 +239,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -265,7 +265,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -291,7 +291,7 @@
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -312,12 +312,12 @@
       "eslite-official-browser": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 122,
-        "fresh_showtimes": 122,
+        "showtimes": 96,
+        "fresh_showtimes": 96,
         "fallback_showtimes": 0,
         "error": null,
         "retrieved_at": null,
-        "last_success_at": "2026-11-26T06:15:01.714Z",
+        "last_success_at": "2026-11-27T15:52:54.644Z",
         "next_probe_at": null,
         "retry_suppressed": false,
         "retry_after": null,
@@ -338,9 +338,9 @@
       "vieshow-official-browser": {
         "health": "healthy",
         "ok": true,
-        "showtimes": 2063,
+        "showtimes": 1826,
         "fresh_showtimes": 0,
-        "fallback_showtimes": 2063,
+        "fallback_showtimes": 1826,
         "error": null,
         "retrieved_at": null,
         "last_success_at": "2026-10-27T02:19:11.397Z",
@@ -521,26 +521,28 @@
     }
   },
   "ids": {
-    "active_movies": 206,
+    "active_movies": 217,
     "missing_movie_references": [],
     "missing_movie_reference_samples_capped_at": 200,
     "unknown_non_moc_cinema_references": [],
     "unknown_cinema_samples_capped_at": 200
   },
   "posters": {
-    "active_movies": 206,
-    "available": 192,
-    "missing": 14,
+    "active_movies": 217,
+    "available": 185,
+    "missing": 32,
     "canonical_registry": {
-      "unique_active_films": 159,
-      "poster_yes": 141,
-      "poster_no": 18,
+      "unique_active_films": 170,
+      "poster_yes": 134,
+      "poster_no": 36,
       "fetch_states": {
-        "ambiguous": 8,
-        "found_manual": 83,
+        "ambiguous": 5,
+        "cooldown": 3,
+        "found": 8,
+        "found_manual": 72,
         "found_official": 16,
-        "not_found": 10,
-        "reused": 42
+        "not_found": 28,
+        "reused": 38
       }
     },
     "missing_movies": [
@@ -589,6 +591,14 @@
         "movie_title": "12月高雄市電影館｜日光"
       },
       {
+        "movie_id": "m_13f28d4073e7",
+        "movie_title": "安納塔漢奇譚"
+      },
+      {
+        "movie_id": "m_c3f188d97614",
+        "movie_title": "海浦春潮"
+      },
+      {
         "movie_id": "m_57990b5e8193",
         "movie_title": "2026年12月【和美鎮立圖書館-電影欣賞】"
       },
@@ -597,8 +607,72 @@
         "movie_title": "12月高雄市電影館｜燕尾蝶 4K全新修復版"
       },
       {
+        "movie_id": "m_9f7d43fb622f",
+        "movie_title": "國寶"
+      },
+      {
+        "movie_id": "m_eae856ef049a",
+        "movie_title": "徵婚啟事（數位修復版）"
+      },
+      {
+        "movie_id": "m_fd1d5f3ec954",
+        "movie_title": "男人之禁地"
+      },
+      {
+        "movie_id": "m_bbcf34274da5",
+        "movie_title": "女與男"
+      },
+      {
+        "movie_id": "m_4c0457c4e6e7",
+        "movie_title": "12月高雄市電影館｜無處安放我的雙眼"
+      },
+      {
+        "movie_id": "m_252b084fca1e",
+        "movie_title": "慾海奇花"
+      },
+      {
+        "movie_id": "m_f0a21a1b7d54",
+        "movie_title": "女真珠王"
+      },
+      {
+        "movie_id": "m_346bfe184d46",
+        "movie_title": "禁海黑珍珠"
+      },
+      {
+        "movie_id": "m_c89d0e265c7c",
+        "movie_title": "快樂腳"
+      },
+      {
+        "movie_id": "m_84b139537778",
+        "movie_title": "沙丘：第三部_紀念銀幕票卡 特別場"
+      },
+      {
+        "movie_id": "m_4fb7c5360194",
+        "movie_title": "12月高雄市電影館｜金法尤物 4K修復"
+      },
+      {
+        "movie_id": "m_cb33246688f4",
+        "movie_title": "蚵女"
+      },
+      {
+        "movie_id": "m_37d070fa7fb0",
+        "movie_title": "12月高雄市電影館｜燃燒歲月 4K修復"
+      },
+      {
+        "movie_id": "m_25d6d7fb81bb",
+        "movie_title": "殘菊物語"
+      },
+      {
         "movie_id": "m_584a5f5fef84",
         "movie_title": "非普通教慾：4K數位修復版－早安！周日經典電影院"
+      },
+      {
+        "movie_id": "m_8f6ec12ae7c7",
+        "movie_title": "12月高雄市電影館｜鼠門秀"
+      },
+      {
+        "movie_id": "m_021b69c7d03b",
+        "movie_title": "12月高雄市電影館｜見晴世代"
       }
     ],
     "missing_samples_capped_at": 200,
@@ -720,6 +794,17 @@
       },
       {
         "titles": [
+          "DUNE: PART THREE",
+          "Dune: Part Three"
+        ],
+        "movie_ids": [
+          "m_5c7d6f8b8ffc",
+          "m_c749e0ee2576"
+        ],
+        "poster_count": 2
+      },
+      {
+        "titles": [
           "門當父不對之親家駕到",
           "門當父不對之親家駕到 特別場"
         ],
@@ -779,26 +864,26 @@
   },
   "matching": {
     "collector_diagnostic_counts": {
-      "ambiguous_movie_metadata": 39,
+      "ambiguous_movie_metadata": 33,
       "ambiguous_cinema_matches": 0,
-      "unmatched_cinema_matches": 7
+      "unmatched_cinema_matches": 10
     },
     "ambiguous_movie_metadata": [
       {
-        "source": "miramar-official-api",
+        "source": "showtimes-official-cloudflare-bootstrap",
         "city": "taipei",
-        "title": "搶銀行先修班",
-        "alternate_title": "HOW TO ROB A BANK",
+        "title": "飢餓遊戲：黎明收割",
+        "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
         "metadata_candidates": [
           {
-            "title": "搶銀行先修班 特別場",
-            "title_en": "How To Rob a Bank",
-            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
+            "title": "飢餓遊戲：黎明收割 特別場",
+            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+            "poster_url": "https://assets.showtimes.com.tw/images/9d7a34cd7ae6c30a2fee8a3bddce9f43.jpg"
           },
           {
-            "title": "搶銀行先修班",
-            "title_en": "HOW TO ROB A BANK",
-            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
+            "title": "飢餓遊戲：黎明收割",
+            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+            "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
           }
         ]
       },
@@ -823,18 +908,18 @@
       {
         "source": "showtimes-official-cloudflare-bootstrap",
         "city": "taipei",
-        "title": "飢餓遊戲：黎明收割",
-        "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+        "title": "劇場版 吉伊卡哇 人魚島的秘密",
+        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
         "metadata_candidates": [
           {
-            "title": "飢餓遊戲：黎明收割 特別場",
-            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-            "poster_url": "https://assets.showtimes.com.tw/images/9d7a34cd7ae6c30a2fee8a3bddce9f43.jpg"
+            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
           },
           {
-            "title": "飢餓遊戲：黎明收割",
-            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-            "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
+            "title": "劇場版 吉伊卡哇 人魚島的秘密",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
           }
         ]
       },
@@ -853,24 +938,6 @@
             "title": "搶銀行先修班",
             "title_en": "HOW TO ROB A BANK",
             "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "taipei",
-        "title": "劇場版 吉伊卡哇 人魚島的秘密",
-        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
-        "metadata_candidates": [
-          {
-            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
-            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
-            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
-          },
-          {
-            "title": "劇場版 吉伊卡哇 人魚島的秘密",
-            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
-            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
           }
         ]
       },
@@ -895,42 +962,6 @@
       {
         "source": "showtimes-official-cloudflare-bootstrap",
         "city": "new-taipei",
-        "title": "飢餓遊戲：黎明收割",
-        "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-        "metadata_candidates": [
-          {
-            "title": "飢餓遊戲：黎明收割 特別場",
-            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-            "poster_url": "https://assets.showtimes.com.tw/images/9d7a34cd7ae6c30a2fee8a3bddce9f43.jpg"
-          },
-          {
-            "title": "飢餓遊戲：黎明收割",
-            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
-            "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "new-taipei",
-        "title": "搶銀行先修班",
-        "alternate_title": "HOW TO ROB A BANK",
-        "metadata_candidates": [
-          {
-            "title": "搶銀行先修班 特別場",
-            "title_en": "How To Rob a Bank",
-            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
-          },
-          {
-            "title": "搶銀行先修班",
-            "title_en": "HOW TO ROB A BANK",
-            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "new-taipei",
         "title": "劇場版 吉伊卡哇 人魚島的秘密 (國語版)",
         "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
         "metadata_candidates": [
@@ -949,18 +980,36 @@
       {
         "source": "showtimes-official-cloudflare-bootstrap",
         "city": "new-taipei",
-        "title": "劇場版 吉伊卡哇 人魚島的秘密",
-        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+        "title": "飢餓遊戲：黎明收割",
+        "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
         "metadata_candidates": [
           {
-            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
-            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
-            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
+            "title": "飢餓遊戲：黎明收割 特別場",
+            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+            "poster_url": "https://assets.showtimes.com.tw/images/9d7a34cd7ae6c30a2fee8a3bddce9f43.jpg"
           },
           {
-            "title": "劇場版 吉伊卡哇 人魚島的秘密",
-            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
-            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
+            "title": "飢餓遊戲：黎明收割",
+            "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
+            "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "new-taipei",
+        "title": "搶銀行先修班",
+        "alternate_title": "HOW TO ROB A BANK",
+        "metadata_candidates": [
+          {
+            "title": "搶銀行先修班 特別場",
+            "title_en": "How To Rob a Bank",
+            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
+          },
+          {
+            "title": "搶銀行先修班",
+            "title_en": "HOW TO ROB A BANK",
+            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
           }
         ]
       },
@@ -985,24 +1034,6 @@
       {
         "source": "showtimes-official-cloudflare-bootstrap",
         "city": "keelung",
-        "title": "搶銀行先修班",
-        "alternate_title": "HOW TO ROB A BANK",
-        "metadata_candidates": [
-          {
-            "title": "搶銀行先修班 特別場",
-            "title_en": "How To Rob a Bank",
-            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
-          },
-          {
-            "title": "搶銀行先修班",
-            "title_en": "HOW TO ROB A BANK",
-            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "keelung",
         "title": "劇場版 吉伊卡哇 人魚島的秘密",
         "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
         "metadata_candidates": [
@@ -1015,6 +1046,24 @@
             "title": "劇場版 吉伊卡哇 人魚島的秘密",
             "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
             "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "keelung",
+        "title": "搶銀行先修班",
+        "alternate_title": "HOW TO ROB A BANK",
+        "metadata_candidates": [
+          {
+            "title": "搶銀行先修班 特別場",
+            "title_en": "How To Rob a Bank",
+            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
+          },
+          {
+            "title": "搶銀行先修班",
+            "title_en": "HOW TO ROB A BANK",
+            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
           }
         ]
       },
@@ -1147,24 +1196,6 @@
       {
         "source": "showtimes-official-cloudflare-bootstrap",
         "city": "yunlin",
-        "title": "搶銀行先修班",
-        "alternate_title": "HOW TO ROB A BANK",
-        "metadata_candidates": [
-          {
-            "title": "搶銀行先修班 特別場",
-            "title_en": "How To Rob a Bank",
-            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
-          },
-          {
-            "title": "搶銀行先修班",
-            "title_en": "HOW TO ROB A BANK",
-            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "yunlin",
         "title": "劇場版 吉伊卡哇 人魚島的秘密",
         "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
         "metadata_candidates": [
@@ -1195,24 +1226,6 @@
             "title": "飢餓遊戲：黎明收割",
             "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
             "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "chiayi-city",
-        "title": "搶銀行先修班",
-        "alternate_title": "HOW TO ROB A BANK",
-        "metadata_candidates": [
-          {
-            "title": "搶銀行先修班 特別場",
-            "title_en": "How To Rob a Bank",
-            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
-          },
-          {
-            "title": "搶銀行先修班",
-            "title_en": "HOW TO ROB A BANK",
-            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
           }
         ]
       },
@@ -1267,24 +1280,6 @@
             "title": "劇場版 吉伊卡哇 人魚島的秘密",
             "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
             "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "tainan",
-        "title": "搶銀行先修班",
-        "alternate_title": "HOW TO ROB A BANK",
-        "metadata_candidates": [
-          {
-            "title": "搶銀行先修班 特別場",
-            "title_en": "How To Rob a Bank",
-            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
-          },
-          {
-            "title": "搶銀行先修班",
-            "title_en": "HOW TO ROB A BANK",
-            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
           }
         ]
       },
@@ -1303,24 +1298,6 @@
             "title": "飢餓遊戲：黎明收割",
             "title_en": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
             "poster_url": "https://assets.showtimes.com.tw/images/ef4cd8ae8f0e4028164ade5762df806f.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "kaohsiung",
-        "title": "搶銀行先修班",
-        "alternate_title": "HOW TO ROB A BANK",
-        "metadata_candidates": [
-          {
-            "title": "搶銀行先修班 特別場",
-            "title_en": "How To Rob a Bank",
-            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
-          },
-          {
-            "title": "搶銀行先修班",
-            "title_en": "HOW TO ROB A BANK",
-            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
           }
         ]
       },
@@ -1362,6 +1339,42 @@
       },
       {
         "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "kaohsiung",
+        "title": "搶銀行先修班",
+        "alternate_title": "HOW TO ROB A BANK",
+        "metadata_candidates": [
+          {
+            "title": "搶銀行先修班 特別場",
+            "title_en": "How To Rob a Bank",
+            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
+          },
+          {
+            "title": "搶銀行先修班",
+            "title_en": "HOW TO ROB A BANK",
+            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
+        "city": "hualien",
+        "title": "劇場版 吉伊卡哇 人魚島的秘密",
+        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+        "metadata_candidates": [
+          {
+            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
+          },
+          {
+            "title": "劇場版 吉伊卡哇 人魚島的秘密",
+            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
+          }
+        ]
+      },
+      {
+        "source": "showtimes-official-cloudflare-bootstrap",
         "city": "hualien",
         "title": "飢餓遊戲：黎明收割",
         "alternate_title": "THE HUNGER GAMES: SUNRISE ON THE REAPING",
@@ -1398,37 +1411,19 @@
       },
       {
         "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "hualien",
-        "title": "蜘蛛人：重生日",
-        "alternate_title": "SPIDER-MAN: BRAND NEW DAY",
+        "city": "taitung",
+        "title": "搶銀行先修班",
+        "alternate_title": "HOW TO ROB A BANK",
         "metadata_candidates": [
           {
-            "title": "蜘蛛人：重生日 最終決戰場",
-            "title_en": "SPIDER-MAN: BRAND NEW DAY",
-            "poster_url": "https://assets.showtimes.com.tw/images/0bdc8bbdb17cd6a7b8ffb8f6be3383fd.jpg"
+            "title": "搶銀行先修班 特別場",
+            "title_en": "How To Rob a Bank",
+            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
           },
           {
-            "title": "蜘蛛人：重生日",
-            "title_en": "SPIDER-MAN: BRAND NEW DAY",
-            "poster_url": "https://assets.showtimes.com.tw/images/9f00d1044341ccd5a1ee1e99d3c8a995.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "hualien",
-        "title": "劇場版 吉伊卡哇 人魚島的秘密",
-        "alternate_title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
-        "metadata_candidates": [
-          {
-            "title": "劇場版 吉伊卡哇 人魚島的秘密 聲援同樂場",
-            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
-            "poster_url": "https://assets.showtimes.com.tw/images/9946b573f805ec18382a748523a62534.jpg"
-          },
-          {
-            "title": "劇場版 吉伊卡哇 人魚島的秘密",
-            "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
-            "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
+            "title": "搶銀行先修班",
+            "title_en": "HOW TO ROB A BANK",
+            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
           }
         ]
       },
@@ -1465,24 +1460,6 @@
             "title": "劇場版 吉伊卡哇 人魚島的秘密",
             "title_en": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
             "poster_url": "https://assets.showtimes.com.tw/images/b34d2f5762a5a4c0c16fe9c6f0ce2794.jpg"
-          }
-        ]
-      },
-      {
-        "source": "showtimes-official-cloudflare-bootstrap",
-        "city": "taitung",
-        "title": "搶銀行先修班",
-        "alternate_title": "HOW TO ROB A BANK",
-        "metadata_candidates": [
-          {
-            "title": "搶銀行先修班 特別場",
-            "title_en": "How To Rob a Bank",
-            "poster_url": "https://assets.showtimes.com.tw/images/1f2cfac8ca637e555a0cd9796411b1f3.jpg"
-          },
-          {
-            "title": "搶銀行先修班",
-            "title_en": "HOW TO ROB A BANK",
-            "poster_url": "https://assets.showtimes.com.tw/images/d9703e599a26498044caaccc53983cb9.jpg"
           }
         ]
       }
@@ -1509,6 +1486,18 @@
       },
       {
         "source": "moc-culture-movie-api",
+        "city": "new-taipei",
+        "venue": "國家電影及視聽文化中心-大影格",
+        "address": "新北市新莊區文藝路2號"
+      },
+      {
+        "source": "moc-culture-movie-api",
+        "city": "new-taipei",
+        "venue": "國家電影及視聽文化中心-小影格",
+        "address": "新北市新莊區文藝路2號"
+      },
+      {
+        "source": "moc-culture-movie-api",
         "city": "kaohsiung",
         "venue": "內惟藝術中心 Reel two 2廳",
         "address": "高雄市鼓山區馬卡道路329號"
@@ -1518,6 +1507,12 @@
         "city": "kaohsiung",
         "venue": "高雄市電影館3樓",
         "address": "高雄市鹽埕區河西路10號"
+      },
+      {
+        "source": "moc-culture-movie-api",
+        "city": "new-taipei",
+        "venue": "府中15",
+        "address": "新北市板橋區府中路15號B1"
       },
       {
         "source": "moc-culture-movie-api",
