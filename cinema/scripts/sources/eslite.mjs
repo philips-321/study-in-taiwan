@@ -122,13 +122,31 @@ export async function fetchEsliteShowtimes() {
 }
 
 export async function fetchEsliteShowtimesInBrowser(scheduleUrl = URL) {
-  const [result] = await browseOfficialPages([{ url: scheduleUrl }], { concurrency: 1, settleMs: 1500 });
-  if (result.status !== 200) {
-    throw new Error(`Eslite browser navigation returned HTTP ${result.status ?? 'unknown'}${result.error ? `: ${result.error}` : ''}`);
+  let lastError;
+
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    try {
+      const [result] = await browseOfficialPages([{ url: scheduleUrl }], {
+        concurrency: 1,
+        settleMs: 4000,
+        navigationTimeoutMs: 45_000,
+        // Eslite can keep subresources open indefinitely; the document is
+        // usable once navigation commits and the settle period has elapsed.
+        waitUntil: 'commit',
+      });
+      if (result.status !== 200) {
+        throw new Error(`Eslite browser navigation returned HTTP ${result.status ?? 'unknown'}${result.error ? `: ${result.error}` : ''}`);
+      }
+      const rows = parseEsliteSchedule(result.html);
+      if (!rows.length) throw new Error('Official Eslite browser page returned no parseable showtimes');
+      rows.acquisition_method = 'first-party-eslite-browser';
+      rows.pages_requested = 1;
+      return rows;
+    } catch (error) {
+      lastError = error;
+      if (attempt < 2) await new Promise((resolve) => setTimeout(resolve, 2000));
+    }
   }
-  const rows = parseEsliteSchedule(result.html);
-  if (!rows.length) throw new Error('Official Eslite browser page returned no parseable showtimes');
-  rows.acquisition_method = 'first-party-eslite-browser';
-  rows.pages_requested = 1;
-  return rows;
+
+  throw lastError;
 }

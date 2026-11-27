@@ -13,7 +13,15 @@ async function loadChromium() {
   return playwright.chromium;
 }
 
-export async function browseOfficialPages(targets, { concurrency = 3, settleMs = 1200, navigationTimeoutMs = 25_000 } = {}) {
+export async function browseOfficialPages(
+  targets,
+  {
+    concurrency = 3,
+    settleMs = 1200,
+    navigationTimeoutMs = 25_000,
+    waitUntil = 'domcontentloaded',
+  } = {},
+) {
   const chromium = await loadChromium();
   const useCloudflareBrowser = cloudflareBrowserAvailable();
   const requireCloudflareBrowser = process.env.CINEMA_REQUIRE_REMOTE_BROWSER === 'true';
@@ -66,7 +74,7 @@ export async function browseOfficialPages(targets, { concurrency = 3, settleMs =
           }
           page = await context.newPage();
           page.setDefaultNavigationTimeout(navigationTimeoutMs);
-          const response = await page.goto(target.url, { waitUntil: 'domcontentloaded' });
+          const response = await page.goto(target.url, { waitUntil });
           const initialStatus = response?.status() ?? null;
           if (initialStatus === 403) {
             // Allow a browser-side challenge or redirect to finish once before stopping the crawl.
