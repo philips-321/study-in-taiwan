@@ -405,7 +405,15 @@ jobs:
 
           git config user.name 'cinema-data-bot'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add cinema/data .github/cinema-city-update-health.json .github/cinema-update-paused.json
+          git add cinema/data .github/cinema-city-update-health.json
+          # The pause marker is created by the separate pause-schedule job and
+          # is removed by successful manual recovery. Stage whichever state
+          # exists without making a missing pathspec fail the whole refresh.
+          if git ls-files --error-unmatch .github/cinema-update-paused.json >/dev/null 2>&1; then
+            git add -u -- .github/cinema-update-paused.json
+          elif [ -e .github/cinema-update-paused.json ]; then
+            git add .github/cinema-update-paused.json
+          fi
           git commit -m 'Update Taiwan cinema JSON [skip ci]'
 
           # main may move while collectors are running. Retry from current main
