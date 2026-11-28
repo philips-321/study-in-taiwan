@@ -1,45 +1,28 @@
 {
   "schema": "public-window-report",
-  "as_of": "2026-11-27",
+  "as_of": "2026-11-28",
   "days": 30,
-  "end_date": "2026-12-27",
-  "generated_at": "2026-11-27T15:53:05.341Z",
-  "input_rows": 57975,
-  "public_rows": 11034,
-  "excluded_by_window": 44730,
-  "excluded_stale_status_rows": 240,
-  "excluded_stale_fallback_rows": 1971,
+  "end_date": "2026-12-28",
+  "generated_at": "2026-11-28T01:30:26.606Z",
+  "input_rows": 58019,
+  "public_rows": 9610,
+  "excluded_by_window": 46365,
+  "excluded_stale_status_rows": 208,
+  "excluded_stale_fallback_rows": 1836,
   "excluded_stale_fallback_by_source": {
-    "vieshow-official-browser": 1936,
+    "vieshow-official-browser": 1801,
     "showtimes-official-api": 35
   },
   "fallback_max_age_hours": 168,
-  "files": 201,
-  "sha256": "2fb79fe9f861274bfa7ed109db4b6c2f3521798f3f52d1027c97c9f3ef89a93d",
+  "files": 189,
+  "sha256": "f1447c124971ab1be5a129925ae0292e6a143065880dcfe626556afc3e417fd6",
   "showtimes_index": {
-    "2026-11-27": {
-      "total": 1410,
-      "cities": {
-        "kaohsiung": 248,
-        "taipei": 345,
-        "taichung": 237,
-        "new-taipei": 271,
-        "pingtung": 38,
-        "chiayi-city": 60,
-        "tainan": 19,
-        "taoyuan": 47,
-        "taitung": 38,
-        "hualien": 45,
-        "keelung": 45,
-        "yunlin": 17
-      }
-    },
     "2026-11-28": {
-      "total": 1414,
+      "total": 1408,
       "cities": {
         "taipei": 338,
-        "taichung": 238,
-        "new-taipei": 290,
+        "taichung": 234,
+        "new-taipei": 288,
         "keelung": 45,
         "kaohsiung": 249,
         "pingtung": 37,
@@ -52,15 +35,15 @@
       }
     },
     "2026-11-30": {
-      "total": 1370,
+      "total": 1359,
       "cities": {
-        "new-taipei": 265,
-        "taipei": 352,
-        "taichung": 236,
+        "new-taipei": 264,
+        "taipei": 351,
+        "taichung": 231,
         "tainan": 18,
-        "kaohsiung": 213,
+        "kaohsiung": 211,
         "pingtung": 38,
-        "taoyuan": 48,
+        "taoyuan": 46,
         "chiayi-city": 55,
         "keelung": 45,
         "yunlin": 17,
@@ -69,14 +52,14 @@
       }
     },
     "2026-11-29": {
-      "total": 1385,
+      "total": 1375,
       "cities": {
-        "taipei": 331,
-        "new-taipei": 278,
+        "taipei": 326,
+        "new-taipei": 276,
         "kaohsiung": 244,
         "keelung": 45,
         "taoyuan": 47,
-        "taichung": 236,
+        "taichung": 233,
         "hualien": 45,
         "yunlin": 15,
         "chiayi-city": 49,
@@ -101,29 +84,12 @@
         "yunlin": 1
       }
     },
-    "2026-12-01": {
-      "total": 1358,
-      "cities": {
-        "taichung": 237,
-        "kaohsiung": 228,
-        "taitung": 38,
-        "new-taipei": 263,
-        "taipei": 327,
-        "pingtung": 38,
-        "taoyuan": 46,
-        "chiayi-city": 55,
-        "yunlin": 17,
-        "hualien": 45,
-        "keelung": 45,
-        "tainan": 19
-      }
-    },
     "2026-12-03": {
-      "total": 1344,
+      "total": 1350,
       "cities": {
-        "taipei": 308,
-        "new-taipei": 266,
-        "taichung": 240,
+        "taipei": 322,
+        "new-taipei": 265,
+        "taichung": 233,
         "kaohsiung": 229,
         "chiayi-city": 53,
         "hualien": 45,
@@ -133,6 +99,23 @@
         "taitung": 38,
         "pingtung": 38,
         "yunlin": 17
+      }
+    },
+    "2026-12-01": {
+      "total": 1367,
+      "cities": {
+        "taichung": 233,
+        "kaohsiung": 227,
+        "taitung": 38,
+        "new-taipei": 279,
+        "taipei": 325,
+        "pingtung": 38,
+        "taoyuan": 46,
+        "chiayi-city": 55,
+        "yunlin": 17,
+        "hualien": 45,
+        "keelung": 45,
+        "tainan": 19
       }
     },
     "2026-12-18": {
@@ -166,16 +149,16 @@
       }
     },
     "2026-12-02": {
-      "total": 1365,
+      "total": 1358,
       "cities": {
-        "taipei": 332,
+        "taipei": 333,
         "chiayi-city": 53,
         "keelung": 45,
         "tainan": 18,
         "hualien": 44,
         "kaohsiung": 229,
-        "new-taipei": 265,
-        "taichung": 240,
+        "new-taipei": 264,
+        "taichung": 233,
         "taoyuan": 46,
         "taitung": 38,
         "yunlin": 17,
@@ -305,10 +288,10 @@
       }
     },
     "2026-12-04": {
-      "total": 21,
+      "total": 27,
       "cities": {
         "kaohsiung": 15,
-        "taipei": 5,
+        "taipei": 11,
         "new-taipei": 1
       }
     },
@@ -334,10 +317,10 @@
       }
     },
     "2026-12-10": {
-      "total": 20,
+      "total": 19,
       "cities": {
         "kaohsiung": 16,
-        "taipei": 3,
+        "taipei": 2,
         "new-taipei": 1
       }
     },
@@ -365,7 +348,7 @@
     }
   },
   "coverage": {
-    "showtime_rows": 11034,
-    "explicit_subtitle_rows": 186
+    "showtime_rows": 9610,
+    "explicit_subtitle_rows": 160
   }
 }

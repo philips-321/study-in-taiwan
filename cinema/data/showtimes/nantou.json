@@ -1,19 +1,19 @@
 {
   "version": 4,
   "city": "nantou",
-  "generated_at": "2026-11-27T15:51:25.162Z",
+  "generated_at": "2026-11-28T01:29:48.235Z",
   "showtime_count": 1,
   "sources": {
     "moc-culture-movie-api": {
       "ok": true,
-      "showtimes": 894,
+      "showtimes": 814,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 894,
+      "fresh_showtimes": 814,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": "2026-10-24T18:59:27.328Z",
       "next_probe_at": null
     },
@@ -26,52 +26,52 @@
       "fresh_showtimes": 493,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "ambassador-official-site": {
       "ok": true,
-      "showtimes": 2891,
+      "showtimes": 2395,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 2891,
+      "fresh_showtimes": 2395,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
     "showtimes-official-api": {
       "ok": true,
-      "showtimes": 6765,
+      "showtimes": 5889,
       "skipped": true,
       "disabled": false,
       "role": "Cloudflare Browser Run official bootstrap; direct API fallback only when remote browser is unavailable",
       "browser_fallback": "showtimes-official-cloudflare-bootstrap",
-      "browser_fallback_showtimes": 6765,
+      "browser_fallback_showtimes": 5889,
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 6765,
+      "fresh_showtimes": 5889,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": "2026-11-18T01:00:31.999Z",
       "next_probe_at": null
     },
     "showtimes-official-cloudflare-bootstrap": {
       "ok": true,
-      "showtimes": 6765,
+      "showtimes": 5889,
       "role": "official ShowTimes bootstrap fetched inside Cloudflare Browser Run",
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
-      "fresh_showtimes": 6765,
+      "fresh_showtimes": 5889,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": "2026-11-18T01:00:31.999Z",
       "next_probe_at": null
     },
@@ -84,7 +84,7 @@
       "fresh_showtimes": 96,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -102,7 +102,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": "2026-11-01T17:42:55.318Z",
       "next_probe_at": null
     },
@@ -118,7 +118,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": null,
       "next_probe_at": null
     },
@@ -133,7 +133,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": "2026-11-01T22:52:01.331Z",
       "next_probe_at": null
     },
@@ -148,7 +148,7 @@
       "fresh_showtimes": 0,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": "2026-11-11T13:29:51.719Z",
       "next_probe_at": null
     },
@@ -163,20 +163,20 @@
       "fresh_showtimes": 96,
       "fallback_showtimes": 0,
       "fallback": null,
-      "last_success_at": "2026-11-27T15:52:54.644Z",
+      "last_success_at": "2026-11-28T01:30:19.261Z",
       "last_failure_at": "2026-11-18T01:00:31.999Z",
       "next_probe_at": null
     },
     "vieshow-official-browser": {
       "ok": true,
-      "showtimes": 1826,
+      "showtimes": 1819,
       "manual_snapshot": true,
       "role": "manual browser snapshot; refresh from official branch pages, not GitHub Actions",
       "health": "healthy",
       "circuit_state": "closed",
       "failure_count": 0,
       "fresh_showtimes": 0,
-      "fallback_showtimes": 1826,
+      "fallback_showtimes": 1819,
       "fallback": "manual-browser-snapshot",
       "last_success_at": "2026-10-27T02:19:11.397Z",
       "last_failure_at": null,
@@ -189,6 +189,6 @@
     "restored_sources": [
       "vieshow-official-browser"
     ],
-    "restored_at": "2026-11-27T15:52:54.644Z"
+    "restored_at": "2026-11-28T01:30:19.261Z"
   }
 }
